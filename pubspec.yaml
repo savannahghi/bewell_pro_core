@@ -1,7 +1,10 @@
 name: bewell_pro_core
 description: Main package for BeWell-Professional
 version: 1.0.0
-
+homepage: https://github.com/savannahghi/bewell_pro_core
+repository: https://github.com/savannahghi/bewell_pro_core
+issue_tracker: https://github.com/savannahghi/bewell_pro_core/issues
+documentation: https://github.com/savannahghi/bewell_pro_core/blob/main/doc/readme.md
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
