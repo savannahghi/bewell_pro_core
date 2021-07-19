@@ -1,0 +1,184 @@
+import 'package:async_redux/async_redux.dart';
+import 'package:flutter/material.dart';
+import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
+import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
+import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/view_models/communication_settings_viewmodel.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
+import 'package:bewell_pro_core/presentation/router/routes.dart';
+import 'package:intl/intl.dart';
+import 'package:app_wrapper/app_wrapper.dart';
+import 'package:domain_objects/entities.dart';
+import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:misc_utilities/responsive_widget.dart';
+import 'package:domain_objects/value_objects.dart';
+import 'package:misc_utilities/enums.dart';
+import 'package:misc_utilities/number_constants.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:shared_themes/text_themes.dart';
+import 'package:shared_ui_components/communications_settings.dart';
+import 'package:shared_ui_components/profile_banner.dart';
+import 'package:http/http.dart' as http;
+
+class CommunicationSettingsPage extends StatefulWidget {
+  @override
+  _CommunicationSettingsPageState createState() =>
+      _CommunicationSettingsPageState();
+}
+
+class _CommunicationSettingsPageState extends State<CommunicationSettingsPage> {
+  @override
+  Widget build(BuildContext context) {
+    final UserProfile? userProfile =
+        StoreProvider.state<AppState>(context)!.userState!.userProfile;
+    final BioData bioData = userProfile!.userBioData!;
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Container(
+          color: Colors.white,
+          child: Column(
+            children: <Widget>[
+              Hero(
+                tag: 'profile_banner',
+                child: Material(
+                  child: SILProfileBanner(
+                    height: 140,
+                    backgroundImagePath: doctorIcon,
+                    userPhotoUrl: (userProfile.photoUploadID != null)
+                        ? userProfile.photoUploadID!
+                        : UNKNOWN,
+                    userName:
+                        '${toBeginningOfSentenceCase(bioData.firstName!.getValue())} ${toBeginningOfSentenceCase(bioData.lastName!.getValue())}',
+                    primaryPhone: userProfile.primaryPhoneNumber != null
+                        ? userProfile.primaryPhoneNumber!.getValue()
+                        : UNKNOWN,
+                    profileRoute: userProfileRoute,
+                  ),
+                ),
+              ),
+              veryLargeVerticalSizedBox,
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal:
+                        SILResponsiveWidget.preferredPaddingOnStretchedScreens(
+                            context: context)),
+                child: BuildCommunicationItems(),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class BuildCommunicationItems extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return StoreConnector<AppState, CommunicationSettingsViewModel>(
+      converter: (Store<AppState> store) =>
+          CommunicationSettingsViewModel.fromStore(store),
+      builder: (BuildContext context, CommunicationSettingsViewModel vm) {
+        return Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: SILResponsiveWidget.deviceType(context) ==
+                      DeviceScreensType.Mobile
+                  ? number15
+                  : number30),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              largeVerticalSizedBox,
+              Text(
+                pageHeader,
+                style: TextThemes.heavySize18Text(Colors.black),
+              ),
+              mediumVerticalSizedBox,
+              CommunicationSettingItem(
+                title: emailTitle,
+                subtitle: emailSubtitle,
+                isActive: vm.allowEmail!,
+                onTapHandler: changeCommunicationSettings,
+                type: CommunicationType.allowEmail,
+              ),
+              largeVerticalSizedBox,
+              CommunicationSettingItem(
+                title: messagesTitle,
+                subtitle: messagesSubTitle,
+                isActive: vm.allowText!,
+                onTapHandler: changeCommunicationSettings,
+                type: CommunicationType.allowTextSMS,
+              ),
+              largeVerticalSizedBox,
+              CommunicationSettingItem(
+                title: whatsAppTitle,
+                subtitle: whatsAppSubTitle,
+                isActive: vm.allowWhatsApp!,
+                onTapHandler: changeCommunicationSettings,
+                type: CommunicationType.allowWhatsApp,
+              ),
+              largeVerticalSizedBox,
+              CommunicationSettingItem(
+                title: pushTitle,
+                subtitle: pushSubTitle,
+                isActive: vm.allowPush!,
+                onTapHandler: changeCommunicationSettings,
+                type: CommunicationType.allowPush,
+              ),
+              mediumVerticalSizedBox,
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Future<bool> changeCommunicationSettings(
+      {required CommunicationType channel,
+      required bool isAllowed,
+      required BuildContext context}) async {
+    final CommunicationSettings settings =
+        StoreProvider.state<AppState>(context)!
+            .userState!
+            .communicationSettings!;
+    final Map<String, bool> _variables = <String, bool>{
+      'allowEmail': settings.allowEmail!,
+      'allowWhatsApp': settings.allowWhatsApp!,
+      'allowTextSMS': settings.allowText!,
+      'allowPush': settings.allowPush!,
+    };
+    _variables[channel.toShortString()] = isAllowed;
+
+    final ISILGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
+
+    /// fetch the data from the api
+    final http.Response _result = await _client.query(
+      setCommSettingsMutation,
+      _variables,
+    );
+
+    final Map<String, dynamic> response = _client.toMap(_result);
+
+    /// check if the response has timeout metadata. If yes, return an error to
+    /// handled correctly
+    if (_result.statusCode == 408) {
+      return false;
+    }
+
+    //  check for errors in the data here
+    if (_client.parseError(response) != null) {
+      return false;
+    }
+    StoreProvider.dispatch<AppState>(
+        context,
+        BatchUpdateUserStateAction(
+            communicationSettings: CommunicationSettings(
+          allowEmail: _variables['allowEmail'],
+          allowPush: _variables['allowPush'],
+          allowText: _variables['allowTextSMS'],
+          allowWhatsApp: _variables['allowWhatsApp'],
+        )));
+    return true;
+  }
+}

@@ -1,0 +1,144 @@
+import 'package:async_redux/async_redux.dart';
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
+import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_contexts.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/domain_constants.dart';
+import 'package:bewell_pro_core/presentation/router/router_generator.dart';
+
+import 'package:app_wrapper/app_wrapper.dart';
+import 'package:domain_objects/entities.dart';
+import 'package:domain_objects/value_objects.dart';
+import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:misc_utilities/event_bus.dart';
+import 'package:shared_ui_components/buttons.dart';
+
+import 'mocks.dart';
+
+/// [buildTestWidget] is a widget wrapper used for testing
+/// It wraps the widget with a `StoreProvider`, `AppWrapperBase`, `MaterialApp` and a `Scaffold`
+/// Helps to avoid repetition across test files requiring the above widgets
+///
+/// The function will create a store for you if you don't provide one
+Future<void> buildTestWidget({
+  required WidgetTester tester,
+  required Widget widget,
+  Store<AppState>? store,
+  ISILGraphQlClient? graphQlClient,
+  List<NavigatorObserver>? navigatorObservers,
+  Widget? endDrawer,
+  EventBus? eventBus,
+  Duration? duration,
+}) async {
+  final EventBus _eventBus = EventBus();
+  final Store<AppState> _store =
+      Store<AppState>(initialState: AppState.initial());
+  NavigateAction.setNavigatorKey(globalAppNavigatorKey);
+
+  await tester.pumpWidget(
+    AppWrapperBase(
+      eventBus: eventBus ?? _eventBus,
+      graphQLClient: graphQlClient ?? mockSILGraphQlClient,
+      appName: appName,
+      appContexts: testAppContexts,
+      deviceCapabilities: deviceCapabilities,
+      child: StoreProvider<AppState>(
+        store: store ?? _store,
+        child: MaterialApp(
+          onGenerateRoute: RouteGenerator.generateRoute,
+          navigatorKey: globalAppNavigatorKey,
+          navigatorObservers: navigatorObservers ?? <NavigatorObserver>[],
+          home: Scaffold(
+            endDrawer: endDrawer,
+            body: widget,
+          ),
+        ),
+      ),
+    ),
+    duration,
+  );
+}
+
+/// [buildDrawerTestWidget] is a widget wrapper used for testing clinical drawers.
+/// It wraps the widget with a `StoreProvider`, `AppWrapperBase`,
+/// `MaterialApp` and a `Scaffold`
+///
+/// It provides a [endDrawer] property to the `Scaffold` with the current active drawer.
+/// Tap [SILPrimaryButton] to open drawer.
+///
+/// This widget also opens the drawer for you so that you can begin your
+/// widget interactions immediately
+Future<void> buildDrawerTestWidget(WidgetTester tester, DrawerType drawerType,
+    {Store<AppState>? store, ISILGraphQlClient? graphQlClient}) async {
+  await buildTestWidget(
+    tester: tester,
+    graphQlClient: graphQlClient,
+    store: store,
+    endDrawer: SizedBox(
+      width: tabletPortrait.width,
+      height: tabletPortrait.height,
+      child: Drawer(
+        child: ListView(
+          children: <Widget>[
+            activeDrawer(
+              drawer: drawerType.name,
+            )
+          ],
+        ),
+      ),
+    ),
+    widget: Builder(
+      builder: (BuildContext context) {
+        StoreProvider.dispatch<AppState>(
+            context,
+            BatchUpdateUserStateAction(
+              userProfile: UserProfile(
+                userBioData: BioData(
+                    firstName: Name.withValue('Bewell'),
+                    lastName: Name.withValue('Test')),
+              ),
+            ));
+        return SILPrimaryButton(
+          text: drawerTestRootText,
+          onPressed: () => Scaffold.of(context).openEndDrawer(),
+        );
+      },
+    ),
+  );
+}
+
+StoreTester<AppState> createStoreTester() {
+  final Store<AppState> store =
+      Store<AppState>(initialState: AppState.initial());
+  return StoreTester<AppState>.from(
+    store,
+    testInfoPrinter: (TestInfo<dynamic> testInfo) {},
+  );
+}
+
+Future<void> advanceAndPump({
+  required Widget widget,
+  required WidgetTester tester,
+  required void Function(Duration) updateTime,
+  Store<AppState>? store,
+  ISILGraphQlClient? graphQlClient,
+  List<NavigatorObserver>? navigatorObservers,
+  Duration duration = Duration.zero,
+}) async {
+  updateTime(duration);
+
+  await buildTestWidget(
+    tester: tester,
+    widget: widget,
+    duration: duration,
+    store: store,
+    graphQlClient: graphQlClient,
+    navigatorObservers: navigatorObservers,
+  );
+  await tester.pumpAndSettle();
+}

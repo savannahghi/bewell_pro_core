@@ -1,0 +1,97 @@
+import 'dart:async';
+
+import 'package:app_wrapper/app_wrapper.dart';
+import 'package:async_redux/async_redux.dart';
+import 'package:domain_objects/value_objects.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:bewell_pro_core/application/core/graphql/queries.dart';
+import 'package:bewell_pro_core/application/core/services/helpers.dart';
+import 'package:bewell_pro_core/application/core/services/onboarding.dart';
+import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
+import 'package:bewell_pro_core/application/redux/flags/flags.dart';
+import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/domain/core/entities/onboarding_path_config.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/events.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/exception_strings.dart';
+import 'package:bewell_pro_core/presentation/router/routes.dart';
+import 'package:http/http.dart';
+import 'package:misc_utilities/event_bus.dart';
+import 'package:misc_utilities/misc.dart';
+
+/// Verifies the PIN entered by the user
+///
+/// @params
+/// [isChangingPin] a bool indicating whether the user is changing their PIN
+/// [String] the PIN that has been entered by the user
+class VerifyPinAction extends ReduxAction<AppState> {
+  final BuildContext context;
+  final bool isChangingPin;
+  final String pin;
+
+  VerifyPinAction(
+      {required this.context, required this.isChangingPin, required this.pin});
+
+  @override
+  void after() {
+    dispatch(WaitAction<AppState>.remove(verifyPinFlag));
+  }
+
+  @override
+  void before() {
+    dispatch(WaitAction<AppState>.add(verifyPinFlag));
+  }
+
+  @override
+  Future<AppState?> reduce() async {
+    final ISILGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
+
+    final Map<String, dynamic> _variables = <String, dynamic>{'pin': pin};
+
+    final Response result = await _client.query(resumeWithPinQuery, _variables);
+
+    final Map<String, dynamic> body = _client.toMap(result);
+
+    // Check first for errors
+    if (_client.parseError(body) != null || body['data'] == null) {
+      await captureException(
+        errorVerifyingPIN,
+        query: resumeWithPinQuery,
+        error: _client.parseError(body),
+        response: body,
+        variables: _variables,
+      );
+      showErrorSnackbar(context);
+      return null;
+    }
+
+    if (body['data']['resumeWithPIN'] as bool == true) {
+      final OnboardingPathConfig path = onboardingPath(state: state);
+
+      final EventBus eventBus =
+          AppWrapperBase.of(context)!.eventBus as EventBus;
+
+      eventBus.fire(TriggeredEvent(navigationEvent, <String, dynamic>{}));
+
+      dispatch(
+        BatchUpdateMiscStateAction(pinCode: UNKNOWN, invalidPin: false),
+      );
+
+      if (isChangingPin) {
+        await triggerNavigationEvent(
+            context: context, namedRoute: profileChangePinRoute);
+      } else {
+        await triggerNavigationEvent(context: context, namedRoute: path.route);
+      }
+    } else {
+      dispatch(
+        BatchUpdateMiscStateAction(pinCode: UNKNOWN, invalidPin: true),
+      );
+      await HapticFeedback.vibrate();
+
+      // return the state unchanged
+      return null;
+    }
+  }
+}
