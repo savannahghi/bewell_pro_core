@@ -24,7 +24,7 @@ class BeWellSecondaryPatientBannerLogic {
     final SecondaryBannerInfoObject secondaryBannerInfoObject =
         SecondaryBannerInfoObject();
 
-    final ISILGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
+    final IGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
 
     final Map<String, dynamic> _variables = <String, dynamic>{
       'params': <String, dynamic>{

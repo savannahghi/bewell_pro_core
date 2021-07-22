@@ -48,13 +48,13 @@ void main() {
       container.currentPatient.updatePatient(payload);
 
       final Map<String, String> error = <String, String>{'error': 'Test error'};
-      final MockShortSILGraphQlClient silGraphQlClient =
+      final MockShortGraphQlClient graphQlClient =
           _getMockclientWithResponse(error);
 
       await buildTestWidget(
         store: store,
         tester: tester,
-        graphQlClient: silGraphQlClient,
+        graphQlClient: graphQlClient,
         widget: container,
       );
 
@@ -128,13 +128,13 @@ void main() {
       ];
 
       final Map<String, dynamic> data = _getPatientDataWithEdges(edges);
-      final MockShortSILGraphQlClient silGraphQlClient =
+      final MockShortGraphQlClient graphQlClient =
           _getMockclientWithResponse(data);
 
       await buildTestWidget(
         store: store,
         tester: tester,
-        graphQlClient: silGraphQlClient,
+        graphQlClient: graphQlClient,
         widget: PatientRegistrationContainer(
           tabController: controller,
           child: const NextOfKin(),
@@ -212,13 +212,13 @@ void main() {
       ];
 
       final Map<String, dynamic> data = _getPatientDataWithEdges(edges);
-      final MockShortSILGraphQlClient silGraphQlClient =
+      final MockShortGraphQlClient graphQlClient =
           _getMockclientWithResponse(data);
 
       await buildTestWidget(
         store: store,
         tester: tester,
-        graphQlClient: silGraphQlClient,
+        graphQlClient: graphQlClient,
         widget: PatientRegistrationContainer(
           tabController: controller,
           child: const NextOfKin(),
@@ -238,13 +238,13 @@ void main() {
         (WidgetTester tester) async {
       final Map<String, dynamic> data =
           _getPatientDataWithEdges(<Map<String, dynamic>>[]);
-      final MockShortSILGraphQlClient silGraphQlClient =
+      final MockShortGraphQlClient graphQlClient =
           _getMockclientWithResponse(data);
 
       await buildTestWidget(
         store: store,
         tester: tester,
-        graphQlClient: silGraphQlClient,
+        graphQlClient: graphQlClient,
         widget: PatientRegistrationContainer(
           tabController: controller,
           child: const NextOfKin(),
@@ -264,13 +264,13 @@ void main() {
           'findPatients': null,
         },
       };
-      final MockShortSILGraphQlClient silGraphQlClient =
+      final MockShortGraphQlClient graphQlClient =
           _getMockclientWithResponse(data);
 
       await buildTestWidget(
         store: store,
         tester: tester,
-        graphQlClient: silGraphQlClient,
+        graphQlClient: graphQlClient,
         widget: PatientRegistrationContainer(
           tabController: controller,
           child: const NextOfKin(),
@@ -374,13 +374,13 @@ void main() {
         (WidgetTester tester) async {
       final Map<String, dynamic> data =
           _getPatientDataWithEdges(<Map<String, dynamic>>[]);
-      final MockShortSILGraphQlClient silGraphQlClient =
+      final MockShortGraphQlClient graphQlClient =
           _getMockclientWithResponse(data);
 
       await buildTestWidget(
         store: store,
         tester: tester,
-        graphQlClient: silGraphQlClient,
+        graphQlClient: graphQlClient,
         widget: PatientRegistrationContainer(
           tabController: controller,
           child: const NextOfKin(),
@@ -405,13 +405,13 @@ void main() {
         (WidgetTester tester) async {
       final Map<String, dynamic> data =
           _getPatientDataWithEdges(<Map<String, dynamic>>[]);
-      final MockShortSILGraphQlClient silGraphQlClient =
+      final MockShortGraphQlClient graphQlClient =
           _getMockclientWithResponse(data);
 
       await buildTestWidget(
         store: store,
         tester: tester,
-        graphQlClient: silGraphQlClient,
+        graphQlClient: graphQlClient,
         widget: PatientRegistrationContainer(
           tabController: controller,
           child: const NextOfKin(),
@@ -443,14 +443,12 @@ Future<void> _inputPhoneNumber(
   await tester.pump(const Duration(milliseconds: 500));
 }
 
-MockShortSILGraphQlClient _getMockclientWithResponse(
-    Map<String, dynamic> data) {
+MockShortGraphQlClient _getMockclientWithResponse(Map<String, dynamic> data) {
   final http.Response mockResponse = http.Response(json.encode(data), 200);
 
-  final MockShortSILGraphQlClient silGraphQlClient =
-      MockShortSILGraphQlClient.withResponse(
-          'idToken', 'endpoint', mockResponse);
-  return silGraphQlClient;
+  final MockShortGraphQlClient graphQlClient =
+      MockShortGraphQlClient.withResponse('idToken', 'endpoint', mockResponse);
+  return graphQlClient;
 }
 
 Map<String, dynamic> _getPatientDataWithEdges(

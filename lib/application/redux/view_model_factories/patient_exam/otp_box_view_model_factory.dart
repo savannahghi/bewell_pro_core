@@ -26,7 +26,7 @@ class OtpBoxViewModelFactory extends VmFactory<AppState, OtpBoxConnector> {
     final String? phoneNumber =
         state.userState?.userProfile?.primaryPhoneNumber?.getValue();
 
-    final ISILGraphQlClient? client = AppWrapperBase.of(context)?.graphQLClient;
+    final IGraphQlClient? client = AppWrapperBase.of(context)?.graphQLClient;
 
     if (phoneNumber != null) {
       dispatch(ResendOtpAction(
@@ -35,7 +35,7 @@ class OtpBoxViewModelFactory extends VmFactory<AppState, OtpBoxConnector> {
   }
 
   void endVisit(BuildContext context, String otp) {
-    final ISILGraphQlClient client = AppWrapperBase.of(context)!.graphQLClient;
+    final IGraphQlClient client = AppWrapperBase.of(context)!.graphQLClient;
 
     dispatch(EndExamAction(client: client));
   }

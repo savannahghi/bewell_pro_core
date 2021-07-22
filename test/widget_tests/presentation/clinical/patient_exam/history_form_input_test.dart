@@ -34,7 +34,7 @@ void main() {
         child: AppWrapper(
           appName: 'Bewell',
           appContexts: testAppContexts,
-          graphQLClient: mockSILGraphQlClient,
+          graphQLClient: mockGraphQlClient,
           child: MaterialApp(
             home: Scaffold(
                 body: HistoryFormInput(
@@ -63,7 +63,7 @@ void main() {
         store: store,
         child: AppWrapper(
           appName: appName,
-          graphQLClient: mockSILGraphQlClient,
+          graphQLClient: mockGraphQlClient,
           appContexts: testAppContexts,
           child: MaterialApp(
             home: Scaffold(

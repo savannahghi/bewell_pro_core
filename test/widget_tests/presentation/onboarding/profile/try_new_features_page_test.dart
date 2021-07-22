@@ -16,8 +16,8 @@ import '../../../../mocks/test_helpers.dart';
 void main() {
   final Store<AppState> store =
       Store<AppState>(initialState: AppState.initial());
-  final MockShortSILGraphQlClient mockSILGraphQlClient =
-      MockShortSILGraphQlClient.withResponse(
+  final MockShortGraphQlClient mockGraphQlClient =
+      MockShortGraphQlClient.withResponse(
     'idToken',
     'endpoint',
     http.Response(
@@ -33,7 +33,7 @@ void main() {
       tester: tester,
       widget: TryNewFeaturesPage(),
       store: store,
-      graphQlClient: mockSILGraphQlClient,
+      graphQlClient: mockGraphQlClient,
     );
 
     expect(find.byType(TryNewFeaturesPage), findsOneWidget);

@@ -24,7 +24,7 @@ void main() {
         store: store,
         child: AppWrapper(
           appName: appName,
-          graphQLClient: SILGraphQlClient('', ''),
+          graphQLClient: GraphQlClient('', ''),
           appContexts: testAppContexts,
           child: const MaterialApp(
             home: Scaffold(
@@ -45,7 +45,7 @@ void main() {
         store: store,
         child: AppWrapper(
           appName: appName,
-          graphQLClient: SILGraphQlClient('', ''),
+          graphQLClient: GraphQlClient('', ''),
           appContexts: testAppContexts,
           child: MaterialApp(
             home: Scaffold(body: ResultsNotFound()),

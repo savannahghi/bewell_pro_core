@@ -30,8 +30,8 @@ void main() {
     testWidgets(
         'should display quick access items and a zero state widget '
         ' when data is null', (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockShortGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -47,7 +47,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockShortSILGraphQlClient,
+        graphQlClient: mockShortGraphQlClient,
         widget: const ReviewOfSystems(),
       );
 

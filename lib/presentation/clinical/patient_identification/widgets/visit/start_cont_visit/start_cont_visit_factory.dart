@@ -62,7 +62,7 @@ class StartContinueVisitViewModelFactory
   }
 
   void startVisitByRequestAccess(BuildContext context, String? phoneContact) {
-    final ISILGraphQlClient? client = AppWrapperBase.of(context)?.graphQLClient;
+    final IGraphQlClient? client = AppWrapperBase.of(context)?.graphQLClient;
 
     if (phoneContact == null) {
       throw const UserException(
@@ -75,7 +75,7 @@ class StartContinueVisitViewModelFactory
 
   void startVisitByEmergencyOverride(
       BuildContext context, String? phoneContact) {
-    final ISILGraphQlClient? client = AppWrapperBase.of(context)?.graphQLClient;
+    final IGraphQlClient? client = AppWrapperBase.of(context)?.graphQLClient;
 
     if (phoneContact == null) {
       throw const UserException(
@@ -86,7 +86,7 @@ class StartContinueVisitViewModelFactory
     sendOTP(client, phoneContact);
   }
 
-  Future<void> sendOTP(ISILGraphQlClient? client, String phoneContact) async {
+  Future<void> sendOTP(IGraphQlClient? client, String phoneContact) async {
     dispatch(SendOTPAction(client: client, phoneContact: phoneContact));
   }
 
@@ -100,7 +100,7 @@ class StartContinueVisitViewModelFactory
     dispatch(UpdateSearchParamAction(phoneNumber: null));
     dispatch(UpdatePatientPatientFoundAction(searchFound: null));
 
-    final ISILGraphQlClient? client = AppWrapperBase.of(context)?.graphQLClient;
+    final IGraphQlClient? client = AppWrapperBase.of(context)?.graphQLClient;
     publishEvent(continueVisitEvent, context);
     await dispatch(ContinueVisitAction(client: client!));
   }

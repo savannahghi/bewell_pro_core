@@ -56,8 +56,8 @@ void main() {
 
     testWidgets('should display zero state widget when data is null',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockGraphQlClient =
-          MockShortSILGraphQlClient.withResponse('idToken', 'endpoint',
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse('idToken', 'endpoint',
               http.Response(json.encode(<String, dynamic>{'data': null}), 200));
 
       await buildTestWidget(
@@ -75,8 +75,8 @@ void main() {
 
     testWidgets('should display SILLoader before data is displayed',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
               'idToken',
               'endpoint',
               http.Response(
@@ -92,15 +92,15 @@ void main() {
           widget: BeWellPatientTimeline(),
           store: store,
           tester: tester,
-          graphQlClient: mockSILGraphQlClient);
+          graphQlClient: mockGraphQlClient);
       await tester.pump();
       expect(find.byType(SILPlatformLoader), findsOneWidget);
     });
 
     testWidgets('should display zero state widget when visits are zero ',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -115,7 +115,7 @@ void main() {
       await buildTestWidget(
           tester: tester,
           store: store,
-          graphQlClient: mockSILGraphQlClient,
+          graphQlClient: mockGraphQlClient,
           widget: BeWellPatientTimeline());
 
       await tester.pump();
@@ -177,8 +177,8 @@ void main() {
 
     testWidgets('should display error message when snapshot has an error',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
               'idToken',
               'endpoint',
               http.Response(
@@ -191,63 +191,11 @@ void main() {
           widget: BeWellPatientTimeline(),
           store: store,
           tester: tester,
-          graphQlClient: mockSILGraphQlClient);
+          graphQlClient: mockGraphQlClient);
       await tester.pump();
 
       expect(find.text(errorOccurred), findsOneWidget);
     });
-
-    // testWidgets(
-    //     'should display all the items in allergy resource in large screen',
-    //     (WidgetTester tester) async {
-    //   const String substance = 'Egg yolk phosphatides';
-    //   const String reaction = 'Reaction:  very bad';
-    //   const String severity = 'severe';
-    //   const String note = 'very bad';
-    //   const String startDate = 'Started on Wed, 3 February, 2021';
-
-    //   tester.binding.window.devicePixelRatioTestValue = 1.0;
-    //   tester.binding.window.physicalSizeTestValue = tabletLandscape;
-
-    //
-    //   await tester.pumpWidget(StoreProvider<AppState>(
-    //     store: store,
-    //     child: AppWrapperBase(
-    //         graphQLClient: mockSILGraphQlClient,
-    //         appContexts: testAppContexts,
-    //         appName: appName,
-    //         deviceCapabilities: deviceCapabilities,
-    //         child: MaterialApp(
-    //           home: Scaffold(
-    //             body: PatientTimelineRecord(visit: testPatientVisitAllergy),
-    //           ),
-    //         )),
-    //   ));
-    //   await tester.pump(Duration.zero);
-
-    //   expect(find.byType(PatientTimelineRecord), findsOneWidget);
-
-    //   expect(find.text(startDate), findsOneWidget);
-    //   expect(find.byType(FloatingActionButton), findsOneWidget);
-
-    //   await tester.tap(find.byType(FloatingActionButton));
-    //   await tester.pumpAndSettle();
-
-    //   expect(find.byType(SILSecondaryButton), findsOneWidget);
-
-    //   await tester.tap(find.byType(SILSecondaryButton));
-    //   await tester.pumpAndSettle();
-
-    //   expect(find.text(reaction), findsOneWidget);
-    //   expect(find.text(severity), findsOneWidget);
-    //   expect(find.text(note), findsOneWidget);
-    //   expect(find.text(substance), findsOneWidget);
-
-    //   addTearDown(() {
-    //     tester.binding.window.clearPhysicalSizeTestValue();
-    //     tester.binding.window.clearDevicePixelRatioTestValue();
-    //   });
-    // });
 
     testWidgets('should display all the items in allergy resource',
         (WidgetTester tester) async {

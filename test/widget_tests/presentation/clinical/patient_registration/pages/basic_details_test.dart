@@ -488,7 +488,7 @@ void _checkColor(Finder nextBtn, Color expectedColor) {
   expect(backGroundColor, expectedColor);
 }
 
-class CustomClient extends MockSILGraphQlClient {
+class CustomClient extends MockGraphQlClient {
   final bool returnRequestError;
   final bool registerPatientNull;
 

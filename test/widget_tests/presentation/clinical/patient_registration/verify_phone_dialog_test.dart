@@ -187,8 +187,8 @@ void main() {
         countdownTimer: countDownTimer,
       );
 
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse(
               'idToken',
               'endpoint',
               Response(

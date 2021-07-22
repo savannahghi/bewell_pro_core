@@ -111,7 +111,7 @@ Future<AuthTokenStatus> getAuthTokenStatus({
 /// Resets device token and gets a new one to ensure token is always valid
 /// saves token to the backend
 Future<void> saveDeviceToken(
-    {required ISILGraphQlClient client, required SILFCM fcm}) async {
+    {required IGraphQlClient client, required SILFCM fcm}) async {
   await fcm.resetToken();
 
   final Map<String, dynamic> _variables = <String, dynamic>{
@@ -201,7 +201,7 @@ String? getRecordingDoctor(BuildContext context) {
 Future<void> genericSearchFunction({
   required String searchParam,
   required ConceptClass conceptClass,
-  required ISILGraphQlClient client,
+  required IGraphQlClient client,
   required StreamController<dynamic> streamController,
 }) async {
   // indicate processing ongoing on
@@ -574,11 +574,11 @@ void resetPatientData() {
 /// Sends an otp request.
 /// Returns the otp fetched or null if there was an error with request
 Future<String?> sendOtpRequest({
-  required ISILGraphQlClient graphQlClient,
+  required IGraphQlClient graphQlClient,
   required String phoneNumber,
 }) async {
   if (phoneNumber.isNotEmpty && phoneNumber != UNKNOWN) {
-    final String otp = await SILGraphQlUtils().sendOtp(
+    final String otp = await GraphQlUtils().sendOtp(
       client: graphQlClient,
       phoneNumber: phoneNumber,
       logTitle: 'Basic details (patient registration) : sendOTP',
@@ -913,7 +913,7 @@ Future<void> searchPatientFunction(
   BuildContext context,
   String searchParam,
 ) async {
-  final ISILGraphQlClient client = AppWrapperBase.of(context)!.graphQLClient;
+  final IGraphQlClient client = AppWrapperBase.of(context)!.graphQLClient;
 
   await StoreProvider.dispatch(context,
       PatientSearchByPhoneAction(client: client, searchParam: searchParam));

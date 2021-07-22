@@ -21,7 +21,7 @@ void main() {
         testInfoPrinter: (TestInfo<dynamic> testInfo) {},
       );
 
-      final ISILGraphQlClient client = MockShortSILGraphQlClient.withResponse(
+      final IGraphQlClient client = MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -81,7 +81,7 @@ void main() {
         testInfoPrinter: (TestInfo<dynamic> testInfo) {},
       );
 
-      final ISILGraphQlClient client = MockShortSILGraphQlClient.withResponse(
+      final IGraphQlClient client = MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(

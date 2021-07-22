@@ -26,8 +26,8 @@ void main() {
     testWidgets(
         'navigates to VerifyPinResetRequestPage when continue button is pressed',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse('idToken', 'endpoint',
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse('idToken', 'endpoint',
               http.Response(json.encode(<String, String>{'otp': '1234'}), 200));
 
       await buildTestWidget(
@@ -46,8 +46,8 @@ void main() {
     testWidgets(
         'displays SnackBar with text checkConnectionText when instance of SILException is thrown',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse('idToken', 'endpoint',
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse('idToken', 'endpoint',
               http.Response(json.encode(<String, String>{'code': '0'}), 400));
 
       await buildTestWidget(

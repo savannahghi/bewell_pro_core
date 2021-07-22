@@ -19,7 +19,7 @@ import 'package:flutter_graphql_client/graph_client.dart';
 class ContinueVisitAction extends ReduxAction<AppState> {
   ContinueVisitAction({required this.client});
 
-  final ISILGraphQlClient client;
+  final IGraphQlClient client;
 
   @override
   void before() {

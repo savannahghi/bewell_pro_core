@@ -27,7 +27,7 @@ class VerifyPinResetRequestPage extends StatelessWidget {
         title: verifyRequestTitle,
         msg: verifyRequestMsg(primaryPhoneNumber),
         icon: Icons.message_rounded,
-        child: SILVerifyPhoneOtp(
+        child: VerifyPhoneOtp(
           phoneNo: primaryPhoneNumber,
           otp: otp,
           successCallBack: ({
@@ -41,7 +41,7 @@ class VerifyPinResetRequestPage extends StatelessWidget {
               ),
             );
           },
-          generateOtpFunc: SILGraphQlUtils().generateRetryOtp,
+          generateOtpFunc: GraphQlUtils().generateRetryOtp,
           client: AppWrapperBase.of(context)!.graphQLClient,
           retrySendOtpEndpoint: EndpointContext.retrySendOtpEndpoint,
           appWrapperContext: AppWrapperBase.of(context)!.appContexts,

@@ -38,7 +38,7 @@ class RequestPinResetAction extends ReduxAction<AppState> {
     final String endpoint = EndpointContext.resetPinResetEndpoint(
         AppWrapperBase.of(context)!.appContexts);
 
-    final ISILGraphQlClient client = AppWrapperBase.of(context)!.graphQLClient;
+    final IGraphQlClient client = AppWrapperBase.of(context)!.graphQLClient;
 
     final Map<String, String> payload = <String, String>{
       'phoneNumber': phoneNumber,

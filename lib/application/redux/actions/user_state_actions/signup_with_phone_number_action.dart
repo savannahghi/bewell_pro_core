@@ -67,7 +67,7 @@ class SignupWithPhoneNumberAction extends ReduxAction<AppState> {
     final String endpoint = EndpointContext.verifyPhoneEndpoint(
         AppWrapperBase.of(context)!.appContexts);
 
-    final ISILGraphQlClient client = AppWrapperBase.of(context)!.graphQLClient;
+    final IGraphQlClient client = AppWrapperBase.of(context)!.graphQLClient;
 
     final Response response = await SimpleCall.callRestAPI(
       endpoint: endpoint,

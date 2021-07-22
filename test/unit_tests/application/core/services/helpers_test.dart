@@ -52,9 +52,8 @@ void main() {
   });
 
   group('sendOtpRequest', () {
-    final MockSILGraphQlClient graphQlClient =
-        MockSILGraphQlClient.withResponse(
-            'idToken', 'endpoint', Response('', 200));
+    final MockGraphQlClient graphQlClient = MockGraphQlClient.withResponse(
+        'idToken', 'endpoint', Response('', 200));
     const String testPhoneNumber = '+254798363893';
 
     test('returns otp if request completed successfully', () async {
@@ -172,13 +171,13 @@ void main() {
 
     final MockSILFCM fcm = MockSILFCM();
 
-    expect(() async => saveDeviceToken(client: mockSILGraphQlClient, fcm: fcm),
+    expect(() async => saveDeviceToken(client: mockGraphQlClient, fcm: fcm),
         returnsNormally);
   });
 
   group('genericSearchFunction', () {
     test('should return results upon search', () async {
-      final ISILGraphQlClient client = MockShortSILGraphQlClient.withResponse(
+      final IGraphQlClient client = MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(
@@ -235,7 +234,7 @@ void main() {
     });
 
     test('should search using a param and return null', () async {
-      final ISILGraphQlClient client = MockShortSILGraphQlClient.withResponse(
+      final IGraphQlClient client = MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(json.encode(<String, dynamic>{'data': null}), 200),
@@ -271,7 +270,7 @@ void main() {
 
     test('should add an error to the stream controller when it occurs',
         () async {
-      final ISILGraphQlClient client = MockShortSILGraphQlClient.withResponse(
+      final IGraphQlClient client = MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(

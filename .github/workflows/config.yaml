@@ -6,7 +6,7 @@ jobs:
   run-tests-and-coverage: 
     name: Analyze, test and report coverage
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 80
     if: github.event_name == 'push'
     steps:
       - uses: actions/checkout@v2
@@ -32,7 +32,8 @@ jobs:
         run: |
           flutter analyze
           flutter test --coverage test/
-          apt-get install -y lcov
+          sudo apt-get install -y 
+          sudo dpkg --configure -a
           lcov --remove coverage/lcov.info 'lib/**/*.g.dart' -o coverage/lcov.info
           lcov --remove coverage/lcov.info 'lib/**/*.freezed.dart' -o coverage/lcov.info
           lcov --remove coverage/lcov.info 'lib/**/*.gr.dart' -o coverage/lcov.info

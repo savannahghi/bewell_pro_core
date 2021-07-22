@@ -238,8 +238,8 @@ void main() {
   testWidgets(
     'renders snackbar with text patientHistorySuccessMsg after submitting with an empty composition ID',
     (WidgetTester tester) async {
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse(
               'idToken',
               'endpoint',
               http.Response(

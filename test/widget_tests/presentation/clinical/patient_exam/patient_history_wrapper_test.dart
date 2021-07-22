@@ -25,8 +25,8 @@ void main() {
     testWidgets(
         'renders widget with text couldNotFindSnapshotError when request has an error',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse(
               'idToken',
               'endpoint',
               http.Response(
@@ -48,8 +48,8 @@ void main() {
     testWidgets(
         'renders PatientHistoryForm when response has no patient history compositions',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse(
               'idToken',
               'endpoint',
               http.Response(
@@ -84,8 +84,8 @@ void main() {
     testWidgets('renders PatientHistoryForm when Composition Section is null',
         (WidgetTester tester) async {
       startMockVisitAndExam();
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse(
               'idToken',
               'endpoint',
               http.Response(

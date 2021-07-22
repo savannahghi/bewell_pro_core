@@ -171,8 +171,8 @@ void main() {
 
     testWidgets('alerts the user when there is a problem adding a a condition',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(

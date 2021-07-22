@@ -26,7 +26,7 @@ void main() {
     testWidgets('should display test items on small screen correctly',
         (WidgetTester tester) async {
       await buildTestWidget(
-          graphQlClient: mockSILGraphQlClient,
+          graphQlClient: mockGraphQlClient,
           tester: tester,
           widget: const PatientExamTests(
             recordedDiagnosis: 'Diabetes Mellitus',
@@ -46,7 +46,7 @@ void main() {
       tester.binding.window.physicalSizeTestValue = tabletLandscape;
 
       await buildTestWidget(
-          graphQlClient: mockSILGraphQlClient,
+          graphQlClient: mockGraphQlClient,
           tester: tester,
           widget: const PatientExamTests(
             recordedDiagnosis: 'Diabetes Mellitus',
@@ -77,7 +77,7 @@ void main() {
     testWidgets('should retire a test and show a success snackbar',
         (WidgetTester tester) async {
       await buildTestWidget(
-          graphQlClient: mockSILGraphQlClient,
+          graphQlClient: mockGraphQlClient,
           tester: tester,
           widget: const PatientExamTests(
             recordedDiagnosis: 'Diabetes Mellitus',
@@ -120,8 +120,8 @@ void main() {
 
     testWidgets('should show PatientTestZeroState when there are no tests',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockShortGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -136,7 +136,7 @@ void main() {
       );
 
       await buildTestWidget(
-          graphQlClient: mockShortSILGraphQlClient,
+          graphQlClient: mockShortGraphQlClient,
           tester: tester,
           widget: const PatientExamTests(
             recordedDiagnosis: 'Diabetes Mellitus',
@@ -151,8 +151,8 @@ void main() {
 
     testWidgets('should show loading indicator when fetching tests',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockShortGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -164,7 +164,7 @@ void main() {
       );
 
       await buildTestWidget(
-        graphQlClient: mockShortSILGraphQlClient,
+        graphQlClient: mockShortGraphQlClient,
         tester: tester,
         widget: const PatientExamTests(
           recordedDiagnosis: 'Diabetes Mellitus',

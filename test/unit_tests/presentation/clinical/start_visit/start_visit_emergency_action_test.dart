@@ -34,7 +34,7 @@ void main() {
             type: <CodeableConcept>[CodeableConcept(text: 'referral')]),
       );
 
-      final ISILGraphQlClient client = MockShortSILGraphQlClient.withResponse(
+      final IGraphQlClient client = MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -96,7 +96,7 @@ void main() {
     });
 
     test('when response status is 404', () async {
-      final ISILGraphQlClient client = MockShortSILGraphQlClient.withResponse(
+      final IGraphQlClient client = MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -171,7 +171,7 @@ void main() {
         testInfoPrinter: (TestInfo<dynamic> testInfo) {},
       );
 
-      final ISILGraphQlClient client = MockShortSILGraphQlClient.withResponse(
+      final IGraphQlClient client = MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(

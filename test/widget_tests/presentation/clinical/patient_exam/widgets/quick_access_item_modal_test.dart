@@ -26,8 +26,8 @@ void main() {
     testWidgets(
         'renders & works correctly in smallScreen and show test added message',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockShortGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -50,7 +50,7 @@ void main() {
             test: QuickAccessItem('alias', 'name', 'code'),
             type: QuickAccessType.test,
           ),
-          graphQlClient: mockShortSILGraphQlClient);
+          graphQlClient: mockShortGraphQlClient);
 
       // verify renders correctly
       expect(find.byKey(AppWidgetKeys.aliasKey), findsOneWidget);
@@ -74,8 +74,8 @@ void main() {
 
     testWidgets('should navigate and show diagnosis added message',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse(
               'idToken',
               'endpoint',
               http.Response(
@@ -125,8 +125,8 @@ void main() {
       tester.binding.window.devicePixelRatioTestValue = 1.0;
       tester.binding.window.physicalSizeTestValue = tabletLandscape;
 
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse(
               'idToken',
               'endpoint',
               http.Response(

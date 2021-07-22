@@ -61,8 +61,8 @@ void main() {
       await setupFirebaseAuthMocks();
       await Firebase.initializeApp();
 
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -82,7 +82,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         widget: const SizedBox(),
       );
 
@@ -103,8 +103,8 @@ void main() {
       await setupFirebaseAuthMocks();
       await Firebase.initializeApp();
 
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(
@@ -123,7 +123,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         widget: const SizedBox(),
       );
 
@@ -150,7 +150,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         widget: const SizedBox(),
       );
 
@@ -321,7 +321,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         widget: const SizedBox(),
       );
 

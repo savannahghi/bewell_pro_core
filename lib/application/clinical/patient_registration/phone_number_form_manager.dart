@@ -46,7 +46,7 @@ class PhoneNumberFormManager with Validator {
   Future<String> resendOtp(BuildContext context, int step) async {
     final String phoneNumber = _phoneNumber.valueOrNull!;
 
-    final String otp = await SILGraphQlUtils().generateRetryOtp(
+    final String otp = await GraphQlUtils().generateRetryOtp(
       client: AppWrapperBase.of(context)!.graphQLClient,
       phoneNumber: phoneNumber,
       step: step,

@@ -31,7 +31,7 @@ void main() {
 
       expect(find.byType(PhoneSignUp), findsOneWidget);
       expect(find.byType(EnterSignUpPhoneNo), findsOneWidget);
-      expect(find.byType(SILVerifyPhoneOtp), findsNothing);
+      expect(find.byType(VerifyPhoneOtp), findsNothing);
 
       await tester.showKeyboard(find.byType(SILPhoneInput));
       await tester.enterText(find.byType(SILPhoneInput), '0712345678');
@@ -72,8 +72,8 @@ void main() {
         widget: PhoneSignUp(),
       );
 
-      // assert that SILVerifyPhoneOtp renders correctly
-      expect(find.byType(SILVerifyPhoneOtp), findsOneWidget);
+      // assert that VerifyPhoneOtp renders correctly
+      expect(find.byType(VerifyPhoneOtp), findsOneWidget);
       expect(find.byType(SILPinCodeTextField), findsOneWidget);
       expect(find.text(changeNo), findsOneWidget);
 
@@ -98,8 +98,8 @@ void main() {
         widget: PhoneSignUp(),
       );
 
-      // assert that SILVerifyPhoneOtp renders correctly
-      expect(find.byType(SILVerifyPhoneOtp), findsOneWidget);
+      // assert that VerifyPhoneOtp renders correctly
+      expect(find.byType(VerifyPhoneOtp), findsOneWidget);
       expect(find.byType(SILPinCodeTextField), findsOneWidget);
       expect(find.text(changeNo), findsOneWidget);
 

@@ -18,7 +18,7 @@ import 'package:misc_utilities/misc.dart';
 import 'package:shared_ui_components/platform_loader.dart';
 import 'package:shared_ui_components/verify_phone_otp.dart';
 
-/// [PhoneSignUp] conditionally renders [EnterSignUpPhoneNo] or [SILVerifyPhoneOtp],
+/// [PhoneSignUp] conditionally renders [EnterSignUpPhoneNo] or [VerifyPhoneOtp],
 /// depending on whether or not the otp was sent to the user
 class PhoneSignUp extends StatelessWidget {
   @override
@@ -29,7 +29,7 @@ class PhoneSignUp extends StatelessWidget {
         return Container(
           child: vm.state.miscState!.otpCode! == UNKNOWN
               ? EnterSignUpPhoneNo()
-              : SILVerifyPhoneOtp(
+              : VerifyPhoneOtp(
                   changeNumberCallback: () => StoreProvider.dispatch<AppState>(
                       context,
                       BatchUpdateMiscStateAction(
@@ -40,7 +40,7 @@ class PhoneSignUp extends StatelessWidget {
                           message: createAccDesc)),
                   phoneNo: vm.state.miscState!.phoneNumber!,
                   otp: vm.state.miscState!.otpCode!,
-                  generateOtpFunc: SILGraphQlUtils().generateRetryOtp,
+                  generateOtpFunc: GraphQlUtils().generateRetryOtp,
                   client: AppWrapperBase.of(context)!.graphQLClient,
                   retrySendOtpEndpoint: EndpointContext.retrySendOtpEndpoint,
                   appWrapperContext: AppWrapperBase.of(context)!.appContexts,

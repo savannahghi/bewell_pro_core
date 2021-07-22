@@ -92,8 +92,7 @@ void main() {
     testWidgets(
         'should navigate to user names page if the correct PIN was entered',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient client =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient client = MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(
@@ -140,9 +139,10 @@ void main() {
       final AuthCredentialResponse auth = AuthCredentialResponse.fromJson(
           <String, String>{'expires_in': nextDay.toIso8601String()});
 
-      final MockShortSILGraphQlClient client =
-          MockShortSILGraphQlClient.withResponse('idToken', 'endpoint',
-              Response(json.encode(validPINResponseMap), 200));
+      final MockShortGraphQlClient client = MockShortGraphQlClient.withResponse(
+          'idToken',
+          'endpoint',
+          Response(json.encode(validPINResponseMap), 200));
 
       store.dispatch(BatchUpdateUserStateAction(auth: auth));
       await buildTestWidget(

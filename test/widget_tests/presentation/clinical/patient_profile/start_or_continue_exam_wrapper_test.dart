@@ -15,8 +15,8 @@ void main() {
     testWidgets(
         'StartOrContinueExamWrapper renders correctly when data is null',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -42,8 +42,8 @@ void main() {
     testWidgets(
         'StartOrContinueExamWrapper renders correctly when searchFHIREncounter is null',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -71,8 +71,8 @@ void main() {
     testWidgets(
         'StartOrContinueExamWrapper renders correctly when edges is null',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -102,8 +102,8 @@ void main() {
     testWidgets(
         'StartOrContinueExamWrapper renders correctly when node is null',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(

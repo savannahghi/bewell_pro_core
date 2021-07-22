@@ -37,8 +37,8 @@ void main() {
     testWidgets(
         'GenericEmptyData should render GenericEmptyData'
         ' when faqs are empty', (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockShortGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -53,7 +53,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockShortSILGraphQlClient,
+        graphQlClient: mockShortGraphQlClient,
         widget: FAQWrapper(),
       );
 
@@ -64,8 +64,8 @@ void main() {
 
     testWidgets('shows a loading indicator when fetching FAQs from the backend',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockShortGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -80,7 +80,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockShortSILGraphQlClient,
+        graphQlClient: mockShortGraphQlClient,
         widget: FAQWrapper(),
       );
 
@@ -91,8 +91,8 @@ void main() {
     testWidgets(
         'should show generic empty data widget when there is an '
         ' error while fetching FAQs', (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockShortGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -102,7 +102,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockShortSILGraphQlClient,
+        graphQlClient: mockShortGraphQlClient,
         widget: FAQWrapper(),
       );
 
@@ -115,8 +115,8 @@ void main() {
       tester.binding.window.devicePixelRatioTestValue = 1.0;
       tester.binding.window.physicalSizeTestValue = tabletLandscape;
 
-      final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockShortGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -131,7 +131,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockShortSILGraphQlClient,
+        graphQlClient: mockShortGraphQlClient,
         widget: FAQWrapper(),
       );
 
@@ -147,8 +147,8 @@ void main() {
     testWidgets(
         'should show timeout widget when there is a timeout while'
         ' fetching FAQs', (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockShortGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(json.encode(<String, dynamic>{'error': 'timeout'}), 408),
@@ -157,7 +157,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockShortSILGraphQlClient,
+        graphQlClient: mockShortGraphQlClient,
         widget: FAQWrapper(),
       );
 
@@ -169,8 +169,8 @@ void main() {
     testWidgets(
         'should retry FAQ fetch when there is a timeout while fetching FAQs',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockShortGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(json.encode(<String, dynamic>{'error': 'timeout'}), 408),
@@ -179,7 +179,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockShortSILGraphQlClient,
+        graphQlClient: mockShortGraphQlClient,
         widget: FAQWrapper(),
       );
 

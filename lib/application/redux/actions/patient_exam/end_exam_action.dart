@@ -15,7 +15,7 @@ import 'package:flutter_graphql_client/graph_event_bus.dart';
 class EndExamAction extends ReduxAction<AppState> {
   EndExamAction({required this.client});
 
-  final ISILGraphQlClient client;
+  final IGraphQlClient client;
 
   @override
   void after() {

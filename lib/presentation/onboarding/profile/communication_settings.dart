@@ -150,7 +150,7 @@ class BuildCommunicationItems extends StatelessWidget {
     };
     _variables[channel.toShortString()] = isAllowed;
 
-    final ISILGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
+    final IGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
 
     /// fetch the data from the api
     final http.Response _result = await _client.query(

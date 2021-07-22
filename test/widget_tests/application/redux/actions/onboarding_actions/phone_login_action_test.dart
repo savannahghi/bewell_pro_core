@@ -26,8 +26,8 @@ void main() {
     testWidgets(
       'should notify a user when they are not able to sign in',
       (WidgetTester tester) async {
-        final MockShortSILGraphQlClient graphQlClient =
-            MockShortSILGraphQlClient.withResponse(
+        final MockShortGraphQlClient graphQlClient =
+            MockShortGraphQlClient.withResponse(
           'idToken',
           'endpoint',
           Response(json.encode(<String, dynamic>{'code': '8'}), 500),

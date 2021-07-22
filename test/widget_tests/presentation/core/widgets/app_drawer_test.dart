@@ -169,7 +169,7 @@ void main() {
         widget: const AppDrawer(
           permanentlyDisplay: true,
         ),
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
       );
 
       // Tap Help item

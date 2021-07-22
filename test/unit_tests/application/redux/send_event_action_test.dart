@@ -35,7 +35,7 @@ void main() {
 
       storeTester.dispatch(
         SendEventAction(
-          client: mockSILGraphQlClient,
+          client: mockGraphQlClient,
           eventName: 'some event',
           eventPayload: <String, dynamic>{'eventData': 'some data'},
         ),
@@ -48,8 +48,7 @@ void main() {
     });
 
     test('should save an event to state for later sending', () async {
-      final MockShortSILGraphQlClient client =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient client = MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(

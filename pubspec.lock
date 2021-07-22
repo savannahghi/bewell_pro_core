@@ -21,7 +21,7 @@ packages:
       name: app_wrapper
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.20"
+    version: "0.1.21"
   args:
     dependency: transitive
     description:
@@ -301,7 +301,7 @@ packages:
       name: dart_fcm
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.20"
+    version: "0.0.21"
   dart_style:
     dependency: transitive
     description:
@@ -322,7 +322,7 @@ packages:
       name: debug_logger
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.22"
+    version: "0.0.23"
   device_info:
     dependency: "direct main"
     description:
@@ -537,7 +537,7 @@ packages:
       name: flutter_graphql_client
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.20"
+    version: "0.1.22"
   flutter_html:
     dependency: "direct main"
     description:
@@ -827,7 +827,7 @@ packages:
       name: misc_utilities
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.20-nullsafety"
+    version: "0.1.21-nullsafety"
   mockito:
     dependency: "direct dev"
     description:
@@ -1024,6 +1024,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
+  pin_input_text_field:
+    dependency: transitive
+    description:
+      name: pin_input_text_field
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.1.0"
   platform:
     dependency: transitive
     description:
@@ -1114,7 +1121,7 @@ packages:
       name: shared_ui_components
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.27-nullsafety"
+    version: "0.1.29-nullsafety"
   shelf:
     dependency: transitive
     description:
@@ -1155,6 +1162,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  sms_autofill:
+    dependency: transitive
+    description:
+      name: sms_autofill
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.1"
   source_gen:
     dependency: transitive
     description:
@@ -1350,7 +1364,7 @@ packages:
       name: user_profile
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.16-nullsafety"
+    version: "0.1.17-nullsafety"
   uuid:
     dependency: transitive
     description:

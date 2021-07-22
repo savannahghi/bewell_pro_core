@@ -81,7 +81,7 @@ String? getPhoneNumber(AppState state) {
 }
 
 void startVisitByRequestAccess(BuildContext context, String? phoneContact) {
-  final ISILGraphQlClient? client = AppWrapperBase.of(context)?.graphQLClient;
+  final IGraphQlClient? client = AppWrapperBase.of(context)?.graphQLClient;
 
   if (phoneContact == null) {
     throw const UserException(
@@ -94,7 +94,7 @@ void startVisitByRequestAccess(BuildContext context, String? phoneContact) {
 }
 
 void startVisitByEmergencyOverride(BuildContext context, String? phoneContact) {
-  final ISILGraphQlClient? client = AppWrapperBase.of(context)?.graphQLClient;
+  final IGraphQlClient? client = AppWrapperBase.of(context)?.graphQLClient;
 
   if (phoneContact == null) {
     throw const UserException(
@@ -109,8 +109,8 @@ void startVisitByEmergencyOverride(BuildContext context, String? phoneContact) {
   sendOTP(context, client, phoneContact);
 }
 
-Future<void> sendOTP(BuildContext context, ISILGraphQlClient? client,
-    String phoneContact) async {
+Future<void> sendOTP(
+    BuildContext context, IGraphQlClient? client, String phoneContact) async {
   StoreProvider.dispatch<AppState>(
       context, SendOTPAction(client: client, phoneContact: phoneContact));
 }

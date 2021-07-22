@@ -31,8 +31,8 @@ void main() {
     testWidgets(
         'should change a user\'s PIN successfully and'
         ' log them out of the app', (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(
@@ -50,7 +50,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: storeTester.store,
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         widget: Builder(builder: (BuildContext context) {
           return GestureDetector(
             onTap: () async {
@@ -74,8 +74,8 @@ void main() {
 
     testWidgets('should fail to change a user\'s PIN due to an error',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(
@@ -91,7 +91,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: storeTester.store,
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         widget: Builder(builder: (BuildContext context) {
           return GestureDetector(
             onTap: () async {
@@ -114,8 +114,8 @@ void main() {
 
     testWidgets('should fail to change a user\'s PIN due to a backend error',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(
@@ -130,7 +130,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: storeTester.store,
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         widget: Builder(builder: (BuildContext context) {
           storeTester.dispatch(BatchUpdateMiscStateAction(pinCode: '0000'));
           storeTester.dispatch(BatchUpdateUserStateAction(

@@ -73,8 +73,8 @@ void main() {
     });
 
     testWidgets('should render SILPlatformLoader', (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -92,7 +92,7 @@ void main() {
           tester: tester,
           store: store,
           widget: PatientExamSummary(),
-          graphQlClient: mockSILGraphQlClient);
+          graphQlClient: mockGraphQlClient);
 
       await tester.pump();
       expect(find.byType(BeWellPrimaryPatientBanner), findsOneWidget);
@@ -101,8 +101,8 @@ void main() {
     });
 
     testWidgets('should return serviceRequests', (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -116,7 +116,7 @@ void main() {
           tester: tester,
           store: store,
           widget: PatientExamSummary(),
-          graphQlClient: mockSILGraphQlClient);
+          graphQlClient: mockGraphQlClient);
 
       await tester.pumpAndSettle();
 
@@ -129,8 +129,8 @@ void main() {
 
     testWidgets('should render GenericZeroStateWidget',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -144,7 +144,7 @@ void main() {
           tester: tester,
           store: store,
           widget: PatientExamSummary(),
-          graphQlClient: mockSILGraphQlClient);
+          graphQlClient: mockGraphQlClient);
 
       await tester.pumpAndSettle();
       expect(find.byType(BeWellPrimaryPatientBanner), findsOneWidget);

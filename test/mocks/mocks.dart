@@ -175,12 +175,11 @@ class TestNavigatorObserver extends NavigatorObserver {
   }
 }
 
-final MockSILGraphQlClient mockSILGraphQlClient =
-    MockSILGraphQlClient.withResponse(
-        'idToken', 'endpoint', http.Response('success response', 200));
+final MockGraphQlClient mockGraphQlClient = MockGraphQlClient.withResponse(
+    'idToken', 'endpoint', http.Response('success response', 200));
 
-final MockSILGraphQlClient mockSILGraphQlClientWithErrorResponse =
-    MockSILGraphQlClient.withResponse(
+final MockGraphQlClient mockGraphQlClientWithErrorResponse =
+    MockGraphQlClient.withResponse(
         'idToken', 'endpoint', http.Response('not found', 400));
 
 final Route<dynamic> testRoute =
@@ -334,8 +333,8 @@ class MockStateDB extends Mock implements Database {
 /// a short client for providing custom responses
 ///
 /// a good use case is when you want to return error responses
-class MockShortSILGraphQlClient extends ISILGraphQlClient {
-  MockShortSILGraphQlClient.withResponse(
+class MockShortGraphQlClient extends IGraphQlClient {
+  MockShortGraphQlClient.withResponse(
       String idToken, String endpoint, this.response) {
     super.idToken = idToken;
     super.endpoint = endpoint;
@@ -359,10 +358,10 @@ class MockShortSILGraphQlClient extends ISILGraphQlClient {
   }
 }
 
-class MockSILGraphQlClient extends ISILGraphQlClient {
-  MockSILGraphQlClient();
+class MockGraphQlClient extends IGraphQlClient {
+  MockGraphQlClient();
 
-  MockSILGraphQlClient.withResponse(
+  MockGraphQlClient.withResponse(
     String idToken,
     String endpoint,
     this.response,

@@ -164,7 +164,7 @@ void main() {
           'Why do you want to retire the review of system?';
 
       await buildTestWidget(
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         tester: tester,
         store: store,
         widget: Builder(builder: (BuildContext context) {

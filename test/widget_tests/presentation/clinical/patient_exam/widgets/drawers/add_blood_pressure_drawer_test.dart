@@ -77,8 +77,8 @@ void main() {
     });
 
     testWidgets('should handle error response', (WidgetTester tester) async {
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(json.encode(<String, dynamic>{'error': ''}), 201),

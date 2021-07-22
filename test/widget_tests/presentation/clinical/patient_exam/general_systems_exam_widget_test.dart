@@ -91,8 +91,8 @@ void main() {
     testWidgets(
         'should show a timeout widget when there is a timeout while fetching general systems exam',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockShortGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(json.encode(<String, dynamic>{'error': 'timeout'}), 408),
@@ -102,7 +102,7 @@ void main() {
         tester: tester,
         store: store,
         widget: const GeneralSystemsExamWidget(),
-        graphQlClient: mockShortSILGraphQlClient,
+        graphQlClient: mockShortGraphQlClient,
       );
       await tester.pump();
 
@@ -114,8 +114,8 @@ void main() {
 
     testWidgets('should show zero state when searchFHIRComposition is null',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -130,7 +130,7 @@ void main() {
         tester: tester,
         store: store,
         widget: const GeneralSystemsExamWidget(),
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
       );
 
       expect(find.text(genExamTitle), findsOneWidget);
@@ -157,8 +157,8 @@ void main() {
 
     testWidgets('should show general exam form  when data is null',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -171,7 +171,7 @@ void main() {
         tester: tester,
         store: store,
         widget: const GeneralSystemsExamWidget(),
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
       );
 
       // verify UI renders correctly
@@ -189,8 +189,8 @@ void main() {
         (WidgetTester tester) async {
       ExamCompositionObject().generalCompositionID.add('');
 
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -211,7 +211,7 @@ void main() {
 
       await buildTestWidget(
         tester: tester,
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         widget: const GeneralSystemsExamWidget(),
       );
 
@@ -249,8 +249,8 @@ void main() {
           .generalCompositionID
           .add(testGeneralCompositionID);
 
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -271,7 +271,7 @@ void main() {
 
       await buildTestWidget(
         tester: tester,
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         widget: const GeneralSystemsExamWidget(),
       );
 
@@ -309,8 +309,8 @@ void main() {
           .generalCompositionID
           .add(testGeneralCompositionID);
 
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -330,7 +330,7 @@ void main() {
 
       await buildTestWidget(
         tester: tester,
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         widget: const GeneralSystemsExamWidget(),
       );
 
@@ -438,8 +438,8 @@ void main() {
       ExamCompositionObject()
           .generalCompositionID
           .add(testGeneralCompositionID);
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -456,7 +456,7 @@ void main() {
       await buildTestWidget(
           tester: tester,
           store: store,
-          graphQlClient: mockSILGraphQlClient,
+          graphQlClient: mockGraphQlClient,
           widget: const GeneralSystemsExamWidget());
 
       await tester.pump();

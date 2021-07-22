@@ -47,7 +47,7 @@ class PhoneLoginAction extends ReduxAction<AppState> {
 
   @override
   Future<AppState?> reduce() async {
-    final ISILGraphQlClient client = AppWrapperBase.of(context)!.graphQLClient;
+    final IGraphQlClient client = AppWrapperBase.of(context)!.graphQLClient;
 
     final MiscState? miscState = state.miscState;
 

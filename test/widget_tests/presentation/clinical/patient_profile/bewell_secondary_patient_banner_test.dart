@@ -35,8 +35,8 @@ void main() {
           SecondaryBannerInfoObject();
       secondaryBannerInfoObject.reset();
 
-      final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockShortGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(json.encode(<String, dynamic>{'data': null}), 200),
@@ -45,7 +45,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockShortSILGraphQlClient,
+        graphQlClient: mockShortGraphQlClient,
         widget: BeWellSecondaryPatientBanner(),
       );
 
@@ -58,8 +58,8 @@ void main() {
       final SecondaryBannerInfoObject secondaryBannerInfoObject =
           SecondaryBannerInfoObject();
       secondaryBannerInfoObject.reset();
-      final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockShortGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(json.encode(<String, dynamic>{'error': 'timeout'}), 408),
@@ -67,7 +67,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockShortSILGraphQlClient,
+        graphQlClient: mockShortGraphQlClient,
         widget: BeWellSecondaryPatientBanner(),
       );
 
@@ -84,7 +84,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         widget: BeWellSecondaryPatientBanner(),
       );
 
@@ -122,7 +122,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         widget: BeWellSecondaryPatientBanner(),
       );
       expect(find.byType(SecondaryBannerConditions), findsOneWidget);

@@ -50,7 +50,7 @@ class PhoneSignUpAction extends ReduxAction<AppState> {
         EndpointContext.createUserByPhoneEndpoint(
             AppWrapperBase.of(this.context)!.appContexts);
 
-    final ISILGraphQlClient client = AppWrapperBase.of(context)!.graphQLClient;
+    final IGraphQlClient client = AppWrapperBase.of(context)!.graphQLClient;
 
     final Map<String, String> variables = <String, String>{
       'phoneNumber': state.miscState!.phoneNumber!,

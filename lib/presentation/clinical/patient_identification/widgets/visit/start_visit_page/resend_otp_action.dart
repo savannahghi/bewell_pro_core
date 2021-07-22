@@ -12,7 +12,7 @@ import 'package:flutter_graphql_client/graph_event_bus.dart';
 class ResendOtpAction extends ReduxAction<AppState> {
   final String? phoneNumber;
   final int step;
-  final ISILGraphQlClient? client;
+  final IGraphQlClient? client;
 
   ResendOtpAction({
     required this.phoneNumber,

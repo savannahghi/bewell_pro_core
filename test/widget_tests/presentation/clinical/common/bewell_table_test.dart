@@ -17,9 +17,8 @@ import '../../../../mocks/mocks.dart';
 void main() {
   final Store<AppState> store =
       Store<AppState>(initialState: AppState.initial());
-  final MockSILGraphQlClient mockSILGraphQlClient =
-      MockSILGraphQlClient.withResponse(
-          'idToken', 'endpoint', http.Response('', 200));
+  final MockGraphQlClient mockGraphQlClient = MockGraphQlClient.withResponse(
+      'idToken', 'endpoint', http.Response('', 200));
 
   testWidgets('BeWellTableTitleAction renders correctly',
       (WidgetTester tester) async {
@@ -28,7 +27,7 @@ void main() {
         store: store,
         child: AppWrapper(
           appName: appName,
-          graphQLClient: mockSILGraphQlClient,
+          graphQLClient: mockGraphQlClient,
           appContexts: testAppContexts,
           child: const MaterialApp(
             home: Scaffold(
@@ -54,7 +53,7 @@ void main() {
         store: store,
         child: AppWrapper(
           appName: appName,
-          graphQLClient: mockSILGraphQlClient,
+          graphQLClient: mockGraphQlClient,
           appContexts: testAppContexts,
           child: const MaterialApp(
             home: Scaffold(body: BewellTableHeader(child: SizedBox())),
@@ -73,7 +72,7 @@ void main() {
         store: store,
         child: AppWrapper(
           appName: appName,
-          graphQLClient: mockSILGraphQlClient,
+          graphQLClient: mockGraphQlClient,
           appContexts: testAppContexts,
           child: MaterialApp(
             home: Scaffold(

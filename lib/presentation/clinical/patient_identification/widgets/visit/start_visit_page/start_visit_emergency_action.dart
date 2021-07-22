@@ -18,7 +18,7 @@ class StartVisitEmergencyAction extends ReduxAction<AppState> {
     required this.client,
     required this.breakGlassEpisodeCreationInput,
   });
-  final ISILGraphQlClient? client;
+  final IGraphQlClient? client;
   final BreakGlassEpisodeCreationInput? breakGlassEpisodeCreationInput;
 
   @override

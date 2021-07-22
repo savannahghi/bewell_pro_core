@@ -18,8 +18,8 @@ void main() {
       'renders GenericTimeoutWidget if response error is timeout',
       (WidgetTester tester) async {
         await mockNetworkImages(() async {
-          final MockShortSILGraphQlClient graphQlClient =
-              MockShortSILGraphQlClient.withResponse(
+          final MockShortGraphQlClient graphQlClient =
+              MockShortGraphQlClient.withResponse(
                   'idToken',
                   'endpoint',
                   http.Response(
@@ -49,8 +49,8 @@ void main() {
       'renders FeedLoadingShimmer when fetching the feed',
       (WidgetTester tester) async {
         await mockNetworkImages(() async {
-          final MockShortSILGraphQlClient graphQlClient =
-              MockShortSILGraphQlClient.withResponse(
+          final MockShortGraphQlClient graphQlClient =
+              MockShortGraphQlClient.withResponse(
             'idToken',
             'endpoint',
             http.Response(

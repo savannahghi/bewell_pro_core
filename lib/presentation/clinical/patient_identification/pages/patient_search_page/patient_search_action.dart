@@ -18,7 +18,7 @@ import 'package:flutter_graphql_client/graph_client.dart';
 class PatientSearchByPhoneAction extends ReduxAction<AppState> {
   PatientSearchByPhoneAction({required this.client, required this.searchParam});
 
-  final ISILGraphQlClient client;
+  final IGraphQlClient client;
   final String searchParam;
 
   @override

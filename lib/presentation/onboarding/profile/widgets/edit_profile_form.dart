@@ -86,7 +86,7 @@ class _EditProfileFormState extends State<EditProfileForm> {
   }) async {
     toggleWaitStateFlagIndicator(context: context, flag: editProfileFlag);
 
-    final ISILGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
+    final IGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
     final http.Response result = await _client.query(
         updateUserProfileMutation, <String, dynamic>{'input': variables});
     final Map<String, dynamic> body = _client.toMap(result);

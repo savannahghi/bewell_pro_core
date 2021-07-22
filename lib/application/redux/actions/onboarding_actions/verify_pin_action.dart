@@ -45,7 +45,7 @@ class VerifyPinAction extends ReduxAction<AppState> {
 
   @override
   Future<AppState?> reduce() async {
-    final ISILGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
+    final IGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
 
     final Map<String, dynamic> _variables = <String, dynamic>{'pin': pin};
 

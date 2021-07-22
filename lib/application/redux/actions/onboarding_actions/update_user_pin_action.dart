@@ -42,7 +42,7 @@ class UpdateUserPinAction extends ReduxAction<AppState> {
     final String endEndpoint = EndpointContext.updateUserPinEndpoint(
         AppWrapperBase.of(context)!.appContexts);
 
-    final ISILGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
+    final IGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
 
     final MiscState? miscState = state.miscState;
 
