@@ -31,8 +31,7 @@ class _FeedComponentWrapperState extends State<FeedComponentWrapper> {
     _feedStream = _feedStreamController.stream;
 
     WidgetsBinding.instance?.addPostFrameCallback((Duration timeStamp) {
-      final ISILGraphQlClient _client =
-          AppWrapperBase.of(context)!.graphQLClient;
+      final IGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
 
       StoreProvider.dispatch<AppState>(
           context,

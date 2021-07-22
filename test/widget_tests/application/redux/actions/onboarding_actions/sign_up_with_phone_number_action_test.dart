@@ -54,8 +54,8 @@ void main() {
       const String phoneNo = '712345678';
 
       final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse(
               'idToken',
               'endpoint',
               http.Response(
@@ -96,8 +96,8 @@ void main() {
       const String phoneNo = '712345678';
 
       final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse('idToken', 'endpoint',
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse('idToken', 'endpoint',
               http.Response(json.encode(<String, int>{'code': 8}), 400));
 
       await storeTester

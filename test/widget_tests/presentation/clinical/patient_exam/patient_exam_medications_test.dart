@@ -117,8 +117,8 @@ void main() {
     testWidgets(
         'should show a GenericZeroStateWidget when there is no '
         'medication data', (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockShortGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(
@@ -134,7 +134,7 @@ void main() {
 
       await buildTestWidget(
         tester: tester,
-        graphQlClient: mockShortSILGraphQlClient,
+        graphQlClient: mockShortGraphQlClient,
         widget: const PatientExamMedications(
           recordedDiagnosis:
               'Benign Hypertensive Renal Disease With Renal Failure',
@@ -151,8 +151,8 @@ void main() {
     testWidgets(
         'should show a loading indicator when medications are being fetched',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockShortGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(
@@ -164,7 +164,7 @@ void main() {
 
       await buildTestWidget(
         tester: tester,
-        graphQlClient: mockShortSILGraphQlClient,
+        graphQlClient: mockShortGraphQlClient,
         widget: const PatientExamMedications(
           recordedDiagnosis:
               'Benign Hypertensive Renal Disease With Renal Failure',

@@ -34,7 +34,7 @@ class ChangeUserPinAction extends ReduxAction<AppState> {
 
   @override
   Future<AppState> reduce() async {
-    final ISILGraphQlClient graphQlClient =
+    final IGraphQlClient graphQlClient =
         AppWrapperBase.of(context)!.graphQLClient;
 
     final Map<String, dynamic> _variables = <String, dynamic>{

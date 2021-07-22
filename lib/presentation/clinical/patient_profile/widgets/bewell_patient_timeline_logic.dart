@@ -21,7 +21,7 @@ class BewellPatientTimelineLogic {
       int count,
       StreamController<dynamic> _timelineStreamController,
       TimelineInfoObject timelineInfoObject) async {
-    final ISILGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
+    final IGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
 
     final EpisodeOfCarePayload? _episode =
         CurrentPatientInEpisode().episodeOfCarePayload.valueOrNull;

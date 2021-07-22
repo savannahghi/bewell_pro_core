@@ -92,8 +92,8 @@ void main() {
       final AddMedicationObject addMedicationObject = AddMedicationObject();
       addMedicationObject.medicationName.add('Amoxicillin');
 
-      final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockShortGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(json.encode(<String, dynamic>{'error': 'timeout'}), 408),
@@ -102,7 +102,7 @@ void main() {
       startMockVisitAndExam();
       await buildTestWidget(
         tester: tester,
-        graphQlClient: mockShortSILGraphQlClient,
+        graphQlClient: mockShortGraphQlClient,
         widget: MedicationPrescriptionForm(
           onMedicationCancel: () {},
         ),

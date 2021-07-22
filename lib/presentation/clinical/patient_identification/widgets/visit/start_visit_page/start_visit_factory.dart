@@ -36,7 +36,7 @@ class StartVisitViewModelFactory
 
   void resendOtp(BuildContext context, int step) {
     final String? phoneNumber = this.visitPhoneNumber();
-    final ISILGraphQlClient? client = AppWrapperBase.of(context)?.graphQLClient;
+    final IGraphQlClient? client = AppWrapperBase.of(context)?.graphQLClient;
 
     dispatch(
         ResendOtpAction(phoneNumber: phoneNumber, client: client, step: step));
@@ -88,14 +88,14 @@ class StartVisitViewModelFactory
       fullAccess: false,
     );
 
-    final ISILGraphQlClient? client = AppWrapperBase.of(context)?.graphQLClient;
+    final IGraphQlClient? client = AppWrapperBase.of(context)?.graphQLClient;
 
     dispatch(StartVisitByRequestAccessAction(
         client: client, otpEpisodeCreationInput: otpEpisodeCreationInput));
   }
 
   void startVisitByEmergency(BuildContext context, String otpCode) {
-    final ISILGraphQlClient? client = AppWrapperBase.of(context)?.graphQLClient;
+    final IGraphQlClient? client = AppWrapperBase.of(context)?.graphQLClient;
 
     final String? patientID =
         state.clinicalState?.patientPayload?.patientRecord?.id;

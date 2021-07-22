@@ -69,8 +69,8 @@ void main() {
         (WidgetTester tester) async {
       PrimaryBannerInfoObject().reset();
 
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -100,7 +100,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         widget: BeWellPrimaryPatientBanner(),
       );
 
@@ -202,8 +202,8 @@ void main() {
     testWidgets(
         'should indicate in the UI when there are no known '
         ' problems and allergies', (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -225,7 +225,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         widget: BeWellPrimaryPatientBanner(),
       );
 

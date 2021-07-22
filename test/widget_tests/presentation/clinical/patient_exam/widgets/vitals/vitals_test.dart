@@ -53,7 +53,7 @@ void main() {
     testWidgets(
         'should display GenericTimeoutWidget when there there is '
         'a timeout error fetching vitals', (WidgetTester tester) async {
-      final ISILGraphQlClient client = MockShortSILGraphQlClient.withResponse(
+      final IGraphQlClient client = MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(json.encode(<String, dynamic>{'error': 'timeout'}), 200),
@@ -70,7 +70,7 @@ void main() {
         'should display GenericTimeoutWidget when there there is '
         'an unknown error while fetching vitals and retry',
         (WidgetTester tester) async {
-      final ISILGraphQlClient client = MockShortSILGraphQlClient.withResponse(
+      final IGraphQlClient client = MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(
@@ -92,7 +92,7 @@ void main() {
 
     testWidgets('should display SILPlatformLoader when fetching vitals',
         (WidgetTester tester) async {
-      final ISILGraphQlClient client = MockShortSILGraphQlClient.withResponse(
+      final IGraphQlClient client = MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(
@@ -113,7 +113,7 @@ void main() {
     testWidgets(
         'should display empty vitals container when the vital data edge is null',
         (WidgetTester tester) async {
-      final ISILGraphQlClient client = MockShortSILGraphQlClient.withResponse(
+      final IGraphQlClient client = MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(

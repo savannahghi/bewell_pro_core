@@ -22,7 +22,7 @@ void main() {
       final PatientPayload patientPayload = PatientPayload(
           hasOpenEpisodes: true, openEpisodes: <EpisodeOfCare>[episodeOfCare]);
 
-      final ISILGraphQlClient client = MockShortSILGraphQlClient.withResponse(
+      final IGraphQlClient client = MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -72,7 +72,7 @@ void main() {
     });
 
     test('should fail to update state due to client error', () async {
-      final ISILGraphQlClient client = MockShortSILGraphQlClient.withResponse(
+      final IGraphQlClient client = MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(

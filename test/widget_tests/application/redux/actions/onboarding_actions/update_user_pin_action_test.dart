@@ -27,8 +27,8 @@ void main() {
 
     testWidgets('navigates to phoneLoginRoute a valid response is received',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse('idToken', 'endpoint',
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse('idToken', 'endpoint',
               http.Response(json.encode(<String, dynamic>{}), 200));
 
       await buildTestWidget(
@@ -53,8 +53,8 @@ void main() {
 
     testWidgets('updateUserPin renders snackbar when exception is thrown',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse('idToken', 'endpoint',
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse('idToken', 'endpoint',
               http.Response(json.encode(<String, int>{'code': 8}), 400));
 
       await buildTestWidget(

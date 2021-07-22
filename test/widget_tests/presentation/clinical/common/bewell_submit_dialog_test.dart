@@ -80,8 +80,8 @@ void main() {
       nhifInformation.frontImageBase64.add('15285455');
       nhifInformation.frontImageContentType.add('15285455');
 
-      final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockShortGraphQlClient =
+          MockShortGraphQlClient.withResponse(
               'idToken',
               'endpoint',
               http.Response(
@@ -98,7 +98,7 @@ void main() {
                   201));
 
       await buildTestWidget(
-        graphQlClient: mockShortSILGraphQlClient,
+        graphQlClient: mockShortGraphQlClient,
         tester: tester,
         store: store,
         widget: Builder(builder: (BuildContext context) {
@@ -125,15 +125,14 @@ void main() {
     testWidgets(
         'should properly process an error when an error response '
         'is returned from the api', (WidgetTester tester) async {
-      final MockShortSILGraphQlClient aaa =
-          MockShortSILGraphQlClient.withResponse(
-              'idToken',
-              'endpoint',
-              http.Response(
-                  json.encode(<String, dynamic>{
-                    'data': <String, dynamic>{'error': 'some error ocurred'}
-                  }),
-                  200));
+      final MockShortGraphQlClient aaa = MockShortGraphQlClient.withResponse(
+          'idToken',
+          'endpoint',
+          http.Response(
+              json.encode(<String, dynamic>{
+                'data': <String, dynamic>{'error': 'some error ocurred'}
+              }),
+              200));
 
       Map<String, dynamic> data = <String, dynamic>{};
 

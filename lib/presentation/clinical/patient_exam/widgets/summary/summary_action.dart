@@ -36,7 +36,7 @@ class SummaryAction extends ReduxAction<AppState> {
           .primaryPhoneNumber!
           .getValue();
 
-      await SILGraphQlUtils().sendOtp(
+      await GraphQlUtils().sendOtp(
         client: AppWrapperBase.of(context)!.graphQLClient,
         phoneNumber: phoneNumber,
         email: doctorsEmail == UNKNOWNEMAIL ? null : doctorsEmail,

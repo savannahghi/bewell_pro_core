@@ -14,11 +14,11 @@ import 'package:http/http.dart';
 /// Posts an event to the backend once triggered
 ///
 /// @params
-/// - [ISILGraphQlClient] the client used to send the event to the backend
+/// - [IGraphQlClient] the client used to send the event to the backend
 /// - [String] eventName; the name of the event
 /// - [Map<String, dynamic>] eventPayload; the event payload
 class SendEventAction extends ReduxAction<AppState> {
-  final ISILGraphQlClient client;
+  final IGraphQlClient client;
   final String eventName;
   final Map<String, dynamic> eventPayload;
   final int retryPeriod;

@@ -47,7 +47,7 @@ void main() {
     );
 
     // This mock is used to both send OTPs and continue a visit
-    final ISILGraphQlClient client = MockShortSILGraphQlClient.withResponse(
+    final IGraphQlClient client = MockShortGraphQlClient.withResponse(
       'idToken',
       'endpoint',
       http.Response(

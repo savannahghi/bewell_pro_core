@@ -11,16 +11,16 @@ environment:
   flutter: ">=2.0.0"
 
 dependencies:
-  app_wrapper: ^0.1.20 # internal (formerly sil_app_wrapper)
+  app_wrapper: ^0.1.21 # internal (formerly sil_app_wrapper)
   async_redux: ^12.0.0
   cached_network_image: ^3.0.0
   camera: ^0.8.1+3
   connectivity: ^3.0.6
   country_pickers: ^2.0.0 # A country picker dropdown
   cupertino_icons: ^1.0.3
-  dart_fcm: ^0.0.19 # internal (formerly sil_fcm)
+  dart_fcm: ^0.0.21 # internal (formerly sil_fcm)
   dartz: ^0.10.0-nullsafety
-  debug_logger: ^0.0.22 # internal (formerly sil_logger)
+  debug_logger: ^0.0.23 # internal (formerly sil_logger)
   device_info: ^2.0.2
   domain_objects: ^0.0.25-nullsafety # internal (formerly sil_core_domain_objects)
   dotted_border: ^2.0.0 # Adds a dotted border around a card or container
@@ -32,7 +32,7 @@ dependencies:
   # the flutter SDK
   flutter:
     sdk: flutter
-  flutter_graphql_client: ^0.1.20 # internal (formerly sil_graphql_client)
+  flutter_graphql_client: ^0.1.22 # internal (formerly sil_graphql_client)
   flutter_html: ^2.0.0
   flutter_slidable: ^0.6.0
   flutter_svg: ^0.22.0 # used to render svg images
@@ -44,20 +44,20 @@ dependencies:
   intl: ^0.17.0
   json_annotation: ^4.0.1
   json_serializable: ^4.1.3
-  misc_utilities: ^0.1.20-nullsafety # internal (formerly sil_misc)
+  misc_utilities: ^0.1.21-nullsafety # internal (formerly sil_misc)
   path: ^1.8.0
   permission_handler: ^6.1.0
   photo_view: ^0.11.1
   rxdart: ^0.27.1
   sentry_flutter: ^5.1.0
   shared_themes: ^0.0.9 # internal (formerly shared_themes)
-  shared_ui_components: ^0.1.27-nullsafety # internal (formerly sil_ui_components)
+  shared_ui_components: ^0.1.29-nullsafety # internal (formerly sil_ui_components)
   shimmer: ^2.0.0-nullsafety.0
   sqflite: ^2.0.0+3
   unicons: ^2.0.1
   url_launcher: ^6.0.6
-  user_feed: ^0.1.35-nullsafety # internal (formerly sil_feed)
-  user_profile: ^0.1.16-nullsafety # internal (formerly user_profile)
+  user_feed: ^0.1.37-nullsafety # internal (formerly sil_feed)
+  user_profile: ^0.1.17-nullsafety # internal (formerly user_profile)
 
 dev_dependencies:
   build_runner: ^2.0.4

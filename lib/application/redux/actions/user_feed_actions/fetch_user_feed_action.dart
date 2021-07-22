@@ -32,7 +32,7 @@ class FetchUserFeedAction extends ReduxAction<AppState> {
     this.refreshFeed = false,
   });
 
-  final ISILGraphQlClient client;
+  final IGraphQlClient client;
   final StreamController<dynamic> feedStreamController;
   final bool refreshFeed;
 

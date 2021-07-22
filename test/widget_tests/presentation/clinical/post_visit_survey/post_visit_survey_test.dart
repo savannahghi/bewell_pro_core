@@ -28,7 +28,7 @@ void main() {
             store: store,
             child: AppWrapper(
               appName: appName,
-              graphQLClient: mockSILGraphQlClient,
+              graphQLClient: mockGraphQlClient,
               appContexts: testAppContexts,
               child: MaterialApp(
                 home: Scaffold(body: BeWellPostVisitSurveyPage()),
@@ -77,8 +77,8 @@ void main() {
 
     testWidgets('shows snackbar when an error occurs',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(json.encode(<String, dynamic>{'error': 'timeout'}), 200),

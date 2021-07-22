@@ -62,7 +62,7 @@ void main() {
         await buildTestWidget(
           tester: tester,
           store: store,
-          graphQlClient: mockSILGraphQlClient,
+          graphQlClient: mockGraphQlClient,
           widget: PhoneLoginPage(),
         );
 
@@ -96,8 +96,8 @@ void main() {
       await mockNetworkImages(() async {
         setupFirebaseAuthMocks();
         await Firebase.initializeApp();
-        final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-            MockShortSILGraphQlClient.withResponse(
+        final MockShortGraphQlClient mockShortGraphQlClient =
+            MockShortGraphQlClient.withResponse(
                 'idToken',
                 'endpoint',
                 Response(
@@ -108,7 +108,7 @@ void main() {
         await buildTestWidget(
           tester: tester,
           store: store,
-          graphQlClient: mockShortSILGraphQlClient,
+          graphQlClient: mockShortGraphQlClient,
           widget: PhoneLoginPage(),
         );
 
@@ -139,8 +139,8 @@ void main() {
     testWidgets(
         'should show an error message if invalid credentials are entered',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse('idToken', 'endpoint',
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse('idToken', 'endpoint',
               Response(json.encode(<String, dynamic>{'code': 8}), 400));
 
       await buildTestWidget(

@@ -12,8 +12,8 @@ import '../../../../mocks/test_helpers.dart';
 void main() {
   testWidgets('PatientAllergySummaryWidget displays loading indicator',
       (WidgetTester tester) async {
-    final MockShortSILGraphQlClient mockSILGraphQlClient =
-        MockShortSILGraphQlClient.withResponse(
+    final MockShortGraphQlClient mockGraphQlClient =
+        MockShortGraphQlClient.withResponse(
       'idToken',
       'endpoint',
       http.Response(
@@ -25,7 +25,7 @@ void main() {
     );
     await buildTestWidget(
       tester: tester,
-      graphQlClient: mockSILGraphQlClient,
+      graphQlClient: mockGraphQlClient,
       widget: PatientAllergySummaryWidget(),
     );
     await tester.pump();

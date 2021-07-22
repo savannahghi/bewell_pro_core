@@ -46,8 +46,8 @@ void main() {
 
   testWidgets('should add null to payload when edges is empty ',
       (WidgetTester tester) async {
-    final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-        MockShortSILGraphQlClient.withResponse(
+    final MockShortGraphQlClient mockShortGraphQlClient =
+        MockShortGraphQlClient.withResponse(
             'idToken',
             'endpoint',
             http.Response(
@@ -68,7 +68,7 @@ void main() {
         tester: tester,
         store: store,
         widget: PatientHistory(),
-        graphQlClient: mockShortSILGraphQlClient);
+        graphQlClient: mockShortGraphQlClient);
 
     await tester.pump(const Duration(seconds: 5));
     expect(find.byType(PatientHistory), findsOneWidget);

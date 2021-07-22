@@ -45,9 +45,8 @@ void main() {
       store = Store<AppState>(initialState: AppState.initial());
     });
 
-    final MockSILGraphQlClient mockSILGraphQlClient =
-        MockSILGraphQlClient.withResponse(
-            'idToken', 'endpoint', Response('', 200));
+    final MockGraphQlClient mockGraphQlClient = MockGraphQlClient.withResponse(
+        'idToken', 'endpoint', Response('', 200));
 
     testWidgets('should send OTP verification code',
         (WidgetTester tester) async {
@@ -57,8 +56,8 @@ void main() {
           store: store,
           widget: SILPrimaryButton(
             onPressed: () async {
-              final String newOtp = await SILGraphQlUtils().sendOtp(
-                client: mockSILGraphQlClient,
+              final String newOtp = await GraphQlUtils().sendOtp(
+                client: mockGraphQlClient,
                 phoneNumber: '0712345678',
                 email: 'demo@gmail.com',
                 logTitle: 'utils_test: sendOTP',
@@ -83,8 +82,8 @@ void main() {
           store: store,
           widget: SILPrimaryButton(
             onPressed: () async {
-              final String newOtp = await SILGraphQlUtils().sendOtp(
-                client: mockSILGraphQlClient,
+              final String newOtp = await GraphQlUtils().sendOtp(
+                client: mockGraphQlClient,
                 phoneNumber: '071',
                 email: 'demo1@gmail.com',
                 logTitle: 'utils_test: sendOTP',
@@ -590,8 +589,8 @@ void main() {
     testWidgets(
         'should fail to save nhif member number if mutation returned error response (sad case)',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockShortGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(
@@ -610,7 +609,7 @@ void main() {
 
       await buildTestWidget(
         tester: tester,
-        graphQlClient: mockShortSILGraphQlClient,
+        graphQlClient: mockShortGraphQlClient,
         widget: Builder(builder: (BuildContext context) {
           return Scaffold(
             body: SILPrimaryButton(
@@ -891,7 +890,7 @@ void main() {
       ' shouldRemoveUntil is true', (WidgetTester tester) async {
     await buildTestWidget(
       tester: tester,
-      graphQlClient: mockSILGraphQlClient,
+      graphQlClient: mockGraphQlClient,
       widget: const SizedBox(),
     );
 
@@ -910,7 +909,7 @@ void main() {
       ' shouldReplace is true', (WidgetTester tester) async {
     await buildTestWidget(
       tester: tester,
-      graphQlClient: mockSILGraphQlClient,
+      graphQlClient: mockGraphQlClient,
       widget: const SizedBox(),
     );
 

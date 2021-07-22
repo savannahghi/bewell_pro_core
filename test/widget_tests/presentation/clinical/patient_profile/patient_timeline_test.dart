@@ -48,7 +48,7 @@ void main() {
         await buildTestWidget(
           tester: tester,
           store: store,
-          graphQlClient: mockSILGraphQlClient,
+          graphQlClient: mockGraphQlClient,
           widget: const StartOrContinueExamBanner(
             patientName: 'patient name',
             isChecking: false,
@@ -77,7 +77,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         widget: const StartOrContinueExamBanner(
           patientName: 'patient name',
           isChecking: false,
@@ -106,7 +106,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         widget: const StartOrContinueExamBanner(
           patientName: 'patient name',
           isChecking: false,
@@ -137,7 +137,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         widget: const StartOrContinueExamBanner(
           patientName: 'patient name',
           isChecking: false,
@@ -162,7 +162,7 @@ void main() {
       await buildTestWidget(
           tester: tester,
           store: store,
-          graphQlClient: mockSILGraphQlClient,
+          graphQlClient: mockGraphQlClient,
           widget: BeWellPatientTimeline());
 
       TimelineInfoObject()
@@ -197,7 +197,7 @@ void main() {
       await buildTestWidget(
           tester: tester,
           store: store,
-          graphQlClient: mockSILGraphQlClient,
+          graphQlClient: mockGraphQlClient,
           widget: BeWellPatientTimeline());
 
       TimelineInfoObject()

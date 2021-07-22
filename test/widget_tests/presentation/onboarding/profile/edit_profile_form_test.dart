@@ -116,8 +116,8 @@ void main() {
       );
 
       store = Store<AppState>(initialState: state);
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(json.encode(<String, dynamic>{'error': 'error'}), 400),
@@ -127,7 +127,7 @@ void main() {
           eventBus: eventBus,
           store: store,
           tester: tester,
-          graphQlClient: mockSILGraphQlClient,
+          graphQlClient: mockGraphQlClient,
           widget: EditProfileForm());
 
       // verify UI renders correctly
@@ -183,8 +183,8 @@ void main() {
       );
 
       store = Store<AppState>(initialState: state);
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(json.encode(<String, dynamic>{'data': null}), 200),
@@ -194,7 +194,7 @@ void main() {
           eventBus: eventBus,
           store: store,
           tester: tester,
-          graphQlClient: mockSILGraphQlClient,
+          graphQlClient: mockGraphQlClient,
           widget: EditProfileForm());
 
       // verify UI renders correctly

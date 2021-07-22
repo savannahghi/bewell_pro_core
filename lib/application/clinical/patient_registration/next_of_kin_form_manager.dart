@@ -44,7 +44,7 @@ class NextOfKinFormManager with Validator {
 
     final String phone = _phoneNumber.valueOrNull!;
 
-    final ISILGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
+    final IGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
 
     final Map<String, dynamic> _variables =
         searchRelatedPersonVariables(<String, dynamic>{'param': phone});

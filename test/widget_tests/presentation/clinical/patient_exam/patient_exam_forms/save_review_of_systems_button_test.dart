@@ -52,7 +52,7 @@ void main() {
     testWidgets('should create a ReviewComposition correctly',
         (WidgetTester tester) async {
       await buildTestWidget(
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         tester: tester,
         store: store,
         widget: Builder(builder: (BuildContext context) {
@@ -102,7 +102,7 @@ void main() {
       ));
 
       await buildTestWidget(
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         tester: tester,
         store: store,
         widget: SaveReviewOfSystemsButton(
@@ -133,8 +133,8 @@ void main() {
         (WidgetTester tester) async {
       ExamCompositionObject().reviewCompositionID.add('some-composition-id');
 
-      final MockShortSILGraphQlClient _client =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient _client =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(
@@ -180,7 +180,7 @@ void main() {
     testWidgets('should pop when cancel button is pressed',
         (WidgetTester tester) async {
       await buildTestWidget(
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         tester: tester,
         store: store,
         widget: Builder(builder: (BuildContext context) {

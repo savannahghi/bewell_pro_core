@@ -27,8 +27,8 @@ void main() {
     testWidgets(
       'should log out the user if the app is not able to refresh their token',
       (WidgetTester tester) async {
-        final MockShortSILGraphQlClient graphQlClient =
-            MockShortSILGraphQlClient.withResponse(
+        final MockShortGraphQlClient graphQlClient =
+            MockShortGraphQlClient.withResponse(
           'idToken',
           'endpoint',
           Response(json.encode(<String, dynamic>{'error': 'some error'}), 500),

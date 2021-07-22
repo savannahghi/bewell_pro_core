@@ -220,12 +220,10 @@ void main() {
 
     testWidgets('response error handling works correctly',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient client =
-          MockShortSILGraphQlClient.withResponse(
-              'idToken',
-              'endpoint',
-              Response(
-                  json.encode(<String, dynamic>{'error': 'some error'}), 201));
+      final MockShortGraphQlClient client = MockShortGraphQlClient.withResponse(
+          'idToken',
+          'endpoint',
+          Response(json.encode(<String, dynamic>{'error': 'some error'}), 201));
 
       await buildTestWidget(
         tester: tester,

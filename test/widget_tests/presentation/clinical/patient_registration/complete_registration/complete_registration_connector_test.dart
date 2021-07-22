@@ -33,7 +33,7 @@ void main() {
     const String patientID = 'some_unique_id';
     const String providerPhone = '0787654321';
 
-    final ISILGraphQlClient client = MockShortSILGraphQlClient.withResponse(
+    final IGraphQlClient client = MockShortGraphQlClient.withResponse(
       'idToken',
       'endpoint',
       http.Response(

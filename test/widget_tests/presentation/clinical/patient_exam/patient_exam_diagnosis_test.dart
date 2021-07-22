@@ -125,8 +125,8 @@ void main() {
     testWidgets(
         'should display error snackbar when result and updateFHIR condition are null',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -148,7 +148,7 @@ void main() {
         tester: tester,
         store: store,
         widget: const PatientDiagnosisTable(),
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
       );
 
       await tester.pump();
@@ -181,8 +181,8 @@ void main() {
     testWidgets(
         'should render zero state widget and quick access items when edges are null ',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -199,7 +199,7 @@ void main() {
         tester: tester,
         store: store,
         widget: const PatientDiagnosisTable(),
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
       );
 
       await tester.pump();
@@ -211,8 +211,8 @@ void main() {
 
     testWidgets('should render SILLoading when data is null ',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -225,7 +225,7 @@ void main() {
         tester: tester,
         store: store,
         widget: const PatientDiagnosisTable(),
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
       );
 
       await tester.pump(Duration.zero);
@@ -234,8 +234,8 @@ void main() {
 
     testWidgets('should render SILLoader when fetching diagnoses',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -250,7 +250,7 @@ void main() {
         tester: tester,
         store: store,
         widget: const PatientDiagnosisTable(),
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
       );
 
       await tester.pump(Duration.zero);
@@ -261,8 +261,8 @@ void main() {
     testWidgets(
         'should render zero state widget and quick access items when patient diagnosis is null ',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -283,7 +283,7 @@ void main() {
         tester: tester,
         store: store,
         widget: const PatientDiagnosisTable(),
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
       );
 
       await tester.pump(Duration.zero);

@@ -34,8 +34,8 @@ void main() {
         ),
       );
 
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse(
               'idToken',
               'endpoint',
               http.Response(
@@ -49,8 +49,8 @@ void main() {
     });
 
     test('should throw an exception when encounterID is null', () async {
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse(
               'idToken',
               'endpoint',
               http.Response(
@@ -73,7 +73,7 @@ void main() {
         ),
       );
 
-      storeTester.dispatch(EndExamAction(client: mockSILGraphQlClient));
+      storeTester.dispatch(EndExamAction(client: mockGraphQlClient));
 
       final TestInfo<AppState> info =
           await storeTester.waitUntil(NavigateAction);

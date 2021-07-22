@@ -15,7 +15,7 @@ void main() {
       Store<AppState>(initialState: AppState.initial());
 
   group('verify pin reset request page', () {
-    final Finder otpBoxFinder = find.byType(SILVerifyPhoneOtp);
+    final Finder otpBoxFinder = find.byType(VerifyPhoneOtp);
     testWidgets('renders correctly', (WidgetTester tester) async {
       store.dispatch(
         BatchUpdateMiscStateAction(

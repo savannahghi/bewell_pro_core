@@ -29,7 +29,7 @@ Future<void> buildTestWidget({
   required WidgetTester tester,
   required Widget widget,
   Store<AppState>? store,
-  ISILGraphQlClient? graphQlClient,
+  IGraphQlClient? graphQlClient,
   List<NavigatorObserver>? navigatorObservers,
   Widget? endDrawer,
   EventBus? eventBus,
@@ -43,7 +43,7 @@ Future<void> buildTestWidget({
   await tester.pumpWidget(
     AppWrapperBase(
       eventBus: eventBus ?? _eventBus,
-      graphQLClient: graphQlClient ?? mockSILGraphQlClient,
+      graphQLClient: graphQlClient ?? mockGraphQlClient,
       appName: appName,
       appContexts: testAppContexts,
       deviceCapabilities: deviceCapabilities,
@@ -74,7 +74,7 @@ Future<void> buildTestWidget({
 /// This widget also opens the drawer for you so that you can begin your
 /// widget interactions immediately
 Future<void> buildDrawerTestWidget(WidgetTester tester, DrawerType drawerType,
-    {Store<AppState>? store, ISILGraphQlClient? graphQlClient}) async {
+    {Store<AppState>? store, IGraphQlClient? graphQlClient}) async {
   await buildTestWidget(
     tester: tester,
     graphQlClient: graphQlClient,
@@ -126,7 +126,7 @@ Future<void> advanceAndPump({
   required WidgetTester tester,
   required void Function(Duration) updateTime,
   Store<AppState>? store,
-  ISILGraphQlClient? graphQlClient,
+  IGraphQlClient? graphQlClient,
   List<NavigatorObserver>? navigatorObservers,
   Duration duration = Duration.zero,
 }) async {

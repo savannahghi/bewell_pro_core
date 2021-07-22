@@ -20,8 +20,8 @@ void main() {
       await tester.runAsync(() async {
         final StoreTester<AppState> storeTester = createStoreTester();
 
-        final MockShortSILGraphQlClient client =
-            MockShortSILGraphQlClient.withResponse(
+        final MockShortGraphQlClient client =
+            MockShortGraphQlClient.withResponse(
           'idToken',
           'endpoint',
           Response(
@@ -73,8 +73,8 @@ void main() {
       await tester.runAsync(() async {
         final StoreTester<AppState> storeTester = createStoreTester();
 
-        final MockShortSILGraphQlClient client =
-            MockShortSILGraphQlClient.withResponse(
+        final MockShortGraphQlClient client =
+            MockShortGraphQlClient.withResponse(
           'idToken',
           'endpoint',
           Response(

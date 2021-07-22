@@ -26,8 +26,8 @@ void main() {
     test(
       'should fetch user feed successfully and update the user feed state',
       () async {
-        final MockShortSILGraphQlClient graphQlClient =
-            MockShortSILGraphQlClient.withResponse('idToken', 'endpoint',
+        final MockShortGraphQlClient graphQlClient =
+            MockShortGraphQlClient.withResponse('idToken', 'endpoint',
                 Response(json.encode(mockUserFeed), 200));
 
         final StreamController<dynamic> streamController =
@@ -80,8 +80,8 @@ void main() {
     test(
       'should fail to fetch user feed when a timeout occurs',
       () async {
-        final MockShortSILGraphQlClient graphQlClient =
-            MockShortSILGraphQlClient.withResponse(
+        final MockShortGraphQlClient graphQlClient =
+            MockShortGraphQlClient.withResponse(
           'idToken',
           'endpoint',
           Response(json.encode(<String, dynamic>{'error': 'timeout'}), 408),
@@ -164,8 +164,9 @@ void main() {
 
         await storeTester.dispatch(
           FetchUserFeedAction(
-              feedStreamController: streamController,
-              client: mockSILGraphQlClient),
+            feedStreamController: streamController,
+            client: mockGraphQlClient,
+          ),
         );
 
         final TestInfo<AppState> info =

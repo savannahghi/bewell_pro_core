@@ -22,7 +22,7 @@ class StartVisitByRequestAccessAction extends ReduxAction<AppState> {
     required this.otpEpisodeCreationInput,
   });
 
-  final ISILGraphQlClient? client;
+  final IGraphQlClient? client;
   final OTPEpisodeCreationInput otpEpisodeCreationInput;
 
   @override

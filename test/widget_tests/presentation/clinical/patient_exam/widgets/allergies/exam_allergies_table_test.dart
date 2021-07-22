@@ -93,8 +93,8 @@ void main() {
 
     testWidgets('shows a Zero state widget when the data is null',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -109,7 +109,7 @@ void main() {
         tester: tester,
         store: store,
         widget: ExamAllergiesTable(),
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
       );
       await tester.pump();
 
@@ -118,8 +118,8 @@ void main() {
 
     testWidgets('shows a loading indicator when data is loading',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -134,7 +134,7 @@ void main() {
         tester: tester,
         store: store,
         widget: ExamAllergiesTable(),
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
       );
 
       await tester.pump();

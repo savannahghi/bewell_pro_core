@@ -26,7 +26,7 @@ Future<void> fetchCompositionData({
   required StreamController<dynamic> streamController,
   required BuildContext context,
 }) async {
-  final ISILGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
+  final IGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
 
   final PatientInfo patientInfo = getPatientInfo();
 

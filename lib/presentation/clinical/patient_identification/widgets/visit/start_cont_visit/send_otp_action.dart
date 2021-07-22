@@ -11,7 +11,7 @@ import 'package:user_profile/constants.dart';
 class SendOTPAction extends ReduxAction<AppState> {
   SendOTPAction({required this.client, required this.phoneContact});
 
-  final ISILGraphQlClient? client;
+  final IGraphQlClient? client;
   final String phoneContact;
 
   @override

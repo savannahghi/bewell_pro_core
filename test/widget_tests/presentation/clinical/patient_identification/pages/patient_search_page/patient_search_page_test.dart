@@ -39,7 +39,7 @@ void main() {
     await buildTestWidget(
         tester: tester,
         store: store,
-        graphQlClient: mockSILGraphQlClient,
+        graphQlClient: mockGraphQlClient,
         widget: Scaffold(
           body: Builder(builder: (BuildContext context) {
             return SILPrimaryButton(

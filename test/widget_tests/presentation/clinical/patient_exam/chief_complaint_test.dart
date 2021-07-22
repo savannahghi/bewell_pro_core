@@ -173,8 +173,8 @@ void main() {
     testWidgets(
         'should show chief complaint zero state when there are no conditions',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient _mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient _mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(
@@ -190,7 +190,7 @@ void main() {
         store: store,
         tester: tester,
         widget: ChiefComplaint(),
-        graphQlClient: _mockSILGraphQlClient,
+        graphQlClient: _mockGraphQlClient,
       );
 
       await tester.pump();
@@ -202,8 +202,8 @@ void main() {
     testWidgets(
         'should display an error message when there is a problem getting the'
         ' chief complaint', (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockShortSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockShortGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(
@@ -217,7 +217,7 @@ void main() {
           store: store,
           tester: tester,
           widget: ChiefComplaint(),
-          graphQlClient: mockShortSILGraphQlClient);
+          graphQlClient: mockShortGraphQlClient);
       await tester.pump();
 
       expect(find.text(errorOccurred), findsOneWidget);
@@ -226,8 +226,8 @@ void main() {
     testWidgets(
         'should show SILPlatformLoader when fetching a chief complaint ',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         http.Response(
@@ -243,7 +243,7 @@ void main() {
           store: store,
           tester: tester,
           widget: ChiefComplaint(),
-          graphQlClient: mockSILGraphQlClient);
+          graphQlClient: mockGraphQlClient);
       await tester.pump();
 
       expect(find.byType(SILPlatformLoader), findsOneWidget);
@@ -251,8 +251,8 @@ void main() {
 
     testWidgets('should only show active chief complaints',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient _mockSILGraphQlClient =
-          MockShortSILGraphQlClient.withResponse(
+      final MockShortGraphQlClient _mockGraphQlClient =
+          MockShortGraphQlClient.withResponse(
         'idToken',
         'endpoint',
         Response(json.encode(inactiveChiefComplaintMock), 200),
@@ -262,7 +262,7 @@ void main() {
         store: store,
         tester: tester,
         widget: ChiefComplaint(),
-        graphQlClient: _mockSILGraphQlClient,
+        graphQlClient: _mockGraphQlClient,
       );
 
       await tester.pump();

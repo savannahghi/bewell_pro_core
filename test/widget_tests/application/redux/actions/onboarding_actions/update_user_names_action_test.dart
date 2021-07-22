@@ -25,8 +25,8 @@ void main() {
 
     testWidgets('displays snackbar if request has an error',
         (WidgetTester tester) async {
-      final MockShortSILGraphQlClient graphQlClient =
-          MockShortSILGraphQlClient.withResponse('idToken', 'endpoint',
+      final MockShortGraphQlClient graphQlClient =
+          MockShortGraphQlClient.withResponse('idToken', 'endpoint',
               http.Response(json.encode(<String, String>{'error': ''}), 400));
 
       await buildTestWidget(
