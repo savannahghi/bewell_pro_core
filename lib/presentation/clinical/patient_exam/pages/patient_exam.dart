@@ -33,8 +33,8 @@ class PatientExam extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isLargeScreenDevice = SILResponsiveWidget.isLargeScreen(context);
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isLargeScreenDevice = ResponsiveWidget.isLargeScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
 
     final double screenWidth = MediaQuery.of(context).size.width;
 

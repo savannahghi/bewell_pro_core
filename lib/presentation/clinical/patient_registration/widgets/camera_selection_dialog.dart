@@ -11,7 +11,7 @@ import 'image_source_icon.dart';
 class CameraSelectionDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
       child: SizedBox(

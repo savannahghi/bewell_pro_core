@@ -17,7 +17,7 @@ class PermissionsBanner extends StatelessWidget {
   const PermissionsBanner({required this.message});
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
 
     return Container(
       width: double.infinity,

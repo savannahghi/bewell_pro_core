@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/common/widgets/bewell_submit_dialog.dart';
@@ -16,11 +16,11 @@ import '../../../../../mocks/test_helpers.dart';
 
 void main() {
   group('QuickAccessItem', () {
-    late Store<AppState> store;
+    late Store<CoreState> store;
 
     setUp(() {
       startMockVisitAndExam();
-      store = Store<AppState>(initialState: AppState.initial());
+      store = Store<CoreState>(initialState: CoreState.initial());
     });
 
     testWidgets(

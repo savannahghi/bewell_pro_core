@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/save_event_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/event_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/domain_constants.dart';
 import 'package:domain_objects/value_objects.dart';
@@ -17,7 +17,7 @@ import 'package:http/http.dart';
 /// - [IGraphQlClient] the client used to send the event to the backend
 /// - [String] eventName; the name of the event
 /// - [Map<String, dynamic>] eventPayload; the event payload
-class SendEventAction extends ReduxAction<AppState> {
+class SendEventAction extends ReduxAction<CoreState> {
   final IGraphQlClient client;
   final String eventName;
   final Map<String, dynamic> eventPayload;
@@ -31,7 +31,7 @@ class SendEventAction extends ReduxAction<AppState> {
   });
 
   @override
-  Future<AppState?> reduce() async {
+  Future<CoreState?> reduce() async {
     final Map<String, dynamic> _variables = <String, dynamic>{
       'eventName': eventName,
       'payload': eventPayload
@@ -39,7 +39,7 @@ class SendEventAction extends ReduxAction<AppState> {
 
     final String? uid = state.userState!.auth!.uid;
 
-    // Send events only when the uid exists in the app state and when the user
+    // Send events only when the uid exists in the core state and when the user
     // is logged in
     if (uid != null && uid != UNKNOWN) {
       final Response response = await client.query(

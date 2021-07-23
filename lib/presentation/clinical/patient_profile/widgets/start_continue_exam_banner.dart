@@ -75,7 +75,7 @@ class StartOrContinueExamBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Widget> items = <Widget>[
-      if (SILResponsiveWidget.isLargeScreen(context))
+      if (ResponsiveWidget.isLargeScreen(context))
         Row(
           children: <Widget>[
             Container(
@@ -142,10 +142,10 @@ class StartOrContinueExamBanner extends StatelessWidget {
     ];
 
     return Container(
-      padding: SILResponsiveWidget.isSmallScreen(context)
+      padding: ResponsiveWidget.isSmallScreen(context)
           ? const EdgeInsets.symmetric(vertical: 10, horizontal: 15)
           : const EdgeInsets.all(20),
-      margin: SILResponsiveWidget.isSmallScreen(context)
+      margin: ResponsiveWidget.isSmallScreen(context)
           ? const EdgeInsets.symmetric(vertical: 5, horizontal: 8)
           : const EdgeInsets.symmetric(vertical: 20, horizontal: 12),
       decoration: BoxDecoration(

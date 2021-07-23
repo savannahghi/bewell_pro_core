@@ -2,9 +2,9 @@ import 'package:async_redux/async_redux.dart';
 
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 
-import 'package:bewell_pro_core/application/redux/view_models/app_state_view_model.dart';
+import 'package:bewell_pro_core/application/redux/view_models/core_state_view_model.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/onboarding_scaffold.dart';
@@ -19,10 +19,10 @@ class SetPinPage extends StatelessWidget {
     const double dimension = 0;
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
-      body: StoreConnector<AppState, AppStateViewModel>(
-        converter: (Store<AppState> store) =>
-            AppStateViewModel.fromStore(store),
-        builder: (BuildContext context, AppStateViewModel vm) {
+      body: StoreConnector<CoreState, CoreStateViewModel>(
+        converter: (Store<CoreState> store) =>
+            CoreStateViewModel.fromStore(store),
+        builder: (BuildContext context, CoreStateViewModel vm) {
           return OnboardingScaffold(
             dimension: dimension,
             title: vm.state.miscState!.title!,

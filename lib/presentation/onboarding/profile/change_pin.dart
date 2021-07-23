@@ -9,13 +9,13 @@ import 'package:shared_themes/spaces.dart';
 import 'package:shared_themes/text_themes.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/set_and_confirm_pin_widget.dart';
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 
 class ProfileChangePin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bool? isChangePin =
-        StoreProvider.state<AppState>(context)!.userState!.auth!.isChangePin;
+        StoreProvider.state<CoreState>(context)!.userState!.auth!.isChangePin;
 
     return Scaffold(
       body: OnboardingScaffold(

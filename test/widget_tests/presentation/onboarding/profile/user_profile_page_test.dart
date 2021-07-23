@@ -2,7 +2,7 @@ import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
@@ -24,10 +24,10 @@ import '../../../../mocks/test_helpers.dart';
 
 void main() {
   group('UserProfile Page', () {
-    late Store<AppState> store;
+    late Store<CoreState> store;
 
     setUp(() {
-      store = Store<AppState>(initialState: AppState.initial());
+      store = Store<CoreState>(initialState: CoreState.initial());
     });
 
     Future<void> buildPage(
@@ -95,8 +95,8 @@ void main() {
         (WidgetTester tester) async {
       final MockNavigatorObserver mockObserver = MockNavigatorObserver();
 
-      Store<AppState> testStore;
-      final AppState state = AppState(
+      Store<CoreState> testStore;
+      final CoreState state = CoreState(
         wait: Wait(),
         userState: UserState(
           userProfile: UserProfile(
@@ -116,7 +116,7 @@ void main() {
         ),
       );
 
-      testStore = Store<AppState>(initialState: state);
+      testStore = Store<CoreState>(initialState: state);
 
       await mockNetworkImages(() async {
         await buildTestWidget(

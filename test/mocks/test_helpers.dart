@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_contexts.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
@@ -28,7 +28,7 @@ import 'mocks.dart';
 Future<void> buildTestWidget({
   required WidgetTester tester,
   required Widget widget,
-  Store<AppState>? store,
+  Store<CoreState>? store,
   IGraphQlClient? graphQlClient,
   List<NavigatorObserver>? navigatorObservers,
   Widget? endDrawer,
@@ -36,8 +36,8 @@ Future<void> buildTestWidget({
   Duration? duration,
 }) async {
   final EventBus _eventBus = EventBus();
-  final Store<AppState> _store =
-      Store<AppState>(initialState: AppState.initial());
+  final Store<CoreState> _store =
+      Store<CoreState>(initialState: CoreState.initial());
   NavigateAction.setNavigatorKey(globalAppNavigatorKey);
 
   await tester.pumpWidget(
@@ -47,7 +47,7 @@ Future<void> buildTestWidget({
       appName: appName,
       appContexts: testAppContexts,
       deviceCapabilities: deviceCapabilities,
-      child: StoreProvider<AppState>(
+      child: StoreProvider<CoreState>(
         store: store ?? _store,
         child: MaterialApp(
           onGenerateRoute: RouteGenerator.generateRoute,
@@ -74,7 +74,7 @@ Future<void> buildTestWidget({
 /// This widget also opens the drawer for you so that you can begin your
 /// widget interactions immediately
 Future<void> buildDrawerTestWidget(WidgetTester tester, DrawerType drawerType,
-    {Store<AppState>? store, IGraphQlClient? graphQlClient}) async {
+    {Store<CoreState>? store, IGraphQlClient? graphQlClient}) async {
   await buildTestWidget(
     tester: tester,
     graphQlClient: graphQlClient,
@@ -94,7 +94,7 @@ Future<void> buildDrawerTestWidget(WidgetTester tester, DrawerType drawerType,
     ),
     widget: Builder(
       builder: (BuildContext context) {
-        StoreProvider.dispatch<AppState>(
+        StoreProvider.dispatch<CoreState>(
             context,
             BatchUpdateUserStateAction(
               userProfile: UserProfile(
@@ -112,10 +112,10 @@ Future<void> buildDrawerTestWidget(WidgetTester tester, DrawerType drawerType,
   );
 }
 
-StoreTester<AppState> createStoreTester() {
-  final Store<AppState> store =
-      Store<AppState>(initialState: AppState.initial());
-  return StoreTester<AppState>.from(
+StoreTester<CoreState> createStoreTester() {
+  final Store<CoreState> store =
+      Store<CoreState>(initialState: CoreState.initial());
+  return StoreTester<CoreState>.from(
     store,
     testInfoPrinter: (TestInfo<dynamic> testInfo) {},
   );
@@ -125,7 +125,7 @@ Future<void> advanceAndPump({
   required Widget widget,
   required WidgetTester tester,
   required void Function(Duration) updateTime,
-  Store<AppState>? store,
+  Store<CoreState>? store,
   IGraphQlClient? graphQlClient,
   List<NavigatorObserver>? navigatorObservers,
   Duration duration = Duration.zero,

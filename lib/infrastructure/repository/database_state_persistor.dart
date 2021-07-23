@@ -1,7 +1,7 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:flutter/foundation.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';
 import 'package:bewell_pro_core/application/redux/states/misc_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_feed_state.dart';
@@ -15,7 +15,7 @@ import 'package:flutter_graphql_client/graph_sqlite.dart';
 /// of the application. From the apps perspective, it doesn't care which database
 /// its saving its state on. HCStateDatabase therefore offers different implementations
 /// for its method.
-class BeWellStateDatabase implements PersistorPrinterDecorator<AppState> {
+class BeWellStateDatabase implements PersistorPrinterDecorator<CoreState> {
   BeWellStateDatabase(
       {Duration throttle = const Duration(seconds: 2),
       Duration saveDuration = const Duration(),
@@ -41,8 +41,8 @@ class BeWellStateDatabase implements PersistorPrinterDecorator<AppState> {
 
   @override
   Future<void> persistDifference({
-    AppState? lastPersistedState,
-    required AppState newState,
+    CoreState? lastPersistedState,
+    required CoreState newState,
   }) async {
     await Future<dynamic>.delayed(saveDuration!);
 
@@ -65,11 +65,11 @@ class BeWellStateDatabase implements PersistorPrinterDecorator<AppState> {
   /// - if the database is empty, we return null
   /// - else, we retrieve the state from the database
   @override
-  Future<AppState> readState() async {
+  Future<CoreState> readState() async {
     if (await BeWellDatabaseMobile<Database>(
             initializeDB: InitializeDB<Database>(dbName: this.dataBaseName))
         .isDatabaseEmpty()) {
-      return AppState.initial();
+      return CoreState.initial();
     } else {
       return retrieveState(
         BeWellDatabaseMobile<Database>(
@@ -79,7 +79,7 @@ class BeWellStateDatabase implements PersistorPrinterDecorator<AppState> {
   }
 
   @override
-  Future<void> saveInitialState(AppState state) async {
+  Future<void> saveInitialState(CoreState state) async {
     return persistDifference(newState: state);
   }
 
@@ -92,7 +92,7 @@ class BeWellStateDatabase implements PersistorPrinterDecorator<AppState> {
 
   @visibleForTesting
   Future<void> persistState(
-      AppState newState, BeWellDatabaseBase<dynamic> database) async {
+      CoreState newState, BeWellDatabaseBase<dynamic> database) async {
     // save MISC state
     await database.saveState(
         data: newState.miscState!.toJson(), table: Tables.miscState);
@@ -115,8 +115,8 @@ class BeWellStateDatabase implements PersistorPrinterDecorator<AppState> {
   }
 
   @visibleForTesting
-  Future<AppState> retrieveState(BeWellDatabaseBase<dynamic> database) async {
-    return AppState().copyWith(
+  Future<CoreState> retrieveState(BeWellDatabaseBase<dynamic> database) async {
+    return CoreState().copyWith(
       // retrieve MISC state
       miscState:
           MiscState.fromJson(await database.retrieveState(Tables.miscState)),

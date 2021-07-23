@@ -67,7 +67,7 @@ class _NextOfKinState extends State<NextOfKin> {
     return OrientationBuilder(
       builder: (BuildContext context, Orientation orientation) => Scaffold(
         floatingActionButton: Padding(
-          padding: SILResponsiveWidget.isSmallScreen(context)
+          padding: ResponsiveWidget.isSmallScreen(context)
               ? const EdgeInsets.fromLTRB(40, 20, 10, 10)
               : const EdgeInsets.all(20.0),
           child: Row(

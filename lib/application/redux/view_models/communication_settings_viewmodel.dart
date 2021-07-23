@@ -1,5 +1,5 @@
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:domain_objects/entities.dart';
 
 class CommunicationSettingsViewModel extends Vm {
@@ -20,7 +20,7 @@ class CommunicationSettingsViewModel extends Vm {
           allowWhatsApp!
         ]);
 
-  static CommunicationSettingsViewModel fromStore(Store<AppState> store) {
+  static CommunicationSettingsViewModel fromStore(Store<CoreState> store) {
     final CommunicationSettings? settings =
         store.state.userState!.communicationSettings;
 

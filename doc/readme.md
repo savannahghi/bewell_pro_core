@@ -112,5 +112,5 @@ import 'package:redux/redux.dart';
 // Be.Well Pro imports
 import 'package:bewell_pro_core/presentation/login/redux/models/login_viewmodel.dart';
 import 'package:bewell_pro_core/presentation/login/widgets/login_page_content.dart';
-import 'package:bewell_pro_core/redux/models/app_state.dart';
+import 'package:bewell_pro_core/redux/models/core_state.dart';
 ```

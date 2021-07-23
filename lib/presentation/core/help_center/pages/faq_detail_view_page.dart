@@ -28,7 +28,7 @@ class FAQDetailViewPage extends StatelessWidget {
       ),
       body: ListView(
         shrinkWrap: true,
-        padding: SILResponsiveWidget.isLargeScreen(context)
+        padding: ResponsiveWidget.isLargeScreen(context)
             ? const EdgeInsets.symmetric(horizontal: 20)
             : null,
         children: <Widget>[

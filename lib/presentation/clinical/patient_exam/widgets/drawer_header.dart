@@ -13,7 +13,7 @@ class SILDrawerHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
-    final bool smallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool smallScreen = ResponsiveWidget.isSmallScreen(context);
 
     return Container(
       margin: const EdgeInsets.only(bottom: 6.0),

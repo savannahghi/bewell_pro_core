@@ -3,7 +3,7 @@ import 'package:async_redux/async_redux.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
@@ -19,8 +19,8 @@ void main() {
     final EventBus eventBus = EventBus();
 
     testWidgets('works correctly', (WidgetTester tester) async {
-      Store<AppState> store;
-      final AppState state = AppState(
+      Store<CoreState> store;
+      final CoreState state = CoreState(
         wait: Wait(),
         userState: UserState(
           userProfile: UserProfile(
@@ -46,7 +46,7 @@ void main() {
         ),
       );
 
-      store = Store<AppState>(initialState: state);
+      store = Store<CoreState>(initialState: state);
 
       await buildTestWidget(
           eventBus: eventBus,
@@ -88,8 +88,8 @@ void main() {
     testWidgets(
         'fails to save details and shows snackbar if there is an error in response',
         (WidgetTester tester) async {
-      Store<AppState> store;
-      final AppState state = AppState(
+      Store<CoreState> store;
+      final CoreState state = CoreState(
         wait: Wait(),
         userState: UserState(
           userProfile: UserProfile(
@@ -115,7 +115,7 @@ void main() {
         ),
       );
 
-      store = Store<AppState>(initialState: state);
+      store = Store<CoreState>(initialState: state);
       final MockShortGraphQlClient mockGraphQlClient =
           MockShortGraphQlClient.withResponse(
         'idToken',
@@ -155,8 +155,8 @@ void main() {
 
     testWidgets('fails to save details if data is null',
         (WidgetTester tester) async {
-      Store<AppState> store;
-      final AppState state = AppState(
+      Store<CoreState> store;
+      final CoreState state = CoreState(
         wait: Wait(),
         userState: UserState(
           userProfile: UserProfile(
@@ -182,7 +182,7 @@ void main() {
         ),
       );
 
-      store = Store<AppState>(initialState: state);
+      store = Store<CoreState>(initialState: state);
       final MockShortGraphQlClient mockGraphQlClient =
           MockShortGraphQlClient.withResponse(
         'idToken',
@@ -222,8 +222,8 @@ void main() {
 
     testWidgets('should not update with invalid inputs',
         (WidgetTester tester) async {
-      Store<AppState> store;
-      final AppState state = AppState(
+      Store<CoreState> store;
+      final CoreState state = CoreState(
         wait: Wait(),
         userState: UserState(
             userProfile: UserProfile(
@@ -247,7 +247,7 @@ void main() {
                 allowEmail: false)),
       );
 
-      store = Store<AppState>(initialState: state);
+      store = Store<CoreState>(initialState: state);
       await buildTestWidget(
           store: store, tester: tester, widget: EditProfileForm());
 

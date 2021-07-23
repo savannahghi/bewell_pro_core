@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/core/services/onboarding.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/domain/core/entities/processed_response.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/pages/phone_login_page.dart';
@@ -22,10 +22,10 @@ import '../../../../mocks/test_helpers.dart';
 
 void main() {
   group('Onboarding_utils', () {
-    late Store<AppState> store;
+    late Store<CoreState> store;
 
     setUp(() {
-      store = Store<AppState>(initialState: AppState.initial());
+      store = Store<CoreState>(initialState: CoreState.initial());
     });
 
     testWidgets('should validate entered PIN when resetting PIN',

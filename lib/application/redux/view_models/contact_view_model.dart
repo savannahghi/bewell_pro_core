@@ -1,5 +1,5 @@
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:domain_objects/value_objects.dart';
 
@@ -23,7 +23,7 @@ class ContactViewModel extends Vm {
           secondaryPhones,
         ]);
 
-  static ContactViewModel fromStore(Store<AppState> store) {
+  static ContactViewModel fromStore(Store<CoreState> store) {
     final UserProfile profile = store.state.userState!.userProfile!;
 
     final EmailAddress primaryEmail =

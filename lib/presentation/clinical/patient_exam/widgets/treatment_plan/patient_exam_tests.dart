@@ -134,7 +134,7 @@ class _PatientExamTestsState extends State<PatientExamTests> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
     return ListView(
       shrinkWrap: true,
       children: <Widget>[

@@ -11,7 +11,7 @@ import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/send_event_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
@@ -39,10 +39,10 @@ import '../../../../mocks/test_helpers.dart';
 
 void main() {
   group('Helpers', () {
-    late Store<AppState> store;
+    late Store<CoreState> store;
 
     setUp(() {
-      store = Store<AppState>(initialState: AppState.initial());
+      store = Store<CoreState>(initialState: CoreState.initial());
     });
 
     final MockGraphQlClient mockGraphQlClient = MockGraphQlClient.withResponse(
@@ -107,7 +107,7 @@ void main() {
           tester: tester,
           store: store,
           widget: Builder(builder: (BuildContext context) {
-            StoreProvider.dispatch<AppState>(
+            StoreProvider.dispatch<CoreState>(
                 context,
                 BatchUpdateUserStateAction(
                     userProfile: UserProfile(
@@ -331,8 +331,8 @@ void main() {
     testWidgets(
         'navigates to patient identification page when continue button is pressed',
         (WidgetTester tester) async {
-      final Store<AppState> store =
-          Store<AppState>(initialState: AppState.initial());
+      final Store<CoreState> store =
+          Store<CoreState>(initialState: CoreState.initial());
 
       await mockNetworkImages(() async {
         await buildTestWidget(
@@ -352,8 +352,8 @@ void main() {
   });
 
   group('User profile RouteTest', () {
-    final Store<AppState> store =
-        Store<AppState>(initialState: AppState.initial());
+    final Store<CoreState> store =
+        Store<CoreState>(initialState: CoreState.initial());
     testWidgets(
         'should render user profile correctly when change pin in  tapped',
         (WidgetTester tester) async {
@@ -441,8 +441,8 @@ void main() {
   });
 
   group('getInitialPageRoute', () {
-    final Store<AppState> store =
-        Store<AppState>(initialState: AppState.initial());
+    final Store<CoreState> store =
+        Store<CoreState>(initialState: CoreState.initial());
 
     testWidgets(
         'should return phoneLoginRoute if a user is signed in and the token'
@@ -549,8 +549,8 @@ void main() {
   });
 
   group('addNHIF', () {
-    final Store<AppState> store =
-        Store<AppState>(initialState: AppState.initial());
+    final Store<CoreState> store =
+        Store<CoreState>(initialState: CoreState.initial());
     testWidgets('should save nhif member number (happy case)',
         (WidgetTester tester) async {
       final NHIFInformationObject nhifInformation = NHIFInformationObject();
@@ -673,10 +673,10 @@ void main() {
   });
 
   group('getAuthTokenStatus', () {
-    late Store<AppState> store;
+    late Store<CoreState> store;
 
     setUp(() {
-      store = Store<AppState>(initialState: AppState.initial());
+      store = Store<CoreState>(initialState: CoreState.initial());
     });
 
     testWidgets(
@@ -844,8 +844,8 @@ void main() {
   testWidgets(
       'sendEventWrapperFunction should send an event when it is available',
       (WidgetTester tester) async {
-    final StoreTester<AppState> storeTester = StoreTester<AppState>(
-      initialState: AppState.initial(),
+    final StoreTester<CoreState> storeTester = StoreTester<CoreState>(
+      initialState: CoreState.initial(),
       // this suppresses the verbose logs in the terminal
       testInfoPrinter: (TestInfo<dynamic> testInfo) {},
     );
@@ -855,7 +855,7 @@ void main() {
     storeTester.dispatch(BatchUpdateUserStateAction(
         auth: AuthCredentialResponse(uid: 'some-uid')));
 
-    final TestInfo<AppState> info =
+    final TestInfo<CoreState> info =
         await storeTester.waitUntil(BatchUpdateUserStateAction);
 
     expect(info.state.userState!.auth!.uid, 'some-uid');
@@ -879,7 +879,7 @@ void main() {
     await eventBus.fire(TriggeredEvent(navigationEvent, <String, dynamic>{}));
     await tester.pumpAndSettle();
 
-    final TestInfo<AppState> sendEventInfo =
+    final TestInfo<CoreState> sendEventInfo =
         await storeTester.wait(SendEventAction);
 
     expect(sendEventInfo.dispatchCount, 2);
@@ -1028,7 +1028,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         widget: Builder(builder: (BuildContext context) {
-          StoreProvider.dispatch<AppState>(
+          StoreProvider.dispatch<CoreState>(
             context,
             NavigationAction(
               secondaryActions: secondaryActionsEmptyMockedData,
@@ -1036,7 +1036,7 @@ void main() {
           );
           padding = getResponsivePadding(context: context);
           preferredPadding =
-              SILResponsiveWidget.preferredPaddingOnStretchedScreens(
+              ResponsiveWidget.preferredPaddingOnStretchedScreens(
                   context: context);
           return const SizedBox();
         }),
@@ -1060,7 +1060,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         widget: Builder(builder: (BuildContext context) {
-          StoreProvider.dispatch<AppState>(
+          StoreProvider.dispatch<CoreState>(
             context,
             NavigationAction(
               secondaryActions: secondaryActionsMockedData,

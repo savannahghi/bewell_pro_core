@@ -37,7 +37,7 @@ class BeWellVitalCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
     final double imageDimension = isSmallScreen ? 15 : 25;
 
     final String interpretation = patientVital?.interpretation ?? 'NORMAL';

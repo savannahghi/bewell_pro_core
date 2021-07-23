@@ -1,6 +1,6 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/widgets/sign_off_exam.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/widgets/summary_exam_button.dart';
@@ -8,8 +8,8 @@ import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summa
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
-  final Store<AppState> store =
-      Store<AppState>(initialState: AppState.initial());
+  final Store<CoreState> store =
+      Store<CoreState>(initialState: CoreState.initial());
   testWidgets('SignOffExam renders correctly', (WidgetTester tester) async {
     await buildTestWidget(tester: tester, store: store, widget: SignOffExam());
 

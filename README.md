@@ -22,7 +22,7 @@ This will add a line like this to your package's pubspec.yaml (and run an implic
 
 ```dart
 dependencies:
-  bewell_pro_core: ^1.0.0
+  bewell_pro_core: ^1.0.1
 ```
 
 Alternatively, your editor might support flutter pub get. Check the docs for your editor to learn more.
@@ -150,5 +150,5 @@ import 'package:redux/redux.dart';
 // Be.Well Pro imports
 import 'package:bewell_pro_core/presentation/login/redux/models/login_viewmodel.dart';
 import 'package:bewell_pro_core/presentation/login/widgets/login_page_content.dart';
-import 'package:bewell_pro_core/redux/models/app_state.dart';
+import 'package:bewell_pro_core/redux/models/core_state.dart';
 ```

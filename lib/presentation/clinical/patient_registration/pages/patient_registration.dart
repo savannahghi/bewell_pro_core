@@ -48,7 +48,7 @@ class _PatientRegistrationState extends State<PatientRegistration>
       child: OrientationBuilder(
         builder: (BuildContext context, Orientation orientation) => Row(
           children: <Widget>[
-            if (SILResponsiveWidget.isLargeScreen(context))
+            if (ResponsiveWidget.isLargeScreen(context))
               Expanded(
                 flex: 2,
                 child: Container(

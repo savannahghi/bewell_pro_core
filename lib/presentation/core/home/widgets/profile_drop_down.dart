@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:async_redux/async_redux.dart';
 
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/view_models/user_state_view_model.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
@@ -37,7 +37,7 @@ class ProfileDropDown extends StatelessWidget {
                 action: dismissSnackBar('close', white, context),
               ));
 
-              StoreProvider.dispatch<AppState>(context, LogoutAction());
+              StoreProvider.dispatch<CoreState>(context, LogoutAction());
             }
             break;
           case 2:
@@ -79,8 +79,8 @@ class ProfileDropDown extends StatelessWidget {
           ),
           shape: BoxShape.circle,
         ),
-        child: StoreConnector<AppState, UserStateViewModel>(
-            converter: (Store<AppState> store) =>
+        child: StoreConnector<CoreState, UserStateViewModel>(
+            converter: (Store<CoreState> store) =>
                 UserStateViewModel.fromStore(store),
             builder: (BuildContext context, UserStateViewModel vm) {
               final UserProfile? userProfile = vm.userState.userProfile;

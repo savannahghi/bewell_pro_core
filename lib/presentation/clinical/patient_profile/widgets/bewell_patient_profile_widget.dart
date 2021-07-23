@@ -1,7 +1,7 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/view_models/clinical/patient_profile/patient_profile_view_model.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
@@ -125,10 +125,10 @@ class _BewellPatientProfileWidgetState
 
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
 
-    return StoreConnector<AppState, PatientProfileViewModel>(
-      converter: (Store<AppState> store) =>
+    return StoreConnector<CoreState, PatientProfileViewModel>(
+      converter: (Store<CoreState> store) =>
           PatientProfileViewModel.fromStore(store),
       builder: (BuildContext context, PatientProfileViewModel vm) {
         final Patient? patientDetail = vm.patient;

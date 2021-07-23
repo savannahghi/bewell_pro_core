@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/core/home/pages/home_page.dart';
@@ -29,10 +29,10 @@ import '../../../../../mocks/test_helpers.dart';
 
 void main() {
   group('PhoneLogin', () {
-    late Store<AppState> store;
+    late Store<CoreState> store;
 
     setUp(() {
-      store = Store<AppState>(initialState: AppState.initial());
+      store = Store<CoreState>(initialState: CoreState.initial());
     });
 
     bool findTextAndTap(InlineSpan visitor, String text) {
@@ -200,7 +200,7 @@ void main() {
 
     testWidgets('shows a loading indicator when processing',
         (WidgetTester tester) async {
-      store.dispatch(WaitAction<AppState>.add(phoneLoginStateFlag));
+      store.dispatch(WaitAction<CoreState>.add(phoneLoginStateFlag));
       await buildTestWidget(store: store, tester: tester, widget: PhoneLogin());
       expect(find.byType(SILPlatformLoader), findsOneWidget);
     });
@@ -225,7 +225,10 @@ void main() {
     testWidgets('navigates to LandingPage when back button is tapped',
         (WidgetTester tester) async {
       await buildTestWidget(
-          tester: tester, store: store, widget: PhoneLoginPage());
+        tester: tester,
+        store: store,
+        widget: PhoneLoginPage(),
+      );
 
       await tester.tap(find.byKey(AppWidgetKeys.backButton));
       await tester.pumpAndSettle();

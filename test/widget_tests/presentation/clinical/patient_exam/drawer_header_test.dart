@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/add_blood_pressure_drawer.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
@@ -14,8 +14,8 @@ import '../../../../mocks/test_helpers.dart';
 
 void main() {
   group('drawer header', () {
-    final Store<AppState> store =
-        Store<AppState>(initialState: AppState.initial());
+    final Store<CoreState> store =
+        Store<CoreState>(initialState: CoreState.initial());
     testWidgets('renders correctly and closes correctly',
         (WidgetTester tester) async {
       await buildDrawerTestWidget(tester, DrawerType.bloodPressure,

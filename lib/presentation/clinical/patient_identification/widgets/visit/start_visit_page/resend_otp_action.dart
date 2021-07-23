@@ -3,13 +3,13 @@ import 'dart:async';
 import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:flutter_graphql_client/graph_event_bus.dart';
 
 /// Action to resend otp to user
-class ResendOtpAction extends ReduxAction<AppState> {
+class ResendOtpAction extends ReduxAction<CoreState> {
   final String? phoneNumber;
   final int step;
   final IGraphQlClient? client;
@@ -22,12 +22,12 @@ class ResendOtpAction extends ReduxAction<AppState> {
 
   @override
   void before() {
-    dispatch(WaitAction<AppState>.add(isResendingOTPFlag));
-    dispatch(WaitAction<AppState>.add(hasCompletedEnteringOTPFlag));
+    dispatch(WaitAction<CoreState>.add(isResendingOTPFlag));
+    dispatch(WaitAction<CoreState>.add(hasCompletedEnteringOTPFlag));
   }
 
   @override
-  Future<AppState?> reduce() async {
+  Future<CoreState?> reduce() async {
     if (phoneNumber == null) {
       throw const UserException('Error resending OTP, phone number not found');
     }
@@ -67,7 +67,7 @@ class ResendOtpAction extends ReduxAction<AppState> {
 
   @override
   void after() {
-    dispatch(WaitAction<AppState>.remove(isResendingOTPFlag));
-    dispatch(WaitAction<AppState>.remove(hasCompletedEnteringOTPFlag));
+    dispatch(WaitAction<CoreState>.remove(isResendingOTPFlag));
+    dispatch(WaitAction<CoreState>.remove(hasCompletedEnteringOTPFlag));
   }
 }

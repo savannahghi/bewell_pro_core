@@ -88,6 +88,11 @@ class _StartVisitWidget extends State<StartVisitWidget> {
               pinController.clear();
               pinFocusNode.requestFocus();
             },
+            onTextChanged: (String v) async {
+              if (v.length == 6) {
+                // todo: implement autofill sms code logic here
+              }
+            },
           ),
           mediumVerticalSizedBox,
           if (widget.showError) ...<Widget>[
@@ -139,7 +144,7 @@ class _StartVisitWidget extends State<StartVisitWidget> {
       ),
     );
 
-    return SILResponsiveWidget.isLargeScreen(context)
+    return ResponsiveWidget.isLargeScreen(context)
         ? Center(child: dialog)
         : dialog;
   }

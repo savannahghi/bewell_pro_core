@@ -18,7 +18,7 @@ class QuickAccessItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
 
     return GestureDetector(
       key: AppWidgetKeys.openPatientExamDrawerKey,

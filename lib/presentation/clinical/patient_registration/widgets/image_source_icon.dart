@@ -19,7 +19,7 @@ class SourceIcon extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
 
     final Size cardDimensions =
         isSmallScreen ? const Size(100, 100) : const Size(140, 160);

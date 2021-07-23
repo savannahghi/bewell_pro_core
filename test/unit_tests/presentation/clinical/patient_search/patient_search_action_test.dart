@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/pages/patient_search_page/patient_search_action.dart';
@@ -18,9 +18,9 @@ import 'mocked_data.dart';
 void main() {
   StoreTester.printDefaultDebugInfo = false;
   test('search a patient by msisdn', () async {
-    final Store<AppState> store =
-        Store<AppState>(initialState: AppState.initial());
-    final StoreTester<AppState> storeTester = StoreTester<AppState>.from(
+    final Store<CoreState> store =
+        Store<CoreState>(initialState: CoreState.initial());
+    final StoreTester<CoreState> storeTester = StoreTester<CoreState>.from(
       store,
       // this suppresses the verbose logs in the terminal
       testInfoPrinter: (TestInfo<dynamic> testInfo) {},
@@ -49,7 +49,7 @@ void main() {
     storeTester.dispatch(
         PatientSearchByPhoneAction(client: client, searchParam: '0712345678'));
 
-    final TestInfoList<AppState> infos = await storeTester.waitAll(<Type>[
+    final TestInfoList<CoreState> infos = await storeTester.waitAll(<Type>[
       PatientSearchByPhoneAction,
       WaitAction,
       UpdateSearchParamAction,
@@ -116,7 +116,7 @@ void main() {
     expect(infos.get(WaitAction, 1)?.state.wait?.isWaiting, true);
     expect(infos.get(WaitAction, 2)?.state.wait?.isWaiting, false);
 
-    final TestInfo<AppState>? info = infos.get(PatientSearchByPhoneAction, 1);
+    final TestInfo<CoreState>? info = infos.get(PatientSearchByPhoneAction, 1);
 
     // test state after the action
     expect(info?.state.clinicalState?.patientSearchResult,
@@ -126,9 +126,9 @@ void main() {
   });
 
   test('patient not found, return inactive records', () async {
-    final Store<AppState> store =
-        Store<AppState>(initialState: AppState.initial());
-    final StoreTester<AppState> storeTester = StoreTester<AppState>.from(
+    final Store<CoreState> store =
+        Store<CoreState>(initialState: CoreState.initial());
+    final StoreTester<CoreState> storeTester = StoreTester<CoreState>.from(
       store,
       // this suppresses the verbose logs in the terminal
       testInfoPrinter: (TestInfo<dynamic> testInfo) {},
@@ -166,7 +166,7 @@ void main() {
     storeTester.dispatch(
         PatientSearchByPhoneAction(client: client, searchParam: '0712345678'));
 
-    final TestInfoList<AppState> infos = await storeTester.waitAll(<Type>[
+    final TestInfoList<CoreState> infos = await storeTester.waitAll(<Type>[
       PatientSearchByPhoneAction,
       WaitAction,
       UpdateSearchParamAction,
@@ -203,15 +203,15 @@ void main() {
             ?.patientSearchFound,
         false);
 
-    final TestInfo<AppState>? info = infos[PatientSearchByPhoneAction];
+    final TestInfo<CoreState>? info = infos[PatientSearchByPhoneAction];
 
     expect(info?.state.clinicalState?.patientSearchResult, null);
   });
 
   test('patient not found, return null record', () async {
-    final Store<AppState> store =
-        Store<AppState>(initialState: AppState.initial());
-    final StoreTester<AppState> storeTester = StoreTester<AppState>.from(store);
+    final Store<CoreState> store =
+        Store<CoreState>(initialState: CoreState.initial());
+    final StoreTester<CoreState> storeTester = StoreTester<CoreState>.from(store);
 
     final PatientConnection patientConnection = PatientConnection();
 
@@ -235,7 +235,7 @@ void main() {
     storeTester.dispatch(
         PatientSearchByPhoneAction(client: client, searchParam: '0712345678'));
 
-    final TestInfoList<AppState> infos = await storeTester.waitAll(<Type>[
+    final TestInfoList<CoreState> infos = await storeTester.waitAll(<Type>[
       PatientSearchByPhoneAction,
       WaitAction,
       UpdateSearchParamAction,
@@ -272,15 +272,15 @@ void main() {
             ?.patientSearchFound,
         false);
 
-    final TestInfo<AppState>? info = infos[PatientSearchByPhoneAction];
+    final TestInfo<CoreState>? info = infos[PatientSearchByPhoneAction];
 
     expect(info?.state.clinicalState?.patientSearchResult, null);
   });
 
   test('error when searching a patient', () async {
-    final Store<AppState> store =
-        Store<AppState>(initialState: AppState.initial());
-    final StoreTester<AppState> storeTester = StoreTester<AppState>.from(
+    final Store<CoreState> store =
+        Store<CoreState>(initialState: CoreState.initial());
+    final StoreTester<CoreState> storeTester = StoreTester<CoreState>.from(
       store,
       // this suppresses the verbose logs in the terminal
       testInfoPrinter: (TestInfo<dynamic> testInfo) {},
@@ -303,7 +303,7 @@ void main() {
     storeTester.dispatch(
         PatientSearchByPhoneAction(client: client, searchParam: '0712345678'));
 
-    final TestInfoList<AppState> infos = await storeTester.waitAll(<Type>[
+    final TestInfoList<CoreState> infos = await storeTester.waitAll(<Type>[
       PatientSearchByPhoneAction,
       WaitAction,
       UpdateSearchParamAction,
@@ -325,15 +325,15 @@ void main() {
     expect(infos.get(WaitAction, 1)?.state.wait?.isWaiting, true);
     expect(infos.get(WaitAction, 2)?.state.wait?.isWaiting, false);
 
-    final TestInfo<AppState>? info = infos[PatientSearchByPhoneAction];
+    final TestInfo<CoreState>? info = infos[PatientSearchByPhoneAction];
 
     expect(info?.state.clinicalState?.patientSearchResult, null);
   });
 
   test('patient search 404, no internet connection', () async {
-    final Store<AppState> store =
-        Store<AppState>(initialState: AppState.initial());
-    final StoreTester<AppState> storeTester = StoreTester<AppState>.from(
+    final Store<CoreState> store =
+        Store<CoreState>(initialState: CoreState.initial());
+    final StoreTester<CoreState> storeTester = StoreTester<CoreState>.from(
       store,
       // this suppresses the verbose logs in the terminal
       testInfoPrinter: (TestInfo<dynamic> testInfo) {},
@@ -356,7 +356,7 @@ void main() {
     storeTester.dispatch(
         PatientSearchByPhoneAction(client: client, searchParam: '0712345678'));
 
-    final TestInfoList<AppState> infos = await storeTester.waitAll(<Type>[
+    final TestInfoList<CoreState> infos = await storeTester.waitAll(<Type>[
       PatientSearchByPhoneAction,
       WaitAction,
       UpdateSearchParamAction,
@@ -376,7 +376,7 @@ void main() {
     expect(infos.get(WaitAction, 1)?.state.wait?.isWaiting, true);
     expect(infos.get(WaitAction, 2)?.state.wait?.isWaiting, false);
 
-    final TestInfo<AppState>? info = infos[PatientSearchByPhoneAction];
+    final TestInfo<CoreState>? info = infos[PatientSearchByPhoneAction];
 
     expect(info?.state.clinicalState?.patientSearchResult, null);
   });

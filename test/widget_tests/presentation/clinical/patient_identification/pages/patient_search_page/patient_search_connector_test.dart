@@ -1,7 +1,7 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/human_name.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient.dart';
@@ -20,15 +20,15 @@ void main() {
   group('Patient search connector', () {
     testWidgets('when the state has should show loading indicator',
         (WidgetTester widgetTester) async {
-      final Store<AppState> store = Store<AppState>(
-        initialState: AppState.initial(),
+      final Store<CoreState> store = Store<CoreState>(
+        initialState: CoreState.initial(),
       );
 
-      final StoreTester<AppState> storeTester =
-          StoreTester<AppState>.from(store);
+      final StoreTester<CoreState> storeTester =
+          StoreTester<CoreState>.from(store);
 
       storeTester.dispatch(
-          WaitAction<AppState>.add(searchingPatientByPhoneNumberIsWaiting));
+          WaitAction<CoreState>.add(searchingPatientByPhoneNumberIsWaiting));
 
       await buildTestWidget(
         tester: widgetTester,
@@ -42,8 +42,8 @@ void main() {
 
     testWidgets('when the state has should show a patient search card',
         (WidgetTester widgetTester) async {
-      final Store<AppState> store = Store<AppState>(
-        initialState: AppState(
+      final Store<CoreState> store = Store<CoreState>(
+        initialState: CoreState(
           clinicalState: ClinicalState(
             patientSearchFound: true,
             patientSearchNumber: '0712345678',
@@ -61,8 +61,8 @@ void main() {
         ),
       );
 
-      final StoreTester<AppState> storeTester =
-          StoreTester<AppState>.from(store);
+      final StoreTester<CoreState> storeTester =
+          StoreTester<CoreState>.from(store);
 
       await buildTestWidget(
         tester: widgetTester,
@@ -76,8 +76,8 @@ void main() {
 
     testWidgets('when the state has should show a patient not found',
         (WidgetTester widgetTester) async {
-      final Store<AppState> store = Store<AppState>(
-        initialState: AppState(
+      final Store<CoreState> store = Store<CoreState>(
+        initialState: CoreState(
           clinicalState: ClinicalState(
             patientSearchFound: false,
             patientSearchNumber: '0712345678',
@@ -85,8 +85,8 @@ void main() {
         ),
       );
 
-      final StoreTester<AppState> storeTester =
-          StoreTester<AppState>.from(store);
+      final StoreTester<CoreState> storeTester =
+          StoreTester<CoreState>.from(store);
 
       await buildTestWidget(
         tester: widgetTester,
@@ -100,12 +100,12 @@ void main() {
 
     testWidgets('when the state has should show a search guide',
         (WidgetTester widgetTester) async {
-      final Store<AppState> store = Store<AppState>(
-        initialState: AppState.initial(),
+      final Store<CoreState> store = Store<CoreState>(
+        initialState: CoreState.initial(),
       );
 
-      final StoreTester<AppState> storeTester =
-          StoreTester<AppState>.from(store);
+      final StoreTester<CoreState> storeTester =
+          StoreTester<CoreState>.from(store);
 
       await buildTestWidget(
         tester: widgetTester,

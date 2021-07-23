@@ -56,7 +56,7 @@ class _EndVisitDialogueContentState extends State<EndVisitDialogueContent> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isSmall = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmall = ResponsiveWidget.isSmallScreen(context);
     final List<Widget> children2 = <Widget>[
       // cancel button
       SILSecondaryButton(

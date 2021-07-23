@@ -4,7 +4,7 @@ import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/contact_point.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
@@ -27,7 +27,7 @@ import '../../../../../mocks/test_helpers.dart';
 
 void main() {
   group('CompleteRegistrationConnector', () {
-    late MockStore<AppState> mockStore;
+    late MockStore<CoreState> mockStore;
 
     const String phoneNumber = '0712345678';
     const String patientID = 'some_unique_id';
@@ -63,8 +63,8 @@ void main() {
     );
 
     setUp(() {
-      mockStore = MockStore<AppState>(
-        initialState: AppState.initial(),
+      mockStore = MockStore<CoreState>(
+        initialState: CoreState.initial(),
         mocks: <Type, dynamic>{
           SendOTPAction: MockSendOTPAction(),
         },

@@ -26,7 +26,7 @@ class ReviewOfSystemsItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool isNormalSystem =
         decodedSystem.decodedJson['symptomNoneKnown'] == 'true';
-    final bool isLargeScreen = SILResponsiveWidget.isLargeScreen(context);
+    final bool isLargeScreen = ResponsiveWidget.isLargeScreen(context);
 
     return Container(
       margin: EdgeInsets.symmetric(

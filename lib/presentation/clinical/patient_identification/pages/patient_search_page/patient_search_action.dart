@@ -4,7 +4,7 @@ import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/core/graphql/queries.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/sil_custom_exceptions.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/exception_strings.dart';
@@ -15,7 +15,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_graphql_client/graph_client.dart';
 
 /// Search for a patient using their phone number
-class PatientSearchByPhoneAction extends ReduxAction<AppState> {
+class PatientSearchByPhoneAction extends ReduxAction<CoreState> {
   PatientSearchByPhoneAction({required this.client, required this.searchParam});
 
   final IGraphQlClient client;
@@ -24,11 +24,11 @@ class PatientSearchByPhoneAction extends ReduxAction<AppState> {
   @override
   void before() {
     // show a loading indicator
-    dispatch(WaitAction<AppState>.add(searchingPatientByPhoneNumberIsWaiting));
+    dispatch(WaitAction<CoreState>.add(searchingPatientByPhoneNumberIsWaiting));
   }
 
   @override
-  Future<AppState?> reduce() async {
+  Future<CoreState?> reduce() async {
     // make the API request
     dispatch(UpdateSearchParamAction(phoneNumber: null));
     dispatch(UpdatePatientPatientFoundAction(searchFound: null));
@@ -102,6 +102,6 @@ class PatientSearchByPhoneAction extends ReduxAction<AppState> {
   void after() {
     // hide the loading indicator
     dispatch(
-        WaitAction<AppState>.remove(searchingPatientByPhoneNumberIsWaiting));
+        WaitAction<CoreState>.remove(searchingPatientByPhoneNumberIsWaiting));
   }
 }

@@ -1,7 +1,7 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/misc_state.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/patient_banner_bio_info.dart';
 
@@ -30,8 +30,8 @@ void main() {
 
   testWidgets('PatientBannerBioInfo renders correctly  on small screen',
       (WidgetTester tester) async {
-    final Store<AppState> store = Store<AppState>(
-        initialState: AppState(miscState: MiscState(visitCount: '10')));
+    final Store<CoreState> store = Store<CoreState>(
+        initialState: CoreState(miscState: MiscState(visitCount: '10')));
 
     await buildTestWidget(
         tester: tester, store: store, widget: patientBannerBioInfoWidget);

@@ -1,6 +1,6 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/basic_details.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/patient_registration_steps.dart';
@@ -10,11 +10,11 @@ import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
-  late Store<AppState> store;
+  late Store<CoreState> store;
 
   setUp(() {
-    final AppState state = AppState.initial();
-    store = Store<AppState>(initialState: state);
+    final CoreState state = CoreState.initial();
+    store = Store<CoreState>(initialState: state);
   });
 
   group('PatientRegistration', () {

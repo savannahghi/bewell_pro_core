@@ -170,6 +170,11 @@ class _VerifyPhoneDialogState extends State<VerifyPhoneDialog> {
                 });
               }
             },
+            onTextChanged: (String v) async {
+              if (v.length == 6) {
+                // todo: implement autofill sms code logic here
+              }
+            },
           ),
           mediumVerticalSizedBox,
           if (showErr) ...<Widget>[

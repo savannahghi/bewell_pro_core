@@ -55,7 +55,7 @@ class _PatientSearchWidget extends State<PatientSearchWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreenDevice = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreenDevice = ResponsiveWidget.isSmallScreen(context);
 
     return Padding(
       padding: const EdgeInsets.only(right: 20, left: 10.0, top: 10.0),

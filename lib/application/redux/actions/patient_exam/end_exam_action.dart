@@ -4,7 +4,7 @@ import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/exception_strings.dart';
@@ -12,25 +12,25 @@ import 'package:http/http.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:flutter_graphql_client/graph_event_bus.dart';
 
-class EndExamAction extends ReduxAction<AppState> {
+class EndExamAction extends ReduxAction<CoreState> {
   EndExamAction({required this.client});
 
   final IGraphQlClient client;
 
   @override
   void after() {
-    dispatch(WaitAction<AppState>.remove(hasCompletedEnteringOTPFlag));
-    dispatch(WaitAction<AppState>.remove(endingExamFlag));
+    dispatch(WaitAction<CoreState>.remove(hasCompletedEnteringOTPFlag));
+    dispatch(WaitAction<CoreState>.remove(endingExamFlag));
   }
 
   @override
   void before() {
-    dispatch(WaitAction<AppState>.add(hasCompletedEnteringOTPFlag));
-    dispatch(WaitAction<AppState>.add(endingExamFlag));
+    dispatch(WaitAction<CoreState>.add(hasCompletedEnteringOTPFlag));
+    dispatch(WaitAction<CoreState>.add(endingExamFlag));
   }
 
   @override
-  Future<AppState?> reduce() async {
+  Future<CoreState?> reduce() async {
     /// End exam here and go back to timeline
     final Patient? patientRecord =
         store.state.clinicalState?.patientPayload?.patientRecord;
@@ -55,16 +55,16 @@ class EndExamAction extends ReduxAction<AppState> {
           .saveLog();
 
       if (client.parseError(data) != null) {
-        dispatch(WaitAction<AppState>.add(showErrorFlag));
+        dispatch(WaitAction<CoreState>.add(showErrorFlag));
       }
 
       if (data['data'] != null) {
         final bool endEncounter = data['data']['endEncounter'] as bool;
         if (endEncounter) {
-          dispatch(WaitAction<AppState>.remove(showErrorFlag));
+          dispatch(WaitAction<CoreState>.remove(showErrorFlag));
           ViewSummaryStore().viewSummaryButton.add(false);
           dispatch(
-              NavigateAction<AppState>.pop(<String, dynamic>{'status': true}));
+              NavigateAction<CoreState>.pop(<String, dynamic>{'status': true}));
         }
       }
     } else {

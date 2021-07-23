@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/user_names_form.dart';
@@ -12,8 +12,8 @@ import '../../../../../mocks/test_helpers.dart';
 
 void main() {
   group(' SetUserNames page', () {
-    final Store<AppState> store =
-        Store<AppState>(initialState: AppState.initial());
+    final Store<CoreState> store =
+        Store<CoreState>(initialState: CoreState.initial());
 
     const String update_names_flag = 'update_names_flag';
 
@@ -50,7 +50,7 @@ void main() {
     });
 
     testWidgets('saves text when text is changed', (WidgetTester tester) async {
-      store.dispatch(WaitAction<AppState>.remove(
+      store.dispatch(WaitAction<CoreState>.remove(
         update_names_flag,
         ref: '${update_names_flag}_ref',
       ));
@@ -76,7 +76,7 @@ void main() {
 
     testWidgets('displays loader when prefix is waiting',
         (WidgetTester tester) async {
-      store.dispatch(WaitAction<AppState>.add(
+      store.dispatch(WaitAction<CoreState>.add(
         update_names_flag,
         ref: '${update_names_flag}_ref',
       ));
@@ -96,7 +96,7 @@ void main() {
 
     testWidgets('saves when prefix is not waiting',
         (WidgetTester tester) async {
-      store.dispatch(WaitAction<AppState>.remove(
+      store.dispatch(WaitAction<CoreState>.remove(
         update_names_flag,
         ref: '${update_names_flag}_ref',
       ));

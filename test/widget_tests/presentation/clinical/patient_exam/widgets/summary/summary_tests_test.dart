@@ -2,7 +2,7 @@ import 'package:async_redux/async_redux.dart';
 
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exam_titles/patient_exam_card_title.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/summary_tests.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/generic_zero_state.dart';
@@ -12,9 +12,9 @@ import '../../../../../../mocks/test_helpers.dart';
 
 void main() {
   group('AddDiagnosis', () {
-    Store<AppState> store;
-    final AppState state = AppState.initial();
-    store = Store<AppState>(initialState: state);
+    Store<CoreState> store;
+    final CoreState state = CoreState.initial();
+    store = Store<CoreState>(initialState: state);
 
     testWidgets(
         'summary tests renders correctly when examTests is null or empty',

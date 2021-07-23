@@ -120,7 +120,7 @@ class _PatientExamMedicationsState extends State<PatientExamMedications> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isLargeScreenDevice = SILResponsiveWidget.isLargeScreen(context);
+    final bool isLargeScreenDevice = ResponsiveWidget.isLargeScreen(context);
 
     return ListView(
       shrinkWrap: true,

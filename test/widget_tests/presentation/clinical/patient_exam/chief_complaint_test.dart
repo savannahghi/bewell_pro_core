@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exam_buttons/exam_item_add_button.dart';
@@ -24,10 +24,10 @@ void main() {
       startMockVisitAndExam();
     });
 
-    Store<AppState> store;
+    Store<CoreState> store;
 
-    final AppState state = AppState.initial();
-    store = Store<AppState>(initialState: state);
+    final CoreState state = CoreState.initial();
+    store = Store<CoreState>(initialState: state);
 
     const String problem = 'Mal de Ojo';
     const String recorder = 'Jane Doe';

@@ -28,7 +28,7 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const double dimension = 0;
-    final bool isLargeScreen = SILResponsiveWidget.isLargeScreen(context);
+    final bool isLargeScreen = ResponsiveWidget.isLargeScreen(context);
 
     /// Sends Initial event
     final FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics();
@@ -49,7 +49,7 @@ class LandingPage extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: Padding(
                     padding: EdgeInsets.symmetric(
-                        horizontal: SILResponsiveWidget
+                        horizontal: ResponsiveWidget
                             .preferredPaddingOnStretchedScreens(
                                 context: context)),
                     child: Column(
@@ -62,7 +62,7 @@ class LandingPage extends StatelessWidget {
                           spacing: 30,
                           runSpacing: 40,
                           children: <Widget>[
-                            if (!SILResponsiveWidget
+                            if (!ResponsiveWidget
                                 .isSmallScreenAndOnLandscape(context: context))
                               LandingPageImage()
                             else

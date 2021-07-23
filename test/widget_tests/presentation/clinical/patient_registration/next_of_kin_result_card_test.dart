@@ -1,7 +1,7 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_payload.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
@@ -12,11 +12,11 @@ import '../../../../mocks/test_helpers.dart';
 
 void main() {
   group('NextOfKinResultCard', () {
-    late Store<AppState> store;
+    late Store<CoreState> store;
 
     setUp(() {
-      final AppState state = AppState.initial();
-      store = Store<AppState>(initialState: state);
+      final CoreState state = CoreState.initial();
+      store = Store<CoreState>(initialState: state);
     });
     testWidgets('renders correctly on small devices',
         (WidgetTester tester) async {

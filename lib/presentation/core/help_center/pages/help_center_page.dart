@@ -15,11 +15,11 @@ class HelpCenterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double padding;
-    if (SILResponsiveWidget.deviceType(context) != DeviceScreensType.Mobile &&
+    if (ResponsiveWidget.deviceType(context) != DeviceScreensType.Mobile &&
         defaultSecondaryNavItems.isNotEmpty) {
       padding = number20;
     } else {
-      padding = SILResponsiveWidget.preferredPaddingOnStretchedScreens(
+      padding = ResponsiveWidget.preferredPaddingOnStretchedScreens(
           context: context);
     }
 

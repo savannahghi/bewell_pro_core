@@ -11,7 +11,7 @@ import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/bat
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/misc_state.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/domain/core/entities/onboarding_path_config.dart';
@@ -28,7 +28,7 @@ import 'package:misc_utilities/misc.dart';
 import 'package:user_feed/user_feed.dart';
 
 /// [PhoneLoginAction] called when the user try to login using their primary phone
-class PhoneLoginAction extends ReduxAction<AppState> {
+class PhoneLoginAction extends ReduxAction<CoreState> {
   PhoneLoginAction({required this.context});
 
   final BuildContext context;
@@ -36,17 +36,17 @@ class PhoneLoginAction extends ReduxAction<AppState> {
   @override
   Future<void> after() async {
     super.after();
-    dispatch(WaitAction<AppState>.remove(phoneLoginStateFlag));
+    dispatch(WaitAction<CoreState>.remove(phoneLoginStateFlag));
   }
 
   @override
   void before() {
     super.before();
-    dispatch(WaitAction<AppState>.add(phoneLoginStateFlag));
+    dispatch(WaitAction<CoreState>.add(phoneLoginStateFlag));
   }
 
   @override
-  Future<AppState?> reduce() async {
+  Future<CoreState?> reduce() async {
     final IGraphQlClient client = AppWrapperBase.of(context)!.graphQLClient;
 
     final MiscState? miscState = state.miscState;
@@ -119,7 +119,7 @@ class PhoneLoginAction extends ReduxAction<AppState> {
 
         final OnboardingPathConfig path = onboardingPath(state: state);
         dispatch(
-          NavigateAction<AppState>.pushNamedAndRemoveAll(path.route,
+          NavigateAction<CoreState>.pushNamedAndRemoveAll(path.route,
               arguments: path.arguments),
         );
       }

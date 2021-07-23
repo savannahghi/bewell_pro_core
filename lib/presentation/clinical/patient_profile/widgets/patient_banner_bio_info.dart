@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:async_redux/async_redux.dart';
 
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
@@ -36,8 +36,8 @@ class PatientBannerBioInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
-    final bool isLargeScreen = SILResponsiveWidget.isLargeScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
+    final bool isLargeScreen = ResponsiveWidget.isLargeScreen(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -119,7 +119,7 @@ class PatientBannerBioInfo extends StatelessWidget {
       timelineInfoObject.showAll.add(false);
       timelineInfoObject.visits.add(<dynamic>[]);
 
-      final AppState state = StoreProvider.state<AppState>(context)!;
+      final CoreState state = StoreProvider.state<CoreState>(context)!;
       final String currentVisitCount = state.miscState!.visitCount!;
 
       /// check if the current visit count is [postSurveyVisitAskCount]

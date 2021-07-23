@@ -8,8 +8,8 @@ import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/bat
 import 'package:bewell_pro_core/application/redux/actions/onboarding_actions/verify_pin_action.dart';
 
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
-import 'package:bewell_pro_core/application/redux/view_models/app_state_view_model.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/application/redux/view_models/core_state_view_model.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/enums.dart';
@@ -28,7 +28,7 @@ class VerifyPin extends StatelessWidget {
   Future<void> verifyPinFunction(
       BuildContext context, String pin, GlobalKey<FormState> formKey) async {
     if (formKey.currentState!.validate()) {
-      StoreProvider.dispatch<AppState>(
+      StoreProvider.dispatch<CoreState>(
         context,
         VerifyPinAction(
           context: context,
@@ -44,9 +44,9 @@ class VerifyPin extends StatelessWidget {
     final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
     String enteredPin = '';
 
-    return StoreConnector<AppState, AppStateViewModel>(
-      converter: (Store<AppState> store) => AppStateViewModel.fromStore(store),
-      builder: (BuildContext context, AppStateViewModel vm) {
+    return StoreConnector<CoreState, CoreStateViewModel>(
+      converter: (Store<CoreState> store) => CoreStateViewModel.fromStore(store),
+      builder: (BuildContext context, CoreStateViewModel vm) {
         return Column(
           children: <Widget>[
             Form(
@@ -66,7 +66,7 @@ class VerifyPin extends StatelessWidget {
                 validator: (String? v) => InputValidators.validatePin(value: v),
                 onChanged: (String val) {
                   if (vm.state.miscState!.invalidPin!) {
-                    StoreProvider.dispatch<AppState>(
+                    StoreProvider.dispatch<CoreState>(
                       context,
                       BatchUpdateMiscStateAction(invalidPin: false),
                     );

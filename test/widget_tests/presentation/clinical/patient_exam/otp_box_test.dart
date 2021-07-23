@@ -3,7 +3,7 @@ import 'package:domain_objects/entities.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/widgets/otp_box.dart';
@@ -20,11 +20,11 @@ void main() {
   group('OTP Box', () {
     const String phoneNumberString = '0712345678';
 
-    late Store<AppState> store;
+    late Store<CoreState> store;
     late int now;
 
     setUp(() {
-      store = Store<AppState>(initialState: AppState.initial());
+      store = Store<CoreState>(initialState: CoreState.initial());
       now = DateTime.now().microsecondsSinceEpoch;
       startMockVisitAndExam();
     });

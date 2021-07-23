@@ -31,8 +31,8 @@ class NoPatientFound extends StatelessWidget {
       child: Container(
         width: double.infinity,
         padding: EdgeInsets.symmetric(
-            horizontal: SILResponsiveWidget.isSmallScreen(context) ? 15 : 30,
-            vertical: SILResponsiveWidget.isSmallScreen(context) ? 20 : 50),
+            horizontal: ResponsiveWidget.isSmallScreen(context) ? 15 : 30,
+            vertical: ResponsiveWidget.isSmallScreen(context) ? 20 : 50),
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
           color: Color(0xfff7f7f9),

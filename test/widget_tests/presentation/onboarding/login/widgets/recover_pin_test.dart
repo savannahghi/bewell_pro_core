@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/onboarding_scaffold.dart';
@@ -21,11 +21,11 @@ import '../../../../../mocks/test_helpers.dart';
 
 void main() {
   group('Recover Pin page', () {
-    late Store<AppState> store;
+    late Store<CoreState> store;
 
     setUp(() {
-      final AppState state = AppState.initial();
-      store = Store<AppState>(initialState: state);
+      final CoreState state = CoreState.initial();
+      store = Store<CoreState>(initialState: state);
     });
 
     testWidgets('recover PIN renders correctly', (WidgetTester tester) async {
@@ -113,7 +113,7 @@ void main() {
           store: store,
           tester: tester,
           widget: Builder(builder: (BuildContext context) {
-            store.dispatch(WaitAction<AppState>.add(
+            store.dispatch(WaitAction<CoreState>.add(
               requestPinResetFlag,
               ref: '${requestPinResetFlag}_ref',
             ));

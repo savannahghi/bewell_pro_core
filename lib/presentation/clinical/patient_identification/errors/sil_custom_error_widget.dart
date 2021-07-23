@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/sil_custom_exceptions.dart';
 import 'package:debug_logger/debug_logger.dart';
 
@@ -11,7 +11,7 @@ class SILUserException extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<AppState, _ViewModel>(
+    return StoreConnector<CoreState, _ViewModel>(
       vm: () => _Factory(this),
       builder: (BuildContext context, _ViewModel vm) =>
           SILUserExceptionWidgetContent(error: vm.error, child: child),
@@ -68,7 +68,7 @@ class _SILUserExceptionWidgetContentState
   Widget build(BuildContext context) => _currentWidget;
 }
 
-class _Factory extends VmFactory<AppState, SILUserException> {
+class _Factory extends VmFactory<CoreState, SILUserException> {
   _Factory(SILUserException widget) : super(widget);
 
   @override

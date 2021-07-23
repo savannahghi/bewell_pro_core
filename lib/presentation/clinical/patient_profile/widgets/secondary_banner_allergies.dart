@@ -120,7 +120,7 @@ class _SecondaryBannerAllergiesState extends State<SecondaryBannerAllergies> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
 
     return Padding(
       padding: const EdgeInsets.only(left: 15, right: 15, bottom: 10),

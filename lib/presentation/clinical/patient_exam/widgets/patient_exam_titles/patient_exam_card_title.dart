@@ -9,7 +9,7 @@ class PatientExamCardTitle extends StatelessWidget {
   const PatientExamCardTitle({required this.title});
   @override
   Widget build(BuildContext context) {
-    final bool isLargeScreenDevice = SILResponsiveWidget.isLargeScreen(context);
+    final bool isLargeScreenDevice = ResponsiveWidget.isLargeScreen(context);
     return Text(
       title,
       style: isLargeScreenDevice

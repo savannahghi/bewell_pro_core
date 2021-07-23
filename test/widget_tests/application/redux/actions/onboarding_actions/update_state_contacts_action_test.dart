@@ -5,7 +5,7 @@ import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/core/services/onboarding.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:user_profile/contact_utils.dart';
 
 import '../../../../../mocks/mocks.dart';
@@ -13,17 +13,18 @@ import '../../../../../mocks/test_helpers.dart';
 
 void main() {
   group('UpdateUserPinAction', () {
-    late StoreTester<AppState> storeTester;
+    late StoreTester<CoreState> storeTester;
 
     setUp(() {
-      storeTester = StoreTester<AppState>(
-        initialState: AppState.initial(),
+      storeTester = StoreTester<CoreState>(
+        initialState: CoreState.initial(),
         // this suppresses the verbose logs in the terminal
         testInfoPrinter: (TestInfo<dynamic> testInfo) {},
       );
     });
 
-    testWidgets('should update app state when a primary email address is added',
+    testWidgets(
+        'should update core state when a primary email address is added',
         (WidgetTester tester) async {
       expect(storeTester.state.userState!.userProfile!.primaryEmailAddress,
           EmailAddress.withValue('unknown@bewell.co.ke'));
@@ -52,7 +53,7 @@ void main() {
           testEmailAddress);
     });
 
-    testWidgets('should update app state when a primary phone number is added',
+    testWidgets('should update core state when a primary phone number is added',
         (WidgetTester tester) async {
       expect(
           storeTester.state.userState!.userProfile!.primaryPhoneNumber, null);
@@ -79,7 +80,7 @@ void main() {
     });
 
     testWidgets(
-        'should update app state when secondary email addresses is added',
+        'should update core state when secondary email addresses is added',
         (WidgetTester tester) async {
       await storeTester.dispatch(BatchUpdateUserStateAction(
           userProfile: UserProfile(
@@ -114,7 +115,8 @@ void main() {
       );
     });
 
-    testWidgets('should update app state when secondary phone numbers in state',
+    testWidgets(
+        'should update core state when secondary phone numbers in state',
         (WidgetTester tester) async {
       await storeTester.dispatch(BatchUpdateUserStateAction(
           userProfile: UserProfile(
@@ -149,7 +151,7 @@ void main() {
       );
     });
 
-    testWidgets('should update app state when a primary email address is set',
+    testWidgets('should update core state when a primary email address is set',
         (WidgetTester tester) async {
       await storeTester.dispatch(BatchUpdateUserStateAction(
           userProfile: UserProfile(
@@ -176,7 +178,7 @@ void main() {
           testEmailAddress);
     });
 
-    testWidgets('should update app state when a primary phone number is set',
+    testWidgets('should update core state when a primary phone number is set',
         (WidgetTester tester) async {
       expect(
           storeTester.state.userState!.userProfile!.primaryPhoneNumber, null);
@@ -209,7 +211,7 @@ void main() {
     });
 
     testWidgets(
-        'should update app state when a secondary email address is retired',
+        'should update core state when a secondary email address is retired',
         (WidgetTester tester) async {
       await storeTester.dispatch(BatchUpdateUserStateAction(
           userProfile: UserProfile(
@@ -236,7 +238,7 @@ void main() {
     });
 
     testWidgets(
-        'should update app state when a secondary phone number is retired',
+        'should update core state when a secondary phone number is retired',
         (WidgetTester tester) async {
       await storeTester.dispatch(BatchUpdateUserStateAction(
           userProfile: UserProfile(

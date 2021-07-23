@@ -13,7 +13,7 @@ class ExamSummaryTests extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
     return this.examTests.isEmpty
         ? Container(
             width: double.infinity,

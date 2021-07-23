@@ -2,7 +2,7 @@ import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/view_models/communication_settings_viewmodel.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
@@ -31,7 +31,7 @@ class _CommunicationSettingsPageState extends State<CommunicationSettingsPage> {
   @override
   Widget build(BuildContext context) {
     final UserProfile? userProfile =
-        StoreProvider.state<AppState>(context)!.userState!.userProfile;
+        StoreProvider.state<CoreState>(context)!.userState!.userProfile;
     final BioData bioData = userProfile!.userBioData!;
     return Scaffold(
       body: SingleChildScrollView(
@@ -61,7 +61,7 @@ class _CommunicationSettingsPageState extends State<CommunicationSettingsPage> {
               Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal:
-                        SILResponsiveWidget.preferredPaddingOnStretchedScreens(
+                        ResponsiveWidget.preferredPaddingOnStretchedScreens(
                             context: context)),
                 child: BuildCommunicationItems(),
               ),
@@ -76,13 +76,13 @@ class _CommunicationSettingsPageState extends State<CommunicationSettingsPage> {
 class BuildCommunicationItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<AppState, CommunicationSettingsViewModel>(
-      converter: (Store<AppState> store) =>
+    return StoreConnector<CoreState, CommunicationSettingsViewModel>(
+      converter: (Store<CoreState> store) =>
           CommunicationSettingsViewModel.fromStore(store),
       builder: (BuildContext context, CommunicationSettingsViewModel vm) {
         return Padding(
           padding: EdgeInsets.symmetric(
-              horizontal: SILResponsiveWidget.deviceType(context) ==
+              horizontal: ResponsiveWidget.deviceType(context) ==
                       DeviceScreensType.Mobile
                   ? number15
                   : number30),
@@ -139,7 +139,7 @@ class BuildCommunicationItems extends StatelessWidget {
       required bool isAllowed,
       required BuildContext context}) async {
     final CommunicationSettings settings =
-        StoreProvider.state<AppState>(context)!
+        StoreProvider.state<CoreState>(context)!
             .userState!
             .communicationSettings!;
     final Map<String, bool> _variables = <String, bool>{
@@ -170,7 +170,7 @@ class BuildCommunicationItems extends StatelessWidget {
     if (_client.parseError(response) != null) {
       return false;
     }
-    StoreProvider.dispatch<AppState>(
+    StoreProvider.dispatch<CoreState>(
         context,
         BatchUpdateUserStateAction(
             communicationSettings: CommunicationSettings(

@@ -48,7 +48,7 @@ class _AddOxygenSaturationState extends State<AddOxygenSaturation> {
   @override
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
-    final bool isLargeScreen = SILResponsiveWidget.isLargeScreen(context);
+    final bool isLargeScreen = ResponsiveWidget.isLargeScreen(context);
 
     return Column(
       children: <Widget>[

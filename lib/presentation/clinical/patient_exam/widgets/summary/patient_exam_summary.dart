@@ -89,7 +89,7 @@ class _PatientExamSummaryState extends State<PatientExamSummary> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
     return AppScaffold(
       currentBottomNavIndex: BottomNavIndex.patients.index,
       body: ListView(

@@ -5,14 +5,14 @@ import 'package:bewell_pro_core/presentation/core/widgets/default_error_route.da
 import 'package:bewell_pro_core/presentation/router/router_generator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:shared_ui_components/buttons.dart';
 import '../../../mocks/test_helpers.dart';
 
 void main() {
   group('RouteGeneratoe', () {
-    final Store<AppState> store =
-        Store<AppState>(initialState: AppState.initial());
+    final Store<CoreState> store =
+        Store<CoreState>(initialState: CoreState.initial());
     testWidgets('should navigate to DefaultErrorRoute',
         (WidgetTester tester) async {
       const Route<dynamic>? Function(RouteSettings settings) routeGenerator =

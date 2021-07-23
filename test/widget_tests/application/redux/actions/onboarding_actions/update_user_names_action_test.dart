@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/redux/actions/onboarding_actions/update_user_names_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 
 import 'package:http/http.dart' as http;
 import 'package:shared_themes/constants.dart';
@@ -14,11 +14,11 @@ import '../../../../../mocks/test_helpers.dart';
 
 void main() {
   group('UpdateUserNamesAction', () {
-    late StoreTester<AppState> storeTester;
+    late StoreTester<CoreState> storeTester;
 
     setUp(() {
-      storeTester = StoreTester<AppState>(
-        initialState: AppState.initial(),
+      storeTester = StoreTester<CoreState>(
+        initialState: CoreState.initial(),
         testInfoPrinter: (TestInfo<dynamic> testInfo) {},
       );
     });

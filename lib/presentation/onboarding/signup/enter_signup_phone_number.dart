@@ -7,8 +7,8 @@ import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/bat
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/signup_with_phone_number_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
 
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
-import 'package:bewell_pro_core/application/redux/view_models/app_state_view_model.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/application/redux/view_models/core_state_view_model.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 
@@ -42,7 +42,7 @@ class _EnterSignUpPhoneNoState extends State<EnterSignUpPhoneNo> {
   void navigateToLogin() {
     triggerNavigationEvent(context: context, route: phoneLoginRoute);
 
-    StoreProvider.dispatch<AppState>(
+    StoreProvider.dispatch<CoreState>(
       context,
       BatchUpdateMiscStateAction(
         accountExists: false,
@@ -54,9 +54,9 @@ class _EnterSignUpPhoneNoState extends State<EnterSignUpPhoneNo> {
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<AppState, AppStateViewModel>(
-      converter: (Store<AppState> store) => AppStateViewModel.fromStore(store),
-      builder: (BuildContext context, AppStateViewModel vm) {
+    return StoreConnector<CoreState, CoreStateViewModel>(
+      converter: (Store<CoreState> store) => CoreStateViewModel.fromStore(store),
+      builder: (BuildContext context, CoreStateViewModel vm) {
         return Form(
           key: _formKey,
           child: Column(
@@ -111,7 +111,7 @@ class _EnterSignUpPhoneNoState extends State<EnterSignUpPhoneNo> {
                 title: Text(verifyPhoneMap[commConsent]!),
                 onChanged: (bool? value) {
                   setState(() {
-                    StoreProvider.dispatch<AppState>(
+                    StoreProvider.dispatch<CoreState>(
                       context,
                       BatchUpdateMiscStateAction(acceptedTerms: value),
                     );
@@ -130,7 +130,7 @@ class _EnterSignUpPhoneNoState extends State<EnterSignUpPhoneNo> {
                     buttonKey: AppWidgetKeys.silPrimaryButtonKey,
                     onPressed: () async {
                       if (_formKey.currentState!.validate()) {
-                        await StoreProvider.dispatch<AppState>(
+                        await StoreProvider.dispatch<CoreState>(
                             context,
                             SignupWithPhoneNumberAction(
                                 phoneNumber: formattedPhoneNumber,

@@ -1,4 +1,4 @@
-const String landingPageRoute = '/';
+const String landingPageRoute = '/landing';
 
 const String recoverPinRoute = '/recoverPin';
 

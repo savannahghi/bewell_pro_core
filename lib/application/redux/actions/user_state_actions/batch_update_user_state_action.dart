@@ -1,16 +1,16 @@
 import 'package:async_redux/async_redux.dart';
 
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 
 import 'package:domain_objects/entities.dart';
 import 'package:domain_objects/value_objects.dart';
 
-/// [BatchUpdateUserStateAction] is used to update the apps internal state. If a state changes requires
+/// [BatchUpdateUserStateAction] is used to update the packages internal state. If a state changes requires
 /// for it to be replicated in the backend, a use-case specific action should be created
 ///
 /// Its used to update the following: `userProfile`,  `communicationSettings`, `auth`,
 /// `isSignedIn`, `inActivitySetInTime`, `signedInTime`, `tokenExpiryTime`
-class BatchUpdateUserStateAction extends ReduxAction<AppState> {
+class BatchUpdateUserStateAction extends ReduxAction<CoreState> {
   BatchUpdateUserStateAction({
     this.userProfile,
     this.communicationSettings,
@@ -30,8 +30,8 @@ class BatchUpdateUserStateAction extends ReduxAction<AppState> {
   final UserProfile? userProfile;
 
   @override
-  AppState reduce() {
-    final AppState newUserState = state.copyWith.userState!.call(
+  CoreState reduce() {
+    final CoreState newUserState = state.copyWith.userState!.call(
       userProfile: state.userState!.userProfile!.copyWith(
         id: this.userProfile?.id ?? state.userState?.userProfile?.id,
         username: this.userProfile?.username ??
@@ -94,7 +94,7 @@ class BatchUpdateUserStateAction extends ReduxAction<AppState> {
   }
 
   /// Returns a list of secondary phone numbers
-  List<PhoneNumber>? deconstructSecondaryPhoneNumber(AppState state) {
+  List<PhoneNumber>? deconstructSecondaryPhoneNumber(CoreState state) {
     if (this.userProfile?.secondaryPhoneNumbers != null) {
       /// overwrite secondary phones to avoid complex pattern matching
       return this.userProfile?.secondaryPhoneNumbers;
@@ -107,7 +107,7 @@ class BatchUpdateUserStateAction extends ReduxAction<AppState> {
   }
 
   /// Returns a list of secondary email addresses
-  List<EmailAddress>? deconstructSecondaryEmailAddresses(AppState state) {
+  List<EmailAddress>? deconstructSecondaryEmailAddresses(CoreState state) {
     if (this.userProfile?.secondaryEmailAddresses != null) {
       /// overwrite secondary emails to avoid complex pattern matching
       return this.userProfile?.secondaryEmailAddresses;

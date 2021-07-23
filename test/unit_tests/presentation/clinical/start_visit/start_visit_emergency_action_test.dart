@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/break_glass_episode_creation_input.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/codeable_concept.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/current_episode.dart';
@@ -48,9 +48,9 @@ void main() {
             200),
       );
 
-      final Store<AppState> store =
-          Store<AppState>(initialState: AppState.initial());
-      final StoreTester<AppState> storeTester = StoreTester<AppState>.from(
+      final Store<CoreState> store =
+          Store<CoreState>(initialState: CoreState.initial());
+      final StoreTester<CoreState> storeTester = StoreTester<CoreState>.from(
         store,
         // this suppresses the verbose logs in the terminal
         testInfoPrinter: (TestInfo<dynamic> testInfo) {},
@@ -76,7 +76,7 @@ void main() {
           client: client,
           breakGlassEpisodeCreationInput: breakGlassEpisodeCreationInput));
 
-      final TestInfoList<AppState> infos = await storeTester.waitAll(<Type>[
+      final TestInfoList<CoreState> infos = await storeTester.waitAll(<Type>[
         StartVisitEmergencyAction,
         WaitAction,
         NavigateAction,
@@ -106,9 +106,9 @@ void main() {
             404),
       );
 
-      final Store<AppState> store =
-          Store<AppState>(initialState: AppState.initial());
-      final StoreTester<AppState> storeTester = StoreTester<AppState>.from(
+      final Store<CoreState> store =
+          Store<CoreState>(initialState: CoreState.initial());
+      final StoreTester<CoreState> storeTester = StoreTester<CoreState>.from(
         store,
         // this suppresses the verbose logs in the terminal
         testInfoPrinter: (TestInfo<dynamic> testInfo) {},
@@ -128,7 +128,7 @@ void main() {
           client: client,
           breakGlassEpisodeCreationInput: breakGlassEpisodeCreationInput));
 
-      final TestInfo<AppState> infos = await storeTester.waitAllGetLast(
+      final TestInfo<CoreState> infos = await storeTester.waitAllGetLast(
           <Type>[StartVisitEmergencyAction, WaitAction, WaitAction]);
 
       expect(infos.errors.removeFirst().msg,
@@ -136,9 +136,9 @@ void main() {
     });
 
     test('when client is null', () async {
-      final Store<AppState> store =
-          Store<AppState>(initialState: AppState.initial());
-      final StoreTester<AppState> storeTester = StoreTester<AppState>.from(
+      final Store<CoreState> store =
+          Store<CoreState>(initialState: CoreState.initial());
+      final StoreTester<CoreState> storeTester = StoreTester<CoreState>.from(
         store,
         // this suppresses the verbose logs in the terminal
         testInfoPrinter: (TestInfo<dynamic> testInfo) {},
@@ -158,15 +158,15 @@ void main() {
           client: null,
           breakGlassEpisodeCreationInput: breakGlassEpisodeCreationInput));
 
-      final TestInfo<AppState> infos = await storeTester.waitAllGetLast(
+      final TestInfo<CoreState> infos = await storeTester.waitAllGetLast(
           <Type>[StartVisitEmergencyAction, WaitAction, WaitAction]);
 
       expect(infos.errors.removeFirst().msg, 'cannot start a visit');
     });
 
     test('when server returns error response', () async {
-      final StoreTester<AppState> storeTester = StoreTester<AppState>(
-        initialState: AppState.initial(),
+      final StoreTester<CoreState> storeTester = StoreTester<CoreState>(
+        initialState: CoreState.initial(),
         // this suppresses the verbose logs in the terminal
         testInfoPrinter: (TestInfo<dynamic> testInfo) {},
       );
@@ -199,7 +199,7 @@ void main() {
           client: client,
           breakGlassEpisodeCreationInput: breakGlassEpisodeCreationInput));
 
-      final TestInfo<AppState> infos = await storeTester.waitAllGetLast(
+      final TestInfo<CoreState> infos = await storeTester.waitAllGetLast(
           <Type>[StartVisitEmergencyAction, WaitAction, WaitAction]);
 
       expect(infos.errors.removeFirst().msg,

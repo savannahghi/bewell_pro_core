@@ -2,7 +2,7 @@ import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/clinical/patient_registration/phone_number_form_manager.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/phone_number_field.dart';
@@ -29,13 +29,13 @@ class MockFormManager extends PhoneNumberFormManager {
 
 void main() {
   group('PhoneNumberFieldWidget', () {
-    late Store<AppState> store;
+    late Store<CoreState> store;
     late MockFormManager formManager;
 
     const String testPhoneNumber = '798000000';
 
     setUp(() {
-      store = Store<AppState>(initialState: AppState.initial());
+      store = Store<CoreState>(initialState: CoreState.initial());
       formManager = MockFormManager();
     });
 

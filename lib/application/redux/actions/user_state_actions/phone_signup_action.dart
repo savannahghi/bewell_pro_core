@@ -10,7 +10,7 @@ import 'package:bewell_pro_core/application/core/services/onboarding.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
 
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 
 import 'package:bewell_pro_core/domain/core/entities/onboarding_path_config.dart';
@@ -28,23 +28,23 @@ import 'package:user_feed/user_feed.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
 
 /// [PhoneSignUpAction] called when creating an account
-class PhoneSignUpAction extends ReduxAction<AppState> {
+class PhoneSignUpAction extends ReduxAction<CoreState> {
   PhoneSignUpAction({required this.context});
 
   final BuildContext context;
 
   @override
   void before() {
-    dispatch(WaitAction<AppState>.add(createUserFlag));
+    dispatch(WaitAction<CoreState>.add(createUserFlag));
   }
 
   @override
   void after() {
-    dispatch(WaitAction<AppState>.remove(createUserFlag));
+    dispatch(WaitAction<CoreState>.remove(createUserFlag));
   }
 
   @override
-  Future<AppState?> reduce() async {
+  Future<CoreState?> reduce() async {
     /// Call endpoint and get back profile and custom token
     final String createAccountEndpoint =
         EndpointContext.createUserByPhoneEndpoint(
@@ -78,7 +78,7 @@ class PhoneSignUpAction extends ReduxAction<AppState> {
 
       final UserResponse responseAsObject = UserResponse.fromJson(responseMap);
 
-      final AppState newState = state.copyWith.userState!.call(
+      final CoreState newState = state.copyWith.userState!.call(
         userProfile: responseAsObject.profile,
         customerProfile: responseAsObject.customerProfile,
         communicationSettings: responseAsObject.communicationSettings,
@@ -88,7 +88,7 @@ class PhoneSignUpAction extends ReduxAction<AppState> {
         signedInTime: DateTime.now().toIso8601String(),
       );
 
-      await StoreProvider.dispatch<AppState>(
+      await StoreProvider.dispatch<CoreState>(
         context,
         NavigationAction(
             drawerSelectedIndex:
@@ -103,7 +103,7 @@ class PhoneSignUpAction extends ReduxAction<AppState> {
 
       triggerEvent(signupEvent, context);
 
-      dispatch(NavigateAction<AppState>.pushNamedAndRemoveAll(path.route));
+      dispatch(NavigateAction<CoreState>.pushNamedAndRemoveAll(path.route));
 
       return newState;
     } else {

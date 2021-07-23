@@ -62,7 +62,7 @@ class _PhoneNumberFieldWidgetState extends State<PhoneNumberFieldWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
 
     final SILFormTextField textField = SILFormTextField(
       enabled: !widget.disabled,

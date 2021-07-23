@@ -7,7 +7,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/clinical/patient_registration/basic_details_form_manager.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_registration_image_data.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
@@ -22,12 +22,12 @@ import '../../../../../mocks/test_helpers.dart';
 
 void main() {
   group('IDDocumentsWidget', () {
-    late Store<AppState> store;
+    late Store<CoreState> store;
     late BasicDetailsFormManager formManager;
     final MemoryFileSystem fileSystem = MemoryFileSystem();
 
     setUp(() {
-      store = Store<AppState>(initialState: AppState.initial());
+      store = Store<CoreState>(initialState: CoreState.initial());
       formManager = BasicDetailsFormManager();
     });
 

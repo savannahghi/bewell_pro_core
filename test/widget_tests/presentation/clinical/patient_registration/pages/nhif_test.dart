@@ -81,9 +81,9 @@ void main() {
         widget: Builder(
           builder: (BuildContext context) {
             final bool isSmallScreen =
-                SILResponsiveWidget.isSmallScreen(context);
+                ResponsiveWidget.isSmallScreen(context);
             final bool isLargeScreen =
-                SILResponsiveWidget.isLargeScreen(context);
+                ResponsiveWidget.isLargeScreen(context);
 
             expect(isSmallScreen, isFalse);
             expect(isLargeScreen, isTrue);

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';
 import 'package:bewell_pro_core/application/redux/states/misc_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/OTP_episode_creation_input.dart';
@@ -16,7 +16,7 @@ import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:flutter_graphql_client/graph_event_bus.dart';
 
 /// starts a patient visit
-class StartVisitByRequestAccessAction extends ReduxAction<AppState> {
+class StartVisitByRequestAccessAction extends ReduxAction<CoreState> {
   StartVisitByRequestAccessAction({
     required this.client,
     required this.otpEpisodeCreationInput,
@@ -28,11 +28,11 @@ class StartVisitByRequestAccessAction extends ReduxAction<AppState> {
   @override
   void before() {
     // show a loading indicator
-    dispatch(WaitAction<AppState>.add(isWaitingStartVisit));
+    dispatch(WaitAction<CoreState>.add(isWaitingStartVisit));
   }
 
   @override
-  Future<AppState?> reduce() async {
+  Future<CoreState?> reduce() async {
     if (client == null) {
       throw const UserException('cannot start a visit');
     }
@@ -83,11 +83,11 @@ class StartVisitByRequestAccessAction extends ReduxAction<AppState> {
         EpisodeOfCarePayload.fromJson(
             data['data']['startEpisodeByOTP'] as Map<String, dynamic>);
 
-    // save the open episode of care into the app state
+    // save the open episode of care into the core state
     final ClinicalState? clinicalState = state.clinicalState?.copyWith
         .call(currentEpisodeOfCare: episodeOfCarePayload.episodeOfCare);
 
-    final AppState newState = state.copyWith.call(clinicalState: clinicalState);
+    final CoreState newState = state.copyWith.call(clinicalState: clinicalState);
 
     // for backward compatibility only
     // TODO: REMOVE AFTER REFACTORING PATIENT PROFILE
@@ -104,13 +104,13 @@ class StartVisitByRequestAccessAction extends ReduxAction<AppState> {
     final PatientConnection patientConnection = PatientConnection(edges: list);
     currentPatientInEpisode.patientConnection.add(patientConnection);
 
-    dispatch(NavigateAction<AppState>.popAndPushNamed(patientProfilePageRoute));
+    dispatch(NavigateAction<CoreState>.popAndPushNamed(patientProfilePageRoute));
     return newState;
   }
 
   @override
   void after() {
     // remove the loading indicator
-    dispatch(WaitAction<AppState>.remove(isWaitingStartVisit));
+    dispatch(WaitAction<CoreState>.remove(isWaitingStartVisit));
   }
 }

@@ -1,8 +1,8 @@
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:domain_objects/entities.dart';
 
-class NavigationAction extends ReduxAction<AppState> {
+class NavigationAction extends ReduxAction<CoreState> {
   final int? drawerSelectedIndex;
   final int? bottomBarSelectedIndex;
   final List<NavigationItem>? primaryActions;
@@ -16,8 +16,8 @@ class NavigationAction extends ReduxAction<AppState> {
   });
 
   @override
-  AppState reduce() {
-    final AppState newState = state.copyWith.navigationState!.call(
+  CoreState reduce() {
+    final CoreState newState = state.copyWith.navigationState!.call(
       drawerSelectedIndex:
           drawerSelectedIndex ?? state.navigationState!.drawerSelectedIndex,
       bottomBarSelectedIndex: bottomBarSelectedIndex ??

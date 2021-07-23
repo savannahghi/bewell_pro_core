@@ -9,7 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:bewell_pro_core/application/clinical/patient_registration/basic_details_form_manager.dart';
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_payload.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_registration_image_data.dart';
@@ -118,7 +118,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
 
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
 
     return Scaffold(
       floatingActionButton: Padding(
@@ -403,7 +403,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
           ?.currentPatient
           .updatePatient(patientPayload);
 
-      StoreProvider.dispatch<AppState>(
+      StoreProvider.dispatch<CoreState>(
         context,
         SavePatientRecordAction(
           patientEdge: PatientEdge(node: patientPayload.patientRecord),

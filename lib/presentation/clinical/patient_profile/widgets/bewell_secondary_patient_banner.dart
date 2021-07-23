@@ -97,7 +97,7 @@ class BeWellSecondaryPatientBannerState
 
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
     final double width = MediaQuery.of(context).size.width;
     final TextStyle tabStyle = Theme.of(context)
         .textTheme

@@ -9,8 +9,8 @@ import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/bat
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/phone_login_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
 
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
-import 'package:bewell_pro_core/application/redux/view_models/app_state_view_model.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/application/redux/view_models/core_state_view_model.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/error_alert_box.dart';
@@ -47,7 +47,7 @@ class _PhoneLoginState extends State<PhoneLogin> {
     super.initState();
 
     WidgetsBinding.instance?.addPostFrameCallback((Duration timeStamp) {
-      StoreProvider.dispatch<AppState>(
+      StoreProvider.dispatch<CoreState>(
         context,
         BatchUpdateMiscStateAction(
           phoneNumber: UNKNOWN,
@@ -65,12 +65,12 @@ class _PhoneLoginState extends State<PhoneLogin> {
     required String? pin,
   }) async {
     if (_formKey.currentState!.validate()) {
-      StoreProvider.dispatch<AppState>(
+      StoreProvider.dispatch<CoreState>(
         context,
         BatchUpdateMiscStateAction(phoneNumber: phoneNumber, pinCode: pin),
       );
 
-      await StoreProvider.dispatch<AppState>(
+      await StoreProvider.dispatch<CoreState>(
         context,
         PhoneLoginAction(context: context),
       );
@@ -79,9 +79,9 @@ class _PhoneLoginState extends State<PhoneLogin> {
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<AppState, AppStateViewModel>(
-      converter: (Store<AppState> store) => AppStateViewModel.fromStore(store),
-      builder: (BuildContext context, AppStateViewModel vm) {
+    return StoreConnector<CoreState, CoreStateViewModel>(
+      converter: (Store<CoreState> store) => CoreStateViewModel.fromStore(store),
+      builder: (BuildContext context, CoreStateViewModel vm) {
         return Form(
           key: _formKey,
           child: Column(
@@ -100,7 +100,7 @@ class _PhoneLoginState extends State<PhoneLogin> {
                   onChanged: (String? value) {
                     if (vm.state.miscState!.invalidCredentials! ||
                         vm.state.miscState!.unKnownPhoneNo!) {
-                      StoreProvider.dispatch<AppState>(
+                      StoreProvider.dispatch<CoreState>(
                         context,
                         BatchUpdateMiscStateAction(
                           invalidCredentials: false,
@@ -136,7 +136,7 @@ class _PhoneLoginState extends State<PhoneLogin> {
                 onChanged: (String val) {
                   if (vm.state.miscState!.invalidCredentials! ||
                       vm.state.miscState!.unKnownPhoneNo!) {
-                    StoreProvider.dispatch<AppState>(
+                    StoreProvider.dispatch<CoreState>(
                       context,
                       BatchUpdateMiscStateAction(
                         invalidCredentials: false,

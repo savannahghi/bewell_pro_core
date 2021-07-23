@@ -1,7 +1,7 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/numbers_constants.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/guide_box.dart';
@@ -16,13 +16,13 @@ import 'package:shared_themes/text_themes.dart';
 
 class SearchGuide extends StatelessWidget {
   List<Widget> vertical(BuildContext context) {
-    double padding = SILResponsiveWidget.preferredPaddingOnStretchedScreens(
+    double padding = ResponsiveWidget.preferredPaddingOnStretchedScreens(
         context: context);
     final List<NavigationItem> secondaryActions =
-        StoreProvider.state<AppState>(context)!
+        StoreProvider.state<CoreState>(context)!
             .navigationState!
             .secondaryActions!;
-    if (SILResponsiveWidget.deviceType(context) != DeviceScreensType.Mobile &&
+    if (ResponsiveWidget.deviceType(context) != DeviceScreensType.Mobile &&
         secondaryActions.isNotEmpty) {
       padding = number20;
     }
@@ -97,13 +97,13 @@ class SearchGuide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<NavigationItem> secondaryActions =
-        StoreProvider.state<AppState>(context)!
+        StoreProvider.state<CoreState>(context)!
             .navigationState!
             .secondaryActions!;
     final bool isSmall =
-        SILResponsiveWidget.deviceType(context) == DeviceScreensType.Mobile;
+        ResponsiveWidget.deviceType(context) == DeviceScreensType.Mobile;
     final bool isTabletWithDrawer =
-        SILResponsiveWidget.deviceType(context) != DeviceScreensType.Mobile &&
+        ResponsiveWidget.deviceType(context) != DeviceScreensType.Mobile &&
             secondaryActions.isNotEmpty;
 
     return ListView(

@@ -7,7 +7,7 @@ import 'package:misc_utilities/responsive_widget.dart';
 class BewellLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final bool isLargeScreen = SILResponsiveWidget.isLargeScreen(context);
+    final bool isLargeScreen = ResponsiveWidget.isLargeScreen(context);
     final double dimension = isLargeScreen ? 120 : 50;
     return SizedBox(
       width: dimension,

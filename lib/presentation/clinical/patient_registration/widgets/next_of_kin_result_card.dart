@@ -38,7 +38,7 @@ class _NextOfKinResultCardState extends State<NextOfKinResultCard> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
     final String? phoneNumberString = widget.patient.telecom?.first?.value;
     PhoneNumber? phoneNumber;
 

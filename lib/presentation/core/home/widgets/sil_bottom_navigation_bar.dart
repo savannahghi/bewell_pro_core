@@ -4,7 +4,7 @@ import 'package:domain_objects/entities.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/presentation/core/home/models/bottom_navigation_bar_items.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
 
@@ -29,7 +29,7 @@ class _SILBottomNavigatorBarState extends State<SILBottomNavigatorBar>
     final List<NavigationItem> navigationItems =
         widget.navigationItems ?? defaultNavItems;
 
-    final int bottomBarIndex = StoreProvider.state<AppState>(context)!
+    final int bottomBarIndex = StoreProvider.state<CoreState>(context)!
         .navigationState!
         .bottomBarSelectedIndex;
 
@@ -41,7 +41,7 @@ class _SILBottomNavigatorBarState extends State<SILBottomNavigatorBar>
       unselectedItemColor: Colors.black45,
       onTap: (int index) async {
         if (index != bottomBarIndex || index == 0) {
-          StoreProvider.dispatch<AppState>(
+          StoreProvider.dispatch<CoreState>(
             context,
             NavigationAction(
               drawerSelectedIndex: -1,

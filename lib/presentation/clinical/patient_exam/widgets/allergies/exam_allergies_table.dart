@@ -119,7 +119,7 @@ class _ExamAllergiesTableState extends State<ExamAllergiesTable> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isLargeScreen = SILResponsiveWidget.isLargeScreen(context);
+    final bool isLargeScreen = ResponsiveWidget.isLargeScreen(context);
     final TextTheme textTheme = Theme.of(context).textTheme;
 
     return SingleChildScrollView(

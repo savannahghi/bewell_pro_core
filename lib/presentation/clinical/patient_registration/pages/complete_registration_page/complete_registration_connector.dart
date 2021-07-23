@@ -1,6 +1,6 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 
 import 'complete_registration_view_model.dart';
 import 'complete_registration_view_model_factory.dart';
@@ -11,7 +11,7 @@ class CompleteRegistrationConnector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<AppState, CompleteRegistrationViewModel>(
+    return StoreConnector<CoreState, CompleteRegistrationViewModel>(
       vm: () => CompleteRegistrationViewModelFactory(this),
       builder: (BuildContext context, CompleteRegistrationViewModel vm) {
         return CompleteRegistrationWidget(

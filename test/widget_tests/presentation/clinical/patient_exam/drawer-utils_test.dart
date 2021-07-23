@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_contexts.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
@@ -13,14 +13,14 @@ import 'package:flutter_graphql_client/graph_client.dart';
 
 void main() {
   group('Drawer Utils', () {
-    Store<AppState> store;
-    final AppState state = AppState.initial();
-    store = Store<AppState>(initialState: state);
+    Store<CoreState> store;
+    final CoreState state = CoreState.initial();
+    store = Store<CoreState>(initialState: state);
 
     testWidgets('DrawerHelpWidget renders & works',
         (WidgetTester tester) async {
       const String helpString = 'x';
-      final Widget testWidget = StoreProvider<AppState>(
+      final Widget testWidget = StoreProvider<CoreState>(
         store: store,
         child: AppWrapper(
           appName: appName,
@@ -41,7 +41,7 @@ void main() {
     });
 
     testWidgets('ResultsNotFound renders', (WidgetTester tester) async {
-      final Widget testWidget = StoreProvider<AppState>(
+      final Widget testWidget = StoreProvider<CoreState>(
         store: store,
         child: AppWrapper(
           appName: appName,

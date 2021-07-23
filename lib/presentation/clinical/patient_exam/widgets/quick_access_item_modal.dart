@@ -48,7 +48,7 @@ class QuickAccessItemModal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
 
     return GestureDetector(
       key: AppWidgetKeys.aliasKey,
@@ -174,7 +174,7 @@ Future<dynamic> quickAccessAddModal({
   required QuickAccessType type,
 }) {
   final String? patientName = getPatientInfo().patientName;
-  final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+  final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
 
   return showDialog(
     context: context,
