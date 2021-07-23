@@ -7,7 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/save_event_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/send_event_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:http/http.dart';
 
 import '../../../../mocks/mocks.dart';
@@ -18,7 +18,7 @@ void main() {
     'should retry sending an event after a period of time',
     (WidgetTester tester) async {
       await tester.runAsync(() async {
-        final StoreTester<AppState> storeTester = createStoreTester();
+        final StoreTester<CoreState> storeTester = createStoreTester();
 
         final MockShortGraphQlClient client =
             MockShortGraphQlClient.withResponse(
@@ -36,7 +36,7 @@ void main() {
         storeTester.dispatch(BatchUpdateUserStateAction(
             auth: AuthCredentialResponse(uid: 'some-uid')));
 
-        final TestInfo<AppState> info =
+        final TestInfo<CoreState> info =
             await storeTester.waitUntil(BatchUpdateUserStateAction);
 
         expect(info.state.userState!.auth!.uid, 'some-uid');
@@ -51,7 +51,7 @@ void main() {
           ),
         );
 
-        final TestInfoList<AppState> sendEventInfo =
+        final TestInfoList<CoreState> sendEventInfo =
             await storeTester.waitAll(<Type>[SendEventAction, SaveEventAction]);
 
         expect(sendEventInfo, isNotEmpty);
@@ -60,7 +60,7 @@ void main() {
 
         await tester.pump(const Duration(seconds: 5));
 
-        final TestInfoList<AppState> resendEventInfo =
+        final TestInfoList<CoreState> resendEventInfo =
             await storeTester.waitAll(<Type>[SendEventAction, SaveEventAction]);
         expect(resendEventInfo, isNotEmpty);
       });
@@ -71,7 +71,7 @@ void main() {
     'should fail to send an event when retrying if it is not in state',
     (WidgetTester tester) async {
       await tester.runAsync(() async {
-        final StoreTester<AppState> storeTester = createStoreTester();
+        final StoreTester<CoreState> storeTester = createStoreTester();
 
         final MockShortGraphQlClient client =
             MockShortGraphQlClient.withResponse(
@@ -89,7 +89,7 @@ void main() {
         storeTester.dispatch(BatchUpdateUserStateAction(
             auth: AuthCredentialResponse(uid: 'some-uid')));
 
-        final TestInfo<AppState> info =
+        final TestInfo<CoreState> info =
             await storeTester.waitUntil(BatchUpdateUserStateAction);
 
         expect(info.state.userState!.auth!.uid, 'some-uid');
@@ -104,7 +104,7 @@ void main() {
           ),
         );
 
-        final TestInfoList<AppState> sendEventInfo =
+        final TestInfoList<CoreState> sendEventInfo =
             await storeTester.waitAll(<Type>[SendEventAction, SaveEventAction]);
 
         expect(sendEventInfo, isNotEmpty);
@@ -114,7 +114,7 @@ void main() {
         storeTester.dispatch(
             SaveEventAction(eventName: UNKNOWN, eventPayload: UNKNOWN));
 
-        final TestInfo<AppState> saveInfo =
+        final TestInfo<CoreState> saveInfo =
             await storeTester.waitUntil(SaveEventAction);
 
         expect(saveInfo.dispatchCount, 4);

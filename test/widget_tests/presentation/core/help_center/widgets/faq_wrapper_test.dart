@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:async_redux/async_redux.dart';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/presentation/core/help_center/widgets/faq_card.dart';
 import 'package:bewell_pro_core/presentation/core/help_center/widgets/faq_wrapper.dart';
 import 'package:bewell_pro_core/presentation/core/widgets/generic_empty_data_widget.dart';
@@ -16,10 +16,10 @@ import '../../../../../mocks/test_helpers.dart';
 
 void main() {
   group('FAQWrapper', () {
-    late Store<AppState> store;
+    late Store<CoreState> store;
 
     setUpAll(() {
-      store = Store<AppState>(initialState: AppState.initial());
+      store = Store<CoreState>(initialState: CoreState.initial());
     });
 
     testWidgets('should render faqs when they exist',

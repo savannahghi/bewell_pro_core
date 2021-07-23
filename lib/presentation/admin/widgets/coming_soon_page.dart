@@ -1,7 +1,7 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/presentation/core/widgets/app_scaffold.dart';
 import 'package:misc_utilities/enums.dart';
 import 'package:misc_utilities/responsive_widget.dart';
@@ -16,12 +16,12 @@ class ComingSoon extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isTabletWithDrawer;
     final List<NavigationItem> secondaryActions =
-        StoreProvider.state<AppState>(context)!
+        StoreProvider.state<CoreState>(context)!
             .navigationState!
             .secondaryActions!;
 
     if (secondaryActions.isNotEmpty &&
-        SILResponsiveWidget.deviceType(context) != DeviceScreensType.Mobile) {
+        ResponsiveWidget.deviceType(context) != DeviceScreensType.Mobile) {
       isTabletWithDrawer = true;
     } else {
       isTabletWithDrawer = false;

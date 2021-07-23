@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'app_state.dart';
+part of 'core_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,15 +12,15 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-AppState _$AppStateFromJson(Map<String, dynamic> json) {
-  return _AppState.fromJson(json);
+CoreState _$CoreStateFromJson(Map<String, dynamic> json) {
+  return _CoreState.fromJson(json);
 }
 
 /// @nodoc
-class _$AppStateTearOff {
-  const _$AppStateTearOff();
+class _$CoreStateTearOff {
+  const _$CoreStateTearOff();
 
-  _AppState call(
+  _CoreState call(
       {MiscState? miscState,
       UserFeedState? userFeedState,
       UserState? userState,
@@ -28,7 +28,7 @@ class _$AppStateTearOff {
       ClinicalState? clinicalState,
       Navigation? navigationState,
       @JsonKey(ignore: true) Wait? wait}) {
-    return _AppState(
+    return _CoreState(
       miscState: miscState,
       userFeedState: userFeedState,
       userState: userState,
@@ -39,16 +39,16 @@ class _$AppStateTearOff {
     );
   }
 
-  AppState fromJson(Map<String, Object> json) {
-    return AppState.fromJson(json);
+  CoreState fromJson(Map<String, Object> json) {
+    return CoreState.fromJson(json);
   }
 }
 
 /// @nodoc
-const $AppState = _$AppStateTearOff();
+const $CoreState = _$CoreStateTearOff();
 
 /// @nodoc
-mixin _$AppState {
+mixin _$CoreState {
   MiscState? get miscState => throw _privateConstructorUsedError;
   UserFeedState? get userFeedState => throw _privateConstructorUsedError;
   UserState? get userState => throw _privateConstructorUsedError;
@@ -61,14 +61,14 @@ mixin _$AppState {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AppStateCopyWith<AppState> get copyWith =>
+  $CoreStateCopyWith<CoreState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AppStateCopyWith<$Res> {
-  factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
-      _$AppStateCopyWithImpl<$Res>;
+abstract class $CoreStateCopyWith<$Res> {
+  factory $CoreStateCopyWith(CoreState value, $Res Function(CoreState) then) =
+      _$CoreStateCopyWithImpl<$Res>;
   $Res call(
       {MiscState? miscState,
       UserFeedState? userFeedState,
@@ -87,12 +87,12 @@ abstract class $AppStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
-  _$AppStateCopyWithImpl(this._value, this._then);
+class _$CoreStateCopyWithImpl<$Res> implements $CoreStateCopyWith<$Res> {
+  _$CoreStateCopyWithImpl(this._value, this._then);
 
-  final AppState _value;
+  final CoreState _value;
   // ignore: unused_field
-  final $Res Function(AppState) _then;
+  final $Res Function(CoreState) _then;
 
   @override
   $Res call({
@@ -204,9 +204,10 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
-  factory _$AppStateCopyWith(_AppState value, $Res Function(_AppState) then) =
-      __$AppStateCopyWithImpl<$Res>;
+abstract class _$CoreStateCopyWith<$Res> implements $CoreStateCopyWith<$Res> {
+  factory _$CoreStateCopyWith(
+          _CoreState value, $Res Function(_CoreState) then) =
+      __$CoreStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {MiscState? miscState,
@@ -232,13 +233,13 @@ abstract class _$AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
-    implements _$AppStateCopyWith<$Res> {
-  __$AppStateCopyWithImpl(_AppState _value, $Res Function(_AppState) _then)
-      : super(_value, (v) => _then(v as _AppState));
+class __$CoreStateCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
+    implements _$CoreStateCopyWith<$Res> {
+  __$CoreStateCopyWithImpl(_CoreState _value, $Res Function(_CoreState) _then)
+      : super(_value, (v) => _then(v as _CoreState));
 
   @override
-  _AppState get _value => super._value as _AppState;
+  _CoreState get _value => super._value as _CoreState;
 
   @override
   $Res call({
@@ -250,7 +251,7 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
     Object? navigationState = freezed,
     Object? wait = freezed,
   }) {
-    return _then(_AppState(
+    return _then(_CoreState(
       miscState: miscState == freezed
           ? _value.miscState
           : miscState // ignore: cast_nullable_to_non_nullable
@@ -285,8 +286,8 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AppState implements _AppState {
-  _$_AppState(
+class _$_CoreState implements _CoreState {
+  _$_CoreState(
       {this.miscState,
       this.userFeedState,
       this.userState,
@@ -295,8 +296,8 @@ class _$_AppState implements _AppState {
       this.navigationState,
       @JsonKey(ignore: true) this.wait});
 
-  factory _$_AppState.fromJson(Map<String, dynamic> json) =>
-      _$_$_AppStateFromJson(json);
+  factory _$_CoreState.fromJson(Map<String, dynamic> json) =>
+      _$_$_CoreStateFromJson(json);
 
   @override
   final MiscState? miscState;
@@ -316,13 +317,13 @@ class _$_AppState implements _AppState {
 
   @override
   String toString() {
-    return 'AppState(miscState: $miscState, userFeedState: $userFeedState, userState: $userState, connectivityState: $connectivityState, clinicalState: $clinicalState, navigationState: $navigationState, wait: $wait)';
+    return 'CoreState(miscState: $miscState, userFeedState: $userFeedState, userState: $userState, connectivityState: $connectivityState, clinicalState: $clinicalState, navigationState: $navigationState, wait: $wait)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AppState &&
+        (other is _CoreState &&
             (identical(other.miscState, miscState) ||
                 const DeepCollectionEquality()
                     .equals(other.miscState, miscState)) &&
@@ -358,26 +359,27 @@ class _$_AppState implements _AppState {
 
   @JsonKey(ignore: true)
   @override
-  _$AppStateCopyWith<_AppState> get copyWith =>
-      __$AppStateCopyWithImpl<_AppState>(this, _$identity);
+  _$CoreStateCopyWith<_CoreState> get copyWith =>
+      __$CoreStateCopyWithImpl<_CoreState>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_AppStateToJson(this);
+    return _$_$_CoreStateToJson(this);
   }
 }
 
-abstract class _AppState implements AppState {
-  factory _AppState(
+abstract class _CoreState implements CoreState {
+  factory _CoreState(
       {MiscState? miscState,
       UserFeedState? userFeedState,
       UserState? userState,
       ConnectivityState? connectivityState,
       ClinicalState? clinicalState,
       Navigation? navigationState,
-      @JsonKey(ignore: true) Wait? wait}) = _$_AppState;
+      @JsonKey(ignore: true) Wait? wait}) = _$_CoreState;
 
-  factory _AppState.fromJson(Map<String, dynamic> json) = _$_AppState.fromJson;
+  factory _CoreState.fromJson(Map<String, dynamic> json) =
+      _$_CoreState.fromJson;
 
   @override
   MiscState? get miscState => throw _privateConstructorUsedError;
@@ -397,6 +399,6 @@ abstract class _AppState implements AppState {
   Wait? get wait => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AppStateCopyWith<_AppState> get copyWith =>
+  _$CoreStateCopyWith<_CoreState> get copyWith =>
       throw _privateConstructorUsedError;
 }

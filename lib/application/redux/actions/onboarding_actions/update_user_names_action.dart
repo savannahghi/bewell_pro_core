@@ -5,7 +5,7 @@ import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/services/onboarding.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/onboarding_path_config.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:domain_objects/value_objects.dart';
@@ -14,7 +14,7 @@ import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:http/http.dart';
 import 'package:misc_utilities/misc.dart';
 
-class UpdateUserNamesAction extends ReduxAction<AppState> {
+class UpdateUserNamesAction extends ReduxAction<CoreState> {
   UpdateUserNamesAction({
     required this.context,
     required this.updatedFirstName,
@@ -27,16 +27,16 @@ class UpdateUserNamesAction extends ReduxAction<AppState> {
 
   @override
   void after() {
-    dispatch(WaitAction<AppState>.remove(updateNamesFlag));
+    dispatch(WaitAction<CoreState>.remove(updateNamesFlag));
   }
 
   @override
   void before() {
-    dispatch(WaitAction<AppState>.add(updateNamesFlag));
+    dispatch(WaitAction<CoreState>.add(updateNamesFlag));
   }
 
   @override
-  Future<AppState?> reduce() async {
+  Future<CoreState?> reduce() async {
     final IGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
 
     final Response result =

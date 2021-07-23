@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/admin/widgets/coming_soon_page.dart';
@@ -20,9 +20,9 @@ import '../../../../mocks/test_helpers.dart';
 
 void main() {
   group('AppDrawer', () {
-    late Store<AppState> store;
+    late Store<CoreState> store;
 
-    store = Store<AppState>(initialState: AppState.initial());
+    store = Store<CoreState>(initialState: CoreState.initial());
 
     testWidgets('should render permanently on Tablet',
         (WidgetTester tester) async {

@@ -49,14 +49,14 @@ class CompleteRegistrationWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double imageHeight =
-        SILResponsiveWidget.isSmallScreen(context) ? 100 : 250;
+        ResponsiveWidget.isSmallScreen(context) ? 100 : 250;
     return Center(
       child: ListView(
         shrinkWrap: true,
         padding: const EdgeInsets.symmetric(horizontal: 20),
         children: <Widget>[
           Container(
-            padding: SILResponsiveWidget.isSmallScreen(context)
+            padding: ResponsiveWidget.isSmallScreen(context)
                 ? const EdgeInsets.fromLTRB(50, 50, 50, 20)
                 : const EdgeInsets.only(top: 20),
             child: Image(

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:bewell_pro_core/application/core/theme/colors.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/numbers_constants.dart';
@@ -92,7 +92,7 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
   }
 
   ListView _createListView() {
-    final int? selectedindex = StoreProvider.state<AppState>(context)!
+    final int? selectedindex = StoreProvider.state<CoreState>(context)!
         .navigationState
         ?.drawerSelectedIndex;
 
@@ -147,7 +147,7 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
                           const Icon(Icons.cloud_off),
                     ),
                     onTap: () {
-                      StoreProvider.dispatch<AppState>(
+                      StoreProvider.dispatch<CoreState>(
                         context,
                         NavigationAction(
                           drawerSelectedIndex: index,
@@ -210,7 +210,7 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
                             return ListTile(
                               title: Text(nestedTitle),
                               onTap: () {
-                                StoreProvider.dispatch<AppState>(
+                                StoreProvider.dispatch<CoreState>(
                                   context,
                                   NavigationAction(
                                     drawerSelectedIndex: index,

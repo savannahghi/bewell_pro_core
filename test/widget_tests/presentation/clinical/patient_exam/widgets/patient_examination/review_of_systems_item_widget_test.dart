@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/decoded_system.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/review_of_system_title_bar.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/review_of_systems_item_widget.dart';
@@ -13,8 +13,8 @@ import '../../../../../../mocks/test_helpers.dart';
 
 void main() {
   group('SystemsWidget', () {
-    final Store<AppState> store = Store<AppState>(
-      initialState: AppState.initial(),
+    final Store<CoreState> store = Store<CoreState>(
+      initialState: CoreState.initial(),
     );
 
     final StreamController<dynamic> streamController =

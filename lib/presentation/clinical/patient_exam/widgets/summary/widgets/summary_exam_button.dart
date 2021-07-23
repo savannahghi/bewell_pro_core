@@ -3,8 +3,8 @@ import 'package:domain_objects/entities.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
-import 'package:bewell_pro_core/application/redux/view_models/app_state_view_model.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/application/redux/view_models/core_state_view_model.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
@@ -39,13 +39,13 @@ class _SaveExamSummaryButtonState extends State<SaveExamSummaryButton> {
         disabled = true;
       });
 
-      final String phoneNumber = StoreProvider.state<AppState>(context)!
+      final String phoneNumber = StoreProvider.state<CoreState>(context)!
           .userState!
           .userProfile!
           .primaryPhoneNumber!
           .getValue();
 
-      await StoreProvider.dispatch<AppState>(
+      await StoreProvider.dispatch<CoreState>(
         context,
         SummaryAction(
             context: context,
@@ -104,9 +104,9 @@ class _SaveExamSummaryButtonState extends State<SaveExamSummaryButton> {
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<AppState, AppStateViewModel>(
-      converter: (Store<AppState> store) => AppStateViewModel.fromStore(store),
-      builder: (BuildContext context, AppStateViewModel vm) {
+    return StoreConnector<CoreState, CoreStateViewModel>(
+      converter: (Store<CoreState> store) => CoreStateViewModel.fromStore(store),
+      builder: (BuildContext context, CoreStateViewModel vm) {
         final UserProfile? userProfile = vm.state.userState!.userProfile;
         final String? phoneNumber = userProfile?.primaryPhoneNumber?.getValue();
         final String? doctorsEmail =

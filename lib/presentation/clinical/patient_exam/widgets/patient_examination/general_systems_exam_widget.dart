@@ -110,7 +110,7 @@ class _GeneralSystemsExamWidgetState extends State<GeneralSystemsExamWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isLargeScreen = SILResponsiveWidget.isLargeScreen(context);
+    final bool isLargeScreen = ResponsiveWidget.isLargeScreen(context);
 
     return Card(
       elevation: 0,

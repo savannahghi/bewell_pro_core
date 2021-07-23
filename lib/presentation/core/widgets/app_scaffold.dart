@@ -37,7 +37,7 @@ class AppScaffold extends StatelessWidget {
     bool shouldOpenDrawer = true;
     final List<NavigationItem> secondaryActions = defaultSecondaryNavItems;
 
-    if (SILResponsiveWidget.deviceType(context) != DeviceScreensType.Mobile ||
+    if (ResponsiveWidget.deviceType(context) != DeviceScreensType.Mobile ||
         secondaryActions.isEmpty) {
       shouldOpenDrawer = false;
     }
@@ -57,7 +57,7 @@ class AppScaffold extends StatelessWidget {
               constraints: const BoxConstraints(maxWidth: 420),
               padding: EdgeInsets.symmetric(
                 horizontal:
-                    SILResponsiveWidget.preferredPaddingOnStretchedScreens(
+                    ResponsiveWidget.preferredPaddingOnStretchedScreens(
                   context: context,
                 ),
               ),
@@ -116,7 +116,7 @@ class AppScaffold extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           /// render navigation drawer permanently on [Tablet]
-          if (SILResponsiveWidget.deviceType(context) !=
+          if (ResponsiveWidget.deviceType(context) !=
                   DeviceScreensType.Mobile &&
               secondaryActions.isNotEmpty)
             const AppDrawer(permanentlyDisplay: true),

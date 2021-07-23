@@ -3,8 +3,8 @@ import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/core/graphql/queries.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/faq_list_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
-import 'package:bewell_pro_core/application/redux/view_models/app_state_view_model.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/application/redux/view_models/core_state_view_model.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/faq_content.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/presentation/core/help_center/widgets/faq_card.dart';
@@ -54,7 +54,7 @@ class _FAQWrapperState extends State<FAQWrapper> {
 
   @override
   Widget build(BuildContext context) {
-    final double faqWrapperWidth = SILResponsiveWidget.isLargeScreen(context)
+    final double faqWrapperWidth = ResponsiveWidget.isLargeScreen(context)
         ? MediaQuery.of(context).size.width * 0.5
         : double.infinity;
 
@@ -103,7 +103,7 @@ class _FAQWrapperState extends State<FAQWrapper> {
                       snapshot.data as Map<String, dynamic>)
                   .faqs;
 
-              StoreProvider.dispatch<AppState>(
+              StoreProvider.dispatch<CoreState>(
                   context, FaqListAction(faqList: fetchedFaqs));
 
               /// Returns an empty state widget here
@@ -111,10 +111,10 @@ class _FAQWrapperState extends State<FAQWrapper> {
                 return const GenericEmptyData(item: faqTextTitle);
               }
 
-              return StoreConnector<AppState, AppStateViewModel>(
-                converter: (Store<AppState> store) =>
-                    AppStateViewModel.fromStore(store),
-                builder: (BuildContext context, AppStateViewModel vm) {
+              return StoreConnector<CoreState, CoreStateViewModel>(
+                converter: (Store<CoreState> store) =>
+                    CoreStateViewModel.fromStore(store),
+                builder: (BuildContext context, CoreStateViewModel vm) {
                   final List<FAQContent?>? faqsFromState =
                       vm.state.miscState!.faqList;
 

@@ -1,24 +1,24 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_feed_state.dart';
 
 void main() {
-  group('AppState:', () {
+  group('CoreState:', () {
     test('should convert state from/to json', () async {
-      final AppState state = AppState.initial();
-      final Map<String, dynamic> appStateJson = <String, dynamic>{
+      final CoreState state = CoreState.initial();
+      final Map<String, dynamic> coreStateJson = <String, dynamic>{
         'userFeedState': <String, dynamic>{'userFeed': 'some-user-feed'},
       };
 
-      // test whether the app state can be updated
+      // test whether the core state can be updated
       expect(state.userFeedState!.userFeed, 'UNKNOWN');
-      final AppState state2 = state.copyWith
+      final CoreState state2 = state.copyWith
           .call(userFeedState: UserFeedState(userFeed: 'some-user-feed'));
 
       expect(state2.userFeedState!.userFeed, 'some-user-feed');
 
-      final AppState state3 = AppState.fromJson(appStateJson);
-      expect(state3, isA<AppState>());
+      final CoreState state3 = CoreState.fromJson(coreStateJson);
+      expect(state3, isA<CoreState>());
       expect(state3.userFeedState!.userFeed, 'some-user-feed');
     });
   });

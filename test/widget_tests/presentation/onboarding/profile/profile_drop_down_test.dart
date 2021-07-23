@@ -1,7 +1,7 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/core/home/widgets/profile_drop_down.dart';
@@ -20,9 +20,9 @@ void main() {
 
     testWidgets('should open & display Profile & logout option',
         (WidgetTester tester) async {
-      Store<AppState> store;
-      final AppState state = AppState.initial();
-      store = Store<AppState>(initialState: state);
+      Store<CoreState> store;
+      final CoreState state = CoreState.initial();
+      store = Store<CoreState>(initialState: state);
       await buildTestWidget(
         tester: tester,
         store: store,
@@ -39,9 +39,9 @@ void main() {
 
     testWidgets('should logout user when logout option is selected',
         (WidgetTester tester) async {
-      Store<AppState> store;
-      final AppState state = AppState.initial();
-      store = Store<AppState>(initialState: state);
+      Store<CoreState> store;
+      final CoreState state = CoreState.initial();
+      store = Store<CoreState>(initialState: state);
       await buildTestWidget(
         tester: tester,
         store: store,
@@ -72,8 +72,8 @@ void main() {
 
     testWidgets('logoutButton works correctly', (WidgetTester tester) async {
       await mockNetworkImages(() async {
-        Store<AppState> store;
-        final AppState state = AppState(
+        Store<CoreState> store;
+        final CoreState state = CoreState(
           wait: Wait(),
           userState: UserState(
             userProfile: UserProfile(
@@ -93,7 +93,7 @@ void main() {
           ),
         );
 
-        store = Store<AppState>(initialState: state);
+        store = Store<CoreState>(initialState: state);
 
         await buildTestWidget(
           eventBus: eventBus,

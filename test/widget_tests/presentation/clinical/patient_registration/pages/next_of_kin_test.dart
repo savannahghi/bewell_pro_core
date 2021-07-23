@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/contact_point.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/human_name.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient.dart';
@@ -26,11 +26,11 @@ void main() {
   group('next of Kin', () {
     const String testPhoneNumber = '798000000';
 
-    late Store<AppState> store;
+    late Store<CoreState> store;
     late TabController controller;
 
     setUp(() {
-      store = Store<AppState>(initialState: AppState.initial());
+      store = Store<CoreState>(initialState: CoreState.initial());
       controller = TabController(length: 4, vsync: const TestVSync());
     });
 

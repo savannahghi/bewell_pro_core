@@ -4,7 +4,7 @@ import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/bewell_secondary_patient_banner.dart';
@@ -18,14 +18,14 @@ import '../../../../mocks/test_helpers.dart';
 
 void main() {
   group('Secondary Patient Banner', () {
-    Store<AppState> store = Store<AppState>(initialState: AppState.initial());
+    Store<CoreState> store = Store<CoreState>(initialState: CoreState.initial());
 
     setUpAll(() {
       startMockVisitAndExam();
     });
 
     tearDownAll(() {
-      store = Store<AppState>(initialState: AppState.initial());
+      store = Store<CoreState>(initialState: CoreState.initial());
       TimelineInfoObject().reset();
     });
 

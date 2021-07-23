@@ -5,7 +5,7 @@ import 'package:bewell_pro_core/application/redux/actions/onboarding_actions/cha
 import 'package:bewell_pro_core/application/redux/actions/onboarding_actions/update_state_contacts_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/onboarding_actions/update_user_pin_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/phone_signup_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/misc_state.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/domain/core/entities/onboarding_path_config.dart';
@@ -26,19 +26,19 @@ import 'package:user_profile/contact_utils.dart';
 void toggleWaitStateFlagIndicator(
     {required BuildContext context, required String flag, bool show = true}) {
   show
-      ? StoreProvider.dispatch<AppState>(
+      ? StoreProvider.dispatch<CoreState>(
           context,
-          WaitAction<AppState>.add(flag, ref: '${flag}_ref'),
+          WaitAction<CoreState>.add(flag, ref: '${flag}_ref'),
         )
-      : StoreProvider.dispatch<AppState>(
+      : StoreProvider.dispatch<CoreState>(
           context,
-          WaitAction<AppState>.remove(flag, ref: '${flag}_ref'),
+          WaitAction<CoreState>.remove(flag, ref: '${flag}_ref'),
         );
 }
 
 /// Does a check on user profile on whether logged in user has bio data and partnerType and
 /// redirects accordingly
-OnboardingPathConfig onboardingPath({required AppState state}) {
+OnboardingPathConfig onboardingPath({required CoreState state}) {
   final BioData? userBio = state.userState!.userProfile!.userBioData;
 
   //  check the validity bio names. This check is here in the event the name as set on 'UNKNOWN'
@@ -54,7 +54,7 @@ OnboardingPathConfig onboardingPath({required AppState state}) {
 }
 
 void toggleUserExists({required BuildContext context, required bool value}) {
-  StoreProvider.dispatch<AppState>(
+  StoreProvider.dispatch<CoreState>(
       context, BatchUpdateMiscStateAction(accountExists: value));
 }
 
@@ -85,13 +85,13 @@ ProcessedResponse processResponse(
       toggleUserExists(value: true, context: context);
     }
     if (code == 7 || code == 10) {
-      StoreProvider.dispatch<AppState>(
+      StoreProvider.dispatch<CoreState>(
           context, BatchUpdateMiscStateAction(unKnownPhoneNo: true));
 
       ScaffoldMessenger.of(context).showSnackBar(snackbar(content: noAccount));
     }
     if (code == 8) {
-      StoreProvider.dispatch<AppState>(
+      StoreProvider.dispatch<CoreState>(
           context, BatchUpdateMiscStateAction(invalidCredentials: true));
     }
     return ProcessedResponse(
@@ -160,29 +160,29 @@ Future<void> validateEnteredPin({
   required SetPinStatus setPinStatus,
 }) async {
   final MiscState? miscState =
-      StoreProvider.state<AppState>(context)!.miscState;
+      StoreProvider.state<CoreState>(context)!.miscState;
 
   if (miscState!.createPin!.length == 4 && miscState.confirmPin!.length == 4) {
     if (miscState.createPin == miscState.confirmPin) {
       /// Update pinCode
-      StoreProvider.dispatch<AppState>(
+      StoreProvider.dispatch<CoreState>(
         context,
         BatchUpdateMiscStateAction(pinCode: miscState.confirmPin),
       );
 
       switch (setPinStatus) {
         case SetPinStatus.IsSettingPin:
-          await StoreProvider.dispatch<AppState>(
+          await StoreProvider.dispatch<CoreState>(
               context, PhoneSignUpAction(context: context));
           return;
 
         case SetPinStatus.IsResettingPin:
-          await StoreProvider.dispatch<AppState>(
+          await StoreProvider.dispatch<CoreState>(
               context, UpdateUserPinAction(context: context));
           return;
 
         case SetPinStatus.IsChangingPin:
-          await StoreProvider.dispatch<AppState>(
+          await StoreProvider.dispatch<CoreState>(
             context,
             ChangeUserPinAction(
               pin: miscState.createPin!,
@@ -204,6 +204,6 @@ void updateStateContacts({
   required StateContactType type,
   required String? value,
 }) {
-  StoreProvider.dispatch<AppState>(
+  StoreProvider.dispatch<CoreState>(
       context, UpdateStateContactsAction(type: type, value: value ?? ''));
 }

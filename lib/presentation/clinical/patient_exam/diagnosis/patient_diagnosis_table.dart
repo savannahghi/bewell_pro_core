@@ -143,7 +143,7 @@ class _PatientDiagnosisTableState extends State<PatientDiagnosisTable> {
   @override
   Widget build(BuildContext context) {
     final EdgeInsets recordedDiagnosisPadding =
-        SILResponsiveWidget.isSmallScreen(context)
+        ResponsiveWidget.isSmallScreen(context)
             ? const EdgeInsets.symmetric(vertical: 16)
             : const EdgeInsets.all(16);
     const EdgeInsets recordedDiagnosisRetireButton =
@@ -281,7 +281,7 @@ class _PatientDiagnosisTableState extends State<PatientDiagnosisTable> {
                         ),
                         margin: EdgeInsets.symmetric(
                             horizontal:
-                                SILResponsiveWidget.isSmallScreen(context)
+                                ResponsiveWidget.isSmallScreen(context)
                                     ? 0
                                     : 20.0),
                         child: ExpansionTile(

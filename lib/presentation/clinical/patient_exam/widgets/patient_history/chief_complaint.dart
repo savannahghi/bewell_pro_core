@@ -101,7 +101,7 @@ class _ChiefComplaintState extends State<ChiefComplaint> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isLargeScreen = SILResponsiveWidget.isLargeScreen(context);
+    final bool isLargeScreen = ResponsiveWidget.isLargeScreen(context);
 
     return Container(
       margin: EdgeInsets.symmetric(

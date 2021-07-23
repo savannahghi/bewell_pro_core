@@ -47,7 +47,7 @@ class _AddTemperatureState extends State<AddTemperature> {
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
     const Color primaryColor = healthcloudPrimaryColor;
-    final bool isLargeScreen = SILResponsiveWidget.isLargeScreen(context);
+    final bool isLargeScreen = ResponsiveWidget.isLargeScreen(context);
 
     return Column(
       children: <Widget>[

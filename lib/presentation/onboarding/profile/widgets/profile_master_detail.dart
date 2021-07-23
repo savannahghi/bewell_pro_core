@@ -5,7 +5,7 @@ import 'package:domain_objects/value_objects.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/core/theme/colors.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
@@ -40,7 +40,7 @@ class _ProfileMasterDetailState extends State<ProfileMasterDetail> {
   @override
   Widget build(BuildContext context) {
     final UserProfile userProfile =
-        StoreProvider.state<AppState>(context)!.userState!.userProfile!;
+        StoreProvider.state<CoreState>(context)!.userState!.userProfile!;
 
     final BioData bioData = userProfile.userBioData!;
     final String firstName =
@@ -75,7 +75,7 @@ class _ProfileMasterDetailState extends State<ProfileMasterDetail> {
 
         ProfileItemBuilder(
           onSelect: (ProfileItem val) async {
-            if (SILResponsiveWidget.deviceType(context) ==
+            if (ResponsiveWidget.deviceType(context) ==
                 DeviceScreensType.Mobile) {
               navigateToProfileItemPage(context: context, profileItem: val);
             } else {
@@ -115,7 +115,7 @@ class _ProfileMasterDetailState extends State<ProfileMasterDetail> {
 
         ProfileItemBuilder(
           onSelect: (ProfileItem val) async {
-            if (SILResponsiveWidget.deviceType(context) ==
+            if (ResponsiveWidget.deviceType(context) ==
                 DeviceScreensType.Mobile) {
               navigateToProfileItemPage(context: context, profileItem: val);
             } else {

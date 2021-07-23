@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
 
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
-import 'package:bewell_pro_core/application/redux/view_models/app_state_view_model.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/application/redux/view_models/core_state_view_model.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 
 import 'package:bewell_pro_core/presentation/onboarding/signup/enter_signup_phone_number.dart';
@@ -23,14 +23,14 @@ import 'package:shared_ui_components/verify_phone_otp.dart';
 class PhoneSignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<AppState, AppStateViewModel>(
-      converter: (Store<AppState> store) => AppStateViewModel.fromStore(store),
-      builder: (BuildContext context, AppStateViewModel vm) {
+    return StoreConnector<CoreState, CoreStateViewModel>(
+      converter: (Store<CoreState> store) => CoreStateViewModel.fromStore(store),
+      builder: (BuildContext context, CoreStateViewModel vm) {
         return Container(
           child: vm.state.miscState!.otpCode! == UNKNOWN
               ? EnterSignUpPhoneNo()
               : VerifyPhoneOtp(
-                  changeNumberCallback: () => StoreProvider.dispatch<AppState>(
+                  changeNumberCallback: () => StoreProvider.dispatch<CoreState>(
                       context,
                       BatchUpdateMiscStateAction(
                           phoneNumber: UNKNOWN,
@@ -50,7 +50,7 @@ class PhoneSignUp extends StatelessWidget {
                     required Function toggleLoading,
                   }) async {
                     /// Ensure that the most current otp is set to state
-                    StoreProvider.dispatch<AppState>(
+                    StoreProvider.dispatch<CoreState>(
                       context,
                       BatchUpdateMiscStateAction(
                         phoneNumber: vm.state.miscState!.phoneNumber,
@@ -65,7 +65,7 @@ class PhoneSignUp extends StatelessWidget {
                     );
 
                     /// Set page title and description
-                    StoreProvider.dispatch<AppState>(
+                    StoreProvider.dispatch<CoreState>(
                       context,
                       BatchUpdateMiscStateAction(
                         title: createPin,

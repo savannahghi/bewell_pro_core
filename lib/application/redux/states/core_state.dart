@@ -7,14 +7,14 @@ import 'package:bewell_pro_core/application/redux/states/misc_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_feed_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 
-part 'app_state.freezed.dart';
-part 'app_state.g.dart';
+part 'core_state.freezed.dart';
+part 'core_state.g.dart';
 
-// AppState assembles all features states into one that can the pushed during creation
+// CoreState assembles all features states into one that can the pushed during creation
 // to create on global app store
 @freezed
-class AppState with _$AppState {
-  factory AppState({
+class CoreState with _$CoreState {
+  factory CoreState({
     MiscState? miscState,
     UserFeedState? userFeedState,
     UserState? userState,
@@ -22,12 +22,12 @@ class AppState with _$AppState {
     ClinicalState? clinicalState,
     Navigation? navigationState,
     @JsonKey(ignore: true) Wait? wait,
-  }) = _AppState;
+  }) = _CoreState;
 
-  factory AppState.fromJson(Map<String, dynamic> json) =>
-      _$AppStateFromJson(json);
+  factory CoreState.fromJson(Map<String, dynamic> json) =>
+      _$CoreStateFromJson(json);
 
-  factory AppState.initial() => AppState(
+  factory CoreState.initial() => CoreState(
         miscState: MiscState.initial(),
         userFeedState: UserFeedState.initial(),
         userState: UserState.initial(),

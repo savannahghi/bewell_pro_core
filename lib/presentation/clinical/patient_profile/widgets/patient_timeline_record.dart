@@ -389,7 +389,7 @@ class _PatientTimelineRecordState extends State<PatientTimelineRecord> {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        if (!SILResponsiveWidget.isSmallScreen(context)) ...<Widget>[
+        if (!ResponsiveWidget.isSmallScreen(context)) ...<Widget>[
           Column(
             children: <Widget>[
               veryLargeVerticalSizedBox,
@@ -508,7 +508,7 @@ class _PatientTimelineRecordState extends State<PatientTimelineRecord> {
         'Started on ${DateFormat('EEE, d MMMM, yyyy').format(
       DateTime.parse(startDate),
     )}';
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
     final TextTheme textTheme = Theme.of(context).textTheme;
 
     return Container(

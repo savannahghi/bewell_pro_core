@@ -59,7 +59,7 @@ class _BewellSubmitDialogState extends State<BewellSubmitDialog> {
   @override
   Widget build(BuildContext context) {
     final double dialogSize =
-        SILResponsiveWidget.isLargeScreen(context) ? 200 : 120;
+        ResponsiveWidget.isLargeScreen(context) ? 200 : 120;
 
     return StreamBuilder<Map<String, dynamic>>(
       stream: _stream,

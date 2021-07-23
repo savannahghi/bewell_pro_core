@@ -59,7 +59,7 @@ class _BeWellPatientTimelineState extends State<BeWellPatientTimeline> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isLargeScreenDevice = SILResponsiveWidget.isLargeScreen(context);
+    final bool isLargeScreenDevice = ResponsiveWidget.isLargeScreen(context);
     return StreamBuilder<dynamic>(
       stream: _timelineStream,
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {

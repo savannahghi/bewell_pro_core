@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'app_state.dart';
+part of 'core_state.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AppState _$_$_AppStateFromJson(Map<String, dynamic> json) {
-  return _$_AppState(
+_$_CoreState _$_$_CoreStateFromJson(Map<String, dynamic> json) {
+  return _$_CoreState(
     miscState: json['miscState'] == null
         ? null
         : MiscState.fromJson(json['miscState'] as Map<String, dynamic>),
@@ -30,7 +30,7 @@ _$_AppState _$_$_AppStateFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_AppStateToJson(_$_AppState instance) =>
+Map<String, dynamic> _$_$_CoreStateToJson(_$_CoreState instance) =>
     <String, dynamic>{
       'miscState': instance.miscState?.toJson(),
       'userFeedState': instance.userFeedState?.toJson(),

@@ -1,7 +1,7 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/allergies/exam_allergies_table.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exam_buttons/exam_item_add_button.dart';
@@ -22,8 +22,8 @@ import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
-  final Store<AppState> store =
-      Store<AppState>(initialState: AppState.initial());
+  final Store<CoreState> store =
+      Store<CoreState>(initialState: CoreState.initial());
   testWidgets('patient exam tiles renders correctly',
       (WidgetTester tester) async {
     startMockVisitAndExam();

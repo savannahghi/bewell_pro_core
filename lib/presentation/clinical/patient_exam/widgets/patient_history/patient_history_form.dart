@@ -134,7 +134,7 @@ class PatientHistoryForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isLargeScreen = SILResponsiveWidget.isLargeScreen(context);
+    final bool isLargeScreen = ResponsiveWidget.isLargeScreen(context);
     final bool isSaved = patientHistoryPayload != null;
 
     return Padding(
@@ -193,7 +193,7 @@ class PatientHistoryForm extends StatelessWidget {
               Align(
                 alignment: Alignment.centerRight,
                 child: SizedBox(
-                  width: SILResponsiveWidget.isSmallScreen(context)
+                  width: ResponsiveWidget.isSmallScreen(context)
                       ? double.infinity
                       : 212,
                   child: DrawerSaveButton(

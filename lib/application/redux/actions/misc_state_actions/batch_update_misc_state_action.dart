@@ -1,5 +1,5 @@
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 
 /// [BatchUpdateMiscStateAction] is the ONLY action that should be called to update [miscState]
 /// with the exception of [IncrementUserVisitCountAction]
@@ -7,7 +7,7 @@ import 'package:bewell_pro_core/application/redux/states/app_state.dart';
 /// - creating an account
 /// - logging in a user
 /// - resetting PIN
-class BatchUpdateMiscStateAction extends ReduxAction<AppState> {
+class BatchUpdateMiscStateAction extends ReduxAction<CoreState> {
   final String? visitCount;
   final String? title;
   final String? message;
@@ -45,8 +45,8 @@ class BatchUpdateMiscStateAction extends ReduxAction<AppState> {
   });
 
   @override
-  AppState reduce() {
-    final AppState newState = state.copyWith.call(
+  CoreState reduce() {
+    final CoreState newState = state.copyWith.call(
       miscState: state.miscState!.copyWith(
         invalidPin: invalidPin ?? state.miscState!.invalidPin,
         visitCount: visitCount ?? state.miscState!.visitCount,

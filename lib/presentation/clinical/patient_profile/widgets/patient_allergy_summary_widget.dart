@@ -66,7 +66,7 @@ class _PatientAllergySummaryWidgetState
 
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
 
     return StreamBuilder<dynamic>(
       stream: problemAllergyStream,

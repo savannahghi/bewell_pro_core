@@ -3,14 +3,14 @@ import 'package:domain_objects/entities.dart';
 import 'package:domain_objects/value_objects.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 
 import '../../../../../mocks/mocks.dart';
 
 void main() {
   group('BatchUpdateUserStateAction', () {
-    final StoreTester<AppState> storeTester = StoreTester<AppState>(
-      initialState: AppState.initial(),
+    final StoreTester<CoreState> storeTester = StoreTester<CoreState>(
+      initialState: CoreState.initial(),
       // this suppresses the verbose logs in the terminal
       testInfoPrinter: (TestInfo<dynamic> testInfo) {},
     );
@@ -30,7 +30,7 @@ void main() {
         ),
       );
 
-      final TestInfo<AppState> info =
+      final TestInfo<CoreState> info =
           await storeTester.wait(BatchUpdateUserStateAction);
 
       expect(info.dispatchCount, 1);
@@ -39,7 +39,7 @@ void main() {
       // not changed
       storeTester.dispatch(BatchUpdateUserStateAction());
 
-      final TestInfo<AppState> info2 =
+      final TestInfo<CoreState> info2 =
           await storeTester.wait(BatchUpdateUserStateAction);
 
       expect(info2.dispatchCount, 2);

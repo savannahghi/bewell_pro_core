@@ -24,7 +24,7 @@ import 'package:shared_themes/colors.dart';
 class PatientExamReview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final bool isLargeScreenDevice = SILResponsiveWidget.isLargeScreen(context);
+    final bool isLargeScreenDevice = ResponsiveWidget.isLargeScreen(context);
     return Column(
       children: <Widget>[
         /// Problems Card

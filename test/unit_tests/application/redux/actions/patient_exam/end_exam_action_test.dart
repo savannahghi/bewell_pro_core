@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/redux/actions/patient_exam/end_exam_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/exception_strings.dart';
@@ -15,11 +15,11 @@ import '../../../../../mocks/mocks.dart';
 
 void main() {
   group('EndExamAction', () {
-    late StoreTester<AppState> storeTester;
+    late StoreTester<CoreState> storeTester;
 
     setUp(() {
-      storeTester = StoreTester<AppState>(
-        initialState: AppState.initial(),
+      storeTester = StoreTester<CoreState>(
+        initialState: CoreState.initial(),
         testInfoPrinter: (TestInfo<dynamic> testInfo) {},
       );
     });
@@ -43,7 +43,7 @@ void main() {
 
       storeTester.dispatch(EndExamAction(client: graphQlClient));
 
-      final TestInfo<AppState> info =
+      final TestInfo<CoreState> info =
           await storeTester.waitUntil(EndExamAction);
       expect(info.state.wait?.isWaitingFor(showErrorFlag), isTrue);
     });
@@ -58,7 +58,7 @@ void main() {
 
       storeTester.dispatch(EndExamAction(client: graphQlClient));
 
-      final TestInfo<AppState> info =
+      final TestInfo<CoreState> info =
           await storeTester.waitUntil(EndExamAction);
       expect(info.errors.removeFirst().msg, errorEndingExam);
     });
@@ -75,13 +75,13 @@ void main() {
 
       storeTester.dispatch(EndExamAction(client: mockGraphQlClient));
 
-      final TestInfo<AppState> info =
+      final TestInfo<CoreState> info =
           await storeTester.waitUntil(NavigateAction);
 
       expect(info.state.wait?.isWaitingFor(showErrorFlag), isFalse);
 
-      final NavigateAction<AppState>? action =
-          info.action as NavigateAction<AppState>?;
+      final NavigateAction<CoreState>? action =
+          info.action as NavigateAction<CoreState>?;
 
       expect(action?.details.type, NavigateType.pop);
     });

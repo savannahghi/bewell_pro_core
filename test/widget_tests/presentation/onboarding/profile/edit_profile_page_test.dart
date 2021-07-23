@@ -1,7 +1,7 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/widgets/edit_profile_form.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/pages/edit_profile_page.dart';
@@ -13,8 +13,8 @@ import '../../../../mocks/test_helpers.dart';
 
 void main() {
   group('EditProfilePage', () {
-    Store<AppState> store;
-    final AppState state = AppState(
+    Store<CoreState> store;
+    final CoreState state = CoreState(
       wait: Wait(),
       userState: UserState(
           userProfile: UserProfile(
@@ -33,7 +33,7 @@ void main() {
       )),
     );
 
-    store = Store<AppState>(initialState: state);
+    store = Store<CoreState>(initialState: state);
     testWidgets('should render correctly', (WidgetTester tester) async {
       await mockNetworkImages(() async {
         await buildTestWidget(

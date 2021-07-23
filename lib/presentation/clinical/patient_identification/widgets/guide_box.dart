@@ -19,7 +19,7 @@ class GuideBox extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(
           horizontal: 30,
-          vertical: SILResponsiveWidget.isSmallScreen(context) ? 20 : 45),
+          vertical: ResponsiveWidget.isSmallScreen(context) ? 20 : 45),
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(10)),
         color: Color(0xfff7f7f9),

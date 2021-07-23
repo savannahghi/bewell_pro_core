@@ -9,7 +9,7 @@ import 'package:bewell_pro_core/presentation/core/widgets/app_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/presentation/core/home/models/bottom_navigation_bar_items.dart';
 import 'package:bewell_pro_core/presentation/core/home/widgets/sil_app_bar.dart';
 import 'package:bewell_pro_core/presentation/core/home/widgets/sil_bottom_navigation_bar.dart';
@@ -23,8 +23,8 @@ import '../../../../mocks/test_helpers.dart';
 void main() {
   testWidgets('should render correctly when all widgets are passed in',
       (WidgetTester tester) async {
-    final Store<AppState> store =
-        Store<AppState>(initialState: AppState.initial());
+    final Store<CoreState> store =
+        Store<CoreState>(initialState: CoreState.initial());
 
     await mockNetworkImages(() async {
       await buildTestWidget(
@@ -51,8 +51,8 @@ void main() {
 
   testWidgets('app drawer humburger renders correctly',
       (WidgetTester tester) async {
-    final Store<AppState> store =
-        Store<AppState>(initialState: AppState.initial());
+    final Store<CoreState> store =
+        Store<CoreState>(initialState: CoreState.initial());
 
     await store.dispatch(
       NavigationAction(
@@ -67,7 +67,7 @@ void main() {
         store: store,
         widget: Builder(
           builder: (BuildContext context) {
-            StoreProvider.dispatch<AppState>(
+            StoreProvider.dispatch<CoreState>(
               context,
               BatchUpdateUserStateAction(
                   auth: AuthCredentialResponse(isAdmin: true)),
@@ -105,8 +105,8 @@ void main() {
 
   testWidgets('app bar back button renders correctly',
       (WidgetTester tester) async {
-    final Store<AppState> store =
-        Store<AppState>(initialState: AppState.initial());
+    final Store<CoreState> store =
+        Store<CoreState>(initialState: CoreState.initial());
 
     await store.dispatch(
       NavigationAction(
@@ -121,7 +121,7 @@ void main() {
         store: store,
         widget: Builder(
           builder: (BuildContext context) {
-            StoreProvider.dispatch<AppState>(
+            StoreProvider.dispatch<CoreState>(
               context,
               BatchUpdateUserStateAction(
                   auth: AuthCredentialResponse(isAdmin: true)),
@@ -172,8 +172,8 @@ void main() {
   });
 
   testWidgets('should render on Tablet correctly', (WidgetTester tester) async {
-    final Store<AppState> store =
-        Store<AppState>(initialState: AppState.initial());
+    final Store<CoreState> store =
+        Store<CoreState>(initialState: CoreState.initial());
 
     tester.binding.window.devicePixelRatioTestValue = 1.0;
     tester.binding.window.physicalSizeTestValue = tabletLandscape;
@@ -190,7 +190,7 @@ void main() {
       store: store,
       widget: Builder(
         builder: (BuildContext context) {
-          StoreProvider.dispatch<AppState>(
+          StoreProvider.dispatch<CoreState>(
             context,
             BatchUpdateUserStateAction(
                 auth: AuthCredentialResponse(isAdmin: true)),

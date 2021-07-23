@@ -37,7 +37,7 @@ class _StartContinueVisitState extends State<StartContinueVisitWidget> {
   @override
   Widget build(BuildContext context) {
     final bool hasOpenEpisodes = widget.patientEdge?.hasOpenEpisodes ?? false;
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
 
     return Stack(
       children: <Widget>[

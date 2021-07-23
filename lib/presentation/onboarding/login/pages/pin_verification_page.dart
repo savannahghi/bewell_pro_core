@@ -2,7 +2,7 @@ import 'package:async_redux/async_redux.dart';
 
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/enums.dart';
@@ -25,7 +25,7 @@ class PinVerificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const double dimension = 0;
-    final AppState state = StoreProvider.state<AppState>(context)!;
+    final CoreState state = StoreProvider.state<CoreState>(context)!;
     final UserProfile? userProfile = state.userState!.userProfile;
     final String loggedInUserName = toBeginningOfSentenceCase(
         userProfile!.userBioData!.firstName!.getValue().toLowerCase())!;

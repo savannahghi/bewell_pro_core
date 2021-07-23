@@ -5,8 +5,8 @@ import 'package:bewell_pro_core/application/core/services/input_validators.dart'
 import 'package:bewell_pro_core/application/core/services/onboarding.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
 
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
-import 'package:bewell_pro_core/application/redux/view_models/app_state_view_model.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/application/redux/view_models/core_state_view_model.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
@@ -37,7 +37,7 @@ class SetAndConfirmPinWidget extends StatelessWidget {
     required String confirmPin,
   }) async {
     if (formKey.currentState!.validate()) {
-      StoreProvider.dispatch<AppState>(
+      StoreProvider.dispatch<CoreState>(
         context,
         BatchUpdateMiscStateAction(createPin: pin, confirmPin: confirmPin),
       );
@@ -57,9 +57,9 @@ class SetAndConfirmPinWidget extends StatelessWidget {
     String? _confirmPin;
     String? _pin;
 
-    return StoreConnector<AppState, AppStateViewModel>(
-      converter: (Store<AppState> store) => AppStateViewModel.fromStore(store),
-      builder: (BuildContext context, AppStateViewModel vm) {
+    return StoreConnector<CoreState, CoreStateViewModel>(
+      converter: (Store<CoreState> store) => CoreStateViewModel.fromStore(store),
+      builder: (BuildContext context, CoreStateViewModel vm) {
         return Form(
           key: _formKey,
           child: Column(

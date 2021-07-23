@@ -69,15 +69,15 @@ class MockFormState extends Mock implements FormState {
   }
 
   @override
-  bool validate() {
-    return validation;
-  }
-
-  @override
   Form get widget {
     return const Form(
       child: SILFormTextField(),
     );
+  }
+
+  @override
+  bool validate() {
+    return validation;
   }
 }
 

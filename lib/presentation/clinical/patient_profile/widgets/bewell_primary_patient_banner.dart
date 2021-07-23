@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/view_models/clinical/patient_profile/patient_banner_view_model.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/attachment.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
@@ -25,11 +25,11 @@ class BeWellPrimaryPatientBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isLargeScreenDevice = SILResponsiveWidget.isLargeScreen(context);
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isLargeScreenDevice = ResponsiveWidget.isLargeScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
 
-    return StoreConnector<AppState, BeWellPrimaryPatientBannerViewModel>(
-      converter: (Store<AppState> store) =>
+    return StoreConnector<CoreState, BeWellPrimaryPatientBannerViewModel>(
+      converter: (Store<CoreState> store) =>
           BeWellPrimaryPatientBannerViewModel.fromStore(store),
       builder: (BuildContext context, BeWellPrimaryPatientBannerViewModel vm) {
         final List<Attachment>? patientPhotos = vm.photo;

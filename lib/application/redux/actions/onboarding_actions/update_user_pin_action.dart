@@ -8,7 +8,7 @@ import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:bewell_pro_core/application/core/services/onboarding.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/misc_state.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/domain/core/entities/processed_response.dart';
@@ -22,23 +22,23 @@ import 'package:misc_utilities/misc.dart';
 /// @params
 /// [isChangingPin] a bool indicating whether the user is changing their PIN
 /// [String] the PIN that has been entered by the user
-class UpdateUserPinAction extends ReduxAction<AppState> {
+class UpdateUserPinAction extends ReduxAction<CoreState> {
   final BuildContext context;
 
   UpdateUserPinAction({required this.context});
 
   @override
   void after() {
-    dispatch(WaitAction<AppState>.remove(verifyPinFlag));
+    dispatch(WaitAction<CoreState>.remove(verifyPinFlag));
   }
 
   @override
   void before() {
-    dispatch(WaitAction<AppState>.add(verifyPinFlag));
+    dispatch(WaitAction<CoreState>.add(verifyPinFlag));
   }
 
   @override
-  Future<AppState?> reduce() async {
+  Future<CoreState?> reduce() async {
     final String endEndpoint = EndpointContext.updateUserPinEndpoint(
         AppWrapperBase.of(context)!.appContexts);
 

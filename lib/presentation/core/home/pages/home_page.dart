@@ -4,7 +4,7 @@ import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/login_constants.dart';
@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
     timer.cancel();
 
     /// Log user out
-    StoreProvider.dispatch<AppState>(context, LogoutAction());
+    StoreProvider.dispatch<CoreState>(context, LogoutAction());
   }
 
   /// LOGOUT SESSION
@@ -101,10 +101,10 @@ class _HomePageState extends State<HomePage> {
     final double padding;
 
     final DeviceScreensType deviceType =
-        SILResponsiveWidget.deviceType(context);
+        ResponsiveWidget.deviceType(context);
 
     if (deviceType != DeviceScreensType.Mobile) {
-      padding = SILResponsiveWidget.preferredPaddingOnStretchedScreens(
+      padding = ResponsiveWidget.preferredPaddingOnStretchedScreens(
         context: context,
       );
     } else {

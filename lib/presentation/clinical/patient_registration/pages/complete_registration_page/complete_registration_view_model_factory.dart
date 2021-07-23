@@ -1,6 +1,6 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_payload.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/start_visit_type_enum.dart';
@@ -12,7 +12,7 @@ import 'complete_registration_connector.dart';
 import 'complete_registration_view_model.dart';
 
 class CompleteRegistrationViewModelFactory
-    extends VmFactory<AppState, CompleteRegistrationConnector> {
+    extends VmFactory<CoreState, CompleteRegistrationConnector> {
   CompleteRegistrationViewModelFactory(CompleteRegistrationConnector widget)
       : super(widget);
 
@@ -26,7 +26,7 @@ class CompleteRegistrationViewModelFactory
 
   void onStartVisit(BuildContext context, StartVisitType startVisitType) {
     startVisitByType(context, startVisitType, state);
-    dispatch(NavigateAction<AppState>.pushNamed(startVisitRoute));
+    dispatch(NavigateAction<CoreState>.pushNamed(startVisitRoute));
   }
 
   void updatePatientRecord(PatientPayload payload) {

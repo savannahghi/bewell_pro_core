@@ -7,7 +7,7 @@ import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/core/services/onboarding.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/misc_state.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/domain/core/entities/otp_response.dart';
@@ -25,7 +25,7 @@ import 'package:misc_utilities/misc.dart';
 ///
 /// After all checks are verified, a Verification Code is sent to the
 /// provided Phone Number
-class SignupWithPhoneNumberAction extends ReduxAction<AppState> {
+class SignupWithPhoneNumberAction extends ReduxAction<CoreState> {
   SignupWithPhoneNumberAction(
       {required this.phoneNumber, required this.context});
 
@@ -35,17 +35,17 @@ class SignupWithPhoneNumberAction extends ReduxAction<AppState> {
   @override
   void after() {
     super.before();
-    dispatch(WaitAction<AppState>.remove(checkUserExistsFlag));
+    dispatch(WaitAction<CoreState>.remove(checkUserExistsFlag));
   }
 
   @override
   void before() {
     super.before();
-    dispatch(WaitAction<AppState>.add(checkUserExistsFlag));
+    dispatch(WaitAction<CoreState>.add(checkUserExistsFlag));
   }
 
   @override
-  Future<AppState> reduce() async {
+  Future<CoreState> reduce() async {
     final MiscState? miscState = state.miscState;
 
     final bool hasAcceptedTerms = miscState!.acceptedTerms!;

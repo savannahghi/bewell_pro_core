@@ -9,7 +9,7 @@ import 'package:shared_ui_components/buttons.dart';
 class SignOffExam extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
 
     return Container(
       width: double.infinity,

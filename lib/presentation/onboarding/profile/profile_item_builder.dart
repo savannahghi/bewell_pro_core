@@ -32,7 +32,7 @@ class ProfileItemBuilder extends StatelessWidget {
                   margin: const EdgeInsets.symmetric(vertical: 1.0),
                   color:
                       (profileSubject.selectedTile.value == profileItem.text &&
-                              SILResponsiveWidget.deviceType(context) !=
+                              ResponsiveWidget.deviceType(context) !=
                                   DeviceScreensType.Mobile)
                           ? profileSubject.color.valueOrNull
                           : Colors.white,

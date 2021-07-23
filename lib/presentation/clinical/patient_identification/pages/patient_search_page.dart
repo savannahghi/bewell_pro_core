@@ -1,7 +1,7 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/pages/patient_search_page/patient_search_connector.dart';
 import 'package:bewell_pro_core/presentation/core/home/models/bottom_navigation_bar_items.dart';
@@ -17,7 +17,7 @@ class PatientSearchPage extends StatelessWidget {
       key: AppWidgetKeys.patientIdentificationScaffoldKey,
       currentBottomNavIndex: BottomNavIndex.patients.index,
       body:
-          UserExceptionDialog<AppState>(child: const PatientSearchConnector()),
+          UserExceptionDialog<CoreState>(child: const PatientSearchConnector()),
     );
   }
 }

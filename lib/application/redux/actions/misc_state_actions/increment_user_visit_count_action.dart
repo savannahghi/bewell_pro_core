@@ -1,6 +1,6 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:domain_objects/value_objects.dart';
 
@@ -9,9 +9,9 @@ import 'package:domain_objects/value_objects.dart';
 /// Used to check the number of visits that User has.
 ///
 /// `10` is the number of visits required in order to ask for a post visit survey.
-class IncrementUserVisitCountAction extends ReduxAction<AppState> {
+class IncrementUserVisitCountAction extends ReduxAction<CoreState> {
   @override
-  AppState reduce() {
+  CoreState reduce() {
     int currentVisitCount;
     // reset the visit count if it is null or unknown
     if (state.miscState!.visitCount != null &&

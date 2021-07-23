@@ -2,7 +2,7 @@ import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/pages/patient_search_page.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/search_guide.dart';
@@ -33,8 +33,8 @@ void main() {
 
   testWidgets('should trigger PatientSearchByPhoneAction',
       (WidgetTester tester) async {
-    final AppState state = AppState.initial();
-    final Store<AppState> store = Store<AppState>(initialState: state);
+    final CoreState state = CoreState.initial();
+    final Store<CoreState> store = Store<CoreState>(initialState: state);
 
     await buildTestWidget(
         tester: tester,

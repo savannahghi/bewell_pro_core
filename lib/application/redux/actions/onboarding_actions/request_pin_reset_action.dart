@@ -6,7 +6,7 @@ import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/core/services/onboarding.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/domain/core/entities/processed_response.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/exception_strings.dart';
@@ -17,7 +17,7 @@ import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:http/http.dart';
 import 'package:misc_utilities/misc.dart';
 
-class RequestPinResetAction extends ReduxAction<AppState> {
+class RequestPinResetAction extends ReduxAction<CoreState> {
   RequestPinResetAction({required this.context, required this.phoneNumber});
 
   final BuildContext context;
@@ -25,16 +25,16 @@ class RequestPinResetAction extends ReduxAction<AppState> {
 
   @override
   void after() {
-    dispatch(WaitAction<AppState>.remove(requestPinResetFlag));
+    dispatch(WaitAction<CoreState>.remove(requestPinResetFlag));
   }
 
   @override
   void before() {
-    dispatch(WaitAction<AppState>.add(requestPinResetFlag));
+    dispatch(WaitAction<CoreState>.add(requestPinResetFlag));
   }
 
   @override
-  Future<AppState?> reduce() async {
+  Future<CoreState?> reduce() async {
     final String endpoint = EndpointContext.resetPinResetEndpoint(
         AppWrapperBase.of(context)!.appContexts);
 

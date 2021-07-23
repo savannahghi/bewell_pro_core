@@ -17,7 +17,7 @@ class UserProfilePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            if (SILResponsiveWidget.deviceType(context) !=
+            if (ResponsiveWidget.deviceType(context) !=
                 DeviceScreensType.Mobile) ...<Widget>{
               /// [Tablet] Widgets
               IntrinsicHeight(
@@ -27,7 +27,7 @@ class UserProfilePage extends StatelessWidget {
                   children: <Widget>[
                     /// [Main] Content
                     SizedBox(
-                      width: !SILResponsiveWidget.isLandscape(context: context)
+                      width: !ResponsiveWidget.isLandscape(context: context)
                           ? number300
                           : number400,
                       child: ProfileMasterDetail(

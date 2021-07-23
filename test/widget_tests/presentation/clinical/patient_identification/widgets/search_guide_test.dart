@@ -2,7 +2,7 @@ import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/guide_box.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/search_guide.dart';
 
@@ -11,8 +11,8 @@ import '../../../../../mocks/test_helpers.dart';
 
 void main() {
   testWidgets('search guide renders correctly', (WidgetTester tester) async {
-    final Store<AppState> store =
-        Store<AppState>(initialState: AppState.initial());
+    final Store<CoreState> store =
+        Store<CoreState>(initialState: CoreState.initial());
 
     await buildTestWidget(
       tester: tester,
@@ -36,8 +36,8 @@ void main() {
   testWidgets(
       'search guide renders correctly on tablet without secondary actions',
       (WidgetTester tester) async {
-    final Store<AppState> store =
-        Store<AppState>(initialState: AppState.initial());
+    final Store<CoreState> store =
+        Store<CoreState>(initialState: CoreState.initial());
 
     tester.binding.window.devicePixelRatioTestValue = 1.0;
     tester.binding.window.physicalSizeTestValue = tabletLandscape;
@@ -67,8 +67,8 @@ void main() {
 
   testWidgets('search guide renders correctly on tablet with secondary actions',
       (WidgetTester tester) async {
-    final Store<AppState> store =
-        Store<AppState>(initialState: AppState.initial());
+    final Store<CoreState> store =
+        Store<CoreState>(initialState: CoreState.initial());
 
     tester.binding.window.devicePixelRatioTestValue = 1.0;
     tester.binding.window.physicalSizeTestValue = tabletLandscape;

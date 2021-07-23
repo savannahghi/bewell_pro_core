@@ -3,7 +3,7 @@ import 'package:domain_objects/entities.dart';
 import 'package:domain_objects/value_objects.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/widgets/otp_box_connector.dart';
@@ -44,8 +44,8 @@ void main() {
         countdownTimer: timer,
       );
 
-      final Store<AppState> store = MockStore<AppState>(
-        initialState: AppState.initial().copyWith(
+      final Store<CoreState> store = MockStore<CoreState>(
+        initialState: CoreState.initial().copyWith(
           userState: UserState(
             userProfile: UserProfile(
               primaryPhoneNumber: PhoneNumber.withValue(examplePhoneNumber),

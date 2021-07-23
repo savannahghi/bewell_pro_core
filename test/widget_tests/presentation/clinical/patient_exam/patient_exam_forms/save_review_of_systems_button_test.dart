@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -16,10 +16,10 @@ import '../../../../../mocks/test_helpers.dart';
 
 void main() {
   group('SaveReviewOfSystemsButton', () {
-    late Store<AppState> store;
+    late Store<CoreState> store;
 
     setUp(() {
-      store = Store<AppState>(initialState: AppState.initial());
+      store = Store<CoreState>(initialState: CoreState.initial());
       startMockVisitAndExam();
       ExamChangeObject().reviewOfSystemsChangeListener.add(false);
     });

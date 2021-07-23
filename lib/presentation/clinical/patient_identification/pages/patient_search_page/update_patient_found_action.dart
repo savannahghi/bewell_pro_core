@@ -1,13 +1,13 @@
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 
-class UpdatePatientPatientFoundAction extends ReduxAction<AppState> {
+class UpdatePatientPatientFoundAction extends ReduxAction<CoreState> {
   UpdatePatientPatientFoundAction({required this.searchFound});
 
   final bool? searchFound;
 
   @override
-  AppState? reduce() {
+  CoreState? reduce() {
     return state.copyWith.call(
         clinicalState: state.clinicalState?.copyWith
             .call(patientSearchFound: searchFound));

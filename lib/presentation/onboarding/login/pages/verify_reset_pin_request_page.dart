@@ -1,6 +1,6 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/onboarding_scaffold.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/pages/reset_pin_page.dart';
@@ -14,11 +14,11 @@ class VerifyPinResetRequestPage extends StatelessWidget {
   Widget build(BuildContext context) {
     const double dimension = 0;
 
-    final AppState? appState = StoreProvider.state<AppState>(context);
+    final CoreState? coreState = StoreProvider.state<CoreState>(context);
 
-    final String primaryPhoneNumber = appState!.miscState!.phoneNumber!;
+    final String primaryPhoneNumber = coreState!.miscState!.phoneNumber!;
 
-    final String otp = appState.miscState!.otpCode!;
+    final String otp = coreState.miscState!.otpCode!;
 
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,

@@ -2,7 +2,7 @@ import 'package:async_redux/async_redux.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/core/home/models/bottom_navigation_bar_items.dart';
 import 'package:bewell_pro_core/presentation/core/home/widgets/profile_drop_down.dart';
@@ -19,7 +19,7 @@ class SilAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final List<NavigationItem> secondaryActions = defaultSecondaryNavItems;
-    final int drawerSelectedIndex = StoreProvider.state<AppState>(context)!
+    final int drawerSelectedIndex = StoreProvider.state<CoreState>(context)!
         .navigationState!
         .drawerSelectedIndex;
     return SafeArea(
@@ -43,7 +43,7 @@ class SilAppBar extends StatelessWidget implements PreferredSizeWidget {
               children: <Widget>[
                 smallHorizontalSizedBox,
                 // render hamburger icon only on mobile devices
-                if (SILResponsiveWidget.deviceType(context) ==
+                if (ResponsiveWidget.deviceType(context) ==
                         DeviceScreensType.Mobile &&
                     secondaryActions.isNotEmpty)
                   (drawerSelectedIndex >= 0)
@@ -51,7 +51,7 @@ class SilAppBar extends StatelessWidget implements PreferredSizeWidget {
                           key: AppWidgetKeys.navDrawerBackKey,
                           icon: const Icon(Icons.arrow_back),
                           onPressed: () {
-                            StoreProvider.dispatch<AppState>(
+                            StoreProvider.dispatch<CoreState>(
                               context,
                               NavigationAction(
                                   drawerSelectedIndex: -1,

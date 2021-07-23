@@ -2,7 +2,7 @@ import 'package:async_redux/async_redux.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/core/global_search/models/search_result.dart';
@@ -85,7 +85,7 @@ class SearchWidget extends SearchDelegate<String> {
     });
 
     if (bottomIndex > -1) {
-      StoreProvider.dispatch<AppState>(
+      StoreProvider.dispatch<CoreState>(
         context,
         NavigationAction(
             bottomBarSelectedIndex: bottomIndex, drawerSelectedIndex: -1),
@@ -93,14 +93,14 @@ class SearchWidget extends SearchDelegate<String> {
     }
 
     if (drawerIndex > -1) {
-      StoreProvider.dispatch<AppState>(
+      StoreProvider.dispatch<CoreState>(
         context,
         NavigationAction(drawerSelectedIndex: drawerIndex),
       );
     }
 
     if (nestedIndex > -1) {
-      StoreProvider.dispatch<AppState>(
+      StoreProvider.dispatch<CoreState>(
         context,
         NavigationAction(drawerSelectedIndex: nestedIndex),
       );

@@ -5,7 +5,7 @@ import 'package:domain_objects/entities.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/increment_user_visit_count_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';
 import 'package:bewell_pro_core/application/redux/states/misc_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
@@ -32,7 +32,7 @@ import '../../../../mocks/test_helpers.dart';
 
 void main() {
   group('patient banner', () {
-    late Store<AppState> store;
+    late Store<CoreState> store;
 
     const String patientName = 'Be Well';
     const String ageSmallScreen = 'Age: 18 yrs';
@@ -47,8 +47,8 @@ void main() {
     );
 
     setUp(() {
-      store = Store<AppState>(
-        initialState: AppState.initial().copyWith(
+      store = Store<CoreState>(
+        initialState: CoreState.initial().copyWith(
           clinicalState: ClinicalState(
             patientPayload: PatientPayload(
               patientRecord: patientRecord,
@@ -242,7 +242,7 @@ void main() {
         (WidgetTester tester) async {
       TimelineInfoObject().visits.add(testTimelineVisitsData);
 
-      final Store<AppState> localStore = Store<AppState>(
+      final Store<CoreState> localStore = Store<CoreState>(
         initialState: store.state.copyWith(
           userState: UserState(auth: AuthCredentialResponse()),
           navigationState: Navigation(
@@ -335,7 +335,7 @@ void main() {
       tester.binding.window.devicePixelRatioTestValue = 1.0;
       tester.binding.window.physicalSizeTestValue = tabletLandscape;
 
-      final Store<AppState> localStore = Store<AppState>(
+      final Store<CoreState> localStore = Store<CoreState>(
         initialState: store.state.copyWith(
           clinicalState: store.state.clinicalState?.copyWith(
             patientPayload: PatientPayload(

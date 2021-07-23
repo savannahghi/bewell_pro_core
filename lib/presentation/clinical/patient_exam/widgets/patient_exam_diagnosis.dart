@@ -9,7 +9,7 @@ import 'package:shared_themes/colors.dart';
 class PatientExamDiagnosis extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final bool isLargeScreenDevice = SILResponsiveWidget.isLargeScreen(context);
+    final bool isLargeScreenDevice = ResponsiveWidget.isLargeScreen(context);
     return Container(
       margin: EdgeInsets.symmetric(
           horizontal: isLargeScreenDevice ? 32 : 1, vertical: 20),
@@ -25,7 +25,7 @@ class PatientExamDiagnosis extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.symmetric(
                         vertical: 16,
-                        horizontal: SILResponsiveWidget.isSmallScreen(context)
+                        horizontal: ResponsiveWidget.isSmallScreen(context)
                             ? 3
                             : 32),
                     child: Row(

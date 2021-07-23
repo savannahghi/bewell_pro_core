@@ -1,6 +1,6 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/patient_search_card_info.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/visit/start_cont_visit/start_continue_visit_connector.dart';
@@ -15,12 +15,12 @@ class PatientSearchCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isLargeScreen = SILResponsiveWidget.isLargeScreen(context);
+    final bool isLargeScreen = ResponsiveWidget.isLargeScreen(context);
 
     final List<Widget> _children = <Widget>[
       PatientSearchCardInfo(patient: patientEdge?.node),
       size15HorizontalSizedBox,
-      UserExceptionDialog<AppState>(
+      UserExceptionDialog<CoreState>(
         child: StartContinueVisitConnector(patientEdge: patientEdge),
       )
     ];

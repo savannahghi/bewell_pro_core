@@ -5,8 +5,8 @@ import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/bat
 import 'package:bewell_pro_core/application/redux/actions/onboarding_actions/request_pin_reset_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
 
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
-import 'package:bewell_pro_core/application/redux/view_models/app_state_view_model.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/application/redux/view_models/core_state_view_model.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 
@@ -28,7 +28,7 @@ class RecoverPinRequest extends StatelessWidget {
   Future<void> requestPinResetFunction(
       BuildContext context, String phoneNumber) async {
     if (phoneNumber.isNotEmpty) {
-      await StoreProvider.dispatch<AppState>(
+      await StoreProvider.dispatch<CoreState>(
         context,
         RequestPinResetAction(context: context, phoneNumber: phoneNumber),
       );
@@ -39,9 +39,9 @@ class RecoverPinRequest extends StatelessWidget {
   Widget build(BuildContext context) {
     late String _phoneNumber;
 
-    return StoreConnector<AppState, AppStateViewModel>(
-      converter: (Store<AppState> store) => AppStateViewModel.fromStore(store),
-      builder: (BuildContext context, AppStateViewModel vm) {
+    return StoreConnector<CoreState, CoreStateViewModel>(
+      converter: (Store<CoreState> store) => CoreStateViewModel.fromStore(store),
+      builder: (BuildContext context, CoreStateViewModel vm) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -52,7 +52,7 @@ class RecoverPinRequest extends StatelessWidget {
               labelStyle: TextThemes.boldSize16Text(),
               onChanged: (String? value) {
                 if (vm.state.miscState!.unKnownPhoneNo != null) {
-                  StoreProvider.dispatch<AppState>(
+                  StoreProvider.dispatch<CoreState>(
                     context,
                     BatchUpdateMiscStateAction(unKnownPhoneNo: false),
                   );

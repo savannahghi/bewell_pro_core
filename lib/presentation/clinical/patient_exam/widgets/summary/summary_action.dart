@@ -6,9 +6,9 @@ import 'package:domain_objects/value_objects.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_graphql_client/graph_utils.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 
-class SummaryAction extends ReduxAction<AppState> {
+class SummaryAction extends ReduxAction<CoreState> {
   SummaryAction({
     this.doctorsEmail,
     this.phoneNumber,
@@ -24,13 +24,13 @@ class SummaryAction extends ReduxAction<AppState> {
   @override
   void before() {
     // show a loading indicator
-    dispatch(WaitAction<AppState>.add(summaryExamFlag));
+    dispatch(WaitAction<CoreState>.add(summaryExamFlag));
   }
 
   @override
-  Future<AppState?> reduce() async {
+  Future<CoreState?> reduce() async {
     if (!disabled) {
-      final String phoneNumber = StoreProvider.state<AppState>(context)!
+      final String phoneNumber = StoreProvider.state<CoreState>(context)!
           .userState!
           .userProfile!
           .primaryPhoneNumber!
@@ -50,6 +50,6 @@ class SummaryAction extends ReduxAction<AppState> {
   @override
   void after() {
     // remove the loading indicator
-    dispatch(WaitAction<AppState>.remove(summaryExamFlag));
+    dispatch(WaitAction<CoreState>.remove(summaryExamFlag));
   }
 }

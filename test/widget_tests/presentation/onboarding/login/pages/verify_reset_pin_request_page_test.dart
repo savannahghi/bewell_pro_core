@@ -1,7 +1,7 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/onboarding_scaffold.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/pages/verify_reset_pin_request_page.dart';
@@ -11,8 +11,8 @@ import 'package:shared_ui_components/verify_phone_otp.dart';
 import '../../../../../mocks/test_helpers.dart';
 
 void main() {
-  final Store<AppState> store =
-      Store<AppState>(initialState: AppState.initial());
+  final Store<CoreState> store =
+      Store<CoreState>(initialState: CoreState.initial());
 
   group('verify pin reset request page', () {
     final Finder otpBoxFinder = find.byType(VerifyPhoneOtp);

@@ -8,7 +8,7 @@ import 'package:bewell_pro_core/application/redux/actions/navigation_actions/nav
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/refresh_token_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/event_object.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
@@ -60,7 +60,7 @@ import 'package:user_feed/user_feed.dart';
 Future<AuthTokenStatus> getAuthTokenStatus({
   required BuildContext context,
 }) async {
-  final AppState? state = StoreProvider.state<AppState>(context);
+  final CoreState? state = StoreProvider.state<CoreState>(context);
   final UserState userStateFromState = state!.userState!;
 
   /// Checks if user is signed in
@@ -87,14 +87,14 @@ Future<AuthTokenStatus> getAuthTokenStatus({
       /// Refresh the token because it is about to expire or it has expired.
       /// No PIN verification is required
       else if (differenceInMinutes > 0 && differenceInMinutes <= 9) {
-        StoreProvider.dispatch<AppState>(
+        StoreProvider.dispatch<CoreState>(
             context, RefreshTokenAction(context: context));
         return AuthTokenStatus.okay;
       }
 
       /// Refresh the token and require PIN verification
       else if (differenceInHours > -12) {
-        StoreProvider.dispatch<AppState>(
+        StoreProvider.dispatch<CoreState>(
             context, RefreshTokenAction(context: context));
 
         return AuthTokenStatus.requiresPin;
@@ -181,7 +181,7 @@ Future<void> addNHIF({
 /// Access the user profile to get the [First Name] and [Last Name] of the current recording doctor,
 String? getRecordingDoctor(BuildContext context) {
   final UserProfile userProfile =
-      StoreProvider.state<AppState>(context)!.userState!.userProfile!;
+      StoreProvider.state<CoreState>(context)!.userState!.userProfile!;
 
   final String firstName =
       titleCase(userProfile.userBioData!.firstName!.getValue());
@@ -310,7 +310,7 @@ PatientInfo getPatientInfo() {
 }
 
 String checkProfileProgress(BuildContext context) {
-  final AppState state = StoreProvider.state<AppState>(context)!;
+  final CoreState state = StoreProvider.state<CoreState>(context)!;
   // check if profile has data
   bool userBioDataFilled() {
     if (state.userState!.userProfile!.userBioData!.firstName!.isValid() &&
@@ -369,7 +369,7 @@ extension StringExtension on String {
   }
 }
 
-class SurveyBottomSheet extends SILBottomSheetBuilder {
+class SurveyBottomSheet extends BottomSheetBuilder {
   SurveyBottomSheet(BuildContext context)
       : super(
             message: BeWellPostVisitSurveyPageState.feedback,
@@ -382,7 +382,7 @@ class SurveyBottomSheet extends SILBottomSheetBuilder {
 
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
     final List<Widget> feedbackItems = <Widget>[
       const Padding(
         padding: EdgeInsets.all(10),
@@ -541,7 +541,7 @@ Future<void> logoutUser(BuildContext context,
       action: dismissSnackBar('close', white, context),
     ));
 
-  StoreProvider.dispatch<AppState>(context, LogoutAction());
+  StoreProvider.dispatch<CoreState>(context, LogoutAction());
 }
 
 /// Clears all behavior subjects that contain the current patient's data
@@ -652,7 +652,7 @@ void sendEventWrapperFunction(
 ) {
   eventBus.streamController.stream.listen(
     (dynamic event) {
-      StoreProvider.dispatch<AppState>(
+      StoreProvider.dispatch<CoreState>(
         context,
         SendEventAction(
           client: AppWrapperBase.of(context)!.graphQLClient,
@@ -814,12 +814,12 @@ Future<dynamic> showInfoBottomSheet({
 
 /// Gets initial route based on the authToken status
 Future<String> getInitialRoute({required BuildContext context}) async {
-  final AppState state = StoreProvider.state<AppState>(context)!;
+  final CoreState state = StoreProvider.state<CoreState>(context)!;
 
   // This will always be false
   final bool? signedIn = state.userState!.isSignedIn;
 
-  await StoreProvider.dispatch<AppState>(
+  await StoreProvider.dispatch<CoreState>(
     context,
     BatchUpdateUserStateAction(
         inActivitySetInTime: DateTime.now().toIso8601String()),
@@ -839,7 +839,7 @@ Future<String> getInitialRoute({required BuildContext context}) async {
       default: // Happy case => Get the onboarding path and
     }
 
-    StoreProvider.dispatch<AppState>(
+    StoreProvider.dispatch<CoreState>(
       context,
       NavigationAction(drawerSelectedIndex: -1, bottomBarSelectedIndex: 0),
     );
@@ -862,7 +862,7 @@ String getAppContext(List<AppContext> contexts) {
 
 void triggerEvent(String eventName, BuildContext context, {String? route}) {
   final UserState userState =
-      StoreProvider.state<AppState>(context)!.userState!;
+      StoreProvider.state<CoreState>(context)!.userState!;
 
   final EventObject eventObjectPayload = EventObject(
     firstName: userState.userProfile!.userBioData!.firstName?.getValue(),
@@ -969,15 +969,15 @@ double getResponsivePadding({required BuildContext context}) {
   final double padding;
 
   final List<NavigationItem> secondaryActions =
-      StoreProvider.state<AppState>(context)!
+      StoreProvider.state<CoreState>(context)!
           .navigationState!
           .secondaryActions!;
 
-  if (SILResponsiveWidget.deviceType(context) != DeviceScreensType.Mobile &&
+  if (ResponsiveWidget.deviceType(context) != DeviceScreensType.Mobile &&
       secondaryActions.isEmpty) {
-    padding = SILResponsiveWidget.preferredPaddingOnStretchedScreens(
+    padding = ResponsiveWidget.preferredPaddingOnStretchedScreens(
         context: context);
-  } else if (SILResponsiveWidget.deviceType(context) ==
+  } else if (ResponsiveWidget.deviceType(context) ==
       DeviceScreensType.Mobile) {
     padding = number15;
   } else {

@@ -62,7 +62,7 @@ class _NHIFState extends State<NHIF> {
     return OrientationBuilder(
       builder: (BuildContext context, Orientation orientation) => Scaffold(
         floatingActionButton: Padding(
-          padding: SILResponsiveWidget.isSmallScreen(context)
+          padding: ResponsiveWidget.isSmallScreen(context)
               ? const EdgeInsets.fromLTRB(40, 20, 10, 10)
               : const EdgeInsets.all(20.0),
           child: Row(
@@ -94,7 +94,7 @@ class _NHIFState extends State<NHIF> {
           ),
         ),
         body: ListView(
-          padding: SILResponsiveWidget.isSmallScreen(context)
+          padding: ResponsiveWidget.isSmallScreen(context)
               ? const EdgeInsets.all(20)
               : const EdgeInsets.fromLTRB(20, 20, 100, 20),
           children: <Widget>[
@@ -109,7 +109,7 @@ class _NHIFState extends State<NHIF> {
                         style: PatientStyles.registerPatientSectionTitle),
                   ),
                   Padding(
-                    padding: SILResponsiveWidget.isSmallScreen(context)
+                    padding: ResponsiveWidget.isSmallScreen(context)
                         ? const EdgeInsets.only(bottom: 5.0)
                         : const EdgeInsets.only(bottom: 24.0),
                     child: Align(
@@ -118,7 +118,7 @@ class _NHIFState extends State<NHIF> {
                           style: PatientStyles.registerPatientSectionSubTitle),
                     ),
                   ),
-                  if (SILResponsiveWidget.isSmallScreen(context))
+                  if (ResponsiveWidget.isSmallScreen(context))
                     smallVerticalSizedBox
                   else
                     mediumVerticalSizedBox,

@@ -1,5 +1,5 @@
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/visit/start_cont_visit/save_patient_record_action.dart';
@@ -8,9 +8,9 @@ import 'package:test/test.dart';
 void main() {
   group('save patient record action test: ', () {
     test('happy case', () async {
-      final Store<AppState> store =
-          Store<AppState>(initialState: AppState.initial());
-      final StoreTester<AppState> storeTester = StoreTester<AppState>.from(
+      final Store<CoreState> store =
+          Store<CoreState>(initialState: CoreState.initial());
+      final StoreTester<CoreState> storeTester = StoreTester<CoreState>.from(
         store,
         // this suppresses the verbose logs in the terminal
         testInfoPrinter: (TestInfo<dynamic> testInfo) {},
@@ -22,7 +22,7 @@ void main() {
           hasOpenEpisodes: false);
 
       storeTester.dispatch(SavePatientRecordAction(patientEdge: patientEdge));
-      final TestInfo<AppState> info =
+      final TestInfo<CoreState> info =
           await storeTester.wait(SavePatientRecordAction);
 
       expect(info.state.clinicalState?.patientPayload?.patientRecord,
@@ -32,16 +32,16 @@ void main() {
     });
 
     test('update to null', () async {
-      final Store<AppState> store =
-          Store<AppState>(initialState: AppState.initial());
-      final StoreTester<AppState> storeTester = StoreTester<AppState>.from(
+      final Store<CoreState> store =
+          Store<CoreState>(initialState: CoreState.initial());
+      final StoreTester<CoreState> storeTester = StoreTester<CoreState>.from(
         store,
         // this suppresses the verbose logs in the terminal
         testInfoPrinter: (TestInfo<dynamic> testInfo) {},
       );
 
       storeTester.dispatch(SavePatientRecordAction(patientEdge: null));
-      final TestInfo<AppState> info =
+      final TestInfo<CoreState> info =
           await storeTester.wait(SavePatientRecordAction);
 
       expect(info.state.clinicalState?.patientPayload?.patientRecord, null);

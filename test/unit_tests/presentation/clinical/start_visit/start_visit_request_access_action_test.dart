@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/OTP_episode_creation_input.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/codeable_concept.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/current_episode.dart';
@@ -49,9 +49,9 @@ void main() {
             200),
       );
 
-      final Store<AppState> store =
-          Store<AppState>(initialState: AppState.initial());
-      final StoreTester<AppState> storeTester = StoreTester<AppState>.from(
+      final Store<CoreState> store =
+          Store<CoreState>(initialState: CoreState.initial());
+      final StoreTester<CoreState> storeTester = StoreTester<CoreState>.from(
         store,
         // this suppresses the verbose logs in the terminal
         testInfoPrinter: (TestInfo<dynamic> testInfo) {},
@@ -68,7 +68,7 @@ void main() {
       storeTester.dispatch(StartVisitByRequestAccessAction(
           client: client, otpEpisodeCreationInput: otpEpisodeCreationInput));
 
-      final TestInfoList<AppState> infos = await storeTester.waitAll(<Type>[
+      final TestInfoList<CoreState> infos = await storeTester.waitAll(<Type>[
         StartVisitByRequestAccessAction,
         WaitAction,
         NavigateAction,
@@ -107,8 +107,8 @@ void main() {
     });
 
     test('when client is null', () async {
-      final StoreTester<AppState> storeTester = StoreTester<AppState>(
-        initialState: AppState.initial(),
+      final StoreTester<CoreState> storeTester = StoreTester<CoreState>(
+        initialState: CoreState.initial(),
         // this suppresses the verbose logs in the terminal
         testInfoPrinter: (TestInfo<dynamic> testInfo) {},
       );
@@ -124,15 +124,15 @@ void main() {
       storeTester.dispatch(StartVisitByRequestAccessAction(
           client: null, otpEpisodeCreationInput: otpEpisodeCreationInput));
 
-      final TestInfo<AppState> infos = await storeTester.waitAllGetLast(
+      final TestInfo<CoreState> infos = await storeTester.waitAllGetLast(
           <Type>[StartVisitByRequestAccessAction, WaitAction, WaitAction]);
 
       expect(infos.errors.removeFirst().msg, 'cannot start a visit');
     });
 
     test('when status code not 200', () async {
-      final StoreTester<AppState> storeTester = StoreTester<AppState>(
-        initialState: AppState.initial(),
+      final StoreTester<CoreState> storeTester = StoreTester<CoreState>(
+        initialState: CoreState.initial(),
         // this suppresses the verbose logs in the terminal
         testInfoPrinter: (TestInfo<dynamic> testInfo) {},
       );
@@ -162,7 +162,7 @@ void main() {
       storeTester.dispatch(StartVisitByRequestAccessAction(
           client: client, otpEpisodeCreationInput: otpEpisodeCreationInput));
 
-      final TestInfo<AppState> infos = await storeTester.waitAllGetLast(
+      final TestInfo<CoreState> infos = await storeTester.waitAllGetLast(
           <Type>[StartVisitByRequestAccessAction, WaitAction, WaitAction]);
 
       expect(infos.errors.removeFirst().msg,
@@ -170,8 +170,8 @@ void main() {
     });
 
     test('when server returns errors', () async {
-      final StoreTester<AppState> storeTester = StoreTester<AppState>(
-        initialState: AppState.initial(),
+      final StoreTester<CoreState> storeTester = StoreTester<CoreState>(
+        initialState: CoreState.initial(),
         // this suppresses the verbose logs in the terminal
         testInfoPrinter: (TestInfo<dynamic> testInfo) {},
       );
@@ -201,7 +201,7 @@ void main() {
       storeTester.dispatch(StartVisitByRequestAccessAction(
           client: client, otpEpisodeCreationInput: otpEpisodeCreationInput));
 
-      final TestInfo<AppState> infos = await storeTester.waitAllGetLast(
+      final TestInfo<CoreState> infos = await storeTester.waitAllGetLast(
           <Type>[StartVisitByRequestAccessAction, WaitAction, WaitAction]);
 
       expect(infos.errors.removeFirst().msg,
@@ -209,8 +209,8 @@ void main() {
     });
 
     test('when server returns errors that contains "invalid phone"', () async {
-      final StoreTester<AppState> storeTester = StoreTester<AppState>(
-        initialState: AppState.initial(),
+      final StoreTester<CoreState> storeTester = StoreTester<CoreState>(
+        initialState: CoreState.initial(),
         // this suppresses the verbose logs in the terminal
         testInfoPrinter: (TestInfo<dynamic> testInfo) {},
       );
@@ -238,7 +238,7 @@ void main() {
       storeTester.dispatch(StartVisitByRequestAccessAction(
           client: client, otpEpisodeCreationInput: otpEpisodeCreationInput));
 
-      final TestInfo<AppState> info = await storeTester.waitAllGetLast(
+      final TestInfo<CoreState> info = await storeTester.waitAllGetLast(
           <Type>[StartVisitByRequestAccessAction, WaitAction, WaitAction]);
 
       expect(info.state.miscState?.invalidPin, true);

@@ -4,7 +4,7 @@ import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/core/graphql/queries.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/current_episode.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
@@ -16,19 +16,19 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_graphql_client/graph_client.dart';
 
 /// Continue a visit
-class ContinueVisitAction extends ReduxAction<AppState> {
+class ContinueVisitAction extends ReduxAction<CoreState> {
   ContinueVisitAction({required this.client});
 
   final IGraphQlClient client;
 
   @override
   void before() {
-    dispatch(WaitAction<AppState>.add(continueVisitFlag));
+    dispatch(WaitAction<CoreState>.add(continueVisitFlag));
   }
 
   // Continue a visit and navigate to the visit page
   @override
-  Future<AppState?> reduce() async {
+  Future<CoreState?> reduce() async {
     final String? patientID =
         state.clinicalState?.patientPayload?.patientRecord?.id;
     if (patientID == null) {
@@ -67,11 +67,11 @@ class ContinueVisitAction extends ReduxAction<AppState> {
     final PatientPayload patientPayload = PatientPayload.fromJson(
         data['data']['getPatient'] as Map<String, dynamic>);
 
-    // save the open episode of care into the app state
+    // save the open episode of care into the core state
     final ClinicalState? clinicalState = state.clinicalState?.copyWith
         .call(currentEpisodeOfCare: patientPayload.openEpisodes?.first);
 
-    final AppState newState = state.copyWith.call(clinicalState: clinicalState);
+    final CoreState newState = state.copyWith.call(clinicalState: clinicalState);
 
     final CurrentPatientInEpisode current = CurrentPatientInEpisode();
 
@@ -91,13 +91,13 @@ class ContinueVisitAction extends ReduxAction<AppState> {
     final PatientConnection patientConnection = PatientConnection(edges: list);
     currentPatientInEpisode.patientConnection.add(patientConnection);
 
-    dispatch(NavigateAction<AppState>.pushNamed(patientProfilePageRoute));
+    dispatch(NavigateAction<CoreState>.pushNamed(patientProfilePageRoute));
 
     return newState;
   }
 
   @override
   void after() {
-    dispatch(WaitAction<AppState>.remove(continueVisitFlag));
+    dispatch(WaitAction<CoreState>.remove(continueVisitFlag));
   }
 }

@@ -35,7 +35,7 @@ Future<dynamic> createRetireModal({
   VoidCallback? onRetireGeneralExamCallback,
 }) {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+  final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
 
   return showDialog(
     context: context,

@@ -5,7 +5,7 @@ import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_feed_actions/fetch_user_feed_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_feed_actions/save_user_feed_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:http/http.dart';
 
@@ -13,11 +13,11 @@ import '../../../../../mocks/mocks.dart';
 
 void main() {
   group('FetchUserFeedAction', () {
-    late StoreTester<AppState> storeTester;
+    late StoreTester<CoreState> storeTester;
 
     setUp(() {
-      storeTester = StoreTester<AppState>(
-        initialState: AppState.initial(),
+      storeTester = StoreTester<CoreState>(
+        initialState: CoreState.initial(),
         // this prevents the verbose logs in the terminal
         testInfoPrinter: (TestInfo<dynamic> testInfo) {},
       );
@@ -56,7 +56,7 @@ void main() {
               feedStreamController: streamController, client: graphQlClient),
         );
 
-        final TestInfoList<AppState> info = await storeTester.waitAll(<Type>[
+        final TestInfoList<CoreState> info = await storeTester.waitAll(<Type>[
           FetchUserFeedAction,
           SaveUserFeedAction,
         ]);
@@ -121,7 +121,7 @@ void main() {
               feedStreamController: streamController, client: graphQlClient),
         );
 
-        final TestInfo<AppState> info =
+        final TestInfo<CoreState> info =
             await storeTester.waitUntil(FetchUserFeedAction);
 
         // confirm the state is not updated
@@ -169,7 +169,7 @@ void main() {
           ),
         );
 
-        final TestInfo<AppState> info =
+        final TestInfo<CoreState> info =
             await storeTester.waitUntil(FetchUserFeedAction);
 
         // confirm the state is not updated

@@ -2,7 +2,7 @@ import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/actions/clinical_state_actions/update_start_visit_type_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/contact_point.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/contact_point_system_enum.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/start_visit_type_enum.dart';
@@ -20,7 +20,7 @@ import 'package:flutter_graphql_client/graph_client.dart';
 
 /// creates [StartContinueVisitViewModel]
 class StartContinueVisitViewModelFactory
-    extends VmFactory<AppState, StartContinueVisitConnector> {
+    extends VmFactory<CoreState, StartContinueVisitConnector> {
   StartContinueVisitViewModelFactory(StartContinueVisitConnector widget)
       : super(widget);
 
@@ -58,7 +58,7 @@ class StartContinueVisitViewModelFactory
           break;
         }
     }
-    dispatch(NavigateAction<AppState>.pushNamed(startVisitRoute));
+    dispatch(NavigateAction<CoreState>.pushNamed(startVisitRoute));
   }
 
   void startVisitByRequestAccess(BuildContext context, String? phoneContact) {

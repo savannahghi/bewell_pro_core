@@ -22,7 +22,7 @@ class DrawerAppBar extends StatelessWidget implements PreferredSizeWidget {
           children: <Widget>[
             /// [DrawerHeader]
             //closes navigation drawer
-            if (SILResponsiveWidget.deviceType(context) ==
+            if (ResponsiveWidget.deviceType(context) ==
                 DeviceScreensType.Mobile)
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: number10),

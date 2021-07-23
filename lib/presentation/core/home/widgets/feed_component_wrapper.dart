@@ -7,7 +7,7 @@ import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:bewell_pro_core/application/core/services/feed_content_callbacks.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_feed_actions/fetch_user_feed_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/presentation/core/widgets/generic_timeout_widget.dart';
 import 'package:misc_utilities/responsive_widget.dart';
@@ -33,7 +33,7 @@ class _FeedComponentWrapperState extends State<FeedComponentWrapper> {
     WidgetsBinding.instance?.addPostFrameCallback((Duration timeStamp) {
       final IGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
 
-      StoreProvider.dispatch<AppState>(
+      StoreProvider.dispatch<CoreState>(
           context,
           FetchUserFeedAction(
               feedStreamController: _feedStreamController, client: _client));
@@ -43,7 +43,7 @@ class _FeedComponentWrapperState extends State<FeedComponentWrapper> {
 
       refreshController.listen((dynamic value) async {
         if (value is bool && value == true) {
-          StoreProvider.dispatch<AppState>(
+          StoreProvider.dispatch<CoreState>(
             context,
             FetchUserFeedAction(
               feedStreamController: _feedStreamController,
@@ -118,7 +118,7 @@ class _FeedComponentWrapperState extends State<FeedComponentWrapper> {
             flavour: Flavour.PRO,
             profileProgress: profileProgress,
             setupComplete: isProgressComplete,
-            isSmallScreen: SILResponsiveWidget.isSmallScreen(context),
+            isSmallScreen: ResponsiveWidget.isSmallScreen(context),
             feedContentCallbacks: getFeedActionCallbacks(context: context),
           );
         }

@@ -1,7 +1,7 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/widgets/edit_profile_form.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
@@ -20,7 +20,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
   @override
   Widget build(BuildContext context) {
     final UserProfile userProfile =
-        StoreProvider.state<AppState>(context)!.userState!.userProfile!;
+        StoreProvider.state<CoreState>(context)!.userState!.userProfile!;
 
     final BioData bioData = userProfile.userBioData!;
 

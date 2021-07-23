@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart' as dartz;
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/actions/clinical_state_actions/update_start_visit_type_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/contact_point.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/contact_point_system_enum.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/start_visit_type_enum.dart';
@@ -38,7 +38,7 @@ Future<void> startVisitDialog(
 }
 
 void startVisitByType(
-    BuildContext context, StartVisitType startVisitType, AppState state) {
+    BuildContext context, StartVisitType startVisitType, CoreState state) {
   // navigate to the page for starting a visit
   switch (startVisitType) {
     case StartVisitType.requestAccess:
@@ -58,7 +58,7 @@ void startVisitByType(
   }
 }
 
-String? getPhoneNumber(AppState state) {
+String? getPhoneNumber(CoreState state) {
   final List<ContactPoint?>? telecoms =
       state.clinicalState?.patientPayload?.patientRecord?.telecom;
 
@@ -88,7 +88,7 @@ void startVisitByRequestAccess(BuildContext context, String? phoneContact) {
         'failed to send otp, user patient phone number not found');
   }
 
-  StoreProvider.dispatch<AppState>(context,
+  StoreProvider.dispatch<CoreState>(context,
       UpdateStartVisitTypeAction(startVisitType: StartVisitType.requestAccess));
   sendOTP(context, client, phoneContact);
 }
@@ -100,7 +100,7 @@ void startVisitByEmergencyOverride(BuildContext context, String? phoneContact) {
     throw const UserException(
         'failed to send OTP, phone number is not available');
   }
-  StoreProvider.dispatch<AppState>(
+  StoreProvider.dispatch<CoreState>(
     context,
     UpdateStartVisitTypeAction(
         startVisitType: StartVisitType.emergencyOverride),
@@ -111,7 +111,7 @@ void startVisitByEmergencyOverride(BuildContext context, String? phoneContact) {
 
 Future<void> sendOTP(
     BuildContext context, IGraphQlClient? client, String phoneContact) async {
-  StoreProvider.dispatch<AppState>(
+  StoreProvider.dispatch<CoreState>(
       context, SendOTPAction(client: client, phoneContact: phoneContact));
 }
 

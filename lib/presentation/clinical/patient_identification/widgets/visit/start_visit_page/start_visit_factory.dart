@@ -3,7 +3,7 @@ import 'package:async_redux/async_redux.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/OTP_episode_creation_input.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/break_glass_episode_creation_input.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/contact_point.dart';
@@ -17,7 +17,7 @@ import 'package:bewell_pro_core/presentation/clinical/patient_identification/wid
 
 /// viewModel factory for [StartVisitViewModel]
 class StartVisitViewModelFactory
-    extends VmFactory<AppState, StartVisitConnector> {
+    extends VmFactory<CoreState, StartVisitConnector> {
   StartVisitViewModelFactory(StartVisitConnector widget) : super(widget);
 
   @override

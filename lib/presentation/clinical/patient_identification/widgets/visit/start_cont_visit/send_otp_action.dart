@@ -2,13 +2,13 @@ import 'dart:async';
 
 import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:flutter_graphql_client/graph_event_bus.dart';
 import 'package:user_profile/constants.dart';
 
-class SendOTPAction extends ReduxAction<AppState> {
+class SendOTPAction extends ReduxAction<CoreState> {
   SendOTPAction({required this.client, required this.phoneContact});
 
   final IGraphQlClient? client;
@@ -17,11 +17,11 @@ class SendOTPAction extends ReduxAction<AppState> {
   @override
   void before() {
     // show a loading indicator
-    dispatch(WaitAction<AppState>.add(isWaitingSendOTP));
+    dispatch(WaitAction<CoreState>.add(isWaitingSendOTP));
   }
 
   @override
-  Future<AppState?> reduce() async {
+  Future<CoreState?> reduce() async {
     if (client == null) {
       throw const UserException('failed to send OTP, retry again');
     }
@@ -58,6 +58,6 @@ class SendOTPAction extends ReduxAction<AppState> {
   @override
   void after() {
     // remove the loading indicator
-    dispatch(WaitAction<AppState>.remove(isWaitingSendOTP));
+    dispatch(WaitAction<CoreState>.remove(isWaitingSendOTP));
   }
 }

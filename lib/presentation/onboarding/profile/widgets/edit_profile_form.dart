@@ -5,8 +5,8 @@ import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/core/services/onboarding.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
-import 'package:bewell_pro_core/application/redux/view_models/app_state_view_model.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/application/redux/view_models/core_state_view_model.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/events.dart';
@@ -54,7 +54,7 @@ class _EditProfileFormState extends State<EditProfileForm> {
   @override
   void initState() {
     WidgetsBinding.instance?.addPostFrameCallback((Duration timeStamp) {
-      final AppState state = StoreProvider.state<AppState>(context)!;
+      final CoreState state = StoreProvider.state<CoreState>(context)!;
       displayName =
           state.userState!.userProfile!.userBioData!.firstName!.getValue();
 
@@ -100,7 +100,7 @@ class _EditProfileFormState extends State<EditProfileForm> {
     }
 
     if (body['data'] != null) {
-      StoreProvider.dispatch<AppState>(
+      StoreProvider.dispatch<CoreState>(
         context,
         BatchUpdateUserStateAction(
           userProfile: UserProfile(
@@ -149,13 +149,13 @@ class _EditProfileFormState extends State<EditProfileForm> {
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<AppState, AppStateViewModel>(
-      converter: (Store<AppState> store) => AppStateViewModel.fromStore(store),
-      builder: (BuildContext context, AppStateViewModel vm) {
+    return StoreConnector<CoreState, CoreStateViewModel>(
+      converter: (Store<CoreState> store) => CoreStateViewModel.fromStore(store),
+      builder: (BuildContext context, CoreStateViewModel vm) {
         return Padding(
           padding: EdgeInsets.symmetric(
               horizontal:
-                  SILResponsiveWidget.preferredPaddingOnStretchedScreens(
+                  ResponsiveWidget.preferredPaddingOnStretchedScreens(
                       context: context)),
           child: Form(
             key: _formKey,

@@ -66,7 +66,7 @@ class _OtpBoxState extends State<OtpBox> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isSmallScreen = SILResponsiveWidget.isSmallScreen(context);
+    final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
 
     return Column(
       children: <Widget>[
@@ -119,6 +119,11 @@ class _OtpBoxState extends State<OtpBox> {
                   widget.endVisit(context, otp);
                   pinController.clear();
                   pinFocusNode.requestFocus();
+                },
+                onTextChanged: (String v) async {
+                  if (v.length == 6) {
+                    // todo: implement autofill sms code logic here
+                  }
                 },
               ),
               SizedBox(height: isSmallScreen ? 10.0 : 25),

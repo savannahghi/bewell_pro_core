@@ -43,7 +43,7 @@ class OnboardingScaffold extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     size40VerticalSizedBox,
-                    if (!SILResponsiveWidget.isSmallScreenAndOnLandscape(
+                    if (!ResponsiveWidget.isSmallScreenAndOnLandscape(
                         context: context)) ...<Widget>[
                       Container(
                         width: MediaQuery.of(context).size.width - 250,

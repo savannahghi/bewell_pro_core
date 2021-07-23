@@ -4,18 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/phone_signup_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:http/http.dart';
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';
 
 void main() {
   group('PhoneSignUpAction', () {
-    late StoreTester<AppState> storeTester;
+    late StoreTester<CoreState> storeTester;
 
     setUp(() {
-      storeTester = StoreTester<AppState>(
-        initialState: AppState.initial(),
+      storeTester = StoreTester<CoreState>(
+        initialState: CoreState.initial(),
         // this suppresses the verbose logs in the terminal
         testInfoPrinter: (TestInfo<dynamic> testInfo) {},
         shouldThrowUserExceptions: true,

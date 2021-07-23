@@ -5,7 +5,7 @@ import 'package:domain_objects/value_objects.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
@@ -25,8 +25,8 @@ import '../../../../mocks/test_helpers.dart';
 
 void main() {
   group('sil search and search widget pages', () {
-    final Store<AppState> store =
-        Store<AppState>(initialState: AppState.initial());
+    final Store<CoreState> store =
+        Store<CoreState>(initialState: CoreState.initial());
     final SearchWidget delegate = SearchWidget();
     final List<SearchResult> suggestionList = <SearchResult>[];
 
@@ -101,8 +101,8 @@ void main() {
 
     testWidgets('profile recent search item navigates correctly',
         (WidgetTester tester) async {
-      final Store<AppState> store = Store<AppState>(
-        initialState: AppState(
+      final Store<CoreState> store = Store<CoreState>(
+        initialState: CoreState(
           navigationState: Navigation(
               drawerSelectedIndex: -1,
               primaryActions: primaryActionsMockedData,
@@ -154,8 +154,8 @@ void main() {
 
     testWidgets('profile suggested item navigates correctly',
         (WidgetTester tester) async {
-      final Store<AppState> store = Store<AppState>(
-        initialState: AppState(
+      final Store<CoreState> store = Store<CoreState>(
+        initialState: CoreState(
           navigationState: Navigation(
               drawerSelectedIndex: -1,
               primaryActions: primaryActionsMockedData,
@@ -203,8 +203,8 @@ void main() {
 
     testWidgets('find patient suggested item navigates correctly',
         (WidgetTester tester) async {
-      final Store<AppState> store = Store<AppState>(
-        initialState: AppState(
+      final Store<CoreState> store = Store<CoreState>(
+        initialState: CoreState(
           navigationState: Navigation(
               drawerSelectedIndex: -1,
               primaryActions: primaryActionsMockedData,
@@ -252,8 +252,8 @@ void main() {
 
     testWidgets('add patient suggested item navigates correctly',
         (WidgetTester tester) async {
-      final Store<AppState> store = Store<AppState>(
-        initialState: AppState(
+      final Store<CoreState> store = Store<CoreState>(
+        initialState: CoreState(
           navigationState: Navigation(
               drawerSelectedIndex: -1,
               primaryActions: primaryActionsMockedData,
@@ -435,8 +435,8 @@ void main() {
 
     testWidgets('return list when suggestion list is not empty',
         (WidgetTester tester) async {
-      final Store<AppState> store = Store<AppState>(
-        initialState: AppState(
+      final Store<CoreState> store = Store<CoreState>(
+        initialState: CoreState(
           navigationState: Navigation(
               drawerSelectedIndex: -1,
               primaryActions: primaryActionsMockedData,
@@ -522,8 +522,8 @@ void main() {
     testWidgets(
         'navigates to search patient page when suggestion list tile is tapped',
         (WidgetTester tester) async {
-      final Store<AppState> store = Store<AppState>(
-        initialState: AppState(
+      final Store<CoreState> store = Store<CoreState>(
+        initialState: CoreState(
           navigationState: Navigation(
               drawerSelectedIndex: -1,
               primaryActions: primaryActionsMockedData,
@@ -564,8 +564,8 @@ void main() {
     testWidgets(
         'navigates to register patient page when suggestion list tile is tapped',
         (WidgetTester tester) async {
-      final Store<AppState> store = Store<AppState>(
-        initialState: AppState(
+      final Store<CoreState> store = Store<CoreState>(
+        initialState: CoreState(
           navigationState: Navigation(
               drawerSelectedIndex: -1,
               primaryActions: primaryActionsMockedData,
@@ -693,8 +693,8 @@ void main() {
 
     testWidgets('return list when result list is not empty',
         (WidgetTester tester) async {
-      final Store<AppState> store = Store<AppState>(
-        initialState: AppState(
+      final Store<CoreState> store = Store<CoreState>(
+        initialState: CoreState(
           navigationState: Navigation(
               drawerSelectedIndex: -1,
               primaryActions: primaryActionsMockedData,
@@ -736,8 +736,8 @@ void main() {
 
     testWidgets('navigates to profile page when result list tile is tapped',
         (WidgetTester tester) async {
-      final Store<AppState> store = Store<AppState>(
-        initialState: AppState(
+      final Store<CoreState> store = Store<CoreState>(
+        initialState: CoreState(
           navigationState: Navigation(
               drawerSelectedIndex: -1,
               primaryActions: primaryActionsMockedData,
@@ -820,8 +820,8 @@ void main() {
     testWidgets(
         'navigates to search patient page when result list tile is tapped',
         (WidgetTester tester) async {
-      final Store<AppState> store = Store<AppState>(
-        initialState: AppState(
+      final Store<CoreState> store = Store<CoreState>(
+        initialState: CoreState(
           navigationState: Navigation(
               drawerSelectedIndex: -1,
               primaryActions: primaryActionsMockedData,
@@ -873,8 +873,8 @@ void main() {
     testWidgets(
         'navigates to patient registration page when result list tile is tapped',
         (WidgetTester tester) async {
-      final Store<AppState> store = Store<AppState>(
-        initialState: AppState(
+      final Store<CoreState> store = Store<CoreState>(
+        initialState: CoreState(
           navigationState: Navigation(
               drawerSelectedIndex: -1,
               primaryActions: primaryActionsMockedData,

@@ -2,7 +2,7 @@ import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';
 import 'package:bewell_pro_core/application/redux/states/misc_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
@@ -53,8 +53,8 @@ void main() {
         fullAccess: false,
       );
 
-      final MockStore<AppState> mockStore = MockStore<AppState>(
-        initialState: AppState(
+      final MockStore<CoreState> mockStore = MockStore<CoreState>(
+        initialState: CoreState(
           clinicalState: ClinicalState(
             startVisitType: StartVisitType.requestAccess,
             patientPayload: PatientPayload(
@@ -93,8 +93,8 @@ void main() {
 
     testWidgets('start visit by request access when patient ID is null ',
         (WidgetTester widgetTester) async {
-      final MockStore<AppState> mockStore = MockStore<AppState>(
-        initialState: AppState(
+      final MockStore<CoreState> mockStore = MockStore<CoreState>(
+        initialState: CoreState(
           clinicalState: ClinicalState(
             startVisitType: StartVisitType.requestAccess,
           ),
@@ -122,8 +122,8 @@ void main() {
     testWidgets(
         'start visit by request access when patient phone number is null',
         (WidgetTester widgetTester) async {
-      final MockStore<AppState> mockStore = MockStore<AppState>(
-        initialState: AppState(
+      final MockStore<CoreState> mockStore = MockStore<CoreState>(
+        initialState: CoreState(
           clinicalState: ClinicalState(
             startVisitType: StartVisitType.requestAccess,
             patientPayload: PatientPayload(
@@ -158,8 +158,8 @@ void main() {
         (WidgetTester widgetTester) async {
       const String phoneNumber = '0712345678';
 
-      final MockStore<AppState> mockStore = MockStore<AppState>(
-        initialState: AppState(
+      final MockStore<CoreState> mockStore = MockStore<CoreState>(
+        initialState: CoreState(
           clinicalState: ClinicalState(
             startVisitType: StartVisitType.emergencyOverride,
           ),
@@ -209,8 +209,8 @@ void main() {
         patientPhone: phoneNumber,
       );
 
-      final MockStore<AppState> mockStore = MockStore<AppState>(
-        initialState: AppState(
+      final MockStore<CoreState> mockStore = MockStore<CoreState>(
+        initialState: CoreState(
           clinicalState: ClinicalState(
             startVisitType: StartVisitType.emergencyOverride,
             patientPayload: PatientPayload(
@@ -272,8 +272,8 @@ void main() {
         patientPhone: phoneNumber,
       );
 
-      final MockStore<AppState> mockStore = MockStore<AppState>(
-        initialState: AppState(
+      final MockStore<CoreState> mockStore = MockStore<CoreState>(
+        initialState: CoreState(
           clinicalState: ClinicalState(
             startVisitType: StartVisitType.emergencyOverride,
             patientPayload: PatientPayload(
@@ -353,8 +353,8 @@ void main() {
         (WidgetTester widgetTester) async {
       const String phoneNumber = '0712345678';
 
-      final MockStore<AppState> mockStore = MockStore<AppState>(
-        initialState: AppState(
+      final MockStore<CoreState> mockStore = MockStore<CoreState>(
+        initialState: CoreState(
           clinicalState: ClinicalState(
             startVisitType: StartVisitType.emergencyOverride,
             patientPayload: PatientPayload(
@@ -398,8 +398,8 @@ void main() {
         (WidgetTester widgetTester) async {
       const String phoneNumber = '0712345678';
 
-      final MockStore<AppState> mockStore = MockStore<AppState>(
-        initialState: AppState(
+      final MockStore<CoreState> mockStore = MockStore<CoreState>(
+        initialState: CoreState(
           clinicalState: ClinicalState(
             startVisitType: StartVisitType.emergencyOverride,
             patientPayload: PatientPayload(
@@ -437,8 +437,8 @@ void main() {
 
     testWidgets('when state has showError', (WidgetTester widgetTester) async {
       const String phoneNumber = '0712345678';
-      final Store<AppState> store = Store<AppState>(
-        initialState: AppState(
+      final Store<CoreState> store = Store<CoreState>(
+        initialState: CoreState(
           clinicalState: ClinicalState(
             startVisitType: StartVisitType.requestAccess,
             patientPayload: PatientPayload(
@@ -475,8 +475,8 @@ void main() {
     testWidgets('when showing loading indicator',
         (WidgetTester widgetTester) async {
       const String phoneNumber = '0712345678';
-      final Store<AppState> store = Store<AppState>(
-        initialState: AppState(
+      final Store<CoreState> store = Store<CoreState>(
+        initialState: CoreState(
           clinicalState: ClinicalState(
             startVisitType: StartVisitType.requestAccess,
             patientPayload: PatientPayload(
@@ -493,8 +493,8 @@ void main() {
         ),
       );
 
-      store.dispatch(WaitAction<AppState>.add(hasCompletedEnteringOTPFlag));
-      store.dispatch(WaitAction<AppState>.add(isResendingOTPFlag));
+      store.dispatch(WaitAction<CoreState>.add(hasCompletedEnteringOTPFlag));
+      store.dispatch(WaitAction<CoreState>.add(isResendingOTPFlag));
 
       await buildTestWidget(
         store: store,
@@ -517,8 +517,8 @@ void main() {
     testWidgets('when has completed entering OTP',
         (WidgetTester widgetTester) async {
       const String phoneNumber = '0712345678';
-      final Store<AppState> store = Store<AppState>(
-        initialState: AppState(
+      final Store<CoreState> store = Store<CoreState>(
+        initialState: CoreState(
           clinicalState: ClinicalState(
             startVisitType: StartVisitType.requestAccess,
             patientPayload: PatientPayload(
@@ -535,7 +535,7 @@ void main() {
         ),
       );
 
-      store.dispatch(WaitAction<AppState>.add(hasCompletedEnteringOTPFlag));
+      store.dispatch(WaitAction<CoreState>.add(hasCompletedEnteringOTPFlag));
 
       await buildTestWidget(
         store: store,
@@ -558,8 +558,8 @@ void main() {
     testWidgets('when has completed entering OTP is false',
         (WidgetTester widgetTester) async {
       const String phoneNumber = '0712345678';
-      final Store<AppState> store = Store<AppState>(
-        initialState: AppState(
+      final Store<CoreState> store = Store<CoreState>(
+        initialState: CoreState(
           clinicalState: ClinicalState(
             startVisitType: StartVisitType.requestAccess,
             patientPayload: PatientPayload(
@@ -576,7 +576,7 @@ void main() {
         ),
       );
 
-      store.dispatch(WaitAction<AppState>.add(isResendingOTPFlag));
+      store.dispatch(WaitAction<CoreState>.add(isResendingOTPFlag));
 
       await buildTestWidget(
         store: store,

@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/core/services/onboarding.dart';
 
-import 'package:bewell_pro_core/application/redux/states/app_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/view_models/contact_view_model.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
@@ -29,7 +29,7 @@ class ProfileContactDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final UserProfile? userProfile =
-        StoreProvider.state<AppState>(context)!.userState!.userProfile;
+        StoreProvider.state<CoreState>(context)!.userState!.userProfile;
 
     final BioData bioData = userProfile!.userBioData!;
     return Scaffold(
@@ -68,11 +68,11 @@ class BuildContactProvider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     UserFeedStore().refreshFeed.add(true);
-    return StoreConnector<AppState, ContactViewModel>(
-      converter: (Store<AppState> store) => ContactViewModel.fromStore(store),
+    return StoreConnector<CoreState, ContactViewModel>(
+      converter: (Store<CoreState> store) => ContactViewModel.fromStore(store),
       builder: (BuildContext context, ContactViewModel vm) {
         bool checkWaitingFor({required String flag}) {
-          return StoreProvider.state<AppState>(
+          return StoreProvider.state<CoreState>(
                   _contactDetailsKey.currentContext!)!
               .wait!
               .isWaitingFor(flag);
@@ -83,7 +83,7 @@ class BuildContactProvider extends StatelessWidget {
           primaryPhone: vm.primaryPhone,
           secondaryEmails: vm.secondaryEmails,
           secondaryPhones: vm.secondaryPhones,
-          wait: StoreProvider.state<AppState>(context)!.wait!,
+          wait: StoreProvider.state<CoreState>(context)!.wait!,
           checkWaitingFor: checkWaitingFor,
           contactUtils: ContactUtils(
             toggleLoadingIndicator: toggleWaitStateFlagIndicator,
@@ -92,7 +92,7 @@ class BuildContactProvider extends StatelessWidget {
           ),
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: SILResponsiveWidget.deviceType(context) !=
+              horizontal: ResponsiveWidget.deviceType(context) !=
                       DeviceScreensType.Mobile
                   ? number30
                   : number0,
