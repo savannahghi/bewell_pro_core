@@ -101,7 +101,7 @@ class PhoneSignUpAction extends ReduxAction<AppState> {
 
       final OnboardingPathConfig path = onboardingPath(state: state);
 
-      publishEvent(signupEvent, context);
+      triggerEvent(signupEvent, context);
 
       dispatch(NavigateAction<AppState>.pushNamedAndRemoveAll(path.route));
 

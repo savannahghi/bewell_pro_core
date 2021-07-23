@@ -39,7 +39,7 @@ List<SearchSuggestion> recentSearches = <SearchSuggestion>[
     ],
     image: SvgPicture.asset(helpTabIconUrl, color: Colors.grey),
     onTap: (BuildContext context) async {
-      triggerNavigationEvent(context: context, namedRoute: helpCenterRoute);
+      triggerNavigationEvent(context: context, route: helpCenterRoute);
     },
     route: helpCenterRoute,
   ),
@@ -55,7 +55,7 @@ List<SearchSuggestion> recentSearches = <SearchSuggestion>[
     ],
     image: SvgPicture.asset(patientsTabIconUrl, color: Colors.grey),
     onTap: (BuildContext context) async {
-      triggerNavigationEvent(context: context, namedRoute: userProfileRoute);
+      triggerNavigationEvent(context: context, route: userProfileRoute);
     },
     route: userProfileRoute,
   ),
@@ -77,7 +77,7 @@ List<SearchSuggestion> searchSuggestions = <SearchSuggestion>[
     ],
     image: SvgPicture.asset(helpTabIconUrl, color: Colors.grey),
     onTap: (BuildContext context) async {
-      triggerNavigationEvent(context: context, namedRoute: helpCenterRoute);
+      triggerNavigationEvent(context: context, route: helpCenterRoute);
     },
     route: helpCenterRoute,
   ),
@@ -95,7 +95,7 @@ List<SearchSuggestion> searchSuggestions = <SearchSuggestion>[
     ],
     image: SvgPicture.asset(patientsTabIconUrl, color: Colors.grey),
     onTap: (BuildContext context) async {
-      triggerNavigationEvent(context: context, namedRoute: userProfileRoute);
+      triggerNavigationEvent(context: context, route: userProfileRoute);
     },
     route: userProfileRoute,
   ),
@@ -116,7 +116,7 @@ List<SearchSuggestion> searchSuggestions = <SearchSuggestion>[
     ],
     image: SvgPicture.asset(patientsTabIconUrl, color: Colors.grey),
     onTap: (BuildContext context) async =>
-        triggerNavigationEvent(context: context, namedRoute: patientsPageRoute),
+        triggerNavigationEvent(context: context, route: patientsPageRoute),
     route: patientsPageRoute,
   ),
 
@@ -137,6 +137,6 @@ List<SearchSuggestion> searchSuggestions = <SearchSuggestion>[
     ],
     image: SvgPicture.asset(editIcon, color: Colors.grey),
     onTap: (BuildContext context) async =>
-        triggerNavigationEvent(context: context, namedRoute: addPatientRoute),
+        triggerNavigationEvent(context: context, route: addPatientRoute),
   ),
 ];

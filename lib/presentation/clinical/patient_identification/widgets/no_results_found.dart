@@ -88,7 +88,7 @@ class NoPatientFound extends StatelessWidget {
                   recoverCallback != null
                       ? recoverCallback!.call()
                       : triggerNavigationEvent(
-                          context: context, namedRoute: addPatientRoute);
+                          context: context, route: addPatientRoute);
                 },
                 text: isError ? searchAgain : regPatient,
                 buttonColor: healthcloudAccentColor,

@@ -119,7 +119,7 @@ class _BewellPatientProfileWidgetState
   }
 
   Future<void> requestAccessToPastVisits() async {
-    publishEvent(requestAccessToPastVisitsEvent, context);
+    triggerEvent(requestAccessToPastVisitsEvent, context);
     startVisitDialog(context, widget.onStartVisit);
   }
 

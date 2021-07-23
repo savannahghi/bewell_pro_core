@@ -123,7 +123,7 @@ class _ProfileMasterDetailState extends State<ProfileMasterDetail> {
 
               if (val.onTapRoute == webViewRoute) {
                 await triggerNavigationEvent(
-                    context: context, namedRoute: val.onTapRoute);
+                    context: context, route: val.onTapRoute);
               }
             }
           },

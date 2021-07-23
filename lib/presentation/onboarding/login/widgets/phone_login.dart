@@ -157,7 +157,7 @@ class _PhoneLoginState extends State<PhoneLogin> {
                     text: resetPin,
                     recognizer: TapGestureRecognizer()
                       ..onTap = () async => triggerNavigationEvent(
-                          context: context, namedRoute: recoverPinRoute),
+                          context: context, route: recoverPinRoute),
                     style: TextThemes.heavySize14Text().copyWith(
                         color: healthcloudPrimaryColor,
                         decoration: TextDecoration.underline),
@@ -175,7 +175,7 @@ class _PhoneLoginState extends State<PhoneLogin> {
                     text: phoneLoginCreateAccountText,
                     recognizer: TapGestureRecognizer()
                       ..onTap = () async => triggerNavigationEvent(
-                          context: context, namedRoute: phoneSignupRoute),
+                          context: context, route: phoneSignupRoute),
                     style: TextThemes.heavySize14Text().copyWith(
                         color: healthcloudPrimaryColor,
                         decoration: TextDecoration.underline),
@@ -222,7 +222,7 @@ class _PhoneLoginState extends State<PhoneLogin> {
                             Theme.of(context).primaryColor),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () async => triggerNavigationEvent(
-                              context: context, namedRoute: phoneSignupRoute),
+                              context: context, route: phoneSignupRoute),
                       )
                     ],
                   ),
@@ -239,7 +239,7 @@ class _PhoneLoginState extends State<PhoneLogin> {
                   key: AppWidgetKeys.backButton,
                   onPressed: () async => triggerNavigationEvent(
                       context: context,
-                      namedRoute: landingPageRoute,
+                      route: landingPageRoute,
                       shouldReplace: true),
                   child: const Opacity(opacity: 0.6, child: Text(loginBack)),
                 ),

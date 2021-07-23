@@ -40,7 +40,7 @@ class _EnterSignUpPhoneNoState extends State<EnterSignUpPhoneNo> {
 
   /// Navigates user back to the login page i.e. incase they have an account already
   void navigateToLogin() {
-    triggerNavigationEvent(context: context, namedRoute: phoneLoginRoute);
+    triggerNavigationEvent(context: context, route: phoneLoginRoute);
 
     StoreProvider.dispatch<AppState>(
       context,

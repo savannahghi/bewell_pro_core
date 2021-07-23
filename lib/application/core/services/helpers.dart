@@ -376,7 +376,7 @@ class SurveyBottomSheet extends SILBottomSheetBuilder {
             callback: () async {
               await triggerNavigationEvent(
                 context: context,
-                namedRoute: patientIdentificationRoute,
+                route: patientIdentificationRoute,
               );
             });
 
@@ -667,39 +667,31 @@ void sendEventWrapperFunction(
 /// Triggers Navigation event by sending a log to firebase
 ///
 /// @params
-/// - String `namedRoute` (determines the route to push to after sending log)
+/// - String `route` (determines the route to push to after sending log)
 /// - bool `shouldReplace` (is used as a flag for navigation events that replace previous routes)
 /// - BuildContext `context`
 Future<void> triggerNavigationEvent({
   required BuildContext context,
-  required String namedRoute,
+  required String route,
   String? event,
   bool shouldReplace = false,
   Object? args,
   bool shouldRemoveUntil = false,
 }) async {
-  /// Event Payload
-  final Map<String, dynamic> eventPayload = <String, dynamic>{
-    'route': namedRoute,
-    'timeTriggered': DateTime.now().toUtc().toIso8601String()
-  };
-
-  /// Send event log
-  AppWrapperBase.of(context)!
-      .eventBus
-      .fire(TriggeredEvent(event ?? navigationEvent, eventPayload));
-
   /// Navigation Function
   if (shouldReplace) {
-    await Navigator.of(context)
-        .pushReplacementNamed(namedRoute, arguments: args);
+    await Navigator.of(context).pushReplacementNamed(route, arguments: args);
+    triggerEvent(navigationEvent, context, route: route);
   } else if (shouldRemoveUntil) {
     await Navigator.of(context).pushNamedAndRemoveUntil(
-      namedRoute,
-      ModalRoute.withName(namedRoute),
+      route,
+      ModalRoute.withName(route),
+      arguments: args,
     );
+    triggerEvent(navigationEvent, context, route: route);
   } else {
-    await Navigator.of(context).pushNamed(namedRoute, arguments: args);
+    await Navigator.of(context).pushNamed(route, arguments: args);
+    triggerEvent(navigationEvent, context, route: route);
   }
 }
 
@@ -741,11 +733,11 @@ Future<void> navigateToProfileItemPage({
   if (profileItem.onTapRoute == pinVerificationRoute) {
     triggerNavigationEvent(
         context: context,
-        namedRoute: profileItem.onTapRoute,
+        route: profileItem.onTapRoute,
         args: PinVerificationType.pinChange);
   } else {
     await triggerNavigationEvent(
-        context: context, namedRoute: profileItem.onTapRoute);
+        context: context, route: profileItem.onTapRoute);
   }
 }
 
@@ -820,8 +812,8 @@ Future<dynamic> showInfoBottomSheet({
   );
 }
 
-/// Gets the initial page to route to based on the auth token status
-Future<String> getInitialPageRoute({required BuildContext context}) async {
+/// Gets initial route based on the authToken status
+Future<String> getInitialRoute({required BuildContext context}) async {
   final AppState state = StoreProvider.state<AppState>(context)!;
 
   // This will always be false
@@ -868,7 +860,7 @@ String getAppContext(List<AppContext> contexts) {
   return 'test';
 }
 
-void publishEvent(String eventName, BuildContext context) {
+void triggerEvent(String eventName, BuildContext context, {String? route}) {
   final UserState userState =
       StoreProvider.state<AppState>(context)!.userState!;
 
@@ -876,6 +868,7 @@ void publishEvent(String eventName, BuildContext context) {
     firstName: userState.userProfile!.userBioData!.firstName?.getValue(),
     lastName: userState.userProfile!.userBioData!.lastName?.getValue(),
     uid: userState.auth!.uid,
+    route: route,
     primaryPhoneNumber: userState.userProfile!.primaryPhoneNumber?.getValue(),
     flavour: Flavour.PRO.name,
     timestamp: DateTime.now(),
@@ -893,15 +886,15 @@ void publishEvent(String eventName, BuildContext context) {
       name: contextEventName, parameters: eventObjectPayload.toJson());
 }
 
-void openPatientExamDrawer(
-    {required BuildContext context, required ReviewSystems system}) {
-  /// Adds the selectedDrawer
+void openPatientExamDrawer({
+  required BuildContext context,
+  required ReviewSystems system,
+}) {
   context
       .findAncestorWidgetOfExactType<PatientExam>()
       ?.selectedDrawer
       .add(system.reviewDefinition.drawerType);
 
-  /// Open the end drawer using the scaffold key
   context
       .findAncestorWidgetOfExactType<PatientExam>()
       ?.scaffoldKey

@@ -27,7 +27,7 @@ class LandingActions extends StatelessWidget {
             borderColor: Colors.transparent,
             text: landingSignIn,
             onPressed: () async => triggerNavigationEvent(
-                context: context, namedRoute: phoneLoginRoute),
+                context: context, route: phoneLoginRoute),
           ),
         ),
         Container(
@@ -40,7 +40,7 @@ class LandingActions extends StatelessWidget {
             textColor: Theme.of(context).primaryColor,
             borderColor: Theme.of(context).primaryColor,
             onPressed: () async => triggerNavigationEvent(
-                context: context, namedRoute: phoneSignupRoute),
+                context: context, route: phoneSignupRoute),
           ),
         ),
       ],

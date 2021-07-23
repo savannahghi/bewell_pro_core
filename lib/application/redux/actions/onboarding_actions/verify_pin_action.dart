@@ -80,9 +80,9 @@ class VerifyPinAction extends ReduxAction<AppState> {
 
       if (isChangingPin) {
         await triggerNavigationEvent(
-            context: context, namedRoute: profileChangePinRoute);
+            context: context, route: profileChangePinRoute);
       } else {
-        await triggerNavigationEvent(context: context, namedRoute: path.route);
+        await triggerNavigationEvent(context: context, route: path.route);
       }
     } else {
       dispatch(

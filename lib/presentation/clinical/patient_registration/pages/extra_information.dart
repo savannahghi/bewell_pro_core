@@ -70,7 +70,7 @@ class _ExtraInformationState extends State<ExtraInformation> {
 
     if (result != null &&
         result['createUpdatePatientExtraInformation'] != null) {
-      publishEvent(registerPatientEvent, context);
+      triggerEvent(registerPatientEvent, context);
 
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: const Text(extraInfoSaved),

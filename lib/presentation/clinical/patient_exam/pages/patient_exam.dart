@@ -87,7 +87,7 @@ class PatientExam extends StatelessWidget {
                                       vertical: 10, horizontal: 10),
                                   onPressed: () async => triggerNavigationEvent(
                                       context: context,
-                                      namedRoute: patientProfilePageRoute),
+                                      route: patientProfilePageRoute),
                                   text: backText,
                                   buttonColor: Colors.transparent,
                                   textColor: Theme.of(context).primaryColor,

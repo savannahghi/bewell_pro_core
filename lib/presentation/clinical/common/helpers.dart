@@ -43,13 +43,13 @@ void startVisitByType(
   switch (startVisitType) {
     case StartVisitType.requestAccess:
       {
-        publishEvent(startVisitRequestAccessEvent, context);
+        triggerEvent(startVisitRequestAccessEvent, context);
         startVisitByRequestAccess(context, getPhoneNumber(state));
         break;
       }
     case StartVisitType.emergencyOverride:
       {
-        publishEvent(startVisitEmergencyOverrideEvent, context);
+        triggerEvent(startVisitEmergencyOverrideEvent, context);
         final String? phoneContact =
             state.userState?.userProfile?.primaryPhoneNumber?.getValue();
         startVisitByEmergencyOverride(context, phoneContact);

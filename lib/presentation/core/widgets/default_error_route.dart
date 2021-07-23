@@ -54,9 +54,7 @@ class DefaultErrorRoute extends StatelessWidget {
             SILSecondaryButton(
               buttonKey: AppWidgetKeys.goBackButtonKey,
               onPressed: () async => triggerNavigationEvent(
-                  context: context,
-                  namedRoute: whereToUrl,
-                  shouldReplace: true),
+                  context: context, route: whereToUrl, shouldReplace: true),
               text: goBack,
               customChild: Text(
                 whereToText,

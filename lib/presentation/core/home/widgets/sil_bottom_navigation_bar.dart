@@ -53,7 +53,7 @@ class _SILBottomNavigatorBarState extends State<SILBottomNavigatorBar>
               navigationItems[index].route!.isNotEmpty) {
             await triggerNavigationEvent(
               context: context,
-              namedRoute: navigationItems[index].route!,
+              route: navigationItems[index].route!,
             );
           } else {
             Navigator.pushNamed(

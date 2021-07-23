@@ -35,7 +35,7 @@ class ProfileChangePin extends StatelessWidget {
                 if (isChangePin != null && !isChangePin)
                   GestureDetector(
                     onTap: () async => triggerNavigationEvent(
-                        context: context, namedRoute: userProfileRoute),
+                        context: context, route: userProfileRoute),
                     child: SizedBox(
                       height: 48,
                       child: Text(
