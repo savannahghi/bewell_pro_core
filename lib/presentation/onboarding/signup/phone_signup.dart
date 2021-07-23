@@ -74,7 +74,7 @@ class PhoneSignUp extends StatelessWidget {
                     );
 
                     await triggerNavigationEvent(
-                        context: context, namedRoute: setPinRoute);
+                        context: context, route: setPinRoute);
                   },
                 ),
         );

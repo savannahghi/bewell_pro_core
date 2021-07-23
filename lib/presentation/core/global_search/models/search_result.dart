@@ -87,7 +87,7 @@ List<SearchResult> searchResults = <SearchResult>[
     image: SvgPicture.asset(findPatientIconUrl,
         height: searchIconHeight, width: searchIconHeight),
     onTap: (BuildContext context) =>
-        triggerNavigationEvent(context: context, namedRoute: patientsPageRoute),
+        triggerNavigationEvent(context: context, route: patientsPageRoute),
   ),
 
   // add patient
@@ -108,5 +108,5 @@ List<SearchResult> searchResults = <SearchResult>[
       image: SvgPicture.asset(addPatientIconUrl,
           height: searchIconHeight, width: searchIconHeight),
       onTap: (BuildContext context) => triggerNavigationEvent(
-          context: context, namedRoute: addPatientRoute)),
+          context: context, route: addPatientRoute)),
 ];

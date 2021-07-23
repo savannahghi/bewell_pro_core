@@ -131,7 +131,7 @@ class _EditProfileFormState extends State<EditProfileForm> {
           .eventBus
           .fire(TriggeredEvent(navigationEvent, eventPayload));
       await triggerNavigationEvent(
-          context: context, namedRoute: userProfileRoute, shouldReplace: true);
+          context: context, route: userProfileRoute, shouldReplace: true);
       return;
     }
     showErrorSnackbar(context);

@@ -20,18 +20,10 @@ class PatientSearchViewModel extends Vm {
   final List<PatientEdge?>? patientEdgeList;
   final SearchResultWidgetEnum searchResult;
 
-  void validateAndSearch(
-    BuildContext context,
-    String searchTerm,
-    GlobalKey<FormState> patientSearchFormKey,
-  ) {
-    if (patientSearchFormKey.currentState?.validate() == null) {
-      return;
-    } else if (patientSearchFormKey.currentState?.validate() == false) {
-      return;
-    } else {
-      searchPatientFunction(context, searchTerm);
-    }
+  void validateAndSearch(BuildContext context, String searchTerm,
+      GlobalKey<FormState> patientSearchFormKey) {
+    patientSearchFormKey.currentState!.validate();
+    searchPatientFunction(context, searchTerm);
   }
 
   String? phoneNumberFormValidator(String? searchParam) {

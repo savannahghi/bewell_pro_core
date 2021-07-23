@@ -57,7 +57,7 @@ class GenericTimeoutWidget extends StatelessWidget {
                     ? recoverCallback?.call()
                     : triggerNavigationEvent(
                         context: context,
-                        namedRoute: recoverRoute,
+                        route: recoverRoute,
                         args: payload,
                       );
               },

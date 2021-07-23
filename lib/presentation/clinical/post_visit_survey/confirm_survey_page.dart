@@ -56,7 +56,7 @@ class ConfirmSurveyPage extends StatelessWidget {
                     SILSecondaryButton(
                       buttonKey: AppWidgetKeys.skipSurveyButtonKey,
                       onPressed: () async => triggerNavigationEvent(
-                          context: context, namedRoute: patientsPageRoute),
+                          context: context, route: patientsPageRoute),
                       text: skipText,
                     ),
 

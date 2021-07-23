@@ -80,7 +80,7 @@ class _SaveExamSummaryButtonState extends State<SaveExamSummaryButton> {
         if (endExam['status'] == true) {
           SnackBarListenersChangeObject().onCloseSummaryListener.add(true);
           await triggerNavigationEvent(
-              context: context, namedRoute: patientProfilePageRoute);
+              context: context, route: patientProfilePageRoute);
         }
       } else {
         ScaffoldMessenger.of(context)

@@ -168,9 +168,14 @@ class RouteGenerator {
         );
 
       default:
-        return MaterialPageRoute<DefaultErrorRoute>(
-            builder: (_) => const DefaultErrorRoute(
-                whereToUrl: phoneLoginRoute, whereToText: 'Sign In'));
+        return _errorRoute();
     }
+  }
+
+  static Route<dynamic> _errorRoute() {
+    return MaterialPageRoute<DefaultErrorRoute>(
+      builder: (_) => const DefaultErrorRoute(
+          whereToUrl: phoneLoginRoute, whereToText: 'Sign In'),
+    );
   }
 }

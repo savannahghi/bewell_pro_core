@@ -101,7 +101,7 @@ class StartContinueVisitViewModelFactory
     dispatch(UpdatePatientPatientFoundAction(searchFound: null));
 
     final IGraphQlClient? client = AppWrapperBase.of(context)?.graphQLClient;
-    publishEvent(continueVisitEvent, context);
+    triggerEvent(continueVisitEvent, context);
     await dispatch(ContinueVisitAction(client: client!));
   }
 

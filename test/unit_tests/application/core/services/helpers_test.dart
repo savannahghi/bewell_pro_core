@@ -311,7 +311,7 @@ void main() {
     });
   });
 
-  group('publishEvent', () {
+  group('triggerEvent', () {
     const MethodChannel channel =
         MethodChannel('plugins.flutter.io/firebase_analytics');
 
@@ -338,7 +338,7 @@ void main() {
 
       final BuildContext context = tester.element(find.byType(SizedBox));
 
-      publishEvent('some-event', context);
+      triggerEvent('some-event', context);
 
       expect(methodCall, isNotNull);
       expect(methodCall!.method, 'logEvent');

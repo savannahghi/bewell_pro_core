@@ -129,7 +129,7 @@ class PatientBannerBioInfo extends StatelessWidget {
 
         await triggerNavigationEvent(
           context: context,
-          namedRoute: postVisitSurveyPageRoute,
+          route: postVisitSurveyPageRoute,
         );
         return;
       } else {

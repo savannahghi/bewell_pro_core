@@ -88,9 +88,9 @@ class _HomePageState extends State<HomePage> {
     if (result == 'stay') {
       timer = startTimeout(kTimeOutAfter);
       // Returns route
-      final String route = await getInitialPageRoute(context: context);
+      final String route = await getInitialRoute(context: context);
 
-      await triggerNavigationEvent(context: context, namedRoute: route);
+      await triggerNavigationEvent(context: context, route: route);
     } else {
       logout();
     }

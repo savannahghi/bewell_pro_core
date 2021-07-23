@@ -113,9 +113,9 @@ class PhoneLoginAction extends ReduxAction<AppState> {
       if (responseAsObject.auth!.isChangePin!) {
         // navigate to change PIN
         await triggerNavigationEvent(
-            context: context, namedRoute: profileChangePinRoute);
+            context: context, route: profileChangePinRoute);
       } else {
-        publishEvent(loginEvent, context);
+        triggerEvent(loginEvent, context);
 
         final OnboardingPathConfig path = onboardingPath(state: state);
         dispatch(

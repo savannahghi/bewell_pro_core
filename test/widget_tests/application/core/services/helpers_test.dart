@@ -465,7 +465,7 @@ void main() {
           widget: Builder(builder: (BuildContext context) {
             return GestureDetector(
               onTap: () async =>
-                  route = await getInitialPageRoute(context: context),
+                  route = await getInitialRoute(context: context),
             );
           }));
 
@@ -500,7 +500,7 @@ void main() {
           widget: Builder(builder: (BuildContext context) {
             return GestureDetector(
               onTap: () async =>
-                  route = await getInitialPageRoute(context: context),
+                  route = await getInitialRoute(context: context),
             );
           }));
 
@@ -534,7 +534,7 @@ void main() {
           widget: Builder(builder: (BuildContext context) {
             return GestureDetector(
               onTap: () async =>
-                  route = await getInitialPageRoute(context: context),
+                  route = await getInitialRoute(context: context),
             );
           }));
 
@@ -897,7 +897,7 @@ void main() {
     final BuildContext context = tester.element(find.byType(SizedBox));
 
     triggerNavigationEvent(
-        context: context, namedRoute: phoneLoginRoute, shouldRemoveUntil: true);
+        context: context, route: phoneLoginRoute, shouldRemoveUntil: true);
 
     await tester.pumpAndSettle();
 
@@ -916,7 +916,7 @@ void main() {
     final BuildContext context = tester.element(find.byType(SizedBox));
 
     triggerNavigationEvent(
-        context: context, namedRoute: phoneLoginRoute, shouldReplace: true);
+        context: context, route: phoneLoginRoute, shouldReplace: true);
 
     await tester.pumpAndSettle();
 

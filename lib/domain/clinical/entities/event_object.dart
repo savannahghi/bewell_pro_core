@@ -14,6 +14,7 @@ class EventObject with _$EventObject {
     @JsonKey(name: 'first_name') String? firstName,
     @JsonKey(name: 'last_name') String? lastName,
     @JsonKey(name: 'uid') String? uid,
+    @JsonKey(name: 'route') String? route,
     @JsonKey(name: 'primary_phonenumber') String? primaryPhoneNumber,
     @JsonKey(name: 'timestamp') DateTime? timestamp,
     @JsonKey(name: 'flavour') String? flavour,

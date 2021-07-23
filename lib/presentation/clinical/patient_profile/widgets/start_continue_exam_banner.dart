@@ -36,9 +36,9 @@ class StartOrContinueExamBanner extends StatelessWidget {
   Future<void> startOrContinueExam(BuildContext context,
       {bool shouldContinueExam = false}) async {
     if (shouldContinueExam) {
-      publishEvent(continueVisitEvent, context);
+      triggerEvent(continueVisitEvent, context);
       await triggerNavigationEvent(
-          context: context, namedRoute: patientExamPageRoute);
+          context: context, route: patientExamPageRoute);
       return;
     } else {
       final EpisodeOfCarePayload _episode =
@@ -64,10 +64,10 @@ class StartOrContinueExamBanner extends StatelessWidget {
             .encounterID
             .add(result['startEncounter']?.toString());
 
-        publishEvent(startExamEvent, context);
+        triggerEvent(startExamEvent, context);
 
         await triggerNavigationEvent(
-            context: context, namedRoute: patientExamPageRoute);
+            context: context, route: patientExamPageRoute);
       }
     }
   }

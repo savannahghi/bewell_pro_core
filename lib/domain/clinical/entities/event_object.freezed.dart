@@ -27,6 +27,8 @@ class _$EventObjectTearOff {
           String? lastName,
       @JsonKey(name: 'uid')
           String? uid,
+      @JsonKey(name: 'route')
+          String? route,
       @JsonKey(name: 'primary_phonenumber')
           String? primaryPhoneNumber,
       @JsonKey(name: 'timestamp')
@@ -39,6 +41,7 @@ class _$EventObjectTearOff {
       firstName: firstName,
       lastName: lastName,
       uid: uid,
+      route: route,
       primaryPhoneNumber: primaryPhoneNumber,
       timestamp: timestamp,
       flavour: flavour,
@@ -62,6 +65,8 @@ mixin _$EventObject {
   String? get lastName => throw _privateConstructorUsedError;
   @JsonKey(name: 'uid')
   String? get uid => throw _privateConstructorUsedError;
+  @JsonKey(name: 'route')
+  String? get route => throw _privateConstructorUsedError;
   @JsonKey(name: 'primary_phonenumber')
   String? get primaryPhoneNumber => throw _privateConstructorUsedError;
   @JsonKey(name: 'timestamp')
@@ -89,6 +94,8 @@ abstract class $EventObjectCopyWith<$Res> {
           String? lastName,
       @JsonKey(name: 'uid')
           String? uid,
+      @JsonKey(name: 'route')
+          String? route,
       @JsonKey(name: 'primary_phonenumber')
           String? primaryPhoneNumber,
       @JsonKey(name: 'timestamp')
@@ -112,6 +119,7 @@ class _$EventObjectCopyWithImpl<$Res> implements $EventObjectCopyWith<$Res> {
     Object? firstName = freezed,
     Object? lastName = freezed,
     Object? uid = freezed,
+    Object? route = freezed,
     Object? primaryPhoneNumber = freezed,
     Object? timestamp = freezed,
     Object? flavour = freezed,
@@ -129,6 +137,10 @@ class _$EventObjectCopyWithImpl<$Res> implements $EventObjectCopyWith<$Res> {
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
+              as String?,
+      route: route == freezed
+          ? _value.route
+          : route // ignore: cast_nullable_to_non_nullable
               as String?,
       primaryPhoneNumber: primaryPhoneNumber == freezed
           ? _value.primaryPhoneNumber
@@ -164,6 +176,8 @@ abstract class _$EventObjectCopyWith<$Res>
           String? lastName,
       @JsonKey(name: 'uid')
           String? uid,
+      @JsonKey(name: 'route')
+          String? route,
       @JsonKey(name: 'primary_phonenumber')
           String? primaryPhoneNumber,
       @JsonKey(name: 'timestamp')
@@ -189,6 +203,7 @@ class __$EventObjectCopyWithImpl<$Res> extends _$EventObjectCopyWithImpl<$Res>
     Object? firstName = freezed,
     Object? lastName = freezed,
     Object? uid = freezed,
+    Object? route = freezed,
     Object? primaryPhoneNumber = freezed,
     Object? timestamp = freezed,
     Object? flavour = freezed,
@@ -206,6 +221,10 @@ class __$EventObjectCopyWithImpl<$Res> extends _$EventObjectCopyWithImpl<$Res>
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
+              as String?,
+      route: route == freezed
+          ? _value.route
+          : route // ignore: cast_nullable_to_non_nullable
               as String?,
       primaryPhoneNumber: primaryPhoneNumber == freezed
           ? _value.primaryPhoneNumber
@@ -234,6 +253,7 @@ class _$_EventObject implements _EventObject {
       {@JsonKey(name: 'first_name') this.firstName,
       @JsonKey(name: 'last_name') this.lastName,
       @JsonKey(name: 'uid') this.uid,
+      @JsonKey(name: 'route') this.route,
       @JsonKey(name: 'primary_phonenumber') this.primaryPhoneNumber,
       @JsonKey(name: 'timestamp') this.timestamp,
       @JsonKey(name: 'flavour') this.flavour,
@@ -252,6 +272,9 @@ class _$_EventObject implements _EventObject {
   @JsonKey(name: 'uid')
   final String? uid;
   @override
+  @JsonKey(name: 'route')
+  final String? route;
+  @override
   @JsonKey(name: 'primary_phonenumber')
   final String? primaryPhoneNumber;
   @override
@@ -266,7 +289,7 @@ class _$_EventObject implements _EventObject {
 
   @override
   String toString() {
-    return 'EventObject(firstName: $firstName, lastName: $lastName, uid: $uid, primaryPhoneNumber: $primaryPhoneNumber, timestamp: $timestamp, flavour: $flavour, appVersion: $appVersion)';
+    return 'EventObject(firstName: $firstName, lastName: $lastName, uid: $uid, route: $route, primaryPhoneNumber: $primaryPhoneNumber, timestamp: $timestamp, flavour: $flavour, appVersion: $appVersion)';
   }
 
   @override
@@ -281,6 +304,8 @@ class _$_EventObject implements _EventObject {
                     .equals(other.lastName, lastName)) &&
             (identical(other.uid, uid) ||
                 const DeepCollectionEquality().equals(other.uid, uid)) &&
+            (identical(other.route, route) ||
+                const DeepCollectionEquality().equals(other.route, route)) &&
             (identical(other.primaryPhoneNumber, primaryPhoneNumber) ||
                 const DeepCollectionEquality()
                     .equals(other.primaryPhoneNumber, primaryPhoneNumber)) &&
@@ -301,6 +326,7 @@ class _$_EventObject implements _EventObject {
       const DeepCollectionEquality().hash(firstName) ^
       const DeepCollectionEquality().hash(lastName) ^
       const DeepCollectionEquality().hash(uid) ^
+      const DeepCollectionEquality().hash(route) ^
       const DeepCollectionEquality().hash(primaryPhoneNumber) ^
       const DeepCollectionEquality().hash(timestamp) ^
       const DeepCollectionEquality().hash(flavour) ^
@@ -325,6 +351,8 @@ abstract class _EventObject implements EventObject {
           String? lastName,
       @JsonKey(name: 'uid')
           String? uid,
+      @JsonKey(name: 'route')
+          String? route,
       @JsonKey(name: 'primary_phonenumber')
           String? primaryPhoneNumber,
       @JsonKey(name: 'timestamp')
@@ -346,6 +374,9 @@ abstract class _EventObject implements EventObject {
   @override
   @JsonKey(name: 'uid')
   String? get uid => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'route')
+  String? get route => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'primary_phonenumber')
   String? get primaryPhoneNumber => throw _privateConstructorUsedError;

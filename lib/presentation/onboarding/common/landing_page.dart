@@ -147,8 +147,8 @@ Widget termsAndConditions(BuildContext context,
                   fontStyle: FontStyle.normal,
                 ),
             recognizer: TapGestureRecognizer()
-              ..onTap = () async => triggerNavigationEvent(
-                  context: context, namedRoute: webViewRoute),
+              ..onTap = () async =>
+                  triggerNavigationEvent(context: context, route: webViewRoute),
           ),
         ],
       ),

@@ -46,7 +46,7 @@ class _CompleteButtonState extends State<CompleteButton> {
       buttonColor: healthcloudPrimaryColor,
       onPressed: isActive
           ? () => triggerNavigationEvent(
-              context: context, namedRoute: patientExamSummaryPageRoute)
+              context: context, route: patientExamSummaryPageRoute)
           : () => addItemsToPatientExamFunction(context),
       text: widget.buttonText,
     );

@@ -89,7 +89,7 @@ class RecoverPinRequest extends StatelessWidget {
                 onPressed: () async {
                   await triggerNavigationEvent(
                       context: context,
-                      namedRoute: phoneLoginRoute,
+                      route: phoneLoginRoute,
                       shouldReplace: true);
                 },
                 child: const Opacity(opacity: 0.5, child: Text(loginBack)),
