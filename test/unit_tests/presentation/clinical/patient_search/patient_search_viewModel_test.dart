@@ -69,7 +69,7 @@ void main() {
       expect(searched, true);
     });
 
-     test('fails validation and does not search', () {
+    test('fails validation and does not search', () {
       bool searched = false;
       final PatientSearchViewModel patientSearchViewModel =
           PatientSearchViewModel(

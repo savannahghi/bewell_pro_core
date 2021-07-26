@@ -80,7 +80,8 @@ class _PhoneLoginState extends State<PhoneLogin> {
   @override
   Widget build(BuildContext context) {
     return StoreConnector<CoreState, CoreStateViewModel>(
-      converter: (Store<CoreState> store) => CoreStateViewModel.fromStore(store),
+      converter: (Store<CoreState> store) =>
+          CoreStateViewModel.fromStore(store),
       builder: (BuildContext context, CoreStateViewModel vm) {
         return Form(
           key: _formKey,

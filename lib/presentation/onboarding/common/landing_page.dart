@@ -49,8 +49,8 @@ class LandingPage extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: Padding(
                     padding: EdgeInsets.symmetric(
-                        horizontal: ResponsiveWidget
-                            .preferredPaddingOnStretchedScreens(
+                        horizontal:
+                            ResponsiveWidget.preferredPaddingOnStretchedScreens(
                                 context: context)),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -62,8 +62,8 @@ class LandingPage extends StatelessWidget {
                           spacing: 30,
                           runSpacing: 40,
                           children: <Widget>[
-                            if (!ResponsiveWidget
-                                .isSmallScreenAndOnLandscape(context: context))
+                            if (!ResponsiveWidget.isSmallScreenAndOnLandscape(
+                                context: context))
                               LandingPageImage()
                             else
                               smallVerticalSizedBox,

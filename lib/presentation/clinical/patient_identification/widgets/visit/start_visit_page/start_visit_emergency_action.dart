@@ -77,7 +77,8 @@ class StartVisitEmergencyAction extends ReduxAction<CoreState> {
     // save the open episode of care into the core state
     final ClinicalState? clinicalState = state.clinicalState?.copyWith
         .call(currentEpisodeOfCare: episodeOfCarePayload.episodeOfCare);
-    final CoreState newState = state.copyWith.call(clinicalState: clinicalState);
+    final CoreState newState =
+        state.copyWith.call(clinicalState: clinicalState);
 
     // for backward compatibility only
     // TODO: REMOVE AFTER REFACTORING PATIENT PROFILE
@@ -94,7 +95,8 @@ class StartVisitEmergencyAction extends ReduxAction<CoreState> {
     final PatientConnection patientConnection = PatientConnection(edges: list);
     currentPatientInEpisode.patientConnection.add(patientConnection);
 
-    dispatch(NavigateAction<CoreState>.popAndPushNamed(patientProfilePageRoute));
+    dispatch(
+        NavigateAction<CoreState>.popAndPushNamed(patientProfilePageRoute));
 
     return newState;
   }

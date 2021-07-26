@@ -58,7 +58,8 @@ class SetAndConfirmPinWidget extends StatelessWidget {
     String? _pin;
 
     return StoreConnector<CoreState, CoreStateViewModel>(
-      converter: (Store<CoreState> store) => CoreStateViewModel.fromStore(store),
+      converter: (Store<CoreState> store) =>
+          CoreStateViewModel.fromStore(store),
       builder: (BuildContext context, CoreStateViewModel vm) {
         return Form(
           key: _formKey,

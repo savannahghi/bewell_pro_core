@@ -211,7 +211,8 @@ void main() {
   test('patient not found, return null record', () async {
     final Store<CoreState> store =
         Store<CoreState>(initialState: CoreState.initial());
-    final StoreTester<CoreState> storeTester = StoreTester<CoreState>.from(store);
+    final StoreTester<CoreState> storeTester =
+        StoreTester<CoreState>.from(store);
 
     final PatientConnection patientConnection = PatientConnection();
 

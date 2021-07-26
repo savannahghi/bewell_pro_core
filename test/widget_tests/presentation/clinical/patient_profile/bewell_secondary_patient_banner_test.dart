@@ -18,7 +18,8 @@ import '../../../../mocks/test_helpers.dart';
 
 void main() {
   group('Secondary Patient Banner', () {
-    Store<CoreState> store = Store<CoreState>(initialState: CoreState.initial());
+    Store<CoreState> store =
+        Store<CoreState>(initialState: CoreState.initial());
 
     setUpAll(() {
       startMockVisitAndExam();

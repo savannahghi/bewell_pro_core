@@ -25,9 +25,8 @@ class PatientExamDiagnosis extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.symmetric(
                         vertical: 16,
-                        horizontal: ResponsiveWidget.isSmallScreen(context)
-                            ? 3
-                            : 32),
+                        horizontal:
+                            ResponsiveWidget.isSmallScreen(context) ? 3 : 32),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const <Widget>[

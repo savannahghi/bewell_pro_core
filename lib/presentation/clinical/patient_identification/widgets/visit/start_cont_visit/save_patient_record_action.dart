@@ -23,7 +23,8 @@ class SavePatientRecordAction extends ReduxAction<CoreState> {
     final ClinicalState? clinicalState =
         state.clinicalState?.copyWith.call(patientPayload: patientPayload);
 
-    final CoreState newState = state.copyWith.call(clinicalState: clinicalState);
+    final CoreState newState =
+        state.copyWith.call(clinicalState: clinicalState);
     return newState;
   }
 }

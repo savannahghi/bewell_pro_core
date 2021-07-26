@@ -978,10 +978,9 @@ double getResponsivePadding({required BuildContext context}) {
 
   if (ResponsiveWidget.deviceType(context) != DeviceScreensType.Mobile &&
       secondaryActions.isEmpty) {
-    padding = ResponsiveWidget.preferredPaddingOnStretchedScreens(
-        context: context);
-  } else if (ResponsiveWidget.deviceType(context) ==
-      DeviceScreensType.Mobile) {
+    padding =
+        ResponsiveWidget.preferredPaddingOnStretchedScreens(context: context);
+  } else if (ResponsiveWidget.deviceType(context) == DeviceScreensType.Mobile) {
     padding = number15;
   } else {
     padding = number20;

@@ -71,7 +71,8 @@ class ContinueVisitAction extends ReduxAction<CoreState> {
     final ClinicalState? clinicalState = state.clinicalState?.copyWith
         .call(currentEpisodeOfCare: patientPayload.openEpisodes?.first);
 
-    final CoreState newState = state.copyWith.call(clinicalState: clinicalState);
+    final CoreState newState =
+        state.copyWith.call(clinicalState: clinicalState);
 
     final CurrentPatientInEpisode current = CurrentPatientInEpisode();
 
