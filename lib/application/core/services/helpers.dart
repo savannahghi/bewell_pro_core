@@ -32,6 +32,7 @@ import 'package:bewell_pro_core/presentation/router/routes.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/html_parser.dart';
 import 'package:http/http.dart' as http;
 import 'package:misc_utilities/enums.dart';
 import 'package:rxdart/rxdart.dart';
@@ -51,7 +52,9 @@ import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/constants.dart';
 import 'package:shared_themes/spaces.dart';
 import 'package:shared_ui_components/buttons.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:user_feed/user_feed.dart';
+import 'package:html/dom.dart' as dom;
 
 /// [getAuthTokenStatus] is used to check if the Auth Token has expired or if it needs refreshing
 ///
@@ -985,4 +988,9 @@ double getResponsivePadding({required BuildContext context}) {
   }
 
   return padding;
+}
+
+void onBodyLinkOrImageTapCallback(String? url, RenderContext context,
+    Map<String, String> attributes, dom.Element? element) {
+  launch(url!);
 }
