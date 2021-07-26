@@ -683,18 +683,18 @@ Future<void> triggerNavigationEvent({
 }) async {
   /// Navigation Function
   if (shouldReplace) {
-    await Navigator.of(context).pushReplacementNamed(route, arguments: args);
     triggerEvent(navigationEvent, context, route: route);
+    await Navigator.of(context).pushReplacementNamed(route, arguments: args);
   } else if (shouldRemoveUntil) {
+    triggerEvent(navigationEvent, context, route: route);
     await Navigator.of(context).pushNamedAndRemoveUntil(
       route,
       ModalRoute.withName(route),
       arguments: args,
     );
-    triggerEvent(navigationEvent, context, route: route);
   } else {
-    await Navigator.of(context).pushNamed(route, arguments: args);
     triggerEvent(navigationEvent, context, route: route);
+    await Navigator.of(context).pushNamed(route, arguments: args);
   }
 }
 

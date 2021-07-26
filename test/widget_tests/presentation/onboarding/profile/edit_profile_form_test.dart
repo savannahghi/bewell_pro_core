@@ -19,40 +19,39 @@ void main() {
     final EventBus eventBus = EventBus();
 
     testWidgets('works correctly', (WidgetTester tester) async {
-      Store<CoreState> store;
-      final CoreState state = CoreState(
-        wait: Wait(),
-        userState: UserState(
-          userProfile: UserProfile(
-            id: UNKNOWN,
-            username: Name.withValue('Bewell-test'),
-            termsAccepted: true,
-            suspended: false,
-            photoUploadID: UNKNOWN,
-            primaryPhoneNumber: PhoneNumber.withValue('+254798000000'),
-            userBioData: BioData(
-              firstName: Name.withValue(''),
-              lastName: Name.withValue(''),
-              dateOfBirth: UNKNOWN,
-              gender: Gender.male,
-            ),
+      final UserState userState = UserState.initial().copyWith(
+        userProfile: UserProfile(
+          id: UNKNOWN,
+          username: Name.withValue('Bewell-test'),
+          termsAccepted: true,
+          suspended: false,
+          photoUploadID: UNKNOWN,
+          primaryPhoneNumber: PhoneNumber.withValue('+254798000000'),
+          userBioData: BioData(
+            firstName: Name.withValue(''),
+            lastName: Name.withValue(''),
+            dateOfBirth: UNKNOWN,
+            gender: Gender.male,
           ),
-          communicationSettings: CommunicationSettings(
-            profileID: 'UNKNOWN',
-            allowWhatsApp: false,
-            allowPush: false,
-            allowEmail: false,
-          ),
+        ),
+        communicationSettings: CommunicationSettings(
+          profileID: 'UNKNOWN',
+          allowWhatsApp: false,
+          allowPush: false,
+          allowEmail: false,
         ),
       );
 
-      store = Store<CoreState>(initialState: state);
+      final CoreState state =
+          CoreState.initial().copyWith(userState: userState);
+      final Store<CoreState> store = Store<CoreState>(initialState: state);
 
       await buildTestWidget(
-          eventBus: eventBus,
-          store: store,
-          tester: tester,
-          widget: EditProfileForm());
+        eventBus: eventBus,
+        store: store,
+        tester: tester,
+        widget: EditProfileForm(),
+      );
 
       // verify UI renders correctly
       expect(find.text(updateProfile), findsOneWidget);
@@ -80,6 +79,7 @@ void main() {
       final String actualFirstName = store
           .state.userState!.userProfile!.userBioData!.firstName!
           .getValue();
+
       expect(find.byType(SnackBar), findsOneWidget);
       expect(find.text(updateSuccessful), findsOneWidget);
       expect(actualFirstName, expectedFirstName);

@@ -8,8 +8,9 @@ class SaveUserFeedAction extends ReduxAction<CoreState> {
 
   @override
   CoreState reduce() {
-    final CoreState newState =
-        state.copyWith.userFeedState!.call(userFeed: feed);
+    final CoreState newState = state.copyWith(
+        userFeedState:
+            store.state.userFeedState?.copyWith.call(userFeed: feed));
 
     return newState;
   }

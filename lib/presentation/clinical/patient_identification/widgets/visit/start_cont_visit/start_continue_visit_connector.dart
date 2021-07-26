@@ -1,6 +1,6 @@
 import 'package:async_redux/async_redux.dart';
-import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/visit/start_cont_visit/start_cont_visit_factory.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/visit/start_cont_visit/start_cont_visit_view_model.dart';

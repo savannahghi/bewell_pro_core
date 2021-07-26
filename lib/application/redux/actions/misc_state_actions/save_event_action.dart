@@ -1,5 +1,6 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/application/redux/states/event_state.dart';
 
 class SaveEventAction extends ReduxAction<CoreState> {
   SaveEventAction({required this.eventName, required this.eventPayload});
@@ -7,8 +8,12 @@ class SaveEventAction extends ReduxAction<CoreState> {
   final String? eventName;
 
   @override
-  Future<CoreState> reduce() async {
-    return state.copyWith.miscState!.eventState!
+  CoreState reduce() {
+    final EventState eventState = state.miscState!.eventState!.copyWith
         .call(eventName: eventName, eventPayload: eventPayload);
+
+    return state.copyWith(
+      miscState: state.miscState?.copyWith.call(eventState: eventState),
+    );
   }
 }

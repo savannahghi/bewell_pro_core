@@ -74,8 +74,8 @@ void main() {
 
         // Use didPopRoute() to simulate the system back button. Check that
         // didPopRoute() indicates that the notification was handled.
-        final dynamic widgetsAppState = tester.state(find.byType(WidgetsApp));
-        expect(await widgetsAppState.didPopRoute(), isTrue);
+        final dynamic widgetsCoreState = tester.state(find.byType(WidgetsApp));
+        expect(await widgetsCoreState.didPopRoute(), isTrue);
         await tester.pumpAndSettle();
 
         // Confirm modal exit barrier is displayed
@@ -97,7 +97,7 @@ void main() {
         expect(find.text(stayBtnText), findsNothing);
 
         // Confirm Exit option leaves
-        expect(await widgetsAppState.didPopRoute(), isTrue);
+        expect(await widgetsCoreState.didPopRoute(), isTrue);
         await tester.pumpAndSettle();
         await tester.tap(find.text(exitBtnText));
         await tester.pumpAndSettle();

@@ -14,11 +14,11 @@ class VerifyPinResetRequestPage extends StatelessWidget {
   Widget build(BuildContext context) {
     const double dimension = 0;
 
-    final CoreState? coreState = StoreProvider.state<CoreState>(context);
+    final CoreState? state = StoreProvider.state<CoreState>(context);
 
-    final String primaryPhoneNumber = coreState!.miscState!.phoneNumber!;
+    final String primaryPhoneNumber = state!.miscState!.phoneNumber!;
 
-    final String otp = coreState.miscState!.otpCode!;
+    final String otp = state.miscState!.otpCode!;
 
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,

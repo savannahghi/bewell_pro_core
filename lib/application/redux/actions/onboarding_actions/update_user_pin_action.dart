@@ -2,13 +2,13 @@ import 'dart:async';
 
 import 'package:app_wrapper/app_wrapper.dart';
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:domain_objects/value_objects.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:bewell_pro_core/application/core/services/onboarding.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/misc_state.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/domain/core/entities/processed_response.dart';

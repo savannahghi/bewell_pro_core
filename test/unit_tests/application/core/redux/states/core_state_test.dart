@@ -1,25 +1,16 @@
-import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:bewell_pro_core/application/redux/states/user_feed_state.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  group('CoreState:', () {
-    test('should convert state from/to json', () async {
-      final CoreState state = CoreState.initial();
-      final Map<String, dynamic> coreStateJson = <String, dynamic>{
-        'userFeedState': <String, dynamic>{'userFeed': 'some-user-feed'},
-      };
+  group('CoreState', () {
+    test('two instances with same parameters should be equal', () {
+      CoreState state = CoreState.initial();
+      expect(state, CoreState.initial());
 
-      // test whether the core state can be updated
-      expect(state.userFeedState!.userFeed, 'UNKNOWN');
-      final CoreState state2 = state.copyWith
-          .call(userFeedState: UserFeedState(userFeed: 'some-user-feed'));
+      state = state.copyWith(
+          userState: state.userState?.copyWith.call(isSignedIn: true));
 
-      expect(state2.userFeedState!.userFeed, 'some-user-feed');
-
-      final CoreState state3 = CoreState.fromJson(coreStateJson);
-      expect(state3, isA<CoreState>());
-      expect(state3.userFeedState!.userFeed, 'some-user-feed');
+      expect(state, isNot(CoreState.initial()));
     });
   });
 }

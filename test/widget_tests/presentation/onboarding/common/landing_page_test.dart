@@ -55,8 +55,8 @@ void main() {
 
       expect(find.byType(LandingActions), findsOneWidget);
 
-      final dynamic widgetsAppState = tester.state(find.byType(WidgetsApp));
-      expect(await widgetsAppState.didPopRoute(), isTrue);
+      final dynamic widgetsCoreState = tester.state(find.byType(WidgetsApp));
+      expect(await widgetsCoreState.didPopRoute(), isTrue);
       await tester.pump();
 
       expect(find.byType(LandingActions), findsOneWidget);

@@ -8,7 +8,6 @@ import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/inc
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';
 import 'package:bewell_pro_core/application/redux/states/misc_state.dart';
-import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/attachment.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/contact_point.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/human_name.dart';
@@ -244,7 +243,8 @@ void main() {
 
       final Store<CoreState> localStore = Store<CoreState>(
         initialState: store.state.copyWith(
-          userState: UserState(auth: AuthCredentialResponse()),
+          userState: store.state.userState?.copyWith
+              .call(auth: AuthCredentialResponse()),
           navigationState: Navigation(
               drawerSelectedIndex: -1,
               bottomBarSelectedIndex: 0,

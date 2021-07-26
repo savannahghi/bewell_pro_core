@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:domain_objects/value_objects.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
@@ -25,8 +25,12 @@ import '../../../../mocks/test_helpers.dart';
 
 void main() {
   group('sil search and search widget pages', () {
-    final Store<CoreState> store =
-        Store<CoreState>(initialState: CoreState.initial());
+    late Store<CoreState> store;
+
+    setUp(() {
+      store = Store<CoreState>(initialState: CoreState.initial());
+    });
+
     final SearchWidget delegate = SearchWidget();
     final List<SearchResult> suggestionList = <SearchResult>[];
 
@@ -101,14 +105,15 @@ void main() {
 
     testWidgets('profile recent search item navigates correctly',
         (WidgetTester tester) async {
-      final Store<CoreState> store = Store<CoreState>(
-        initialState: CoreState(
-          navigationState: Navigation(
-              drawerSelectedIndex: -1,
-              primaryActions: primaryActionsMockedData,
-              secondaryActions: secondaryActionsMockedData,
-              bottomBarSelectedIndex: -1),
-          userState: UserState(
+      final Store<CoreState> localStore = Store<CoreState>(
+        initialState: store.state.copyWith(
+          navigationState: store.state.navigationState?.copyWith.call(
+            drawerSelectedIndex: -1,
+            primaryActions: primaryActionsMockedData,
+            secondaryActions: secondaryActionsMockedData,
+            bottomBarSelectedIndex: -1,
+          ),
+          userState: store.state.userState?.copyWith.call(
             userProfile: UserProfile(
               userBioData: BioData(
                 firstName: testFirstName,
@@ -126,7 +131,7 @@ void main() {
       await mockNetworkImages(() async {
         await buildTestWidget(
           tester: tester,
-          store: store,
+          store: localStore,
           widget: Builder(builder: (BuildContext context) {
             return SILSearch();
           }),
@@ -154,14 +159,15 @@ void main() {
 
     testWidgets('profile suggested item navigates correctly',
         (WidgetTester tester) async {
-      final Store<CoreState> store = Store<CoreState>(
-        initialState: CoreState(
-          navigationState: Navigation(
-              drawerSelectedIndex: -1,
-              primaryActions: primaryActionsMockedData,
-              secondaryActions: secondaryActionsMockedData,
-              bottomBarSelectedIndex: -1),
-          userState: UserState(
+      final Store<CoreState> localStore = Store<CoreState>(
+        initialState: store.state.copyWith(
+          navigationState: store.state.navigationState?.copyWith.call(
+            drawerSelectedIndex: -1,
+            primaryActions: primaryActionsMockedData,
+            secondaryActions: secondaryActionsMockedData,
+            bottomBarSelectedIndex: -1,
+          ),
+          userState: store.state.userState?.copyWith.call(
             userProfile: UserProfile(
               userBioData: BioData(
                 firstName: testFirstName,
@@ -175,9 +181,10 @@ void main() {
           ),
         ),
       );
+
       await mockNetworkImages(() async {
         await buildTestWidget(
-            store: store, tester: tester, widget: SILSearch());
+            store: localStore, tester: tester, widget: SILSearch());
 
         // verify UI renders correctly
         expect(searchGestureDetectorFinder, findsOneWidget);
@@ -203,14 +210,14 @@ void main() {
 
     testWidgets('find patient suggested item navigates correctly',
         (WidgetTester tester) async {
-      final Store<CoreState> store = Store<CoreState>(
-        initialState: CoreState(
-          navigationState: Navigation(
+      final Store<CoreState> localStore = Store<CoreState>(
+        initialState: store.state.copyWith(
+          navigationState: store.state.navigationState?.copyWith.call(
               drawerSelectedIndex: -1,
               primaryActions: primaryActionsMockedData,
               secondaryActions: secondaryActionsMockedData,
               bottomBarSelectedIndex: 0),
-          userState: UserState(
+          userState: store.state.userState?.copyWith.call(
             userProfile: UserProfile(
               userBioData: BioData(
                 firstName: testFirstName,
@@ -225,7 +232,11 @@ void main() {
         ),
       );
 
-      await buildTestWidget(store: store, tester: tester, widget: SILSearch());
+      await buildTestWidget(
+        store: localStore,
+        tester: tester,
+        widget: SILSearch(),
+      );
 
       // verify UI renders correctly
       expect(searchGestureDetectorFinder, findsOneWidget);
@@ -252,14 +263,14 @@ void main() {
 
     testWidgets('add patient suggested item navigates correctly',
         (WidgetTester tester) async {
-      final Store<CoreState> store = Store<CoreState>(
-        initialState: CoreState(
-          navigationState: Navigation(
+      final Store<CoreState> localStore = Store<CoreState>(
+        initialState: store.state.copyWith(
+          navigationState: store.state.navigationState?.copyWith.call(
               drawerSelectedIndex: -1,
               primaryActions: primaryActionsMockedData,
               secondaryActions: secondaryActionsMockedData,
               bottomBarSelectedIndex: 0),
-          userState: UserState(
+          userState: store.state.userState?.copyWith.call(
             userProfile: UserProfile(
               userBioData: BioData(
                 firstName: testFirstName,
@@ -273,7 +284,9 @@ void main() {
           ),
         ),
       );
-      await buildTestWidget(store: store, tester: tester, widget: SILSearch());
+
+      await buildTestWidget(
+          store: localStore, tester: tester, widget: SILSearch());
 
       // verify UI renders correctly
       expect(searchGestureDetectorFinder, findsOneWidget);
@@ -820,14 +833,14 @@ void main() {
     testWidgets(
         'navigates to search patient page when result list tile is tapped',
         (WidgetTester tester) async {
-      final Store<CoreState> store = Store<CoreState>(
-        initialState: CoreState(
-          navigationState: Navigation(
+      final Store<CoreState> localStore = Store<CoreState>(
+        initialState: store.state.copyWith(
+          navigationState: store.state.navigationState?.copyWith.call(
               drawerSelectedIndex: -1,
               primaryActions: primaryActionsMockedData,
               secondaryActions: secondaryActionsMockedData,
               bottomBarSelectedIndex: 0),
-          userState: UserState(
+          userState: store.state.userState?.copyWith.call(
             userProfile: UserProfile(
               userBioData: BioData(
                 firstName: testFirstName,
@@ -845,7 +858,12 @@ void main() {
           ),
         ),
       );
-      await buildTestWidget(store: store, tester: tester, widget: SILSearch());
+
+      await buildTestWidget(
+        store: localStore,
+        tester: tester,
+        widget: SILSearch(),
+      );
 
       expect(searchAbsorbFinder, findsOneWidget);
       expect(appSearchInputFinder, findsOneWidget);
@@ -873,14 +891,14 @@ void main() {
     testWidgets(
         'navigates to patient registration page when result list tile is tapped',
         (WidgetTester tester) async {
-      final Store<CoreState> store = Store<CoreState>(
-        initialState: CoreState(
-          navigationState: Navigation(
+      final Store<CoreState> localStore = Store<CoreState>(
+        initialState: store.state.copyWith(
+          navigationState: store.state.navigationState?.copyWith.call(
               drawerSelectedIndex: -1,
               primaryActions: primaryActionsMockedData,
               secondaryActions: secondaryActionsMockedData,
               bottomBarSelectedIndex: 0),
-          userState: UserState(
+          userState: store.state.userState?.copyWith.call(
             userProfile: UserProfile(
               userBioData: BioData(
                 firstName: testFirstName,
@@ -899,7 +917,11 @@ void main() {
         ),
       );
 
-      await buildTestWidget(store: store, tester: tester, widget: SILSearch());
+      await buildTestWidget(
+        store: localStore,
+        tester: tester,
+        widget: SILSearch(),
+      );
 
       expect(searchAbsorbFinder, findsOneWidget);
       expect(appSearchInputFinder, findsOneWidget);
