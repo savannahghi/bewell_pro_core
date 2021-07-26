@@ -45,7 +45,8 @@ class VerifyPin extends StatelessWidget {
     String enteredPin = '';
 
     return StoreConnector<CoreState, CoreStateViewModel>(
-      converter: (Store<CoreState> store) => CoreStateViewModel.fromStore(store),
+      converter: (Store<CoreState> store) =>
+          CoreStateViewModel.fromStore(store),
       builder: (BuildContext context, CoreStateViewModel vm) {
         return Column(
           children: <Widget>[

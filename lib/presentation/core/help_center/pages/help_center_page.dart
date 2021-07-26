@@ -19,8 +19,8 @@ class HelpCenterPage extends StatelessWidget {
         defaultSecondaryNavItems.isNotEmpty) {
       padding = number20;
     } else {
-      padding = ResponsiveWidget.preferredPaddingOnStretchedScreens(
-          context: context);
+      padding =
+          ResponsiveWidget.preferredPaddingOnStretchedScreens(context: context);
     }
 
     return AppScaffold(

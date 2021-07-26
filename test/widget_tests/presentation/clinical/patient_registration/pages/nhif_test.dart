@@ -80,10 +80,8 @@ void main() {
         tester: tester,
         widget: Builder(
           builder: (BuildContext context) {
-            final bool isSmallScreen =
-                ResponsiveWidget.isSmallScreen(context);
-            final bool isLargeScreen =
-                ResponsiveWidget.isLargeScreen(context);
+            final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
+            final bool isLargeScreen = ResponsiveWidget.isLargeScreen(context);
 
             expect(isSmallScreen, isFalse);
             expect(isLargeScreen, isTrue);

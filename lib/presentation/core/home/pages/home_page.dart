@@ -100,8 +100,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final double padding;
 
-    final DeviceScreensType deviceType =
-        ResponsiveWidget.deviceType(context);
+    final DeviceScreensType deviceType = ResponsiveWidget.deviceType(context);
 
     if (deviceType != DeviceScreensType.Mobile) {
       padding = ResponsiveWidget.preferredPaddingOnStretchedScreens(

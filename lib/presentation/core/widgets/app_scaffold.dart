@@ -56,8 +56,7 @@ class AppScaffold extends StatelessWidget {
               decoration: const BoxDecoration(color: Colors.white),
               constraints: const BoxConstraints(maxWidth: 420),
               padding: EdgeInsets.symmetric(
-                horizontal:
-                    ResponsiveWidget.preferredPaddingOnStretchedScreens(
+                horizontal: ResponsiveWidget.preferredPaddingOnStretchedScreens(
                   context: context,
                 ),
               ),

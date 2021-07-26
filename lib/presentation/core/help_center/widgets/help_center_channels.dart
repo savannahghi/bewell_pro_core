@@ -18,10 +18,9 @@ class HelpCenterChannels extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double contactSectionWidth =
-        ResponsiveWidget.isLargeScreen(context)
-            ? MediaQuery.of(context).size.width * 0.5
-            : double.infinity;
+    final double contactSectionWidth = ResponsiveWidget.isLargeScreen(context)
+        ? MediaQuery.of(context).size.width * 0.5
+        : double.infinity;
 
     return SizedBox(
       width: contactSectionWidth,

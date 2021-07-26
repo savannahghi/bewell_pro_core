@@ -150,13 +150,13 @@ class _EditProfileFormState extends State<EditProfileForm> {
   @override
   Widget build(BuildContext context) {
     return StoreConnector<CoreState, CoreStateViewModel>(
-      converter: (Store<CoreState> store) => CoreStateViewModel.fromStore(store),
+      converter: (Store<CoreState> store) =>
+          CoreStateViewModel.fromStore(store),
       builder: (BuildContext context, CoreStateViewModel vm) {
         return Padding(
           padding: EdgeInsets.symmetric(
-              horizontal:
-                  ResponsiveWidget.preferredPaddingOnStretchedScreens(
-                      context: context)),
+              horizontal: ResponsiveWidget.preferredPaddingOnStretchedScreens(
+                  context: context)),
           child: Form(
             key: _formKey,
             child: Column(

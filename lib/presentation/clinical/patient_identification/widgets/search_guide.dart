@@ -16,8 +16,8 @@ import 'package:shared_themes/text_themes.dart';
 
 class SearchGuide extends StatelessWidget {
   List<Widget> vertical(BuildContext context) {
-    double padding = ResponsiveWidget.preferredPaddingOnStretchedScreens(
-        context: context);
+    double padding =
+        ResponsiveWidget.preferredPaddingOnStretchedScreens(context: context);
     final List<NavigationItem> secondaryActions =
         StoreProvider.state<CoreState>(context)!
             .navigationState!

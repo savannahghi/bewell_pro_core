@@ -280,10 +280,9 @@ class _PatientDiagnosisTableState extends State<PatientDiagnosisTable> {
                               Border.all(color: patientIDLightGrey, width: 0.5),
                         ),
                         margin: EdgeInsets.symmetric(
-                            horizontal:
-                                ResponsiveWidget.isSmallScreen(context)
-                                    ? 0
-                                    : 20.0),
+                            horizontal: ResponsiveWidget.isSmallScreen(context)
+                                ? 0
+                                : 20.0),
                         child: ExpansionTile(
                           initiallyExpanded: isExpanded,
                           onExpansionChanged: _onExpansionChanged,
