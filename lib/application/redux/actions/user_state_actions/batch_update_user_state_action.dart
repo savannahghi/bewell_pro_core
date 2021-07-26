@@ -1,7 +1,6 @@
 import 'package:async_redux/async_redux.dart';
-
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-
+import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:domain_objects/value_objects.dart';
 
@@ -31,7 +30,7 @@ class BatchUpdateUserStateAction extends ReduxAction<CoreState> {
 
   @override
   CoreState reduce() {
-    final CoreState newUserState = state.copyWith.userState!.call(
+    final UserState? newUserState = state.userState?.copyWith.call(
       userProfile: state.userState!.userProfile!.copyWith(
         id: this.userProfile?.id ?? state.userState?.userProfile?.id,
         username: this.userProfile?.username ??
@@ -90,7 +89,7 @@ class BatchUpdateUserStateAction extends ReduxAction<CoreState> {
           : state.userState!.auth,
     );
 
-    return newUserState;
+    return state.copyWith(userState: newUserState);
   }
 
   /// Returns a list of secondary phone numbers

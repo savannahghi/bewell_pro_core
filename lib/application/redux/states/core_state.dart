@@ -1,31 +1,32 @@
+// // CoreState assembles all features states into one that can the pushed during creation
+// // to create a global app store
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';
 import 'package:bewell_pro_core/application/redux/states/connectivity_state.dart';
 import 'package:bewell_pro_core/application/redux/states/misc_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_feed_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
+import 'package:domain_objects/entities.dart';
+import 'package:equatable/equatable.dart';
 
-part 'core_state.freezed.dart';
-part 'core_state.g.dart';
+class CoreState extends Equatable {
+  const CoreState({
+    this.miscState,
+    this.userFeedState,
+    this.userState,
+    this.connectivityState,
+    this.clinicalState,
+    this.navigationState,
+    this.wait,
+  });
 
-// CoreState assembles all features states into one that can the pushed during creation
-// to create on global app store
-@freezed
-class CoreState with _$CoreState {
-  factory CoreState({
-    MiscState? miscState,
-    UserFeedState? userFeedState,
-    UserState? userState,
-    ConnectivityState? connectivityState,
-    ClinicalState? clinicalState,
-    Navigation? navigationState,
-    @JsonKey(ignore: true) Wait? wait,
-  }) = _CoreState;
-
-  factory CoreState.fromJson(Map<String, dynamic> json) =>
-      _$CoreStateFromJson(json);
+  final MiscState? miscState;
+  final UserFeedState? userFeedState;
+  final UserState? userState;
+  final ConnectivityState? connectivityState;
+  final ClinicalState? clinicalState;
+  final Navigation? navigationState;
+  final Wait? wait;
 
   factory CoreState.initial() => CoreState(
         miscState: MiscState.initial(),
@@ -36,4 +37,35 @@ class CoreState with _$CoreState {
         navigationState: Navigation.initial(),
         wait: Wait(),
       );
+
+  CoreState copyWith({
+    MiscState? miscState,
+    UserFeedState? userFeedState,
+    UserState? userState,
+    ConnectivityState? connectivityState,
+    ClinicalState? clinicalState,
+    Navigation? navigationState,
+    Wait? wait,
+  }) {
+    return CoreState(
+      miscState: miscState ?? this.miscState,
+      userFeedState: userFeedState ?? this.userFeedState,
+      userState: userState ?? this.userState,
+      connectivityState: connectivityState ?? this.connectivityState,
+      clinicalState: clinicalState ?? this.clinicalState,
+      navigationState: navigationState ?? this.navigationState,
+      wait: wait ?? this.wait,
+    );
+  }
+
+  @override
+  List<Object?> get props => <Object?>[
+        miscState,
+        userFeedState,
+        userState,
+        connectivityState,
+        clinicalState,
+        navigationState,
+        wait,
+      ];
 }

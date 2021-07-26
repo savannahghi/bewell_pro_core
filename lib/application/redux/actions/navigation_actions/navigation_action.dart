@@ -17,7 +17,7 @@ class NavigationAction extends ReduxAction<CoreState> {
 
   @override
   CoreState reduce() {
-    final CoreState newState = state.copyWith.navigationState!.call(
+    final Navigation? newState = state.navigationState?.copyWith.call(
       drawerSelectedIndex:
           drawerSelectedIndex ?? state.navigationState!.drawerSelectedIndex,
       bottomBarSelectedIndex: bottomBarSelectedIndex ??
@@ -27,6 +27,6 @@ class NavigationAction extends ReduxAction<CoreState> {
           secondaryActions ?? state.navigationState!.secondaryActions,
     );
 
-    return newState;
+    return state.copyWith(navigationState: newState);
   }
 }

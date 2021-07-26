@@ -1,4 +1,5 @@
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/application/redux/states/connectivity_state.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 
 class ConnectivityChangedAction extends ReduxAction<CoreState> {
@@ -8,8 +9,9 @@ class ConnectivityChangedAction extends ReduxAction<CoreState> {
 
   @override
   Future<CoreState> reduce() async {
-    final CoreState newState =
-        state.copyWith.connectivityState!.call(isConnected: isConnected);
-    return newState;
+    final ConnectivityState? newConnectivityState =
+        state.connectivityState?.copyWith.call(isConnected: isConnected);
+
+    return state.copyWith(connectivityState: newConnectivityState);
   }
 }

@@ -1,13 +1,18 @@
 # CHANGELOG
 
+## 1.0.2
+
+- refactor: change `CoreState`
+
 ## 1.0.1
 
 - refactor: change `AppState` with `CoreState`
+
 ## 1.0.0
 
 - feat: initial implementation of `bewell_pro_core`
 
-##  ^0.9.0
+## ^0.9.0
 
 Features:
 
