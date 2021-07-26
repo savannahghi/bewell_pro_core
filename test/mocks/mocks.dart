@@ -13,7 +13,6 @@ import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart
 import 'package:bewell_pro_core/domain/clinical/entities/reference.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-import 'package:bewell_pro_core/infrastructure/repository/initialize_db.dart';
 import 'package:bewell_pro_core/presentation/core/home/pages/home_page.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
 import 'package:http/http.dart' as http;
@@ -204,19 +203,6 @@ const Size mediumSizedTabletLandscape = Size(1024, 600);
 
 const Size tabletPortrait = Size(720, 1280);
 const Size tabletLandscape = Size(1280, 720);
-
-class MockInitializeDB extends Mock implements InitializeDB<MockStateDB> {
-  @override
-  Future<MockStateDB> database({MockStateDB? preInitializedDB}) =>
-      super.noSuchMethod(Invocation.getter(#database),
-              returnValue: Future<MockStateDB>.value(MockStateDB()))
-          as Future<MockStateDB>;
-
-  @override
-  String get dbName =>
-      super.noSuchMethod(Invocation.getter(#dbName), returnValue: 'testDb')
-          as String;
-}
 
 class MockStateDB extends Mock implements Database {
   @override
