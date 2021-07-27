@@ -5,7 +5,6 @@ import 'package:bewell_pro_core/application/redux/flags/flags.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_graphql_client/graph_client.dart';
-import 'package:flutter_graphql_client/graph_event_bus.dart';
 import 'package:user_profile/constants.dart';
 
 class SendOTPAction extends ReduxAction<CoreState> {
@@ -34,16 +33,6 @@ class SendOTPAction extends ReduxAction<CoreState> {
         await client!.query(generateOTPQuery, queryVariables);
 
     final Map<String, dynamic> data = client!.toMap(response);
-
-    /// save logs to firebase
-    SaveTraceLog(
-            query: generateOTPQuery,
-            data: queryVariables,
-            client: client!,
-            response: data,
-            title: 'send otp code',
-            description: 'otp code sent to user')
-        .saveLog();
 
     client!.close();
 

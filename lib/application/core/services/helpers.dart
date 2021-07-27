@@ -3,7 +3,6 @@ import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/graphql/queries.dart';
 import 'package:bewell_pro_core/application/core/services/onboarding.dart';
-import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/send_event_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';
@@ -41,10 +40,8 @@ import 'package:dart_fcm/dart_fcm.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:domain_objects/value_objects.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
-import 'package:flutter_graphql_client/graph_event_bus.dart';
 import 'package:flutter_graphql_client/graph_utils.dart';
 import 'package:misc_utilities/bottom_sheet_builder.dart';
-import 'package:misc_utilities/event_bus.dart';
 import 'package:misc_utilities/misc.dart';
 import 'package:misc_utilities/responsive_widget.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
@@ -121,17 +118,7 @@ Future<void> saveDeviceToken(
     'token': await SILFCM().getDeviceToken()
   };
 
-  final http.Response result =
-      await client.query(registerDeviceTokenMutation, _variables);
-
-  SaveTraceLog(
-    query: registerDeviceTokenMutation,
-    data: _variables,
-    response: client.toMap(result),
-    client: client,
-    title: 'Register FCM Device Token',
-    description: 'Register Device Token',
-  ).saveLog();
+  await client.query(registerDeviceTokenMutation, _variables);
 }
 
 Future<void> addNHIF({
@@ -642,29 +629,6 @@ Future<void> clinicalRetireFunctionHelper({
       onRetireGeneralExamCallback!();
     }
   }
-}
-
-/// Creates a listener to send an event once an event is fired
-///
-/// @params
-/// - A [EventBus] instance so as to extract the listener
-/// - [BuildContext] context to help with dispatching the send event action
-void sendEventWrapperFunction(
-  EventBus eventBus,
-  BuildContext context,
-) {
-  eventBus.streamController.stream.listen(
-    (dynamic event) {
-      StoreProvider.dispatch<CoreState>(
-        context,
-        SendEventAction(
-          client: AppWrapperBase.of(context)!.graphQLClient,
-          eventName: event.eventName as String,
-          eventPayload: event.eventPayload as Map<String, dynamic>,
-        ),
-      );
-    },
-  );
 }
 
 /// Triggers Navigation event by sending a log to firebase

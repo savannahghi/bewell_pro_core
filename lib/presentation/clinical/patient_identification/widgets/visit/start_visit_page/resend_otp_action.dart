@@ -6,7 +6,6 @@ import 'package:bewell_pro_core/application/redux/flags/flags.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_graphql_client/graph_client.dart';
-import 'package:flutter_graphql_client/graph_event_bus.dart';
 
 /// Action to resend otp to user
 class ResendOtpAction extends ReduxAction<CoreState> {
@@ -45,16 +44,6 @@ class ResendOtpAction extends ReduxAction<CoreState> {
         await client!.query(generateRetryOTPQuery, variables);
 
     final Map<String, dynamic> data = client!.toMap(result);
-
-    /// save logs to firebase
-    SaveTraceLog(
-            query: generateRetryOTPQuery,
-            data: variables,
-            response: data,
-            client: client!,
-            title: 'Resend OTP',
-            description: 'Resend OTP')
-        .saveLog();
 
     final String? parseError = client!.parseError(data);
 

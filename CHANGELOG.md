@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.3-nullsafety
+
+- chore: update depndencies
+
 ## 1.0.2
 
 - refactor: change `CoreState`

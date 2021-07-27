@@ -7,7 +7,6 @@ import 'package:http/http.dart' as http;
 import 'package:rxdart/rxdart.dart';
 import 'package:app_wrapper/app_wrapper.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
-import 'package:flutter_graphql_client/graph_event_bus.dart';
 
 class StartOrContinueExamWrapper extends StatefulWidget {
   final String patientName;
@@ -54,14 +53,6 @@ class _HCStartExamButtonState extends State<StartOrContinueExamWrapper> {
         await _client.query(searchEncounterQuery, _variables);
 
     final Map<String, dynamic> payload = _client.toMap(result);
-
-    SaveTraceLog(
-            client: AppWrapperBase.of(context)!.graphQLClient,
-            query: searchEncounterQuery,
-            data: _variables,
-            response: payload,
-            title: 'Search encounters')
-        .saveLog();
 
     if (payload['data'] == null) {
       this.checking.add(false);

@@ -9,7 +9,6 @@ import 'package:bewell_pro_core/domain/core/value_objects/type_defs.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/pages/patient_search_page.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/complete_registration_page/complete_registration_widget.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration_container.dart';
-import 'package:misc_utilities/event_bus.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
 import 'package:shared_ui_components/buttons.dart';
 
@@ -41,7 +40,6 @@ void main() {
     container = buildWidget();
   });
 
-  final EventBus eventBus = EventBus();
   testWidgets('complete registration renders correctly ',
       (WidgetTester tester) async {
     final PatientPayload patientData = PatientPayload.fromJson(
@@ -51,7 +49,6 @@ void main() {
 
     await mockNetworkImages(() async {
       await buildTestWidget(
-        eventBus: eventBus,
         tester: tester,
         store: store,
         widget: container,
@@ -82,7 +79,6 @@ void main() {
     container.currentPatient.updatePatient(patientData);
 
     await buildTestWidget(
-      eventBus: eventBus,
       tester: tester,
       store: store,
       widget: container,

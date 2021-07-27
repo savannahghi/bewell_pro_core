@@ -10,7 +10,6 @@ import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart
 import 'package:bewell_pro_core/domain/core/value_objects/exception_strings.dart';
 import 'package:http/http.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
-import 'package:flutter_graphql_client/graph_event_bus.dart';
 
 class EndExamAction extends ReduxAction<CoreState> {
   EndExamAction({required this.client});
@@ -44,15 +43,6 @@ class EndExamAction extends ReduxAction<CoreState> {
 
       final Response result = await client.query(endExamMutation, input);
       final Map<String, dynamic> data = client.toMap(result);
-
-      SaveTraceLog(
-              client: client,
-              query: endExamMutation,
-              data: input,
-              response: data,
-              title: 'Patient exam summary',
-              description: 'Patient exam summary : End exam')
-          .saveLog();
 
       if (client.parseError(data) != null) {
         dispatch(WaitAction<CoreState>.add(showErrorFlag));

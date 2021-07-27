@@ -9,25 +9,19 @@ import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/view_models/core_state_view_model.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/events.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/numbers_constants.dart';
-
 import 'package:bewell_pro_core/presentation/onboarding/profile/widgets/text_field_label.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
 import 'package:app_wrapper/app_wrapper.dart';
-
 import 'package:domain_objects/entities.dart';
 import 'package:domain_objects/value_objects.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
-import 'package:misc_utilities/event_bus.dart';
 import 'package:misc_utilities/misc.dart';
 import 'package:misc_utilities/responsive_widget.dart';
-
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/constants.dart';
 import 'package:shared_themes/spaces.dart';
 import 'package:flutter/cupertino.dart';
-
 import 'package:http/http.dart' as http;
 import 'package:shared_ui_components/buttons.dart';
 import 'package:shared_ui_components/inputs.dart';
@@ -124,12 +118,6 @@ class _EditProfileFormState extends State<EditProfileForm> {
       await Future<void>.delayed(
           const Duration(seconds: kShortSnackBarDuration));
 
-      final Map<String, dynamic> eventPayload = <String, dynamic>{
-        'route': userProfileRoute
-      };
-      await AppWrapperBase.of(context)!
-          .eventBus
-          .fire(TriggeredEvent(navigationEvent, eventPayload));
       await triggerNavigationEvent(
           context: context, route: userProfileRoute, shouldReplace: true);
       return;

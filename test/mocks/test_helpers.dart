@@ -10,12 +10,10 @@ import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.d
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/domain_constants.dart';
 import 'package:bewell_pro_core/presentation/router/router_generator.dart';
-
 import 'package:app_wrapper/app_wrapper.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:domain_objects/value_objects.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
-import 'package:misc_utilities/event_bus.dart';
 import 'package:shared_ui_components/buttons.dart';
 
 import 'mocks.dart';
@@ -32,17 +30,14 @@ Future<void> buildTestWidget({
   IGraphQlClient? graphQlClient,
   List<NavigatorObserver>? navigatorObservers,
   Widget? endDrawer,
-  EventBus? eventBus,
   Duration? duration,
 }) async {
-  final EventBus _eventBus = EventBus();
   final Store<CoreState> _store =
       Store<CoreState>(initialState: CoreState.initial());
   NavigateAction.setNavigatorKey(globalAppNavigatorKey);
 
   await tester.pumpWidget(
     AppWrapperBase(
-      eventBus: eventBus ?? _eventBus,
       graphQLClient: graphQlClient ?? mockGraphQlClient,
       appName: appName,
       appContexts: testAppContexts,

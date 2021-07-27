@@ -4,14 +4,11 @@ import 'package:bewell_pro_core/domain/clinical/entities/patient_payload.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/events.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/type_defs.dart';
 import 'package:bewell_pro_core/presentation/clinical/common/helpers.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration_container.dart';
 import 'package:bewell_pro_core/presentation/clinical/theme/form_styles.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
-import 'package:app_wrapper/app_wrapper.dart';
-import 'package:misc_utilities/event_bus.dart';
 import 'package:misc_utilities/responsive_widget.dart';
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/spaces.dart';
@@ -34,16 +31,6 @@ class CompleteRegistrationWidget extends StatelessWidget {
     }
 
     startVisitDialog(context, onStartVisit);
-  }
-
-  Future<void> completeRegistrationAndStartVisit(BuildContext context) async {
-    final Map<String, String> eventPayload = <String, String>{
-      'route': patientProfilePageRoute
-    };
-    await AppWrapperBase.of(context)!
-        .eventBus
-        .fire(TriggeredEvent(startedExamEvent, eventPayload));
-    _startVisit(context);
   }
 
   @override
@@ -92,7 +79,7 @@ class CompleteRegistrationWidget extends StatelessWidget {
                   SILPrimaryButton(
                     buttonKey:
                         AppWidgetKeys.completeRegistrationAndStartVisitKey,
-                    onPressed: () => completeRegistrationAndStartVisit(context),
+                    onPressed: () => _startVisit(context),
                     buttonColor: healthcloudAccentColor,
                     text: startVisitTitle,
                   )

@@ -13,11 +13,9 @@ import 'package:bewell_pro_core/application/core/services/onboarding.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
 import 'package:bewell_pro_core/domain/core/entities/onboarding_path_config.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/events.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/exception_strings.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
 import 'package:http/http.dart';
-import 'package:misc_utilities/event_bus.dart';
 import 'package:misc_utilities/misc.dart';
 
 /// Verifies the PIN entered by the user
@@ -68,11 +66,6 @@ class VerifyPinAction extends ReduxAction<CoreState> {
 
     if (body['data']['resumeWithPIN'] as bool == true) {
       final OnboardingPathConfig path = onboardingPath(state: state);
-
-      final EventBus eventBus =
-          AppWrapperBase.of(context)!.eventBus as EventBus;
-
-      eventBus.fire(TriggeredEvent(navigationEvent, <String, dynamic>{}));
 
       dispatch(
         BatchUpdateMiscStateAction(pinCode: UNKNOWN, invalidPin: false),

@@ -10,14 +10,11 @@ import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/widgets/edit_profile_form.dart';
 import 'package:http/http.dart';
 import 'package:domain_objects/value_objects.dart';
-import 'package:misc_utilities/event_bus.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
   group('EditProfileForm', () {
-    final EventBus eventBus = EventBus();
-
     testWidgets('works correctly', (WidgetTester tester) async {
       final UserState userState = UserState.initial().copyWith(
         userProfile: UserProfile(
@@ -47,7 +44,6 @@ void main() {
       final Store<CoreState> store = Store<CoreState>(initialState: state);
 
       await buildTestWidget(
-        eventBus: eventBus,
         store: store,
         tester: tester,
         widget: EditProfileForm(),
@@ -124,7 +120,6 @@ void main() {
       );
 
       await buildTestWidget(
-          eventBus: eventBus,
           store: store,
           tester: tester,
           graphQlClient: mockGraphQlClient,
@@ -191,7 +186,6 @@ void main() {
       );
 
       await buildTestWidget(
-          eventBus: eventBus,
           store: store,
           tester: tester,
           graphQlClient: mockGraphQlClient,
