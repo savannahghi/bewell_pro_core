@@ -8,7 +8,6 @@ import 'package:bewell_pro_core/application/redux/states/event_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/domain_constants.dart';
 import 'package:domain_objects/value_objects.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
-import 'package:flutter_graphql_client/graph_event_bus.dart';
 import 'package:http/http.dart';
 
 /// Posts an event to the backend once triggered
@@ -32,21 +31,16 @@ class SendEventAction extends ReduxAction<CoreState> {
 
   @override
   Future<CoreState?> reduce() async {
-    final Map<String, dynamic> _variables = <String, dynamic>{
-      'eventName': eventName,
-      'payload': eventPayload
-    };
-
     final String? uid = state.userState!.auth!.uid;
 
     // Send events only when the uid exists in the core state and when the user
     // is logged in
     if (uid != null && uid != UNKNOWN) {
-      final Response response = await client.query(
-        processEventMutation,
-        processEventMutationVariables(
-            eventName: eventName, uid: uid, payload: eventPayload),
-      );
+      final Map<String, dynamic> _variables = processEventMutationVariables(
+          eventName: eventName, uid: uid, payload: eventPayload);
+
+      final Response response =
+          await client.query(processEventMutation, _variables);
 
       client.close();
 
@@ -85,14 +79,6 @@ class SendEventAction extends ReduxAction<CoreState> {
           },
         );
       } else {
-        SaveTraceLog(
-          client: client,
-          query: processEventMutation,
-          data: _variables,
-          response: logResponse,
-          title: 'Process Event :: $eventName',
-        ).saveLog();
-
         return state;
       }
     }

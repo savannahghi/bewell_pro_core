@@ -8,7 +8,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_graphql_client/graph_utils.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
-import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/send_event_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
@@ -17,7 +16,6 @@ import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/events.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/pages/patient_exam.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawer_header.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/pages/patient_search_page.dart';
@@ -26,7 +24,6 @@ import 'package:bewell_pro_core/presentation/onboarding/login/widgets/phone_logi
 import 'package:bewell_pro_core/presentation/onboarding/profile/pages/user_profile_page.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
 import 'package:http/http.dart';
-import 'package:misc_utilities/event_bus.dart';
 import 'package:misc_utilities/misc.dart';
 import 'package:misc_utilities/number_constants.dart';
 import 'package:misc_utilities/responsive_widget.dart';
@@ -839,50 +836,6 @@ void main() {
       expect(tokenStatus, isNotNull);
       expect(tokenStatus, AuthTokenStatus.requiresLogin);
     });
-  });
-
-  testWidgets(
-      'sendEventWrapperFunction should send an event when it is available',
-      (WidgetTester tester) async {
-    final StoreTester<CoreState> storeTester = StoreTester<CoreState>(
-      initialState: CoreState.initial(),
-      // this suppresses the verbose logs in the terminal
-      testInfoPrinter: (TestInfo<dynamic> testInfo) {},
-    );
-
-    final EventBus eventBus = EventBus();
-
-    storeTester.dispatch(BatchUpdateUserStateAction(
-        auth: AuthCredentialResponse(uid: 'some-uid')));
-
-    final TestInfo<CoreState> info =
-        await storeTester.waitUntil(BatchUpdateUserStateAction);
-
-    expect(info.state.userState!.auth!.uid, 'some-uid');
-    expect(info.dispatchCount, 1);
-
-    await buildTestWidget(
-      tester: tester,
-      store: storeTester.store,
-      widget: Builder(builder: (BuildContext context) {
-        return GestureDetector(
-          // Creates the listener
-          onTap: () => sendEventWrapperFunction(eventBus, context),
-        );
-      }),
-    );
-
-    await tester.tap(find.byType(GestureDetector));
-    await tester.pumpAndSettle();
-
-    // Triggers the listener
-    await eventBus.fire(TriggeredEvent(navigationEvent, <String, dynamic>{}));
-    await tester.pumpAndSettle();
-
-    final TestInfo<CoreState> sendEventInfo =
-        await storeTester.wait(SendEventAction);
-
-    expect(sendEventInfo.dispatchCount, 2);
   });
 
   testWidgets(

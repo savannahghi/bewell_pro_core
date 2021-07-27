@@ -1,4 +1,3 @@
-import 'package:app_wrapper/app_wrapper.dart';
 import 'package:async_redux/async_redux.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:domain_objects/value_objects.dart';
@@ -10,13 +9,11 @@ import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/enums.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/events.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/profile_item_builder.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/profile_page_items.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
 import 'package:intl/intl.dart';
 import 'package:misc_utilities/enums.dart';
-import 'package:misc_utilities/event_bus.dart';
 import 'package:misc_utilities/responsive_widget.dart';
 import 'package:shared_themes/spaces.dart';
 import 'package:shared_themes/text_themes.dart';
@@ -79,13 +76,6 @@ class _ProfileMasterDetailState extends State<ProfileMasterDetail> {
                 DeviceScreensType.Mobile) {
               navigateToProfileItemPage(context: context, profileItem: val);
             } else {
-              final Map<String, dynamic> eventPayload = <String, dynamic>{
-                'route': val.onTapRoute
-              };
-
-              AppWrapperBase.of(context)!
-                  .eventBus
-                  .fire(TriggeredEvent(navigationEvent, eventPayload));
               if (val.onTapRoute == pinVerificationRoute) {
                 /// dispatch action to set [isChangingPin] to true
                 await Navigator.of(context).pushNamed(

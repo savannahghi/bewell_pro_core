@@ -13,7 +13,6 @@ import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart
 import 'package:bewell_pro_core/presentation/router/routes.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_graphql_client/graph_client.dart';
-import 'package:flutter_graphql_client/graph_event_bus.dart';
 
 /// starts a patient visit
 class StartVisitByRequestAccessAction extends ReduxAction<CoreState> {
@@ -54,15 +53,6 @@ class StartVisitByRequestAccessAction extends ReduxAction<CoreState> {
     }
 
     final Map<String, dynamic> data = client!.toMap(result);
-
-    // log the request
-    SaveTraceLog(
-      query: startVisitMutation,
-      client: client!,
-      response: data,
-      title: 'Start visit',
-      data: otpEpisodeCreationInput.toJson(),
-    ).saveLog();
 
     client!.close();
 

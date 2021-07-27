@@ -9,7 +9,6 @@ import 'package:app_wrapper/app_wrapper.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/exception_strings.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutter_graphql_client/graph_event_bus.dart';
 
 /// Wrap all the logic used in class [BeWellPatientTimeline]
 ///
@@ -39,15 +38,6 @@ class BewellPatientTimelineLogic {
 
       final Map<String, dynamic> payLoad = _client.toMap(result);
       final String? error = _client.parseError(payLoad);
-
-      SaveTraceLog(
-              client: AppWrapperBase.of(context)!.graphQLClient,
-              query: countTimelineQuery,
-              data: _variables,
-              response: payLoad,
-              title: 'Patient timeline',
-              description: 'Fetch patient timeline')
-          .saveLog();
 
       // check first for errors
       if (error != null) {

@@ -1,19 +1,12 @@
 import 'package:flutter/material.dart';
-
 import 'package:async_redux/async_redux.dart';
-
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/view_models/user_state_view_model.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/events.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/login_constants.dart';
-import 'package:bewell_pro_core/presentation/router/routes.dart';
-
-import 'package:app_wrapper/app_wrapper.dart';
 import 'package:domain_objects/entities.dart';
-import 'package:misc_utilities/event_bus.dart';
 import 'package:misc_utilities/misc.dart';
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/constants.dart';
@@ -27,33 +20,14 @@ class ProfileDropDown extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(10.0))),
       key: AppWidgetKeys.popupMenuButtonKey,
       onSelected: (int result) async {
-        switch (result) {
-          case 1:
-            {
-              /// Notify the user he is about to be logged out
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                content: const Text(logoutMessage),
-                duration: const Duration(seconds: kLongSnackBarDuration),
-                action: dismissSnackBar('close', white, context),
-              ));
+        /// Notify the user he is about to be logged out
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: const Text(logoutMessage),
+          duration: const Duration(seconds: kLongSnackBarDuration),
+          action: dismissSnackBar('close', white, context),
+        ));
 
-              StoreProvider.dispatch<CoreState>(context, LogoutAction());
-            }
-            break;
-          case 2:
-            {
-              final Map<String, dynamic> eventPayload = <String, dynamic>{
-                'route': userProfileRoute
-              };
-              await AppWrapperBase.of(context)!
-                  .eventBus
-                  .fire(TriggeredEvent(navigationEvent, eventPayload));
-              await Navigator.of(context, rootNavigator: true).pushNamed(
-                userProfileRoute,
-              );
-            }
-            break;
-        }
+        StoreProvider.dispatch<CoreState>(context, LogoutAction());
       },
       itemBuilder: (BuildContext context) => <PopupMenuItem<int>>[
         PopupMenuItem<int>(

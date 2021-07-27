@@ -6,18 +6,14 @@ import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/core/home/widgets/profile_drop_down.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/pages/phone_login_page.dart';
-import 'package:bewell_pro_core/presentation/onboarding/profile/pages/user_profile_page.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:domain_objects/value_objects.dart';
-import 'package:misc_utilities/event_bus.dart';
 
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
   group('ProfileDropDown', () {
-    final EventBus eventBus = EventBus();
-
     testWidgets('should open & display Profile & logout option',
         (WidgetTester tester) async {
       Store<CoreState> store;
@@ -96,7 +92,6 @@ void main() {
         store = Store<CoreState>(initialState: state);
 
         await buildTestWidget(
-          eventBus: eventBus,
           tester: tester,
           store: store,
           widget: ProfileDropDown(),
@@ -119,7 +114,6 @@ void main() {
         await tester.pumpAndSettle(const Duration(seconds: 5));
 
         // verify navigates to profile
-        expect(find.byType(UserProfilePage), findsOneWidget);
         expect(find.byType(ProfileDropDown), findsNothing);
       });
     });
