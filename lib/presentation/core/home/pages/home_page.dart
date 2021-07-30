@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/application/core/services/feed_content_callbacks.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';
@@ -22,11 +23,13 @@ class HomePage extends StatefulWidget {
   const HomePage({
     int? sessionTimeout,
     int? modalCountdown,
+    this.feedContentCallbacks,
   })  : sessionTimeout = sessionTimeout ?? kTimeOutAfter,
         modalCountdown = modalCountdown ?? kModalCountDown;
 
   final int modalCountdown;
   final int sessionTimeout;
+  final Map<String, Function>? feedContentCallbacks;
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -130,7 +133,10 @@ class _HomePageState extends State<HomePage> {
               smallVerticalSizedBox,
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: padding),
-                child: FeedComponentWrapper(),
+                child: FeedComponentWrapper(
+                  feedContentCallbacks: widget.feedContentCallbacks ??
+                      getFeedActionCallbacks(context: context),
+                ),
               ),
             ],
           ),

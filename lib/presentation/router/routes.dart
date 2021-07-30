@@ -64,8 +64,6 @@ const String profileContactDetailsRoute = '/profileContactDetails';
 
 const String tryNewFeatureSettingsRoute = '/tryNewFeatureSettings';
 
-const String accountTypePageRoute = '/accountTypePage';
-
 const String patientIdentificationRoute = '/searchFindPatient';
 
 const String startVisitRoute = '/startVisitPage';
