@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.3-nullsafety-1
+
+- Migrated from the deprecated connectivity plugin to connectivity_plus.
+
 ## 1.0.3-nullsafety
 
 - chore: update depndencies
