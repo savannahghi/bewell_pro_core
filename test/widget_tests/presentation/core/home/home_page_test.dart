@@ -1,7 +1,4 @@
 import 'package:async_redux/async_redux.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
@@ -12,8 +9,11 @@ import 'package:bewell_pro_core/presentation/core/home/pages/home_page.dart';
 import 'package:bewell_pro_core/presentation/core/home/widgets/feed_component_wrapper.dart';
 import 'package:bewell_pro_core/presentation/core/home/widgets/session_timeout.dart';
 import 'package:bewell_pro_core/presentation/core/home/widgets/sil_bottom_navigation_bar.dart';
-import 'package:fake_async/fake_async.dart';
 import 'package:domain_objects/value_objects.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:fake_async/fake_async.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
@@ -103,6 +103,45 @@ void main() {
         await tester.pumpAndSettle();
         expect(isExited, isTrue);
       });
+    });
+
+    testWidgets('session timeout displays login prompt to user',
+        (WidgetTester tester) async {
+      final DateTime initialTokenExpiry =
+          DateTime.now().add(const Duration(seconds: 5));
+
+      store.dispatch(
+        BatchUpdateUserStateAction(
+          tokenExpiryTime: initialTokenExpiry.toIso8601String(),
+        ),
+      );
+
+      final FakeAsync fakeAsync = FakeAsync();
+
+      fakeAsync.run((FakeAsync self) async {
+        await mockNetworkImages(() async {
+          await buildTestWidget(
+            store: store,
+            tester: tester,
+            widget: const HomePage(sessionTimeout: 1, modalCountdown: 1),
+          );
+          await tester.pumpAndSettle();
+          fakeAsync.elapse(const Duration(seconds: 1));
+          await tester.pumpAndSettle();
+          expect(find.byType(SessionTimeoutAlert), findsOneWidget);
+
+          final Finder stayLoggedInFinder = find.text(stayLoggedInText);
+          expect(stayLoggedInFinder, findsOneWidget);
+          await tester.tap(stayLoggedInFinder);
+          await tester.pumpAndSettle();
+          fakeAsync.elapse(const Duration(seconds: 1));
+          final Duration difference =
+              DateTime.parse(store.state.userState!.tokenExpiryTime!)
+                  .difference(initialTokenExpiry);
+          expect(difference.inMinutes, 0);
+        });
+      });
+      fakeAsync.flushMicrotasks();
     });
 
     testWidgets('tapping logout on session prompt logs out user',

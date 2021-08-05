@@ -1,8 +1,12 @@
 # CHANGELOG
 
+## 1.0.4-nullsafety
+
+- fix: modify home page to accept feed content callbacks
+
 ## 1.0.3-nullsafety
 
-- chore: update depndencies
+- chore: update dependencies
 
 ## 1.0.2
 

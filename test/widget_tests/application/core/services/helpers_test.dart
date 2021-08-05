@@ -6,6 +6,7 @@ import 'package:domain_objects/value_objects.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_graphql_client/graph_utils.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
@@ -28,8 +29,11 @@ import 'package:misc_utilities/misc.dart';
 import 'package:misc_utilities/number_constants.dart';
 import 'package:misc_utilities/responsive_widget.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
+import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 import 'package:shared_themes/constants.dart';
 import 'package:shared_ui_components/buttons.dart';
+import 'package:url_launcher_platform_interface/link.dart';
+import 'package:url_launcher_platform_interface/url_launcher_platform_interface.dart';
 
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
@@ -1088,4 +1092,57 @@ void main() {
     await tester.pumpAndSettle();
     expect(showBanner, true);
   });
+
+  testWidgets('onBodyLinkOrImageTapCallback called when link is tapped',
+      (WidgetTester tester) async {
+    final MockUrlLauncher mock = MockUrlLauncher();
+    UrlLauncherPlatform.instance = mock;
+
+    await buildTestWidget(
+      tester: tester,
+      widget: SizedBox(
+        child: Html(
+          data: '<a href="https://example.com">empty</a>',
+          onLinkTap: onBodyLinkOrImageTapCallback,
+        ),
+      ),
+    );
+
+    await tester.tap(find.text('empty'));
+    await tester.pump();
+
+    expect(mock.url, 'https://example.com');
+  });
+}
+
+class MockUrlLauncher
+    with MockPlatformInterfaceMixin
+    implements UrlLauncherPlatform {
+  String? url;
+
+  @override
+  Future<bool> canLaunch(String url) {
+    return Future<bool>.value(true);
+  }
+
+  @override
+  Future<void> closeWebView() {
+    return Future<void>.value();
+  }
+
+  @override
+  Future<bool> launch(String url,
+      {required bool useSafariVC,
+      required bool useWebView,
+      required bool enableJavaScript,
+      required bool enableDomStorage,
+      required bool universalLinksOnly,
+      required Map<String, String> headers,
+      String? webOnlyWindowName}) {
+    this.url = url;
+    return Future<bool>.value(true);
+  }
+
+  @override
+  LinkDelegate? get linkDelegate => null;
 }

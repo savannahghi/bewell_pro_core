@@ -4,7 +4,6 @@ import 'package:app_wrapper/app_wrapper.dart';
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
-import 'package:bewell_pro_core/application/core/services/feed_content_callbacks.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_feed_actions/fetch_user_feed_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
@@ -16,6 +15,10 @@ import 'package:user_feed/user_feed.dart';
 /// A wrapper for homepage that handles fetching user's feed, pull to refresh callback and
 /// toggles a shimmer animation to provide user with visual feedback when feed is in a loading state
 class FeedComponentWrapper extends StatefulWidget {
+  final Map<String, Function> feedContentCallbacks;
+
+  const FeedComponentWrapper({required this.feedContentCallbacks});
+
   @override
   _FeedComponentWrapperState createState() => _FeedComponentWrapperState();
 }
@@ -119,7 +122,7 @@ class _FeedComponentWrapperState extends State<FeedComponentWrapper> {
             profileProgress: profileProgress,
             setupComplete: isProgressComplete,
             isSmallScreen: ResponsiveWidget.isSmallScreen(context),
-            feedContentCallbacks: getFeedActionCallbacks(context: context),
+            feedContentCallbacks: widget.feedContentCallbacks,
           );
         }
 

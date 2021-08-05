@@ -27,7 +27,10 @@ void main() {
           await buildTestWidget(
             tester: tester,
             graphQlClient: graphQlClient,
-            widget: SingleChildScrollView(child: FeedComponentWrapper()),
+            widget: const SingleChildScrollView(
+                child: FeedComponentWrapper(
+              feedContentCallbacks: <String, Function>{},
+            )),
           );
 
           // This additional pump is used to ensure that the broadcast updates the subscribed widget
@@ -62,7 +65,11 @@ void main() {
           await buildTestWidget(
             tester: tester,
             graphQlClient: graphQlClient,
-            widget: SingleChildScrollView(child: FeedComponentWrapper()),
+            widget: const SingleChildScrollView(
+              child: FeedComponentWrapper(
+                feedContentCallbacks: <String, Function>{},
+              ),
+            ),
           );
 
           await tester.pump();
