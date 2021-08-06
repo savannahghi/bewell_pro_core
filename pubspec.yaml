@@ -80,6 +80,7 @@ dev_dependencies:
   mockito: ^5.0.1
   mocktail_image_network: ^0.1.0
   test: ^1.16.5
+  url_launcher_platform_interface: ^2.0.4
 
 flutter:
   uses-material-design: true
