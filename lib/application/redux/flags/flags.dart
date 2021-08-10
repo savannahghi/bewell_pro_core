@@ -19,3 +19,7 @@ const String hasCompletedEnteringOTPFlag = 'has_completed_entering_OTP_flag';
 const String endingExamFlag = 'ending_exam_flag';
 const String showErrorFlag = 'show_error_flag';
 const String summaryExamFlag = 'summary_exam_flag';
+
+String getFavouriteNavigationFlag(String title) {
+  return 'favourite_navigation_$title';
+}

@@ -1,13 +1,12 @@
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/core/global_search/models/search_result.dart';
 import 'package:bewell_pro_core/presentation/core/global_search/models/search_suggestion.dart';
-import 'package:bewell_pro_core/presentation/core/home/models/bottom_navigation_bar_items.dart';
+import 'package:domain_objects/entities.dart';
+import 'package:flutter/material.dart';
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/spaces.dart';
 
@@ -23,14 +22,17 @@ class SearchWidget extends SearchDelegate<String> {
 
   //Get the roles the user is allowed
   List<String> getUserRoles(BuildContext context) {
+    final Navigation userRolesNavigation =
+        StoreProvider.state<CoreState>(context)!.navigationState!;
+
     final List<String> acceptedUserRoles = <String>[];
 
-    for (int i = 0; i < defaultNavItems.length; ++i) {
-      acceptedUserRoles.add(defaultNavItems[i].title!);
+    for (int i = 0; i < userRolesNavigation.primaryActions!.length; ++i) {
+      acceptedUserRoles.add(userRolesNavigation.primaryActions![i].title!);
     }
 
-    for (int i = 0; i < defaultSecondaryNavItems.length; ++i) {
-      acceptedUserRoles.add(defaultSecondaryNavItems[i].title!);
+    for (int i = 0; i < userRolesNavigation.secondaryActions!.length; ++i) {
+      acceptedUserRoles.add(userRolesNavigation.secondaryActions![i].title!);
     }
 
     return acceptedUserRoles;
@@ -62,15 +64,17 @@ class SearchWidget extends SearchDelegate<String> {
 
   void updateNavigationIndex(
       BuildContext context, List<dynamic> suggestionList, int index) {
-    final int bottomIndex = defaultNavItems.indexWhere(
+    final Navigation userRoles =
+        StoreProvider.state<CoreState>(context)!.navigationState!;
+    final int bottomIndex = userRoles.primaryActions!.indexWhere(
         (NavigationItem element) =>
             element.route! == suggestionList[index].route);
-    final int drawerIndex = defaultSecondaryNavItems.indexWhere(
+    final int drawerIndex = userRoles.secondaryActions!.indexWhere(
         (NavigationItem element) =>
             element.route! == suggestionList[index].route);
 
     final int nestedIndex =
-        defaultSecondaryNavItems.indexWhere((NavigationItem element) {
+        userRoles.secondaryActions!.indexWhere((NavigationItem element) {
       int x = -1;
       if (element.nestedItems != null) {
         x = element.nestedItems!.indexWhere((NavigationNestedItem element) =>

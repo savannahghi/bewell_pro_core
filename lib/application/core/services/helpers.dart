@@ -808,7 +808,9 @@ Future<String> getInitialRoute({required BuildContext context}) async {
 
     StoreProvider.dispatch<CoreState>(
       context,
-      NavigationAction(drawerSelectedIndex: -1, bottomBarSelectedIndex: 0),
+      NavigationAction(
+        drawerSelectedIndex: -1,
+      ),
     );
 
     return onboardingPath(state: state).route;

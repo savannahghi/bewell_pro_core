@@ -7430,7 +7430,8 @@ List<NavigationItem> secondaryActionsMockedData = <NavigationItem>[
           title: 'Patient Identification',
           route: '/patients',
         ),
-      ]),
+      ],
+      isFavourite: false),
   NavigationItem(
       id: '234432',
       title: 'About',
@@ -7446,7 +7447,8 @@ List<NavigationItem> secondaryActionsMockedData = <NavigationItem>[
           title: 'About Us',
           route: '',
         ),
-      ]),
+      ],
+      isFavourite: true),
   NavigationItem(
       id: '234432',
       title: navGetHelpText,
@@ -7458,6 +7460,71 @@ List<NavigationItem> secondaryActionsMockedData = <NavigationItem>[
           iconTitle: 'Help',
           iconDescription: 'Help Navigation action'),
       isFavourite: true),
+];
+
+List<NavigationItem> secondaryActionsNoFavouriteMockedData = <NavigationItem>[
+  NavigationItem(
+    id: '234432',
+    title: 'Agent',
+    route: '',
+    icon: NavigationIcon(
+      id: '1u7E6vQxZ7Le4ZyodCuXTSDaPLs',
+      iconUrl:
+          'https://assets.healthcloud.co.ke/actions/svg/agent_navaction.svg',
+      iconTitle: 'Agent',
+      iconDescription: 'Agent Navigation action',
+    ),
+    isFavourite: false,
+  ),
+  NavigationItem(
+      id: '234432',
+      title: 'Patient',
+      route: '',
+      icon: NavigationIcon(
+          id: '1u7E6vQxZ7Le4ZyodCuXTSDaPLs',
+          iconUrl:
+              'https://assets.healthcloud.co.ke/actions/svg/agent_navaction.svg',
+          iconTitle: 'Agent',
+          iconDescription: 'Agent Navigation action'),
+      nestedItems: <NavigationNestedItem>[
+        NavigationNestedItem(
+          title: 'Patient Registration',
+          route: '/addPatient',
+        ),
+        NavigationNestedItem(
+          title: 'Patient Identification',
+          route: '/patients',
+        )
+      ],
+      isFavourite: false),
+  NavigationItem(
+      id: '234432',
+      title: 'About',
+      route: '',
+      icon: NavigationIcon(
+          id: '1u7E6vQxZ7Le4ZyodCuXTSDaPLs',
+          iconUrl:
+              'https://assets.healthcloud.co.ke/actions/svg/agent_navaction.svg',
+          iconTitle: 'About',
+          iconDescription: 'About Navigation action'),
+      nestedItems: <NavigationNestedItem>[
+        NavigationNestedItem(
+          title: 'About Us',
+          route: '',
+        ),
+      ],
+      isFavourite: false),
+  NavigationItem(
+      id: '234432',
+      title: navGetHelpText,
+      route: '/helpCenter',
+      icon: NavigationIcon(
+          id: '1u7E6vQxZ7Le4ZyodCuXTSDaPLs',
+          iconUrl:
+              'https://assets.healthcloud.co.ke/actions/svg/help_navaction.svg',
+          iconTitle: 'Help',
+          iconDescription: 'Help Navigation action'),
+      isFavourite: false),
 ];
 
 List<NavigationItem> secondaryActionsEmptyMockedData = <NavigationItem>[];

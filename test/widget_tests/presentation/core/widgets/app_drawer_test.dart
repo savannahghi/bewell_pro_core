@@ -1,7 +1,6 @@
+import 'dart:convert';
+
 import 'package:async_redux/async_redux.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
@@ -10,9 +9,12 @@ import 'package:bewell_pro_core/presentation/admin/widgets/coming_soon_page.dart
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/pages/patient_search_page.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration.dart';
 import 'package:bewell_pro_core/presentation/core/help_center/pages/help_center_page.dart';
-import 'package:bewell_pro_core/presentation/core/home/models/bottom_navigation_bar_items.dart';
 import 'package:bewell_pro_core/presentation/core/widgets/app_drawer.dart';
 import 'package:bewell_pro_core/presentation/core/widgets/nav_drawer_content.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart' as http;
 import 'package:mocktail_image_network/mocktail_image_network.dart';
 
 import '../../../../mocks/mocks.dart';
@@ -45,6 +47,7 @@ void main() {
           ),
         );
 
+        expect(find.text(navDrawerAgentText), findsWidgets);
         expect(find.byKey(AppWidgetKeys.navDrawerCloseKey), findsNothing);
 
         // Tap Patient item
@@ -82,6 +85,8 @@ void main() {
           permanentlyDisplay: false,
         ),
       );
+
+      expect(find.text(navDrawerAgentText), findsWidgets);
 
       // Tap Patient item
       expect(find.text(navDrawerPatientText), findsOneWidget);
@@ -161,8 +166,6 @@ void main() {
             secondaryActions: secondaryActionsMockedData),
       );
 
-      defaultSecondaryNavItems = secondaryActionsMockedData;
-
       await buildTestWidget(
         tester: tester,
         store: store,
@@ -189,8 +192,6 @@ void main() {
             secondaryActions: secondaryActionsMockedData),
       );
 
-      defaultSecondaryNavItems = secondaryActionsMockedData;
-
       await mockNetworkImages(() async {
         await buildTestWidget(
           tester: tester,
@@ -209,6 +210,60 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(find.byType(ComingSoon), findsOneWidget);
+      });
+    });
+
+    testWidgets('should navigate to Coming Soon Page on a single action',
+        (WidgetTester tester) async {
+      await store.dispatch(
+        NavigationAction(
+            drawerSelectedIndex: -1,
+            primaryActions: primaryActionsMockedData,
+            secondaryActions: secondaryActionsMockedData),
+      );
+
+      await mockNetworkImages(() async {
+        await buildTestWidget(
+          tester: tester,
+          store: store,
+          widget: const AppDrawer(
+            permanentlyDisplay: true,
+          ),
+        );
+
+        // Tap Agent item
+        expect(find.text('Agent'), findsOneWidget);
+        await tester.tap(find.text('Agent'));
+        await tester.pumpAndSettle();
+
+        expect(find.byType(ComingSoon), findsOneWidget);
+      });
+    });
+
+    testWidgets('should show Coming soon message', (WidgetTester tester) async {
+      await store.dispatch(
+        NavigationAction(
+            drawerSelectedIndex: -1,
+            primaryActions: primaryActionsMockedData,
+            secondaryActions: secondaryActionsMockedData),
+      );
+
+      await mockNetworkImages(() async {
+        await buildTestWidget(
+          tester: tester,
+          store: store,
+          widget: const AppDrawer(
+            permanentlyDisplay: true,
+          ),
+        );
+
+        expect(find.text(navDrawerAgentText), findsOneWidget);
+
+        // Tap Agent item
+        await tester.tap(find.text(navDrawerAgentText));
+        await tester.pumpAndSettle();
+
+        expect(find.byType(ScaffoldMessenger), findsOneWidget);
       });
     });
 
@@ -236,7 +291,7 @@ void main() {
       await tester.pumpAndSettle();
 
       await tester.enterText(
-          find.byKey(AppWidgetKeys.navDrawerSearchKey), navDrawerPatientText);
+          find.byKey(AppWidgetKeys.navDrawerSearchKey), navDrawerAgentText);
       await tester.pumpAndSettle();
 
       expect(find.byType(ListTile), findsOneWidget);
@@ -250,9 +305,27 @@ void main() {
     testWidgets('should add to favourite', (WidgetTester tester) async {
       await store.dispatch(
         NavigationAction(
-            drawerSelectedIndex: -1,
+            drawerSelectedIndex: 4,
             primaryActions: primaryActionsMockedData,
             secondaryActions: secondaryActionsMockedData),
+      );
+
+      final MockShortGraphQlClient mockShortSILGraphQlClient =
+          MockShortGraphQlClient.withResponse(
+        'idToken',
+        'endpoint',
+        http.Response(
+          json.encode(<String, dynamic>{
+            'data': <String, dynamic>{
+              'saveFavoriteNavAction': true,
+              'fetchUserNavigationActions': <String, dynamic>{
+                'primary': primaryActionsMockedData,
+                'secondary': secondaryActionsMockedData
+              }
+            },
+          }),
+          201,
+        ),
       );
 
       await buildTestWidget(
@@ -261,6 +334,63 @@ void main() {
         widget: const AppDrawer(
           permanentlyDisplay: false,
         ),
+        graphQlClient: mockShortSILGraphQlClient,
+      );
+
+      expect(find.byType(AppDrawer), findsOneWidget);
+
+      //drag list tile
+      await tester.drag(
+          find.byType(SlidableDrawerActionPane).last, const Offset(500.0, 0.0));
+      await tester.pumpAndSettle();
+      expect(find.byType(IconSlideAction), findsOneWidget);
+      await tester.tap(find.byType(IconSlideAction));
+      await tester.pumpAndSettle();
+      expect(find.byType(ScaffoldMessenger), findsOneWidget);
+
+      //drag Extensionlist tile
+      await tester.drag(
+          find.byType(ExpansionTile).first, const Offset(500.0, 0.0));
+      await tester.pumpAndSettle();
+      expect(find.byType(IconSlideAction), findsOneWidget);
+      await tester.tap(find.byType(IconSlideAction));
+      await tester.pumpAndSettle();
+      expect(find.byType(ScaffoldMessenger), findsOneWidget);
+    });
+
+    testWidgets('should remove from favourite', (WidgetTester tester) async {
+      await store.dispatch(
+        NavigationAction(
+            drawerSelectedIndex: 4,
+            primaryActions: primaryActionsMockedData,
+            secondaryActions: secondaryActionsMockedData),
+      );
+
+      final MockShortGraphQlClient mockShortSILGraphQlClient =
+          MockShortGraphQlClient.withResponse(
+        'idToken',
+        'endpoint',
+        http.Response(
+          json.encode(<String, dynamic>{
+            'data': <String, dynamic>{
+              'deleteFavoriteNavAction': true,
+              'fetchUserNavigationActions': <String, dynamic>{
+                'primary': primaryActionsMockedData,
+                'secondary': secondaryActionsMockedData
+              }
+            },
+          }),
+          201,
+        ),
+      );
+
+      await buildTestWidget(
+        tester: tester,
+        store: store,
+        widget: const AppDrawer(
+          permanentlyDisplay: false,
+        ),
+        graphQlClient: mockShortSILGraphQlClient,
       );
 
       expect(find.byType(AppDrawer), findsOneWidget);
@@ -282,6 +412,177 @@ void main() {
       await tester.tap(find.byType(IconSlideAction));
       await tester.pumpAndSettle();
       expect(find.byType(ScaffoldMessenger), findsOneWidget);
+    });
+
+    testWidgets('should display error if add to favourite failed',
+        (WidgetTester tester) async {
+      await store.dispatch(
+        NavigationAction(
+            drawerSelectedIndex: 4,
+            primaryActions: primaryActionsMockedData,
+            secondaryActions: secondaryActionsMockedData),
+      );
+
+      final MockShortGraphQlClient mockShortSILGraphQlClient =
+          MockShortGraphQlClient.withResponse(
+        'idToken',
+        'endpoint',
+        http.Response(
+          json.encode(<String, dynamic>{
+            'error': <String, dynamic>{},
+          }),
+          201,
+        ),
+      );
+
+      await buildTestWidget(
+        tester: tester,
+        store: store,
+        widget: const AppDrawer(
+          permanentlyDisplay: false,
+        ),
+        graphQlClient: mockShortSILGraphQlClient,
+      );
+
+      expect(find.byType(AppDrawer), findsOneWidget);
+
+      //drag list tile
+      await tester.drag(
+          find.byType(SlidableDrawerActionPane).last, const Offset(500.0, 0.0));
+      await tester.pumpAndSettle();
+      expect(find.byType(IconSlideAction), findsOneWidget);
+      await tester.tap(find.byType(IconSlideAction));
+      await tester.pumpAndSettle();
+      expect(find.byType(ScaffoldMessenger), findsOneWidget);
+
+      //drag Extensionlist tile
+      await tester.drag(
+          find.byType(ExpansionTile).first, const Offset(500.0, 0.0));
+      await tester.pumpAndSettle();
+      expect(find.byType(IconSlideAction), findsOneWidget);
+      await tester.tap(find.byType(IconSlideAction));
+      await tester.pumpAndSettle();
+      expect(find.byType(ScaffoldMessenger), findsOneWidget);
+    });
+
+    testWidgets('should render favourite items', (WidgetTester tester) async {
+      await store.dispatch(
+        NavigationAction(
+            drawerSelectedIndex: 1,
+            primaryActions: primaryActionsMockedData,
+            secondaryActions: secondaryActionsMockedData),
+      );
+
+      await buildTestWidget(
+        tester: tester,
+        store: store,
+        widget: const AppDrawer(
+          permanentlyDisplay: false,
+        ),
+      );
+
+      expect(find.byType(AppDrawer), findsOneWidget);
+
+      //click favourite
+      expect(find.text(navDrawerFavoritesText), findsOneWidget);
+      await tester.tap(find.text(navDrawerFavoritesText));
+      await tester.pumpAndSettle();
+      expect(find.byType(ListView), findsWidgets);
+    });
+
+    testWidgets('should render text if favourite Items is null',
+        (WidgetTester tester) async {
+      await store.dispatch(
+        NavigationAction(
+          drawerSelectedIndex: 1,
+          primaryActions: primaryActionsMockedData,
+          secondaryActions: secondaryActionsNoFavouriteMockedData,
+        ),
+      );
+
+      await buildTestWidget(
+        tester: tester,
+        store: store,
+        widget: const AppDrawer(
+          permanentlyDisplay: false,
+        ),
+      );
+
+      expect(find.byType(AppDrawer), findsOneWidget);
+
+      //click favourite
+      expect(find.text(navDrawerFavoritesText), findsOneWidget);
+      await tester.tap(find.text(navDrawerFavoritesText));
+      await tester.pumpAndSettle();
+      expect(find.text(navDrawerNoFavouriteText), findsOneWidget);
+    });
+
+    testWidgets('should set correct index in favourite items',
+        (WidgetTester tester) async {
+      await store.dispatch(
+        NavigationAction(
+            drawerSelectedIndex: 1,
+            primaryActions: primaryActionsMockedData,
+            secondaryActions: secondaryActionsMockedData),
+      );
+
+      await buildTestWidget(
+        tester: tester,
+        store: store,
+        widget: const AppDrawer(
+          permanentlyDisplay: false,
+        ),
+      );
+
+      expect(find.byType(AppDrawer), findsOneWidget);
+
+      //click favourite
+      expect(find.text(navDrawerFavoritesText), findsOneWidget);
+      await tester.tap(find.text(navDrawerFavoritesText));
+      await tester.pumpAndSettle();
+      expect(find.byType(ListView), findsWidgets);
+
+      //tap list tile
+      await tester.tap(find.byType(ListTile).first);
+
+      expect(
+          store.state.navigationState!.drawerSelectedIndex, isNot(equals(1)));
+    });
+
+    testWidgets('should set correct index in Nested actions in favourite items',
+        (WidgetTester tester) async {
+      await store.dispatch(
+        NavigationAction(
+            drawerSelectedIndex: 1,
+            primaryActions: primaryActionsMockedData,
+            secondaryActions: secondaryActionsMockedData),
+      );
+
+      await buildTestWidget(
+        tester: tester,
+        store: store,
+        widget: const AppDrawer(
+          permanentlyDisplay: false,
+        ),
+      );
+
+      expect(find.byType(AppDrawer), findsOneWidget);
+
+      //click favourite
+      expect(find.text(navDrawerFavoritesText), findsOneWidget);
+      await tester.tap(find.text(navDrawerFavoritesText));
+      await tester.pumpAndSettle();
+      expect(find.byType(ListView), findsWidgets);
+
+      expect(find.text('About'), findsOneWidget);
+      await tester.tap(find.text('About'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('About Us'), findsOneWidget);
+      await tester.tap(find.text('About Us'));
+      await tester.pumpAndSettle();
+
+      expect(store.state.navigationState!.drawerSelectedIndex, equals(2));
     });
   });
 }

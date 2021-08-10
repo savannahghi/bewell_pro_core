@@ -1,16 +1,14 @@
 import 'package:async_redux/async_redux.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:bewell_pro_core/presentation/core/home/models/bottom_navigation_bar_items.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:domain_objects/entities.dart';
+import 'package:flutter/material.dart';
 
 class SILBottomNavigatorBar extends StatefulWidget {
-  const SILBottomNavigatorBar({Key? key, this.navigationItems})
-      : super(key: key);
+  const SILBottomNavigatorBar({this.navigationItems});
 
   final List<NavigationItem>? navigationItems;
 
@@ -27,7 +25,9 @@ class _SILBottomNavigatorBarState extends State<SILBottomNavigatorBar>
   @override
   Widget build(BuildContext context) {
     final List<NavigationItem> navigationItems =
-        widget.navigationItems ?? defaultNavItems;
+        StoreProvider.state<CoreState>(context)!
+            .navigationState!
+            .primaryActions!;
 
     final int bottomBarIndex = StoreProvider.state<CoreState>(context)!
         .navigationState!
@@ -40,8 +40,8 @@ class _SILBottomNavigatorBarState extends State<SILBottomNavigatorBar>
       selectedItemColor: Theme.of(context).primaryColor,
       unselectedItemColor: Colors.black45,
       onTap: (int index) async {
-        if (index != bottomBarIndex || index == 0) {
-          StoreProvider.dispatch<CoreState>(
+        if (index != bottomBarIndex) {
+          await StoreProvider.dispatch<CoreState>(
             context,
             NavigationAction(
               drawerSelectedIndex: -1,

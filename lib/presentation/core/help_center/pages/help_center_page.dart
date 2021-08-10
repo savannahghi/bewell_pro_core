@@ -1,3 +1,6 @@
+import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:domain_objects/entities.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
@@ -14,9 +17,14 @@ import 'package:shared_themes/text_themes.dart';
 class HelpCenterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final List<NavigationItem> secondaryActions =
+        StoreProvider.state<CoreState>(context)!
+            .navigationState!
+            .secondaryActions!;
+
     final double padding;
     if (ResponsiveWidget.deviceType(context) != DeviceScreensType.Mobile &&
-        defaultSecondaryNavItems.isNotEmpty) {
+        secondaryActions.isNotEmpty) {
       padding = number20;
     } else {
       padding =

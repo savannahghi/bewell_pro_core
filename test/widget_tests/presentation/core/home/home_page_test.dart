@@ -1,4 +1,9 @@
+import 'dart:async';
+import 'dart:convert';
+
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
+import 'package:bewell_pro_core/application/redux/actions/user_feed_actions/save_user_feed_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
@@ -15,6 +20,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fake_async/fake_async.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
+import 'package:http/http.dart' as http;
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 
@@ -107,6 +113,14 @@ void main() {
 
     testWidgets('session timeout displays login prompt to user',
         (WidgetTester tester) async {
+      final StreamController<dynamic> streamController =
+          StreamController<dynamic>.broadcast();
+
+      final Stream<dynamic> _stream =
+          streamController.stream.asBroadcastStream();
+
+      _stream.listen((dynamic event) {});
+
       final DateTime initialTokenExpiry =
           DateTime.now().add(const Duration(seconds: 5));
 
@@ -116,6 +130,33 @@ void main() {
         ),
       );
 
+      await store.dispatch(
+        NavigationAction(
+            drawerSelectedIndex: 1,
+            bottomBarSelectedIndex: 0,
+            primaryActions: secondaryActionsMockedData,
+            secondaryActions: secondaryActionsMockedData),
+      );
+
+      store.dispatch(SaveUserFeedAction(feed: json.encode(mockUserFeed)));
+
+      final MockShortGraphQlClient mockShortSILGraphQlClient =
+          MockShortGraphQlClient.withResponse(
+        'idToken',
+        'endpoint',
+        http.Response(
+          json.encode(<String, dynamic>{
+            'data': <String, dynamic>{
+              'deleteFavoriteNavAction': true,
+              'fetchUserNavigationActions': <String, dynamic>{
+                'primary': primaryActionsMockedData,
+                'secondary': secondaryActionsMockedData
+              },
+            },
+          }),
+          201,
+        ),
+      );
       final FakeAsync fakeAsync = FakeAsync();
 
       fakeAsync.run((FakeAsync self) async {
@@ -123,6 +164,7 @@ void main() {
           await buildTestWidget(
             store: store,
             tester: tester,
+            graphQlClient: mockShortSILGraphQlClient,
             widget: const HomePage(sessionTimeout: 1, modalCountdown: 1),
           );
           await tester.pumpAndSettle();
@@ -178,7 +220,6 @@ void main() {
       });
       fakeAsync.flushMicrotasks();
     });
-
     testWidgets(
         'should have correct padding when secondaryActions isEmpty and '
         'DeviceType is not Mobile', (WidgetTester tester) async {
