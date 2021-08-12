@@ -1,3 +1,6 @@
+import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/application/redux/actions/navigation_actions/update_navigation_action.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
@@ -106,8 +109,13 @@ class _SessionTimeoutAlertState extends State<SessionTimeoutAlert> {
                   SILPrimaryButton(
                     buttonKey: AppWidgetKeys.stayBtnKey,
                     buttonColor: healthcloudAccentColor,
-                    onPressed: () {
+                    onPressed: () async {
                       closeTimers();
+                      //Refreshes navigation
+                      await StoreProvider.dispatch<CoreState>(
+                          context,
+                          UpdateNavigationAction(
+                              context: context, favouriteUpdate: false));
                       Navigator.pop(context, 'stay');
                     },
                     text: stayLoggedInText,

@@ -748,3 +748,54 @@ Map<String, dynamic> problemAllergySummaryQueryVariables() {
     'patientID': patientInfo.patientId,
   };
 }
+
+const String getUserActionsQuery = '''
+query  getUserActions{
+  fetchUserNavigationActions {
+    primary {
+      title
+      favourite
+      onTapRoute
+      icon {
+        id:ID
+        title:Title
+        description:Description
+        url:URL
+        linkType:LinkType
+        thumbnail:Thumbnail
+      }
+      nested {
+        title
+        onTapRoute
+      }
+    }
+    secondary {
+      title
+      favourite
+			onTapRoute
+      icon{
+        id:ID
+        title:Title
+        description:Description
+        url:URL
+        linkType:LinkType
+        thumbnail:Thumbnail
+      }
+      nested {
+        title
+        onTapRoute
+      }
+    }
+  }
+}
+''';
+
+const String listPermissionsQuery = '''
+query listPermissions {
+  getAllPermissions {
+    scope
+    group
+    description
+  }
+}
+''';

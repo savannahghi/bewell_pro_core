@@ -782,10 +782,28 @@ const String continueVisitText = 'Continue Visit';
 const String navDrawerFavoritesText = 'Favorite';
 const String navDrawerHintSearchText = 'Search';
 const String navDrawerComingSoonText = 'Coming Soon';
+const String navDrawerAgentText = 'Agent';
 const String navDrawerPatientText = 'Patient';
 const String navDrawerPatientRegistrationText = 'Patient Registration';
 const String navDrawerPatientIdentificationText = 'Patient Identification';
 const String navDrawerGetHelpText = 'Get Help';
+const String navDrawerNoFavouriteText = 'No items in favourite';
+
+String favouriteAddActionFeedback(String navigationActionTitle) {
+  return 'Adding $navigationActionTitle to favourites';
+}
+
+String favouriteAddActionDone(String navigationActionTitle) {
+  return 'Added $navigationActionTitle to favourites';
+}
+
+String favouriteRemoveActionFeedback(String navigationActionTitle) {
+  return 'Removing $navigationActionTitle from favourites';
+}
+
+String favouriteRemoveActionDone(String navigationActionTitle) {
+  return 'Removed $navigationActionTitle from favourites';
+}
 
 const String drawerTestRootText = 'You have closed the drawer';
 

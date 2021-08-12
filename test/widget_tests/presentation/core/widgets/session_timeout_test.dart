@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -6,7 +8,9 @@ import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/core/home/widgets/session_timeout.dart';
 import 'package:quiver/async.dart';
 import 'package:quiver/testing/time.dart';
+import 'package:http/http.dart' as http;
 
+import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
@@ -52,8 +56,28 @@ void main() {
     });
 
     testWidgets('stay button works', (WidgetTester tester) async {
-      await tester.pumpWidget(
-        const MaterialApp(
+      final MockShortGraphQlClient mockShortSILGraphQlClient =
+          MockShortGraphQlClient.withResponse(
+        'idToken',
+        'endpoint',
+        http.Response(
+          json.encode(<String, dynamic>{
+            'data': <String, dynamic>{
+              'deleteFavoriteNavAction': true,
+              'fetchUserNavigationActions': <String, dynamic>{
+                'primary': primaryActionsMockedData,
+                'secondary': secondaryActionsMockedData
+              }
+            },
+          }),
+          201,
+        ),
+      );
+
+      await buildTestWidget(
+        tester: tester,
+        graphQlClient: mockShortSILGraphQlClient,
+        widget: const MaterialApp(
           home: Material(
             child: Center(
               child: ElevatedButton(

@@ -1705,3 +1705,19 @@ query GenerateRetryOTP($msisdn: String!, $step: Int!) {
   generateRetryOTP(msisdn: $msisdn, retryStep: $step)
 }
 ''';
+
+const String saveFavouriteNavigationActionMutation = r'''
+mutation saveFavAction($title: String!){
+  saveFavoriteNavAction(title: $title)
+}
+''';
+
+Map<String, String> updateFavouriteNavigationAction(String title) {
+  return <String, String>{'title': title};
+}
+
+const String removeFavouriteNavigationActionMutation = r'''
+mutation deleteFavAction($title: String!){
+  deleteFavoriteNavAction(title: $title)
+}
+''';
