@@ -105,7 +105,7 @@ void main() {
 
       // enter otp code
       await tester.enterText(find.byType(SILPinCodeTextField), '123456');
-      await tester.pump();
+      await tester.pump(const Duration(seconds: 5));
 
       // check if most current otp was set to state by the action
       expect(store.state.miscState!.otpCode, '123456');
