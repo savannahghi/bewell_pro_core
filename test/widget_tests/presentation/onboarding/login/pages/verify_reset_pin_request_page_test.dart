@@ -21,7 +21,6 @@ void main() {
         BatchUpdateMiscStateAction(
             phoneNumber: '0712345678', otpCode: '123456'),
       );
-
       await buildTestWidget(
           tester: tester, store: store, widget: VerifyPinResetRequestPage());
 
@@ -32,7 +31,7 @@ void main() {
 
       // enter otp code
       await tester.enterText(otpBoxFinder, '123456');
-      await tester.pump();
+      await tester.pump(const Duration(seconds: 5));
 
       // verify navigation
       expect(find.byType(OnboardingScaffold), findsOneWidget);

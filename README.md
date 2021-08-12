@@ -1,4 +1,4 @@
-[![Release](https://img.shields.io/badge/Version-^1.04-success.svg?style=for-the-badge)](https://shields.io/)
+[![Release](https://img.shields.io/badge/Version-^1.0.5-success.svg?style=for-the-badge)](https://shields.io/)
 [![Maintained](https://img.shields.io/badge/Maintained-Actively-informational.svg?style=for-the-badge)](https://shields.io/)
 [![Release](https://img.shields.io/badge/Coverage-100-success.svg?style=for-the-badge)](https://shields.io/)
 
@@ -22,7 +22,7 @@ This will add a line like this to your package's pubspec.yaml (and run an implic
 
 ```dart
 dependencies:
-  bewell_pro_core: ^1.0.4-nullsafety
+  bewell_pro_core: ^1.0.5-nullsafety
 ```
 
 Alternatively, your editor might support flutter pub get. Check the docs for your editor to learn more.

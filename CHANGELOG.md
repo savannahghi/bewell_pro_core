@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.5-nullsafety
+
+- fix: rbac navigation
+
 ## 1.0.4-nullsafety
 
 - fix: modify home page to accept feed content callbacks
