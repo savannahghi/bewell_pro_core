@@ -96,14 +96,14 @@ class MockImagePickerPlatform extends Mock
     with MockPlatformInterfaceMixin
     implements ImagePickerPlatform {
   @override
-  Future<PickedFile?> pickImage({
+  Future<XFile?> getImage({
     required ImageSource source,
     double? maxWidth,
     double? maxHeight,
     int? imageQuality,
     CameraDevice preferredCameraDevice = CameraDevice.rear,
   }) {
-    return Future<PickedFile>.value(PickedFile(mockImagePath));
+    return Future<XFile>.value(XFile(mockImagePath));
   }
 }
 

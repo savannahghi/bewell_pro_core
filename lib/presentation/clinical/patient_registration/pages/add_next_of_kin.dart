@@ -1,6 +1,3 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:bewell_pro_core/application/clinical/patient_registration/add_next_of_kin_form_manager.dart';
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
@@ -9,6 +6,7 @@ import 'package:bewell_pro_core/domain/clinical/entities/patient_payload.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/simple_next_of_kin_input.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/patient_gender_enum.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
+import 'package:bewell_pro_core/domain/core/failures/generic_exception.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/domain_constants.dart';
@@ -18,6 +16,9 @@ import 'package:bewell_pro_core/presentation/clinical/patient_registration/widge
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/name_field.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/phone_number_field.dart';
 import 'package:bewell_pro_core/presentation/clinical/theme/form_styles.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:domain_objects/value_objects.dart';
 import 'package:misc_utilities/misc.dart';
 import 'package:shared_themes/colors.dart';
@@ -43,8 +44,13 @@ class _AddNextOfKinState extends State<AddNextOfKin> {
 
   bool _nextOfKinExists = false;
 
+  final TextEditingController _firstNameController = TextEditingController();
+  final TextEditingController _lastNameController = TextEditingController();
+
   @override
   void dispose() {
+    _firstNameController.dispose();
+    _lastNameController.dispose();
     super.dispose();
   }
 
@@ -73,8 +79,10 @@ class _AddNextOfKinState extends State<AddNextOfKin> {
               children: <Widget>[
                 Align(
                   alignment: Alignment.centerLeft,
-                  child: Text(addNextOfKinText,
-                      style: PatientStyles.registerPatientSectionTitle),
+                  child: Text(
+                    addNextOfKinText,
+                    style: PatientStyles.registerPatientSectionTitle,
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 28.0),
@@ -86,27 +94,47 @@ class _AddNextOfKinState extends State<AddNextOfKin> {
                 ),
 
                 // First name
-                NameField(
-                  enabled: !_nextOfKinExists,
-                  fieldHintText: _nextOfKinExists
-                      ? nextOfKinFirstNameText
-                      : enterNextOfKinFirstName,
-                  formFieldKey: AppWidgetKeys.addNextOfKinFirstNameKey,
+                StreamBuilder<String>(
                   stream: _formManager.firstName,
-                  sink: _formManager.inFirstName,
+                  builder:
+                      (BuildContext context, AsyncSnapshot<String> snapshot) {
+                    return NameField(
+                      controller: _firstNameController,
+                      enabled: !_nextOfKinExists,
+                      onChanged: (String value) =>
+                          _formManager.inFirstName.add(value),
+                      fieldHintText: _nextOfKinExists
+                          ? nextOfKinFirstNameText
+                          : enterNextOfKinFirstName,
+                      formFieldKey: AppWidgetKeys.addNextOfKinFirstNameKey,
+                      error: (snapshot.hasError)
+                          ? (snapshot.error as GenericException?)?.message
+                          : null,
+                    );
+                  },
                 ),
 
                 largeVerticalSizedBox,
 
                 // Last name
-                NameField(
-                  enabled: !_nextOfKinExists,
-                  fieldHintText: _nextOfKinExists
-                      ? nextOfKinLastNameText
-                      : enterNextOfKinLastName,
-                  formFieldKey: AppWidgetKeys.addNextOfKinLastNameKey,
+                StreamBuilder<String>(
                   stream: _formManager.lastName,
-                  sink: _formManager.inLastName,
+                  builder:
+                      (BuildContext context, AsyncSnapshot<String> snapshot) {
+                    return NameField(
+                      controller: _lastNameController,
+                      enabled: !_nextOfKinExists,
+                      onChanged: (String value) =>
+                          _formManager.inLastName.add(value),
+                      fieldHintText: _nextOfKinExists
+                          ? nextOfKinLastNameText
+                          : enterNextOfKinLastName,
+                      formFieldKey: AppWidgetKeys.addNextOfKinLastNameKey,
+                      error: (snapshot.hasError)
+                          ? (snapshot.error as GenericException?)?.message
+                          : null,
+                    );
+                  },
                 ),
 
                 largeVerticalSizedBox,
@@ -227,13 +255,13 @@ class _AddNextOfKinState extends State<AddNextOfKin> {
   }
 
   String _getInitialNameValue(String? name) {
-    String? initialValueFirstName;
+    String? initialName;
     if (name != null) {
-      initialValueFirstName = titleCase(name);
+      initialName = titleCase(name);
     } else {
-      initialValueFirstName = '';
+      initialName = '';
     }
-    return initialValueFirstName;
+    return initialName;
   }
 
   Future<void> _addNextOfKin() async {
@@ -277,6 +305,9 @@ class _AddNextOfKinState extends State<AddNextOfKin> {
     final HumanName? name = nextOfKinPayload.patientRecord?.name?.first;
     final String? firstName = name?.given?.first;
     final String? lastName = name?.family;
+
+    _firstNameController.text = _getInitialNameValue(firstName);
+    _lastNameController.text = _getInitialNameValue(lastName);
 
     _formManager.inFirstName.add(_getInitialNameValue(firstName));
     _formManager.inLastName.add(_getInitialNameValue(lastName));
