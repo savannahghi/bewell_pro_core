@@ -11,7 +11,6 @@ class LogoutAction extends ReduxAction<CoreState> {
 
   @override
   CoreState reduce() {
-    final CoreState newState = CoreState.initial().copyWith.call();
-    return newState;
+    return CoreState.initial();
   }
 }

@@ -182,7 +182,7 @@ final MockGraphQlClient mockGraphQlClientWithErrorResponse =
         'idToken', 'endpoint', http.Response('not found', 400));
 
 final Route<dynamic> testRoute =
-    MaterialPageRoute<dynamic>(builder: (_) => const HomePage());
+    MaterialPageRoute<dynamic>(builder: (_) => HomePage());
 
 class MockDeviceCapabilities extends IDeviceCapabilities {}
 

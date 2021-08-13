@@ -1,4 +1,5 @@
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/numbers_constants.dart';
@@ -15,15 +16,17 @@ import 'package:shared_themes/text_themes.dart';
 import 'package:shared_ui_components/buttons.dart';
 
 class AppScaffold extends StatelessWidget {
-  const AppScaffold({
+  AppScaffold({
     Key? key,
+    ReduxAction<CoreState>? logoutAction,
     this.currentBottomNavIndex,
     required this.body,
     this.scaffoldKey,
     this.endDrawer,
     this.floatingActionButton,
     this.backgroundColor,
-  }) : super(key: key);
+  })  : logoutAction = logoutAction ?? LogoutAction(),
+        super(key: key);
 
   final Widget body;
   final int? currentBottomNavIndex;
@@ -31,6 +34,7 @@ class AppScaffold extends StatelessWidget {
   final GlobalKey<ScaffoldState>? scaffoldKey;
   final Widget? floatingActionButton;
   final Color? backgroundColor;
+  final ReduxAction<CoreState> logoutAction;
 
   @override
   Widget build(BuildContext context) {
@@ -113,7 +117,9 @@ class AppScaffold extends StatelessWidget {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: backgroundColor,
-      appBar: SilAppBar(),
+      appBar: SilAppBar(
+        logoutAction: logoutAction,
+      ),
       endDrawer: endDrawer,
       floatingActionButton: floatingActionButton,
       drawerEnableOpenDragGesture: shouldOpenDrawer,
