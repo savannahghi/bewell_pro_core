@@ -2,10 +2,6 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:async_redux/async_redux.dart';
-import 'package:file/file.dart';
-import 'package:file/local.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:bewell_pro_core/application/clinical/patient_registration/basic_details_form_manager.dart';
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
@@ -15,7 +11,7 @@ import 'package:bewell_pro_core/domain/clinical/entities/patient_payload.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_registration_image_data.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/simple_patient_registration_input.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
-import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/failures/generic_exception.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/common/widgets/bewell_submit_dialog.dart';
@@ -28,6 +24,11 @@ import 'package:bewell_pro_core/presentation/clinical/patient_registration/widge
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/patient_photo.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/permissions_banner.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/phone_number_field.dart';
+import 'package:bewell_pro_core/presentation/clinical/theme/form_styles.dart';
+import 'package:file/file.dart';
+import 'package:file/local.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:misc_utilities/misc.dart';
 import 'package:misc_utilities/responsive_widget.dart';
@@ -36,11 +37,7 @@ import 'package:shared_themes/constants.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart'
     as permission_handler;
-
 import 'package:shared_themes/spaces.dart';
-
-import 'package:bewell_pro_core/presentation/clinical/theme/form_styles.dart';
-
 import 'package:shared_ui_components/inputs.dart';
 
 class BasicDetailsWidget extends StatefulWidget {
@@ -61,8 +58,6 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
   final TextEditingController datePickerController = TextEditingController();
   final BasicDetailsFormManager _formManager = BasicDetailsFormManager();
 
-  final bool? phoneNotFound = PatientSearchStore().isNotFound.valueOrNull;
-  final String? phoneValue = PatientSearchStore().phoneNumber.valueOrNull;
   final ImagePicker imagePicker = ImagePicker();
 
   /// focus nodes are used to enable seamless data input by automatically focusing
@@ -205,30 +200,49 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
                   largeVerticalSizedBox,
 
                   // first name
-                  NameField(
+                  StreamBuilder<String>(
                     stream: _formManager.firstName,
-                    sink: _formManager.inFirstName,
-                    formFieldKey: AppWidgetKeys.firstNameKey,
-                    focusNode: _firstNameFocusNode,
-                    onSubmitted: (String v) {
-                      _formManager.inFirstName.add(v);
-                      _lastNameFocusNode.requestFocus();
+                    builder:
+                        (BuildContext context, AsyncSnapshot<String> snapshot) {
+                      return NameField(
+                        formFieldKey: AppWidgetKeys.firstNameKey,
+                        focusNode: _firstNameFocusNode,
+                        onChanged: (String value) =>
+                            _formManager.inFirstName.add(value),
+                        onSubmitted: (String v) {
+                          _formManager.inFirstName.add(v);
+                          _lastNameFocusNode.requestFocus();
+                        },
+                        fieldHintText: firstNameHint,
+                        formHintText: enterFirstName,
+                        error: (snapshot.hasError)
+                            ? (snapshot.error as GenericException?)?.message
+                            : null,
+                      );
                     },
-                    fieldHintText: firstNameHint,
-                    formHintText: enterFirstName,
                   ),
 
                   largeVerticalSizedBox,
 
                   // last name
-                  NameField(
+                  StreamBuilder<String>(
                     stream: _formManager.lastName,
-                    sink: _formManager.inLastName,
-                    focusNode: _lastNameFocusNode,
-                    onSubmitted: (String v) => _formManager.inLastName.add(v),
-                    fieldHintText: lastNameHint,
-                    formHintText: enterLastName,
-                    formFieldKey: AppWidgetKeys.lastNameKey,
+                    builder:
+                        (BuildContext context, AsyncSnapshot<String> snapshot) {
+                      return NameField(
+                        formFieldKey: AppWidgetKeys.lastNameKey,
+                        focusNode: _lastNameFocusNode,
+                        onChanged: (String value) =>
+                            _formManager.inLastName.add(value),
+                        onSubmitted: (String v) =>
+                            _formManager.inLastName.add(v),
+                        fieldHintText: lastNameHint,
+                        formHintText: enterLastName,
+                        error: (snapshot.hasError)
+                            ? (snapshot.error as GenericException?)?.message
+                            : null,
+                      );
+                    },
                   ),
 
                   largeVerticalSizedBox,
@@ -466,8 +480,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
     }
 
     // captures the image from the [imageSource] selected above
-    // ignore: deprecated_member_use
-    final PickedFile? pickedFile = await imagePicker.getImage(
+    final XFile? pickedFile = await imagePicker.pickImage(
         source: imageSource, maxHeight: 500, maxWidth: 500, imageQuality: 80);
 
     if (pickedFile != null) {

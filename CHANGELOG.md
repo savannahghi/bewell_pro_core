@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.0.7-nullsafety
+
+- fix: name field issue within basic details page under patient registration
+- fix: navigation to profile
+
 ## 1.0.6-nullsafety
 
 - fix: home padding

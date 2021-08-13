@@ -1,8 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/human_name.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient.dart';
@@ -15,6 +12,9 @@ import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration_container.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/verify_phone_dialog.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/phone_number_field.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:domain_objects/value_objects.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
@@ -33,6 +33,56 @@ void main() {
 
     setUp(() {
       controller = TabController(length: 4, vsync: const TestVSync());
+    });
+
+    testWidgets(
+        'first name field should show error text when user leaves '
+        'field empty', (WidgetTester tester) async {
+      await buildTestWidget(
+        tester: tester,
+        widget: PatientRegistrationContainer(
+          tabController: controller,
+          child: const AddNextOfKin(),
+        ),
+      );
+
+      const String testName = 'John';
+
+      final Finder firstNameFieldFinder =
+          find.byKey(AppWidgetKeys.addNextOfKinFirstNameKey);
+      expect(firstNameFieldFinder, findsOneWidget);
+
+      await tester.enterText(firstNameFieldFinder, testName);
+      expect(find.text(testName), findsOneWidget);
+
+      await tester.enterText(firstNameFieldFinder, '');
+      await tester.pump();
+      expect(find.text(fieldCannotBeEmptyText), findsOneWidget);
+    });
+
+    testWidgets(
+        'last name field should show error text when user leaves '
+        'field empty', (WidgetTester tester) async {
+      await buildTestWidget(
+        tester: tester,
+        widget: PatientRegistrationContainer(
+          tabController: controller,
+          child: const AddNextOfKin(),
+        ),
+      );
+
+      const String testName = 'Doe';
+
+      final Finder lastNameFieldFinder =
+          find.byKey(AppWidgetKeys.addNextOfKinLastNameKey);
+      expect(lastNameFieldFinder, findsOneWidget);
+
+      await tester.enterText(lastNameFieldFinder, testName);
+      expect(find.text(testName), findsOneWidget);
+
+      await tester.enterText(lastNameFieldFinder, '');
+      await tester.pump();
+      expect(find.text(fieldCannotBeEmptyText), findsOneWidget);
     });
 
     testWidgets('if patient exists form fields prefilled with correct values',
