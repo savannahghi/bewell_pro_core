@@ -66,12 +66,13 @@ void main() {
       expect(find.byType(PhoneLoginPage), findsOneWidget);
     });
 
-    testWidgets('logoutButton works correctly', (WidgetTester tester) async {
+    testWidgets('profile button works correctly', (WidgetTester tester) async {
       await mockNetworkImages(() async {
         Store<CoreState> store;
         final CoreState state = CoreState(
           wait: Wait(),
           userState: UserState(
+            auth: AuthCredentialResponse(uid: ''),
             userProfile: UserProfile(
               id: UNKNOWN,
               username: Name.withValue('Bewell-test'),
