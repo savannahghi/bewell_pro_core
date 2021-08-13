@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.6-nullsafety
+
+- fix: home padding
+
 ## 1.0.5-nullsafety
 
 - fix: navigation

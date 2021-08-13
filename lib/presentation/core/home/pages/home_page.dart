@@ -2,21 +2,18 @@ import 'dart:async';
 
 import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/core/services/feed_content_callbacks.dart';
-import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/login_constants.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/numbers_constants.dart';
 import 'package:bewell_pro_core/presentation/core/global_search/sil_search.dart';
 import 'package:bewell_pro_core/presentation/core/home/models/bottom_navigation_bar_items.dart';
 import 'package:bewell_pro_core/presentation/core/home/widgets/feed_component_wrapper.dart';
 import 'package:bewell_pro_core/presentation/core/home/widgets/session_timeout.dart';
 import 'package:bewell_pro_core/presentation/core/widgets/app_scaffold.dart';
-import 'package:misc_utilities/enums.dart';
-import 'package:misc_utilities/responsive_widget.dart';
+import 'package:flutter/material.dart';
 import 'package:shared_themes/spaces.dart';
 
 class HomePage extends StatefulWidget {
@@ -101,18 +98,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final double padding;
-
-    final DeviceScreensType deviceType = ResponsiveWidget.deviceType(context);
-
-    if (deviceType != DeviceScreensType.Mobile) {
-      padding = ResponsiveWidget.preferredPaddingOnStretchedScreens(
-        context: context,
-      );
-    } else {
-      padding = number0;
-    }
-
     return AppScaffold(
       scaffoldKey: _scaffoldKey,
       backgroundColor: Colors.white,
@@ -132,7 +117,8 @@ class _HomePageState extends State<HomePage> {
               SILSearch(),
               smallVerticalSizedBox,
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: padding),
+                padding: EdgeInsets.symmetric(
+                    horizontal: getResponsivePadding(context: context)),
                 child: FeedComponentWrapper(
                   feedContentCallbacks: widget.feedContentCallbacks ??
                       getFeedActionCallbacks(context: context),
