@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.0.8-nullsafety
+
+- chore: migrated from the deprecated connectivity plugin to connectivity_plus.
 ## 1.0.7-nullsafety
 
 - fix: name field issue within basic details page under patient registration
