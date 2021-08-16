@@ -49,7 +49,6 @@ class _SaveExamSummaryButtonState extends State<SaveExamSummaryButton> {
         context,
         SummaryAction(
             context: context,
-            disabled: disabled,
             doctorsEmail: doctorsEmail,
             phoneNumber: phoneNumber),
       );

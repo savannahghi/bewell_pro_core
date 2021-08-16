@@ -12,13 +12,11 @@ class SummaryAction extends ReduxAction<CoreState> {
   SummaryAction({
     this.doctorsEmail,
     this.phoneNumber,
-    required this.disabled,
     required this.context,
   });
 
   final String? doctorsEmail;
   final String? phoneNumber;
-  final bool disabled;
   final BuildContext context;
 
   @override
@@ -29,20 +27,18 @@ class SummaryAction extends ReduxAction<CoreState> {
 
   @override
   Future<CoreState?> reduce() async {
-    if (!disabled) {
-      final String phoneNumber = StoreProvider.state<CoreState>(context)!
-          .userState!
-          .userProfile!
-          .primaryPhoneNumber!
-          .getValue();
+    final String phoneNumber = StoreProvider.state<CoreState>(context)!
+        .userState!
+        .userProfile!
+        .primaryPhoneNumber!
+        .getValue();
 
-      await GraphQlUtils().sendOtp(
-        client: AppWrapperBase.of(context)!.graphQLClient,
-        phoneNumber: phoneNumber,
-        email: doctorsEmail == UNKNOWNEMAIL ? null : doctorsEmail,
-        logTitle: 'Exam summary : send OTP',
-      );
-    }
+    await GraphQlUtils().sendOtp(
+      client: AppWrapperBase.of(context)!.graphQLClient,
+      phoneNumber: phoneNumber,
+      email: doctorsEmail == UNKNOWNEMAIL ? null : doctorsEmail,
+      logTitle: 'Exam summary : send OTP',
+    );
 
     return null;
   }

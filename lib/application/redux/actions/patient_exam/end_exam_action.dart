@@ -5,7 +5,7 @@ import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:bewell_pro_core/domain/clinical/entities/patient.dart';
+import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/exception_strings.dart';
 import 'package:http/http.dart';
@@ -28,15 +28,14 @@ class EndExamAction extends ReduxAction<CoreState> {
     dispatch(WaitAction<CoreState>.add(endingExamFlag));
   }
 
+  /// End exam here and go back to timeline
   @override
   Future<CoreState?> reduce() async {
-    /// End exam here and go back to timeline
-    final Patient? patientRecord =
-        store.state.clinicalState?.patientPayload?.patientRecord;
+    final PatientInfo patientInfo = getPatientInfo();
 
-    final String? id = patientRecord?.id;
+    final String? id = patientInfo.encounterId;
 
-    if (id != null) {
+    if (id!.isNotEmpty && id != 'null') {
       final Map<String, String> input = <String, String>{
         'encounterID': id,
       };
@@ -64,7 +63,7 @@ class EndExamAction extends ReduxAction<CoreState> {
         error: 'patient encounter ID is not available',
         variables: <String, dynamic>{
           'encounterID': id,
-          'currentPatient': patientRecord
+          'currentPatient': patientInfo
         },
       );
       throw const UserException(errorEndingExam);
