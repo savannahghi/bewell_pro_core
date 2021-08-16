@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.0-nullsafety
+
+- fix: end exam dialog send otp
+
 ## 1.0.9-nullsafety
 
 fix: add logout action to home page

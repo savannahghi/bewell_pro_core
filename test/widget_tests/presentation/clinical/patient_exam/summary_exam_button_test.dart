@@ -149,7 +149,6 @@ void main() {
           store.dispatch(
             SummaryAction(
                 context: context,
-                disabled: false,
                 doctorsEmail: testEmailAddress.toString(),
                 phoneNumber: testPhoneNumber.toString()),
           );
