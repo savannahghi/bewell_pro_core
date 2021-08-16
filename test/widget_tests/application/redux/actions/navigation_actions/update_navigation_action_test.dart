@@ -262,8 +262,7 @@ void main() {
           storeTester.store.state.navigationState!.bottomBarSelectedIndex;
 
       expect(newDrawerIndex, 1);
-      expect(newDrawerBottomIndex, -1);
-      expect(err, isA<Future<dynamic>>());
+      expect(newDrawerBottomIndex, 0);
     });
   });
 }

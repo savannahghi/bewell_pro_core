@@ -120,7 +120,7 @@ class UpdateNavigationAction extends ReduxAction<CoreState> {
         bottomIndex = navigationItemExistsPrimary;
         drawerIndex = -1;
       } else if (navigationItemExistsSecondary >= 0) {
-        bottomIndex = -1;
+        bottomIndex = 0;
         drawerIndex = navigationItemExistsSecondary;
       }
       store.dispatch(NavigationAction(

@@ -808,12 +808,15 @@ Future<String> getInitialRoute({required BuildContext context}) async {
       default: // Happy case => Get the onboarding path and
     }
 
-    StoreProvider.dispatch<CoreState>(
-      context,
-      NavigationAction(
-        drawerSelectedIndex: -1,
-      ),
-    );
+    if (onboardingPath(state: state).route == homePageRoute) {
+      StoreProvider.dispatch<CoreState>(
+        context,
+        NavigationAction(
+          drawerSelectedIndex: -1,
+          bottomBarSelectedIndex: 0,
+        ),
+      );
+    }
 
     return onboardingPath(state: state).route;
   }

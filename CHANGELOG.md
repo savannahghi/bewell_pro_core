@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.8-nullsafety
+
+- fix: bottom navigation bar currentIndex
+
 ## 1.1.7-nullsafety
 
 - chore: package fixes and cleanup
