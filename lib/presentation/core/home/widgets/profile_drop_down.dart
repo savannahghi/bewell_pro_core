@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/events.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
@@ -16,6 +15,11 @@ import 'package:shared_themes/constants.dart';
 import 'package:shared_themes/text_themes.dart';
 
 class ProfileDropDown extends StatelessWidget {
+  final ReduxAction<CoreState> logoutAction;
+
+  const ProfileDropDown({Key? key, required this.logoutAction})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton<int>(
@@ -33,7 +37,7 @@ class ProfileDropDown extends StatelessWidget {
               action: dismissSnackBar('close', white, context),
             ));
 
-            StoreProvider.dispatch<CoreState>(context, LogoutAction());
+            StoreProvider.dispatch<CoreState>(context, logoutAction);
             break;
           case 2:
             triggerEvent(navigationEvent, context, route: userProfileRoute);

@@ -77,7 +77,7 @@ class RouteGenerator {
             builder: (_) => SetUserNamesPage());
 
       case homePageRoute:
-        return MaterialPageRoute<HomePage>(builder: (_) => const HomePage());
+        return MaterialPageRoute<HomePage>(builder: (_) => HomePage());
 
       case confirmSurveyRoute:
         return MaterialPageRoute<ConfirmSurveyPage>(

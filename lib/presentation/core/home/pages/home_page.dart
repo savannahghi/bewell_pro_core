@@ -17,16 +17,19 @@ import 'package:flutter/material.dart';
 import 'package:shared_themes/spaces.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({
+  HomePage({
     int? sessionTimeout,
     int? modalCountdown,
+    ReduxAction<CoreState>? logoutAction,
     this.feedContentCallbacks,
   })  : sessionTimeout = sessionTimeout ?? kTimeOutAfter,
-        modalCountdown = modalCountdown ?? kModalCountDown;
+        modalCountdown = modalCountdown ?? kModalCountDown,
+        logoutAction = logoutAction ?? LogoutAction();
 
   final int modalCountdown;
   final int sessionTimeout;
   final Map<String, Function>? feedContentCallbacks;
+  final ReduxAction<CoreState> logoutAction;
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -60,7 +63,7 @@ class _HomePageState extends State<HomePage> {
     timer.cancel();
 
     /// Log user out
-    StoreProvider.dispatch<CoreState>(context, LogoutAction());
+    StoreProvider.dispatch<CoreState>(context, widget.logoutAction);
   }
 
   /// LOGOUT SESSION
@@ -100,6 +103,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return AppScaffold(
       scaffoldKey: _scaffoldKey,
+      logoutAction: widget.logoutAction,
       backgroundColor: Colors.white,
       body: GestureDetector(
         key: AppWidgetKeys.homePageGestureDetectorKey,

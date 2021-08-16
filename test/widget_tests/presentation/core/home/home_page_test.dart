@@ -39,7 +39,7 @@ void main() {
         await buildTestWidget(
           store: store,
           tester: tester,
-          widget: const HomePage(),
+          widget: HomePage(),
         );
         await tester.pump(const Duration(seconds: 5));
 
@@ -75,7 +75,7 @@ void main() {
         await buildTestWidget(
           store: store,
           tester: tester,
-          widget: const HomePage(),
+          widget: HomePage(),
         );
 
         // Use didPopRoute() to simulate the system back button. Check that
@@ -165,7 +165,7 @@ void main() {
             store: store,
             tester: tester,
             graphQlClient: mockShortSILGraphQlClient,
-            widget: const HomePage(sessionTimeout: 1, modalCountdown: 1),
+            widget: HomePage(sessionTimeout: 1, modalCountdown: 1),
           );
           await tester.pumpAndSettle();
           fakeAsync.elapse(const Duration(seconds: 1));
@@ -204,7 +204,7 @@ void main() {
           await buildTestWidget(
             store: store,
             tester: tester,
-            widget: const HomePage(sessionTimeout: 1, modalCountdown: 1),
+            widget: HomePage(sessionTimeout: 1, modalCountdown: 1),
           );
           await tester.pumpAndSettle();
           fakeAsync.elapse(const Duration(seconds: 1));
@@ -230,7 +230,7 @@ void main() {
         await buildTestWidget(
           store: store,
           tester: tester,
-          widget: const HomePage(),
+          widget: HomePage(),
         );
 
         await tester.pump(const Duration(seconds: 5));

@@ -12,6 +12,9 @@ import 'package:misc_utilities/responsive_widget.dart';
 import 'package:shared_themes/spaces.dart';
 
 class SilAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final ReduxAction<CoreState> logoutAction;
+
+  const SilAppBar({Key? key, required this.logoutAction}) : super(key: key);
   @override
   Size get preferredSize => const Size.fromHeight(100.0);
 
@@ -89,7 +92,9 @@ class SilAppBar extends StatelessWidget implements PreferredSizeWidget {
             Row(
               children: <Widget>[
                 smallHorizontalSizedBox,
-                ProfileDropDown(),
+                ProfileDropDown(
+                  logoutAction: logoutAction,
+                ),
                 smallHorizontalSizedBox,
               ],
             ),

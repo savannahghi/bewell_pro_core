@@ -1,4 +1,5 @@
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
@@ -28,11 +29,13 @@ class ComingSoon extends StatelessWidget {
     }
 
     return AppScaffold(
-        body: SILComingSoonPage(
-      title: title,
-      description: 'Manage $title',
-      comingSoonText: title,
-      isTabletWithDrawer: isTabletWithDrawer,
-    ));
+      logoutAction: LogoutAction(),
+      body: SILComingSoonPage(
+        title: title,
+        description: 'Manage $title',
+        comingSoonText: title,
+        isTabletWithDrawer: isTabletWithDrawer,
+      ),
+    );
   }
 }
