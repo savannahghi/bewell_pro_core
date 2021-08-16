@@ -518,8 +518,11 @@ Future<void> saveVital(
   }
 }
 
-Future<void> logoutUser(BuildContext context,
-    {String? customSignOutMsg}) async {
+Future<void> logoutUser(
+  BuildContext context, {
+  String? customSignOutMsg,
+  ReduxAction<CoreState>? logoutAction,
+}) async {
   Navigation.initial();
 
   /// Notify the user
@@ -531,7 +534,7 @@ Future<void> logoutUser(BuildContext context,
       action: dismissSnackBar('close', white, context),
     ));
 
-  StoreProvider.dispatch<CoreState>(context, LogoutAction());
+  StoreProvider.dispatch<CoreState>(context, logoutAction ?? LogoutAction());
 }
 
 /// Clears all behavior subjects that contain the current patient's data

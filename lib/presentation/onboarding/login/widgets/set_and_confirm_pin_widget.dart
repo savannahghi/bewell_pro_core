@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:bewell_pro_core/application/core/services/input_validators.dart';
 import 'package:bewell_pro_core/application/core/services/onboarding.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
-
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/view_models/core_state_view_model.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
@@ -13,13 +12,18 @@ import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/numbers_constants.dart';
 import 'package:misc_utilities/misc.dart';
 import 'package:shared_themes/spaces.dart';
-
 import 'package:shared_ui_components/buttons.dart';
 import 'package:shared_ui_components/inputs.dart';
 import 'package:shared_ui_components/platform_loader.dart';
 
 class SetAndConfirmPinWidget extends StatelessWidget {
-  SetAndConfirmPinWidget({required this.flag, required this.setPinStatus});
+  final ReduxAction<CoreState>? logoutAction;
+
+  SetAndConfirmPinWidget({
+    required this.flag,
+    required this.setPinStatus,
+    this.logoutAction,
+  });
 
   final String flag;
   final SetPinStatus setPinStatus;
@@ -45,6 +49,7 @@ class SetAndConfirmPinWidget extends StatelessWidget {
         context: context,
         flag: flag,
         setPinStatus: setPinStatus,
+        logoutAction: logoutAction,
       );
     } else {
       ScaffoldMessenger.of(context)
@@ -82,6 +87,7 @@ class SetAndConfirmPinWidget extends StatelessWidget {
                     InputValidators.validatePin(value: value),
                 onChanged: (String val) => _pin = val,
               ),
+
               mediumVerticalSizedBox,
 
               /// Confirm PIN input
@@ -105,7 +111,9 @@ class SetAndConfirmPinWidget extends StatelessWidget {
                 },
                 onChanged: (String val) => _confirmPin = val,
               ),
+
               size40VerticalSizedBox,
+
               if (!vm.state.wait!.isWaitingFor(flag))
                 SizedBox(
                   width: double.infinity,

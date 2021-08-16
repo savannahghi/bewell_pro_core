@@ -17,10 +17,12 @@ class ChangeUserPinAction extends ReduxAction<CoreState> {
   ChangeUserPinAction({
     required this.pin,
     required this.context,
+    this.logoutAction,
   });
 
   final BuildContext context;
   final String pin;
+  ReduxAction<CoreState>? logoutAction;
 
   @override
   void after() {
@@ -66,7 +68,7 @@ class ChangeUserPinAction extends ReduxAction<CoreState> {
     if (body['data']['updateUserPIN'] as bool) {
       ScaffoldMessenger.of(context)
           .showSnackBar(snackbar(content: changePinSuccessMessage));
-      dispatch(LogoutAction());
+      dispatch(logoutAction ?? LogoutAction());
       return state;
     }
 

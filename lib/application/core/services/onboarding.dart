@@ -158,6 +158,7 @@ Future<void> validateEnteredPin({
   required BuildContext context,
   required String flag,
   required SetPinStatus setPinStatus,
+  ReduxAction<CoreState>? logoutAction,
 }) async {
   final MiscState? miscState =
       StoreProvider.state<CoreState>(context)!.miscState;
@@ -187,6 +188,7 @@ Future<void> validateEnteredPin({
             ChangeUserPinAction(
               pin: miscState.createPin!,
               context: context,
+              logoutAction: logoutAction,
             ),
           );
           return;
