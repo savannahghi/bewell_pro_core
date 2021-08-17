@@ -12,6 +12,10 @@ import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 
 class ProfileChangePin extends StatelessWidget {
+  final ReduxAction<CoreState>? logoutAction;
+
+  const ProfileChangePin({Key? key, this.logoutAction}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final bool? isChangePin =
@@ -30,6 +34,7 @@ class ProfileChangePin extends StatelessWidget {
                 SetAndConfirmPinWidget(
                   flag: changePinFlag,
                   setPinStatus: SetPinStatus.IsChangingPin,
+                  logoutAction: logoutAction,
                 ),
                 largeVerticalSizedBox,
                 if (isChangePin != null && !isChangePin)

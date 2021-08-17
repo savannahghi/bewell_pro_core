@@ -34,7 +34,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        widget: ProfileChangePin(),
+        widget: const ProfileChangePin(),
       );
 
       expect(find.byType(OnboardingScaffold), findsOneWidget);

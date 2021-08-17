@@ -15,12 +15,16 @@ import 'package:domain_objects/entities.dart';
 import 'package:shared_themes/text_themes.dart';
 
 class PinVerificationPage extends StatelessWidget {
-  const PinVerificationPage(
-      {Key? key, required this.pinVerificationType, this.shouldPop = false})
-      : super(key: key);
+  const PinVerificationPage({
+    Key? key,
+    required this.pinVerificationType,
+    this.shouldPop = false,
+    this.logoutAction,
+  }) : super(key: key);
 
   final PinVerificationType pinVerificationType;
   final bool shouldPop;
+  final ReduxAction<CoreState>? logoutAction;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +50,7 @@ class PinVerificationPage extends StatelessWidget {
                 if (shouldPop) {
                   Navigator.of(context).pop();
                 } else {
-                  await logoutUser(context);
+                  await logoutUser(context, logoutAction: logoutAction);
                 }
               },
               child: Text(

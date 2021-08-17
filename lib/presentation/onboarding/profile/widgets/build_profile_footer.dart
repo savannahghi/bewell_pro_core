@@ -1,3 +1,5 @@
+import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
@@ -9,13 +11,17 @@ import 'package:shared_themes/text_themes.dart';
 /// This class is the [profile footer]
 /// It holds the widgets for copyright declaration and current year
 class BuildProfileFooter extends StatelessWidget {
+  final ReduxAction<CoreState>? logoutAction;
+
+  const BuildProfileFooter({Key? key, this.logoutAction}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
         Builder(builder: (BuildContext context) {
           return InkWell(
-            onTap: () => logoutUser(context),
+            onTap: () => logoutUser(context, logoutAction: logoutAction),
             key: AppWidgetKeys.userProfileLogoutBtn,
             child: Padding(
               padding:

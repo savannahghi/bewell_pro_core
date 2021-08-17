@@ -1,3 +1,6 @@
+import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
@@ -9,6 +12,14 @@ import 'package:misc_utilities/number_constants.dart';
 import 'package:misc_utilities/responsive_widget.dart';
 
 class UserProfilePage extends StatelessWidget {
+  final ReduxAction<CoreState> logoutAction;
+
+  UserProfilePage({
+    Key? key,
+    ReduxAction<CoreState>? logoutAction,
+  })  : logoutAction = logoutAction ?? LogoutAction(),
+        super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final ProfileSubject profileSubject = ProfileSubject();
@@ -32,6 +43,7 @@ class UserProfilePage extends StatelessWidget {
                           : number400,
                       child: ProfileMasterDetail(
                         selection: profileSubject.selection.value,
+                        logoutAction: logoutAction,
                       ),
                     ),
                     const VerticalDivider(
@@ -46,7 +58,10 @@ class UserProfilePage extends StatelessWidget {
               ),
             } else ...<Widget>{
               /// [Mobile] Widgets
-              ProfileMasterDetail(selection: profileSubject.selection.value),
+              ProfileMasterDetail(
+                selection: profileSubject.selection.value,
+                logoutAction: logoutAction,
+              ),
             }
           ],
         ),

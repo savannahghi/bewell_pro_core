@@ -22,8 +22,13 @@ import 'build_profile_footer.dart';
 
 /// used for [master view] in master detail ui
 class ProfileMasterDetail extends StatefulWidget {
-  const ProfileMasterDetail({Key? key, required this.selection})
-      : super(key: key);
+  final ReduxAction<CoreState> logoutAction;
+
+  const ProfileMasterDetail({
+    Key? key,
+    required this.selection,
+    required this.logoutAction,
+  }) : super(key: key);
 
   final ValueNotifier<ProfileItem> selection;
 
@@ -36,15 +41,18 @@ class _ProfileMasterDetailState extends State<ProfileMasterDetail> {
 
   @override
   Widget build(BuildContext context) {
-    final UserProfile userProfile =
-        StoreProvider.state<CoreState>(context)!.userState!.userProfile!;
+    final UserProfile? userProfile =
+        StoreProvider.state<CoreState>(context)?.userState?.userProfile;
 
-    final BioData bioData = userProfile.userBioData!;
+    final BioData? bioData = userProfile?.userBioData;
     final String firstName =
-        toBeginningOfSentenceCase(bioData.firstName?.getValue()) ?? 'Hey';
+        toBeginningOfSentenceCase(bioData?.firstName?.getValue()) ?? 'Hey';
     final String lastName =
-        toBeginningOfSentenceCase(bioData.lastName?.getValue()) ?? 'You';
+        toBeginningOfSentenceCase(bioData?.lastName?.getValue()) ?? 'You';
     final String userName = '$firstName $lastName';
+
+    final String? primaryPhoneNumber =
+        userProfile?.primaryPhoneNumber?.getValue();
 
     return Column(
       children: <Widget>[
@@ -55,11 +63,11 @@ class _ProfileMasterDetailState extends State<ProfileMasterDetail> {
             child: SILProfileBanner(
               editable: true,
               backgroundImagePath: doctorIcon,
-              userPhotoUrl: (userProfile.photoUploadID != null)
-                  ? userProfile.photoUploadID!
+              userPhotoUrl: (userProfile?.photoUploadID != null)
+                  ? userProfile!.photoUploadID!
                   : UNKNOWN,
               userName: userName,
-              primaryPhone: userProfile.primaryPhoneNumber!.getValue(),
+              primaryPhone: primaryPhoneNumber ?? UNKNOWN,
               profileRoute: editUserProfileRoute,
             ),
           ),
@@ -119,7 +127,9 @@ class _ProfileMasterDetailState extends State<ProfileMasterDetail> {
           },
           section: ProfileItemType.legal,
         ),
-        BuildProfileFooter(),
+        BuildProfileFooter(
+          logoutAction: widget.logoutAction,
+        ),
       ],
     );
   }

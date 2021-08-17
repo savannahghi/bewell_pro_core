@@ -108,7 +108,7 @@ class RouteGenerator {
 
       case profileChangePinRoute:
         return MaterialPageRoute<ProfileChangePin>(
-          builder: (_) => ProfileChangePin(),
+          builder: (_) => const ProfileChangePin(),
         );
 
       case patientIdentificationRoute:

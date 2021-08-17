@@ -15,7 +15,10 @@ void main() {
   testWidgets('BuildProfileFooter logs out user correctly',
       (WidgetTester tester) async {
     await buildTestWidget(
-        store: store, tester: tester, widget: BuildProfileFooter());
+      store: store,
+      tester: tester,
+      widget: const BuildProfileFooter(),
+    );
 
     expect(find.byKey(AppWidgetKeys.userProfileLogoutBtn), findsOneWidget);
     await tester.tap(find.byKey(AppWidgetKeys.userProfileLogoutBtn));
