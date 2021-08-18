@@ -7531,44 +7531,62 @@ List<NavigationItem> secondaryActionsEmptyMockedData = <NavigationItem>[];
 
 List<NavigationItem> primaryActionsMockedData = <NavigationItem>[
   NavigationItem(
-      icon: NavigationIcon(
-          id: '1u7E6vQxZ7Le4ZyodCuXTSDaPLs',
-          iconUrl:
-              'https://assets.healthcloud.co.ke/actions/svg/home_navaction.svg',
-          iconTitle: navHomeText,
-          iconDescription: homeIconDescription),
-      title: navHomeText,
-      isFavourite: false,
-      route: homePageRoute),
+    icon: NavigationIcon(
+      id: '1u7E6vQxZ7Le4ZyodCuXTSDaPLs',
+      iconUrl:
+          'https://assets.healthcloud.co.ke/actions/svg/home_navaction.svg',
+      iconTitle: navHomeText,
+      iconDescription: homeIconDescription,
+    ),
+    title: navHomeText,
+    isFavourite: false,
+    route: homePageRoute,
+  ),
   NavigationItem(
-      icon: NavigationIcon(
-        id: '1uLlySEd2Em4PPPE2NQ8lFBbKEi',
-        iconUrl:
-            'https://assets.healthcloud.co.ke/actions/svg/kyc_navaction.svg',
-        iconTitle: navRequestsText,
-        iconDescription: requestsIconDescription,
-      ),
-      title: navRequestsText,
-      isFavourite: false,
-      route: ''),
+    icon: NavigationIcon(
+      id: '1uLlySEd2Em4PPPE2NQ8lFBbKEi',
+      iconUrl: 'https://assets.healthcloud.co.ke/actions/svg/kyc_navaction.svg',
+      iconTitle: navRequestsText,
+      iconDescription: requestsIconDescription,
+    ),
+    title: navRequestsText,
+    isFavourite: false,
+    route: '',
+  ),
   NavigationItem(
-      icon: NavigationIcon(
-          id: '1uLlyMkObz6sekIQhsRI1J1NBH8',
-          iconUrl:
-              'https://assets.healthcloud.co.ke/actions/svg/partner_navaction.svg',
-          iconTitle: navPartnerText,
-          iconDescription: partnerIconDescription),
-      title: navPartnerText,
-      isFavourite: false,
-      route: ''),
+    icon: NavigationIcon(
+      id: '1uLlyMkObz6sekIQhsRI1J1NBH8',
+      iconUrl:
+          'https://assets.healthcloud.co.ke/actions/svg/partner_navaction.svg',
+      iconTitle: navPartnerText,
+      iconDescription: partnerIconDescription,
+    ),
+    title: navPartnerText,
+    isFavourite: false,
+    route: '',
+  ),
   NavigationItem(
-      icon: NavigationIcon(
-          id: '1uLlyNoysESvkeXLrTN2oOCxz9x',
-          iconUrl:
-              'https://assets.healthcloud.co.ke/actions/svg/consumer_navaction.svg',
-          iconTitle: navConsumerText,
-          iconDescription: consumerIconDescription),
-      title: navConsumerText,
-      isFavourite: false,
-      route: '')
+    icon: NavigationIcon(
+      id: '1uLlyNoysESvkeXLrTN2oOCxz9x',
+      iconUrl:
+          'https://assets.healthcloud.co.ke/actions/svg/consumer_navaction.svg',
+      iconTitle: navConsumerText,
+      iconDescription: consumerIconDescription,
+    ),
+    title: navConsumerText,
+    isFavourite: false,
+    route: '',
+  ),
+  NavigationItem(
+    icon: NavigationIcon(
+      id: '1uLlyNoysESvkeXLrTN2oOCxz9x',
+      iconUrl:
+          'https://assets.healthcloud.co.ke/actions/svg/consumer_navaction.svg',
+      iconTitle: navPatientText,
+      iconDescription: consumerIconDescription,
+    ),
+    title: navPatientText,
+    isFavourite: false,
+    route: '',
+  )
 ];

@@ -141,7 +141,6 @@ class SearchWidget extends SearchDelegate<String> {
   @override
   Widget buildResults(BuildContext context) {
     final List<String> acceptedUserRoles = getUserRoles(context);
-
     if (query.length < 2) {
       return Column(
         key: AppWidgetKeys.smallQueryBuildResultKey,
@@ -172,7 +171,8 @@ class SearchWidget extends SearchDelegate<String> {
       final List<SearchResult> resultList = searchResults.where(
         (SearchResult result) {
           if (result.role != null) {
-            if (!acceptedUserRoles.contains(result.role)) {
+            final bool hasPermission = acceptedUserRoles.contains(result.role);
+            if (!hasPermission) {
               return false;
             }
           }

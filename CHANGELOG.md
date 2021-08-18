@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.0.12-nullsafety
+
+- fix: app wide search and navigation 
 ## 1.0.11-nullsafety
 
 - fix: logout helpers

@@ -103,7 +103,7 @@ List<SearchSuggestion> searchSuggestions = <SearchSuggestion>[
   //find patient
   SearchSuggestion(
     name: patientFind,
-    role: patientStr,
+    role: patientRole,
     aliases: <String>[
       'find a patient',
       'find patient',
@@ -123,7 +123,7 @@ List<SearchSuggestion> searchSuggestions = <SearchSuggestion>[
   // add patient
   SearchSuggestion(
     name: patientAdd,
-    role: patientStr,
+    role: patientRole,
     route: addPatientRoute,
     aliases: <String>[
       'add a patient',

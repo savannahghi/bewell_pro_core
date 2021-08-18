@@ -73,7 +73,7 @@ List<SearchResult> searchResults = <SearchResult>[
   SearchResult(
     name: patientFind,
     route: patientsPageRoute,
-    role: patientStr,
+    role: patientRole,
     aliases: <String>[
       'find a patient',
       'find patient',
@@ -93,7 +93,7 @@ List<SearchResult> searchResults = <SearchResult>[
   // add patient
   SearchResult(
       name: patientAdd,
-      role: patientStr,
+      role: patientRole,
       route: addPatientRoute,
       aliases: <String>[
         'add a patient',
