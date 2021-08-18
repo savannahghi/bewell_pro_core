@@ -61,7 +61,6 @@ class PatientSearchByPhoneAction extends ReduxAction<CoreState> {
         query: findPatientsQuery,
         error: error,
         response: data,
-        variables: _variables,
       );
 
       dispatch(UpdateSearchParamAction(phoneNumber: searchParam));
