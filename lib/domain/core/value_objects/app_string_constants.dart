@@ -789,6 +789,8 @@ const String navDrawerPatientRegistrationText = 'Patient Registration';
 const String navDrawerPatientIdentificationText = 'Patient Identification';
 const String navDrawerGetHelpText = 'Get Help';
 const String navDrawerNoFavouriteText = 'No items in favourite';
+const String navDrawerHowToFavouriteText =
+    'Swipe to the right on the action you want to favorite and tap on the favorite icon';
 
 String favouriteAddActionFeedback(String navigationActionTitle) {
   return 'Adding $navigationActionTitle to favourites';

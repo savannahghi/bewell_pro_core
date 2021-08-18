@@ -514,7 +514,7 @@ void main() {
       expect(find.text(navDrawerFavoritesText), findsOneWidget);
       await tester.tap(find.text(navDrawerFavoritesText));
       await tester.pumpAndSettle();
-      expect(find.text(navDrawerNoFavouriteText), findsOneWidget);
+      expect(find.text(navDrawerHowToFavouriteText), findsOneWidget);
     });
 
     testWidgets('should set correct index in favourite items',
