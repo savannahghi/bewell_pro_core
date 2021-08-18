@@ -213,10 +213,11 @@ void main() {
       final Store<CoreState> localStore = Store<CoreState>(
         initialState: store.state.copyWith(
           navigationState: store.state.navigationState?.copyWith.call(
-              drawerSelectedIndex: -1,
-              primaryActions: primaryActionsMockedData,
-              secondaryActions: secondaryActionsMockedData,
-              bottomBarSelectedIndex: 0),
+            drawerSelectedIndex: -1,
+            primaryActions: primaryActionsMockedData,
+            secondaryActions: secondaryActionsMockedData,
+            bottomBarSelectedIndex: 0,
+          ),
           userState: store.state.userState?.copyWith.call(
             userProfile: UserProfile(
               userBioData: BioData(
@@ -240,15 +241,15 @@ void main() {
 
       // verify UI renders correctly
       expect(searchGestureDetectorFinder, findsOneWidget);
-      expect(searchAbsorbFinder, findsOneWidget);
       expect(appSearchInputFinder, findsOneWidget);
+      expect(find.text('What would you like to do today?'), findsOneWidget);
 
       // tap on search box
       await tester.tap(searchGestureDetectorFinder);
       await tester.pumpAndSettle();
 
       // enter text
-      tester.binding.testTextInput.enterText('find patient');
+      tester.binding.testTextInput.enterText('patient search');
       await tester.pumpAndSettle();
 
       expect(find.text(patientFind), findsOneWidget);
@@ -257,7 +258,7 @@ void main() {
       await tester.tap(find.text(patientFind));
       await tester.pumpAndSettle();
 
-      // //verify navigation
+      //verify navigation
       expect(find.text('Recent Searches'), findsNothing);
     });
 

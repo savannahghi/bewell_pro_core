@@ -339,6 +339,7 @@ const String silButtonCancel = 'Cancel';
 const String silButtonRegister = 'Register Next of Kin';
 
 // BasicDetailsStrings
+const String patientRole = 'Patients';
 const String patientStr = 'Patient';
 const String patientDetailsText = 'Patient Details';
 const String registerPatientText = 'Register Patient';
@@ -812,6 +813,7 @@ const String navHomeText = 'Home';
 const String navRequestsText = 'Requests';
 const String navPartnerText = 'Partner';
 const String navConsumerText = 'Consumer';
+const String navPatientText = 'Patients';
 
 String contactSupport(String phoneNo) {
   return 'Sorry, an unknown error occurred. Try again or contact us $phoneNo';
