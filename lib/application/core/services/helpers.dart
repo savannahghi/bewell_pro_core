@@ -210,11 +210,10 @@ Future<void> genericSearchFunction({
 
   if (error != null) {
     await captureException(
-      'Error while searching for $searchParam',
+      'Error while searching for patient',
       query: listConceptsQuery,
       error: error,
       response: payLoad,
-      variables: _variables,
     );
     return streamController.addError(<String, dynamic>{'error': error});
   }

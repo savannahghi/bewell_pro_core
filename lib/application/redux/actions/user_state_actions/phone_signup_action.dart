@@ -108,7 +108,6 @@ class PhoneSignUpAction extends ReduxAction<CoreState> {
         errorPhoneSignup,
         error: processedResponse.message,
         response: processedResponse.response.body,
-        variables: variables,
       );
       throw UserException(processedResponse.message);
     }

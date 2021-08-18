@@ -130,7 +130,6 @@ class PhoneLoginAction extends ReduxAction<CoreState> {
         errorPhoneLogin,
         error: processedResponse.message,
         response: processedResponse.response.body,
-        variables: credentials,
       );
       throw UserException(processedResponse.message);
     }

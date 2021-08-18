@@ -64,7 +64,6 @@ class NextOfKinFormManager with Validator {
         query: searchRelatedPersonByMSISDN,
         error: error,
         response: payLoad,
-        variables: _variables,
       );
       inPotentialNextOfKin.addError(
           NextOfKinPhoneState(loading: false, error: noPatientsFoundText));
