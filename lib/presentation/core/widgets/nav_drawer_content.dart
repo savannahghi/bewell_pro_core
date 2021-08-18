@@ -7,6 +7,7 @@ import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/view_models/core_state_view_model.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/numbers_constants.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -347,12 +348,19 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
         });
   }
 
-  Center _noElements() {
-    return const Center(
-        child: Text(
-      navDrawerNoFavouriteText,
-      textAlign: TextAlign.center,
-    ));
+  Column _noElements() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Image.asset(
+          favouriteHelpIconUrl,
+        ),
+        const Text(
+          navDrawerHowToFavouriteText,
+          textAlign: TextAlign.center,
+        )
+      ],
+    );
   }
 
   // Perform actual search

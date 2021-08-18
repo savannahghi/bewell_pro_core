@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.0.13-nullsafety
+
+- chore: favorite action guide 
 ## 1.0.12-nullsafety
 
 - fix: app wide search and navigation 
