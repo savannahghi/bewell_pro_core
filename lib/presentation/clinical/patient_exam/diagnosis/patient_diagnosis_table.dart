@@ -17,7 +17,6 @@ import 'package:bewell_pro_core/presentation/clinical/common/widgets/bewell_subm
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_diagnosis_tabs.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/quick_access_item_modal.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/generic_zero_state.dart';
-import 'package:bewell_pro_core/presentation/clinical/theme/healthcloud_styles.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/retire_helper.dart';
 
 import 'package:misc_utilities/misc.dart';
@@ -27,6 +26,7 @@ import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/constants.dart';
 import 'package:shared_ui_components/buttons.dart';
 import 'package:shared_ui_components/platform_loader.dart';
+import 'package:shared_themes/text_themes.dart';
 
 class PatientDiagnosisTable extends StatefulWidget {
   const PatientDiagnosisTable({this.isExpanded = true});
@@ -299,7 +299,8 @@ class _PatientDiagnosisTableState extends State<PatientDiagnosisTable> {
                                       child: Text(
                                         toBeginningOfSentenceCase(
                                             recordedDiagnosis)!,
-                                        style: HCStyles.diagnosisTitle,
+                                        style: TextThemes.veryBoldSize20Text(
+                                            titleBlack),
                                       ),
                                     ),
                                     // Retire Diagnosis button

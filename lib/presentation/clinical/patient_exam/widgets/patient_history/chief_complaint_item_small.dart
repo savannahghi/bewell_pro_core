@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
-import 'package:bewell_pro_core/presentation/clinical/theme/healthcloud_styles.dart';
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/spaces.dart';
+import 'package:shared_themes/text_themes.dart';
 import 'package:shared_ui_components/buttons.dart';
 
 class ChiefComplaintItemSmall extends StatelessWidget {
@@ -31,29 +31,29 @@ class ChiefComplaintItemSmall extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(problemName, style: HCStyles.smallScreenContentText),
+            Text(problemName, style: TextThemes.veryBoldSize18Text(titleBlack)),
             smallVerticalSizedBox,
             Text(
               recorder,
-              style: HCStyles.smallScreenSmallTitle,
+              style: TextThemes.normalSize16Text(subtitleGrey),
             )
           ],
         ),
         size15VerticalSizedBox,
         Text(
           'Date: $recordedDate',
-          style: HCStyles.smallScreenSmallTitle,
+          style: TextThemes.normalSize16Text(subtitleGrey),
         ),
         size15VerticalSizedBox,
         Row(
           children: <Widget>[
             Text(
               statusText,
-              style: HCStyles.smallScreenSmallTitle,
+              style: TextThemes.normalSize16Text(subtitleGrey),
             ),
             Text(
               clinicalStatus,
-              style: HCStyles.smallScreenSmallTitle,
+              style: TextThemes.normalSize16Text(subtitleGrey),
             )
           ],
         ),

@@ -13,7 +13,6 @@ import 'package:shared_themes/colors.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/review_of_system_title_bar.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/symptom_widget.dart';
 import 'package:shared_themes/spaces.dart';
-import 'package:bewell_pro_core/presentation/clinical/theme/healthcloud_styles.dart';
 import 'package:shared_themes/text_themes.dart';
 
 class ReviewOfSystemsItemWidget extends StatelessWidget {
@@ -82,7 +81,8 @@ class ReviewOfSystemsItemWidget extends StatelessWidget {
               verySmallVerticalSizedBox,
               Container(
                 margin: const EdgeInsets.only(top: 15),
-                child: Text('Doctor\'s notes', style: HCStyles.titleStyle),
+                child: Text('Doctor\'s notes',
+                    style: TextThemes.veryBoldSize20Text(titleBlack)),
               ),
               smallVerticalSizedBox,
               Padding(

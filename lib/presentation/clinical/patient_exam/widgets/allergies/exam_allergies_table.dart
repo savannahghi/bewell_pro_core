@@ -15,7 +15,6 @@ import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/gener
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/bewell_secondary_patient_banner_logic.dart';
 
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/retire_helper.dart';
-import 'package:bewell_pro_core/presentation/clinical/theme/healthcloud_styles.dart';
 
 import 'package:intl/intl.dart';
 import 'package:rxdart/subjects.dart';
@@ -26,6 +25,7 @@ import 'package:misc_utilities/responsive_widget.dart';
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/spaces.dart';
 import 'package:shared_themes/constants.dart';
+import 'package:shared_themes/text_themes.dart';
 import 'package:shared_ui_components/buttons.dart';
 import 'package:shared_ui_components/platform_loader.dart';
 
@@ -273,7 +273,8 @@ class _ExamAllergiesTableState extends State<ExamAllergiesTable> {
                                       flex: 3,
                                       child: Text(
                                         recordedAllergy ?? '',
-                                        style: HCStyles.smallScreenLargeTitle,
+                                        style: TextThemes.heavySize18Text(
+                                            titleBlack),
                                       ),
                                     ),
                                     //RetireButton
@@ -305,13 +306,14 @@ class _ExamAllergiesTableState extends State<ExamAllergiesTable> {
                                         children: <Widget>[
                                           Text(
                                             statusText,
-                                            style:
-                                                HCStyles.smallScreenSmallTitle,
+                                            style: TextThemes.normalSize16Text(
+                                                subtitleGrey),
                                           ),
                                           Text(
                                             clinicalStatus ?? '',
                                             style:
-                                                HCStyles.smallScreenContentText,
+                                                TextThemes.veryBoldSize18Text(
+                                                    titleBlack),
                                           ),
                                         ],
                                       ),
@@ -321,22 +323,29 @@ class _ExamAllergiesTableState extends State<ExamAllergiesTable> {
                                         children: <Widget>[
                                           Text(
                                             dateTitle,
-                                            style:
-                                                HCStyles.smallScreenSmallTitle,
+                                            style: TextThemes.normalSize16Text(
+                                                subtitleGrey),
                                           ),
                                           Text(
                                             recordedDate,
                                             style:
-                                                HCStyles.smallScreenContentText,
+                                                TextThemes.veryBoldSize18Text(
+                                                    titleBlack),
                                           ),
                                         ],
                                       )
                                     ]),
                                 size15VerticalSizedBox,
-                                Text(doctorTitle,
-                                    style: HCStyles.smallScreenSmallTitle),
-                                Text(recordingDoctor ?? '',
-                                    style: HCStyles.smallScreenContentText),
+                                Text(
+                                  doctorTitle,
+                                  style:
+                                      TextThemes.normalSize16Text(subtitleGrey),
+                                ),
+                                Text(
+                                  recordingDoctor ?? '',
+                                  style:
+                                      TextThemes.veryBoldSize18Text(titleBlack),
+                                ),
                               ],
                             ),
                           ),
