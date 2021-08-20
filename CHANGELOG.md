@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.1-nullsafety
+
+- fix: package versioning
+
 ## 1.0.14-nullsafety
 
 - chore: favorite action guide 
