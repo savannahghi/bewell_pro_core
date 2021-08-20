@@ -6,7 +6,6 @@ import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/clini
 
 import 'package:intl/intl.dart';
 
-
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/text_themes.dart';
 import 'package:shared_ui_components/buttons.dart';
