@@ -85,7 +85,7 @@ class RouteGenerator {
 
       case helpCenterRoute:
         return MaterialPageRoute<HelpCenterPage>(
-            builder: (_) => HelpCenterPage());
+            builder: (_) => const HelpCenterPage());
 
       case webViewRoute:
         return MaterialPageRoute<TermsAndConditionsPage>(
