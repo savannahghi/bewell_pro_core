@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.2-nullsafety
+
+- fix: add variables to getFeed query for debugging purposes
+
 ## 1.1.1-nullsafety
 
 - fix: package versioning
