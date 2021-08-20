@@ -105,3 +105,4 @@ const String patientNavDrawerIconUrl =
     'assets/icons/patient_nav_drawer_icon.svg';
 
 const String testDevelopmentIconUrl = 'assets/images/test-development.png';
+const String favouriteHelpIconUrl = 'assets/images/favourite_action.png';
