@@ -25,7 +25,7 @@ void main() {
           tester: tester,
           store: store,
           graphQlClient: mockGraphQlClient,
-          widget: HelpCenterPage(),
+          widget: const HelpCenterPage(),
         );
 
         expect(find.byType(ListView), findsOneWidget);
@@ -44,7 +44,7 @@ void main() {
         tester: tester,
         store: store,
         graphQlClient: mockGraphQlClient,
-        widget: HelpCenterPage(),
+        widget: const HelpCenterPage(),
       );
 
       final Finder whatsAppWidget =
@@ -63,7 +63,7 @@ void main() {
         tester: tester,
         store: store,
         graphQlClient: mockGraphQlClient,
-        widget: HelpCenterPage(),
+        widget: const HelpCenterPage(),
       );
 
       final Finder whatsAppWidget =

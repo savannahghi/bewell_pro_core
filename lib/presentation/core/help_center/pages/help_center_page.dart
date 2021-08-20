@@ -15,6 +15,10 @@ import 'package:shared_themes/spaces.dart';
 import 'package:shared_themes/text_themes.dart';
 
 class HelpCenterPage extends StatelessWidget {
+  final ReduxAction<CoreState>? logoutAction;
+
+  const HelpCenterPage({Key? key, this.logoutAction}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final List<NavigationItem> secondaryActions =
@@ -32,6 +36,7 @@ class HelpCenterPage extends StatelessWidget {
     }
 
     return AppScaffold(
+      logoutAction: logoutAction,
       currentBottomNavIndex: BottomNavIndex.help.index,
       body: ListView(
         shrinkWrap: true,

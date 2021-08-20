@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.3-nullsafety
+
+- fix: logout issue
+
 ## 1.1.2-nullsafety
 
 - fix: add variables to getFeed query for debugging purposes
