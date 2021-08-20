@@ -6,9 +6,9 @@ import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/clini
 
 import 'package:intl/intl.dart';
 
-import 'package:bewell_pro_core/presentation/clinical/theme/healthcloud_styles.dart';
 
 import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/text_themes.dart';
 import 'package:shared_ui_components/buttons.dart';
 
 class ReviewOfSystemTitleBar extends StatelessWidget {
@@ -45,7 +45,7 @@ class ReviewOfSystemTitleBar extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     toBeginningOfSentenceCase(title)!,
-                    style: HCStyles.titleStyle,
+                    style: TextThemes.veryBoldSize20Text(titleBlack),
                   ),
                 ],
               ),

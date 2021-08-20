@@ -1,10 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+
+import 'package:intl/intl.dart';
+import 'package:rxdart/rxdart.dart';
+
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/graphql/queries.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
-
 import 'package:bewell_pro_core/domain/clinical/entities/condition.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/condition_edge.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
@@ -12,22 +15,16 @@ import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart'
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
-
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/problems/patient_records_empty.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/generic_zero_state.dart';
-
-import 'package:intl/intl.dart';
-import 'package:rxdart/rxdart.dart';
-
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/retire_helper.dart';
-import 'package:misc_utilities/misc.dart';
 
+import 'package:misc_utilities/misc.dart';
 import 'package:misc_utilities/responsive_widget.dart';
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/spaces.dart';
-import 'package:bewell_pro_core/presentation/clinical/theme/healthcloud_styles.dart';
-
 import 'package:shared_themes/constants.dart';
+import 'package:shared_themes/text_themes.dart';
 import 'package:shared_ui_components/buttons.dart';
 import 'package:shared_ui_components/platform_loader.dart';
 
@@ -263,8 +260,8 @@ class _PatientProblemTableState extends State<PatientProblemTable> {
                                   Flexible(
                                       flex: 3,
                                       child: Text(recordedProblem!,
-                                          style:
-                                              HCStyles.smallScreenLargeTitle)),
+                                          style: TextThemes.heavySize18Text(
+                                              titleBlack))),
 
                                   /// Retire button
                                   Flexible(
@@ -295,11 +292,12 @@ class _PatientProblemTableState extends State<PatientProblemTable> {
                                           CrossAxisAlignment.start,
                                       children: <Widget>[
                                         Text(statusText,
-                                            style:
-                                                HCStyles.smallScreenSmallTitle),
+                                            style: TextThemes.normalSize16Text(
+                                                subtitleGrey)),
                                         Text(clinicalStatus,
-                                            style: HCStyles
-                                                .smallScreenContentText),
+                                            style:
+                                                TextThemes.veryBoldSize18Text(
+                                                    titleBlack)),
                                       ],
                                     ),
                                     Column(
@@ -307,19 +305,22 @@ class _PatientProblemTableState extends State<PatientProblemTable> {
                                           CrossAxisAlignment.start,
                                       children: <Widget>[
                                         Text(date,
-                                            style:
-                                                HCStyles.smallScreenSmallTitle),
+                                            style: TextThemes.normalSize16Text(
+                                                subtitleGrey)),
                                         Text(recordedDate,
-                                            style: HCStyles
-                                                .smallScreenContentText),
+                                            style:
+                                                TextThemes.veryBoldSize18Text(
+                                                    titleBlack)),
                                       ],
                                     )
                                   ]),
                               size15VerticalSizedBox,
                               Text(doctor,
-                                  style: HCStyles.smallScreenSmallTitle),
+                                  style: TextThemes.normalSize16Text(
+                                      subtitleGrey)),
                               Text(recordingDoctor,
-                                  style: HCStyles.smallScreenContentText),
+                                  style: TextThemes.veryBoldSize18Text(
+                                      titleBlack)),
                             ],
                           ),
                         ),

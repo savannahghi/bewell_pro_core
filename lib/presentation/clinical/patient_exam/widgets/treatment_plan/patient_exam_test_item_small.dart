@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 
 import 'package:intl/intl.dart';
 
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/spaces.dart';
-import 'package:bewell_pro_core/presentation/clinical/theme/healthcloud_styles.dart';
-
+import 'package:shared_themes/text_themes.dart';
 import 'package:shared_ui_components/badge.dart';
 import 'package:shared_ui_components/buttons.dart';
 
@@ -48,7 +48,7 @@ class PatientExamTestItemSmall extends StatelessWidget {
                       Text(
                           toBeginningOfSentenceCase(
                               testName.toString().toLowerCase())!,
-                          style: HCStyles.testTitle),
+                          style: TextThemes.veryBoldSize18Text(titleBlack)),
                     ]),
                   ),
                   smallVerticalSizedBox,
@@ -56,7 +56,9 @@ class PatientExamTestItemSmall extends StatelessWidget {
                   // test status
                   Row(
                     children: <Widget>[
-                      Text('Status: ', style: HCStyles.resultsTextStyle),
+                      Text('Status: ',
+                          style: TextThemes.veryBoldSize18Text(
+                              patientIDLightGrey)),
                       smallHorizontalSizedBox,
                       SILBadge(text: toBeginningOfSentenceCase(testStatus)!),
                     ],
@@ -84,11 +86,12 @@ class PatientExamTestItemSmall extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text('Verified by:', style: HCStyles.resultsTextStyle),
+                Text('Verified by:',
+                    style: TextThemes.veryBoldSize18Text(patientIDLightGrey)),
                 const SizedBox(width: 70),
                 Text(
                   requestingDoctor,
-                  style: HCStyles.resultsTextStyleDark,
+                  style: TextThemes.veryBoldSize18Text(patientIDLightGrey),
                 ),
               ],
             ),
@@ -96,11 +99,12 @@ class PatientExamTestItemSmall extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text('Date added:', style: HCStyles.resultsTextStyle),
+                Text('Date added:',
+                    style: TextThemes.veryBoldSize18Text(patientIDLightGrey)),
                 smallHorizontalSizedBox,
                 Text(
                   recordedDate,
-                  style: HCStyles.resultsTextStyleDark,
+                  style: TextThemes.veryBoldSize18Text(patientIDLightGrey),
                 ),
               ],
             ),

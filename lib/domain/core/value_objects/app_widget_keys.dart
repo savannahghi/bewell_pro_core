@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AppWidgetKeys {
-  static const Key silBottomNavKey = Key('sil_bottom_nav_key');
-
-  /// global store provider key
-  ///
-  static const Key globalStoreProviderKey = Key('global-store-provider');
   // list of the keys that are going to be used to search in the app
   static const Key patientSearchDoneKey = Key('patient_search_done');
 
@@ -23,23 +18,12 @@ class AppWidgetKeys {
   static const Key patientSearchResultsCardAction =
       Key('patient_search_results_card_action');
 
-  // config keys
-  static const Key scaffoldWorkstationChooserKey =
-      Key('scaffold_workstation_chooser');
-
   // patient identification keys
   static const Key patientIdentificationScaffoldKey =
       Key('patient_identification_scaffold');
   static const Key patientSearchInputKey = Key('patient_search_input');
   static const Key patientIdentificationTitleKey = Key('page_title_key');
 
-  // patient exam keys
-  static const Key retireConditionBtn = Key('retire_condition');
-  static const Key startContinueExam = Key('start_continue_exam');
-  static const Key endVisit = Key('end_visit');
-  static const Key endVisitConfirm = Key('end_visit_confirm');
-
-  static const Key contentLoaderKey = Key('sil_content_loader');
   // patient timeline Keys
   static const Key requestAccessVisitsKey = Key('RequestAccessVisitsKey');
   static const Key startContinueExamWrapperButtonKey =
@@ -118,14 +102,12 @@ class AppWidgetKeys {
   static const Key resendingTextKey = Key('resending_text_key');
   // sil task item Widget key
   static const Key silTaskItemContainerKey = Key('silTaskItemContainerKey');
-  static const Key viewMoreButton = Key('view_more_button');
 
   static const Key appSearchInputKey = Key('app_search_input_key');
 
   // login_actions keys
   static const Key createAccountKey = Key('create_account_key');
   static const Key signInKey = Key('sign_in_key');
-  static const Key setPinPromptButtonKey = Key('set_pin_prompt_button_key');
   static const Key onboardingScaffoldBackButton =
       Key('onboarding_scaffold_back_button');
   static const Key recoverRequestBackButton =
@@ -295,13 +277,6 @@ class AppWidgetKeys {
   static const Key dentalServicesOtherKey = Key('dental_services_other_key');
   static const Key otherServicesTextFormKey =
       Key('other_services_text_form_key');
-
-  // Notification Keys
-  static const Key notificationStackKey = Key('notificationStackKey');
-  static const Key navigationGestureKey = Key('navigationGestureKey');
-
-  // HCScaffold
-  static const Key helpButtonKey = Key('help_button_key');
 
   //no next of kin page keys
   static const Key noNextOfKinContainerKey =

@@ -29,7 +29,6 @@ import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patie
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/symptom_widget.dart';
 
 import 'package:shared_themes/spaces.dart';
-import 'package:bewell_pro_core/presentation/clinical/theme/healthcloud_styles.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/retire_helper.dart';
 
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/models/exam_composition.dart';
@@ -257,7 +256,10 @@ class _GeneralSystemsExamWidgetState extends State<GeneralSystemsExamWidget> {
                       size15VerticalSizedBox,
 
                       /// doctor's notes
-                      Text(doctorsNotes, style: HCStyles.titleStyle),
+                      Text(
+                        doctorsNotes,
+                        style: TextThemes.veryBoldSize20Text(titleBlack),
+                      ),
                       size15VerticalSizedBox,
                       Text(
                           generalExamData['description']?.toString() ?? noNotes,
