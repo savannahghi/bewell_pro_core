@@ -341,27 +341,33 @@ const String silButtonRegister = 'Register Next of Kin';
 // BasicDetailsStrings
 const String patientRole = 'Patients';
 const String patientStr = 'Patient';
-const String patientDetailsText = 'Patient Details';
-const String registerPatientText = 'Register Patient';
-const String provideBasicInfo = 'Kindly provide patient\'s basic information';
-const String capturePhoto = 'Capture patient\'s photo (optional)';
+String detailsText(String userType) => '$userType Details';
+String registerText(String userType) => 'Register $userType';
+String provideBasicInfo(String userType) =>
+    'Kindly provide patient\'s basic information';
+String capturePhoto(String userType) =>
+    'Capture ${userType.toLowerCase()}\'s photo (optional)';
 const String takePhotoText = 'Take photo';
 const String retakePhotoText = 'Retake photo';
 const String firstNameHint = 'First Name';
-const String enterFirstName = 'Enter the patient\'s first name';
+String enterFirstName(String userType) =>
+    'Enter the ${userType.toLowerCase()}\'s first name';
 const String firstNameReq = 'First name is required';
 const String lastNameHint = 'Last Name';
-const String enterLastName = 'Enter the patient\'s last name';
+String enterLastName(String userType) =>
+    'Enter the ${userType.toLowerCase()}\'s last name';
 const String lastNameReq = 'Last name is required';
 const String hintPhoneNumber = 'Phone number';
-const String enterPhoneNumber = 'Enter the patient\'s phone number';
+String enterPhoneNumber(String userType) =>
+    'Enter the ${userType.toLowerCase()}\'s phone number';
 const String verifiedPhoneNumber = 'VERIFIED';
 const String verifyPhoneNumber = 'Kindly verify phone number';
 const String asteriskSymbol = '*';
 
 const String phoneNumberReq = 'Please Verify Patient\'s Phone Number';
 const String hintDob = 'Date of Birth';
-const String enterDob = 'Enter the patient\'s date of birth';
+String enterDob(String userType) =>
+    'Enter the ${userType.toLowerCase()}\'s date of birth';
 const String dobReq = 'Please select date of birth';
 const String hintGender = 'Gender';
 const String hintSelectGender = 'Select gender';

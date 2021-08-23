@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:bewell_pro_core/application/clinical/patient_registration/patient_payload_helper.dart';
 import 'package:bewell_pro_core/application/clinical/patient_registration/patient_registration_step_manager.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../patient_registration_helper.dart';
 import 'add_next_of_kin.dart';

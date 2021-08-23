@@ -467,7 +467,8 @@ Future<void> _fillFormFields(WidgetTester tester) async {
   _checkColor(nextBtn, Colors.grey);
 
   // Date of birth
-  final Finder datePicker = find.text(enterDob, skipOffstage: false);
+  final Finder datePicker =
+      find.text(enterDob(patientStr), skipOffstage: false);
   expect(datePicker, findsOneWidget);
   await tester.ensureVisible(datePicker);
   await tester.pump();
