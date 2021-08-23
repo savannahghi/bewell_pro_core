@@ -38,8 +38,6 @@ Map<String, dynamic> getFeedQueryVariables() {
     'flavour': Flavour.PRO.name,
     'persistent': 'BOTH',
     'isAnonymous': false,
-    'expired': 'FALSE',
-    'status': 'PENDING'
   };
 }
 

@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 1.1.3-nullsafety
+## 1.1.4-nullsafety
 
 - fix: logout issue
 
