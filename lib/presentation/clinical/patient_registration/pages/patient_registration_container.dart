@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:bewell_pro_core/application/clinical/patient_registration/patient_payload_helper.dart';
 import 'package:bewell_pro_core/application/clinical/patient_registration/patient_registration_step_manager.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../patient_registration_helper.dart';
 import 'add_next_of_kin.dart';
@@ -13,7 +13,7 @@ import 'nhif.dart';
 
 class PatientRegistrationContainer extends InheritedWidget {
   static final List<Widget> _tabs = <Widget>[
-    const BasicDetailsWidget(),
+    BasicDetailsWidget(userType: _userType!),
     const NextOfKin(),
     const AddNextOfKin(),
     const NHIF(),
@@ -29,6 +29,8 @@ class PatientRegistrationContainer extends InheritedWidget {
   static const int completeRegistrationIndex = 5;
 
   static int _currentIndex = 0;
+
+  static String? _userType;
 
   final TabController _tabController;
   final PatientPayloadHelper _currentRegisteredPatient = PatientPayloadHelper();
@@ -50,6 +52,10 @@ class PatientRegistrationContainer extends InheritedWidget {
   List<Widget> get tabs => _tabs;
 
   int get currentIndex => _currentIndex;
+
+  set userType(String? userStr) => userType = userStr;
+
+  String? get userType => _userType;
 
   PatientPayloadHelper get currentPatient => _currentRegisteredPatient;
 

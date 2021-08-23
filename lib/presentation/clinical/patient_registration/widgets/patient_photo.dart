@@ -12,7 +12,10 @@ class PatientPhoto extends StatelessWidget {
   final File? profileImage;
   final Function? takePhotoCallback;
 
+  final String? userType;
+
   const PatientPhoto({
+    this.userType,
     this.profileImage,
     this.takePhotoCallback,
   });
@@ -54,7 +57,7 @@ class PatientPhoto extends StatelessWidget {
           children: <Widget>[
             SizedBox(
               width: isSmallScreen ? 180 : null,
-              child: const Text(capturePhoto),
+              child: Text(capturePhoto(userType!)),
             ),
             smallVerticalSizedBox,
             SILSecondaryButton(

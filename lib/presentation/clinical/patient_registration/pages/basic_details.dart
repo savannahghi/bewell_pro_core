@@ -43,8 +43,11 @@ import 'package:shared_ui_components/inputs.dart';
 class BasicDetailsWidget extends StatefulWidget {
   final FileSystem fileSystem;
 
+  final String userType;
+
   const BasicDetailsWidget({
     FileSystem? fileSystem,
+    required this.userType,
   }) : fileSystem = fileSystem ?? const LocalFileSystem();
 
   @override
@@ -113,6 +116,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
 
   @override
   Widget build(BuildContext context) {
+    final String userStr = widget.userType;
     final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
 
     return Scaffold(
@@ -158,7 +162,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      patientDetailsText,
+                      detailsText(userStr),
                       style: PatientStyles.registerPatientSectionTitle,
                     ),
                   ),
@@ -167,7 +171,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        provideBasicInfo,
+                        provideBasicInfo(userStr),
                         style: PatientStyles.registerPatientSectionSubTitle,
                       ),
                     ),
@@ -189,6 +193,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
                       }
 
                       return PatientPhoto(
+                        userType: userStr,
                         profileImage: profileImage,
                         takePhotoCallback: () =>
                             // take patient's photo
@@ -214,7 +219,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
                           _lastNameFocusNode.requestFocus();
                         },
                         fieldHintText: firstNameHint,
-                        formHintText: enterFirstName,
+                        formHintText: enterFirstName(userStr),
                         error: (snapshot.hasError)
                             ? (snapshot.error as GenericException?)?.message
                             : null,
@@ -237,7 +242,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
                         onSubmitted: (String v) =>
                             _formManager.inLastName.add(v),
                         fieldHintText: lastNameHint,
-                        formHintText: enterLastName,
+                        formHintText: enterLastName(userStr),
                         error: (snapshot.hasError)
                             ? (snapshot.error as GenericException?)?.message
                             : null,
@@ -266,7 +271,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
                   SILDatePickerField(
                     gestureDateKey:
                         AppWidgetKeys.basicDetailsDobGestureDetectorKey,
-                    hintText: enterDob,
+                    hintText: enterDob(userStr),
                     allowEligibleDate: true,
                     controller: datePickerController,
                     keyboardType: TextInputType.datetime,

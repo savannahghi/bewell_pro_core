@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/enums.dart';
 import 'package:bewell_pro_core/presentation/admin/widgets/coming_soon_page.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/pages/patient_exam.dart';
@@ -29,6 +27,8 @@ import 'package:bewell_pro_core/presentation/onboarding/profile/pages/user_profi
 import 'package:bewell_pro_core/presentation/onboarding/profile/profile_contact_details.dart';
 import 'package:bewell_pro_core/presentation/onboarding/signup/phone_signup_page.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:user_profile/term_and_conditions.dart';
 
 import 'routes.dart';
@@ -118,7 +118,7 @@ class RouteGenerator {
 
       case addPatientRoute:
         return MaterialPageRoute<PatientRegistration>(
-            builder: (_) => PatientRegistration());
+            builder: (_) => const PatientRegistration());
 
       case tryNewFeatureSettingsRoute:
         return MaterialPageRoute<TryNewFeaturesPage>(

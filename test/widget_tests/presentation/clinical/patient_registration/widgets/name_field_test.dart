@@ -34,7 +34,7 @@ void main() {
               formFieldKey: AppWidgetKeys.firstNameKey,
               onChanged: (String value) => formManager.inFirstName.add(value),
               fieldHintText: firstNameHint,
-              formHintText: enterFirstName,
+              formHintText: enterFirstName(patientStr),
               error: (snapshot.hasError)
                   ? (snapshot.error as GenericException?)?.message
                   : null,
@@ -47,7 +47,7 @@ void main() {
       expect(textField, findsOneWidget);
 
       expect(find.text(firstNameHint), findsOneWidget);
-      expect(find.text(enterFirstName), findsOneWidget);
+      expect(find.text(enterFirstName(patientStr)), findsOneWidget);
 
       await tester.enterText(textField, testName);
       expect(find.text(testName), findsOneWidget);

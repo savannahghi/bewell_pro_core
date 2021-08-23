@@ -45,7 +45,9 @@ void main() {
         store: store,
         widget: PatientRegistrationContainer(
           tabController: controller,
-          child: const BasicDetailsWidget(),
+          child: const BasicDetailsWidget(
+            userType: patientStr,
+          ),
         ),
       );
 
@@ -70,7 +72,9 @@ void main() {
           store: store,
           widget: PatientRegistrationContainer(
             tabController: controller,
-            child: const BasicDetailsWidget(),
+            child: const BasicDetailsWidget(
+              userType: patientStr,
+            ),
           ),
         );
 
@@ -96,7 +100,9 @@ void main() {
           store: store,
           widget: PatientRegistrationContainer(
             tabController: controller,
-            child: const BasicDetailsWidget(),
+            child: const BasicDetailsWidget(
+              userType: patientStr,
+            ),
           ),
         );
 
@@ -130,6 +136,7 @@ void main() {
             tabController: controller,
             child: BasicDetailsWidget(
               fileSystem: fileSystem,
+              userType: patientStr,
             ),
           ),
         );
@@ -171,6 +178,7 @@ void main() {
             tabController: controller,
             child: BasicDetailsWidget(
               fileSystem: fileSystem,
+              userType: patientStr,
             ),
           ),
         );
@@ -198,6 +206,7 @@ void main() {
             tabController: controller,
             child: BasicDetailsWidget(
               fileSystem: fileSystem,
+              userType: patientStr,
             ),
           ),
         );
@@ -216,7 +225,9 @@ void main() {
         store: store,
         widget: PatientRegistrationContainer(
           tabController: controller,
-          child: const BasicDetailsWidget(),
+          child: const BasicDetailsWidget(
+            userType: patientStr,
+          ),
         ),
       );
 
@@ -242,7 +253,9 @@ void main() {
         store: store,
         widget: PatientRegistrationContainer(
           tabController: controller,
-          child: const BasicDetailsWidget(),
+          child: const BasicDetailsWidget(
+            userType: patientStr,
+          ),
         ),
       );
 
@@ -274,6 +287,7 @@ void main() {
         tabController: controller,
         child: BasicDetailsWidget(
           fileSystem: fileSystem,
+          userType: patientStr,
         ),
       );
 
@@ -311,7 +325,9 @@ void main() {
         graphQlClient: graphQlClient,
         widget: PatientRegistrationContainer(
           tabController: controller,
-          child: const BasicDetailsWidget(),
+          child: const BasicDetailsWidget(
+            userType: patientStr,
+          ),
         ),
       );
 
@@ -340,7 +356,9 @@ void main() {
         graphQlClient: graphQlClient,
         widget: PatientRegistrationContainer(
           tabController: controller,
-          child: const BasicDetailsWidget(),
+          child: const BasicDetailsWidget(
+            userType: patientStr,
+          ),
         ),
       );
 
@@ -371,7 +389,9 @@ void main() {
         graphQlClient: graphQlClient,
         widget: PatientRegistrationContainer(
           tabController: controller,
-          child: const BasicDetailsWidget(),
+          child: const BasicDetailsWidget(
+            userType: patientStr,
+          ),
         ),
       );
 
@@ -467,7 +487,8 @@ Future<void> _fillFormFields(WidgetTester tester) async {
   _checkColor(nextBtn, Colors.grey);
 
   // Date of birth
-  final Finder datePicker = find.text(enterDob, skipOffstage: false);
+  final Finder datePicker =
+      find.text(enterDob(patientStr), skipOffstage: false);
   expect(datePicker, findsOneWidget);
   await tester.ensureVisible(datePicker);
   await tester.pump();

@@ -22,7 +22,7 @@ void main() {
         (WidgetTester tester) async {
       await mockNetworkImages(() async {
         await buildTestWidget(
-            tester: tester, store: store, widget: PatientRegistration());
+            tester: tester, store: store, widget: const PatientRegistration());
 
         final Finder basicDetailsPage = find.byType(BasicDetailsWidget);
 
@@ -38,7 +38,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         store: store,
-        widget: PatientRegistration(),
+        widget: const PatientRegistration(),
       );
 
       expect(find.byType(PatientRegistrationSteps), findsOneWidget);

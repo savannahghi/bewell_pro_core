@@ -1,3 +1,4 @@
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration_container.dart';
@@ -9,6 +10,12 @@ import 'package:misc_utilities/responsive_widget.dart';
 import 'package:shared_themes/colors.dart';
 
 class PatientRegistration extends StatefulWidget {
+  final String? userType;
+
+  const PatientRegistration({
+    this.userType,
+  });
+
   @override
   _PatientRegistrationState createState() => _PatientRegistrationState();
 }
@@ -22,6 +29,8 @@ class _PatientRegistrationState extends State<PatientRegistration>
   void initState() {
     super.initState();
     _tabController = TabController(length: 6, vsync: this);
+    PatientRegistrationContainer.of(context)?.userType =
+        widget.userType ?? patientStr;
 
     /// initialize PatientRegistrationContainer to make it immune to
     /// app lifecycle state changes
