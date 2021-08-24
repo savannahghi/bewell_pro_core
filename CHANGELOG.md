@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.5-nullsafety
+
+- fix: favorite action guide
+
 ## 1.1.4-nullsafety
 
 - fix: logout issue
