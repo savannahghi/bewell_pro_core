@@ -355,6 +355,7 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
         Image.asset(
           favouriteHelpIconUrl,
         ),
+        smallVerticalSizedBox,
         const Text(
           navDrawerHowToFavouriteText,
           textAlign: TextAlign.center,
