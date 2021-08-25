@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.6-nullsafety
+
+- chore: remove unused icons
+
 ## 1.1.5-nullsafety
 
 - fix: favorite action guide

@@ -34,10 +34,6 @@ const String doctorIcon = 'assets/images/doctor-2.jpg';
 const String landingPageImage = 'assets/images/landing.png';
 const String onboardingBackgroundImage = 'assets/images/onboarding_bg.png';
 
-/// ICONS
-const String warningImage = 'assets/icons/warning.png';
-const String errorImage = 'assets/icons/error.png';
-
 // config
 const String cameraIconUrl = 'assets/icons/camera.png';
 const String searchIconUrl = 'assets/icons/search.png';
