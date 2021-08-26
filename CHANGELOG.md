@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.9-nullsafety
+
+- chore: upgrade app wrapper package
+
 ## 1.1.8-nullsafety
 
 - fix: bottom navigation bar currentIndex
@@ -30,13 +34,16 @@
 
 ## 1.0.14-nullsafety
 
-- chore: favorite action guide 
+- chore: favorite action guide
+
 ## 1.0.13-nullsafety
 
-- chore: retire unused and obsolete theming code 
+- chore: retire unused and obsolete theming code
+
 ## 1.0.12-nullsafety
 
-- fix: app wide search and navigation 
+- fix: app wide search and navigation
+
 ## 1.0.11-nullsafety
 
 - fix: logout helpers
@@ -100,7 +107,7 @@ feat: upgrade outdated flutter packages
 refactor: Refactored the clinical forms files
 feat: implement proper versioning
 refactor: refactor all user feedback strings to use constants from shared utils
-feat : merge googleaction with apple login action
+feat : merge google action with apple login action
 feat : retire email/pwd login
 chore:typos on database_mobile_documentation
 chore: remove commented code from add_nhif.dart
@@ -115,13 +122,13 @@ Bugfixes:
 
 fix: increase CI test running time to 20 minutes
 fix: fix getWidth function
-fix: renaming of variable dummyPhotodata to defaultPhotoData
+fix: renaming of variable dummyPhotoData to defaultPhotoData
 fix: made the diagnosis tab look expandable
 fix: keyboard not popping up upon dismiss
 fix: adding missing drug routes
 fix : defensive programming
 fix: place all theme data in one file
-fix: Handled nulls and deserialization errors
+fix: Handled nulls and de-serialization errors
 fix: adding of diagnosis via quick access
 fix: zero state for tests
 fix: fix retire problems and allergies in small screen

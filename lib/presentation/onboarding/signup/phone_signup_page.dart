@@ -1,10 +1,10 @@
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/application/redux/view_models/misc_state_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
 
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 
-import 'package:bewell_pro_core/application/redux/view_models/core_state_view_model.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/onboarding_scaffold.dart';
@@ -41,16 +41,16 @@ class _PhoneSignUpPageState extends State<PhoneSignUpPage> {
     const double dimension = 0;
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
-      body: StoreConnector<CoreState, CoreStateViewModel>(
+      body: StoreConnector<CoreState, MiscStateViewModel>(
         converter: (Store<CoreState> store) =>
-            CoreStateViewModel.fromStore(store),
-        builder: (BuildContext context, CoreStateViewModel vm) {
+            MiscStateViewModel.fromStore(store),
+        builder: (BuildContext context, MiscStateViewModel vm) {
           return OnboardingScaffold(
             dimension: dimension,
-            title: vm.state.miscState!.title!,
-            msg: vm.state.miscState!.message,
+            title: vm.state!.title!,
+            msg: vm.state!.message,
             icon: MdiIcons.accountEdit,
-            child: PhoneSignUp(),
+            child: const PhoneSignUp(),
           );
         },
       ),

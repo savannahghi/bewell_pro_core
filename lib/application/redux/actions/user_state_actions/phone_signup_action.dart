@@ -42,8 +42,9 @@ class PhoneSignUpAction extends ReduxAction<CoreState> {
   Future<CoreState?> reduce() async {
     /// Call endpoint and get back profile and custom token
     final String createAccountEndpoint =
-        EndpointContext.createUserByPhoneEndpoint(
-            AppWrapperBase.of(this.context)!.appContexts);
+        AppWrapperBase.of(context)!.customContext?.createUserByPhoneEndpoint ??
+            EndpointContext.createUserByPhoneEndpoint(
+                AppWrapperBase.of(this.context)!.appContexts);
 
     final IGraphQlClient client = AppWrapperBase.of(context)!.graphQLClient;
 

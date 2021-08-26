@@ -1,6 +1,6 @@
 name: bewell_pro_core
 description: Main package for BeWell-Professional
-version: 1.1.8-nullsafety
+version: 1.1.9-nullsafety
 homepage: https://github.com/savannahghi/bewell_pro_core
 repository: https://github.com/savannahghi/bewell_pro_core
 issue_tracker: https://github.com/savannahghi/bewell_pro_core/issues
@@ -11,16 +11,16 @@ environment:
   flutter: ">=2.0.0"
 
 dependencies:
-  app_wrapper: ^0.1.23 # internal (formerly sil_app_wrapper)
+  app_wrapper: ^0.1.26
   async_redux: ^12.0.0
   cached_network_image: ^3.0.0
   camera: ^0.8.1+3
   connectivity_plus: ^1.0.6
   country_pickers: ^2.0.0 # A country picker dropdown
   cupertino_icons: ^1.0.3
-  dart_fcm: ^0.0.23 # internal (formerly sil_fcm)
+  dart_fcm: ^0.0.23
   dartz: ^0.10.0-nullsafety
-  debug_logger: ^0.0.23 # internal (formerly sil_logger)
+  debug_logger: ^0.0.23
   device_info: ^2.0.2
   domain_objects: ^0.0.27-nullsafety # internal (formerly sil_core_domain_objects)
   dotted_border: ^2.0.0 # Adds a dotted border around a card or container
@@ -76,7 +76,7 @@ dev_dependencies:
   connectivity_platform_interface: ^2.0.0
   flutter_test:
     sdk: flutter
-  lint: ^1.5.3
+  lint: 1.5.3
   mockito: ^5.0.1
   mocktail_image_network: ^0.1.0
   test: ^1.16.5

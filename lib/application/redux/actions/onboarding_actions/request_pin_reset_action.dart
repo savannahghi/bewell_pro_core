@@ -35,8 +35,10 @@ class RequestPinResetAction extends ReduxAction<CoreState> {
 
   @override
   Future<CoreState?> reduce() async {
-    final String endpoint = EndpointContext.resetPinResetEndpoint(
-        AppWrapperBase.of(context)!.appContexts);
+    final String endpoint =
+        AppWrapperBase.of(context)!.customContext?.pinResetEndpoint ??
+            EndpointContext.resetPinResetEndpoint(
+                AppWrapperBase.of(context)!.appContexts);
 
     final IGraphQlClient client = AppWrapperBase.of(context)!.graphQLClient;
 

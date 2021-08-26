@@ -64,8 +64,10 @@ class SignupWithPhoneNumberAction extends ReduxAction<CoreState> {
       return state;
     }
 
-    final String endpoint = EndpointContext.verifyPhoneEndpoint(
-        AppWrapperBase.of(context)!.appContexts);
+    final String endpoint =
+        AppWrapperBase.of(context)!.customContext?.verifyPhoneEndpoint ??
+            EndpointContext.verifyPhoneEndpoint(
+                AppWrapperBase.of(context)!.appContexts);
 
     final IGraphQlClient client = AppWrapperBase.of(context)!.graphQLClient;
 

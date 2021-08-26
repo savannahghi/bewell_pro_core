@@ -47,7 +47,7 @@ class RouteGenerator {
 
       case verifyPinResetRequestRoute:
         return MaterialPageRoute<VerifyPinResetRequestPage>(
-            builder: (_) => VerifyPinResetRequestPage());
+            builder: (_) => const VerifyPinResetRequestPage());
 
       case resetPinRoute:
         return MaterialPageRoute<ReSetPinPage>(builder: (_) => ReSetPinPage());

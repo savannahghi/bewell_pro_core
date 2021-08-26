@@ -739,7 +739,7 @@ const String createAccDesc = 'Use your phone number to create an account';
 const String userExists = 'User with that phone number exists. Please sign in';
 const String verifyPhoneText = 'Verify phone number';
 
-const String changeNo = 'Change number';
+const String changeNumberText = 'Change number';
 
 //landing page strings
 const String landingTerms = 'Read our ';
