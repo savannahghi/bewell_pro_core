@@ -22,7 +22,7 @@ The following is a set of guidelines for contributing to `bewell_pro_core`, whic
 - [Your First Code Contribution](#your-first-code-contribution)
 - [Pull Requests](#pull-requests)
 
-[Styleguides](#styleguides)
+[Style guides](#style-guides)
 
 - [Git Commit Messages](#git-commit-messages)
 - [Importing packages](#packages-import)
@@ -31,7 +31,7 @@ The following is a set of guidelines for contributing to `bewell_pro_core`, whic
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by the [Savannah Informatics Limited Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior via email to [BeWell Feedback](mailto:feedback@bewell.co.ke).
+This project and everyone participating in it is governed by the [Savannah Informatics Limited Code of Conduct](https://github.com/savannahghi/bewell_pro_core/blob/main/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior via email to [BeWell Feedback](mailto:feedback@bewell.co.ke).
 
 ## TL-DR I just have a question
 
@@ -61,7 +61,7 @@ Here's a list of the big ones:
 
 ### Design Decisions
 
-When we make a significant decision in how we maintain the project and what we can or cannot support, we will document it in a shared wiki [SIL WIKI](https://github.com/). If you have a question around how we do things, check to see if it is documented there. If it is _not_ documented there, please open a new issue on the project repo or reach out to us via the official channels and ask your question.
+When we make a significant decision in how we maintain the project and what we can or cannot support, we will document it in a shared [WIKI](https://github.com/savannahghi/bewell_pro_core/wiki). If you have a question around how we do things, check to see if it is documented there. If it is _not_ documented there, please open a new issue on the project repo or reach out to us via the official channels and ask your question.
 
 ## How Can I Contribute?
 
@@ -69,7 +69,7 @@ When we make a significant decision in how we maintain the project and what we c
 
 This section guides you through submitting a bug report for `bewell_pro_core`. Following these guidelines helps maintainers and the community understand your report :pencil:, reproduce the behavior :computer:, and find related reports :mag_right:.
 
-Before creating bug reports, please check the project's list of open issues/bug reports as you might find out that you don't need to create one. When you are creating a bug report, please [include as many details as possible](#how-do-i-submit-a-good-bug-report). Fill out [the required template](https://github.com/atom/.github/blob/master/.github/ISSUE_TEMPLATE/bug_report.md), the information it asks for helps us resolve issues faster.
+Before creating bug reports, please check the project's list of open issues/bug reports as you might find out that you don't need to create one. When you are creating a bug report, please [include as many details as possible](#how-do-i-submit-a-good-bug-report). Fill out [the required template](https://github.com/savannahghi/bewell_pro_core/blob/main/.github/feature_request.md), the information it asks for helps us resolve issues faster.
 
 > **Note:** If you find a **Closed** issue that seems like it is the same thing that you're experiencing, open a new issue and include a link to the original issue in the body of your new one.
 
@@ -81,7 +81,7 @@ Before creating bug reports, please check the project's list of open issues/bug 
 
 #### How Do I Submit A (Good) Bug Report?
 
-Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've determined [which repository](#ail-software-and-packages) your bug is related to, create an issue on that repository and provide the following information by filling in [the template](https://github.com/search?q=org%3Asavannahghi+).
+Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've determined [which repository](#ail-software-and-packages) your bug is related to, create an issue on that repository and provide the following information by filling in [the template](https://github.com/savannahghi/bewell_pro_core/blob/main/.github/feature_request.md).
 
 Explain the problem and include additional details to help maintainers reproduce the problem:
 
@@ -98,7 +98,7 @@ Provide more context by answering these questions:
 
 - **Can you reproduce the problem?**
 - **Did the problem start happening recently** (e.g. after updating to a new version of the project in question) or was this always a problem?
-- If the problem started happening recently, **can you reproduce the problem in an older version of the project?** What's the most recent version in which the problem doesn't happen? You can download older versions of this project in its [release](https://github.com/) page on github.
+- If the problem started happening recently, **can you reproduce the problem in an older version of the project?** What's the most recent version in which the problem doesn't happen? You can download older versions of this project in its [release](https://pub.dev/packages/bewell_pro_core/versions) page on Pub.
 - **Can you reliably reproduce the issue?** If not, provide details about how often the problem happens and under which conditions it normally happens.
 - If the problem is related to working with files, **does the problem happen for all files and projects or only some?** Does the problem happen only when working with local or remote files. Is there anything else special about the files you are using?
 
@@ -112,13 +112,13 @@ Include details about your configuration and environment:
 
 This section guides you through submitting an enhancement suggestion for this project, including completely new features and minor improvements to existing functionality. Following these guidelines helps maintainers and the community understand your suggestion :pencil: and find related suggestions :mag_right:.
 
-Before creating enhancement suggestions, please check [the list of already proposed enhancements](#before-submitting-an-enhancement-suggestion) as you might find out that you don't need to create one. When you are creating an enhancement suggestion, please [include as many details as possible](#how-do-i-submit-a-good-enhancement-suggestion). Fill in [the template](https://github.com/), including the steps that you imagine you would take if the feature you're requesting existed.
+Before creating enhancement suggestions, please check [the list of already proposed enhancements](#before-submitting-an-enhancement-suggestion) as you might find out that you don't need to create one. When you are creating an enhancement suggestion, please [include as many details as possible](#how-do-i-submit-a-good-enhancement-suggestion). Fill in [the template](https://github.com/savannahghi/bewell_pro_core/blob/main/.github/feature_request.md), including the steps that you imagine you would take if the feature you're requesting existed.
 
 #### Before Submitting An Enhancement Suggestion
 
-- **Check the [project changelog](https://github.com/)** for tips — you might discover that the enhancement is already in the works and(or) is available in this or a previous version. Most importantly, check if you're using [the latest version of this project](https://github.com/#update-to-the-latest-version).
-- **Check if there's already [a package](https://atom.io/packages) which provides that enhancement among the list of related projects.**
-- **Perform a [cursory search](https://github.com/search?q=+is%3Aissue+user%3)** to see if the enhancement has already been suggested. If it has, add a comment to the existing issue instead of opening a new one.
+- **Check the [project changelog](https://github.com/savannahghi/bewell_pro_core/blob/main/CHANGELOG.md)** for tips — you might discover that the enhancement is already in the works and(or) is available in this or a previous version. Most importantly, check if you're using [the latest version of this project](https://pub.dev/packages/bewell_pro_core/versions).
+- **Check if there's already [a package](https://pub.dev/publishers/savannahghi.org/packages) which provides that enhancement among the list of related projects.**
+- **Perform a [cursory search](https://github.com/savannahghi/bewell_pro_core/issues)** to see if the enhancement has already been suggested. If it has, add a comment to the existing issue instead of opening a new one.
 
 #### How Do I Submit A (Good) Enhancement Suggestion?
 
@@ -139,8 +139,8 @@ Enhancement suggestions are tracked as [GitHub issues](https://guides.github.com
 
 Unsure where to begin contributing to SIL Software? You can start by looking through these `beginner` and `help-wanted` issues:
 
-- [Beginner issues](https://github.com/) - issues which should only require a few lines of code, and a test or two.
-- [Help wanted issues](https://github.com/) - issues which should be a bit more involved.
+- [Beginner issues](https://github.com/savannahghi/bewell_pro_core/issues) - issues which should only require a few lines of code, and a test or two.
+- [Help wanted issues](https://github.com/savannahghi/bewell_pro_core/issues) - issues which should be a bit more involved.
 
 Both issue lists are sorted by total number of comments. While not perfect, number of comments is a reasonable proxy for impact a given change will have.
 
@@ -160,11 +160,11 @@ The process described here has several goals:
 Please follow these steps to have your contribution considered by the maintainers:
 
 1. Follow all instructions in [the template](PULL_REQUEST_TEMPLATE.md)
-2. Follow the [styleguides](#styleguides)
+2. Follow the [style guides](#style-guides)
 
 While the prerequisites above must be satisfied prior to having your pull request reviewed, the reviewer(s) may ask you to complete additional design work, tests, or other changes before your pull request can be ultimately accepted.
 
-## Styleguides
+## Style guides
 
 ### Git Commit Messages
 

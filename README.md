@@ -1,10 +1,10 @@
-[![Release](https://img.shields.io/badge/Version-^1.1.6-success.svg?style=for-the-badge)](https://shields.io/)
+[![Release](https://img.shields.io/badge/Version-^1.1.7-success.svg?style=for-the-badge)](https://shields.io/)
 [![Maintained](https://img.shields.io/badge/Maintained-Actively-informational.svg?style=for-the-badge)](https://shields.io/)
 [![Release](https://img.shields.io/badge/Coverage-100-success.svg?style=for-the-badge)](https://shields.io/)
 
 # bewell_pro_core
 
-`# bewell_pro_core` is a home for `BeWell Professional Community Edition`'s base package. It's one among many other open source libraries that make up the wider ecosystem of software made and open sourced by `Savannah Informatics Limited`.
+`# bewell_pro_core` is a home for `BeWell Professional`'s base package. It's one among many other open source libraries and applications that make up the wider ecosystem of software made and open sourced by `Savannah Informatics Limited`.
 
 ## Installation Instructions
 
@@ -22,7 +22,7 @@ This will add a line like this to your package's pubspec.yaml (and run an implic
 
 ```dart
 dependencies:
-  bewell_pro_core: ^1.1.6-nullsafety
+  bewell_pro_core: ^1.1.7-nullsafety
 ```
 
 Alternatively, your editor might support flutter pub get. Check the docs for your editor to learn more.
@@ -37,8 +37,8 @@ import 'package:bewell_pro_core/landing_page.dart';
 
 ## Dart & Flutter Version
 
-- Dart 2: >= 2.12
-- Flutter: >=2.0.0
+- Dart: 2 >= 2.12
+- Flutter: >=2.2.3
 
 ## How to setup and run unit, widget and integration tests locally
 

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.7-nullsafety
+
+- chore: package fixes and cleanup
+
 ## 1.1.6-nullsafety
 
 - chore: remove unused icons
