@@ -1,4 +1,5 @@
 import 'package:bewell_pro_core/presentation/onboarding/profile/profile_utils.dart';
+import 'package:intl/intl.dart';
 
 const String appName = 'Be.well Professional';
 
@@ -591,15 +592,16 @@ const String cameraText = 'Camera';
 const String galleryText = 'Gallery';
 
 // complete registration
-const String patientRegSuccessMsg = 'Patient registered successfully';
+String regSuccessMsg(String userType) =>
+    '${toBeginningOfSentenceCase(userType)} registered successfully';
 
 const String extraInfoSaved = 'Extra information saved';
 const String extraInfoText = 'extra information';
 const String skippingExtraInfo = 'Skipping extra information';
 const String extraInfoInvalidEmailText = 'Kindly provide a valid email address';
 const String finishBtnTxt = 'Finish';
-const String providePatientExtraInfoPrompt =
-    'Kindly provide the patient\'s extra information';
+String provideExtraInfoPrompt(String userType) =>
+    'Kindly provide the $userType\'s extra information';
 const String emailCommunicationText = 'Email communications';
 const String emailAddressText = 'Email address';
 const String enterEmailPrompt = 'Enter the patient\'s email address';
@@ -610,8 +612,8 @@ const String phoneNumberField = 'Phone number:  ';
 const String skipNextBtnText = 'Skip/Next';
 
 // nhif
-const String providePatientNHIFInfoPrompt =
-    'Kindly provide the patient\'s NHIF information';
+String provideNHIFInfoPrompt(String userType) =>
+    'Kindly provide the $userType\'s NHIF information';
 const String nHIFNumber = 'NHIF Number';
 const String nHIFNumberPrompt = 'Enter the patient\'s NHIF number';
 const String nhifRequiredPrompt = 'The NHIF number cannot be empty';
@@ -863,6 +865,9 @@ String verifyDesc(String phoneNo) {
   final String phoneNumber = phoneNo.substring(1);
   return 'We have sent a 6 digit code to $phoneNumber. Enter the code below to proceed';
 }
+
+//Complete registration page
+const String viewUser = 'Complete Registration';
 
 // this is the version of the currently running app.
 // it has to be defined as a const otherwise the compiler will return the default

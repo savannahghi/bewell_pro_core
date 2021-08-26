@@ -1,3 +1,5 @@
+import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/clinical/patient_registration/patient_payload_helper.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_payload.dart';
@@ -35,6 +37,18 @@ class CompleteRegistrationWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String userStr = StoreProvider.state<CoreState>(context)!
+        .userRegistrationState!
+        .userType;
+    final String primaryRoute = StoreProvider.state<CoreState>(context)!
+        .userRegistrationState!
+        .primaryRouteName;
+
+    bool isPatientReg = false;
+    if (primaryRoute == patientsPageRoute) {
+      isPatientReg = true;
+    }
+
     final double imageHeight =
         ResponsiveWidget.isSmallScreen(context) ? 100 : 250;
     return Center(
@@ -59,7 +73,7 @@ class CompleteRegistrationWidget extends StatelessWidget {
               Container(
                 alignment: Alignment.center,
                 child: Text(
-                  patientRegSuccessMsg,
+                  regSuccessMsg(userStr),
                   style: PatientStyles.registerPatientSectionTitle,
                   textAlign: TextAlign.center,
                 ),
@@ -79,9 +93,17 @@ class CompleteRegistrationWidget extends StatelessWidget {
                   SILPrimaryButton(
                     buttonKey:
                         AppWidgetKeys.completeRegistrationAndStartVisitKey,
-                    onPressed: () => _startVisit(context),
+                    onPressed: () {
+                      if (primaryRoute == patientsPageRoute) {
+                        _startVisit(context);
+                      } else {
+                        Navigator.pushReplacementNamed(context, primaryRoute);
+                      }
+                    },
                     buttonColor: healthcloudAccentColor,
-                    text: startVisitTitle,
+                    text: isPatientReg
+                        ? startVisitTitle
+                        : completeRegistrationText,
                   )
                 ],
               ),

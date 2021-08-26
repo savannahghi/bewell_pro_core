@@ -45,9 +45,7 @@ void main() {
         store: store,
         widget: PatientRegistrationContainer(
           tabController: controller,
-          child: const BasicDetailsWidget(
-            userType: patientStr,
-          ),
+          child: const BasicDetailsWidget(),
         ),
       );
 
@@ -72,9 +70,7 @@ void main() {
           store: store,
           widget: PatientRegistrationContainer(
             tabController: controller,
-            child: const BasicDetailsWidget(
-              userType: patientStr,
-            ),
+            child: const BasicDetailsWidget(),
           ),
         );
 
@@ -100,9 +96,7 @@ void main() {
           store: store,
           widget: PatientRegistrationContainer(
             tabController: controller,
-            child: const BasicDetailsWidget(
-              userType: patientStr,
-            ),
+            child: const BasicDetailsWidget(),
           ),
         );
 
@@ -136,7 +130,6 @@ void main() {
             tabController: controller,
             child: BasicDetailsWidget(
               fileSystem: fileSystem,
-              userType: patientStr,
             ),
           ),
         );
@@ -178,7 +171,6 @@ void main() {
             tabController: controller,
             child: BasicDetailsWidget(
               fileSystem: fileSystem,
-              userType: patientStr,
             ),
           ),
         );
@@ -206,7 +198,6 @@ void main() {
             tabController: controller,
             child: BasicDetailsWidget(
               fileSystem: fileSystem,
-              userType: patientStr,
             ),
           ),
         );
@@ -225,9 +216,7 @@ void main() {
         store: store,
         widget: PatientRegistrationContainer(
           tabController: controller,
-          child: const BasicDetailsWidget(
-            userType: patientStr,
-          ),
+          child: const BasicDetailsWidget(),
         ),
       );
 
@@ -253,9 +242,7 @@ void main() {
         store: store,
         widget: PatientRegistrationContainer(
           tabController: controller,
-          child: const BasicDetailsWidget(
-            userType: patientStr,
-          ),
+          child: const BasicDetailsWidget(),
         ),
       );
 
@@ -287,7 +274,6 @@ void main() {
         tabController: controller,
         child: BasicDetailsWidget(
           fileSystem: fileSystem,
-          userType: patientStr,
         ),
       );
 
@@ -325,9 +311,7 @@ void main() {
         graphQlClient: graphQlClient,
         widget: PatientRegistrationContainer(
           tabController: controller,
-          child: const BasicDetailsWidget(
-            userType: patientStr,
-          ),
+          child: const BasicDetailsWidget(),
         ),
       );
 
@@ -356,9 +340,7 @@ void main() {
         graphQlClient: graphQlClient,
         widget: PatientRegistrationContainer(
           tabController: controller,
-          child: const BasicDetailsWidget(
-            userType: patientStr,
-          ),
+          child: const BasicDetailsWidget(),
         ),
       );
 
@@ -389,9 +371,7 @@ void main() {
         graphQlClient: graphQlClient,
         widget: PatientRegistrationContainer(
           tabController: controller,
-          child: const BasicDetailsWidget(
-            userType: patientStr,
-          ),
+          child: const BasicDetailsWidget(),
         ),
       );
 

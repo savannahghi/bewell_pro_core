@@ -1,3 +1,5 @@
+import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
+import 'package:bewell_pro_core/application/redux/states/user_registration_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/enums.dart';
 import 'package:bewell_pro_core/presentation/admin/widgets/coming_soon_page.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/pages/patient_exam.dart';
@@ -117,8 +119,14 @@ class RouteGenerator {
         );
 
       case addPatientRoute:
+        final dynamic args = UserRegistrationState(
+          userType: 'Patient ',
+          userRegistrationMutation: registerPatientQuery,
+          primaryRouteName: patientsPageRoute,
+        );
         return MaterialPageRoute<PatientRegistration>(
-            builder: (_) => const PatientRegistration());
+            builder: (_) => PatientRegistration(
+                userRegistrationState: args as UserRegistrationState));
 
       case tryNewFeatureSettingsRoute:
         return MaterialPageRoute<TryNewFeaturesPage>(

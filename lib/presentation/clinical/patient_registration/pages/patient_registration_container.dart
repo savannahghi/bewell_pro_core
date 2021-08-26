@@ -13,7 +13,7 @@ import 'nhif.dart';
 
 class PatientRegistrationContainer extends InheritedWidget {
   static final List<Widget> _tabs = <Widget>[
-    BasicDetailsWidget(userType: _userType!),
+    const BasicDetailsWidget(),
     const NextOfKin(),
     const AddNextOfKin(),
     const NHIF(),
@@ -29,8 +29,6 @@ class PatientRegistrationContainer extends InheritedWidget {
   static const int completeRegistrationIndex = 5;
 
   static int _currentIndex = 0;
-
-  static String? _userType;
 
   final TabController _tabController;
   final PatientPayloadHelper _currentRegisteredPatient = PatientPayloadHelper();
@@ -52,10 +50,6 @@ class PatientRegistrationContainer extends InheritedWidget {
   List<Widget> get tabs => _tabs;
 
   int get currentIndex => _currentIndex;
-
-  set userType(String? userStr) => userType = userStr;
-
-  String? get userType => _userType;
 
   PatientPayloadHelper get currentPatient => _currentRegisteredPatient;
 
