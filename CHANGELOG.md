@@ -1,4 +1,7 @@
 # CHANGELOG
+## 1.1.13-nullsafety
+
+- feat: user registration
 
 ## 1.1.12-nullsafety
 

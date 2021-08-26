@@ -21,10 +21,12 @@ class IDDocumentsWidget extends StatefulWidget {
   final TakePhotoCallback takePhotoCallback;
   final BasicDetailsFormManager formManager;
   final FileSystem fileSystem;
+  final String? userType;
 
   const IDDocumentsWidget({
     Key? key,
     required this.takePhotoCallback,
+    this.userType,
     required this.formManager,
     required this.fileSystem,
   }) : super(key: key);
@@ -38,8 +40,9 @@ class _IDDocumentsWidgetState extends State<IDDocumentsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final String _userType = widget.userType!;
     final String idDocumentHint =
-        'Enter the patient\'s $_selectedDocument number';
+        'Enter the ${_userType.toLowerCase()}\'s $_selectedDocument number';
 
     final String takePhotoString =
         'Take photos of $_selectedDocument (optional)';

@@ -1,6 +1,10 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
+import 'package:bewell_pro_core/application/redux/actions/navigation_actions/user_registration_action.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/basic_details.dart';
+import 'package:bewell_pro_core/presentation/router/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
@@ -105,5 +109,46 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(startVisitCount, 1);
+  });
+
+  testWidgets('navigates when registration is complete',
+      (WidgetTester tester) async {
+    AppBrand().appLogo.add(cameraIconUrl);
+    store.dispatch(
+      UserRegistrationAction(
+        userType: patientStr,
+        primaryRouteName: addPatientRoute,
+      ),
+    );
+
+    final PatientPayload patientData = PatientPayload.fromJson(
+        registeredPatientData['registerPatient'] as Map<String, dynamic>);
+
+    int startVisitCount = 0;
+
+    container = buildWidget(
+      onStartVisit: (BuildContext context, StartVisitType startVisitType) =>
+          startVisitCount++,
+    );
+
+    container.currentPatient.updatePatient(patientData);
+
+    await buildTestWidget(
+      tester: tester,
+      store: store,
+      widget: container,
+    );
+
+    expect(startVisitCount, 0);
+
+    final Finder startVisitBtn =
+        find.byKey(AppWidgetKeys.completeRegistrationAndStartVisitKey);
+    expect(startVisitBtn, findsOneWidget);
+
+    await tester.tap(startVisitBtn);
+    await tester.pumpAndSettle();
+
+    final Finder basicDetails = find.byType(BasicDetailsWidget);
+    expect(basicDetails, findsOneWidget);
   });
 }

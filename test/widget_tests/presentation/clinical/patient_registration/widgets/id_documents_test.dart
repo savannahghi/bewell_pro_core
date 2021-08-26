@@ -35,12 +35,13 @@ void main() {
         'renders the passport number text field when passport is selected from '
         'the dropdown', (WidgetTester tester) async {
       final String hintText =
-          "Enter the patient's ${DocumentType.Passport.name} number";
+          'Enter the ${patientStr.toLowerCase()}\'s ${DocumentType.Passport.name} number';
 
       await buildTestWidget(
         tester: tester,
         store: store,
         widget: IDDocumentsWidget(
+          userType: patientStr,
           fileSystem: fileSystem,
           formManager: formManager,
           takePhotoCallback: (
@@ -101,6 +102,7 @@ void main() {
         tester: tester,
         store: store,
         widget: IDDocumentsWidget(
+          userType: patientStr,
           fileSystem: fileSystem,
           formManager: formManager,
           takePhotoCallback: ({required ImageDocumentType documentType}) =>
@@ -141,6 +143,7 @@ void main() {
         tester: tester,
         store: store,
         widget: IDDocumentsWidget(
+          userType: patientStr,
           fileSystem: fileSystem,
           formManager: formManager,
           takePhotoCallback: ({required ImageDocumentType documentType}) =>
@@ -163,6 +166,7 @@ void main() {
         tester: tester,
         store: store,
         widget: IDDocumentsWidget(
+            userType: patientStr,
             fileSystem: fileSystem,
             formManager: formManager,
             takePhotoCallback: ({required ImageDocumentType documentType}) {}),
