@@ -6,10 +6,15 @@ import 'package:bewell_pro_core/presentation/onboarding/login/widgets/onboarding
 import 'package:bewell_pro_core/presentation/onboarding/login/pages/reset_pin_page.dart';
 import 'package:app_wrapper/app_wrapper.dart';
 import 'package:flutter_graphql_client/graph_utils.dart';
+import 'package:http/http.dart';
 import 'package:shared_ui_components/platform_loader.dart';
 import 'package:shared_ui_components/verify_phone_otp.dart';
 
 class VerifyPinResetRequestPage extends StatelessWidget {
+  final Client? httpClient;
+
+  const VerifyPinResetRequestPage({Key? key, this.httpClient})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     const double dimension = 0;
@@ -28,6 +33,7 @@ class VerifyPinResetRequestPage extends StatelessWidget {
         msg: verifyRequestMsg(primaryPhoneNumber),
         icon: Icons.message_rounded,
         child: VerifyPhoneOtp(
+          httpClient: httpClient,
           phoneNo: primaryPhoneNumber,
           otp: otp,
           successCallBack: ({
@@ -43,7 +49,14 @@ class VerifyPinResetRequestPage extends StatelessWidget {
           },
           generateOtpFunc: GraphQlUtils().generateRetryOtp,
           client: AppWrapperBase.of(context)!.graphQLClient,
-          retrySendOtpEndpoint: EndpointContext.retrySendOtpEndpoint,
+          retrySendOtpEndpoint:
+              AppWrapperBase.of(context)!.customContext != null
+                  ? (List<AppContext> contexts) {
+                      return AppWrapperBase.of(context)!
+                          .customContext
+                          ?.retryResendOtpEndpoint;
+                    }
+                  : EndpointContext.retrySendOtpEndpoint,
           appWrapperContext: AppWrapperBase.of(context)!.appContexts,
           loader: const SILPlatformLoader(),
         ),

@@ -39,8 +39,10 @@ class UpdateUserPinAction extends ReduxAction<CoreState> {
 
   @override
   Future<CoreState?> reduce() async {
-    final String endEndpoint = EndpointContext.updateUserPinEndpoint(
-        AppWrapperBase.of(context)!.appContexts);
+    final String endEndpoint =
+        AppWrapperBase.of(context)!.customContext?.updateUserPinEndpoint ??
+            EndpointContext.updateUserPinEndpoint(
+                AppWrapperBase.of(context)!.appContexts);
 
     final IGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
 

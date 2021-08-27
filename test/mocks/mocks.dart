@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io' as io;
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:domain_objects/entities.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
@@ -35,17 +36,58 @@ import 'base64_image.dart';
 /// [this stack overflow question](https://stackoverflow.com/a/40244095/6322723)
 ///
 
-class MockHttpClientIO extends Mock implements io.HttpClient {}
-
-class MockHttpClientRequest extends Mock implements io.HttpClientRequest {}
-
-class MockHttpClientResponse extends Mock implements io.HttpClientResponse {}
-
-class MockHttpHeaders extends Mock implements io.HttpHeaders {}
-
 class MockNavigatorObserver extends Mock implements NavigatorObserver {}
 
 class MockBuildContext extends Mock implements BuildContext {}
+
+class MockHttpClient implements http.Client {
+  final http.Response? response;
+
+  MockHttpClient(this.response);
+
+  @override
+  void close() {}
+
+  @override
+  Future<http.Response> delete(Uri url,
+          {Map<String, String>? headers, Object? body, Encoding? encoding}) =>
+      Future<http.Response>.value(response ?? http.Response('body', 200));
+
+  @override
+  Future<http.Response> get(Uri url, {Map<String, String>? headers}) =>
+      Future<http.Response>.value(response ?? http.Response('body', 200));
+
+  @override
+  Future<http.Response> head(Uri url, {Map<String, String>? headers}) =>
+      Future<http.Response>.value(response ?? http.Response('body', 200));
+
+  @override
+  Future<http.Response> patch(Uri url,
+          {Map<String, String>? headers, Object? body, Encoding? encoding}) =>
+      Future<http.Response>.value(response ?? http.Response('body', 200));
+
+  @override
+  Future<http.Response> post(Uri url,
+          {Map<String, String>? headers, Object? body, Encoding? encoding}) =>
+      Future<http.Response>.value(response ?? http.Response('body', 200));
+
+  @override
+  Future<http.Response> put(Uri url,
+          {Map<String, String>? headers, Object? body, Encoding? encoding}) =>
+      Future<http.Response>.value(response ?? http.Response('body', 200));
+
+  @override
+  Future<String> read(Uri url, {Map<String, String>? headers}) =>
+      Future<String>.value('test');
+
+  @override
+  Future<Uint8List> readBytes(Uri url, {Map<String, String>? headers}) =>
+      Future<Uint8List>.value(Uint8List.fromList(<int>[1, 2, 3]));
+
+  @override
+  Future<http.StreamedResponse> send(http.BaseRequest request) =>
+      Future<http.StreamedResponse>.value();
+}
 
 class MockFirebaseAnalytics extends Mock implements FirebaseAnalytics {
   @override

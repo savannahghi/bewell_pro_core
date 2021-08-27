@@ -156,8 +156,6 @@ void main() {
         }),
       );
 
-      await tester.pump();
-
       expect(find.text(signOffButtonText), findsOneWidget);
       expect(find.byKey(AppWidgetKeys.signOffExamSaveButton), findsOneWidget);
 

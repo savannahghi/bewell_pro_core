@@ -171,14 +171,13 @@ void main() {
     testWidgets(
         'shows the error alert widget when invalid credentials are provided',
         (WidgetTester tester) async {
-      store.dispatch(BatchUpdateMiscStateAction(invalidCredentials: true));
       await buildTestWidget(store: store, tester: tester, widget: PhoneLogin());
-
       await tester.pumpAndSettle();
-      expect(find.byType(ErrorAlertBox), findsOneWidget);
 
-      // Enter phone number
-      await tester.enterText(find.byType(SILPhoneInput), '0712345678');
+      store.dispatch(BatchUpdateMiscStateAction(invalidCredentials: true));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(ErrorAlertBox), findsOneWidget);
 
       // Enter PIN
       await tester.enterText(
@@ -191,11 +190,18 @@ void main() {
     testWidgets(
         'shows the error alert widget when an unknown phone number is added',
         (WidgetTester tester) async {
-      store.dispatch(BatchUpdateMiscStateAction(unKnownPhoneNo: true));
       await buildTestWidget(store: store, tester: tester, widget: PhoneLogin());
-
       await tester.pumpAndSettle();
+
+      store.dispatch(BatchUpdateMiscStateAction(unKnownPhoneNo: true));
+      await tester.pumpAndSettle();
+
       expect(find.byType(ErrorAlertBox), findsOneWidget);
+
+      await tester.enterText(find.byType(SILPhoneInput), '0712345678');
+
+      expect(store.state.miscState!.invalidCredentials, false);
+      expect(store.state.miscState!.unKnownPhoneNo, false);
     });
 
     testWidgets('shows a loading indicator when processing',

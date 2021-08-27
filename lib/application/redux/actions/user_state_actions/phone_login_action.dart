@@ -57,8 +57,10 @@ class PhoneLoginAction extends ReduxAction<CoreState> {
       'flavour': Flavour.PRO.name,
     };
 
-    final String phoneLoginEndpoint = EndpointContext.loginByPhoneEndpoint(
-        AppWrapperBase.of(this.context)!.appContexts);
+    final String phoneLoginEndpoint =
+        AppWrapperBase.of(context)!.customContext?.loginByPhoneEndpoint ??
+            EndpointContext.loginByPhoneEndpoint(
+                AppWrapperBase.of(this.context)!.appContexts);
 
     final ProcessedResponse processedResponse = processResponse(
       await SimpleCall.callRestAPI(
