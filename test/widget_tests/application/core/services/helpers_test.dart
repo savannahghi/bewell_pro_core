@@ -1,13 +1,7 @@
 import 'dart:convert';
+
 import 'package:app_wrapper/app_wrapper.dart';
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_graphql_client/graph_utils.dart';
-import 'package:flutter_html/flutter_html.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
@@ -24,6 +18,13 @@ import 'package:bewell_pro_core/presentation/onboarding/login/pages/phone_login_
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/phone_login.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/pages/user_profile_page.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
+import 'package:domain_objects/entities.dart';
+import 'package:domain_objects/value_objects.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_graphql_client/graph_utils.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
 import 'package:misc_utilities/misc.dart';
 import 'package:misc_utilities/number_constants.dart';
@@ -546,6 +547,46 @@ void main() {
 
       expect(route, isNotNull);
       expect(route, '/userNames');
+    });
+
+    testWidgets(
+        'should return the correct home page path if a user is signed in '
+        ', the token is valid and BioData is valid',
+        (WidgetTester tester) async {
+      /// modify change the expiry time to >10 minutes in the future
+      final DateTime hours = DateTime.now().add(const Duration(minutes: 10));
+
+      await store.dispatch(
+        BatchUpdateUserStateAction(
+          isSignedIn: true,
+          tokenExpiryTime: hours.toIso8601String(),
+          userProfile: UserProfile(
+            userBioData: BioData(
+                firstName: Name.withValue('Bewell'),
+                lastName: Name.withValue('Test')),
+          ),
+        ),
+      );
+
+      late String? route;
+
+      await buildTestWidget(
+          tester: tester,
+          store: store,
+          widget: Builder(builder: (BuildContext context) {
+            return GestureDetector(
+              onTap: () async =>
+                  route = await getInitialRoute(context: context),
+            );
+          }));
+
+      // normal when the token is UNKNOWN
+
+      await tester.tap(find.byType(GestureDetector));
+      await tester.pump();
+
+      expect(route, isNotNull);
+      expect(route, homePageRoute);
     });
   });
 
