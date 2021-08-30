@@ -17,7 +17,12 @@ import 'package:shared_themes/text_themes.dart';
 class HelpCenterPage extends StatelessWidget {
   final ReduxAction<CoreState>? logoutAction;
 
-  const HelpCenterPage({Key? key, this.logoutAction}) : super(key: key);
+  final String? title;
+
+  const HelpCenterPage({
+    this.logoutAction,
+    this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +55,7 @@ class HelpCenterPage extends StatelessWidget {
                   children: <Widget>[
                     smallVerticalSizedBox,
                     Text(
-                      faqTitle,
+                      this.title ?? faqTitle,
                       textAlign: TextAlign.center,
                       style: TextThemes.boldSize24Text(
                         Colors.black,
