@@ -1,3 +1,5 @@
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -19,6 +21,8 @@ void main() {
         Store<CoreState>(initialState: CoreState.initial());
 
     testWidgets('search again button works', (WidgetTester tester) async {
+      AppBrand().appLogo.add(cameraIconUrl);
+
       await mockNetworkImages(() async {
         await buildTestWidget(
             tester: tester,
@@ -40,6 +44,8 @@ void main() {
         // verify navigation was successful
         expect(find.byType(PatientRegistration), findsOneWidget);
         expect(find.byType(NoPatientFound), findsNothing);
+
+        AppBrand().appLogo.add('');
       });
     });
 

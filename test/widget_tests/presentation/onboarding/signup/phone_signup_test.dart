@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:app_wrapper/app_wrapper.dart';
 import 'package:app_wrapper/src/base_context.dart';
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_contexts.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/domain_constants.dart';
 import 'package:bewell_pro_core/presentation/router/router_generator.dart';
@@ -136,7 +137,7 @@ void main() {
         await tester.pumpWidget(
           AppWrapperBase(
             graphQLClient: mockGraphQlClient,
-            appName: appName,
+            appName: AppBrand().appName.value,
             appContexts: testAppContexts,
             deviceCapabilities: deviceCapabilities,
             customContext: const BaseContext(

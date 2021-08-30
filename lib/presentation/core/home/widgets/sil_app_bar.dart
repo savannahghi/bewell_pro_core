@@ -3,7 +3,7 @@ import 'package:bewell_pro_core/application/redux/actions/navigation_actions/nav
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/core/home/widgets/profile_drop_down.dart';
-import 'package:bewell_pro_core/presentation/onboarding/common/widgets/bewell_logo.dart';
+import 'package:bewell_pro_core/presentation/onboarding/common/widgets/brand_logo.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +15,7 @@ class SilAppBar extends StatelessWidget implements PreferredSizeWidget {
   final ReduxAction<CoreState> logoutAction;
 
   const SilAppBar({Key? key, required this.logoutAction}) : super(key: key);
+
   @override
   Size get preferredSize => const Size.fromHeight(100.0);
 
@@ -85,7 +86,7 @@ class SilAppBar extends StatelessWidget implements PreferredSizeWidget {
                         );
                         Navigator.pushNamed(context, route!, arguments: title);
                       }),
-                BewellLogo(),
+                BrandLogo(),
                 smallHorizontalSizedBox,
               ],
             ),

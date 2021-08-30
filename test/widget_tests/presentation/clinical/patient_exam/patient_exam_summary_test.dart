@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
@@ -59,6 +60,8 @@ void main() {
 
     testWidgets(' renders correctly and works correctly',
         (WidgetTester tester) async {
+      AppBrand().appLogo.add(cameraIconUrl);
+
       await mockNetworkImages(() async {
         await buildTestWidget(
           tester: tester,
@@ -70,9 +73,13 @@ void main() {
         expect(find.byType(BeWellPrimaryPatientBanner), findsOneWidget);
         expect(find.byType(SignOffExam), findsOneWidget);
       });
+
+      AppBrand().appLogo.add('');
     });
 
     testWidgets('should render SILPlatformLoader', (WidgetTester tester) async {
+      AppBrand().appLogo.add(cameraIconUrl);
+
       final MockShortGraphQlClient mockGraphQlClient =
           MockShortGraphQlClient.withResponse(
         'idToken',
@@ -98,9 +105,13 @@ void main() {
       expect(find.byType(BeWellPrimaryPatientBanner), findsOneWidget);
       expect(find.byType(SignOffExam), findsOneWidget);
       expect(find.byType(SILPlatformLoader), findsWidgets);
+
+      AppBrand().appLogo.add('');
     });
 
     testWidgets('should return serviceRequests', (WidgetTester tester) async {
+      AppBrand().appLogo.add(cameraIconUrl);
+
       final MockShortGraphQlClient mockGraphQlClient =
           MockShortGraphQlClient.withResponse(
         'idToken',
@@ -125,10 +136,14 @@ void main() {
       expect(find.byType(SignOffExam), findsOneWidget);
       expect(find.byType(PatientExamCardTitle), findsOneWidget);
       expect(find.byType(PatientTimelineDividerWidget), findsOneWidget);
+
+      AppBrand().appLogo.add('');
     });
 
     testWidgets('should render GenericZeroStateWidget',
         (WidgetTester tester) async {
+      AppBrand().appLogo.add(cameraIconUrl);
+
       final MockShortGraphQlClient mockGraphQlClient =
           MockShortGraphQlClient.withResponse(
         'idToken',
@@ -150,6 +165,8 @@ void main() {
       expect(find.byType(BeWellPrimaryPatientBanner), findsOneWidget);
       expect(find.byType(SignOffExam), findsOneWidget);
       expect(find.byType(GenericZeroStateWidget), findsOneWidget);
+
+      AppBrand().appLogo.add('');
     });
   });
 }

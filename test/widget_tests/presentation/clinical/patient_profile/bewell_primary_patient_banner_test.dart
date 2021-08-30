@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -164,6 +165,8 @@ void main() {
     testWidgets(
         'should navigate to patient registration page when visits are less than 10',
         (WidgetTester tester) async {
+      AppBrand().appLogo.add(cameraIconUrl);
+
       PrimaryBannerInfoObject().patientBannerChangeListener.add(true);
       TimelineInfoObject().visits.add(testTimelineVisitsData);
 
@@ -195,6 +198,8 @@ void main() {
 
         await tester.tap(find.byKey(AppWidgetKeys.confirmEndVisitKey));
         await tester.pumpAndSettle();
+
+        AppBrand().appLogo.add('');
       });
     });
 

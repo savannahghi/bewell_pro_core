@@ -1,3 +1,4 @@
+import 'package:bewell_pro_core/domain/core/value_objects/enums.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';

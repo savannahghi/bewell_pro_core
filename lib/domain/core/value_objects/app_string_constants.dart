@@ -1,7 +1,5 @@
 import 'package:bewell_pro_core/presentation/onboarding/profile/profile_utils.dart';
 
-const String appName = 'Be.well Professional';
-
 // descriptions
 const String homeIconDescription = 'Home Navigation action';
 const String requestsIconDescription = 'Requests Navigation action';
@@ -61,7 +59,7 @@ const String yourFirstName = 'Your first name';
 const String yourLastName = 'Your last name';
 
 // SearchPageStrings
-const String helpCenter = 'Be.Well Help Center';
+String helpCenter = 'Help Center';
 const String userProfile = 'My Profile';
 const String clearText = 'Clear';
 const String queryLength = 'Search term needs to be longer than 2 letters';
@@ -578,7 +576,7 @@ const String verifyPhoneChangedPrompt =
 const String basicDetailsSaved = 'Basic details saved';
 const String savingBasicDetails = 'saving basic details';
 const String enableCameraPerm =
-    'In order for you take the patient\'s photo, you need to enable camera permissions for the $appName app. Tap the button below to open the settings app';
+    'In order for you take the patient\'s photo, you need to enable camera permissions for the app. Tap the button below to open the settings app';
 const String sendingTheOtp = 'sending the OTP';
 const String selectSource = 'Select source';
 const String cameraText = 'Camera';

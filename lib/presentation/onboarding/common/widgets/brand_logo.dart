@@ -1,10 +1,10 @@
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
-
 import 'package:misc_utilities/responsive_widget.dart';
 
-class BewellLogo extends StatelessWidget {
+class BrandLogo extends StatelessWidget {
+  final String appLogo = AppBrand().appLogo.value;
+
   @override
   Widget build(BuildContext context) {
     final bool isLargeScreen = ResponsiveWidget.isLargeScreen(context);
@@ -12,7 +12,9 @@ class BewellLogo extends StatelessWidget {
     return SizedBox(
       width: dimension,
       height: dimension,
-      child: SvgPicture.asset(bewellLogo),
+      child: Image.asset(
+        appLogo,
+      ),
     );
   }
 }

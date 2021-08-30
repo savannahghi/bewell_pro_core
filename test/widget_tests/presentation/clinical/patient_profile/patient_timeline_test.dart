@@ -1,4 +1,5 @@
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
@@ -42,6 +43,8 @@ void main() {
     testWidgets(
         'StartOrContinueExamBanner widget renders correctly when should continue visit is false',
         (WidgetTester tester) async {
+      AppBrand().appLogo.add(cameraIconUrl);
+
       startMockVisitAndExam();
 
       await mockNetworkImages(() async {
@@ -63,6 +66,7 @@ void main() {
         await tester.pumpAndSettle();
         expect(find.byType(StartOrContinueExamBanner), findsNothing);
         expect(find.byType(PatientExam), findsOneWidget);
+        AppBrand().appLogo.add('');
       });
     });
 
@@ -133,6 +137,8 @@ void main() {
     testWidgets(
         'StartContinueExamWrapper widget renders correctly when should continue is == true',
         (WidgetTester tester) async {
+      AppBrand().appLogo.add(cameraIconUrl);
+
       startMockVisitAndExam();
       await buildTestWidget(
         tester: tester,
@@ -152,6 +158,8 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.byType(StartOrContinueExamBanner), findsNothing);
       expect(find.byType(PatientExam), findsOneWidget);
+
+      AppBrand().appLogo.add('');
     });
 
     testWidgets(

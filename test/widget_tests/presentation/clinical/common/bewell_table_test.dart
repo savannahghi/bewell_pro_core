@@ -1,9 +1,9 @@
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_contexts.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/presentation/clinical/common/widgets/bewell_table_header.dart';
 import 'package:bewell_pro_core/presentation/clinical/common/widgets/bewell_table_title_action.dart';
 import 'package:bewell_pro_core/presentation/clinical/common/widgets/bewell_table_header_value.dart';
@@ -26,7 +26,7 @@ void main() {
       StoreProvider<CoreState>(
         store: store,
         child: AppWrapper(
-          appName: appName,
+          appName: AppBrand().appName.value,
           graphQLClient: mockGraphQlClient,
           appContexts: testAppContexts,
           child: const MaterialApp(
@@ -52,7 +52,7 @@ void main() {
       StoreProvider<CoreState>(
         store: store,
         child: AppWrapper(
-          appName: appName,
+          appName: AppBrand().appName.value,
           graphQLClient: mockGraphQlClient,
           appContexts: testAppContexts,
           child: const MaterialApp(
@@ -71,7 +71,7 @@ void main() {
       StoreProvider<CoreState>(
         store: store,
         child: AppWrapper(
-          appName: appName,
+          appName: AppBrand().appName.value,
           graphQLClient: mockGraphQlClient,
           appContexts: testAppContexts,
           child: MaterialApp(

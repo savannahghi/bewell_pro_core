@@ -1,8 +1,8 @@
+import 'package:bewell_pro_core/domain/core/value_objects/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/communication_settings.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/profile_contact_details.dart';
-import 'package:bewell_pro_core/presentation/onboarding/profile/pages/try_new_features_page.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
 
 class ProfileItem {
@@ -21,11 +21,6 @@ class ProfileItem {
   final ProfileItemType section;
   final Widget? tabletWidget;
   final String text;
-}
-
-enum ProfileItemType {
-  account,
-  legal,
 }
 
 /// A list of Widgets that holds profile items to be displayed in the user_profile_page
@@ -48,12 +43,6 @@ List<ProfileItem> profileItems = <ProfileItem>[
     text: changePINText,
     section: ProfileItemType.account,
     onTapRoute: pinVerificationRoute,
-  ),
-  ProfileItem(
-    text: tryNewFeaturesText,
-    section: ProfileItemType.account,
-    onTapRoute: tryNewFeatureSettingsRoute,
-    tabletWidget: BuildTryNewFeatures(),
   ),
   const ProfileItem(
     text: termsOfServiceText,

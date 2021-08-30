@@ -1,3 +1,4 @@
+import 'package:bewell_pro_core/domain/core/value_objects/enums.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/allergy_intolerance_relay_edge.dart';
@@ -1761,4 +1762,17 @@ class UserFeedStore {
   BehaviorSubject<bool> refreshFeed = BehaviorSubject<bool>.seeded(false);
 
   static final UserFeedStore _singleton = UserFeedStore._internal();
+}
+
+class AppBrand {
+  factory AppBrand() {
+    return _singleton;
+  }
+
+  AppBrand._internal();
+
+  BehaviorSubject<String> appLogo = BehaviorSubject<String>.seeded('');
+  BehaviorSubject<String> appName = BehaviorSubject<String>.seeded('');
+
+  static final AppBrand _singleton = AppBrand._internal();
 }
