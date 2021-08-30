@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.10-nullsafety
+
+- chore: upgrade dart_fcm package
+
 ## 1.1.9-nullsafety
 
 - chore: upgrade app wrapper package

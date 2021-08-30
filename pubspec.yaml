@@ -1,6 +1,6 @@
 name: bewell_pro_core
 description: Main package for BeWell-Professional
-version: 1.1.9-nullsafety
+version: 1.1.10-nullsafety
 homepage: https://github.com/savannahghi/bewell_pro_core
 repository: https://github.com/savannahghi/bewell_pro_core
 issue_tracker: https://github.com/savannahghi/bewell_pro_core/issues
@@ -18,7 +18,7 @@ dependencies:
   connectivity_plus: ^1.0.6
   country_pickers: ^2.0.0 # A country picker dropdown
   cupertino_icons: ^1.0.3
-  dart_fcm: ^0.0.23
+  dart_fcm: ^0.0.24
   dartz: ^0.10.0-nullsafety
   debug_logger: ^0.0.23
   device_info: ^2.0.2
