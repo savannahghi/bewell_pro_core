@@ -14,49 +14,42 @@ import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
-  late Store<CoreState> store;
+  group('ProfileChangePin', () {
+    late Store<CoreState> store;
 
-  setUp(() {
-    store = Store<CoreState>(initialState: CoreState.initial());
-  });
-  testWidgets('ProfileChangePin renders correctly',
-      (WidgetTester tester) async {
-    tester.binding.window.devicePixelRatioTestValue = 1.0;
-    tester.binding.window.physicalSizeTestValue = tabletLandscape;
+    setUp(() {
+      store = Store<CoreState>(initialState: CoreState.initial());
+    });
 
-    store.dispatch(BatchUpdateUserStateAction(
-        userProfile: UserProfile(
-          primaryPhoneNumber: testPhoneNumber,
-        ),
-        auth: AuthCredentialResponse(isChangePin: false)));
+    testWidgets('ProfileChangePin renders correctly',
+        (WidgetTester tester) async {
+      store.dispatch(BatchUpdateUserStateAction(
+          userProfile: UserProfile(primaryPhoneNumber: testPhoneNumber),
+          auth: AuthCredentialResponse(isChangePin: false)));
 
-    await mockNetworkImages(() async {
-      await buildTestWidget(
-        tester: tester,
-        store: store,
-        widget: const ProfileChangePin(),
-      );
+      await mockNetworkImages(() async {
+        await buildTestWidget(
+          tester: tester,
+          store: store,
+          widget: const ProfileChangePin(),
+        );
 
-      expect(find.byType(OnboardingScaffold), findsOneWidget);
-      expect(find.text(changePinTitle), findsOneWidget);
-      expect(find.text(changePinMessage), findsOneWidget);
+        expect(find.byType(OnboardingScaffold), findsOneWidget);
+        expect(find.text(changePinTitle), findsOneWidget);
+        expect(find.text(changePinMessage), findsOneWidget);
 
-      // tap cancel button
+        // tap cancel button
 
-      final GestureDetector saveButton = find
-          .widgetWithText(GestureDetector, verificationCancelText)
-          .evaluate()
-          .first
-          .widget as GestureDetector;
-      saveButton.onTap!();
+        final GestureDetector saveButton = find
+            .widgetWithText(GestureDetector, verificationCancelText)
+            .evaluate()
+            .first
+            .widget as GestureDetector;
+        saveButton.onTap!();
 
-      await tester.pumpAndSettle();
+        await tester.pumpAndSettle();
 
-      expect(find.byType(UserProfilePage), findsOneWidget);
-
-      addTearDown(() {
-        tester.binding.window.clearPhysicalSizeTestValue();
-        tester.binding.window.clearDevicePixelRatioTestValue();
+        expect(find.byType(UserProfilePage), findsOneWidget);
       });
     });
   });
