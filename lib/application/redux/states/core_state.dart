@@ -5,6 +5,7 @@ import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';
 import 'package:bewell_pro_core/application/redux/states/connectivity_state.dart';
 import 'package:bewell_pro_core/application/redux/states/misc_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_feed_state.dart';
+import 'package:bewell_pro_core/application/redux/states/user_registration_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:equatable/equatable.dart';
@@ -17,6 +18,7 @@ class CoreState extends Equatable {
     this.connectivityState,
     this.clinicalState,
     this.navigationState,
+    this.userRegistrationState,
     this.wait,
   });
 
@@ -26,6 +28,7 @@ class CoreState extends Equatable {
   final ConnectivityState? connectivityState;
   final ClinicalState? clinicalState;
   final Navigation? navigationState;
+  final UserRegistrationState? userRegistrationState;
   final Wait? wait;
 
   factory CoreState.initial() => CoreState(
@@ -35,6 +38,7 @@ class CoreState extends Equatable {
         connectivityState: ConnectivityState.initial(),
         clinicalState: ClinicalState.initial(),
         navigationState: Navigation.initial(),
+        userRegistrationState: UserRegistrationState.initial(),
         wait: Wait(),
       );
 
@@ -45,6 +49,7 @@ class CoreState extends Equatable {
     ConnectivityState? connectivityState,
     ClinicalState? clinicalState,
     Navigation? navigationState,
+    UserRegistrationState? userRegistrationState,
     Wait? wait,
   }) {
     return CoreState(
@@ -54,6 +59,8 @@ class CoreState extends Equatable {
       connectivityState: connectivityState ?? this.connectivityState,
       clinicalState: clinicalState ?? this.clinicalState,
       navigationState: navigationState ?? this.navigationState,
+      userRegistrationState:
+          userRegistrationState ?? this.userRegistrationState,
       wait: wait ?? this.wait,
     );
   }
@@ -66,6 +73,7 @@ class CoreState extends Equatable {
         connectivityState,
         clinicalState,
         navigationState,
+        userRegistrationState,
         wait,
       ];
 }

@@ -3,7 +3,6 @@ import 'dart:convert';
 
 import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/clinical/patient_registration/basic_details_form_manager.dart';
-import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
@@ -29,14 +28,14 @@ import 'package:file/file.dart';
 import 'package:file/local.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:misc_utilities/misc.dart';
 import 'package:misc_utilities/responsive_widget.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart'
     as permission_handler;
+import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/constants.dart';
 import 'package:shared_themes/spaces.dart';
 import 'package:shared_ui_components/inputs.dart';
 
@@ -69,6 +68,8 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
   bool isCameraRestricted = true;
   bool isCameraDenied = true;
   bool isCameraPermanentlyDenied = true;
+
+  String userRegistrationMutation = '';
 
   @override
   void initState() {
@@ -113,6 +114,14 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
 
   @override
   Widget build(BuildContext context) {
+    final String userStr = StoreProvider.state<CoreState>(context)!
+        .userRegistrationState!
+        .userType;
+
+    userRegistrationMutation = StoreProvider.state<CoreState>(context)!
+        .userRegistrationState!
+        .userRegistrationMutation;
+
     final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
 
     return Scaffold(
@@ -158,7 +167,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      patientDetailsText,
+                      detailsText(userStr),
                       style: PatientStyles.registerPatientSectionTitle,
                     ),
                   ),
@@ -167,7 +176,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        provideBasicInfo,
+                        provideBasicInfo(userStr),
                         style: PatientStyles.registerPatientSectionSubTitle,
                       ),
                     ),
@@ -189,6 +198,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
                       }
 
                       return PatientPhoto(
+                        userType: userStr,
                         profileImage: profileImage,
                         takePhotoCallback: () =>
                             // take patient's photo
@@ -214,7 +224,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
                           _lastNameFocusNode.requestFocus();
                         },
                         fieldHintText: firstNameHint,
-                        formHintText: enterFirstName,
+                        formHintText: enterFirstName(userStr),
                         error: (snapshot.hasError)
                             ? (snapshot.error as GenericException?)?.message
                             : null,
@@ -237,7 +247,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
                         onSubmitted: (String v) =>
                             _formManager.inLastName.add(v),
                         fieldHintText: lastNameHint,
-                        formHintText: enterLastName,
+                        formHintText: enterLastName(userStr),
                         error: (snapshot.hasError)
                             ? (snapshot.error as GenericException?)?.message
                             : null,
@@ -250,7 +260,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
                   // phone number
                   PhoneNumberFieldWidget(
                     formManager: _formManager.phoneManager,
-                    otpReceiver: patientStr,
+                    otpReceiver: userStr,
                   ),
 
                   mediumVerticalSizedBox,
@@ -266,7 +276,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
                   SILDatePickerField(
                     gestureDateKey:
                         AppWidgetKeys.basicDetailsDobGestureDetectorKey,
-                    hintText: enterDob,
+                    hintText: enterDob(userStr),
                     allowEligibleDate: true,
                     controller: datePickerController,
                     keyboardType: TextInputType.datetime,
@@ -302,6 +312,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
 
                   // ID documents
                   IDDocumentsWidget(
+                    userType: userStr,
                     fileSystem: widget.fileSystem,
                     formManager: _formManager,
                     takePhotoCallback: takePhoto,
@@ -380,7 +391,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
       builder: (BuildContext context) {
         return BewellSubmitDialog(
           data: <String, dynamic>{'input': registerPatientPayload.toMap()},
-          query: registerPatientQuery,
+          query: userRegistrationMutation,
           customNavigation: (Map<String, dynamic> data) {
             result = data;
             Future<void>.delayed(const Duration(milliseconds: 500), () {
@@ -457,7 +468,6 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
   Future<PatientRegistrationImageData?> _getPatientRegistrationImageData(
       String title) async {
     /// prepare a map to store the photo data once it has been captured
-
     /// 1. Multiply the width and height of the image, in pixels, to get the total pixel count.
     /// 2. Multiply the total pixel count by 3 to get the image size in bytes.
     /// 3. Divide the number of bytes by 1024 to get the image size in kilobytes.
@@ -465,7 +475,6 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
     ///
     /// from the above definitions, the size of the images that should satisfy a <1MB threshold
     /// would be [500x500] which gives us [0.72MB] which is way below the threshold but ok
-
     // before we take an image, the user needs to select a source
     // final ImageSource imageSource =
     //     await cameraImageSelectionDialog(context: context) as ImageSource;

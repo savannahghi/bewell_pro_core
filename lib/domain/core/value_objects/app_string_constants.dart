@@ -1,4 +1,5 @@
 import 'package:bewell_pro_core/presentation/onboarding/profile/profile_utils.dart';
+import 'package:intl/intl.dart';
 
 // descriptions
 const String homeIconDescription = 'Home Navigation action';
@@ -339,27 +340,29 @@ const String silButtonRegister = 'Register Next of Kin';
 // BasicDetailsStrings
 const String patientRole = 'Patients';
 const String patientStr = 'Patient';
-const String patientDetailsText = 'Patient Details';
-const String registerPatientText = 'Register Patient';
-const String provideBasicInfo = 'Kindly provide patient\'s basic information';
-const String capturePhoto = 'Capture patient\'s photo (optional)';
+String detailsText(String userType) => '$userType Details';
+String provideBasicInfo(String userType) =>
+    'Kindly provide ${userType.toLowerCase()}\'s basic information';
+String capturePhoto(String userType) =>
+    'Capture ${userType.toLowerCase()}\'s photo (optional)';
 const String takePhotoText = 'Take photo';
 const String retakePhotoText = 'Retake photo';
 const String firstNameHint = 'First Name';
-const String enterFirstName = 'Enter the patient\'s first name';
+String enterFirstName(String userType) =>
+    'Enter the ${userType.toLowerCase()}\'s first name';
 const String firstNameReq = 'First name is required';
 const String lastNameHint = 'Last Name';
-const String enterLastName = 'Enter the patient\'s last name';
+String enterLastName(String userType) =>
+    'Enter the ${userType.toLowerCase()}\'s last name';
 const String lastNameReq = 'Last name is required';
 const String hintPhoneNumber = 'Phone number';
-const String enterPhoneNumber = 'Enter the patient\'s phone number';
 const String verifiedPhoneNumber = 'VERIFIED';
 const String verifyPhoneNumber = 'Kindly verify phone number';
 const String asteriskSymbol = '*';
 
-const String phoneNumberReq = 'Please Verify Patient\'s Phone Number';
+String enterDob(String userType) =>
+    'Enter the ${userType.toLowerCase()}\'s date of birth';
 const String hintDob = 'Date of Birth';
-const String enterDob = 'Enter the patient\'s date of birth';
 const String dobReq = 'Please select date of birth';
 const String hintGender = 'Gender';
 const String hintSelectGender = 'Select gender';
@@ -583,15 +586,16 @@ const String cameraText = 'Camera';
 const String galleryText = 'Gallery';
 
 // complete registration
-const String patientRegSuccessMsg = 'Patient registered successfully';
+String regSuccessMsg(String userType) =>
+    '${toBeginningOfSentenceCase(userType)} registered successfully';
 
 const String extraInfoSaved = 'Extra information saved';
 const String extraInfoText = 'extra information';
 const String skippingExtraInfo = 'Skipping extra information';
 const String extraInfoInvalidEmailText = 'Kindly provide a valid email address';
 const String finishBtnTxt = 'Finish';
-const String providePatientExtraInfoPrompt =
-    'Kindly provide the patient\'s extra information';
+String provideExtraInfoPrompt(String userType) =>
+    'Kindly provide the ${userType.toLowerCase()}\'s extra information';
 const String emailCommunicationText = 'Email communications';
 const String emailAddressText = 'Email address';
 const String enterEmailPrompt = 'Enter the patient\'s email address';
@@ -602,8 +606,8 @@ const String phoneNumberField = 'Phone number:  ';
 const String skipNextBtnText = 'Skip/Next';
 
 // nhif
-const String providePatientNHIFInfoPrompt =
-    'Kindly provide the patient\'s NHIF information';
+String provideNHIFInfoPrompt(String userType) =>
+    'Kindly provide the ${userType.toLowerCase()}\'s NHIF information';
 const String nHIFNumber = 'NHIF Number';
 const String nHIFNumberPrompt = 'Enter the patient\'s NHIF number';
 const String nhifRequiredPrompt = 'The NHIF number cannot be empty';
@@ -855,6 +859,9 @@ String verifyDesc(String phoneNo) {
   final String phoneNumber = phoneNo.substring(1);
   return 'We have sent a 6 digit code to $phoneNumber. Enter the code below to proceed';
 }
+
+//Complete registration page
+const String completeRegistrationText = 'Complete Registration';
 
 // this is the version of the currently running app.
 // it has to be defined as a const otherwise the compiler will return the default

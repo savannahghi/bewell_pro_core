@@ -1,3 +1,5 @@
+import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:dartz/dartz.dart' as dartz;
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/clinical/patient_registration/patient_payload_helper.dart';
@@ -138,6 +140,9 @@ class _ExtraInformationState extends State<ExtraInformation> {
 
   @override
   Widget build(BuildContext context) {
+    final String userStr = StoreProvider.state<CoreState>(context)!
+        .userRegistrationState!
+        .userType;
     return OrientationBuilder(
       builder: (BuildContext context, Orientation orientation) => Scaffold(
         floatingActionButton: Padding(
@@ -192,7 +197,7 @@ class _ExtraInformationState extends State<ExtraInformation> {
                   padding: const EdgeInsets.only(bottom: 15),
                   child: Align(
                     alignment: Alignment.centerLeft,
-                    child: Text(providePatientExtraInfoPrompt,
+                    child: Text(provideExtraInfoPrompt(userStr),
                         style: PatientStyles.registerPatientSectionSubTitle),
                   ),
                 ),

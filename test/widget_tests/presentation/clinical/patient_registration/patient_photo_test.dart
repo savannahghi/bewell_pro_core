@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
@@ -14,6 +15,7 @@ void main() {
       await buildTestWidget(
         tester: tester,
         widget: PatientPhoto(
+          userType: patientStr,
           profileImage: File(''),
           takePhotoCallback: () {},
         ),

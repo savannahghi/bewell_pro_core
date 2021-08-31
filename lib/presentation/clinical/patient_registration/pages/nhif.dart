@@ -1,3 +1,5 @@
+import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/clinical/patient_registration/patient_payload_helper.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
@@ -59,6 +61,9 @@ class _NHIFState extends State<NHIF> {
 
   @override
   Widget build(BuildContext context) {
+    final String userStr = StoreProvider.state<CoreState>(context)!
+        .userRegistrationState!
+        .userType;
     return OrientationBuilder(
       builder: (BuildContext context, Orientation orientation) => Scaffold(
         floatingActionButton: Padding(
@@ -114,7 +119,7 @@ class _NHIFState extends State<NHIF> {
                         : const EdgeInsets.only(bottom: 24.0),
                     child: Align(
                       alignment: Alignment.centerLeft,
-                      child: Text(providePatientNHIFInfoPrompt,
+                      child: Text(provideNHIFInfoPrompt(userStr),
                           style: PatientStyles.registerPatientSectionSubTitle),
                     ),
                   ),

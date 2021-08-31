@@ -354,6 +354,7 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
       children: <Widget>[
         Image.asset(
           favouriteHelpIconUrl,
+          height: 50,
         ),
         smallVerticalSizedBox,
         const Text(

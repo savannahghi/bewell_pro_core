@@ -44,7 +44,7 @@ class _SILBottomNavigatorBarState extends State<SILBottomNavigatorBar>
       selectedItemColor: Theme.of(context).primaryColor,
       unselectedItemColor: Colors.black45,
       onTap: (int index) async {
-        if (index != bottomBarIndex || drawerSelectedIndex > 0) {
+        if (index != bottomBarIndex || drawerSelectedIndex >= 0) {
           StoreProvider.dispatch<CoreState>(
             context,
             NavigationAction(
