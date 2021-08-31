@@ -360,6 +360,8 @@ const String verifiedPhoneNumber = 'VERIFIED';
 const String verifyPhoneNumber = 'Kindly verify phone number';
 const String asteriskSymbol = '*';
 
+const String patientRegistrationResponse = 'registerPatient';
+
 String enterDob(String userType) =>
     'Enter the ${userType.toLowerCase()}\'s date of birth';
 const String hintDob = 'Date of Birth';

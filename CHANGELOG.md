@@ -1,4 +1,8 @@
 # CHANGELOG
+## 1.1.14-nullsafety
+
+- chore: user registration response
+
 ## 1.1.13-nullsafety
 
 - feat: user registration

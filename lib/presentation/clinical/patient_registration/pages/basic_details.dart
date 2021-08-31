@@ -70,6 +70,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
   bool isCameraPermanentlyDenied = true;
 
   String userRegistrationMutation = '';
+  String userResponse = '';
 
   @override
   void initState() {
@@ -121,6 +122,10 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
     userRegistrationMutation = StoreProvider.state<CoreState>(context)!
         .userRegistrationState!
         .userRegistrationMutation;
+
+    userResponse = StoreProvider.state<CoreState>(context)!
+        .userRegistrationState!
+        .userResponse;
 
     final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
 
@@ -420,9 +425,9 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
       return;
     }
 
-    if (result['registerPatient'] != null) {
-      final PatientPayload patientPayload = PatientPayload.fromJson(
-          result['registerPatient'] as Map<String, dynamic>);
+    if (result[userResponse] != null) {
+      final PatientPayload patientPayload =
+          PatientPayload.fromJson(result[userResponse] as Map<String, dynamic>);
 
       PatientRegistrationContainer.of(context)
           ?.currentPatient

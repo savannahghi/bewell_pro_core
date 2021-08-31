@@ -24,11 +24,15 @@ class _$UserRegistrationStateTearOff {
   _UserRegistrationState call(
       {required String userType,
       required String userRegistrationMutation,
-      required String primaryRouteName}) {
+      required String userResponse,
+      required String primaryRouteName,
+      required String secondaryRouteName}) {
     return _UserRegistrationState(
       userType: userType,
       userRegistrationMutation: userRegistrationMutation,
+      userResponse: userResponse,
       primaryRouteName: primaryRouteName,
+      secondaryRouteName: secondaryRouteName,
     );
   }
 
@@ -44,7 +48,9 @@ const $UserRegistrationState = _$UserRegistrationStateTearOff();
 mixin _$UserRegistrationState {
   String get userType => throw _privateConstructorUsedError;
   String get userRegistrationMutation => throw _privateConstructorUsedError;
+  String get userResponse => throw _privateConstructorUsedError;
   String get primaryRouteName => throw _privateConstructorUsedError;
+  String get secondaryRouteName => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -60,7 +66,9 @@ abstract class $UserRegistrationStateCopyWith<$Res> {
   $Res call(
       {String userType,
       String userRegistrationMutation,
-      String primaryRouteName});
+      String userResponse,
+      String primaryRouteName,
+      String secondaryRouteName});
 }
 
 /// @nodoc
@@ -76,7 +84,9 @@ class _$UserRegistrationStateCopyWithImpl<$Res>
   $Res call({
     Object? userType = freezed,
     Object? userRegistrationMutation = freezed,
+    Object? userResponse = freezed,
     Object? primaryRouteName = freezed,
+    Object? secondaryRouteName = freezed,
   }) {
     return _then(_value.copyWith(
       userType: userType == freezed
@@ -87,9 +97,17 @@ class _$UserRegistrationStateCopyWithImpl<$Res>
           ? _value.userRegistrationMutation
           : userRegistrationMutation // ignore: cast_nullable_to_non_nullable
               as String,
+      userResponse: userResponse == freezed
+          ? _value.userResponse
+          : userResponse // ignore: cast_nullable_to_non_nullable
+              as String,
       primaryRouteName: primaryRouteName == freezed
           ? _value.primaryRouteName
           : primaryRouteName // ignore: cast_nullable_to_non_nullable
+              as String,
+      secondaryRouteName: secondaryRouteName == freezed
+          ? _value.secondaryRouteName
+          : secondaryRouteName // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -105,7 +123,9 @@ abstract class _$UserRegistrationStateCopyWith<$Res>
   $Res call(
       {String userType,
       String userRegistrationMutation,
-      String primaryRouteName});
+      String userResponse,
+      String primaryRouteName,
+      String secondaryRouteName});
 }
 
 /// @nodoc
@@ -123,7 +143,9 @@ class __$UserRegistrationStateCopyWithImpl<$Res>
   $Res call({
     Object? userType = freezed,
     Object? userRegistrationMutation = freezed,
+    Object? userResponse = freezed,
     Object? primaryRouteName = freezed,
+    Object? secondaryRouteName = freezed,
   }) {
     return _then(_UserRegistrationState(
       userType: userType == freezed
@@ -134,9 +156,17 @@ class __$UserRegistrationStateCopyWithImpl<$Res>
           ? _value.userRegistrationMutation
           : userRegistrationMutation // ignore: cast_nullable_to_non_nullable
               as String,
+      userResponse: userResponse == freezed
+          ? _value.userResponse
+          : userResponse // ignore: cast_nullable_to_non_nullable
+              as String,
       primaryRouteName: primaryRouteName == freezed
           ? _value.primaryRouteName
           : primaryRouteName // ignore: cast_nullable_to_non_nullable
+              as String,
+      secondaryRouteName: secondaryRouteName == freezed
+          ? _value.secondaryRouteName
+          : secondaryRouteName // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -148,7 +178,9 @@ class _$_UserRegistrationState implements _UserRegistrationState {
   _$_UserRegistrationState(
       {required this.userType,
       required this.userRegistrationMutation,
-      required this.primaryRouteName});
+      required this.userResponse,
+      required this.primaryRouteName,
+      required this.secondaryRouteName});
 
   factory _$_UserRegistrationState.fromJson(Map<String, dynamic> json) =>
       _$_$_UserRegistrationStateFromJson(json);
@@ -158,11 +190,15 @@ class _$_UserRegistrationState implements _UserRegistrationState {
   @override
   final String userRegistrationMutation;
   @override
+  final String userResponse;
+  @override
   final String primaryRouteName;
+  @override
+  final String secondaryRouteName;
 
   @override
   String toString() {
-    return 'UserRegistrationState(userType: $userType, userRegistrationMutation: $userRegistrationMutation, primaryRouteName: $primaryRouteName)';
+    return 'UserRegistrationState(userType: $userType, userRegistrationMutation: $userRegistrationMutation, userResponse: $userResponse, primaryRouteName: $primaryRouteName, secondaryRouteName: $secondaryRouteName)';
   }
 
   @override
@@ -177,9 +213,15 @@ class _$_UserRegistrationState implements _UserRegistrationState {
                 const DeepCollectionEquality().equals(
                     other.userRegistrationMutation,
                     userRegistrationMutation)) &&
+            (identical(other.userResponse, userResponse) ||
+                const DeepCollectionEquality()
+                    .equals(other.userResponse, userResponse)) &&
             (identical(other.primaryRouteName, primaryRouteName) ||
                 const DeepCollectionEquality()
-                    .equals(other.primaryRouteName, primaryRouteName)));
+                    .equals(other.primaryRouteName, primaryRouteName)) &&
+            (identical(other.secondaryRouteName, secondaryRouteName) ||
+                const DeepCollectionEquality()
+                    .equals(other.secondaryRouteName, secondaryRouteName)));
   }
 
   @override
@@ -187,7 +229,9 @@ class _$_UserRegistrationState implements _UserRegistrationState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(userType) ^
       const DeepCollectionEquality().hash(userRegistrationMutation) ^
-      const DeepCollectionEquality().hash(primaryRouteName);
+      const DeepCollectionEquality().hash(userResponse) ^
+      const DeepCollectionEquality().hash(primaryRouteName) ^
+      const DeepCollectionEquality().hash(secondaryRouteName);
 
   @JsonKey(ignore: true)
   @override
@@ -205,7 +249,9 @@ abstract class _UserRegistrationState implements UserRegistrationState {
   factory _UserRegistrationState(
       {required String userType,
       required String userRegistrationMutation,
-      required String primaryRouteName}) = _$_UserRegistrationState;
+      required String userResponse,
+      required String primaryRouteName,
+      required String secondaryRouteName}) = _$_UserRegistrationState;
 
   factory _UserRegistrationState.fromJson(Map<String, dynamic> json) =
       _$_UserRegistrationState.fromJson;
@@ -215,7 +261,11 @@ abstract class _UserRegistrationState implements UserRegistrationState {
   @override
   String get userRegistrationMutation => throw _privateConstructorUsedError;
   @override
+  String get userResponse => throw _privateConstructorUsedError;
+  @override
   String get primaryRouteName => throw _privateConstructorUsedError;
+  @override
+  String get secondaryRouteName => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$UserRegistrationStateCopyWith<_UserRegistrationState> get copyWith =>

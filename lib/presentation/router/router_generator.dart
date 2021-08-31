@@ -121,7 +121,9 @@ class RouteGenerator {
         final dynamic args = UserRegistrationState(
           userType: patientStr,
           userRegistrationMutation: registerPatientQuery,
+          userResponse: patientRegistrationResponse,
           primaryRouteName: patientsPageRoute,
+          secondaryRouteName: patientIdentificationRoute,
         );
         return MaterialPageRoute<PatientRegistration>(
             builder: (_) => PatientRegistration(

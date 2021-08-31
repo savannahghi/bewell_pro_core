@@ -35,7 +35,9 @@ void main() {
               userRegistrationState: UserRegistrationState(
                 userType: patientStr,
                 userRegistrationMutation: registerPatientQuery,
+                userResponse: patientRegistrationResponse,
                 primaryRouteName: patientsPageRoute,
+                secondaryRouteName: patientIdentificationRoute,
               ),
             ));
 
@@ -57,7 +59,9 @@ void main() {
             userRegistrationState: UserRegistrationState(
               userType: patientStr,
               userRegistrationMutation: registerPatientQuery,
+              userResponse: patientRegistrationResponse,
               primaryRouteName: patientsPageRoute,
+              secondaryRouteName: patientIdentificationRoute,
             ),
           ));
 
