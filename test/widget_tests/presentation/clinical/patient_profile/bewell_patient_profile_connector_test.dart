@@ -1,4 +1,6 @@
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';
@@ -22,6 +24,7 @@ import '../../../../mocks/test_helpers.dart';
 void main() {
   group('BewellPatientProfileConnector', () {
     testWidgets('should start visit on click', (WidgetTester tester) async {
+      AppBrand().appLogo.add(cameraIconUrl);
       startMockVisitAndExam();
 
       const String testPhoneNumber = '+254798000000';
@@ -69,6 +72,7 @@ void main() {
 
         expect(mockStore.state.clinicalState?.startVisitType,
             StartVisitType.requestAccess);
+        AppBrand().appLogo.add('');
       });
     });
   });

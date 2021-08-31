@@ -1,4 +1,6 @@
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
@@ -14,6 +16,8 @@ import '../../../../../../mocks/test_helpers.dart';
 void main() {
   testWidgets('patient search page renders correctly',
       (WidgetTester widgetTester) async {
+    AppBrand().appLogo.add(cameraIconUrl);
+
     await mockNetworkImages(() async {
       await buildTestWidget(
         tester: widgetTester,
@@ -28,6 +32,8 @@ void main() {
       expect(find.byKey(AppWidgetKeys.patientSearchDoneKey), findsOneWidget);
 
       expect(find.byType(SearchGuide), findsOneWidget);
+
+      AppBrand().appLogo.add('');
     });
   });
 

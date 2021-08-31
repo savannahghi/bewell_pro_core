@@ -6,7 +6,7 @@ import 'package:bewell_pro_core/application/core/theme/colors.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
-import 'package:bewell_pro_core/presentation/onboarding/common/widgets/bewell_logo.dart';
+import 'package:bewell_pro_core/presentation/onboarding/common/widgets/brand_logo.dart';
 import 'package:bewell_pro_core/presentation/onboarding/common/widgets/landing_actions.dart';
 import 'package:bewell_pro_core/presentation/onboarding/common/widgets/landing_page_image.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
@@ -117,7 +117,7 @@ class LandingPage extends StatelessWidget {
             Positioned(
               top: 40,
               left: 20,
-              child: BewellLogo(),
+              child: BrandLogo(),
             ),
           ],
         ),

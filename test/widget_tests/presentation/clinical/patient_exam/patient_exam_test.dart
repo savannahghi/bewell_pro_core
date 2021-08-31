@@ -1,4 +1,6 @@
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
@@ -50,6 +52,8 @@ void main() {
 
     testWidgets('should render correctly on largeScreen',
         (WidgetTester tester) async {
+      AppBrand().appLogo.add(cameraIconUrl);
+
       tester.binding.window.devicePixelRatioTestValue = 1.0;
       tester.binding.window.physicalSizeTestValue = tabletLandscape;
 
@@ -68,6 +72,7 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(find.byType(ExpansionTile), findsWidgets);
+        AppBrand().appLogo.add('');
 
         addTearDown(() {
           tester.binding.window.clearPhysicalSizeTestValue();
@@ -88,6 +93,8 @@ void main() {
 
     testWidgets('PatientExam should open endDrawer',
         (WidgetTester tester) async {
+      AppBrand().appLogo.add(cameraIconUrl);
+
       final BehaviorSubject<DrawerType> selectedDrawer =
           BehaviorSubject<DrawerType>();
       final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
@@ -114,10 +121,13 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.byType(Drawer), findsOneWidget);
+      AppBrand().appLogo.add('');
     });
 
     testWidgets('PatientExam back button navigates',
         (WidgetTester tester) async {
+      AppBrand().appLogo.add(cameraIconUrl);
+
       await buildTestWidget(
           tester: tester, store: store, widget: Scaffold(body: PatientExam()));
 
@@ -134,10 +144,14 @@ void main() {
 
       expect(find.byType(BewellPatientProfilePage), findsOneWidget);
       expect(find.byType(BeWellPrimaryPatientBanner), findsOneWidget);
+
+      AppBrand().appLogo.add('');
     });
 
     testWidgets('PatientExam should open endDrawer on a larger screen',
         (WidgetTester tester) async {
+      AppBrand().appLogo.add(cameraIconUrl);
+
       tester.binding.window.devicePixelRatioTestValue = 1.0;
       tester.binding.window.physicalSizeTestValue = tabletLandscape;
       final BehaviorSubject<DrawerType> selectedDrawer =
@@ -166,6 +180,8 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.byType(Drawer), findsWidgets);
+
+      AppBrand().appLogo.add('');
 
       addTearDown(() {
         tester.binding.window.clearPhysicalSizeTestValue();

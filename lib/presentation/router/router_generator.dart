@@ -24,7 +24,6 @@ import 'package:bewell_pro_core/presentation/onboarding/login/widgets/recover_pi
 import 'package:bewell_pro_core/presentation/onboarding/profile/change_pin.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/communication_settings.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/pages/edit_profile_page.dart';
-import 'package:bewell_pro_core/presentation/onboarding/profile/pages/try_new_features_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/pages/user_profile_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/profile_contact_details.dart';
 import 'package:bewell_pro_core/presentation/onboarding/signup/phone_signup_page.dart';
@@ -119,11 +118,6 @@ class RouteGenerator {
       case addPatientRoute:
         return MaterialPageRoute<PatientRegistration>(
             builder: (_) => PatientRegistration());
-
-      case tryNewFeatureSettingsRoute:
-        return MaterialPageRoute<TryNewFeaturesPage>(
-          builder: (_) => TryNewFeaturesPage(),
-        );
 
       case profileContactDetailsRoute:
         return MaterialPageRoute<ProfileContactDetails>(

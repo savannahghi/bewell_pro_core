@@ -10,7 +10,6 @@ import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.d
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/pages/pin_verification_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/communication_settings.dart';
-import 'package:bewell_pro_core/presentation/onboarding/profile/pages/try_new_features_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/pages/user_profile_page.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/profile_contact_details.dart';
@@ -195,24 +194,6 @@ void main() {
       expect(routes[0], isA<MaterialPageRoute<CommunicationSettingsPage>>());
     });
 
-    testWidgets('tapping try new features navigates correctly',
-        (WidgetTester tester) async {
-      final List<Route<dynamic>?> routes = <Route<dynamic>?>[];
-
-      final TestNavigatorObserver navigatorObserver = TestNavigatorObserver(
-        onPush: (Route<dynamic>? route, Route<dynamic>? previousRoute) {
-          if (route?.settings.name != '/') {
-            routes.add(route);
-          }
-        },
-      );
-
-      await buildPage(tester, navigatorObserver);
-      expect(find.text(tryNewFeaturesText), findsOneWidget);
-      await tester.tap(find.text(tryNewFeaturesText));
-      expect(routes[0], isA<MaterialPageRoute<TryNewFeaturesPage>>());
-    });
-
     testWidgets('tapping terms of service navigates correctly',
         (WidgetTester tester) async {
       final List<Route<dynamic>?> routes = <Route<dynamic>?>[];
@@ -280,7 +261,6 @@ void main() {
         expect(find.text(changePINText), findsWidgets);
         expect(find.text(contactInfo), findsNWidgets(2));
         expect(find.text(communicationSettingsText), findsWidgets);
-        expect(find.text(tryNewFeaturesText), findsWidgets);
         expect(find.text(termsOfServiceText), findsWidgets);
 
         /// verify contact info navigates
@@ -297,10 +277,6 @@ void main() {
         expect(profileSubject.selectedTile.value, contactInfo);
 
         await tester.tap(find.byKey(const Key(communicationSettingsText)));
-        await tester.pump();
-        expect(profileSubject.selectedTile.value, contactInfo);
-
-        await tester.tap(find.byKey(const Key(tryNewFeaturesText)));
         await tester.pump();
         expect(profileSubject.selectedTile.value, contactInfo);
 

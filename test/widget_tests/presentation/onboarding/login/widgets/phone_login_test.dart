@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +34,7 @@ void main() {
     late Store<CoreState> store;
 
     setUp(() {
+      AppBrand().appLogo.add(cameraIconUrl);
       store = Store<CoreState>(initialState: CoreState.initial());
     });
 

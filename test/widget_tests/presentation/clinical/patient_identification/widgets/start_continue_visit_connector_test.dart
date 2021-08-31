@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
@@ -161,6 +163,8 @@ void main() {
 
     testWidgets('continues a visit when patient has open episodes',
         (WidgetTester tester) async {
+      AppBrand().appLogo.add(cameraIconUrl);
+
       store.dispatch(SavePatientRecordAction(patientEdge: patientWithEpisodes));
 
       await mockNetworkImages(() async {
@@ -181,6 +185,7 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(find.byType(BewellPatientProfileWidget), findsOneWidget);
+        AppBrand().appLogo.add('');
       });
     });
   });

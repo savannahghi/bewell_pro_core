@@ -1,4 +1,6 @@
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
@@ -14,6 +16,10 @@ void main() {
   group('ConfirmSurvey', () {
     final Store<CoreState> store =
         Store<CoreState>(initialState: CoreState.initial());
+
+    setUp(() {
+      AppBrand().appLogo.add(cameraIconUrl);
+    });
 
     testWidgets('should skip curvey correctly', (WidgetTester tester) async {
       await mockNetworkImages(() async {

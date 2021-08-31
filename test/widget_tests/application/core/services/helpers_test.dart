@@ -336,6 +336,8 @@ void main() {
       final Store<CoreState> store =
           Store<CoreState>(initialState: CoreState.initial());
 
+      AppBrand().appLogo.add(cameraIconUrl);
+
       await mockNetworkImages(() async {
         await buildTestWidget(
             tester: tester,
@@ -349,6 +351,7 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(find.byType(PatientSearchPage), findsOneWidget);
+        AppBrand().appLogo.add('');
       });
     });
   });
@@ -973,6 +976,8 @@ void main() {
 
       const ReviewSystems system = ReviewSystems.respiratory;
 
+      AppBrand().appLogo.add(cameraIconUrl);
+
       /// Should add the selectedDrawer to scaffold & open it
       await buildTestWidget(
           tester: tester,
@@ -996,6 +1001,8 @@ void main() {
       // verify drawer is open
       expect(find.text('Congest'), findsOneWidget);
       expect(find.byType(SILDrawerHeader), findsOneWidget);
+
+      AppBrand().appLogo.add('');
     });
   });
 

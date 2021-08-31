@@ -1,3 +1,5 @@
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
@@ -96,6 +98,8 @@ void main() {
 
     testWidgets('saves when prefix is not waiting',
         (WidgetTester tester) async {
+      AppBrand().appLogo.add(cameraIconUrl);
+
       store.dispatch(WaitAction<CoreState>.remove(
         update_names_flag,
         ref: '${update_names_flag}_ref',

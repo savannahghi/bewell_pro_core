@@ -21,7 +21,6 @@ import 'package:bewell_pro_core/presentation/onboarding/login/widgets/recover_pi
 import 'package:bewell_pro_core/presentation/onboarding/profile/change_pin.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/communication_settings.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/pages/edit_profile_page.dart';
-import 'package:bewell_pro_core/presentation/onboarding/profile/pages/try_new_features_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/pages/user_profile_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/profile_contact_details.dart';
 import 'package:bewell_pro_core/presentation/onboarding/signup/phone_signup_page.dart';
@@ -220,30 +219,6 @@ void main() {
 
     expect(route, isA<MaterialPageRoute<PatientRegistration>>());
     expect(route.builder(context), isA<PatientRegistration>());
-  });
-
-  test('Test router returns TryNewFeaturesPage', () {
-    const RouteSettings settings = RouteSettings(
-        name: tryNewFeatureSettingsRoute,
-        arguments: <String, dynamic>{'test': 'value'});
-
-    final MaterialPageRoute<TryNewFeaturesPage> route =
-        routeGenerator(settings)! as MaterialPageRoute<TryNewFeaturesPage>;
-
-    expect(route, isA<MaterialPageRoute<TryNewFeaturesPage>>());
-    expect(route.builder(context), isA<TryNewFeaturesPage>());
-  });
-
-  test('Test router returns TryNewFeaturesPage', () {
-    const RouteSettings settings = RouteSettings(
-        name: tryNewFeatureSettingsRoute,
-        arguments: <String, dynamic>{'test': 'value'});
-
-    final MaterialPageRoute<TryNewFeaturesPage> route =
-        routeGenerator(settings)! as MaterialPageRoute<TryNewFeaturesPage>;
-
-    expect(route, isA<MaterialPageRoute<TryNewFeaturesPage>>());
-    expect(route.builder(context), isA<TryNewFeaturesPage>());
   });
 
   test('Test router returns ProfileContactDetails', () {

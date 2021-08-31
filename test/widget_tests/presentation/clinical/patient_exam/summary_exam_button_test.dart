@@ -1,4 +1,6 @@
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -109,6 +111,8 @@ void main() {
     testWidgets(
         'renders correctly and works correctly when pressed and otp is wrong',
         (WidgetTester tester) async {
+      AppBrand().appLogo.add(cameraIconUrl);
+
       int sendOtpCalls = 0;
 
       await mockNetworkImages(() async {
@@ -138,6 +142,7 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(sendOtpCalls, 1);
+        AppBrand().appLogo.add('');
       });
     });
 

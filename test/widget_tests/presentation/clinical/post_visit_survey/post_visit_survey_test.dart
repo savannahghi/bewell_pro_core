@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
@@ -21,13 +23,17 @@ void main() {
     final Store<CoreState> store =
         Store<CoreState>(initialState: CoreState.initial());
 
+    setUp(() {
+      AppBrand().appLogo.add(cameraIconUrl);
+    });
+
     testWidgets('Renders the text form Fields', (WidgetTester tester) async {
       await mockNetworkImages(() async {
         await tester.pumpWidget(
           StoreProvider<CoreState>(
             store: store,
             child: AppWrapper(
-              appName: appName,
+              appName: AppBrand().appName.value,
               graphQLClient: mockGraphQlClient,
               appContexts: testAppContexts,
               child: MaterialApp(

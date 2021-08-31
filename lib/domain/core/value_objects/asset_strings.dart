@@ -42,7 +42,6 @@ const String galleryIconUrl = 'assets/icons/gallery.png';
 const String checkIconUrl = 'assets/icons/check.png';
 
 const String closeIconUrl = 'assets/icons/close.png';
-const String bewellLogo = 'assets/icons/logo.svg';
 const String emptyIconUrl = 'assets/icons/empty_inbox.svg';
 const String emptyDataUrl = 'assets/images/no_data.svg';
 

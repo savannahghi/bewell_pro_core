@@ -1,4 +1,5 @@
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +40,7 @@ Future<void> buildTestWidget({
   await tester.pumpWidget(
     AppWrapperBase(
       graphQLClient: graphQlClient ?? mockGraphQlClient,
-      appName: appName,
+      appName: AppBrand().appName.value,
       appContexts: testAppContexts,
       deviceCapabilities: deviceCapabilities,
       child: StoreProvider<CoreState>(

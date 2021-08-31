@@ -1,4 +1,6 @@
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -15,6 +17,7 @@ void main() {
     late Store<CoreState> store;
 
     setUpAll(() {
+      AppBrand().appLogo.add(cameraIconUrl);
       store = Store<CoreState>(initialState: CoreState.initial());
     });
 

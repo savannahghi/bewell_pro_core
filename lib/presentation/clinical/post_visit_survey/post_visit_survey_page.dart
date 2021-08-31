@@ -37,11 +37,11 @@ class BeWellPostVisitSurveyPageState extends State<BeWellPostVisitSurveyPage> {
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  void rateMessages(int currentRating, String appName) {
+  void rateMessages(int currentRating) {
     if (currentRating <= 2) {
       feedback = lowRatingMessage;
     } else if ((currentRating > 2) && (currentRating < 4)) {
-      feedback = mediumRatingMessage + appName;
+      feedback = mediumRatingMessage + AppBrand().appName.value;
     } else if (currentRating >= 4) {
       feedback = highRatingMessage;
     }
@@ -154,7 +154,7 @@ class BeWellPostVisitSurveyPageState extends State<BeWellPostVisitSurveyPage> {
 
                               isStarSelected = true;
 
-                              rateMessages(currentRating, appName);
+                              rateMessages(currentRating);
                             }),
                             currentRating: currentRating,
                           ),

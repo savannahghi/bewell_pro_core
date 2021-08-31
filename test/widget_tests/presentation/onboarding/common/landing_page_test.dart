@@ -1,3 +1,5 @@
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
@@ -11,6 +13,10 @@ import '../../../../mocks/test_helpers.dart';
 
 void main() {
   group('Landing Page', () {
+    setUp(() {
+      AppBrand().appLogo.add(cameraIconUrl);
+    });
+
     testWidgets('terms and condition widget renders correctly',
         (WidgetTester tester) async {
       tester.binding.window.devicePixelRatioTestValue = 1.0;
@@ -34,9 +40,11 @@ void main() {
     });
 
     testWidgets('willPopCallback works', (WidgetTester tester) async {
-      await tester.pumpWidget(MaterialApp(
-        home: LandingPage(),
-      ));
+      await tester.pumpWidget(
+        MaterialApp(
+          home: LandingPage(),
+        ),
+      );
 
       await tester.pump();
 

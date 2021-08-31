@@ -1,3 +1,4 @@
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
@@ -26,9 +27,11 @@ class SearchResult {
 
 double searchIconHeight = 80.0;
 
+final String appName = AppBrand().appName.value;
+
 List<SearchResult> searchResults = <SearchResult>[
   SearchResult(
-    name: helpCenter,
+    name: '$appName $helpCenter',
     route: helpCenterRoute,
     aliases: <String>[
       'help',

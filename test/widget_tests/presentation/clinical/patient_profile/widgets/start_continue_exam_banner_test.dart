@@ -1,4 +1,6 @@
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
@@ -21,6 +23,7 @@ void main() {
   late Store<CoreState> store;
 
   setUp(() {
+    AppBrand().appLogo.add(cameraIconUrl);
     store = Store<CoreState>(
       initialState: CoreState.initial().copyWith(
           clinicalState: ClinicalState(

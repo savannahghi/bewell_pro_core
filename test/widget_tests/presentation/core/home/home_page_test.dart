@@ -9,6 +9,7 @@ import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/presentation/core/global_search/sil_search.dart';
 import 'package:bewell_pro_core/presentation/core/home/pages/home_page.dart';
 import 'package:bewell_pro_core/presentation/core/home/widgets/feed_component_wrapper.dart';
@@ -29,6 +30,7 @@ void main() {
     late Store<CoreState> store;
 
     setUp(() {
+      AppBrand().appLogo.add(cameraIconUrl);
       store = Store<CoreState>(initialState: CoreState.initial());
     });
 

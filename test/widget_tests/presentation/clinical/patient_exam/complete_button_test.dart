@@ -1,4 +1,5 @@
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
@@ -41,6 +42,8 @@ void main() {
   testWidgets(
       'complete button shows a snackbar is the user has not added'
       ' anything to the patient\'s exam', (WidgetTester tester) async {
+    AppBrand().appLogo.add(cameraIconUrl);
+
     await mockNetworkImages(() async {
       await buildTestWidget(
         tester: tester,
@@ -68,6 +71,8 @@ void main() {
 
       // verify the app navigated
       expect(find.byType(PatientExamSummary), findsOneWidget);
+
+      AppBrand().appLogo.add('');
     });
   });
 }
