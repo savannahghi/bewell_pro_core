@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.11-nullsafety
+
+- chore: add title to help center page
+
 ## 1.1.10-nullsafety
 
 - chore: upgrade dart_fcm package
