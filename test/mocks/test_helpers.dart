@@ -32,6 +32,7 @@ Future<void> buildTestWidget({
   List<NavigatorObserver>? navigatorObservers,
   Widget? endDrawer,
   Duration? duration,
+  List<AppContext>? appContexts,
 }) async {
   final Store<CoreState> _store =
       Store<CoreState>(initialState: CoreState.initial());
@@ -41,7 +42,7 @@ Future<void> buildTestWidget({
     AppWrapperBase(
       graphQLClient: graphQlClient ?? mockGraphQlClient,
       appName: AppBrand().appName.value,
-      appContexts: testAppContexts,
+      appContexts: appContexts ?? testAppContexts,
       deviceCapabilities: deviceCapabilities,
       child: StoreProvider<CoreState>(
         store: store ?? _store,

@@ -36,23 +36,21 @@ const String userProfileRoute = '/userProfile';
 
 const String channelsPageRoute = '/channelsPage';
 
-const String helpCenterRoute = '/helpCenter';
+const String helpCenterPageRoute = '/helpCenter';
 
 const String comingSoon = '/comingSoon';
 
 const String proFeedItemThreadPageRoute = '/proFeedItemThreadPage';
 
-const String webViewRoute = '/webView';
+const String termsAndConditionsRoute = '/termsAndConditions';
 
 const String setPartnerPageRoute = '/setPartnerPage';
 
-const String commSettingsRoute = '/commSettings';
+const String communicationSettingsRoute = '/communicationSettings';
 
 const String editUserProfileRoute = '/edit_user_profile';
 
 const String providerSearchPageRoute = '/providerSearchPage';
-
-const String ediLoginPageRoute = '/ediLoginPage';
 
 const String defaultBranchPickerPageRoute = '/defaultBranchPickerPage';
 
@@ -66,7 +64,7 @@ const String tryNewFeatureSettingsRoute = '/tryNewFeatureSettings';
 
 const String patientIdentificationRoute = '/searchFindPatient';
 
-const String startVisitRoute = '/startVisitPage';
+const String startVisitPageRoute = '/startVisitPage';
 
 const String addPatientRoute = '/addPatient';
 

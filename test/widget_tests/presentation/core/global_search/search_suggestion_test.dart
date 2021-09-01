@@ -10,7 +10,7 @@ void main() {
   test('search suggestion is correct', () {
     final SearchSuggestion result = SearchSuggestion(
       name: helpCenter,
-      route: helpCenterRoute,
+      route: helpCenterPageRoute,
       image: SvgPicture.asset(userProfileIconUrl, height: 80, width: 80),
       aliases: <String>[
         'help',
@@ -28,7 +28,7 @@ void main() {
     );
     expect(result.aliases, isNotNull);
     expect(result.name, helpCenter);
-    expect(result.route, helpCenterRoute);
+    expect(result.route, helpCenterPageRoute);
     expect(result.onTap, isNotNull);
   });
 }

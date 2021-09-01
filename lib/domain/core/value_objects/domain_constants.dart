@@ -13,3 +13,5 @@ const String defaultDate = '1970-01-01';
 
 final GlobalKey<NavigatorState> globalAppNavigatorKey =
     GlobalKey<NavigatorState>();
+
+const String afyaMojaTermsUrl = 'https://legal.healthcloud.co.ke/terms';

@@ -36,7 +36,7 @@ List<ProfileItem> profileItems = <ProfileItem>[
   ProfileItem(
     text: communicationSettingsText,
     section: ProfileItemType.account,
-    onTapRoute: commSettingsRoute,
+    onTapRoute: communicationSettingsRoute,
     tabletWidget: BuildCommunicationItems(),
   ),
   const ProfileItem(
@@ -47,6 +47,6 @@ List<ProfileItem> profileItems = <ProfileItem>[
   const ProfileItem(
     text: termsOfServiceText,
     section: ProfileItemType.legal,
-    onTapRoute: webViewRoute,
+    onTapRoute: termsAndConditionsRoute,
   ),
 ];

@@ -1399,7 +1399,7 @@ packages:
       name: user_profile
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.21-nullsafety"
+    version: "0.1.22-nullsafety"
   uuid:
     dependency: transitive
     description:

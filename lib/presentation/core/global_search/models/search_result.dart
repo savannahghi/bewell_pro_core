@@ -32,7 +32,7 @@ final String appName = AppBrand().appName.value;
 List<SearchResult> searchResults = <SearchResult>[
   SearchResult(
     name: '$appName $helpCenter',
-    route: helpCenterRoute,
+    route: helpCenterPageRoute,
     aliases: <String>[
       'help',
       'help center',
@@ -47,7 +47,7 @@ List<SearchResult> searchResults = <SearchResult>[
         height: searchIconHeight, width: searchIconHeight),
     onTap: (BuildContext context) async {
       await Navigator.of(context, rootNavigator: true)
-          .pushNamed(helpCenterRoute);
+          .pushNamed(helpCenterPageRoute);
     },
   ),
 

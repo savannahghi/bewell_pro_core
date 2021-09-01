@@ -84,20 +84,22 @@ class RouteGenerator {
         return MaterialPageRoute<ConfirmSurveyPage>(
             builder: (_) => ConfirmSurveyPage());
 
-      case helpCenterRoute:
+      case helpCenterPageRoute:
         return MaterialPageRoute<HelpCenterPage>(
             builder: (_) => const HelpCenterPage());
 
-      case webViewRoute:
+      case termsAndConditionsRoute:
+        final String? termsUrl = args as String?;
         return MaterialPageRoute<TermsAndConditionsPage>(
-            builder: (_) => TermsAndConditionsPage());
+          builder: (_) => TermsAndConditionsPage(termsUrl: termsUrl),
+        );
 
       case userProfileRoute:
         return MaterialPageRoute<UserProfilePage>(
           builder: (_) => UserProfilePage(),
         );
 
-      case commSettingsRoute:
+      case communicationSettingsRoute:
         return MaterialPageRoute<CommunicationSettingsPage>(
           builder: (_) => CommunicationSettingsPage(),
         );
@@ -140,7 +142,7 @@ class RouteGenerator {
           builder: (_) => const PatientSearchPage(),
         );
 
-      case startVisitRoute:
+      case startVisitPageRoute:
         return MaterialPageRoute<StartVisitPage>(
           builder: (_) => const StartVisitPage(),
         );

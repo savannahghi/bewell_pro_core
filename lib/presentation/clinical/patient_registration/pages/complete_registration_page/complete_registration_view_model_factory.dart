@@ -26,7 +26,7 @@ class CompleteRegistrationViewModelFactory
 
   void onStartVisit(BuildContext context, StartVisitType startVisitType) {
     startVisitByType(context, startVisitType, state);
-    dispatch(NavigateAction<CoreState>.pushNamed(startVisitRoute));
+    dispatch(NavigateAction<CoreState>.pushNamed(startVisitPageRoute));
   }
 
   void updatePatientRecord(PatientPayload payload) {

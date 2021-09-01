@@ -1,3 +1,4 @@
+import 'package:app_wrapper/app_wrapper.dart';
 import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:flutter/cupertino.dart';
@@ -11,12 +12,21 @@ import 'package:shared_themes/text_themes.dart';
 /// This class is the [profile footer]
 /// It holds the widgets for copyright declaration and current year
 class BuildProfileFooter extends StatelessWidget {
-  final ReduxAction<CoreState>? logoutAction;
-
   const BuildProfileFooter({Key? key, this.logoutAction}) : super(key: key);
+
+  final ReduxAction<CoreState>? logoutAction;
 
   @override
   Widget build(BuildContext context) {
+    final List<AppContext> appContext = AppWrapperBase.of(context)!.appContexts;
+
+    String? copyrightString;
+    if (appContext.contains(AppContext.AfyaMoja)) {
+      copyrightString = afyaMojaCopyrightString;
+    } else {
+      copyrightString = bewellCopyrightString;
+    }
+
     return Column(
       children: <Widget>[
         Builder(builder: (BuildContext context) {

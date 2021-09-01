@@ -1,4 +1,9 @@
 # CHANGELOG
+
+## 1.1.15-nullsafety
+
+- fix: terms and conditions
+
 ## 1.1.14-nullsafety
 
 - chore: user registration response

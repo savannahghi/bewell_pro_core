@@ -39,9 +39,9 @@ List<SearchSuggestion> recentSearches = <SearchSuggestion>[
     ],
     image: SvgPicture.asset(helpTabIconUrl, color: Colors.grey),
     onTap: (BuildContext context) async {
-      triggerNavigationEvent(context: context, route: helpCenterRoute);
+      triggerNavigationEvent(context: context, route: helpCenterPageRoute);
     },
-    route: helpCenterRoute,
+    route: helpCenterPageRoute,
   ),
   SearchSuggestion(
     name: userProfile,
@@ -77,9 +77,9 @@ List<SearchSuggestion> searchSuggestions = <SearchSuggestion>[
     ],
     image: SvgPicture.asset(helpTabIconUrl, color: Colors.grey),
     onTap: (BuildContext context) async {
-      triggerNavigationEvent(context: context, route: helpCenterRoute);
+      triggerNavigationEvent(context: context, route: helpCenterPageRoute);
     },
-    route: helpCenterRoute,
+    route: helpCenterPageRoute,
   ),
 
   //profile
