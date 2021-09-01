@@ -22,5 +22,5 @@ List<NavigationItem> navigationItems() => <NavigationItem>[
           icon: NavigationIcon(iconUrl: helpNavDrawerIconUrl),
           title: navDrawerGetHelpText,
           isFavourite: false,
-          route: helpCenterRoute),
+          route: helpCenterPageRoute),
     ];

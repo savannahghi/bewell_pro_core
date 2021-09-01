@@ -139,7 +139,7 @@ void main() {
   });
 
   test('Test router returns HelpCenter', () {
-    const RouteSettings settings = RouteSettings(name: helpCenterRoute);
+    const RouteSettings settings = RouteSettings(name: helpCenterPageRoute);
 
     final MaterialPageRoute<HelpCenterPage> route =
         routeGenerator(settings)! as MaterialPageRoute<HelpCenterPage>;
@@ -149,8 +149,8 @@ void main() {
   });
 
   test('Test router returns TermsAndConditionsPage', () {
-    const RouteSettings settings = RouteSettings(
-        name: webViewRoute, arguments: <String, dynamic>{'test': 'value'});
+    const RouteSettings settings =
+        RouteSettings(name: termsAndConditionsRoute, arguments: 'some url');
 
     final MaterialPageRoute<TermsAndConditionsPage> route =
         routeGenerator(settings)! as MaterialPageRoute<TermsAndConditionsPage>;
@@ -170,7 +170,8 @@ void main() {
   });
 
   test('Test router returns CommunicationSettingsPage', () {
-    const RouteSettings settings = RouteSettings(name: commSettingsRoute);
+    const RouteSettings settings =
+        RouteSettings(name: communicationSettingsRoute);
 
     final MaterialPageRoute<CommunicationSettingsPage> route =
         routeGenerator(settings)!
@@ -298,7 +299,7 @@ void main() {
 
   test('Test router returns StartVisitPage', () {
     const RouteSettings settings = RouteSettings(
-      name: startVisitRoute,
+      name: startVisitPageRoute,
     );
 
     final MaterialPageRoute<StartVisitPage> route =

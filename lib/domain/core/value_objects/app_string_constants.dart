@@ -17,7 +17,10 @@ const String confirmExitPrompt = 'Are you sure you want to exit?';
 const String stayBtnText = 'Stay';
 const String exitBtnText = 'Exit';
 
-final String copyrightString = 'Copyright ©️ ${returnCurrentYear()} Be.Well';
+final String bewellCopyrightString =
+    'Copyright ©️ ${returnCurrentYear()} Be.Well';
+final String afyaMojaCopyrightString =
+    'Copyright ©️ ${returnCurrentYear()} Healthcloud';
 
 // Communication Setting Strings
 const String emailSubtitle =

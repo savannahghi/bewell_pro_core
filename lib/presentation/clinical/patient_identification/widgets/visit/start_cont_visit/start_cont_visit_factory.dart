@@ -58,7 +58,7 @@ class StartContinueVisitViewModelFactory
           break;
         }
     }
-    dispatch(NavigateAction<CoreState>.pushNamed(startVisitRoute));
+    dispatch(NavigateAction<CoreState>.pushNamed(startVisitPageRoute));
   }
 
   void startVisitByRequestAccess(BuildContext context, String? phoneContact) {

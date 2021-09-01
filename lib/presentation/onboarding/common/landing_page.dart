@@ -1,3 +1,5 @@
+import 'package:app_wrapper/app_wrapper.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/domain_constants.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -148,7 +150,18 @@ Widget termsAndConditions(BuildContext context,
                 ),
             recognizer: TapGestureRecognizer()
               ..onTap = () {
-                triggerNavigationEvent(context: context, route: webViewRoute);
+                final List<AppContext> appContext =
+                    AppWrapperBase.of(context)!.appContexts;
+
+                String? termsUrl;
+                if (appContext.contains(AppContext.AfyaMoja)) {
+                  termsUrl = afyaMojaTermsUrl;
+                }
+
+                triggerNavigationEvent(
+                    context: context,
+                    route: termsAndConditionsRoute,
+                    args: termsUrl);
               },
           ),
         ],

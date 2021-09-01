@@ -1,4 +1,6 @@
+import 'package:app_wrapper/app_wrapper.dart';
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/domain_constants.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:domain_objects/value_objects.dart';
 import 'package:flutter/material.dart';
@@ -22,14 +24,13 @@ import 'build_profile_footer.dart';
 
 /// used for [master view] in master detail ui
 class ProfileMasterDetail extends StatefulWidget {
-  final ReduxAction<CoreState> logoutAction;
-
   const ProfileMasterDetail({
     Key? key,
     required this.selection,
     required this.logoutAction,
   }) : super(key: key);
 
+  final ReduxAction<CoreState> logoutAction;
   final ValueNotifier<ProfileItem> selection;
 
   @override
@@ -119,9 +120,17 @@ class _ProfileMasterDetailState extends State<ProfileMasterDetail> {
             } else {
               profileSubject.color.add(Colors.purple[100]!);
 
-              if (val.onTapRoute == webViewRoute) {
+              if (val.onTapRoute == termsAndConditionsRoute) {
+                final List<AppContext> appContext =
+                    AppWrapperBase.of(context)!.appContexts;
+
+                String? termsUrl;
+                if (appContext.contains(AppContext.AfyaMoja)) {
+                  termsUrl = afyaMojaTermsUrl;
+                }
+
                 await triggerNavigationEvent(
-                    context: context, route: val.onTapRoute);
+                    context: context, route: val.onTapRoute, args: termsUrl);
               }
             }
           },
