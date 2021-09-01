@@ -17,6 +17,7 @@ import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/domain_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/enums.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/events.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/login_constants.dart';
@@ -705,6 +706,17 @@ Future<void> navigateToProfileItemPage({
         context: context,
         route: profileItem.onTapRoute,
         args: PinVerificationType.pinChange);
+  }
+  if (profileItem.onTapRoute == termsAndConditionsRoute) {
+    final List<AppContext> appContext = AppWrapperBase.of(context)!.appContexts;
+
+    String? termsUrl;
+    if (appContext.contains(AppContext.AfyaMoja)) {
+      termsUrl = afyaMojaTermsUrl;
+    }
+
+    await triggerNavigationEvent(
+        context: context, route: profileItem.onTapRoute, args: termsUrl);
   } else {
     await triggerNavigationEvent(
         context: context, route: profileItem.onTapRoute);
