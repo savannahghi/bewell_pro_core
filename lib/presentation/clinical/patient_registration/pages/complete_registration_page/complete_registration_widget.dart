@@ -1,7 +1,6 @@
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:flutter/material.dart';
 import 'package:bewell_pro_core/application/clinical/patient_registration/patient_payload_helper.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_payload.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
@@ -11,6 +10,7 @@ import 'package:bewell_pro_core/presentation/clinical/common/helpers.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration_container.dart';
 import 'package:bewell_pro_core/presentation/clinical/theme/form_styles.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
+import 'package:flutter/material.dart';
 import 'package:misc_utilities/responsive_widget.dart';
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/spaces.dart';
@@ -43,6 +43,9 @@ class CompleteRegistrationWidget extends StatelessWidget {
     final String primaryRoute = StoreProvider.state<CoreState>(context)!
         .userRegistrationState!
         .primaryRouteName;
+    final String secondaryRoute = StoreProvider.state<CoreState>(context)!
+        .userRegistrationState!
+        .secondaryRouteName;
 
     bool isPatientReg = false;
     if (primaryRoute == patientsPageRoute) {
@@ -83,8 +86,8 @@ class CompleteRegistrationWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   SILSecondaryButton(
-                    onPressed: () => Navigator.of(context)
-                        .pushNamed(patientIdentificationRoute),
+                    onPressed: () =>
+                        Navigator.of(context).pushNamed(secondaryRoute),
                     text: silButtonCancel,
                     buttonColor: transparent,
                     textColor: healthcloudAccentColor,

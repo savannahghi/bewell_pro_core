@@ -47,11 +47,12 @@ class _PatientRegistrationState extends State<PatientRegistration>
     StoreProvider.dispatch<CoreState>(
       context,
       UserRegistrationAction(
-        userType: widget.userRegistrationState.userType,
-        userRegistrationMutation:
-            widget.userRegistrationState.userRegistrationMutation,
-        primaryRouteName: widget.userRegistrationState.primaryRouteName,
-      ),
+          userType: widget.userRegistrationState.userType,
+          userRegistrationMutation:
+              widget.userRegistrationState.userRegistrationMutation,
+          userResponse: widget.userRegistrationState.userResponse,
+          primaryRouteName: widget.userRegistrationState.primaryRouteName,
+          secondaryRouteName: widget.userRegistrationState.secondaryRouteName),
     );
     return AppScaffold(
       currentBottomNavIndex: BottomNavIndex.patient_reg.index,

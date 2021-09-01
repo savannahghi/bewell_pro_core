@@ -11,7 +11,9 @@ _$_UserRegistrationState _$_$_UserRegistrationStateFromJson(
   return _$_UserRegistrationState(
     userType: json['userType'] as String,
     userRegistrationMutation: json['userRegistrationMutation'] as String,
+    userResponse: json['userResponse'] as String,
     primaryRouteName: json['primaryRouteName'] as String,
+    secondaryRouteName: json['secondaryRouteName'] as String,
   );
 }
 
@@ -20,5 +22,7 @@ Map<String, dynamic> _$_$_UserRegistrationStateToJson(
     <String, dynamic>{
       'userType': instance.userType,
       'userRegistrationMutation': instance.userRegistrationMutation,
+      'userResponse': instance.userResponse,
       'primaryRouteName': instance.primaryRouteName,
+      'secondaryRouteName': instance.secondaryRouteName,
     };

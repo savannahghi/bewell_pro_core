@@ -11,15 +11,18 @@ class UserRegistrationState with _$UserRegistrationState {
   factory UserRegistrationState({
     required String userType,
     required String userRegistrationMutation,
+    required String userResponse,
     required String primaryRouteName,
+    required String secondaryRouteName,
   }) = _UserRegistrationState;
 
   factory UserRegistrationState.fromJson(Map<String, dynamic> json) =>
       _$UserRegistrationStateFromJson(json);
 
   factory UserRegistrationState.initial() => UserRegistrationState(
-        userType: patientStr,
-        userRegistrationMutation: registerPatientQuery,
-        primaryRouteName: patientsPageRoute,
-      );
+      userType: patientStr,
+      userRegistrationMutation: registerPatientQuery,
+      userResponse: patientRegistrationResponse,
+      primaryRouteName: patientsPageRoute,
+      secondaryRouteName: patientIdentificationRoute);
 }

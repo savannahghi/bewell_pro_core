@@ -11,22 +11,30 @@ void main() {
       final Map<String, dynamic> userRegistrationStateJson = <String, dynamic>{
         'userType': patientStr,
         'userRegistrationMutation': registerPatientQuery,
+        'userResponse': patientRegistrationResponse,
         'primaryRouteName': patientsPageRoute,
+        'secondaryRouteName': patientIdentificationRoute,
       };
 
       expect(state.userType, patientStr);
       expect(state.userRegistrationMutation, registerPatientQuery);
       expect(state.primaryRouteName, patientsPageRoute);
+      expect(state.secondaryRouteName, patientIdentificationRoute);
+      expect(state.userResponse, patientRegistrationResponse);
 
       final UserRegistrationState state2 = state.copyWith.call(
         userType: patientStr,
         userRegistrationMutation: registerPatientQuery,
+        userResponse: patientRegistrationResponse,
         primaryRouteName: patientsPageRoute,
+        secondaryRouteName: patientIdentificationRoute,
       );
 
       expect(state2.userType, patientStr);
       expect(state2.userRegistrationMutation, registerPatientQuery);
       expect(state2.primaryRouteName, patientsPageRoute);
+      expect(state2.secondaryRouteName, patientIdentificationRoute);
+      expect(state2.userResponse, patientRegistrationResponse);
 
       final UserRegistrationState state3 =
           UserRegistrationState.fromJson(userRegistrationStateJson);
@@ -35,6 +43,8 @@ void main() {
       expect(state3.userType, patientStr);
       expect(state3.userRegistrationMutation, registerPatientQuery);
       expect(state3.primaryRouteName, patientsPageRoute);
+      expect(state3.secondaryRouteName, patientIdentificationRoute);
+      expect(state3.userResponse, patientRegistrationResponse);
     });
   });
 }
