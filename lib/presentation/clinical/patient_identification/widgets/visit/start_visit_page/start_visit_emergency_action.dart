@@ -63,8 +63,6 @@ class StartVisitEmergencyAction extends ReduxAction<CoreState> {
         errorStartingVisitEmergency,
         query: startBreakGlassVisitMutation,
         error: error,
-        response: data,
-        variables: input,
       );
       throw const UserException(
           'Failed to start a visit, unexpected error occurred'); // todo: create better messages

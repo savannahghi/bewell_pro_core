@@ -79,6 +79,7 @@ class BuildCommunicationItems extends StatelessWidget {
     return StoreConnector<CoreState, CommunicationSettingsViewModel>(
       converter: (Store<CoreState> store) =>
           CommunicationSettingsViewModel.fromStore(store),
+      distinct: true,
       builder: (BuildContext context, CommunicationSettingsViewModel vm) {
         return Padding(
           padding: EdgeInsets.symmetric(

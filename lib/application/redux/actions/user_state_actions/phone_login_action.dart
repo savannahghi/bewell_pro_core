@@ -139,7 +139,6 @@ class PhoneLoginAction extends ReduxAction<CoreState> {
       await captureException(
         errorPhoneLogin,
         error: processedResponse.message,
-        response: processedResponse.response.body,
       );
       throw UserException(processedResponse.message);
     }

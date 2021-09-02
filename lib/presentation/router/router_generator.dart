@@ -89,9 +89,8 @@ class RouteGenerator {
             builder: (_) => const HelpCenterPage());
 
       case termsAndConditionsRoute:
-        final String? termsUrl = args as String?;
         return MaterialPageRoute<TermsAndConditionsPage>(
-          builder: (_) => TermsAndConditionsPage(termsUrl: termsUrl),
+          builder: (_) => const TermsAndConditionsPage(),
         );
 
       case userProfileRoute:

@@ -114,6 +114,7 @@ class _FAQWrapperState extends State<FAQWrapper> {
               return StoreConnector<CoreState, CoreStateViewModel>(
                 converter: (Store<CoreState> store) =>
                     CoreStateViewModel.fromStore(store),
+                distinct: true,
                 builder: (BuildContext context, CoreStateViewModel vm) {
                   final List<FAQContent?>? faqsFromState =
                       vm.state.miscState!.faqList;

@@ -69,8 +69,6 @@ class RefreshTokenAction extends ReduxAction<CoreState> {
       await captureException(
         errorRefreshingToken,
         error: processedResponse.message,
-        response: processedResponse.response.body,
-        variables: refreshTokenVariables,
       );
 
       // logout the user if an error occurs

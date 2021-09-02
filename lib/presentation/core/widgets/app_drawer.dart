@@ -21,6 +21,7 @@ class AppDrawer extends StatelessWidget {
             child: StoreConnector<CoreState, List<NavigationItem>>(
               converter: (Store<CoreState> store) =>
                   store.state.navigationState!.secondaryActions!,
+              distinct: true,
               builder: (BuildContext context,
                       List<NavigationItem> secondaryNavigationItem) =>
                   Scaffold(

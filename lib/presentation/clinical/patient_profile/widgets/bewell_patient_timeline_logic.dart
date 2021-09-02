@@ -45,8 +45,6 @@ class BewellPatientTimelineLogic {
           errorFetchingPatientTimelineWithCount,
           query: countTimelineQuery,
           error: error,
-          response: payLoad,
-          variables: _variables,
         );
         _timelineStreamController.addError(<String, dynamic>{'error': error});
         return false;

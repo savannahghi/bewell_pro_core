@@ -55,8 +55,6 @@ class ContinueVisitAction extends ReduxAction<CoreState> {
         errorContinueVisit,
         query: getOpenEpisodesOfCare,
         error: error,
-        response: data,
-        variables: _variables,
       );
       throw const UserException('Failed to continue visit, error from server');
     }

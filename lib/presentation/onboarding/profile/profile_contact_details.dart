@@ -70,6 +70,7 @@ class BuildContactProvider extends StatelessWidget {
     UserFeedStore().refreshFeed.add(true);
     return StoreConnector<CoreState, ContactViewModel>(
       converter: (Store<CoreState> store) => ContactViewModel.fromStore(store),
+      distinct: true,
       builder: (BuildContext context, ContactViewModel vm) {
         bool checkWaitingFor({required String flag}) {
           return StoreProvider.state<CoreState>(

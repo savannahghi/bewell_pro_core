@@ -57,6 +57,7 @@ class _EnterSignUpPhoneNoState extends State<EnterSignUpPhoneNo> {
     return StoreConnector<CoreState, CoreStateViewModel>(
       converter: (Store<CoreState> store) =>
           CoreStateViewModel.fromStore(store),
+      distinct: true,
       builder: (BuildContext context, CoreStateViewModel vm) {
         return Form(
           key: _formKey,

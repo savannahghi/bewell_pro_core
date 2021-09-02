@@ -60,7 +60,6 @@ class PatientSearchByPhoneAction extends ReduxAction<CoreState> {
         errorSearchingPatientByPhone,
         query: findPatientsQuery,
         error: error,
-        response: data,
       );
 
       dispatch(UpdateSearchParamAction(phoneNumber: searchParam));

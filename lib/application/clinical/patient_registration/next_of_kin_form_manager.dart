@@ -63,7 +63,6 @@ class NextOfKinFormManager with Validator {
         errorFetchingPotentialNextOfKin,
         query: searchRelatedPersonByMSISDN,
         error: error,
-        response: payLoad,
       );
       inPotentialNextOfKin.addError(
           NextOfKinPhoneState(loading: false, error: noPatientsFoundText));

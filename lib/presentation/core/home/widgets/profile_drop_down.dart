@@ -76,6 +76,7 @@ class ProfileDropDown extends StatelessWidget {
         child: StoreConnector<CoreState, UserStateViewModel>(
             converter: (Store<CoreState> store) =>
                 UserStateViewModel.fromStore(store),
+            distinct: true,
             builder: (BuildContext context, UserStateViewModel vm) {
               final UserProfile? userProfile = vm.userState.userProfile;
               return Center(

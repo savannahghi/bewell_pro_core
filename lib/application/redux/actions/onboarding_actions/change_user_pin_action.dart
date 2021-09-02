@@ -59,7 +59,6 @@ class ChangeUserPinAction extends ReduxAction<CoreState> {
         errorChangingPIN,
         query: updateUserPinMutation,
         error: graphQlClient.parseError(body),
-        response: body,
       );
       return state;
     }

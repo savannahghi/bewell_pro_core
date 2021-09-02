@@ -72,8 +72,6 @@ class FetchUserFeedAction extends ReduxAction<CoreState> {
           errorFetchingUserFeed,
           query: getFeedContentQuery,
           error: error,
-          response: body,
-          variables: variables,
         );
         feedStreamController.addError(<String, dynamic>{'error': error});
         return null;

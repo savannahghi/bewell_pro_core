@@ -19,6 +19,7 @@ class OtpBoxConnector extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreConnector<CoreState, OtpBoxViewModel>(
       vm: () => OtpBoxViewModelFactory(),
+      distinct: true,
       builder: (BuildContext context, OtpBoxViewModel vm) {
         return OtpBox(
           phoneNumber: vm.phoneNumber,

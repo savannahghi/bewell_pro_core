@@ -31,6 +31,7 @@ class BeWellPrimaryPatientBanner extends StatelessWidget {
     return StoreConnector<CoreState, BeWellPrimaryPatientBannerViewModel>(
       converter: (Store<CoreState> store) =>
           BeWellPrimaryPatientBannerViewModel.fromStore(store),
+      distinct: true,
       builder: (BuildContext context, BeWellPrimaryPatientBannerViewModel vm) {
         final List<Attachment>? patientPhotos = vm.photo;
         final String? imageData = _getImageData(patientPhotos);

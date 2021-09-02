@@ -130,6 +130,7 @@ class _BewellPatientProfileWidgetState
     return StoreConnector<CoreState, PatientProfileViewModel>(
       converter: (Store<CoreState> store) =>
           PatientProfileViewModel.fromStore(store),
+      distinct: true,
       builder: (BuildContext context, PatientProfileViewModel vm) {
         final Patient? patientDetail = vm.patient;
         String patientName = noNameString;

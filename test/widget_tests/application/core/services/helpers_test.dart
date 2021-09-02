@@ -1,6 +1,4 @@
 import 'dart:convert';
-
-import 'package:app_wrapper/app_wrapper.dart';
 import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
@@ -1116,29 +1114,6 @@ void main() {
       );
       expect(snackBar, findsOneWidget);
     });
-  });
-
-  testWidgets('showDebugModeBanner works', (WidgetTester tester) async {
-    late bool showBanner;
-    await buildTestWidget(
-      tester: tester,
-      widget: Builder(
-        builder: (BuildContext context) {
-          return TextButton(
-            onPressed: () {
-              showBanner =
-                  showDebugModeBanner(<AppContext>[AppContext.AppTest]);
-            },
-            child: const Text('Ok'),
-          );
-        },
-      ),
-    );
-    await tester.pump();
-    expect(find.byType(TextButton), findsOneWidget);
-    await tester.tap(find.byType(TextButton));
-    await tester.pumpAndSettle();
-    expect(showBanner, true);
   });
 
   testWidgets('onBodyLinkOrImageTapCallback called when link is tapped',

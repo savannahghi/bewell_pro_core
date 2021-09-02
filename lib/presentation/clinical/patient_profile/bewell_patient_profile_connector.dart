@@ -12,6 +12,7 @@ class BewellPatientProfileConnector extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreConnector<CoreState, BewellPatientProfileViewModel>(
       vm: () => BewellPatientProfileViewModelFactory(this),
+      distinct: true,
       builder: (BuildContext context, BewellPatientProfileViewModel vm) {
         return BewellPatientProfileWidget(onStartVisit: vm.onStartVisit);
       },

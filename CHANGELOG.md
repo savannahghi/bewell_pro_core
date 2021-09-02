@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 1.1.18-nullsafety
+
+- Remove `responses` from error reporting
+- Prevent state rebuilds when vm has no changes
+- Remove unused functions
+
 ## 1.1.17-nullsafety
 
 - fix: partner type page

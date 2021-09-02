@@ -15,6 +15,7 @@ class PatientSearchCardConnector extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreConnector<CoreState, PatientSearchCardViewModel>(
       vm: () => PatientSearchCardFactory(this),
+      distinct: true,
       builder: (BuildContext context, PatientSearchCardViewModel vm) {
         return PatientSearchCardWidget(patientEdge: vm.patientEdge);
       },

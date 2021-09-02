@@ -13,6 +13,7 @@ class SILUserException extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreConnector<CoreState, _ViewModel>(
       vm: () => _Factory(this),
+      distinct: true,
       builder: (BuildContext context, _ViewModel vm) =>
           SILUserExceptionWidgetContent(error: vm.error, child: child),
     );

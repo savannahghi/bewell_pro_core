@@ -140,6 +140,7 @@ class _EditProfileFormState extends State<EditProfileForm> {
     return StoreConnector<CoreState, CoreStateViewModel>(
       converter: (Store<CoreState> store) =>
           CoreStateViewModel.fromStore(store),
+      distinct: true,
       builder: (BuildContext context, CoreStateViewModel vm) {
         return Padding(
           padding: EdgeInsets.symmetric(

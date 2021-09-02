@@ -17,6 +17,7 @@ class PatientSearchConnector extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreConnector<CoreState, PatientSearchViewModel>(
       vm: () => PatientSearchViewModelFactory(this),
+      distinct: true,
       builder: (BuildContext context, PatientSearchViewModel vm) =>
           PatientSearchWidget(
         phoneNumberFormValidator: vm.phoneNumberFormValidator,

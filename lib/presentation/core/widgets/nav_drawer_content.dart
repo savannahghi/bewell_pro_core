@@ -66,6 +66,7 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
       return StoreConnector<CoreState, CoreStateViewModel>(
           converter: (Store<CoreState> store) =>
               CoreStateViewModel.fromStore(store),
+          distinct: true,
           builder: (BuildContext context, CoreStateViewModel vm) {
             return ListView(
               children: <Widget>[
@@ -166,81 +167,85 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
           if (nestedItems == null || nestedItems.isEmpty) {
             return StoreConnector<CoreState, VoidCallback>(
                 converter: (Store<CoreState> store) {
-              return () {
-                store.dispatch(NavigationFavouriteAction(
-                    context: context,
-                    title: title,
-                    flag: getFavouriteNavigationFlag(title),
-                    navigationItem: widget.drawerItems[index]));
-              };
-            }, builder: (BuildContext context, VoidCallback callback) {
-              return Slidable(
-                actionPane: const SlidableDrawerActionPane(),
-                actions: <Widget>[
-                  IconSlideAction(
-                    caption: navDrawerFavoritesText,
-                    color: healthcloudPrimaryColor,
-                    icon: getIcon(
-                        condition: isFavourite!,
-                        conditionFlag: StoreProvider.state<CoreState>(context)!
-                            .wait!
-                            .isWaitingFor(getFavouriteNavigationFlag(title))),
-                    onTap: callback,
-                  ),
-                ],
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: number15),
-                  child: ClipRRect(
-                    borderRadius:
-                        const BorderRadius.all(Radius.circular(number10)),
-                    child: ListTile(
-                        title: Text(title),
-                        tileColor: (selectedindex == index)
-                            ? Colors.purple[50]
-                            : Colors.transparent,
-                        leading: CachedNetworkImage(
-                          imageUrl: iconUrl,
-                          color: Colors.black45,
-                          height: 25,
-                          width: 25,
-                          placeholder: (BuildContext context, String url) =>
-                              const Icon(Icons.cloud_off),
-                        ),
-                        onTap: () {
-                          if (widget.favouriteDrawer) {
-                            selectedindex = secondaryNavItem!.indexWhere(
-                                (NavigationItem navigationItem) =>
-                                    navigationItem.title ==
-                                    widget.drawerItems[index].title);
+                  return () {
+                    store.dispatch(NavigationFavouriteAction(
+                        context: context,
+                        title: title,
+                        flag: getFavouriteNavigationFlag(title),
+                        navigationItem: widget.drawerItems[index]));
+                  };
+                },
+                distinct: true,
+                builder: (BuildContext context, VoidCallback callback) {
+                  return Slidable(
+                    actionPane: const SlidableDrawerActionPane(),
+                    actions: <Widget>[
+                      IconSlideAction(
+                        caption: navDrawerFavoritesText,
+                        color: healthcloudPrimaryColor,
+                        icon: getIcon(
+                            condition: isFavourite!,
+                            conditionFlag:
+                                StoreProvider.state<CoreState>(context)!
+                                    .wait!
+                                    .isWaitingFor(
+                                        getFavouriteNavigationFlag(title))),
+                        onTap: callback,
+                      ),
+                    ],
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: number15),
+                      child: ClipRRect(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(number10)),
+                        child: ListTile(
+                            title: Text(title),
+                            tileColor: (selectedindex == index)
+                                ? Colors.purple[50]
+                                : Colors.transparent,
+                            leading: CachedNetworkImage(
+                              imageUrl: iconUrl,
+                              color: Colors.black45,
+                              height: 25,
+                              width: 25,
+                              placeholder: (BuildContext context, String url) =>
+                                  const Icon(Icons.cloud_off),
+                            ),
+                            onTap: () {
+                              if (widget.favouriteDrawer) {
+                                selectedindex = secondaryNavItem!.indexWhere(
+                                    (NavigationItem navigationItem) =>
+                                        navigationItem.title ==
+                                        widget.drawerItems[index].title);
 
-                            StoreProvider.dispatch<CoreState>(
-                              context,
-                              NavigationAction(
-                                drawerSelectedIndex: selectedindex,
-                              ),
-                            );
-                          } else {
-                            StoreProvider.dispatch<CoreState>(
-                              context,
-                              NavigationAction(
-                                drawerSelectedIndex: index,
-                              ),
-                            );
-                          }
+                                StoreProvider.dispatch<CoreState>(
+                                  context,
+                                  NavigationAction(
+                                    drawerSelectedIndex: selectedindex,
+                                  ),
+                                );
+                              } else {
+                                StoreProvider.dispatch<CoreState>(
+                                  context,
+                                  NavigationAction(
+                                    drawerSelectedIndex: index,
+                                  ),
+                                );
+                              }
 
-                          if (onTapRoute != null && onTapRoute.isNotEmpty) {
-                            setState(() {});
-                            Navigator.of(context)
-                                .pushReplacementNamed(onTapRoute);
-                          } else {
-                            Navigator.pushNamed(context, comingSoon,
-                                arguments: title);
-                          }
-                        }),
-                  ),
-                ),
-              );
-            });
+                              if (onTapRoute != null && onTapRoute.isNotEmpty) {
+                                setState(() {});
+                                Navigator.of(context)
+                                    .pushReplacementNamed(onTapRoute);
+                              } else {
+                                Navigator.pushNamed(context, comingSoon,
+                                    arguments: title);
+                              }
+                            }),
+                      ),
+                    ),
+                  );
+                });
           }
 
           /// else return nested items in [ExpansionTile]
@@ -254,6 +259,7 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
                     navigationItem: widget.drawerItems[index]));
               };
             },
+            distinct: true,
             builder: (BuildContext context, VoidCallback callback) {
               return Slidable(
                   actionPane: const SlidableDrawerActionPane(),

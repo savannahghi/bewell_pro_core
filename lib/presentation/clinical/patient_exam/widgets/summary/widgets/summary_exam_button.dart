@@ -106,6 +106,7 @@ class _SaveExamSummaryButtonState extends State<SaveExamSummaryButton> {
     return StoreConnector<CoreState, CoreStateViewModel>(
       converter: (Store<CoreState> store) =>
           CoreStateViewModel.fromStore(store),
+      distinct: true,
       builder: (BuildContext context, CoreStateViewModel vm) {
         final UserProfile? userProfile = vm.state.userState!.userProfile;
         final String? phoneNumber = userProfile?.primaryPhoneNumber?.getValue();

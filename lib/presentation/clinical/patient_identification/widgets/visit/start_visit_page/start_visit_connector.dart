@@ -17,6 +17,7 @@ class StartVisitConnector extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreConnector<CoreState, StartVisitViewModel>(
       vm: () => StartVisitViewModelFactory(this),
+      distinct: true,
       builder: (BuildContext context, StartVisitViewModel vm) {
         return StartVisitWidget(
           showError: vm.showError,

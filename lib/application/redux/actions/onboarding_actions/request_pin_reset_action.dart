@@ -70,7 +70,6 @@ class RequestPinResetAction extends ReduxAction<CoreState> {
       await captureException(
         errorResettingPIN,
         error: processedResponse.message,
-        response: processedResponse.response.body,
       );
       throw UserException(processedResponse.message);
     }

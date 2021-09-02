@@ -214,7 +214,6 @@ Future<void> genericSearchFunction({
       'Error while searching for patient',
       query: listConceptsQuery,
       error: error,
-      response: payLoad,
     );
     return streamController.addError(<String, dynamic>{'error': error});
   }
@@ -438,13 +437,6 @@ class SurveyBottomSheet extends BottomSheetBuilder {
     );
   }
 }
-
-/// Decides whether to show the debug mode banner based on the environment
-/// that the app is running.
-///
-/// The banner is only shown when the app is running in test mode
-bool showDebugModeBanner(List<AppContext> appContexts) =>
-    appContexts.contains(AppContext.AppTest);
 
 void showAlertSnackBar({
   @required BuildContext? context,

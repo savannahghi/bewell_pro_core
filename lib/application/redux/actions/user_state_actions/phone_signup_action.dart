@@ -108,7 +108,6 @@ class PhoneSignUpAction extends ReduxAction<CoreState> {
       await captureException(
         errorPhoneSignup,
         error: processedResponse.message,
-        response: processedResponse.response.body,
       );
       throw UserException(processedResponse.message);
     }

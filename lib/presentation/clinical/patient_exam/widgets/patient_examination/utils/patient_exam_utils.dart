@@ -51,8 +51,6 @@ Future<void> fetchCompositionData({
       errorFetchingCompositionData,
       query: searchCompositionQuery,
       error: _client.parseError(payload),
-      response: payload,
-      variables: _variables,
     );
     return streamController
         .addError(<String, dynamic>{'error': _client.parseError(payload)});

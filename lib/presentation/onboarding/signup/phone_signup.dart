@@ -31,6 +31,7 @@ class PhoneSignUp extends StatelessWidget {
     return StoreConnector<CoreState, MiscStateViewModel>(
       converter: (Store<CoreState> store) =>
           MiscStateViewModel.fromStore(store),
+      distinct: true,
       builder: (BuildContext context, MiscStateViewModel vm) {
         return Container(
           child: vm.state!.otpCode! == UNKNOWN

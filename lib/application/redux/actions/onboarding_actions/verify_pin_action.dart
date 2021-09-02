@@ -57,7 +57,6 @@ class VerifyPinAction extends ReduxAction<CoreState> {
         errorVerifyingPIN,
         query: resumeWithPinQuery,
         error: _client.parseError(body),
-        response: body,
       );
       showErrorSnackbar(context);
       return null;

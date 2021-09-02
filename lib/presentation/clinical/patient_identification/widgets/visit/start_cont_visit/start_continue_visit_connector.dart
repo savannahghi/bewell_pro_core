@@ -15,6 +15,7 @@ class StartContinueVisitConnector extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreConnector<CoreState, StartContinueVisitViewModel>(
       vm: () => StartContinueVisitViewModelFactory(this),
+      distinct: true,
       builder: (BuildContext context, StartContinueVisitViewModel vm) =>
           StartContinueVisitWidget(
         patientEdge: vm.patientEdge,

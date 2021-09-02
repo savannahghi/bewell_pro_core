@@ -13,6 +13,7 @@ class CompleteRegistrationConnector extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreConnector<CoreState, CompleteRegistrationViewModel>(
       vm: () => CompleteRegistrationViewModelFactory(this),
+      distinct: true,
       builder: (BuildContext context, CompleteRegistrationViewModel vm) {
         return CompleteRegistrationWidget(
           onStartVisit: vm.onStartVisit,

@@ -44,6 +44,7 @@ class _PhoneSignUpPageState extends State<PhoneSignUpPage> {
       body: StoreConnector<CoreState, MiscStateViewModel>(
         converter: (Store<CoreState> store) =>
             MiscStateViewModel.fromStore(store),
+        distinct: true,
         builder: (BuildContext context, MiscStateViewModel vm) {
           return OnboardingScaffold(
             dimension: dimension,
