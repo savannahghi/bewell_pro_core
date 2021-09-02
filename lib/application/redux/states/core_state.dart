@@ -19,6 +19,7 @@ class CoreState extends Equatable {
     this.clinicalState,
     this.navigationState,
     this.userRegistrationState,
+    this.supplierProfileState,
     this.wait,
   });
 
@@ -29,6 +30,7 @@ class CoreState extends Equatable {
   final ClinicalState? clinicalState;
   final Navigation? navigationState;
   final UserRegistrationState? userRegistrationState;
+  final SupplierProfile? supplierProfileState;
   final Wait? wait;
 
   factory CoreState.initial() => CoreState(
@@ -39,6 +41,7 @@ class CoreState extends Equatable {
         clinicalState: ClinicalState.initial(),
         navigationState: Navigation.initial(),
         userRegistrationState: UserRegistrationState.initial(),
+        supplierProfileState: SupplierProfile.initial(),
         wait: Wait(),
       );
 
@@ -50,6 +53,7 @@ class CoreState extends Equatable {
     ClinicalState? clinicalState,
     Navigation? navigationState,
     UserRegistrationState? userRegistrationState,
+    SupplierProfile? supplierProfileState,
     Wait? wait,
   }) {
     return CoreState(
@@ -61,6 +65,7 @@ class CoreState extends Equatable {
       navigationState: navigationState ?? this.navigationState,
       userRegistrationState:
           userRegistrationState ?? this.userRegistrationState,
+      supplierProfileState: supplierProfileState ?? this.supplierProfileState,
       wait: wait ?? this.wait,
     );
   }
@@ -74,6 +79,7 @@ class CoreState extends Equatable {
         clinicalState,
         navigationState,
         userRegistrationState,
+        supplierProfileState,
         wait,
       ];
 }
