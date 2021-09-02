@@ -21,7 +21,7 @@ void main() {
     await mockNetworkImages(() async {
       await buildTestWidget(
         tester: widgetTester,
-        widget: const PatientSearchPage(),
+        widget: PatientSearchPage(),
       );
 
       expect(find.byKey(AppWidgetKeys.patientIdentificationTitleKey),
