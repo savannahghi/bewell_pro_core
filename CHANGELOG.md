@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.17-nullsafety
+
+- fix: partner type page
+
 ## 1.1.16-nullsafety
 
 - fix: navigation to terms page in user profile page

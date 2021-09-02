@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/application/redux/actions/user_state_actions/update_supplier_profile_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:domain_objects/value_objects.dart';
@@ -100,6 +101,13 @@ class PhoneLoginAction extends ReduxAction<CoreState> {
             primaryActions: responseAsObject.navigation?.primaryActions,
             secondaryActions: responseAsObject.navigation?.secondaryActions),
       );
+
+      dispatch(UpdateSupplierProfileAction(
+        partnerType: responseAsObject.supplierProfile?.partnerType,
+        partnerSetupComplete:
+            responseAsObject.supplierProfile?.partnerSetupComplete,
+      ));
+
       await saveDeviceToken(client: client, fcm: SILFCM());
 
       // Clear the misc state
