@@ -1,5 +1,6 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/user_registration_action.dart';
+import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_registration_state.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration_container.dart';
@@ -12,10 +13,12 @@ import 'package:shared_themes/colors.dart';
 
 class PatientRegistration extends StatefulWidget {
   final UserRegistrationState userRegistrationState;
+  final ReduxAction<CoreState> logoutAction;
 
-  const PatientRegistration({
+  PatientRegistration({
     required this.userRegistrationState,
-  });
+    ReduxAction<CoreState>? logoutAction,
+  }) : logoutAction = logoutAction ?? LogoutAction();
 
   @override
   _PatientRegistrationState createState() => _PatientRegistrationState();
@@ -56,6 +59,7 @@ class _PatientRegistrationState extends State<PatientRegistration>
     );
     return AppScaffold(
       currentBottomNavIndex: BottomNavIndex.patient_reg.index,
+      logoutAction: widget.logoutAction,
       body: _container,
     );
   }

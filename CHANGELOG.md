@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.18-nullsafety
+
+- fix: clinical logout
+
 ## 1.1.17-nullsafety
 
 - fix: partner type page

@@ -116,7 +116,7 @@ class RouteGenerator {
 
       case patientIdentificationRoute:
         return MaterialPageRoute<PatientSearchPage>(
-          builder: (_) => const PatientSearchPage(),
+          builder: (_) => PatientSearchPage(),
         );
 
       case addPatientRoute:
@@ -139,7 +139,7 @@ class RouteGenerator {
       // clinical pages
       case patientsPageRoute:
         return MaterialPageRoute<PatientSearchPage>(
-          builder: (_) => const PatientSearchPage(),
+          builder: (_) => PatientSearchPage(),
         );
 
       case startVisitPageRoute:
