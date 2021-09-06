@@ -29,12 +29,12 @@ class UpdateUserPinAction extends ReduxAction<CoreState> {
 
   @override
   void after() {
-    dispatch(WaitAction<CoreState>.remove(verifyPinFlag));
+    dispatch(WaitAction<CoreState>.remove(resetPinFlag));
   }
 
   @override
   void before() {
-    dispatch(WaitAction<CoreState>.add(verifyPinFlag));
+    dispatch(WaitAction<CoreState>.add(resetPinFlag));
   }
 
   @override

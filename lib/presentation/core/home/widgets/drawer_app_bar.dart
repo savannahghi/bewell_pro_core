@@ -1,20 +1,16 @@
-import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/numbers_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:misc_utilities/enums.dart';
 import 'package:misc_utilities/responsive_widget.dart';
 import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/spaces.dart';
 
-class DrawerAppBar extends StatelessWidget implements PreferredSizeWidget {
-  @override
-  Size get preferredSize => const Size.fromHeight(100.0);
-
+class DrawerAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: Theme.of(context).primaryColor,
       child: SafeArea(
         child: ListView(
           shrinkWrap: true,
@@ -29,25 +25,27 @@ class DrawerAppBar extends StatelessWidget implements PreferredSizeWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Image.asset(
-                      AppBrand().appLogo.value,
+                      beWellWhiteIconUrl,
                       height: number50,
                       width: number50,
                     ),
                     IconButton(
                       key: AppWidgetKeys.navDrawerCloseKey,
                       splashColor: healthcloudPrimaryColor,
-                      icon: const Icon(Icons.close, color: Colors.black54),
+                      icon: const Icon(
+                        Icons.close,
+                        color: Colors.white,
+                      ),
                       onPressed: () => Navigator.pop(context),
                     ),
                   ],
                 ),
               ),
-            smallVerticalSizedBox,
-            const TabBar(
-              indicatorColor: Colors.transparent,
-              labelColor: healthcloudPrimaryColor,
-              unselectedLabelColor: Colors.black54,
-              tabs: <Widget>[
+            TabBar(
+              indicatorColor: Colors.white,
+              labelColor: Colors.white,
+              unselectedLabelColor: Colors.purple[200],
+              tabs: const <Widget>[
                 Tab(text: 'All Items'),
                 Tab(text: 'Favorite'),
               ],

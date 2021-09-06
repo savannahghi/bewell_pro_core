@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.19-nullsafety
+
+- fix: change PIN
+
 ## 1.1.18-nullsafety
 
 - fix: clinical logout

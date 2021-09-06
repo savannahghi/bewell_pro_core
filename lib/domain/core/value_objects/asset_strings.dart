@@ -54,3 +54,5 @@ const String patientNavDrawerIconUrl =
     'assets/icons/patient_nav_drawer_icon.svg';
 
 const String favouriteHelpIconUrl = 'assets/images/favourite_action.png';
+
+const String beWellWhiteIconUrl = 'assets/images/bewell_white_logo.png';

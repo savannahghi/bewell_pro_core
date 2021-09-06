@@ -1,21 +1,16 @@
 import 'package:async_redux/async_redux.dart';
-
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
 import 'package:bewell_pro_core/application/core/services/input_validators.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/onboarding_actions/verify_pin_action.dart';
-
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/view_models/core_state_view_model.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/enums.dart';
-
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shared_themes/spaces.dart';
-
 import 'package:shared_ui_components/buttons.dart';
 import 'package:shared_ui_components/inputs.dart';
 import 'package:shared_ui_components/platform_loader.dart';

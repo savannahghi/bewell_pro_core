@@ -13,7 +13,7 @@ jobs:
              echo 'export PATH=/home/circleci/flutter/bin:$PATH' >> $BASH_ENV
       - run:
          name: Analyze, test and report coverage
-         no_output_timeout: 10m
+         no_output_timeout: 20m
          command: |
             flutter clean
             flutter pub get

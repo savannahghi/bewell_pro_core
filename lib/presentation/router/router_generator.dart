@@ -65,6 +65,7 @@ class RouteGenerator {
             builder: (_) => PhoneLoginPage());
 
       case pinVerificationRoute:
+        final dynamic args = settings?.arguments;
         return MaterialPageRoute<PinVerificationPage>(
           builder: (_) => PinVerificationPage(
             pinVerificationType: args != null
