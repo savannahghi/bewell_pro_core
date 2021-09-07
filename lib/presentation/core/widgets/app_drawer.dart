@@ -13,9 +13,8 @@ class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      elevation: 0,
       child: Container(
-        color: Colors.white,
+        color: Theme.of(context).primaryColor,
         child: DefaultTabController(
             length: 2,
             child: StoreConnector<CoreState, List<NavigationItem>>(
@@ -23,24 +22,29 @@ class AppDrawer extends StatelessWidget {
                   store.state.navigationState!.secondaryActions!,
               builder: (BuildContext context,
                       List<NavigationItem> secondaryNavigationItem) =>
-                  Scaffold(
-                backgroundColor: Colors.white,
-                appBar: DrawerAppBar(),
-                body: TabBarView(
+                  SafeArea(
+                child: Column(
                   children: <Widget>[
-                    /// [All items]
-                    NavDrawerContent(
-                      drawerItems: secondaryNavigationItem,
-                      favouriteDrawer: false,
-                    ),
+                    DrawerAppBar(),
+                    Expanded(
+                      child: TabBarView(
+                        children: <Widget>[
+                          /// [All items]
+                          NavDrawerContent(
+                            drawerItems: secondaryNavigationItem,
+                            favouriteDrawer: false,
+                          ),
 
-                    /// [Favorite]
-                    NavDrawerContent(
-                      drawerItems: secondaryNavigationItem
-                          .where((NavigationItem navigationItem) =>
-                              navigationItem.isFavourite == true)
-                          .toList(),
-                      favouriteDrawer: true,
+                          /// [Favorite]
+                          NavDrawerContent(
+                            drawerItems: secondaryNavigationItem
+                                .where((NavigationItem navigationItem) =>
+                                    navigationItem.isFavourite == true)
+                                .toList(),
+                            favouriteDrawer: true,
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

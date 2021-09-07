@@ -1,5 +1,4 @@
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/core/theme/colors.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_favourite_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
@@ -80,16 +79,17 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
                       child: SILFormTextField(
                         key: AppWidgetKeys.navDrawerSearchKey,
                         controller: _searchview,
-                        prefixIcon: const Icon(
+                        prefixIcon: Icon(
                           Icons.search,
                           size: 30,
+                          color: Theme.of(context).primaryColor,
                         ),
-                        customFillColor:
-                            patientSearchInputFillColor.withOpacity(0.1),
+                        customFillColor: Colors.purple[50],
                         textInputAction: TextInputAction.search,
                         isSearchFieldSmall: true,
                         keyboardType: TextInputType.text,
                         hintText: navDrawerHintSearchText,
+                        hintColor: Theme.of(context).primaryColor,
                       ),
                     ),
                   ),
@@ -193,50 +193,54 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
                   child: ClipRRect(
                     borderRadius:
                         const BorderRadius.all(Radius.circular(number10)),
-                    child: ListTile(
-                        title: Text(title),
-                        tileColor: (selectedindex == index)
-                            ? Colors.purple[50]
-                            : Colors.transparent,
-                        leading: CachedNetworkImage(
-                          imageUrl: iconUrl,
-                          color: Colors.black45,
-                          height: 25,
-                          width: 25,
-                          placeholder: (BuildContext context, String url) =>
-                              const Icon(Icons.cloud_off),
-                        ),
-                        onTap: () {
-                          if (widget.favouriteDrawer) {
-                            selectedindex = secondaryNavItem!.indexWhere(
-                                (NavigationItem navigationItem) =>
-                                    navigationItem.title ==
-                                    widget.drawerItems[index].title);
+                    child: ListTileTheme(
+                      textColor: Colors.white,
+                      horizontalTitleGap: 10,
+                      child: ListTile(
+                          title: Text(title),
+                          tileColor: (selectedindex == index)
+                              ? Colors.purple[50]
+                              : Colors.transparent,
+                          leading: CachedNetworkImage(
+                            imageUrl: iconUrl,
+                            color: Colors.black45,
+                            height: 25,
+                            width: 25,
+                            placeholder: (BuildContext context, String url) =>
+                                const Icon(Icons.cloud_off),
+                          ),
+                          onTap: () {
+                            if (widget.favouriteDrawer) {
+                              selectedindex = secondaryNavItem!.indexWhere(
+                                  (NavigationItem navigationItem) =>
+                                      navigationItem.title ==
+                                      widget.drawerItems[index].title);
 
-                            StoreProvider.dispatch<CoreState>(
-                              context,
-                              NavigationAction(
-                                drawerSelectedIndex: selectedindex,
-                              ),
-                            );
-                          } else {
-                            StoreProvider.dispatch<CoreState>(
-                              context,
-                              NavigationAction(
-                                drawerSelectedIndex: index,
-                              ),
-                            );
-                          }
+                              StoreProvider.dispatch<CoreState>(
+                                context,
+                                NavigationAction(
+                                  drawerSelectedIndex: selectedindex,
+                                ),
+                              );
+                            } else {
+                              StoreProvider.dispatch<CoreState>(
+                                context,
+                                NavigationAction(
+                                  drawerSelectedIndex: index,
+                                ),
+                              );
+                            }
 
-                          if (onTapRoute != null && onTapRoute.isNotEmpty) {
-                            setState(() {});
-                            Navigator.of(context)
-                                .pushReplacementNamed(onTapRoute);
-                          } else {
-                            Navigator.pushNamed(context, comingSoon,
-                                arguments: title);
-                          }
-                        }),
+                            if (onTapRoute != null && onTapRoute.isNotEmpty) {
+                              setState(() {});
+                              Navigator.of(context)
+                                  .pushReplacementNamed(onTapRoute);
+                            } else {
+                              Navigator.pushNamed(context, comingSoon,
+                                  arguments: title);
+                            }
+                          }),
+                    ),
                   ),
                 ),
               );
@@ -284,12 +288,27 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
                           title: Text(title),
                           leading: CachedNetworkImage(
                             imageUrl: iconUrl,
-                            color: Colors.black45,
+                            color: (selectedindex == index)
+                                ? Colors.black45
+                                : Colors.purple[200],
                             height: 25,
                             width: 25,
                             placeholder: (BuildContext context, String url) =>
-                                const Icon(Icons.cloud_off),
+                                Icon(
+                              Icons.cloud_off,
+                              color: Colors.purple[50],
+                            ),
                           ),
+                          trailing: Icon(
+                            Icons.keyboard_arrow_down,
+                            color: (selectedindex == index)
+                                ? Colors.black45
+                                : Colors.purple[200],
+                          ),
+                          textColor: Colors.white,
+                          collapsedTextColor: (selectedindex == index)
+                              ? Colors.black
+                              : Colors.white,
                           children: <Widget>[
                             ListView.builder(
                                 shrinkWrap: true,
@@ -301,43 +320,49 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
                                   final String? nestedOnTapRoute =
                                       nestedItems[expandeIndex].route;
 
-                                  return ListTile(
-                                    title: Text(nestedTitle),
-                                    onTap: () {
-                                      if (widget.favouriteDrawer) {
-                                        selectedindex = secondaryNavItem!
-                                            .indexWhere((NavigationItem
-                                                    navigationItem) =>
-                                                navigationItem.title ==
-                                                widget
-                                                    .drawerItems[index].title);
+                                  return ListTileTheme(
+                                    textColor: Colors.white,
+                                    horizontalTitleGap: 10,
+                                    child: ListTile(
+                                      title: Text(nestedTitle),
+                                      onTap: () {
+                                        if (widget.favouriteDrawer) {
+                                          selectedindex = secondaryNavItem!
+                                              .indexWhere((NavigationItem
+                                                      navigationItem) =>
+                                                  navigationItem.title ==
+                                                  widget.drawerItems[index]
+                                                      .title);
 
-                                        StoreProvider.dispatch<CoreState>(
-                                          context,
-                                          NavigationAction(
-                                            drawerSelectedIndex: selectedindex,
-                                          ),
-                                        );
-                                      } else {
-                                        StoreProvider.dispatch<CoreState>(
-                                          context,
-                                          NavigationAction(
-                                            drawerSelectedIndex: index,
-                                          ),
-                                        );
-                                      }
+                                          StoreProvider.dispatch<CoreState>(
+                                            context,
+                                            NavigationAction(
+                                              drawerSelectedIndex:
+                                                  selectedindex,
+                                            ),
+                                          );
+                                        } else {
+                                          StoreProvider.dispatch<CoreState>(
+                                            context,
+                                            NavigationAction(
+                                              drawerSelectedIndex: index,
+                                            ),
+                                          );
+                                        }
 
-                                      if (nestedOnTapRoute != null &&
-                                          nestedOnTapRoute.isNotEmpty) {
-                                        setState(() {});
-                                        Navigator.of(context)
-                                            .pushReplacementNamed(
-                                                nestedOnTapRoute);
-                                      } else {
-                                        Navigator.pushNamed(context, comingSoon,
-                                            arguments: title);
-                                      }
-                                    },
+                                        if (nestedOnTapRoute != null &&
+                                            nestedOnTapRoute.isNotEmpty) {
+                                          setState(() {});
+                                          Navigator.of(context)
+                                              .pushReplacementNamed(
+                                                  nestedOnTapRoute);
+                                        } else {
+                                          Navigator.pushNamed(
+                                              context, comingSoon,
+                                              arguments: title);
+                                        }
+                                      },
+                                    ),
                                   );
                                 })
                           ],
@@ -357,9 +382,13 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
           height: 50,
         ),
         smallVerticalSizedBox,
-        const Text(
-          navDrawerHowToFavouriteText,
-          textAlign: TextAlign.center,
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: Text(
+            navDrawerHowToFavouriteText,
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.white),
+          ),
         )
       ],
     );

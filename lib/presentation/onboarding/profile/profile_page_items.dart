@@ -17,7 +17,7 @@ class ProfileItem {
 
   final bool isComingSoon;
   final String onTapRoute;
-  final Map<String, dynamic>? onTapRouteArguments;
+  final Object? onTapRouteArguments;
   final ProfileItemType section;
   final Widget? tabletWidget;
   final String text;
@@ -40,10 +40,10 @@ List<ProfileItem> profileItems = <ProfileItem>[
     tabletWidget: BuildCommunicationItems(),
   ),
   const ProfileItem(
-    text: changePINText,
-    section: ProfileItemType.account,
-    onTapRoute: pinVerificationRoute,
-  ),
+      text: changePINText,
+      section: ProfileItemType.account,
+      onTapRoute: pinVerificationRoute,
+      onTapRouteArguments: PinVerificationType.pinChange),
   const ProfileItem(
     text: termsOfServiceText,
     section: ProfileItemType.legal,

@@ -52,7 +52,7 @@ void main() {
       await tester.pump();
 
       expect(store.state.miscState!.pinCode, 'UNKNOWN');
-      expect(store.state.wait!.isWaitingFor(resetPinFlag), false);
+      expect(store.state.wait!.isWaitingFor(resetPinFlag), true);
     });
 
     testWidgets(

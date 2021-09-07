@@ -114,34 +114,32 @@ class AppScaffold extends StatelessWidget {
       return true;
     }
 
-    return Scaffold(
-      key: scaffoldKey,
-      backgroundColor: backgroundColor,
-      appBar: SilAppBar(
-        logoutAction: logoutAction,
-      ),
-      endDrawer: endDrawer,
-      floatingActionButton: floatingActionButton,
-      drawerEnableOpenDragGesture: shouldOpenDrawer,
-      drawer: const AppDrawer(permanentlyDisplay: false),
-      bottomNavigationBar: const SILBottomNavigatorBar(),
-      body: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          /// render navigation drawer permanently on [Tablet]
-          if (ResponsiveWidget.deviceType(context) !=
-                  DeviceScreensType.Mobile &&
-              secondaryActions.isNotEmpty)
-            const AppDrawer(permanentlyDisplay: true),
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        /// render navigation drawer permanently on [Tablet]
+        if (ResponsiveWidget.deviceType(context) != DeviceScreensType.Mobile &&
+            secondaryActions.isNotEmpty)
+          const AppDrawer(permanentlyDisplay: true),
 
-          const VerticalDivider(width: 0, color: Colors.grey),
+        const VerticalDivider(width: 0, color: Colors.grey),
 
-          /// render Scaffold with detail layout on [Tablet] and [Mobile]
-          Expanded(
-            child: WillPopScope(onWillPop: willPopCallback, child: body),
-          ),
-        ],
-      ),
+        /// render Scaffold with detail layout on [Tablet] and [Mobile]
+        Expanded(
+          child: Scaffold(
+              key: scaffoldKey,
+              backgroundColor: backgroundColor,
+              appBar: SilAppBar(
+                logoutAction: logoutAction,
+              ),
+              endDrawer: endDrawer,
+              floatingActionButton: floatingActionButton,
+              drawerEnableOpenDragGesture: shouldOpenDrawer,
+              drawer: const AppDrawer(permanentlyDisplay: false),
+              bottomNavigationBar: const SILBottomNavigatorBar(),
+              body: WillPopScope(onWillPop: willPopCallback, child: body)),
+        ),
+      ],
     );
   }
 }

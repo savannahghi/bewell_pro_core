@@ -702,7 +702,7 @@ Future<void> navigateToProfileItemPage({
   required ProfileItem profileItem,
 }) async {
   if (profileItem.onTapRoute == pinVerificationRoute) {
-    triggerNavigationEvent(
+    await triggerNavigationEvent(
         context: context,
         route: profileItem.onTapRoute,
         args: PinVerificationType.pinChange);

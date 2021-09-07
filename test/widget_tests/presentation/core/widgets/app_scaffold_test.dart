@@ -217,7 +217,7 @@ void main() {
 
     expect(find.byType(AppDrawer), findsOneWidget);
     expect(find.byType(SILPrimaryButton), findsOneWidget);
-    expect(find.byType(Scaffold), findsNWidgets(3));
+    expect(find.byType(Scaffold), findsNWidgets(2));
     expect(find.byType(SilAppBar), findsOneWidget);
     expect(find.byType(SILBottomNavigatorBar), findsOneWidget);
     expect(find.text('End drawer'), findsOneWidget);
