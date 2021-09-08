@@ -798,6 +798,8 @@ const String navDrawerGetHelpText = 'Get Help';
 const String navDrawerNoFavouriteText = 'No items in favourite';
 const String navDrawerHowToFavouriteText =
     'Swipe to the right on the action you want to favorite and tap on the favorite icon';
+const String favoritesText = 'Favorites';
+const String allItemsText = 'All Items';
 
 String favouriteAddActionFeedback(String navigationActionTitle) {
   return 'Adding $navigationActionTitle to favourites';

@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.1.20-nullsafety
+
+- fix: navigation drawer UI
 ## 1.1.19-nullsafety
 
 - fix: change PIN

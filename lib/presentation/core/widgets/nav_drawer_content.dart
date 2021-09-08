@@ -1,4 +1,5 @@
 import 'package:async_redux/async_redux.dart';
+import 'package:bewell_pro_core/application/core/theme/colors.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_favourite_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
@@ -12,8 +13,8 @@ import 'package:bewell_pro_core/presentation/router/routes.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/shims/dart_ui_real.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/spaces.dart';
 import 'package:shared_ui_components/inputs.dart';
 
@@ -79,17 +80,18 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
                       child: SILFormTextField(
                         key: AppWidgetKeys.navDrawerSearchKey,
                         controller: _searchview,
-                        prefixIcon: Icon(
+                        prefixIcon: const Icon(
                           Icons.search,
                           size: 30,
-                          color: Theme.of(context).primaryColor,
+                          color: Colors.white,
                         ),
-                        customFillColor: Colors.purple[50],
+                        customFillColor: primaryColorLight,
                         textInputAction: TextInputAction.search,
                         isSearchFieldSmall: true,
                         keyboardType: TextInputType.text,
                         hintText: navDrawerHintSearchText,
-                        hintColor: Theme.of(context).primaryColor,
+                        hintColor: Colors.white,
+                        textStyle: const TextStyle(color: Colors.white),
                       ),
                     ),
                   ),
@@ -179,7 +181,7 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
                 actions: <Widget>[
                   IconSlideAction(
                     caption: navDrawerFavoritesText,
-                    color: healthcloudPrimaryColor,
+                    color: primaryColorLight,
                     icon: getIcon(
                         condition: isFavourite!,
                         conditionFlag: StoreProvider.state<CoreState>(context)!
@@ -197,17 +199,30 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
                       textColor: Colors.white,
                       horizontalTitleGap: 10,
                       child: ListTile(
-                          title: Text(title),
+                          title: Row(
+                            children: <Widget>[
+                              CachedNetworkImage(
+                                imageUrl: iconUrl,
+                                color: Colors.white70,
+                                height: 25,
+                                width: 25,
+                                placeholder:
+                                    (BuildContext context, String url) =>
+                                        const Icon(
+                                  Icons.cloud_off,
+                                  color: Colors.white70,
+                                ),
+                              ),
+                              mediumVerticalSizedBox,
+                              Text(title),
+                            ],
+                          ),
                           tileColor: (selectedindex == index)
-                              ? Colors.purple[50]
+                              ? primaryColorLight
                               : Colors.transparent,
-                          leading: CachedNetworkImage(
-                            imageUrl: iconUrl,
-                            color: Colors.black45,
-                            height: 25,
-                            width: 25,
-                            placeholder: (BuildContext context, String url) =>
-                                const Icon(Icons.cloud_off),
+                          trailing: const Icon(
+                            Icons.keyboard_arrow_down,
+                            color: Colors.white70,
                           ),
                           onTap: () {
                             if (widget.favouriteDrawer) {
@@ -264,7 +279,7 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
                   actions: <Widget>[
                     IconSlideAction(
                       caption: navDrawerFavoritesText,
-                      color: healthcloudPrimaryColor,
+                      color: primaryColorLight,
                       icon: getIcon(
                         condition: isFavourite!,
                         conditionFlag: StoreProvider.state<CoreState>(context)!
@@ -281,91 +296,119 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
                       child: ClipRRect(
                         borderRadius:
                             const BorderRadius.all(Radius.circular(number10)),
-                        child: ExpansionTile(
-                          collapsedBackgroundColor: (selectedindex == index)
-                              ? Colors.purple[50]
-                              : Colors.transparent,
-                          title: Text(title),
-                          leading: CachedNetworkImage(
-                            imageUrl: iconUrl,
-                            color: (selectedindex == index)
-                                ? Colors.black45
-                                : Colors.purple[200],
-                            height: 25,
-                            width: 25,
-                            placeholder: (BuildContext context, String url) =>
-                                Icon(
-                              Icons.cloud_off,
-                              color: Colors.purple[50],
+                        child: Theme(
+                          data: Theme.of(context)
+                              .copyWith(dividerColor: Colors.transparent),
+                          child: ExpansionTile(
+                            collapsedBackgroundColor: (selectedindex == index)
+                                ? primaryColorLight
+                                : Colors.transparent,
+                            title: Row(
+                              children: <Widget>[
+                                CachedNetworkImage(
+                                  imageUrl: iconUrl,
+                                  color: Colors.white70,
+                                  height: 25,
+                                  width: 25,
+                                  placeholder:
+                                      (BuildContext context, String url) =>
+                                          const Icon(
+                                    Icons.cloud_off,
+                                    color: Colors.white70,
+                                  ),
+                                ),
+                                mediumHorizontalSizedBox,
+                                Text(title),
+                              ],
                             ),
-                          ),
-                          trailing: Icon(
-                            Icons.keyboard_arrow_down,
-                            color: (selectedindex == index)
-                                ? Colors.black45
-                                : Colors.purple[200],
-                          ),
-                          textColor: Colors.white,
-                          collapsedTextColor: (selectedindex == index)
-                              ? Colors.black
-                              : Colors.white,
-                          children: <Widget>[
-                            ListView.builder(
-                                shrinkWrap: true,
-                                itemCount: nestedItems.length,
-                                itemBuilder:
-                                    (BuildContext context, int expandeIndex) {
-                                  final String nestedTitle =
-                                      nestedItems[expandeIndex].title!;
-                                  final String? nestedOnTapRoute =
-                                      nestedItems[expandeIndex].route;
+                            trailing: const Icon(
+                              Icons.keyboard_arrow_down,
+                              color: Colors.white70,
+                            ),
+                            textColor: Colors.white,
+                            collapsedTextColor: Colors.white,
+                            backgroundColor: Colors.transparent,
+                            children: <Widget>[
+                              ListView.builder(
+                                  shrinkWrap: true,
+                                  itemCount: nestedItems.length,
+                                  itemBuilder:
+                                      (BuildContext context, int expandeIndex) {
+                                    final String nestedTitle =
+                                        nestedItems[expandeIndex].title!;
+                                    final String? nestedOnTapRoute =
+                                        nestedItems[expandeIndex].route;
 
-                                  return ListTileTheme(
-                                    textColor: Colors.white,
-                                    horizontalTitleGap: 10,
-                                    child: ListTile(
-                                      title: Text(nestedTitle),
-                                      onTap: () {
-                                        if (widget.favouriteDrawer) {
-                                          selectedindex = secondaryNavItem!
-                                              .indexWhere((NavigationItem
-                                                      navigationItem) =>
-                                                  navigationItem.title ==
-                                                  widget.drawerItems[index]
-                                                      .title);
-
-                                          StoreProvider.dispatch<CoreState>(
-                                            context,
-                                            NavigationAction(
-                                              drawerSelectedIndex:
-                                                  selectedindex,
+                                    return IntrinsicHeight(
+                                      child: Row(
+                                        children: <Widget>[
+                                          const Padding(
+                                            padding: EdgeInsets.fromLTRB(
+                                                20, 0, 10, 0),
+                                            child: VerticalDivider(
+                                              color: Colors.white70,
+                                              thickness: 1,
                                             ),
-                                          );
-                                        } else {
-                                          StoreProvider.dispatch<CoreState>(
-                                            context,
-                                            NavigationAction(
-                                              drawerSelectedIndex: index,
-                                            ),
-                                          );
-                                        }
+                                          ),
+                                          Expanded(
+                                            child: ListTileTheme(
+                                              textColor: Colors.white,
+                                              child: ListTile(
+                                                title: Text(nestedTitle),
+                                                onTap: () {
+                                                  if (widget.favouriteDrawer) {
+                                                    selectedindex = secondaryNavItem!
+                                                        .indexWhere((NavigationItem
+                                                                navigationItem) =>
+                                                            navigationItem
+                                                                .title ==
+                                                            widget
+                                                                .drawerItems[
+                                                                    index]
+                                                                .title);
 
-                                        if (nestedOnTapRoute != null &&
-                                            nestedOnTapRoute.isNotEmpty) {
-                                          setState(() {});
-                                          Navigator.of(context)
-                                              .pushReplacementNamed(
-                                                  nestedOnTapRoute);
-                                        } else {
-                                          Navigator.pushNamed(
-                                              context, comingSoon,
-                                              arguments: title);
-                                        }
-                                      },
-                                    ),
-                                  );
-                                })
-                          ],
+                                                    StoreProvider.dispatch<
+                                                        CoreState>(
+                                                      context,
+                                                      NavigationAction(
+                                                        drawerSelectedIndex:
+                                                            selectedindex,
+                                                      ),
+                                                    );
+                                                  } else {
+                                                    StoreProvider.dispatch<
+                                                        CoreState>(
+                                                      context,
+                                                      NavigationAction(
+                                                        drawerSelectedIndex:
+                                                            index,
+                                                      ),
+                                                    );
+                                                  }
+
+                                                  if (nestedOnTapRoute !=
+                                                          null &&
+                                                      nestedOnTapRoute
+                                                          .isNotEmpty) {
+                                                    setState(() {});
+                                                    Navigator.of(context)
+                                                        .pushReplacementNamed(
+                                                            nestedOnTapRoute);
+                                                  } else {
+                                                    Navigator.pushNamed(
+                                                        context, comingSoon,
+                                                        arguments: title);
+                                                  }
+                                                },
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    );
+                                  })
+                            ],
+                          ),
                         ),
                       )));
             },
