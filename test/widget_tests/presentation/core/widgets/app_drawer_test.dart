@@ -490,8 +490,8 @@ void main() {
       expect(find.byType(AppDrawer), findsOneWidget);
 
       //click favourite
-      expect(find.text(navDrawerFavoritesText), findsOneWidget);
-      await tester.tap(find.text(navDrawerFavoritesText));
+      expect(find.text(favoritesText), findsOneWidget);
+      await tester.tap(find.text(favoritesText));
       await tester.pumpAndSettle();
       expect(find.byType(ListView), findsWidgets);
     });
@@ -517,8 +517,8 @@ void main() {
       expect(find.byType(AppDrawer), findsOneWidget);
 
       //click favourite
-      expect(find.text(navDrawerFavoritesText), findsOneWidget);
-      await tester.tap(find.text(navDrawerFavoritesText));
+      expect(find.text(favoritesText), findsOneWidget);
+      await tester.tap(find.text(favoritesText));
       await tester.pumpAndSettle();
       expect(find.text(navDrawerHowToFavouriteText), findsOneWidget);
     });
@@ -543,8 +543,8 @@ void main() {
       expect(find.byType(AppDrawer), findsOneWidget);
 
       //click favourite
-      expect(find.text(navDrawerFavoritesText), findsOneWidget);
-      await tester.tap(find.text(navDrawerFavoritesText));
+      expect(find.text(favoritesText), findsOneWidget);
+      await tester.tap(find.text(favoritesText));
       await tester.pumpAndSettle();
       expect(find.byType(ListView), findsWidgets);
 
@@ -575,8 +575,8 @@ void main() {
       expect(find.byType(AppDrawer), findsOneWidget);
 
       //click favourite
-      expect(find.text(navDrawerFavoritesText), findsOneWidget);
-      await tester.tap(find.text(navDrawerFavoritesText));
+      expect(find.text(favoritesText), findsOneWidget);
+      await tester.tap(find.text(favoritesText));
       await tester.pumpAndSettle();
       expect(find.byType(ListView), findsWidgets);
 

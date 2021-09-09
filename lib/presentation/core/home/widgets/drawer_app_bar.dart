@@ -1,3 +1,4 @@
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/numbers_constants.dart';
@@ -41,13 +42,13 @@ class DrawerAppBar extends StatelessWidget {
                   ],
                 ),
               ),
-            TabBar(
+            const TabBar(
               indicatorColor: Colors.white,
               labelColor: Colors.white,
-              unselectedLabelColor: Colors.purple[200],
-              tabs: const <Widget>[
-                Tab(text: 'All Items'),
-                Tab(text: 'Favorite'),
+              unselectedLabelColor: Colors.white38,
+              tabs: <Widget>[
+                Tab(text: allItemsText),
+                Tab(text: favoritesText),
               ],
             ),
           ],
