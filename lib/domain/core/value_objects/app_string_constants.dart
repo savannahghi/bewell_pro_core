@@ -600,10 +600,11 @@ const String skippingExtraInfo = 'Skipping extra information';
 const String extraInfoInvalidEmailText = 'Kindly provide a valid email address';
 const String finishBtnTxt = 'Finish';
 String provideExtraInfoPrompt(String userType) =>
-    'Kindly provide the ${userType.toLowerCase()}\'s extra information';
+    'Kindly provide the $userType\'s extra information';
 const String emailCommunicationText = 'Email communications';
 const String emailAddressText = 'Email address';
-const String enterEmailPrompt = 'Enter the patient\'s email address';
+String enterEmailPrompt(String userType) =>
+    'Enter the $userType\'s email address';
 const String emailIsRequired = 'Email address is required';
 const String validEmailPrompt = 'Please enter a valid email';
 
