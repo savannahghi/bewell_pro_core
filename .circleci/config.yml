@@ -1,12 +1,31 @@
 version: 2.1
+
+commands:
+  install_packages:
+    description: "Install flutter to latest version and install dependencies"
+    steps:
+      - checkout
+      - run :
+          name: Install flutter
+          command: bash install_flutter_ci.sh
+      - save_cache:
+          key: flutter_root_and_dependencies_cache
+          paths:
+            - $CIRCLE_WORKING_DIRECTORY/.dart_tool/
+            - $CIRCLE_WORKING_DIRECTORY/.flutter-plugins
+            - $CIRCLE_WORKING_DIRECTORY/.flutter-plugins-dependencies
+            - $CIRCLE_WORKING_DIRECTORY/.packages
+            - $CIRCLE_WORKING_DIRECTORY/.pub-cache/
+            - $CIRCLE_WORKING_DIRECTORY/.pub/
+            - $CIRCLE_WORKING_DIRECTORY/.pub/
         
 jobs:
   run_tests_and_generate_coverage:
     resource_class: large
     docker:
-      - image: cirrusci/flutter
+      - image: circleci/android:api-30-ndk
     steps:
-      - checkout
+      - install_packages
       - run:
           name: "Setup flutter environment variable"
           command: |
