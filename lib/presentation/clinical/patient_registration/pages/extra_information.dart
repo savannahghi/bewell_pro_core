@@ -278,7 +278,7 @@ class _ExtraInformationState extends State<ExtraInformation> {
                             margin: const EdgeInsets.only(bottom: 70),
                             child: SILFormTextField(
                               key: AppWidgetKeys.emailCommunicationsFieldKey,
-                              hintText: enterEmailPrompt,
+                              hintText: enterEmailPrompt(userStr),
                               validator: (String? value) =>
                                   InputValidators.validateEmailAddress(value),
                               onChanged: (String value) {
