@@ -197,7 +197,6 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
                         const BorderRadius.all(Radius.circular(number10)),
                     child: ListTileTheme(
                       textColor: Colors.white,
-                      horizontalTitleGap: 10,
                       child: ListTile(
                           title: Row(
                             children: <Widget>[
@@ -213,17 +212,13 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
                                   color: Colors.white70,
                                 ),
                               ),
-                              mediumVerticalSizedBox,
+                              mediumHorizontalSizedBox,
                               Text(title),
                             ],
                           ),
                           tileColor: (selectedindex == index)
                               ? primaryColorLight
                               : Colors.transparent,
-                          trailing: const Icon(
-                            Icons.keyboard_arrow_down,
-                            color: Colors.white70,
-                          ),
                           onTap: () {
                             if (widget.favouriteDrawer) {
                               selectedindex = secondaryNavItem!.indexWhere(
