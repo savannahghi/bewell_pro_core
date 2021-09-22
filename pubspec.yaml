@@ -1,6 +1,6 @@
 name: bewell_pro_core
 description: Main package for BeWell-Professional
-version: 1.1.21-nullsafety
+version: 1.1.22-nullsafety
 homepage: https://github.com/savannahghi/bewell_pro_core
 repository: https://github.com/savannahghi/bewell_pro_core
 issue_tracker: https://github.com/savannahghi/bewell_pro_core/issues
@@ -67,7 +67,7 @@ dependencies:
   sqflite: ^2.0.0+4
   unicons: ^2.0.1
   url_launcher: ^6.0.6
-  user_feed: ^0.1.39-nullsafety # internal (formerly sil_feed)
+  user_feed: ^0.1.42-nullsafety # internal (formerly sil_feed)
   user_profile: ^0.1.22-nullsafety # internal (formerly user_profile)
 
 dev_dependencies:

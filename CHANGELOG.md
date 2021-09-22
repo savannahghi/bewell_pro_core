@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.22-nullsafety
+
+- chore: package update to resolve feed errors
+
 ## 1.1.21-nullsafety
 
 - fix: extra information
