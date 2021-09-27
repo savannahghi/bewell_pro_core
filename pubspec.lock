@@ -371,7 +371,7 @@ packages:
       name: domain_objects
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.27-nullsafety"
+    version: "0.0.31-nullsafety"
   dotted_border:
     dependency: "direct main"
     description:
@@ -572,7 +572,7 @@ packages:
       name: flutter_html
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.1"
+    version: "2.0.0"
   flutter_image_compress:
     dependency: transitive
     description:
@@ -898,13 +898,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
-  numerus:
-    dependency: transitive
-    description:
-      name: numerus
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.1"
   octo_image:
     dependency: transitive
     description:
@@ -1149,7 +1142,7 @@ packages:
       name: shared_themes
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.0"
+    version: "0.1.1"
   shared_ui_components:
     dependency: "direct main"
     description:
@@ -1392,7 +1385,7 @@ packages:
       name: user_feed
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.42-nullsafety"
+    version: "0.1.43-nullsafety"
   user_profile:
     dependency: "direct main"
     description:
