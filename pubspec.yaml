@@ -1,6 +1,6 @@
 name: bewell_pro_core
 description: Main package for BeWell-Professional
-version: 1.1.23-nullsafety
+version: 1.1.24-nullsafety
 homepage: https://github.com/savannahghi/bewell_pro_core
 repository: https://github.com/savannahghi/bewell_pro_core
 issue_tracker: https://github.com/savannahghi/bewell_pro_core/issues
@@ -22,7 +22,7 @@ dependencies:
   dartz: ^0.10.0-nullsafety
   debug_logger: ^0.0.23
   device_info: ^2.0.2
-  domain_objects: ^0.0.27-nullsafety # internal (formerly sil_core_domain_objects)
+  domain_objects: ^0.0.31-nullsafety # internal (formerly sil_core_domain_objects)
   dotted_border: ^2.0.0 # Adds a dotted border around a card or container
   equatable: ^2.0.3
   fake_async: ^1.2.0
@@ -61,13 +61,13 @@ dependencies:
   quiver: ^3.0.1
   rxdart: ^0.27.1
   sentry_flutter: ^5.1.0
-  shared_themes: ^0.1.0 # internal (formerly shared_themes)
+  shared_themes: ^0.1.1 # internal (formerly shared_themes)
   shared_ui_components: ^0.1.37-nullsafety # internal (formerly sil_ui_components)
   shimmer: ^2.0.0
   sqflite: ^2.0.0+4
   unicons: ^2.0.1
   url_launcher: ^6.0.6
-  user_feed: ^0.1.42-nullsafety # internal (formerly sil_feed)
+  user_feed: ^0.1.43-nullsafety # internal (formerly sil_feed)
   user_profile: ^0.1.22-nullsafety # internal (formerly user_profile)
 
 dev_dependencies:

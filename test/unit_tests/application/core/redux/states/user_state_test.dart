@@ -22,7 +22,9 @@ void main() {
           'gender': 'unknown'
         },
         'homeAddress': null,
-        'workAddress': null
+        'workAddress': null,
+        'referralLink': null,
+        'assistant': null,
       },
       'customerProfile': null,
       'communicationSettings': <String, dynamic>{

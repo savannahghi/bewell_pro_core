@@ -97,6 +97,7 @@ query GetFeed(
       notificationChannels
     }
     items {
+      featureImage
       id
       sequenceNumber
       expiry
