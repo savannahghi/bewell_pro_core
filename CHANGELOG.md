@@ -1,7 +1,10 @@
 # CHANGELOG
 
-### 1.1.24-nullsafety
+## 1.1.25-nullsafety
 
+- Capture exceptions thrown after user updates their first name and last name during onboarding
+
+## 1.1.24-nullsafety
 
 - chore: update packages
 
