@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:app_wrapper/app_wrapper.dart';
 import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
+import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/core/services/onboarding.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
@@ -39,17 +40,29 @@ class UpdateUserNamesAction extends ReduxAction<CoreState> {
   Future<CoreState?> reduce() async {
     final IGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
 
-    final Response result =
-        await _client.query(updateUserProfileMutation, <String, dynamic>{
+    final Map<String, dynamic> queryVariables = <String, dynamic>{
       'input': <String, String>{
         'firstName': updatedFirstName,
         'lastName': updatedLastName,
       }
-    });
+    };
+
+    final Response result =
+        await _client.query(updateUserProfileMutation, queryVariables);
 
     final Map<String, dynamic> body = _client.toMap(result);
 
-    if (_client.parseError(body) != null) {
+    final String? requestError = _client.parseError(body);
+
+    if (requestError != null) {
+      captureException(
+        requestError,
+        query: updateUserProfileMutation,
+        variables: queryVariables,
+        response: body,
+        error: requestError,
+      );
+
       // parse these errors properly
       showErrorSnackbar(context);
       return null;
