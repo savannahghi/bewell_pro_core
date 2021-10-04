@@ -18,6 +18,7 @@ class BatchUpdateUserStateAction extends ReduxAction<CoreState> {
     this.inActivitySetInTime,
     this.signedInTime,
     this.tokenExpiryTime,
+    this.customerProfile,
   });
 
   final AuthCredentialResponse? auth;
@@ -27,10 +28,22 @@ class BatchUpdateUserStateAction extends ReduxAction<CoreState> {
   final String? signedInTime;
   final String? tokenExpiryTime;
   final UserProfile? userProfile;
+  final Customer? customerProfile;
 
   @override
   CoreState reduce() {
     final UserState? newUserState = state.userState?.copyWith.call(
+      customerProfile: state.userState?.customerProfile?.copyWith(
+        id: this.customerProfile?.id ?? state.userState?.customerProfile?.id,
+        active: this.customerProfile?.active ??
+            state.userState?.customerProfile?.active,
+        customerID: this.customerProfile?.customerID ??
+            state.userState?.customerProfile?.customerID,
+        profileID: this.customerProfile?.profileID ??
+            state.userState?.customerProfile?.profileID,
+        receivablesAccount: this.customerProfile?.receivablesAccount ??
+            state.userState?.customerProfile?.receivablesAccount,
+      ),
       userProfile: state.userState!.userProfile!.copyWith(
         id: this.userProfile?.id ?? state.userState?.userProfile?.id,
         username: this.userProfile?.username ??

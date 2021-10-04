@@ -21,6 +21,11 @@ void main() {
       // Set the values in state
       await storeTester.dispatch(
         BatchUpdateUserStateAction(
+          customerProfile: Customer(
+            active: true,
+            customerID: 'test',
+            id: 'test',
+          ),
           userProfile: UserProfile(
             secondaryPhoneNumbers: <PhoneNumber>[
               PhoneNumber.withValue('+2547123455678')

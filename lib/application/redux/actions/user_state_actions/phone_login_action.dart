@@ -83,6 +83,7 @@ class PhoneLoginAction extends ReduxAction<CoreState> {
       dispatch(
         BatchUpdateUserStateAction(
           userProfile: responseAsObject.profile,
+          customerProfile: responseAsObject.customerProfile,
           communicationSettings: responseAsObject.communicationSettings,
           auth: responseAsObject.auth,
           isSignedIn: true,

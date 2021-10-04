@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.26-nullsafety
+
+- chore: add customer profile on login
+
 ## 1.1.25-nullsafety
 
 - Capture exceptions thrown after user updates their first name and last name during onboarding
