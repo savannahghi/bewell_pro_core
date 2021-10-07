@@ -1,13 +1,18 @@
-import 'package:domain_objects/value_objects.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-import 'package:bewell_pro_core/presentation/clinical/common/widgets/countdown_timer_widget.dart';
-import 'package:quiver/async.dart';
+
+// Package imports:
+import 'package:domain_objects/value_objects.dart';
 import 'package:misc_utilities/responsive_widget.dart';
+import 'package:quiver/async.dart';
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/spaces.dart';
 import 'package:shared_ui_components/inputs.dart';
 import 'package:shared_ui_components/platform_loader.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/presentation/clinical/common/widgets/countdown_timer_widget.dart';
 
 class OtpBox extends StatefulWidget {
   const OtpBox({

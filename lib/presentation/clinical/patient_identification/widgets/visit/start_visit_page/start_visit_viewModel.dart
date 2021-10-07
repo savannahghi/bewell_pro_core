@@ -1,5 +1,10 @@
-import 'package:async_redux/async_redux.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/value_objects/start_visit_type_enum.dart';
 
 /// viewModel for [StartVisitPage]

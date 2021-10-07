@@ -1,3 +1,4 @@
+// Project imports:
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 
 enum CompositionTypeTitle {

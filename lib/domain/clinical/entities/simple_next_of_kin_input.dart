@@ -1,10 +1,13 @@
+// Package imports:
 import 'package:domain_objects/value_objects.dart';
+import 'package:intl/intl.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/domain/core/entities/email_input.dart';
 import 'package:bewell_pro_core/domain/core/entities/name_input.dart';
 import 'package:bewell_pro_core/domain/core/entities/payload_input.dart';
 import 'package:bewell_pro_core/domain/core/entities/phone_number_input.dart';
-import 'package:intl/intl.dart';
 
 class SimpleNextOfKinInput with PayloadInput {
   final String patientID;

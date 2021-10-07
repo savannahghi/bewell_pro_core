@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/composition_edge_relay.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/page_info.dart';
 

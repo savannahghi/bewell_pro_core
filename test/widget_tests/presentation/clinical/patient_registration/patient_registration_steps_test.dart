@@ -1,12 +1,16 @@
-import 'package:async_redux/async_redux.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration_container.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/patient_registration_helper.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/patient_registration_steps.dart';
-
 import '../../../../mocks/test_helpers.dart';
 
 void main() {

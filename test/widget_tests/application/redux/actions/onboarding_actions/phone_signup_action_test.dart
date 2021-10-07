@@ -1,11 +1,18 @@
+// Dart imports:
 import 'dart:convert';
-import 'package:async_redux/async_redux.dart';
+
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/phone_signup_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:http/http.dart';
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';
 

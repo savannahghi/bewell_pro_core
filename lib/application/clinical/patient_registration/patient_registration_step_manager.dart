@@ -1,7 +1,10 @@
+// Package imports:
+import 'package:rxdart/rxdart.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration_container.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/patient_registration_helper.dart';
-import 'package:rxdart/rxdart.dart';
 
 class PatientRegistrationStepManager {
   final BehaviorSubject<int> _steps = BehaviorSubject<int>.seeded(1);

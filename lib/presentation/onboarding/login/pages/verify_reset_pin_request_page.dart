@@ -1,14 +1,19 @@
-import 'package:async_redux/async_redux.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-import 'package:bewell_pro_core/presentation/onboarding/login/widgets/onboarding_scaffold.dart';
-import 'package:bewell_pro_core/presentation/onboarding/login/pages/reset_pin_page.dart';
+
+// Package imports:
 import 'package:app_wrapper/app_wrapper.dart';
+import 'package:async_redux/async_redux.dart';
 import 'package:flutter_graphql_client/graph_utils.dart';
 import 'package:http/http.dart';
 import 'package:shared_ui_components/platform_loader.dart';
 import 'package:shared_ui_components/verify_phone_otp.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/presentation/onboarding/login/pages/reset_pin_page.dart';
+import 'package:bewell_pro_core/presentation/onboarding/login/widgets/onboarding_scaffold.dart';
 
 class VerifyPinResetRequestPage extends StatelessWidget {
   final Client? httpClient;

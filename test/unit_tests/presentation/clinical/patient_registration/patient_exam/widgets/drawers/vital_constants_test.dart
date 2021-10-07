@@ -1,7 +1,10 @@
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
+import 'package:rxdart/rxdart.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/vital_constants.dart';
-import 'package:rxdart/rxdart.dart';
 
 void main() {
   group('Vital constants', () {

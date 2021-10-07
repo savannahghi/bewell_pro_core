@@ -1,6 +1,14 @@
-import 'package:async_redux/async_redux.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
+import 'package:domain_objects/entities.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_themes/constants.dart';
+import 'package:shared_ui_components/buttons.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
@@ -8,10 +16,6 @@ import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.d
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/models/exam_composition.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/clinical_exam_forms/retire_composition_button.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:shared_ui_components/buttons.dart';
-
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';
 

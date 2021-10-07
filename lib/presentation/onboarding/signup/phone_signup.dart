@@ -1,23 +1,24 @@
-import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/view_models/misc_state_view_model.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/application/core/services/helpers.dart';
-import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
 
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-
-import 'package:bewell_pro_core/presentation/onboarding/signup/enter_signup_phone_number.dart';
-import 'package:bewell_pro_core/presentation/router/routes.dart';
-
+// Package imports:
 import 'package:app_wrapper/app_wrapper.dart';
-
+import 'package:async_redux/async_redux.dart';
 import 'package:domain_objects/value_objects.dart';
 import 'package:flutter_graphql_client/graph_utils.dart';
 import 'package:http/http.dart';
 import 'package:misc_utilities/misc.dart';
 import 'package:shared_ui_components/platform_loader.dart';
 import 'package:shared_ui_components/verify_phone_otp.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/application/core/services/helpers.dart';
+import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/application/redux/view_models/misc_state_view_model.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/presentation/onboarding/signup/enter_signup_phone_number.dart';
+import 'package:bewell_pro_core/presentation/router/routes.dart';
 
 /// [PhoneSignUp] conditionally renders [EnterSignUpPhoneNo] or [VerifyPhoneOtp],
 /// depending on whether or not the otp was sent to the user

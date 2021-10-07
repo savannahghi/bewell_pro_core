@@ -1,25 +1,33 @@
+// Flutter imports:
+
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:app_wrapper/app_wrapper.dart';
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/domain_constants.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:domain_objects/value_objects.dart';
-import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:misc_utilities/enums.dart';
+import 'package:misc_utilities/responsive_widget.dart';
+import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:shared_themes/text_themes.dart';
+import 'package:shared_ui_components/profile_banner.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/core/theme/colors.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/domain_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/enums.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/profile_item_builder.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/profile_page_items.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
-import 'package:intl/intl.dart';
-import 'package:misc_utilities/enums.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_themes/text_themes.dart';
-import 'package:shared_ui_components/profile_banner.dart';
 import 'build_profile_footer.dart';
 
 /// used for [master view] in master detail ui
@@ -159,7 +167,7 @@ class ProfileSeparator extends StatelessWidget {
         child: Text(
           text.toUpperCase(),
           style: TextThemes.boldSize12Text()
-              .copyWith(color: Theme.of(context).accentColor, fontSize: 8),
+              .copyWith(color: healthcloudAccentColor, fontSize: 8),
         ),
       ),
     );

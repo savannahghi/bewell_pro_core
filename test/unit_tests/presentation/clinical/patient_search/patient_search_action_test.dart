@@ -1,6 +1,13 @@
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:http/http.dart' as http;
+import 'package:test/test.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
@@ -8,10 +15,6 @@ import 'package:bewell_pro_core/presentation/clinical/patient_identification/pag
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/pages/patient_search_page/update_patient_found_action.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/pages/patient_search_page/update_patient_search_action.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/pages/patient_search_page/update_search_param_action.dart';
-import 'package:http/http.dart' as http;
-import 'package:flutter_graphql_client/graph_client.dart';
-import 'package:test/test.dart';
-
 import '../../../../mocks/mocks.dart';
 import 'mocked_data.dart';
 

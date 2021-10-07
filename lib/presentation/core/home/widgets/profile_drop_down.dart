@@ -1,18 +1,25 @@
+// Flutter imports:
+
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/core/services/helpers.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/events.dart';
-import 'package:bewell_pro_core/presentation/router/routes.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:bewell_pro_core/application/redux/view_models/user_state_view_model.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/login_constants.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:misc_utilities/misc.dart';
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/constants.dart';
 import 'package:shared_themes/text_themes.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/application/core/services/helpers.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/application/redux/view_models/user_state_view_model.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/events.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/login_constants.dart';
+import 'package:bewell_pro_core/presentation/router/routes.dart';
 
 class ProfileDropDown extends StatelessWidget {
   final ReduxAction<CoreState> logoutAction;
@@ -69,7 +76,7 @@ class ProfileDropDown extends StatelessWidget {
         width: 47,
         decoration: BoxDecoration(
           border: Border.all(
-            color: Theme.of(context).accentColor.withOpacity(0.5),
+            color: healthcloudAccentColor.withOpacity(0.5),
           ),
           shape: BoxShape.circle,
         ),
@@ -84,14 +91,14 @@ class ProfileDropDown extends StatelessWidget {
                         ''
                     ? Text(
                         'BW',
-                        style: TextThemes.boldSize18Text(
-                            Theme.of(context).accentColor),
+                        style:
+                            TextThemes.boldSize18Text(healthcloudAccentColor),
                       )
                     : Text(
                         extractNamesInitials(
                             name: getDisplayName(userProfile!)),
-                        style: TextThemes.boldSize18Text(
-                            Theme.of(context).accentColor),
+                        style:
+                            TextThemes.boldSize18Text(healthcloudAccentColor),
                       ),
               );
             }),

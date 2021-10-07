@@ -1,8 +1,12 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/presentation/core/help_center/pages/faq_detail_view_page.dart';
 import 'package:bewell_pro_core/presentation/core/help_center/widgets/html_wrapper.dart';
-
 import '../../../../../mocks/test_helpers.dart';
 
 void main() {

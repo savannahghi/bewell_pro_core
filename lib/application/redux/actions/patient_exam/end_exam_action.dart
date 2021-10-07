@@ -1,6 +1,12 @@
+// Dart imports:
 import 'dart:async';
 
+// Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:http/http.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
@@ -8,8 +14,6 @@ import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/exception_strings.dart';
-import 'package:http/http.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
 
 class EndExamAction extends ReduxAction<CoreState> {
   EndExamAction({required this.client});

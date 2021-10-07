@@ -1,7 +1,10 @@
-import 'package:bewell_pro_core/domain/clinical/entities/narrative_status.dart';
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/current_episode.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/narrative.dart';
+import 'package:bewell_pro_core/domain/clinical/entities/narrative_status.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/episode_of_care_status_enum.dart';
 
 void main() {

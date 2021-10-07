@@ -1,17 +1,20 @@
+// Dart imports:
 import 'dart:convert';
 
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
 import 'package:domain_objects/value_objects.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:async_redux/async_redux.dart';
-import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/application/redux/actions/onboarding_actions/verify_pin_action.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-
-import 'package:bewell_pro_core/presentation/onboarding/login/pages/set_user_names_page.dart';
-import 'package:bewell_pro_core/presentation/onboarding/profile/change_pin.dart';
-
 import 'package:http/http.dart' as http;
 
+// Project imports:
+import 'package:bewell_pro_core/application/redux/actions/onboarding_actions/verify_pin_action.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/presentation/onboarding/login/pages/set_user_names_page.dart';
+import 'package:bewell_pro_core/presentation/onboarding/profile/change_pin.dart';
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';
 

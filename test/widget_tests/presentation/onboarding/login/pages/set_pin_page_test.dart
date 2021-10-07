@@ -1,9 +1,11 @@
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/presentation/onboarding/login/widgets/onboarding_scaffold.dart';
-import 'package:bewell_pro_core/presentation/onboarding/login/widgets/set_and_confirm_pin_widget.dart';
-import 'package:bewell_pro_core/presentation/onboarding/login/pages/set_pin_page.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
+// Project imports:
+import 'package:bewell_pro_core/presentation/onboarding/login/pages/set_pin_page.dart';
+import 'package:bewell_pro_core/presentation/onboarding/login/widgets/onboarding_scaffold.dart';
+import 'package:bewell_pro_core/presentation/onboarding/login/widgets/set_and_confirm_pin_widget.dart';
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';
 

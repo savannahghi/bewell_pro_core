@@ -1,30 +1,35 @@
+// Dart imports:
 import 'dart:convert';
 
-import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
-import 'package:firebase_core/firebase_core.dart';
+// Flutter imports:
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
-import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
-import 'package:bewell_pro_core/presentation/core/home/pages/home_page.dart';
-import 'package:bewell_pro_core/presentation/onboarding/common/landing_page.dart';
-import 'package:bewell_pro_core/presentation/onboarding/login/widgets/phone_login.dart';
-import 'package:bewell_pro_core/presentation/onboarding/login/pages/phone_login_page.dart';
-import 'package:bewell_pro_core/presentation/onboarding/login/widgets/error_alert_box.dart';
-import 'package:bewell_pro_core/presentation/onboarding/profile/change_pin.dart';
-import 'package:bewell_pro_core/presentation/onboarding/signup/phone_signup_page.dart';
-import 'package:http/http.dart';
+// Package imports:
+import 'package:async_redux/async_redux.dart';
 import 'package:domain_objects/entities.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
 import 'package:shared_ui_components/inputs.dart';
 import 'package:shared_ui_components/platform_loader.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
+import 'package:bewell_pro_core/application/redux/flags/flags.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
+import 'package:bewell_pro_core/presentation/core/home/pages/home_page.dart';
+import 'package:bewell_pro_core/presentation/onboarding/common/landing_page.dart';
+import 'package:bewell_pro_core/presentation/onboarding/login/pages/phone_login_page.dart';
+import 'package:bewell_pro_core/presentation/onboarding/login/widgets/error_alert_box.dart';
+import 'package:bewell_pro_core/presentation/onboarding/login/widgets/phone_login.dart';
+import 'package:bewell_pro_core/presentation/onboarding/profile/change_pin.dart';
+import 'package:bewell_pro_core/presentation/onboarding/signup/phone_signup_page.dart';
 import '../../../../../mocks/mock_utils.dart';
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';

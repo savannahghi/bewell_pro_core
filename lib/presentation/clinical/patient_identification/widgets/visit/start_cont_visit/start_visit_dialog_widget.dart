@@ -1,11 +1,16 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/domain/clinical/value_objects/start_visit_type_enum.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+
+// Package imports:
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/spaces.dart';
 import 'package:shared_themes/text_themes.dart';
 import 'package:shared_ui_components/buttons.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/clinical/value_objects/start_visit_type_enum.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 
 /// Dialog for starting a visit by emergency override or request access
 class StartVisitDialogWidget extends StatelessWidget {

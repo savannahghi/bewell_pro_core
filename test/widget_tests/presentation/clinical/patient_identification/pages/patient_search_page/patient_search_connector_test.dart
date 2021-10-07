@@ -1,8 +1,12 @@
+// Package imports:
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_ui_components/platform_loader.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/human_name.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
@@ -11,8 +15,6 @@ import 'package:bewell_pro_core/presentation/clinical/patient_identification/pag
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/no_results_found.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/search_card/patient_search_card_widget.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/search_guide.dart';
-import 'package:shared_ui_components/platform_loader.dart';
-
 import '../../../../../../mocks/test_helpers.dart';
 
 void main() {

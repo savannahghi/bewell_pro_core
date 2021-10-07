@@ -1,21 +1,23 @@
+// Dart imports:
 import 'dart:async';
 
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:app_wrapper/app_wrapper.dart';
+import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:http/http.dart' as http;
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/graphql/queries.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/composition_edge.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/composition_edge_relay.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/fhir.dart';
-
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/exception_strings.dart';
-
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/models/exam_composition.dart';
-
-import 'package:http/http.dart' as http;
-import 'package:app_wrapper/app_wrapper.dart';
-
-import 'package:flutter_graphql_client/graph_client.dart';
 
 enum PatientExamUpdateType { patientHistory, generalExam, reviewOfSystem }
 

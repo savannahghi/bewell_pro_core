@@ -1,9 +1,12 @@
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
-import 'package:bewell_pro_core/application/clinical/patient_registration/next_of_kin_data_validator.dart';
 
+// Project imports:
+import 'package:bewell_pro_core/application/clinical/patient_registration/next_of_kin_data_validator.dart';
+import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
 import '../../../../mocks/mocks.dart';
 
 void main() {

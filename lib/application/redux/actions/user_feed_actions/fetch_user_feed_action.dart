@@ -1,16 +1,20 @@
+// Dart imports:
 import 'dart:async';
 import 'dart:convert';
 
+// Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:domain_objects/value_objects.dart';
+import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:http/http.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/graphql/queries.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_feed_actions/save_user_feed_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/exception_strings.dart';
-import 'package:http/http.dart';
-import 'package:domain_objects/value_objects.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
 
 /// A [ReduxAction] used to fetch user's feed.
 /// Retrieves the current feed from state and passes the data to

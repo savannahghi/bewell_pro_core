@@ -1,12 +1,15 @@
+// Flutter imports:
 import 'package:flutter/gestures.dart';
-
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
-import 'package:bewell_pro_core/presentation/core/help_center/widgets/html_wrapper.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
 
+// Project imports:
+import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+import 'package:bewell_pro_core/presentation/core/help_center/widgets/html_wrapper.dart';
 import '../../../../../mocks/test_helpers.dart';
 
 void main() {

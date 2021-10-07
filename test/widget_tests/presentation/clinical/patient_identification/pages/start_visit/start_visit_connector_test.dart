@@ -1,9 +1,20 @@
-import 'package:async_redux/async_redux.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
+import 'package:domain_objects/entities.dart';
+import 'package:domain_objects/value_objects.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:quiver/async.dart';
+import 'package:quiver/testing/time.dart';
+import 'package:shared_ui_components/buttons.dart';
+import 'package:shared_ui_components/platform_loader.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/misc_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/OTP_episode_creation_input.dart';
@@ -19,13 +30,6 @@ import 'package:bewell_pro_core/presentation/clinical/common/widgets/countdown_t
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/visit/start_visit_page/start_visit_connector.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/visit/start_visit_page/start_visit_emergency_action.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/visit/start_visit_page/start_visit_request_access_action.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
-import 'package:shared_ui_components/buttons.dart';
-import 'package:quiver/async.dart';
-import 'package:quiver/testing/time.dart';
-import 'package:shared_ui_components/platform_loader.dart';
-
 import '../../../../../../mocks/mock_redux_actions.dart';
 import '../../../../../../mocks/test_helpers.dart';
 

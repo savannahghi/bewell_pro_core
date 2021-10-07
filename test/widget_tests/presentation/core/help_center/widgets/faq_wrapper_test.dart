@@ -1,16 +1,18 @@
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:async_redux/async_redux.dart';
-
 import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_ui_components/platform_loader.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/presentation/core/help_center/widgets/faq_card.dart';
 import 'package:bewell_pro_core/presentation/core/help_center/widgets/faq_wrapper.dart';
 import 'package:bewell_pro_core/presentation/core/widgets/generic_empty_data_widget.dart';
 import 'package:bewell_pro_core/presentation/core/widgets/generic_timeout_widget.dart';
-import 'package:http/http.dart' as http;
-import 'package:shared_ui_components/platform_loader.dart';
-
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';
 

@@ -1,17 +1,21 @@
-import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_contexts.dart';
-import 'package:bewell_pro_core/presentation/clinical/common/widgets/bewell_table_header.dart';
-import 'package:bewell_pro_core/presentation/clinical/common/widgets/bewell_table_title_action.dart';
-import 'package:bewell_pro_core/presentation/clinical/common/widgets/bewell_table_header_value.dart';
-import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exam_buttons/exam_item_add_button.dart';
+
+// Package imports:
 import 'package:app_wrapper/app_wrapper.dart';
+import 'package:async_redux/async_redux.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 
+// Project imports:
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_contexts.dart';
+import 'package:bewell_pro_core/presentation/clinical/common/widgets/bewell_table_header.dart';
+import 'package:bewell_pro_core/presentation/clinical/common/widgets/bewell_table_header_value.dart';
+import 'package:bewell_pro_core/presentation/clinical/common/widgets/bewell_table_title_action.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exam_buttons/exam_item_add_button.dart';
 import '../../../../mocks/mocks.dart';
 
 void main() {

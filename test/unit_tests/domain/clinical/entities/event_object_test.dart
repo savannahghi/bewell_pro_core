@@ -1,5 +1,8 @@
-import 'package:bewell_pro_core/domain/clinical/entities/event_object.dart';
+// Package imports:
 import 'package:test/test.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/clinical/entities/event_object.dart';
 
 void main() {
   test('EventObject should create a valid EventObject object', () {

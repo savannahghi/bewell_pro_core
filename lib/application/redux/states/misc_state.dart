@@ -1,8 +1,11 @@
+// Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:domain_objects/value_objects.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/states/event_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/faq_content.dart';
-import 'package:domain_objects/value_objects.dart';
 
 part 'misc_state.freezed.dart';
 part 'misc_state.g.dart';

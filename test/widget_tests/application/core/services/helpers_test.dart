@@ -1,7 +1,30 @@
+// Dart imports:
 import 'dart:convert';
 
+// Flutter imports:
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
+// Package imports:
 import 'package:app_wrapper/app_wrapper.dart';
 import 'package:async_redux/async_redux.dart';
+import 'package:domain_objects/entities.dart';
+import 'package:domain_objects/value_objects.dart';
+import 'package:flutter_graphql_client/graph_utils.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart';
+import 'package:misc_utilities/misc.dart';
+import 'package:misc_utilities/number_constants.dart';
+import 'package:misc_utilities/responsive_widget.dart';
+import 'package:mocktail_image_network/mocktail_image_network.dart';
+import 'package:plugin_platform_interface/plugin_platform_interface.dart';
+import 'package:shared_themes/constants.dart';
+import 'package:shared_ui_components/buttons.dart';
+import 'package:url_launcher_platform_interface/link.dart';
+import 'package:url_launcher_platform_interface/url_launcher_platform_interface.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
@@ -18,24 +41,6 @@ import 'package:bewell_pro_core/presentation/onboarding/login/pages/phone_login_
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/phone_login.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/pages/user_profile_page.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_graphql_client/graph_utils.dart';
-import 'package:flutter_html/flutter_html.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:http/http.dart';
-import 'package:misc_utilities/misc.dart';
-import 'package:misc_utilities/number_constants.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:mocktail_image_network/mocktail_image_network.dart';
-import 'package:plugin_platform_interface/plugin_platform_interface.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:shared_ui_components/buttons.dart';
-import 'package:url_launcher_platform_interface/link.dart';
-import 'package:url_launcher_platform_interface/url_launcher_platform_interface.dart';
-
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 

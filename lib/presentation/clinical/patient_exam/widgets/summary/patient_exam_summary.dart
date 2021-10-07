@@ -1,26 +1,28 @@
+// Dart imports:
 import 'dart:async';
 
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/application/core/graphql/queries.dart';
-import 'package:bewell_pro_core/application/core/services/helpers.dart';
 
-import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
-
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exam_titles/patient_exam_card_title.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/summary_utils.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/widgets/sign_off_exam.dart';
-
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/summary_medications.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/summary_tests.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/generic_zero_state.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/bewell_primary_patient_banner.dart';
-import 'package:bewell_pro_core/presentation/core/home/models/bottom_navigation_bar_items.dart';
-import 'package:bewell_pro_core/presentation/core/widgets/app_scaffold.dart';
+// Package imports:
 import 'package:misc_utilities/misc.dart';
-
 import 'package:misc_utilities/responsive_widget.dart';
 import 'package:shared_themes/spaces.dart';
 import 'package:shared_ui_components/platform_loader.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/application/core/graphql/queries.dart';
+import 'package:bewell_pro_core/application/core/services/helpers.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/generic_zero_state.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exam_titles/patient_exam_card_title.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/summary_medications.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/summary_tests.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/summary_utils.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/widgets/sign_off_exam.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/bewell_primary_patient_banner.dart';
+import 'package:bewell_pro_core/presentation/core/home/models/bottom_navigation_bar_items.dart';
+import 'package:bewell_pro_core/presentation/core/widgets/app_scaffold.dart';
 
 /// PatientExamSummary
 /// Rendered on View Summary which has a summary of the recorded patient info,

@@ -1,19 +1,24 @@
+// Dart imports:
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:firebase_core/firebase_core.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+// Package imports:
+import 'package:dart_fcm/dart_fcm.dart';
+import 'package:domain_objects/value_objects.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart';
+import 'package:mockito/annotations.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/problem_allergy_summary.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
-import 'package:http/http.dart';
-import 'package:mockito/annotations.dart';
-import 'package:domain_objects/value_objects.dart';
-import 'package:dart_fcm/dart_fcm.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
-
 import '../../../../mocks/mock_utils.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';

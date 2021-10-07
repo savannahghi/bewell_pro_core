@@ -1,10 +1,14 @@
-import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/application/redux/view_model_factories/patient_exam/otp_box_view_model_factory.dart';
-import 'package:bewell_pro_core/application/redux/view_models/clinical/patient_exam/otp_box_view_model.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
 import 'package:quiver/async.dart';
 
+// Project imports:
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/application/redux/view_model_factories/patient_exam/otp_box_view_model_factory.dart';
+import 'package:bewell_pro_core/application/redux/view_models/clinical/patient_exam/otp_box_view_model.dart';
 import 'otp_box.dart';
 
 class OtpBoxConnector extends StatelessWidget {

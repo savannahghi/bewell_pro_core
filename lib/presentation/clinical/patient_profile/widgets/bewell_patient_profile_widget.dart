@@ -1,5 +1,16 @@
-import 'package:async_redux/async_redux.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
+import 'package:misc_utilities/misc.dart';
+import 'package:misc_utilities/responsive_widget.dart';
+import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/constants.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:unicons/unicons.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/view_models/clinical/patient_profile/patient_profile_view_model.dart';
@@ -17,12 +28,6 @@ import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/be
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/start_or_continue_exam_wrapper.dart';
 import 'package:bewell_pro_core/presentation/core/home/models/bottom_navigation_bar_items.dart';
 import 'package:bewell_pro_core/presentation/core/widgets/app_scaffold.dart';
-import 'package:misc_utilities/misc.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:unicons/unicons.dart';
 
 class BewellPatientProfileWidget extends StatefulWidget {
   const BewellPatientProfileWidget({Key? key, required this.onStartVisit})

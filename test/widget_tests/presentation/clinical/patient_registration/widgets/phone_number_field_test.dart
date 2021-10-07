@@ -1,13 +1,15 @@
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
+import 'package:quiver/async.dart';
+import 'package:quiver/testing/time.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/clinical/patient_registration/phone_number_form_manager.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/resend_otp.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/verify_phone_dialog.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/phone_number_field.dart';
-import 'package:quiver/testing/time.dart';
-import 'package:quiver/async.dart';
-
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';
 

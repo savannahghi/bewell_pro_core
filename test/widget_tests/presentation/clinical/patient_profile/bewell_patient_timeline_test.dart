@@ -1,21 +1,25 @@
+// Dart imports:
 import 'dart:convert';
 
-import 'package:async_redux/async_redux.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_ui_components/buttons.dart';
+import 'package:shared_ui_components/platform_loader.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/generic_zero_state.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/bewell_patient_timeline.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/patient_timeline_record.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/load_more_timeline_records.dart';
-import 'package:http/http.dart' as http;
-
-import 'package:shared_ui_components/buttons.dart';
-import 'package:shared_ui_components/platform_loader.dart';
-
+import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/patient_timeline_record.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 
@@ -23,11 +27,9 @@ void main() {
   group('BeWellPatientTimeline', () {
     late Store<CoreState> store;
 
-    setUpAll(() {
-      startMockVisitAndExam();
-    });
-
     setUp(() {
+      startMockVisitAndExam();
+
       store = Store<CoreState>(initialState: CoreState.initial());
       TimelineInfoObject().reset();
     });
@@ -199,6 +201,7 @@ void main() {
 
     testWidgets('should display all the items in allergy resource',
         (WidgetTester tester) async {
+      TimelineInfoObject().reset();
       const String substance = 'Egg yolk phosphatides';
       const String reaction = 'very bad';
       const String severity = 'Severe';

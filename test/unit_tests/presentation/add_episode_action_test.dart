@@ -1,9 +1,12 @@
+// Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:test/test.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/actions/clinical_state_actions/add_episode_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/current_episode.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/episode_of_care_status_enum.dart';
-import 'package:test/test.dart';
 
 void main() {
   group('add episode of care to state action', () {

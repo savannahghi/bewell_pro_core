@@ -1,23 +1,25 @@
+// Dart imports:
 import 'dart:async';
 
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:app_wrapper/app_wrapper.dart';
+import 'package:intl/intl.dart';
+import 'package:shared_themes/spaces.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
-
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/medications/medication_search_result_container.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/medications/medication_prescription_form.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawer_common_widgets/drawer_search_input.dart';
-
-import 'package:intl/intl.dart';
-
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawer_header.dart';
-import 'package:app_wrapper/app_wrapper.dart';
-
-import 'package:shared_themes/spaces.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/medications/medication_prescription_form.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/medications/medication_search_result_container.dart';
 
 /// Drawer used to add medication details for patients
 ///

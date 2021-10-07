@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/allergy.dart';
 
 part 'allergy_intolerance_relay_edge.freezed.dart';

@@ -1,32 +1,38 @@
+// Dart imports:
 import 'dart:convert';
 
-import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/actions/user_state_actions/update_supplier_profile_action.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
+// Package imports:
+import 'package:app_wrapper/app_wrapper.dart';
+import 'package:async_redux/async_redux.dart';
+import 'package:dart_fcm/dart_fcm.dart';
+import 'package:domain_objects/entities.dart';
+import 'package:domain_objects/value_objects.dart';
+import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:http/http.dart' as http;
+import 'package:misc_utilities/misc.dart';
+import 'package:user_feed/user_feed.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/core/services/onboarding.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
+import 'package:bewell_pro_core/application/redux/actions/user_state_actions/update_supplier_profile_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/misc_state.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/domain/core/entities/onboarding_path_config.dart';
 import 'package:bewell_pro_core/domain/core/entities/processed_response.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/exception_strings.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/events.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/exception_strings.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/login_constants.dart';
-import 'package:app_wrapper/app_wrapper.dart';
-import 'package:dart_fcm/dart_fcm.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
-import 'package:http/http.dart' as http;
-import 'package:misc_utilities/misc.dart';
-import 'package:user_feed/user_feed.dart';
 
 /// [PhoneLoginAction] called when the user try to login using their primary phone
 class PhoneLoginAction extends ReduxAction<CoreState> {

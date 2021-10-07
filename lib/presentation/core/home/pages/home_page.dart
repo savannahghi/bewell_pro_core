@@ -1,6 +1,14 @@
+// Dart imports:
 import 'dart:async';
 
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:shared_themes/spaces.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/services/feed_content_callbacks.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';
@@ -13,8 +21,6 @@ import 'package:bewell_pro_core/presentation/core/home/models/bottom_navigation_
 import 'package:bewell_pro_core/presentation/core/home/widgets/feed_component_wrapper.dart';
 import 'package:bewell_pro_core/presentation/core/home/widgets/session_timeout.dart';
 import 'package:bewell_pro_core/presentation/core/widgets/app_scaffold.dart';
-import 'package:flutter/material.dart';
-import 'package:shared_themes/spaces.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({

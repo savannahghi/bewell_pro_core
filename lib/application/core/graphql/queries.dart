@@ -1,6 +1,9 @@
+// Package imports:
+import 'package:user_feed/user_feed.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
-import 'package:user_feed/user_feed.dart';
 
 const String resumeWithPinQuery = r'''
 query ResumeWithPIN($pin: String!) {

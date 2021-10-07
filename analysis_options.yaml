@@ -59,6 +59,7 @@ linter:
     avoid_bool_literals_in_conditional_expressions: true
     overridden_fields: true
     camel_case_types: true
+    directives_ordering: false
 
     # exceptions
     prefer_constructors_over_static_methods: false

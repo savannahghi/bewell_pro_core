@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/patient_registration_helper.dart';
 
 void main() {

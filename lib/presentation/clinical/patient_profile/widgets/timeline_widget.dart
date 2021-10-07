@@ -1,6 +1,11 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/bewell_custom_timeline_painter.dart';
+
+// Package imports:
 import 'package:shared_themes/colors.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/bewell_custom_timeline_painter.dart';
 
 class HCTimelineWidget extends StatelessWidget {
   const HCTimelineWidget({

@@ -1,6 +1,9 @@
+// Package imports:
+import 'package:test/test.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/fhir.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/range.dart';
-import 'package:test/test.dart';
 
 void main() {
   test('Range should create a valid Range object', () {

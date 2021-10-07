@@ -1,12 +1,15 @@
+// Package imports:
+import 'package:domain_objects/value_objects.dart';
+import 'package:intl/intl.dart';
+import 'package:rxdart/rxdart.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/clinical/patient_registration/phone_number_form_manager.dart';
 import 'package:bewell_pro_core/application/clinical/patient_registration/validator_mixin.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/simple_next_of_kin_input.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/domain/core/entities/name_input.dart';
 import 'package:bewell_pro_core/domain/core/entities/phone_number_input.dart';
-import 'package:domain_objects/value_objects.dart';
-import 'package:intl/intl.dart';
-import 'package:rxdart/rxdart.dart';
 
 class AddNextOfKinFormManager with Validator {
   final BehaviorSubject<String> _firstName = BehaviorSubject<String>();

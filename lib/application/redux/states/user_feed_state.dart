@@ -1,5 +1,6 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+// Package imports:
 import 'package:domain_objects/value_objects.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'user_feed_state.freezed.dart';
 part 'user_feed_state.g.dart';

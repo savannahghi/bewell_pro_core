@@ -1,22 +1,28 @@
-import 'package:app_wrapper/app_wrapper.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/domain_constants.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
+// Flutter imports:
+
+// Flutter imports:
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:app_wrapper/app_wrapper.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:misc_utilities/responsive_widget.dart';
+import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:shared_themes/text_themes.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/core/theme/colors.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/domain_constants.dart';
 import 'package:bewell_pro_core/presentation/onboarding/common/widgets/brand_logo.dart';
 import 'package:bewell_pro_core/presentation/onboarding/common/widgets/landing_actions.dart';
 import 'package:bewell_pro_core/presentation/onboarding/common/widgets/landing_page_image.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
-
-import 'package:misc_utilities/responsive_widget.dart';
-
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_themes/text_themes.dart';
 
 /// [LandingPage] for Bewell pro app.
 ///
@@ -183,7 +189,7 @@ List<Widget> circles(BuildContext context) {
         height: circleSize,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: Theme.of(context).accentColor.withOpacity(0.04),
+          color: healthcloudAccentColor.withOpacity(0.04),
         ),
       ),
     ),

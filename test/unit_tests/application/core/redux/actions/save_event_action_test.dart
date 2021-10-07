@@ -1,7 +1,10 @@
+// Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:test/test.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/save_event_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:test/test.dart';
 
 void main() {
   group('SaveEventAction', () {

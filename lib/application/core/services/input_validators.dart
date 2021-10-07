@@ -1,5 +1,8 @@
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+// Package imports:
 import 'package:misc_utilities/misc.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 
 RegExp validNumberRegexp = RegExp(r'^-?[0-9]+$');
 

@@ -1,6 +1,6 @@
 name: bewell_pro_core
 description: Main package for BeWell-Professional
-version: 1.1.25-nullsafety
+version: 1.1.26-nullsafety
 homepage: https://github.com/savannahghi/bewell_pro_core
 repository: https://github.com/savannahghi/bewell_pro_core
 issue_tracker: https://github.com/savannahghi/bewell_pro_core/issues
@@ -56,18 +56,18 @@ dependencies:
   path: ^1.8.0
   permission_handler: ^6.1.0
   permission_handler_platform_interface: ^3.6.1
-  photo_view: ^0.11.1
+  photo_view: ^0.13.0
   plugin_platform_interface: ^2.0.1
   quiver: ^3.0.1
   rxdart: ^0.27.1
   sentry_flutter: ^5.1.0
   shared_themes: ^0.1.1 # internal (formerly shared_themes)
-  shared_ui_components: ^0.1.37-nullsafety # internal (formerly sil_ui_components)
+  shared_ui_components: ^0.1.38-nullsafety # internal (formerly sil_ui_components)
   shimmer: ^2.0.0
   sqflite: ^2.0.0+4
   unicons: ^2.0.1
   url_launcher: ^6.0.6
-  user_feed: ^0.1.43-nullsafety # internal (formerly sil_feed)
+  user_feed: ^0.1.45-nullsafety # internal (formerly sil_feed)
   user_profile: ^0.1.22-nullsafety # internal (formerly user_profile)
 
 dev_dependencies:
@@ -76,6 +76,7 @@ dev_dependencies:
   connectivity_platform_interface: ^2.0.0
   flutter_test:
     sdk: flutter
+  import_sorter: ^4.6.0
   lint: 1.5.3
   mockito: ^5.0.1
   mocktail_image_network: ^0.1.0

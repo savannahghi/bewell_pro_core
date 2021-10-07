@@ -1,4 +1,17 @@
+// Flutter imports:
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+// Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:domain_objects/entities.dart';
+import 'package:misc_utilities/enums.dart';
+import 'package:misc_utilities/responsive_widget.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:shared_themes/text_themes.dart';
+import 'package:shared_ui_components/buttons.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
@@ -6,14 +19,6 @@ import 'package:bewell_pro_core/domain/core/value_objects/numbers_constants.dart
 import 'package:bewell_pro_core/presentation/core/home/widgets/sil_app_bar.dart';
 import 'package:bewell_pro_core/presentation/core/home/widgets/sil_bottom_navigation_bar.dart';
 import 'package:bewell_pro_core/presentation/core/widgets/app_drawer.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:misc_utilities/enums.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_themes/text_themes.dart';
-import 'package:shared_ui_components/buttons.dart';
 
 class AppScaffold extends StatelessWidget {
   AppScaffold({

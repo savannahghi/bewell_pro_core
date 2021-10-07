@@ -1,8 +1,13 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/presentation/onboarding/common/landing_page.dart';
+
+// Package imports:
 import 'package:misc_utilities/responsive_widget.dart';
 import 'package:shared_themes/spaces.dart';
 import 'package:shared_themes/text_themes.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/presentation/onboarding/common/landing_page.dart';
 
 /// Generic Class used in various pages.
 ///

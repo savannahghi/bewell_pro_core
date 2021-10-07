@@ -1,11 +1,14 @@
+// Package imports:
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/annotation.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/codeable_concept.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/dosage.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/identifier.dart';
-import 'package:bewell_pro_core/domain/clinical/entities/medication_request_substitution.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/medication_request_dispense.dart';
+import 'package:bewell_pro_core/domain/clinical/entities/medication_request_substitution.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/reference.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 
 part 'medication.freezed.dart';

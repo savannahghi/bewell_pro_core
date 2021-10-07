@@ -1,3 +1,7 @@
+// Package imports:
+import 'package:intl/intl.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/domain/core/entities/email_input.dart';
 import 'package:bewell_pro_core/domain/core/entities/identification_details.dart';
@@ -5,8 +9,6 @@ import 'package:bewell_pro_core/domain/core/entities/name_input.dart';
 import 'package:bewell_pro_core/domain/core/entities/payload_input.dart';
 import 'package:bewell_pro_core/domain/core/entities/phone_number_input.dart';
 import 'package:bewell_pro_core/domain/core/entities/photo_input.dart';
-import 'package:intl/intl.dart';
-
 import 'patient_registration_image_data.dart';
 
 class SimplePatientRegistrationInput {
