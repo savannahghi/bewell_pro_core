@@ -49,8 +49,30 @@ jobs:
       - store_artifacts:
           path: coverage/
 
+  publish_package_to_pub_dev:
+    docker:
+      - image: cirrusci/flutter:2.2.1
+    steps:
+      - checkout
+      - run:
+          name: Setup credentials
+          command:
+            echo $PUB_CREDENTIALS_JSON_FILE > ~/.pub-cache/credentials.json
+      - run:
+          name: Publish package to pub.dev
+          no_output_timeout: 5m
+          command: 
+            pub publish -f
+
 workflows:
   version: 2
   run_tests:
     jobs:
       - run_tests_and_generate_coverage
+      - publish_package_to_pub_dev:
+          requires:
+            - run_tests_and_generate_coverage
+          filters:
+            branches:
+              only:
+                - main
