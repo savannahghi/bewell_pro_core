@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 1.1.27-nullsafety
+
+- feat: complete setup automated deployment to pub.dev
+
+## 1.1.26-nullsafety
+
+- feat: setup automated deployment to pub.dev
+
 ## 1.1.25-nullsafety
 
 - Capture exceptions thrown after user updates their first name and last name during onboarding
