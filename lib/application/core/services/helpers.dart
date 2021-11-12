@@ -829,7 +829,7 @@ Future<String> getInitialRoute({required BuildContext context}) async {
     }
 
     if (onboardingPath(state: state).route == homePageRoute) {
-      StoreProvider.dispatch<CoreState>(
+      await StoreProvider.dispatch<CoreState>(
         context,
         NavigationAction(
           drawerSelectedIndex: -1,

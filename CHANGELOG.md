@@ -1,8 +1,15 @@
 # CHANGELOG
 
+## 1.1.28-nullsafety
+
+- fix: app fixes
+
 ## 1.1.27-nullsafety
 
 - Move CI workflow to github
+## 1.1.26-nullsafety
+
+- fix: bottom navigation drawer and app drawer
 
 ## 1.1.25-nullsafety
 

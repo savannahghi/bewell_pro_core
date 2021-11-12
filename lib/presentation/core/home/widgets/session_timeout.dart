@@ -1,18 +1,13 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
-
-// Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:quiver/async.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/buttons.dart';
-
-// Project imports:
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/update_navigation_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+import 'package:flutter/material.dart';
+import 'package:quiver/async.dart';
+import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:shared_ui_components/buttons.dart';
 
 class SessionTimeoutAlert extends StatefulWidget {
   const SessionTimeoutAlert({

@@ -294,8 +294,8 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
                     keyboardType: TextInputType.datetime,
                     onChanged: (String? value) {
                       if (value != null) {
-                        final DateTime date =
-                            DateFormat('d MMM yyyy').parse(value);
+                        final DateTime date = DateFormat.yMMMMd('en_GB')
+                            .parseLoose(value.replaceAll(',', ''));
                         _formManager.inDateOfBirth.add(date);
                       }
                     },

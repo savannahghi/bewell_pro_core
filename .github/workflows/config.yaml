@@ -39,3 +39,9 @@ jobs:
           lcov --remove coverage/lcov.info 'lib/**/*.freezed.dart' -o coverage/lcov.info
           genhtml -q -o coverage coverage/lcov.info
           python3 check_coverage.py
+
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v2
+        with:
+          name: code-coverage-report
+          path: coverage/index.html
