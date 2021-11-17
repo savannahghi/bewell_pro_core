@@ -18,6 +18,7 @@ _$_EventObject _$_$_EventObjectFromJson(Map<String, dynamic> json) {
         : DateTime.parse(json['timestamp'] as String),
     flavour: json['flavour'] as String?,
     appVersion: json['app_version'] as String? ?? 'dev-build',
+    metaData: json['meta_data'] as Map<String, dynamic>?,
   );
 }
 
@@ -31,4 +32,5 @@ Map<String, dynamic> _$_$_EventObjectToJson(_$_EventObject instance) =>
       'timestamp': instance.timestamp?.toIso8601String(),
       'flavour': instance.flavour,
       'app_version': instance.appVersion,
+      'meta_data': instance.metaData,
     };

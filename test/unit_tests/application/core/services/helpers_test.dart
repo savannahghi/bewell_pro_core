@@ -344,6 +344,23 @@ void main() {
       expect(methodCall!.method, 'logEvent');
       expect(methodCall!.arguments['parameters']['flavour'], 'PRO');
     });
+
+    testWidgets(
+        'should publish event to Firebase analytics correctly successfully as consumer',
+        (WidgetTester tester) async {
+      await buildTestWidget(
+        tester: tester,
+        widget: const SizedBox(),
+      );
+
+      final BuildContext context = tester.element(find.byType(SizedBox));
+
+      triggerEvent('some-event', context, appContextParam: 'consumer');
+
+      expect(methodCall, isNotNull);
+      expect(methodCall!.method, 'logEvent');
+      expect(methodCall!.arguments['parameters']['flavour'], 'PRO');
+    });
   });
 
   testWidgets(

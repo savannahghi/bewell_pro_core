@@ -1,4 +1,6 @@
 import 'dart:async';
+
+import 'package:app_wrapper/app_wrapper.dart';
 import 'package:async_redux/async_redux.dart';
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/graphql/queries.dart';
@@ -29,22 +31,22 @@ import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages
 import 'package:bewell_pro_core/presentation/clinical/post_visit_survey/post_visit_survey_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/profile_page_items.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_html/html_parser.dart';
-import 'package:http/http.dart' as http;
-import 'package:misc_utilities/enums.dart';
-import 'package:rxdart/rxdart.dart';
-import 'package:app_wrapper/app_wrapper.dart';
 import 'package:dart_fcm/dart_fcm.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:domain_objects/value_objects.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:flutter_graphql_client/graph_utils.dart';
+import 'package:flutter_html/html_parser.dart';
+import 'package:html/dom.dart' as dom;
+import 'package:http/http.dart' as http;
 import 'package:misc_utilities/bottom_sheet_builder.dart';
+import 'package:misc_utilities/enums.dart';
 import 'package:misc_utilities/misc.dart';
 import 'package:misc_utilities/responsive_widget.dart';
+import 'package:rxdart/rxdart.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/constants.dart';
@@ -52,7 +54,6 @@ import 'package:shared_themes/spaces.dart';
 import 'package:shared_ui_components/buttons.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:user_feed/user_feed.dart';
-import 'package:html/dom.dart' as dom;
 
 /// [getAuthTokenStatus] is used to check if the Auth Token has expired or if it needs refreshing
 ///
@@ -847,7 +848,8 @@ String getAppContext(List<AppContext> contexts) {
   return 'test';
 }
 
-void triggerEvent(String eventName, BuildContext context, {String? route}) {
+void triggerEvent(String eventName, BuildContext context,
+    {String? route, Map<String, dynamic>? metaData, String? appContextParam}) {
   final UserState userState =
       StoreProvider.state<CoreState>(context)!.userState!;
 
@@ -859,10 +861,11 @@ void triggerEvent(String eventName, BuildContext context, {String? route}) {
     primaryPhoneNumber: userState.userProfile!.primaryPhoneNumber?.getValue(),
     flavour: Flavour.PRO.name,
     timestamp: DateTime.now(),
+    metaData: metaData,
   );
 
   final String appContext =
-      getAppContext(AppWrapperBase.of(context)!.appContexts);
+      appContextParam ?? getAppContext(AppWrapperBase.of(context)!.appContexts);
 
   /// The environment specific event name
   final String contextEventName = '${eventName}_$appContext';
