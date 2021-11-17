@@ -36,7 +36,9 @@ class _$EventObjectTearOff {
       @JsonKey(name: 'flavour')
           String? flavour,
       @JsonKey(name: 'app_version', defaultValue: APPVERSION)
-          String? appVersion}) {
+          String? appVersion,
+      @JsonKey(name: 'meta_data')
+          Map<String, dynamic>? metaData}) {
     return _EventObject(
       firstName: firstName,
       lastName: lastName,
@@ -46,6 +48,7 @@ class _$EventObjectTearOff {
       timestamp: timestamp,
       flavour: flavour,
       appVersion: appVersion,
+      metaData: metaData,
     );
   }
 
@@ -75,6 +78,8 @@ mixin _$EventObject {
   String? get flavour => throw _privateConstructorUsedError;
   @JsonKey(name: 'app_version', defaultValue: APPVERSION)
   String? get appVersion => throw _privateConstructorUsedError;
+  @JsonKey(name: 'meta_data')
+  Map<String, dynamic>? get metaData => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -103,7 +108,9 @@ abstract class $EventObjectCopyWith<$Res> {
       @JsonKey(name: 'flavour')
           String? flavour,
       @JsonKey(name: 'app_version', defaultValue: APPVERSION)
-          String? appVersion});
+          String? appVersion,
+      @JsonKey(name: 'meta_data')
+          Map<String, dynamic>? metaData});
 }
 
 /// @nodoc
@@ -124,6 +131,7 @@ class _$EventObjectCopyWithImpl<$Res> implements $EventObjectCopyWith<$Res> {
     Object? timestamp = freezed,
     Object? flavour = freezed,
     Object? appVersion = freezed,
+    Object? metaData = freezed,
   }) {
     return _then(_value.copyWith(
       firstName: firstName == freezed
@@ -158,6 +166,10 @@ class _$EventObjectCopyWithImpl<$Res> implements $EventObjectCopyWith<$Res> {
           ? _value.appVersion
           : appVersion // ignore: cast_nullable_to_non_nullable
               as String?,
+      metaData: metaData == freezed
+          ? _value.metaData
+          : metaData // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -185,7 +197,9 @@ abstract class _$EventObjectCopyWith<$Res>
       @JsonKey(name: 'flavour')
           String? flavour,
       @JsonKey(name: 'app_version', defaultValue: APPVERSION)
-          String? appVersion});
+          String? appVersion,
+      @JsonKey(name: 'meta_data')
+          Map<String, dynamic>? metaData});
 }
 
 /// @nodoc
@@ -208,6 +222,7 @@ class __$EventObjectCopyWithImpl<$Res> extends _$EventObjectCopyWithImpl<$Res>
     Object? timestamp = freezed,
     Object? flavour = freezed,
     Object? appVersion = freezed,
+    Object? metaData = freezed,
   }) {
     return _then(_EventObject(
       firstName: firstName == freezed
@@ -242,6 +257,10 @@ class __$EventObjectCopyWithImpl<$Res> extends _$EventObjectCopyWithImpl<$Res>
           ? _value.appVersion
           : appVersion // ignore: cast_nullable_to_non_nullable
               as String?,
+      metaData: metaData == freezed
+          ? _value.metaData
+          : metaData // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -257,7 +276,8 @@ class _$_EventObject implements _EventObject {
       @JsonKey(name: 'primary_phonenumber') this.primaryPhoneNumber,
       @JsonKey(name: 'timestamp') this.timestamp,
       @JsonKey(name: 'flavour') this.flavour,
-      @JsonKey(name: 'app_version', defaultValue: APPVERSION) this.appVersion});
+      @JsonKey(name: 'app_version', defaultValue: APPVERSION) this.appVersion,
+      @JsonKey(name: 'meta_data') this.metaData});
 
   factory _$_EventObject.fromJson(Map<String, dynamic> json) =>
       _$_$_EventObjectFromJson(json);
@@ -286,10 +306,13 @@ class _$_EventObject implements _EventObject {
   @override
   @JsonKey(name: 'app_version', defaultValue: APPVERSION)
   final String? appVersion;
+  @override
+  @JsonKey(name: 'meta_data')
+  final Map<String, dynamic>? metaData;
 
   @override
   String toString() {
-    return 'EventObject(firstName: $firstName, lastName: $lastName, uid: $uid, route: $route, primaryPhoneNumber: $primaryPhoneNumber, timestamp: $timestamp, flavour: $flavour, appVersion: $appVersion)';
+    return 'EventObject(firstName: $firstName, lastName: $lastName, uid: $uid, route: $route, primaryPhoneNumber: $primaryPhoneNumber, timestamp: $timestamp, flavour: $flavour, appVersion: $appVersion, metaData: $metaData)';
   }
 
   @override
@@ -317,7 +340,10 @@ class _$_EventObject implements _EventObject {
                     .equals(other.flavour, flavour)) &&
             (identical(other.appVersion, appVersion) ||
                 const DeepCollectionEquality()
-                    .equals(other.appVersion, appVersion)));
+                    .equals(other.appVersion, appVersion)) &&
+            (identical(other.metaData, metaData) ||
+                const DeepCollectionEquality()
+                    .equals(other.metaData, metaData)));
   }
 
   @override
@@ -330,7 +356,8 @@ class _$_EventObject implements _EventObject {
       const DeepCollectionEquality().hash(primaryPhoneNumber) ^
       const DeepCollectionEquality().hash(timestamp) ^
       const DeepCollectionEquality().hash(flavour) ^
-      const DeepCollectionEquality().hash(appVersion);
+      const DeepCollectionEquality().hash(appVersion) ^
+      const DeepCollectionEquality().hash(metaData);
 
   @JsonKey(ignore: true)
   @override
@@ -360,7 +387,9 @@ abstract class _EventObject implements EventObject {
       @JsonKey(name: 'flavour')
           String? flavour,
       @JsonKey(name: 'app_version', defaultValue: APPVERSION)
-          String? appVersion}) = _$_EventObject;
+          String? appVersion,
+      @JsonKey(name: 'meta_data')
+          Map<String, dynamic>? metaData}) = _$_EventObject;
 
   factory _EventObject.fromJson(Map<String, dynamic> json) =
       _$_EventObject.fromJson;
@@ -389,6 +418,9 @@ abstract class _EventObject implements EventObject {
   @override
   @JsonKey(name: 'app_version', defaultValue: APPVERSION)
   String? get appVersion => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'meta_data')
+  Map<String, dynamic>? get metaData => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$EventObjectCopyWith<_EventObject> get copyWith =>
