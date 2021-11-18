@@ -1,5 +1,8 @@
-import 'package:bewell_pro_core/domain/core/value_objects/enums.dart';
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/core/value_objects/enums.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/profile_page_items.dart';
 
 void main() {

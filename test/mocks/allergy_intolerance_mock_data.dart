@@ -1,3 +1,4 @@
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/allergy.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/allergy_intolerance_category.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/allergy_intolerance_criticality.dart';

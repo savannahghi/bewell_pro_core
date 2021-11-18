@@ -1,12 +1,31 @@
+// Dart imports:
 import 'dart:convert';
 import 'dart:io' as io;
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:domain_objects/entities.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:app_wrapper/app_wrapper.dart';
+import 'package:domain_objects/entities.dart';
+import 'package:domain_objects/value_objects.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:flutter_graphql_client/graph_sqlite.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart' as http;
+import 'package:image_picker/image_picker.dart';
+import 'package:image_picker_platform_interface/image_picker_platform_interface.dart';
+import 'package:mockito/mockito.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:permission_handler_platform_interface/permission_handler_platform_interface.dart';
+import 'package:plugin_platform_interface/plugin_platform_interface.dart';
+import 'package:shared_ui_components/inputs.dart';
+import 'package:user_feed/user_feed.dart' as feed_obj;
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/graphql/queries.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/current_episode.dart';
@@ -16,20 +35,6 @@ import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/presentation/core/home/pages/home_page.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
-import 'package:http/http.dart' as http;
-import 'package:image_picker/image_picker.dart';
-import 'package:image_picker_platform_interface/image_picker_platform_interface.dart';
-import 'package:mockito/mockito.dart';
-import 'package:permission_handler/permission_handler.dart';
-import 'package:permission_handler_platform_interface/permission_handler_platform_interface.dart';
-import 'package:plugin_platform_interface/plugin_platform_interface.dart';
-import 'package:app_wrapper/app_wrapper.dart';
-import 'package:domain_objects/value_objects.dart';
-import 'package:user_feed/user_feed.dart' as feed_obj;
-import 'package:flutter_graphql_client/graph_client.dart';
-import 'package:flutter_graphql_client/graph_sqlite.dart';
-import 'package:shared_ui_components/inputs.dart';
-
 import 'base64_image.dart';
 
 /// For a little bit more context on the concept of `Mocking`, take a look at
@@ -86,6 +91,7 @@ class MockHttpClient implements http.Client {
 
   @override
   Future<http.StreamedResponse> send(http.BaseRequest request) =>
+      // ignore: null_argument_to_non_null_type
       Future<http.StreamedResponse>.value();
 }
 
@@ -3756,6 +3762,7 @@ class MockGraphQlClient extends IGraphQlClient {
           201));
     }
 
+    // ignore: null_argument_to_non_null_type
     return Future<http.Response>.value();
   }
 }

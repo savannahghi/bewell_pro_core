@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/current_episode.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_payload.dart';

@@ -1,8 +1,12 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 
+// Package imports:
 import 'package:rxdart/rxdart.dart';
 import 'package:shared_themes/colors.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 
 const String lowText = 'LOW';
 const String normalText = 'NORMAL';

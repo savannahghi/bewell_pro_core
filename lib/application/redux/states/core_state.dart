@@ -1,14 +1,18 @@
 // // CoreState assembles all features states into one that can the pushed during creation
 // // to create a global app store
+
+// Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:domain_objects/entities.dart';
+import 'package:equatable/equatable.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';
 import 'package:bewell_pro_core/application/redux/states/connectivity_state.dart';
 import 'package:bewell_pro_core/application/redux/states/misc_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_feed_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_registration_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:equatable/equatable.dart';
 
 class CoreState extends Equatable {
   const CoreState({

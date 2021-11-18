@@ -1,7 +1,12 @@
-import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_svg/flutter_svg.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/type_defs.dart';

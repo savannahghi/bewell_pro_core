@@ -1,3 +1,4 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 /// Estimate of the potential clinical harm, or seriousness, of a reaction

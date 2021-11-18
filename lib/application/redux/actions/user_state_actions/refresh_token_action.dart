@@ -1,19 +1,25 @@
+// Dart imports:
 import 'dart:async';
 
-import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+// Flutter imports:
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:app_wrapper/app_wrapper.dart';
+import 'package:async_redux/async_redux.dart';
+import 'package:domain_objects/entities.dart';
+import 'package:flutter_graphql_client/graph_client.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/core/services/onboarding.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/processed_response.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/exception_strings.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/login_constants.dart';
-import 'package:app_wrapper/app_wrapper.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
 
 /// [RefreshTokenAction] is used to refresh the Auth Token once it has expired
 ///

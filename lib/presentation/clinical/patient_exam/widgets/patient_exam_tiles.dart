@@ -1,4 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exam_buttons/next_tile_button.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exam_buttons/previous_tile_button.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exam_diagnosis.dart';

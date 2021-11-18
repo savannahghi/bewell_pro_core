@@ -1,8 +1,13 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:misc_utilities/responsive_widget.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exam_buttons/exam_item_add_button.dart';
-import 'package:misc_utilities/responsive_widget.dart';
 
 class ChiefComplaintZeroState extends StatelessWidget {
   const ChiefComplaintZeroState();

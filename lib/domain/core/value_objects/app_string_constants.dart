@@ -1,5 +1,8 @@
-import 'package:bewell_pro_core/presentation/onboarding/profile/profile_utils.dart';
+// Package imports:
 import 'package:intl/intl.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/presentation/onboarding/profile/profile_utils.dart';
 
 // descriptions
 const String homeIconDescription = 'Home Navigation action';

@@ -1,4 +1,12 @@
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:misc_utilities/responsive_widget.dart';
+import 'package:shared_themes/colors.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/user_registration_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
@@ -7,9 +15,6 @@ import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/patient_registration_steps.dart';
 import 'package:bewell_pro_core/presentation/core/home/models/bottom_navigation_bar_items.dart';
 import 'package:bewell_pro_core/presentation/core/widgets/app_scaffold.dart';
-import 'package:flutter/material.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:shared_themes/colors.dart';
 
 class PatientRegistration extends StatefulWidget {
   final UserRegistrationState userRegistrationState;

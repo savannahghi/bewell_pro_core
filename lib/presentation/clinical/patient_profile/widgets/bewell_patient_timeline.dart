@@ -1,20 +1,22 @@
+// Dart imports:
 import 'dart:async';
 
+// Flutter imports:
 import 'package:flutter/material.dart';
 
-import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/bewell_patient_timeline_logic.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/patient_timeline_record.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/load_more_timeline_records.dart';
-
+// Package imports:
 import 'package:misc_utilities/responsive_widget.dart';
 import 'package:shared_themes/colors.dart';
-
 import 'package:shared_themes/spaces.dart';
-
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/generic_zero_state.dart';
 import 'package:shared_ui_components/platform_loader.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/generic_zero_state.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/bewell_patient_timeline_logic.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/load_more_timeline_records.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/patient_timeline_record.dart';
 
 /// patient's past visits
 class BeWellPatientTimeline extends StatefulWidget {

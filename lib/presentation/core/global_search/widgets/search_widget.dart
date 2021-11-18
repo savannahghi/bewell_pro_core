@@ -1,14 +1,19 @@
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:domain_objects/entities.dart';
+import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/spaces.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/core/global_search/models/search_result.dart';
 import 'package:bewell_pro_core/presentation/core/global_search/models/search_suggestion.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:flutter/material.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/spaces.dart';
 
 /// Shows a full screen search page and returns the search result selected by
 /// the user when the page is closed.

@@ -1,24 +1,29 @@
+// Dart imports:
 import 'dart:async';
 
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:misc_utilities/misc.dart';
+import 'package:misc_utilities/responsive_widget.dart';
+import 'package:quiver/async.dart';
+import 'package:rxdart/rxdart.dart';
+import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/constants.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:shared_themes/text_themes.dart';
+import 'package:shared_ui_components/badge.dart';
+import 'package:shared_ui_components/buttons.dart';
+import 'package:shared_ui_components/inputs.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/clinical/patient_registration/phone_number_form_manager.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/domain/core/entities/verify_phone_dialog_status.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/theme/form_styles.dart';
-import 'package:misc_utilities/misc.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:quiver/async.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_themes/text_themes.dart';
-import 'package:shared_ui_components/buttons.dart';
-import 'package:shared_ui_components/badge.dart';
-import 'package:rxdart/rxdart.dart';
-import 'package:shared_ui_components/inputs.dart';
-
 import '../verify_phone_dialog.dart';
 
 class PhoneNumberFieldWidget extends StatefulWidget {

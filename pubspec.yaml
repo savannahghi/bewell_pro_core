@@ -16,14 +16,14 @@ dependencies:
   cached_network_image: ^3.0.0
   camera: ^0.8.1+3
   connectivity_plus: ^1.0.6
-  country_pickers: ^2.0.0 # A country picker dropdown
+  country_pickers: ^2.0.0
   cupertino_icons: ^1.0.3
   dart_fcm: ^0.0.24
   dartz: ^0.10.0-nullsafety
   debug_logger: ^0.0.23
   device_info: ^2.0.2
-  domain_objects: ^0.0.31-nullsafety # internal (formerly sil_core_domain_objects)
-  dotted_border: ^2.0.0 # Adds a dotted border around a card or container
+  domain_objects: ^0.0.31-nullsafety
+  dotted_border: ^2.0.0
   equatable: ^2.0.3
   fake_async: ^1.2.0
   file: ^6.1.0
@@ -33,42 +33,42 @@ dependencies:
   firebase_core_platform_interface: ^4.0.1
   firebase_crashlytics: ^2.0.5
   firebase_messaging: ^10.0.4
-  # the flutter SDK
   flutter:
     sdk: flutter
-  flutter_graphql_client: ^0.1.23 # internal (formerly sil_graphql_client)
+  flutter_graphql_client: ^0.1.23
   flutter_html: ^2.0.0
   flutter_local_notifications: ^8.0.0
   flutter_slidable: ^0.6.0
-  flutter_svg: ^0.22.0 # used to render svg images
+  flutter_svg: ^0.22.0
   freezed: ^0.14.2
   freezed_annotation: ^0.14.2
   google_fonts: ^2.0.0
   html: ^0.15.0
   http: ^0.13.3
-  image_picker: ^0.8.0+1 # For taking pictures with the camera
+  image_picker: ^0.8.0+1
   image_picker_platform_interface: ^2.2.0
+  import_sorter: ^4.6.0
   intl: ^0.17.0
   json_annotation: ^4.0.1
   json_serializable: ^4.1.3
   material_design_icons_flutter: ^5.0.5955-rc.1
-  misc_utilities: ^0.1.27-nullsafety # internal (formerly sil_misc)
+  misc_utilities: ^0.1.27-nullsafety
   path: ^1.8.0
   permission_handler: ^6.1.0
   permission_handler_platform_interface: ^3.6.1
-  photo_view: ^0.11.1
+  photo_view: ^0.13.0
   plugin_platform_interface: ^2.0.1
   quiver: ^3.0.1
   rxdart: ^0.27.1
   sentry_flutter: ^5.1.0
-  shared_themes: ^0.1.1 # internal (formerly shared_themes)
-  shared_ui_components: ^0.1.37-nullsafety # internal (formerly sil_ui_components)
+  shared_themes: ^0.1.1
+  shared_ui_components: ^0.1.37-nullsafety
   shimmer: ^2.0.0
   sqflite: ^2.0.0+4
   unicons: ^2.0.1
   url_launcher: ^6.0.6
-  user_feed: ^0.1.43-nullsafety # internal (formerly sil_feed)
-  user_profile: ^0.1.22-nullsafety # internal (formerly user_profile)
+  user_feed: ^0.1.43-nullsafety
+  user_profile: ^0.1.22-nullsafety
 
 dev_dependencies:
   build_runner: ^2.0.4

@@ -1,9 +1,11 @@
+// Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:mocktail_image_network/mocktail_image_network.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/contact_point.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/human_name.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient.dart';
@@ -11,12 +13,12 @@ import 'package:bewell_pro_core/domain/clinical/entities/patient_payload.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/contact_point_system_enum.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/patient_gender_enum.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/start_visit_type_enum.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/visit/start_cont_visit/send_otp_action.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/bewell_patient_profile_connector.dart';
-import 'package:mocktail_image_network/mocktail_image_network.dart';
-
 import '../../../../mocks/mock_redux_actions.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';

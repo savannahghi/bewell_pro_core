@@ -1,8 +1,13 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:shared_ui_components/buttons.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/type_defs.dart';
-import 'package:shared_ui_components/buttons.dart';
 
 /// Handles resending otp
 /// Options include via [SMS Text] or via [Whatsapp]

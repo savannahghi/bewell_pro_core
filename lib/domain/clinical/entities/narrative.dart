@@ -1,5 +1,8 @@
-import 'package:bewell_pro_core/domain/clinical/entities/narrative_status.dart';
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/clinical/entities/narrative_status.dart';
 
 part 'narrative.freezed.dart';
 part 'narrative.g.dart';

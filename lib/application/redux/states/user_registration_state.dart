@@ -1,7 +1,10 @@
+// Package imports:
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'user_registration_state.freezed.dart';
 part 'user_registration_state.g.dart';

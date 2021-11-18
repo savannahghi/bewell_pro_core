@@ -1,15 +1,19 @@
+// Flutter imports:
 import 'package:flutter/widgets.dart';
+
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/domain/clinical/value_objects/start_visit_type_enum.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/visit/start_visit_page/start_visit_widget.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_registration/resend_otp.dart';
 import 'package:quiver/async.dart';
 import 'package:quiver/testing/time.dart';
 import 'package:shared_ui_components/inputs.dart';
 import 'package:shared_ui_components/platform_loader.dart';
 
+// Project imports:
+import 'package:bewell_pro_core/domain/clinical/value_objects/start_visit_type_enum.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/visit/start_visit_page/start_visit_widget.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_registration/resend_otp.dart';
 import '../../../../../../mocks/mocks.dart';
 import '../../../../../../mocks/test_helpers.dart';
 

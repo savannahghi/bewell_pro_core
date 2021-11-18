@@ -1,5 +1,11 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
+import 'package:user_profile/term_and_conditions.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/pages/patient_exam.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/patient_exam_summary.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/pages/patient_search_page.dart';
@@ -26,8 +32,6 @@ import 'package:bewell_pro_core/presentation/onboarding/profile/profile_contact_
 import 'package:bewell_pro_core/presentation/onboarding/signup/phone_signup_page.dart';
 import 'package:bewell_pro_core/presentation/router/router_generator.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
-import 'package:user_profile/term_and_conditions.dart';
-
 import '../../../mocks/mocks.dart';
 
 void main() {

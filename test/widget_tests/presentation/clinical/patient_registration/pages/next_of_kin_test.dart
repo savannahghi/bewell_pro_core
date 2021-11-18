@@ -1,8 +1,17 @@
+// Dart imports:
 import 'dart:convert';
 
-import 'package:async_redux/async_redux.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_themes/colors.dart';
+import 'package:shared_ui_components/inputs.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/contact_point.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/human_name.dart';
@@ -15,10 +24,6 @@ import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration_container.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/next_of_kin_result_card.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/self_next_of_kin_search.dart';
-import 'package:http/http.dart' as http;
-import 'package:shared_themes/colors.dart';
-import 'package:shared_ui_components/inputs.dart';
-
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';
 

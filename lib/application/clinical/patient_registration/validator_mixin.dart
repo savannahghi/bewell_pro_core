@@ -1,9 +1,16 @@
+// Dart imports:
 import 'dart:async';
+
+// Flutter imports:
+import 'package:flutter/foundation.dart';
+
+// Package imports:
+import 'package:domain_objects/value_objects.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/core/entities/identification_details.dart';
 import 'package:bewell_pro_core/domain/core/failures/generic_exception.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-import 'package:domain_objects/value_objects.dart';
-import 'package:flutter/foundation.dart';
 
 mixin Validator {
   final StreamTransformer<String, String> validateName =

@@ -1,11 +1,15 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:misc_utilities/responsive_widget.dart';
+import 'package:shared_ui_components/buttons.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
-
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:shared_ui_components/buttons.dart';
 
 /// - [LandingActions] which provides navigation buttons to user that lead to:
 ///   - 1 => phoneSignupRoute - Prompts user to signup/register

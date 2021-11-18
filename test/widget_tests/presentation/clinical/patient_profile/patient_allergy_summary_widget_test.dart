@@ -1,11 +1,13 @@
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
-
-import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/patient_allergy_summary_widget.dart';
 import 'package:shared_ui_components/platform_loader.dart';
 
+// Project imports:
+import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/patient_allergy_summary_widget.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 

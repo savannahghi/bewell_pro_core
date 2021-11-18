@@ -1,7 +1,9 @@
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/resend_otp.dart';
-
 import '../../../../mocks/test_helpers.dart';
 
 void main() {

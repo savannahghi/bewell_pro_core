@@ -1,24 +1,28 @@
-import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration.dart';
-import 'package:bewell_pro_core/presentation/core/home/pages/home_page.dart';
-import 'package:bewell_pro_core/presentation/core/widgets/app_drawer.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
+import 'package:domain_objects/entities.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
-import 'package:bewell_pro_core/presentation/core/home/models/bottom_navigation_bar_items.dart';
-import 'package:bewell_pro_core/presentation/core/home/widgets/sil_app_bar.dart';
-import 'package:bewell_pro_core/presentation/core/home/widgets/sil_bottom_navigation_bar.dart';
-import 'package:bewell_pro_core/presentation/core/widgets/app_scaffold.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
 import 'package:shared_ui_components/buttons.dart';
 
+// Project imports:
+import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
+import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration.dart';
+import 'package:bewell_pro_core/presentation/core/home/models/bottom_navigation_bar_items.dart';
+import 'package:bewell_pro_core/presentation/core/home/pages/home_page.dart';
+import 'package:bewell_pro_core/presentation/core/home/widgets/sil_app_bar.dart';
+import 'package:bewell_pro_core/presentation/core/home/widgets/sil_bottom_navigation_bar.dart';
+import 'package:bewell_pro_core/presentation/core/widgets/app_drawer.dart';
+import 'package:bewell_pro_core/presentation/core/widgets/app_scaffold.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 

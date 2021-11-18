@@ -1,3 +1,8 @@
+// Package imports:
+import 'package:domain_objects/value_objects.dart';
+import 'package:rxdart/rxdart.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/clinical/patient_registration/validator_mixin.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_registration_image_data.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/simple_patient_registration_input.dart';
@@ -5,8 +10,6 @@ import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart'
 import 'package:bewell_pro_core/domain/core/entities/identification_details.dart';
 import 'package:bewell_pro_core/domain/core/entities/name_input.dart';
 import 'package:bewell_pro_core/domain/core/entities/phone_number_input.dart';
-import 'package:domain_objects/value_objects.dart';
-import 'package:rxdart/rxdart.dart';
 import 'phone_number_form_manager.dart';
 
 class BasicDetailsFormManager with Validator {

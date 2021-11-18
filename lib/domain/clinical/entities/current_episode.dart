@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/codeable_concept.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/episodeofcare_diagnosis.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/episodeofcare_status_history.dart';

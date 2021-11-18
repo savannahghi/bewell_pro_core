@@ -1,6 +1,8 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_history/chief_complaint.dart';
 
+// Project imports:
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_history/chief_complaint.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_history/patient_history_wrapper.dart';
 
 /// [common] and [shared]

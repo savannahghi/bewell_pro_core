@@ -1,14 +1,18 @@
+// Dart imports:
 import 'dart:convert';
 
-import 'package:flutter_test/flutter_test.dart';
-import 'package:async_redux/async_redux.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/application/redux/actions/onboarding_actions/update_user_names_action.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 
+// Package imports:
+import 'package:async_redux/async_redux.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_themes/constants.dart';
 
+// Project imports:
+import 'package:bewell_pro_core/application/redux/actions/onboarding_actions/update_user_names_action.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';
 

@@ -1,5 +1,8 @@
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 
 void main() {
   group('CoreState', () {

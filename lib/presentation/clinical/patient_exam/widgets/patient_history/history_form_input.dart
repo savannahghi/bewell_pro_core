@@ -1,13 +1,16 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/type_defs.dart';
 
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_history/patient_history_form.dart';
-
-import 'package:shared_themes/spaces.dart';
+// Package imports:
 import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/spaces.dart';
 import 'package:shared_ui_components/inputs.dart';
 import 'package:unicons/unicons.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/type_defs.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_history/patient_history_form.dart';
 
 class HistoryFormInput extends StatefulWidget {
   // the title of the input

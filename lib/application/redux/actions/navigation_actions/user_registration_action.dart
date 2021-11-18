@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:async_redux/async_redux.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_registration_state.dart';
 

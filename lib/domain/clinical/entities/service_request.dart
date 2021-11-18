@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/annotation.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/codeable_concept.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/identifier.dart';

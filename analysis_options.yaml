@@ -8,6 +8,8 @@ analyzer:
     sdk_version_async_exported_from_core: ignore
     missing_required_param: error
     missing_return: error
+    directives_ordering: ignore
+
   exclude:
     - "lib/generated_plugin_*.dart"
     - "bin/cache/**"

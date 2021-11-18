@@ -1,13 +1,18 @@
-import 'package:bewell_pro_core/domain/core/value_objects/enums.dart';
+// Flutter imports:
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-import 'package:bewell_pro_core/presentation/onboarding/profile/profile_page_items.dart';
+
+// Package imports:
 import 'package:misc_utilities/enums.dart';
 import 'package:misc_utilities/responsive_widget.dart';
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/text_themes.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/enums.dart';
+import 'package:bewell_pro_core/presentation/onboarding/profile/profile_page_items.dart';
 
 class ProfileItemBuilder extends StatelessWidget {
   const ProfileItemBuilder({

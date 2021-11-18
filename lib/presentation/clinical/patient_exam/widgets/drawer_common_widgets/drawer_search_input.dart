@@ -1,12 +1,16 @@
+// Dart imports:
 import 'dart:async';
 
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:intl/intl.dart';
+import 'package:shared_ui_components/inputs.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/services/input_validators.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
-
-import 'package:intl/intl.dart';
-
-import 'package:shared_ui_components/inputs.dart';
 
 /// [DrawerSearchInput] Is used to search items for the drawers [problems], [medications] [allergies]
 class DrawerSearchInput extends StatelessWidget {

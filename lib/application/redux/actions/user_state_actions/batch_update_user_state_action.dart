@@ -1,8 +1,11 @@
+// Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:domain_objects/value_objects.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 
 /// [BatchUpdateUserStateAction] is used to update the packages internal state. If a state changes requires
 /// for it to be replicated in the backend, a use-case specific action should be created

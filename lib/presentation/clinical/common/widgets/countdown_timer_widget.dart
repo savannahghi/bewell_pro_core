@@ -1,10 +1,14 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:quiver/async.dart';
+import 'package:shared_themes/colors.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/resend_otp.dart';
-
-import 'package:quiver/async.dart';
-import 'package:shared_themes/colors.dart';
 
 class CountdownTimerWidget extends StatefulWidget {
   const CountdownTimerWidget({

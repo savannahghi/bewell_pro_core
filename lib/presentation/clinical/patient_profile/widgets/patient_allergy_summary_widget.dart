@@ -1,17 +1,23 @@
+// Dart imports:
 import 'dart:async';
 
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/application/core/graphql/queries.dart';
-import 'package:bewell_pro_core/application/core/services/helpers.dart';
-import 'package:bewell_pro_core/domain/clinical/entities/problem_allergy_summary.dart';
-import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+
+// Package imports:
 import 'package:misc_utilities/misc.dart';
 import 'package:misc_utilities/responsive_widget.dart';
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/spaces.dart';
 import 'package:shared_themes/text_themes.dart';
 import 'package:shared_ui_components/platform_loader.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/application/core/graphql/queries.dart';
+import 'package:bewell_pro_core/application/core/services/helpers.dart';
+import 'package:bewell_pro_core/domain/clinical/entities/problem_allergy_summary.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 
 class PatientAllergySummaryWidget extends StatefulWidget {
   @override
@@ -120,7 +126,7 @@ class _PatientAllergySummaryWidgetState
                   style: Theme.of(context)
                       .textTheme
                       .bodyText1!
-                      .copyWith(color: Theme.of(context).accentColor),
+                      .copyWith(color: Theme.of(context).colorScheme.secondary),
                 ),
               ],
             ),
@@ -150,7 +156,7 @@ class _PatientAllergySummaryWidgetState
                   style: Theme.of(context)
                       .textTheme
                       .bodyText1!
-                      .copyWith(color: Theme.of(context).accentColor),
+                      .copyWith(color: Theme.of(context).colorScheme.secondary),
                 ),
               ],
             ),

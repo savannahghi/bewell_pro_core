@@ -1,9 +1,13 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/patient_examination.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/general_systems_exam_widget.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/review_of_systems.dart';
 
+// Package imports:
+import 'package:flutter_test/flutter_test.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/general_systems_exam_widget.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/patient_examination.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/review_of_systems.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 

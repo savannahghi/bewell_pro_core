@@ -1,14 +1,16 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/spaces.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration_container.dart';
-
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/patient_registration_helper.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/step_item.dart';
-
-import 'package:shared_themes/spaces.dart';
-
-import 'package:shared_themes/colors.dart';
 
 class PatientRegistrationSteps extends StatefulWidget {
   const PatientRegistrationSteps({Key? key}) : super(key: key);

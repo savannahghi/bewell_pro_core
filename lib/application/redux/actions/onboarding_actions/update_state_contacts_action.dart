@@ -1,10 +1,15 @@
+// Dart imports:
 import 'dart:async';
+
+// Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:domain_objects/value_objects.dart';
 import 'package:user_profile/contact_utils.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 
 /// Used in [Profile] to update state when contact details are updated
 class UpdateStateContactsAction extends ReduxAction<CoreState> {

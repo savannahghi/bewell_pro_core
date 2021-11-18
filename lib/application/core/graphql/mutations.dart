@@ -1,3 +1,7 @@
+// Package imports:
+import 'package:user_feed/user_feed.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/allergy.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/allergy_intolerance_category.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/allergy_intolerance_criticality.dart';
@@ -15,7 +19,6 @@ import 'package:bewell_pro_core/domain/clinical/entities/reference.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/allergy_intolerance_reaction_severity_enum.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/models/exam_composition.dart';
-import 'package:user_feed/user_feed.dart';
 
 const String setCommSettingsMutation = r'''
 mutation SetUserCommunicationsSettings($allowWhatsApp: Boolean, $allowTextSMS: Boolean, $allowPush: Boolean, $allowEmail: Boolean) {

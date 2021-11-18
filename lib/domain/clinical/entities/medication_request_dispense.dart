@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/fhir.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/medication_request_initial_fill.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/period.dart';

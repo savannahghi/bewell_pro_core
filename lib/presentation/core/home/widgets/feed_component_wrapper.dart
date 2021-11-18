@@ -1,16 +1,22 @@
+// Dart imports:
 import 'dart:async';
 
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:app_wrapper/app_wrapper.dart';
 import 'package:async_redux/async_redux.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:misc_utilities/responsive_widget.dart';
+import 'package:user_feed/user_feed.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_feed_actions/fetch_user_feed_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/presentation/core/widgets/generic_timeout_widget.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:user_feed/user_feed.dart';
 
 /// A wrapper for homepage that handles fetching user's feed, pull to refresh callback and
 /// toggles a shimmer animation to provide user with visual feedback when feed is in a loading state

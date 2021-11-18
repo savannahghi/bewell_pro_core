@@ -1,3 +1,4 @@
+// Project imports:
 import 'package:bewell_pro_core/domain/core/entities/otp_response.dart';
 
 class CanRegisterOutput {

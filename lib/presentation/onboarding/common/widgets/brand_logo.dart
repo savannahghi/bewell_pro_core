@@ -1,6 +1,11 @@
-import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:misc_utilities/responsive_widget.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 
 class BrandLogo extends StatelessWidget {
   final String appLogo = AppBrand().appLogo.value;

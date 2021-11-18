@@ -1,10 +1,15 @@
-import 'package:bewell_pro_core/application/core/services/helpers.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_html/flutter_html.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/text_or_html.dart';
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/text_themes.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/application/core/services/helpers.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/text_or_html.dart';
 
 /// Renders the widget based on whether it is html or normal text
 class HtmlWrapper extends StatelessWidget {

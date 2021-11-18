@@ -1,9 +1,13 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-import 'package:bewell_pro_core/presentation/onboarding/login/widgets/onboarding_scaffold.dart';
-import 'package:bewell_pro_core/presentation/onboarding/login/pages/recover_pin_request_page.dart';
 
+// Package imports:
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/presentation/onboarding/login/pages/recover_pin_request_page.dart';
+import 'package:bewell_pro_core/presentation/onboarding/login/widgets/onboarding_scaffold.dart';
 
 class RecoverPinPage extends StatelessWidget {
   @override

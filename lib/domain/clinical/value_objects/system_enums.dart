@@ -1,17 +1,21 @@
+// Flutter imports:
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:intl/intl.dart';
+import 'package:rxdart/rxdart.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/patient_vital.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/review_of_system_definition.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/review_systems_base.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/clinical_exam_forms/review_of_systems_form_builder.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/add_blood_pressure_drawer.dart';
-import 'package:intl/intl.dart';
-import 'package:rxdart/rxdart.dart';
-import 'package:flutter/material.dart';
-
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/diagnosis/add_diagnosis_drawer.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/allergies/add_allergy_drawer.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/clinical_exam_forms/review_of_systems_form_builder.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/add_blood_pressure_drawer.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/add_bmi_reading_drawer.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/add_oxygen_saturation_drawer.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/add_pulse_reading_drawer.dart';

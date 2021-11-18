@@ -1,8 +1,10 @@
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/verity_phone_number.dart';
 import 'package:shared_ui_components/buttons.dart';
 
+// Project imports:
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/verity_phone_number.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {

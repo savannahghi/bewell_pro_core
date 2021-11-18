@@ -1,13 +1,17 @@
-import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
+import 'package:user_profile/term_and_conditions.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/presentation/onboarding/common/landing_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/common/widgets/landing_actions.dart';
 import 'package:bewell_pro_core/presentation/onboarding/common/widgets/landing_page_image.dart';
-import 'package:user_profile/term_and_conditions.dart';
-
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 

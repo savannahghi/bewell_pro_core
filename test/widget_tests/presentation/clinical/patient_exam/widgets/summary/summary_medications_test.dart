@@ -1,12 +1,12 @@
+// Package imports:
 import 'package:async_redux/async_redux.dart';
-
 import 'package:flutter_test/flutter_test.dart';
 
+// Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/generic_zero_state.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exam_titles/patient_exam_card_title.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/summary_medications.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/generic_zero_state.dart';
-
 import '../../../../../../mocks/mocks.dart';
 import '../../../../../../mocks/test_helpers.dart';
 

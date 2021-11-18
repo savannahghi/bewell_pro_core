@@ -1,8 +1,13 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_svg/svg.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:shared_themes/spaces.dart';
 import 'package:shared_themes/text_themes.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 
 class GenericEmptyData extends StatelessWidget {
   const GenericEmptyData({required this.item, this.customMessage});

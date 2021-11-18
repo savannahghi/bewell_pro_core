@@ -1,7 +1,9 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 
-import 'package:shared_themes/text_themes.dart';
+// Package imports:
 import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/text_themes.dart';
 
 abstract class PatientStyles {
   static TextStyle registerPatientSectionTitle =

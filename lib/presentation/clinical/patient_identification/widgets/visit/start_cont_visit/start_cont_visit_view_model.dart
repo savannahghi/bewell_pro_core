@@ -1,5 +1,10 @@
-import 'package:async_redux/async_redux.dart';
+// Flutter imports:
 import 'package:flutter/cupertino.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/type_defs.dart';
 

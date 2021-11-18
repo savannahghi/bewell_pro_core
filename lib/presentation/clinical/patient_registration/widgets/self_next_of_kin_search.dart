@@ -1,10 +1,14 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/spaces.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
-
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/spaces.dart';
 
 class SelfNextOfKinSearch extends StatelessWidget {
   @override

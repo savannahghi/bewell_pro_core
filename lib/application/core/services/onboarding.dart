@@ -1,5 +1,20 @@
+// Dart imports:
 import 'dart:async';
 import 'dart:convert';
+
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
+import 'package:domain_objects/entities.dart';
+import 'package:domain_objects/value_objects.dart';
+import 'package:http/http.dart' as http;
+import 'package:misc_utilities/misc.dart';
+import 'package:shared_themes/constants.dart';
+import 'package:user_profile/contact_utils.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/onboarding_actions/change_user_pin_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/onboarding_actions/update_state_contacts_action.dart';
@@ -12,14 +27,6 @@ import 'package:bewell_pro_core/domain/core/entities/onboarding_path_config.dart
 import 'package:bewell_pro_core/domain/core/entities/processed_response.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
-import 'package:http/http.dart' as http;
-import 'package:flutter/material.dart';
-import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
-import 'package:misc_utilities/misc.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:user_profile/contact_utils.dart';
 
 /// [toggleWaitStateFlagIndicator] a generic function that call `WaitAction` to `add`
 /// or `remove` a flag. When `show` is [true], the flag will be removed.

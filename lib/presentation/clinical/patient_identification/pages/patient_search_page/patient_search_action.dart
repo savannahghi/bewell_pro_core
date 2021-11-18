@@ -1,6 +1,12 @@
+// Dart imports:
 import 'dart:async';
 
+// Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:http/http.dart' as http;
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/graphql/queries.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
@@ -11,8 +17,6 @@ import 'package:bewell_pro_core/domain/core/value_objects/exception_strings.dart
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/pages/patient_search_page/update_patient_found_action.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/pages/patient_search_page/update_patient_search_action.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/pages/patient_search_page/update_search_param_action.dart';
-import 'package:http/http.dart' as http;
-import 'package:flutter_graphql_client/graph_client.dart';
 
 /// Search for a patient using their phone number
 class PatientSearchByPhoneAction extends ReduxAction<CoreState> {

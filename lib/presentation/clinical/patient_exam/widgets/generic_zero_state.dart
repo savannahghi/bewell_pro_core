@@ -1,7 +1,11 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 
+// Package imports:
 import 'package:shared_themes/colors.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 
 /// shows information that the patient has no records of past visits
 class GenericZeroStateWidget extends StatelessWidget {
