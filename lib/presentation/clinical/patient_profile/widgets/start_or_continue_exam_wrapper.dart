@@ -1,12 +1,17 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:app_wrapper/app_wrapper.dart';
+import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:http/http.dart' as http;
+import 'package:rxdart/rxdart.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/graphql/queries.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/current_episode.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/start_continue_exam_banner.dart';
-import 'package:http/http.dart' as http;
-import 'package:rxdart/rxdart.dart';
-import 'package:app_wrapper/app_wrapper.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
 
 class StartOrContinueExamWrapper extends StatefulWidget {
   final String patientName;

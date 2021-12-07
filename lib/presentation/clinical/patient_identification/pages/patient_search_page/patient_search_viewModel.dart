@@ -1,9 +1,14 @@
-import 'package:async_redux/async_redux.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
+import 'package:misc_utilities/misc.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/pages/patient_search_page/patient_search_widget.dart';
-import 'package:misc_utilities/misc.dart';
 
 /// Holds data that is used by the widget [PatientIdentification]
 class PatientSearchViewModel extends Vm {

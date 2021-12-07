@@ -1,21 +1,25 @@
-import 'package:async_redux/async_redux.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:shared_ui_components/buttons.dart';
+import 'package:shared_ui_components/inputs.dart';
+import 'package:shared_ui_components/platform_loader.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
-import 'package:bewell_pro_core/presentation/onboarding/login/widgets/onboarding_scaffold.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/pages/phone_login_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/pages/recover_pin_request_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/error_alert_box.dart';
+import 'package:bewell_pro_core/presentation/onboarding/login/widgets/onboarding_scaffold.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/recover_pin.dart';
-import 'package:shared_ui_components/buttons.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:shared_ui_components/inputs.dart';
-import 'package:shared_ui_components/platform_loader.dart';
-
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';
 

@@ -1,7 +1,11 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+
+// Package imports:
 import 'package:shared_themes/spaces.dart';
 
+// Project imports:
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import '../profile_contact_details.dart';
 import '../profile_page_items.dart';
 

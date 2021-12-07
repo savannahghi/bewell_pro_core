@@ -1,8 +1,10 @@
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/presentation/onboarding/login/pages/reset_pin_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/onboarding_scaffold.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/set_and_confirm_pin_widget.dart';
-import 'package:bewell_pro_core/presentation/onboarding/login/pages/reset_pin_page.dart';
-
 import '../../../../../mocks/test_helpers.dart';
 
 void main() {

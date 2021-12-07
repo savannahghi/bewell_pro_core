@@ -1,8 +1,15 @@
+// Dart imports:
 import 'dart:convert';
 
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
+
+// Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart' as http;
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
@@ -11,8 +18,6 @@ import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/drawer_utils/drawer_save_button.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_history/history_form_input.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_history/patient_history_form.dart';
-import 'package:http/http.dart' as http;
-
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 

@@ -1,20 +1,23 @@
+// Dart imports:
 import 'dart:async';
 
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/domain/clinical/entities/medication.dart';
-import 'package:bewell_pro_core/domain/clinical/entities/medication_edge.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/treatment_plan/medication_item_large_screen.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/treatment_plan/medication_item_small_screen.dart';
-import 'package:rxdart/rxdart.dart';
+
+// Package imports:
 import 'package:misc_utilities/misc.dart';
 import 'package:misc_utilities/responsive_widget.dart';
+import 'package:rxdart/rxdart.dart';
 import 'package:shared_themes/constants.dart';
 import 'package:shared_themes/spaces.dart';
 import 'package:shared_ui_components/platform_loader.dart';
 
+// Project imports:
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/graphql/queries.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
+import 'package:bewell_pro_core/domain/clinical/entities/medication.dart';
+import 'package:bewell_pro_core/domain/clinical/entities/medication_edge.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
@@ -22,6 +25,8 @@ import 'package:bewell_pro_core/presentation/clinical/common/widgets/bewell_subm
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/generic_zero_state.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exam_buttons/exam_item_add_button.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exam_titles/patient_exam_card_title.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/treatment_plan/medication_item_large_screen.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/treatment_plan/medication_item_small_screen.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/retire_helper.dart';
 
 class PatientExamMedications extends StatefulWidget {

@@ -1,5 +1,16 @@
+// Dart imports:
 import 'dart:async';
+
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:app_wrapper/app_wrapper.dart';
+import 'package:shared_themes/constants.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:shared_ui_components/inputs.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
@@ -9,15 +20,11 @@ import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.d
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/numbers_constants.dart';
 import 'package:bewell_pro_core/presentation/clinical/common/widgets/bewell_submit_dialog.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/drawer_utils/drawer_bottom_bar.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawer_common_widgets/drawer_search_input.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawer_common_widgets/drawer_search_results.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawer_common_widgets/drawer_selected_item.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawer_header.dart';
-import 'package:app_wrapper/app_wrapper.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:shared_ui_components/inputs.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/drawer_utils/drawer_bottom_bar.dart';
 
 class AddProblem extends StatefulWidget {
   const AddProblem({required this.conditionCategory});

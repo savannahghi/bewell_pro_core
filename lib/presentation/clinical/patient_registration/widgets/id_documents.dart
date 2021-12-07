@@ -1,7 +1,15 @@
-import 'package:file/file.dart';
+// Flutter imports:
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+// Package imports:
+import 'package:file/file.dart';
+import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:shared_ui_components/inputs.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/clinical/patient_registration/basic_details_form_manager.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_registration_image_data.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
@@ -13,9 +21,6 @@ import 'package:bewell_pro_core/domain/core/value_objects/domain_constants.dart'
 import 'package:bewell_pro_core/domain/core/value_objects/type_defs.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/document_camera_selector.dart';
 import 'package:bewell_pro_core/presentation/clinical/theme/form_styles.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/inputs.dart';
 
 class IDDocumentsWidget extends StatefulWidget {
   final TakePhotoCallback takePhotoCallback;

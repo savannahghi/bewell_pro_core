@@ -1,8 +1,11 @@
+// Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:test/test.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/actions/clinical_state_actions/update_start_visit_type_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/start_visit_type_enum.dart';
-import 'package:test/test.dart';
 
 void main() {
   group('update start visit type action', () {

@@ -1,24 +1,26 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 
+// Package imports:
 import 'package:intl/intl.dart';
+import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/constants.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:shared_themes/text_themes.dart';
+import 'package:shared_ui_components/buttons.dart';
+import 'package:shared_ui_components/inputs.dart';
 
+// Project imports:
+import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
+import 'package:bewell_pro_core/application/core/services/input_validators.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
-import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
-import 'package:bewell_pro_core/application/core/services/input_validators.dart';
 import 'package:bewell_pro_core/presentation/clinical/common/widgets/bewell_submit_dialog.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/drawer_utils/drawer_bottom_bar.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/medications/bewell_select_input.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/patient_timeline_divider_widget.dart';
-
-import 'package:shared_themes/constants.dart';
-import 'package:shared_themes/text_themes.dart';
-import 'package:shared_ui_components/inputs.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_ui_components/buttons.dart';
 
 /// Used to add prescription details on a selected medication
 class MedicationPrescriptionForm extends StatefulWidget {

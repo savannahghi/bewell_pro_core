@@ -1,14 +1,17 @@
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:async_redux/async_redux.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/save_event_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/send_event_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:http/http.dart';
-
 import '../../../mocks/mocks.dart';
 
 void main() {

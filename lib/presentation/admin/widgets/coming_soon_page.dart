@@ -1,12 +1,17 @@
-import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';
-import 'package:domain_objects/entities.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:bewell_pro_core/presentation/core/widgets/app_scaffold.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
+import 'package:domain_objects/entities.dart';
 import 'package:misc_utilities/enums.dart';
 import 'package:misc_utilities/responsive_widget.dart';
 import 'package:shared_ui_components/coming_soon_page.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/presentation/core/widgets/app_scaffold.dart';
 
 class ComingSoon extends StatelessWidget {
   final String title;

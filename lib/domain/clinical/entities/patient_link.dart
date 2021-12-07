@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/reference.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/patientLink_type_enum.dart';
 

@@ -1,8 +1,11 @@
+// Package imports:
 import 'package:async_redux/async_redux.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/contact_point.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/human_name.dart';
@@ -13,7 +16,6 @@ import 'package:bewell_pro_core/domain/clinical/value_objects/start_visit_type_e
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/visit/start_visit_page/start_visit_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/onboarding_scaffold.dart';
-
 import '../../../../../../../mocks/mocks.dart';
 import '../../../../../../../mocks/test_helpers.dart';
 

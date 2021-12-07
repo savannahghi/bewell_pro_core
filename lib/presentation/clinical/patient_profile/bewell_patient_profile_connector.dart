@@ -1,6 +1,11 @@
-import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/view_model_factories/patient_profile/bewell_patient_profile_view_model_factory.dart';
 import 'package:bewell_pro_core/application/redux/view_models/clinical/patient_profile/bewell_patient_view_model.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/bewell_patient_profile_widget.dart';

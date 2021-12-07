@@ -1,6 +1,17 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 
+// Package imports:
+import 'package:misc_utilities/misc.dart';
+import 'package:misc_utilities/responsive_widget.dart';
+import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/constants.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:shared_themes/text_themes.dart';
+import 'package:shared_ui_components/buttons.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
@@ -8,15 +19,6 @@ import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.d
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/common/widgets/bewell_submit_dialog.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/quick_access_item.dart';
-
-import 'package:misc_utilities/misc.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_themes/text_themes.dart';
-
-import 'package:shared_ui_components/buttons.dart';
 
 // the type of quick access item
 enum QuickAccessType { test, medication, diagnosis }

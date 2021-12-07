@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 
 part 'event_object.freezed.dart';

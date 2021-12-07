@@ -1,6 +1,17 @@
+// Dart imports:
 import 'dart:convert';
 
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart' as http;
+import 'package:mocktail_image_network/mocktail_image_network.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
@@ -13,12 +24,6 @@ import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages
 import 'package:bewell_pro_core/presentation/core/help_center/pages/help_center_page.dart';
 import 'package:bewell_pro_core/presentation/core/widgets/app_drawer.dart';
 import 'package:bewell_pro_core/presentation/core/widgets/nav_drawer_content.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:http/http.dart' as http;
-import 'package:mocktail_image_network/mocktail_image_network.dart';
-
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 

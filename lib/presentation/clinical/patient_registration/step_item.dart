@@ -1,7 +1,12 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:shared_themes/colors.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration_container.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/patient_registration_helper.dart';
-import 'package:shared_themes/colors.dart';
 
 class StepItem extends StatelessWidget {
   final PatientRegistrationStep patientStep;

@@ -1,5 +1,17 @@
-import 'package:app_wrapper/app_wrapper.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:app_wrapper/app_wrapper.dart';
+import 'package:misc_utilities/misc.dart';
+import 'package:misc_utilities/responsive_widget.dart';
+import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/constants.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:shared_ui_components/buttons.dart';
+import 'package:shared_ui_components/inputs.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
@@ -9,13 +21,6 @@ import 'package:bewell_pro_core/presentation/clinical/common/widgets/bewell_subm
 import 'package:bewell_pro_core/presentation/clinical/post_visit_survey/rating.dart';
 import 'package:bewell_pro_core/presentation/core/home/widgets/sil_bottom_navigation_bar.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
-import 'package:misc_utilities/misc.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/buttons.dart';
-import 'package:shared_ui_components/inputs.dart';
 
 class BeWellPostVisitSurveyPage extends StatefulWidget {
   @override

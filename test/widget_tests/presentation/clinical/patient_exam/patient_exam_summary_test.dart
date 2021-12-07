@@ -1,11 +1,17 @@
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:http/http.dart' as http;
+import 'package:mocktail_image_network/mocktail_image_network.dart';
+import 'package:shared_ui_components/platform_loader.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/contact_point.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/human_name.dart';
@@ -13,16 +19,13 @@ import 'package:bewell_pro_core/domain/clinical/entities/patient.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_payload.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/patient_gender_enum.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/generic_zero_state.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exam_titles/patient_exam_card_title.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/patient_exam_summary.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/widgets/sign_off_exam.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/bewell_primary_patient_banner.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/patient_timeline_divider_widget.dart';
-import 'package:http/http.dart' as http;
-import 'package:mocktail_image_network/mocktail_image_network.dart';
-import 'package:shared_ui_components/platform_loader.dart';
-
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 

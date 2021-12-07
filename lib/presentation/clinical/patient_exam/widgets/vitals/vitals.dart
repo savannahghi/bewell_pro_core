@@ -1,8 +1,15 @@
+// Dart imports:
 import 'dart:async';
 
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/application/core/graphql/queries.dart';
 
+// Package imports:
+import 'package:misc_utilities/misc.dart';
+import 'package:shared_ui_components/platform_loader.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/application/core/graphql/queries.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_vital.dart';
@@ -10,9 +17,6 @@ import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart'
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/vitals/bewell_vital_card.dart';
 import 'package:bewell_pro_core/presentation/core/widgets/generic_timeout_widget.dart';
-
-import 'package:misc_utilities/misc.dart';
-import 'package:shared_ui_components/platform_loader.dart';
 
 /// Renders stats on already recorded patient vitals
 /// Or empty vital cards ([BeWellVitalCard]) that offer mechanism to enter patient vitals

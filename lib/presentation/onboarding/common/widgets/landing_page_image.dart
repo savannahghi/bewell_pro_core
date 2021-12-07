@@ -1,4 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 
 class LandingPageImage extends StatelessWidget {

@@ -1,9 +1,14 @@
-import 'package:domain_objects/value_objects.dart';
+// Flutter imports:
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:domain_objects/value_objects.dart';
+import 'package:shared_ui_components/inputs.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/type_defs.dart';
-import 'package:shared_ui_components/inputs.dart';
 
 class GenderPicker extends StatelessWidget {
   final Stream<Gender> stream;

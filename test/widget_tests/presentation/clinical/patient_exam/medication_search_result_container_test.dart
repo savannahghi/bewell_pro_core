@@ -1,11 +1,14 @@
+// Dart imports:
 import 'dart:async';
 
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_ui_components/platform_loader.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/drawer_utils/result_not_found.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/medications/medication_search_result_container.dart';
-import 'package:shared_ui_components/platform_loader.dart';
-
 import '../../../../mocks/test_helpers.dart';
 
 void main() {

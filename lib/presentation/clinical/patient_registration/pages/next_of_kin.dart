@@ -1,29 +1,32 @@
+// Dart imports:
 import 'dart:async';
 
-import 'package:bewell_pro_core/application/clinical/patient_registration/patient_payload_helper.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration_container.dart';
-import 'package:rxdart/rxdart.dart';
-
+// Flutter imports:
 import 'package:flutter/material.dart';
 
-import 'package:bewell_pro_core/application/clinical/patient_registration/next_of_kin_form_manager.dart';
-import 'package:bewell_pro_core/domain/clinical/entities/patient.dart';
-import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_registration/no_next_of_kin_found.dart';
-import 'package:bewell_pro_core/application/clinical/patient_registration/next_of_kin_data_validator.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/next_of_kin_result_card.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/self_next_of_kin_search.dart';
-import 'package:bewell_pro_core/presentation/clinical/theme/form_styles.dart';
-
+// Package imports:
+import 'package:misc_utilities/misc.dart';
 import 'package:misc_utilities/responsive_widget.dart';
+import 'package:rxdart/rxdart.dart';
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/spaces.dart';
-import 'package:misc_utilities/misc.dart';
 import 'package:shared_themes/text_themes.dart';
 import 'package:shared_ui_components/inputs.dart';
 import 'package:shared_ui_components/platform_loader.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/application/clinical/patient_registration/next_of_kin_data_validator.dart';
+import 'package:bewell_pro_core/application/clinical/patient_registration/next_of_kin_form_manager.dart';
+import 'package:bewell_pro_core/application/clinical/patient_registration/patient_payload_helper.dart';
+import 'package:bewell_pro_core/domain/clinical/entities/patient.dart';
+import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_registration/no_next_of_kin_found.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration_container.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/next_of_kin_result_card.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/self_next_of_kin_search.dart';
+import 'package:bewell_pro_core/presentation/clinical/theme/form_styles.dart';
 
 class NextOfKin extends StatefulWidget {
   const NextOfKin({Key? key}) : super(key: key);

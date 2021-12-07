@@ -1,3 +1,18 @@
+// Flutter imports:
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+// Package imports:
+import 'package:domain_objects/value_objects.dart';
+import 'package:misc_utilities/misc.dart';
+import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/constants.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:shared_ui_components/buttons.dart';
+import 'package:shared_ui_components/inputs.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/clinical/patient_registration/add_next_of_kin_form_manager.dart';
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
@@ -16,16 +31,6 @@ import 'package:bewell_pro_core/presentation/clinical/patient_registration/widge
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/name_field.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/phone_number_field.dart';
 import 'package:bewell_pro_core/presentation/clinical/theme/form_styles.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:domain_objects/value_objects.dart';
-import 'package:misc_utilities/misc.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/buttons.dart';
-import 'package:shared_ui_components/inputs.dart';
 
 class AddNextOfKin extends StatefulWidget {
   const AddNextOfKin({Key? key}) : super(key: key);

@@ -1,16 +1,19 @@
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_themes/constants.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/common/widgets/bewell_submit_dialog.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/quick_access_item_modal.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/quick_access_item.dart';
-import 'package:http/http.dart' as http;
-import 'package:shared_themes/constants.dart';
-
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';
 

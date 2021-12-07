@@ -1,17 +1,19 @@
+// Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
-import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
-import 'package:bewell_pro_core/application/redux/states/user_registration_state.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-import 'package:bewell_pro_core/presentation/router/routes.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail_image_network/mocktail_image_network.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/application/redux/states/user_registration_state.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/basic_details.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/patient_registration_steps.dart';
-import 'package:mocktail_image_network/mocktail_image_network.dart';
-
+import 'package:bewell_pro_core/presentation/router/routes.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 

@@ -1,5 +1,14 @@
-import 'package:async_redux/async_redux.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:shared_ui_components/buttons.dart';
+import 'package:shared_ui_components/inputs.dart';
+import 'package:shared_ui_components/platform_loader.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/actions/onboarding_actions/update_user_names_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
@@ -7,11 +16,6 @@ import 'package:bewell_pro_core/application/redux/view_models/core_state_view_mo
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/numbers_constants.dart';
-import 'package:shared_themes/spaces.dart';
-
-import 'package:shared_ui_components/buttons.dart';
-import 'package:shared_ui_components/inputs.dart';
-import 'package:shared_ui_components/platform_loader.dart';
 
 class UserNamesForm extends StatefulWidget {
   @override
@@ -88,7 +92,7 @@ class _UserNamesFormState extends State<UserNamesForm> {
                     buttonKey: AppWidgetKeys.silPrimaryButtonKey,
                     onPressed: () => updateUserNamesFunction(),
                     customRadius: 4,
-                    buttonColor: Theme.of(context).accentColor,
+                    buttonColor: Theme.of(context).colorScheme.secondary,
                     text: continueText,
                   ),
                 ),

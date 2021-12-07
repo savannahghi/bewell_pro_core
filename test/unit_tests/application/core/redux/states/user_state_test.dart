@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 
 void main() {

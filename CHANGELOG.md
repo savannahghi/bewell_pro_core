@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.27-nullsafety
+
+- Move CI workflow to github
+
 ## 1.1.25-nullsafety
 
 - Capture exceptions thrown after user updates their first name and last name during onboarding

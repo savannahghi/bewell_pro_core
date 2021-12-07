@@ -1,10 +1,14 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:shared_ui_components/inputs.dart';
+import 'package:unicons/unicons.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/core/global_search/widgets/search_widget.dart';
-
-import 'package:shared_ui_components/inputs.dart';
-import 'package:unicons/unicons.dart';
 
 /// Entry point for SIL global search.
 class SILSearch extends StatelessWidget {
@@ -32,7 +36,7 @@ class SILSearch extends StatelessWidget {
                 child: Align(
                   child: SILFormTextField(
                     key: AppWidgetKeys.appSearchInputKey,
-                    borderColor: Theme.of(context).accentColor,
+                    borderColor: Theme.of(context).colorScheme.secondary,
                     prefixIcon:
                         const Icon(UniconsLine.search, color: Colors.grey),
                     customFillColor: Colors.grey[200],

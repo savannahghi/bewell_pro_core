@@ -1,10 +1,13 @@
-import 'package:dotted_border/dotted_border.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_registration/document_camera_selector.dart';
 
+// Package imports:
+import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_themes/spaces.dart';
 
+// Project imports:
+import 'package:bewell_pro_core/presentation/clinical/patient_registration/document_camera_selector.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {

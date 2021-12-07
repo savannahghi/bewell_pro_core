@@ -1,14 +1,19 @@
+// Flutter imports:
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:intl/intl.dart';
+import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:shared_themes/text_themes.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/patient.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/patient_gender_enum.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/domain_constants.dart';
-import 'package:intl/intl.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_themes/text_themes.dart';
 
 class PatientSearchCardInfo extends StatelessWidget {
   const PatientSearchCardInfo({required this.patient});

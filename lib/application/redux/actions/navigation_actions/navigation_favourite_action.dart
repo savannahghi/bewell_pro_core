@@ -1,18 +1,24 @@
+// Dart imports:
 import 'dart:async';
 
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:app_wrapper/app_wrapper.dart';
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
-import 'package:bewell_pro_core/application/redux/actions/navigation_actions/update_navigation_action.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:domain_objects/entities.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:http/http.dart' as http;
 import 'package:misc_utilities/misc.dart';
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/constants.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
+import 'package:bewell_pro_core/application/redux/actions/navigation_actions/update_navigation_action.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 
 class NavigationFavouriteAction extends ReduxAction<CoreState> {
   final String title;

@@ -1,13 +1,21 @@
+// Dart imports:
 import 'dart:convert';
 
-import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
-import 'package:domain_objects/entities.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
+import 'package:domain_objects/entities.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart' as http;
+import 'package:mocktail_image_network/mocktail_image_network.dart';
+import 'package:shared_ui_components/buttons.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/increment_user_visit_count_action.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/misc_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/attachment.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/contact_point.dart';
@@ -17,15 +25,11 @@ import 'package:bewell_pro_core/domain/clinical/entities/patient_payload.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/patient_gender_enum.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/bewell_primary_patient_banner.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/end_visit_dialogue_content.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/patient_banner_bio_info.dart';
 import 'package:bewell_pro_core/presentation/clinical/post_visit_survey/rating.dart';
-import 'package:mocktail_image_network/mocktail_image_network.dart';
-
-import 'package:shared_ui_components/buttons.dart';
-import 'package:http/http.dart' as http;
-
 import '../../../../mocks/base64_image.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';

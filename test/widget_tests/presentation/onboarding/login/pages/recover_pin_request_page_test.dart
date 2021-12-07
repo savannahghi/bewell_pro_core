@@ -1,14 +1,16 @@
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-import 'package:http/http.dart' as http;
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-
-import 'package:bewell_pro_core/presentation/onboarding/login/pages/recover_pin_request_page.dart';
+import 'package:http/http.dart' as http;
 import 'package:shared_ui_components/inputs.dart';
 
+// Project imports:
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/presentation/onboarding/login/pages/recover_pin_request_page.dart';
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';
 

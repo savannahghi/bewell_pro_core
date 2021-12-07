@@ -1,7 +1,11 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/numbers_constants.dart';
 
+// Package imports:
 import 'package:shared_themes/colors.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/core/value_objects/numbers_constants.dart';
 
 // todo: move to shared_ui_components
 class BeWellSelectInput extends StatefulWidget {

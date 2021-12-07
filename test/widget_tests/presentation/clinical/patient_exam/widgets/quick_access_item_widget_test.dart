@@ -1,8 +1,10 @@
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
-import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/widgets/quick_access_item_widget.dart';
 
+// Project imports:
+import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/widgets/quick_access_item_widget.dart';
 import '../../../../../mocks/test_helpers.dart';
 
 void main() {

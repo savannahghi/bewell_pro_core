@@ -1,7 +1,16 @@
+// Dart imports:
 import 'dart:convert';
 
-import 'package:async_redux/async_redux.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
+import 'package:misc_utilities/responsive_widget.dart';
+import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/spaces.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/view_models/clinical/patient_profile/patient_banner_view_model.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/attachment.dart';
@@ -9,9 +18,6 @@ import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/patient_allergy_summary_widget.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/patient_banner_bio_info.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/patient_timeline_divider_widget.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/spaces.dart';
 
 class BeWellPrimaryPatientBanner extends StatelessWidget {
   final PrimaryBannerInfoObject primaryBannerInfoObject =

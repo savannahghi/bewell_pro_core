@@ -1,7 +1,25 @@
+// Dart imports:
 import 'dart:async';
 import 'dart:convert';
 
+// Flutter imports:
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+// Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:file/file.dart';
+import 'package:file/local.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:intl/intl.dart';
+import 'package:misc_utilities/misc.dart';
+import 'package:misc_utilities/responsive_widget.dart';
+import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/constants.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:shared_ui_components/inputs.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/clinical/patient_registration/basic_details_form_manager.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
@@ -24,20 +42,9 @@ import 'package:bewell_pro_core/presentation/clinical/patient_registration/widge
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/permissions_banner.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/phone_number_field.dart';
 import 'package:bewell_pro_core/presentation/clinical/theme/form_styles.dart';
-import 'package:file/file.dart';
-import 'package:file/local.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:intl/intl.dart';
-import 'package:misc_utilities/misc.dart';
-import 'package:misc_utilities/responsive_widget.dart';
+
 import 'package:permission_handler/permission_handler.dart'
     as permission_handler;
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/inputs.dart';
 
 class BasicDetailsWidget extends StatefulWidget {
   final FileSystem fileSystem;

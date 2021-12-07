@@ -1,14 +1,18 @@
-import 'package:async_redux/async_redux.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:bewell_pro_core/application/redux/states/user_state.dart';
-import 'package:bewell_pro_core/presentation/onboarding/profile/widgets/edit_profile_form.dart';
-import 'package:bewell_pro_core/presentation/onboarding/profile/pages/edit_profile_page.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
 import 'package:domain_objects/entities.dart';
 import 'package:domain_objects/value_objects.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
 
+// Project imports:
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/application/redux/states/user_state.dart';
+import 'package:bewell_pro_core/presentation/onboarding/profile/pages/edit_profile_page.dart';
+import 'package:bewell_pro_core/presentation/onboarding/profile/widgets/edit_profile_form.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {

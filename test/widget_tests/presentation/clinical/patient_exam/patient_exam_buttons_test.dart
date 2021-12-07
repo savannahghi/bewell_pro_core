@@ -1,6 +1,10 @@
-import 'package:flutter_test/flutter_test.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
 
+// Package imports:
+import 'package:flutter_test/flutter_test.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exam_buttons/complete_button.dart';
@@ -9,7 +13,6 @@ import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patie
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exam_buttons/previous_tile_button.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exams_title_icons/patient_exam_active_title_icon.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exams_title_icons/patient_exam_done_title_icon.dart';
-
 import '../../../../mocks/test_helpers.dart';
 
 void main() {

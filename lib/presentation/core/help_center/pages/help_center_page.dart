@@ -1,18 +1,23 @@
-import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:domain_objects/entities.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
+import 'package:domain_objects/entities.dart';
+import 'package:misc_utilities/enums.dart';
+import 'package:misc_utilities/number_constants.dart';
+import 'package:misc_utilities/responsive_widget.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:shared_themes/text_themes.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/core/help_center/widgets/faq_wrapper.dart';
 import 'package:bewell_pro_core/presentation/core/help_center/widgets/help_center_channels.dart';
 import 'package:bewell_pro_core/presentation/core/home/models/bottom_navigation_bar_items.dart';
 import 'package:bewell_pro_core/presentation/core/widgets/app_scaffold.dart';
-import 'package:misc_utilities/enums.dart';
-import 'package:misc_utilities/number_constants.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_themes/text_themes.dart';
 
 class HelpCenterPage extends StatelessWidget {
   final ReduxAction<CoreState>? logoutAction;

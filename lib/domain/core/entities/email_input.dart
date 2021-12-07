@@ -1,5 +1,8 @@
-import 'package:bewell_pro_core/domain/core/entities/payload_input.dart';
+// Package imports:
 import 'package:domain_objects/value_objects.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/core/entities/payload_input.dart';
 
 class EmailInput with PayloadInput {
   final EmailAddress emailAddress;

@@ -1,9 +1,10 @@
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/end_visit_dialogue_content.dart';
-
 import 'package:shared_ui_components/buttons.dart';
 
+// Project imports:
+import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/end_visit_dialogue_content.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 

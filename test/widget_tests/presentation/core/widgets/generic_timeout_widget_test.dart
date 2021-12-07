@@ -1,13 +1,14 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 
+// Package imports:
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
-import 'package:bewell_pro_core/presentation/core/widgets/generic_timeout_widget.dart';
-
 import 'package:shared_ui_components/buttons.dart';
 
+// Project imports:
+import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+import 'package:bewell_pro_core/presentation/core/widgets/generic_timeout_widget.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {

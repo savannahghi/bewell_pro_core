@@ -1,6 +1,15 @@
+// Dart imports:
 import 'dart:async';
 
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:app_wrapper/app_wrapper.dart';
+import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:http/http.dart' as http;
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/graphql/queries.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/allergy.dart';
@@ -9,9 +18,6 @@ import 'package:bewell_pro_core/domain/clinical/entities/allergy_intolerance_rel
 import 'package:bewell_pro_core/domain/clinical/entities/condition_edge.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/medication_edge.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
-import 'package:app_wrapper/app_wrapper.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
-import 'package:http/http.dart' as http;
 
 /// logic used in class [BeWellSecondaryPatientBanner]
 class BeWellSecondaryPatientBannerLogic {

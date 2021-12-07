@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/allergy_intolerance_category.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/allergy_intolerance_criticality.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/allergy_intolerance_reaction.dart';
@@ -7,9 +10,10 @@ import 'package:bewell_pro_core/domain/clinical/entities/annotation.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/codeable_concept.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/fhir.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/identifier.dart';
+import 'package:bewell_pro_core/domain/clinical/entities/period.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/range.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/reference.dart';
-import 'package:bewell_pro_core/domain/clinical/entities/period.dart';
+
 part 'allergy.freezed.dart';
 part 'allergy.g.dart';
 

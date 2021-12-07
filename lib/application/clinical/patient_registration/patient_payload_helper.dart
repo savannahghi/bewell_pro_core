@@ -1,5 +1,8 @@
-import 'package:bewell_pro_core/domain/clinical/entities/patient_payload.dart';
+// Package imports:
 import 'package:rxdart/rxdart.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/clinical/entities/patient_payload.dart';
 
 class PatientPayloadHelper {
   final BehaviorSubject<PatientPayload> _patientPayload =

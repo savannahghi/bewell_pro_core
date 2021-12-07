@@ -1,8 +1,18 @@
+// Dart imports:
 import 'dart:convert';
 
-import 'package:async_redux/async_redux.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
+import 'package:domain_objects/src/entities/user_profile.dart';
+import 'package:domain_objects/src/value_objects/phone_number.dart';
+import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart' as http;
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/contact_point.dart';
@@ -16,11 +26,6 @@ import 'package:bewell_pro_core/presentation/clinical/patient_identification/wid
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/visit/start_cont_visit/send_otp_action.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/complete_registration_page/complete_registration_page.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration_container.dart';
-import 'package:http/http.dart' as http;
-import 'package:domain_objects/src/entities/user_profile.dart';
-import 'package:domain_objects/src/value_objects/phone_number.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
-
 import '../../../../../mocks/mock_redux_actions.dart';
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';

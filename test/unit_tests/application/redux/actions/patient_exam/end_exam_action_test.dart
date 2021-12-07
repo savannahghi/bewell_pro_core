@@ -1,14 +1,17 @@
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:http/http.dart' as http;
+import 'package:test/test.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/actions/patient_exam/end_exam_action.dart';
 import 'package:bewell_pro_core/application/redux/flags/flags.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/exception_strings.dart';
-import 'package:http/http.dart' as http;
-import 'package:test/test.dart';
-
 import '../../../../../mocks/mocks.dart';
 
 void main() {

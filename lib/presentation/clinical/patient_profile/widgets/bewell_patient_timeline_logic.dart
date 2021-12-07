@@ -1,14 +1,20 @@
+// Dart imports:
 import 'dart:async';
 
+// Flutter imports:
 import 'package:flutter/widgets.dart';
+
+// Package imports:
+import 'package:app_wrapper/app_wrapper.dart';
+import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:http/http.dart' as http;
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/graphql/queries.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/current_episode.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
-import 'package:app_wrapper/app_wrapper.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/exception_strings.dart';
-import 'package:http/http.dart' as http;
 
 /// Wrap all the logic used in class [BeWellPatientTimeline]
 ///

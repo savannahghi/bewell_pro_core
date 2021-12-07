@@ -1,11 +1,13 @@
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/allergy.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/allergy_intolerance_relay_connection.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/allergy_intolerance_relay_edge.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/codeable_concept.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/bewell_secondary_patient_banner_logic.dart';
-
 import '../../../../mocks/allergy_intolerance_mock_data.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/patient_connection_mocked_data.dart';

@@ -1,8 +1,10 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/clinical/patient_registration/patient_payload_helper.dart';
 import 'package:bewell_pro_core/application/clinical/patient_registration/patient_registration_step_manager.dart';
-
 import '../patient_registration_helper.dart';
 import 'add_next_of_kin.dart';
 import 'basic_details.dart';

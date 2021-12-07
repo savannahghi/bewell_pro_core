@@ -1,14 +1,19 @@
+// Dart imports:
 import 'dart:async';
 import 'dart:convert';
+
+// Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:domain_objects/value_objects.dart';
+import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:http/http.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/save_event_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/event_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/domain_constants.dart';
-import 'package:domain_objects/value_objects.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
-import 'package:http/http.dart';
 
 /// Posts an event to the backend once triggered
 ///

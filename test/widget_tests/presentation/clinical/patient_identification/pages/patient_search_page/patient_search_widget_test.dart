@@ -1,6 +1,12 @@
+// Flutter imports:
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_ui_components/inputs.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/patient.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
@@ -8,8 +14,6 @@ import 'package:bewell_pro_core/presentation/clinical/patient_identification/pag
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/no_results_found.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/search_card/patient_search_card_connector.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/search_guide.dart';
-import 'package:shared_ui_components/inputs.dart';
-
 import '../../../../../../mocks/test_helpers.dart';
 
 void main() {

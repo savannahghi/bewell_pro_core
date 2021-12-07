@@ -1,21 +1,23 @@
+// Dart imports:
 import 'dart:async';
 import 'dart:convert';
 
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/domain/clinical/entities/fhir.dart';
 
+// Package imports:
+import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:shared_ui_components/platform_loader.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/clinical/entities/fhir.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/models/exam_composition.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/utils/patient_exam_utils.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_history/patient_history_form.dart';
-
-import 'package:shared_themes/spaces.dart';
-
-import 'package:shared_themes/colors.dart';
-import 'package:shared_ui_components/platform_loader.dart';
 
 class PatientHistoryWrapper extends StatefulWidget {
   @override

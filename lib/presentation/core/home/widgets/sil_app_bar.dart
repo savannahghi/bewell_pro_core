@@ -1,15 +1,20 @@
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:domain_objects/entities.dart';
+import 'package:misc_utilities/enums.dart';
+import 'package:misc_utilities/responsive_widget.dart';
+import 'package:shared_themes/spaces.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/core/home/widgets/profile_drop_down.dart';
 import 'package:bewell_pro_core/presentation/onboarding/common/widgets/brand_logo.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:flutter/material.dart';
-import 'package:misc_utilities/enums.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:shared_themes/spaces.dart';
 
 class SilAppBar extends StatelessWidget implements PreferredSizeWidget {
   final ReduxAction<CoreState> logoutAction;

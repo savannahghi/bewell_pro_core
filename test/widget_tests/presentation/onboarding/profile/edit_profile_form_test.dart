@@ -1,15 +1,22 @@
+// Dart imports:
 import 'dart:convert';
+
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:async_redux/async_redux.dart';
 import 'package:domain_objects/entities.dart';
-import 'package:flutter/material.dart';
+import 'package:domain_objects/value_objects.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/widgets/edit_profile_form.dart';
-import 'package:http/http.dart';
-import 'package:domain_objects/value_objects.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 

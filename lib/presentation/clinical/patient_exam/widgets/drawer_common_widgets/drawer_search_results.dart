@@ -1,19 +1,20 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/domain/clinical/entities/concepts.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/patient_timeline_divider_widget.dart';
 
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/drawer_utils/drawer_help_widget.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/drawer_utils/result_not_found.dart';
-
+// Package imports:
 import 'package:intl/intl.dart';
 import 'package:rxdart/rxdart.dart';
-
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/spaces.dart';
 import 'package:shared_ui_components/buttons.dart';
-
 import 'package:shared_ui_components/platform_loader.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/clinical/entities/concepts.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/drawer_utils/drawer_help_widget.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/drawer_utils/result_not_found.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/patient_timeline_divider_widget.dart';
 
 class DrawerSearchResults extends StatelessWidget {
   const DrawerSearchResults({

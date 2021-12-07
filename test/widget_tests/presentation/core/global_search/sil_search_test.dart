@@ -1,16 +1,24 @@
+// Dart imports:
 import 'dart:async';
 
-import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
-import 'package:domain_objects/value_objects.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
+import 'package:domain_objects/entities.dart';
+import 'package:domain_objects/value_objects.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail_image_network/mocktail_image_network.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/pages/patient_search_page.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration.dart';
 import 'package:bewell_pro_core/presentation/core/global_search/models/search_result.dart';
@@ -19,9 +27,6 @@ import 'package:bewell_pro_core/presentation/core/global_search/sil_search.dart'
 import 'package:bewell_pro_core/presentation/core/global_search/widgets/search_widget.dart';
 import 'package:bewell_pro_core/presentation/core/help_center/pages/help_center_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/widgets/profile_master_detail.dart';
-import 'package:mocktail_image_network/mocktail_image_network.dart';
-import 'package:domain_objects/entities.dart';
-
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 

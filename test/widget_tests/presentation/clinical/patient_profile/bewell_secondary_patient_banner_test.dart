@@ -1,9 +1,13 @@
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_themes/constants.dart';
 
+// Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
@@ -11,8 +15,6 @@ import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/be
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/secondary_banner_allergies.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/secondary_banner_conditions.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/secondary_banner_medication.dart';
-import 'package:shared_themes/constants.dart';
-
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 

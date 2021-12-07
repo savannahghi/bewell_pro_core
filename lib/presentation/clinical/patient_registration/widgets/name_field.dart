@@ -1,8 +1,13 @@
-import 'package:bewell_pro_core/domain/core/value_objects/type_defs.dart';
-import 'package:bewell_pro_core/presentation/clinical/theme/form_styles.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:shared_themes/spaces.dart';
 import 'package:shared_ui_components/inputs.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/domain/core/value_objects/type_defs.dart';
+import 'package:bewell_pro_core/presentation/clinical/theme/form_styles.dart';
 
 class NameField extends StatelessWidget {
   const NameField({

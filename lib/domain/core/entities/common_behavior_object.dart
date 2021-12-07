@@ -1,6 +1,11 @@
-import 'package:bewell_pro_core/domain/core/value_objects/enums.dart';
+// Flutter imports:
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:rxdart/rxdart.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/allergy_intolerance_relay_edge.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/annotation.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/codeable_concept.dart';
@@ -15,10 +20,10 @@ import 'package:bewell_pro_core/domain/clinical/entities/patient_vital.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/reference.dart';
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/enums.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/models/exam_composition.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/profile_page_items.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
-import 'package:rxdart/rxdart.dart';
 
 class ExamChangeObject {
   factory ExamChangeObject() {

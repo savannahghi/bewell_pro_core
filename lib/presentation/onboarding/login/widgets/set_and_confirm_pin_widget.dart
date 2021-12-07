@@ -1,6 +1,16 @@
-import 'package:async_redux/async_redux.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
+import 'package:misc_utilities/misc.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:shared_ui_components/buttons.dart';
+import 'package:shared_ui_components/inputs.dart';
+import 'package:shared_ui_components/platform_loader.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/core/services/input_validators.dart';
 import 'package:bewell_pro_core/application/core/services/onboarding.dart';
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
@@ -10,11 +20,6 @@ import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart'
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/numbers_constants.dart';
-import 'package:misc_utilities/misc.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/buttons.dart';
-import 'package:shared_ui_components/inputs.dart';
-import 'package:shared_ui_components/platform_loader.dart';
 
 class SetAndConfirmPinWidget extends StatelessWidget {
   final ReduxAction<CoreState>? logoutAction;

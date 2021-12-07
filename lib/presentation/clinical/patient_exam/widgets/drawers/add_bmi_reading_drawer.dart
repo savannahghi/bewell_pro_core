@@ -1,6 +1,14 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 
+// Package imports:
+import 'package:misc_utilities/responsive_widget.dart';
+import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:shared_ui_components/inputs.dart';
+
+// Project imports:
+import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
 import 'package:bewell_pro_core/application/core/services/input_validators.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_connection.dart';
@@ -9,7 +17,6 @@ import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
-
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawer_header.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/drawer_utils/drawer_bottom_bar.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/drawer_utils/large_device_divider.dart';
@@ -18,12 +25,7 @@ import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawe
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/drawer_utils/vital_legend_column.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/vital_constants.dart';
 
-import 'package:misc_utilities/responsive_widget.dart';
-
 /// [common] and [shared]
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_ui_components/inputs.dart';
 
 class AddBMI extends StatefulWidget {
   @override

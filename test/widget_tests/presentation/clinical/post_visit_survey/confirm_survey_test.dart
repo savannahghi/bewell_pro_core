@@ -1,14 +1,16 @@
+// Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bewell_pro_core/application/redux/states/core_state.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
-import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_identification/pages/patient_search_page.dart';
-import 'package:bewell_pro_core/presentation/clinical/post_visit_survey/confirm_survey_page.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
 
+// Project imports:
+import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
+import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_identification/pages/patient_search_page.dart';
+import 'package:bewell_pro_core/presentation/clinical/post_visit_survey/confirm_survey_page.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 

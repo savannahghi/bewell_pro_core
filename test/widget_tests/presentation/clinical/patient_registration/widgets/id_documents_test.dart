@@ -1,11 +1,19 @@
+// Dart imports:
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:async_redux/async_redux.dart';
-import 'package:file/memory.dart';
+// Flutter imports:
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
+import 'package:file/memory.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:image_picker_platform_interface/image_picker_platform_interface.dart';
+import 'package:permission_handler_platform_interface/permission_handler_platform_interface.dart';
+
+// Project imports:
 import 'package:bewell_pro_core/application/clinical/patient_registration/basic_details_form_manager.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/patient_registration_image_data.dart';
@@ -13,9 +21,6 @@ import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart'
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/id_documents.dart';
-import 'package:image_picker_platform_interface/image_picker_platform_interface.dart';
-import 'package:permission_handler_platform_interface/permission_handler_platform_interface.dart';
-
 import '../../../../../mocks/base64_image.dart';
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';

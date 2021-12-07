@@ -1,20 +1,25 @@
+// Dart imports:
 import 'dart:convert';
 
-import 'package:async_redux/async_redux.dart';
+// Flutter imports:
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/basic.dart';
+
+// Package imports:
+import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart' as http;
+
+// Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/widgets/quick_access_item_widget.dart';
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/generic_zero_state.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/review_of_system_title_bar.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/review_of_systems.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/review_of_systems_item_widget.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/symptom_widget.dart';
-import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/generic_zero_state.dart';
-import 'package:http/http.dart' as http;
-
+import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/widgets/quick_access_item_widget.dart';
 import '../../../../../../mocks/mocks.dart';
 import '../../../../../../mocks/test_helpers.dart';
 
