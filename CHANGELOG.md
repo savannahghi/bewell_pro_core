@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.28-nullsafety
+
+- chore: package upgrade
+
 ## 1.1.27-nullsafety
 
 - Move CI workflow to github

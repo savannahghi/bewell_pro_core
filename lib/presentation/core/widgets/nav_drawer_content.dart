@@ -211,11 +211,10 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
                                 height: 25,
                                 width: 25,
                                 placeholder:
-                                    (BuildContext context, String url) =>
-                                        const Icon(
-                                  Icons.cloud_off,
-                                  color: Colors.white70,
-                                ),
+                                    (BuildContext context, String url) => Icon(
+                                        Icons.circle,
+                                        color: Colors.grey.withOpacity(0.6),
+                                        size: 25),
                               ),
                               mediumHorizontalSizedBox,
                               Text(title),
@@ -310,12 +309,11 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
                                   color: Colors.white70,
                                   height: 25,
                                   width: 25,
-                                  placeholder:
-                                      (BuildContext context, String url) =>
-                                          const Icon(
-                                    Icons.cloud_off,
-                                    color: Colors.white70,
-                                  ),
+                                  placeholder: (BuildContext context,
+                                          String url) =>
+                                      Icon(Icons.circle,
+                                          color: Colors.grey.withOpacity(0.6),
+                                          size: 25),
                                 ),
                                 mediumHorizontalSizedBox,
                                 Text(title),
@@ -354,7 +352,13 @@ class _NavDrawerContentState extends State<NavDrawerContent> {
                                             child: ListTileTheme(
                                               textColor: Colors.white,
                                               child: ListTile(
-                                                title: Text(nestedTitle),
+                                                title: Text(
+                                                  nestedTitle,
+                                                  style: const TextStyle(
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w500),
+                                                ),
                                                 onTap: () {
                                                   if (widget.favouriteDrawer) {
                                                     selectedindex = secondaryNavItem!

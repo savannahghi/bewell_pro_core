@@ -69,7 +69,8 @@ class AddNextOfKinFormManager with Validator {
       });
 
   DateTime parseDateString(String dateString) {
-    final DateTime date = DateFormat('d MMM yyyy').parse(dateString);
+    final DateTime date =
+        DateFormat.yMMMMd('en_GB').parseLoose(dateString.replaceAll(',', ''));
     return date;
   }
 
