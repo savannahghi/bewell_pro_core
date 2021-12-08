@@ -13,6 +13,7 @@ import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker_platform_interface/image_picker_platform_interface.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:permission_handler_platform_interface/permission_handler_platform_interface.dart';
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/constants.dart';
@@ -45,6 +46,7 @@ void main() {
     testWidgets(
         'next button should be disabled if all form fields have not been filled',
         (WidgetTester tester) async {
+      initializeDateFormatting();
       await buildTestWidget(
         tester: tester,
         store: store,

@@ -10,6 +10,7 @@ import 'package:domain_objects/value_objects.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:shared_themes/colors.dart';
 import 'package:shared_themes/constants.dart';
 import 'package:shared_ui_components/inputs.dart';
@@ -156,6 +157,7 @@ void main() {
     testWidgets(
         'next button disabled until all required form fields are filled',
         (WidgetTester tester) async {
+      initializeDateFormatting();
       await buildTestWidget(
         tester: tester,
         widget: PatientRegistrationContainer(
@@ -175,6 +177,7 @@ void main() {
 
     testWidgets('back button navigates to correct page',
         (WidgetTester tester) async {
+      initializeDateFormatting();
       final PatientRegistrationContainer container =
           PatientRegistrationContainer(
         tabController: controller,
@@ -246,6 +249,7 @@ void main() {
         'when next button is tapped and all form fields '
         'are valid, should show error if response contains error',
         (WidgetTester tester) async {
+      initializeDateFormatting();
       final CustomClient client = CustomClient(returnRequestError: true);
 
       final PatientRegistrationContainer container =

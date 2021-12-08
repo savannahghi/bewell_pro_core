@@ -95,6 +95,7 @@ void main() {
               sendContactVerificationOTPEndpoint:
                   'sendContactVerificationOTPEndpoint',
               verifyContactOTPEndpoint: 'verifyContactOTPEndpoint',
+              switchFlaggedFeaturesEndpoint: '',
             ),
             child: StoreProvider<CoreState>(
               store: store,

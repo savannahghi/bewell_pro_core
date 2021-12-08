@@ -40,7 +40,7 @@ class DrawerAppBar extends StatelessWidget {
                       splashColor: healthcloudPrimaryColor,
                       icon: const Icon(
                         Icons.close,
-                        color: Colors.white,
+                        color: Colors.white70,
                       ),
                       onPressed: () => Navigator.pop(context),
                     ),
