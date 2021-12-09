@@ -74,23 +74,23 @@ class _SILBottomNavigatorBarState extends State<SILBottomNavigatorBar>
                   (NavigationItem navItem) => BottomNavigationBarItem(
                     icon: CachedNetworkImage(
                       color: Colors.black45,
-                      imageUrl: navItem.icon!.iconUrl!,
-                      height: 25,
-                      width: 25,
-                      placeholder: (BuildContext context, String url) => Icon(
-                        Icons.circle,
-                        color: Theme.of(context).primaryColor,
-                        size: 25,
-                      ),
-                    ),
-                    activeIcon: CachedNetworkImage(
-                      color: Theme.of(context).primaryColor,
-                      imageUrl: navItem.icon!.iconUrl!,
+                      imageUrl: navItem.icon?.iconUrl ?? '',
                       height: 25,
                       width: 25,
                       placeholder: (BuildContext context, String url) => Icon(
                         Icons.circle,
                         color: Colors.grey.withOpacity(0.6),
+                        size: 25,
+                      ),
+                    ),
+                    activeIcon: CachedNetworkImage(
+                      color: Theme.of(context).primaryColor,
+                      imageUrl: navItem.icon?.iconUrl ?? '',
+                      height: 25,
+                      width: 25,
+                      placeholder: (BuildContext context, String url) => Icon(
+                        Icons.circle,
+                        color: Theme.of(context).primaryColor,
                         size: 25,
                       ),
                     ),

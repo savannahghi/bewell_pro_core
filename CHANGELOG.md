@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.29-nullsafety
+
+- fix: bottom nav icons
+
 ## 1.1.28-nullsafety
 
 - chore: package upgrade
