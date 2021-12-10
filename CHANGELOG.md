@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.30-nullsafety
+
+- chore: app fixes
+
 ## 1.1.29-nullsafety
 
 - fix: bottom nav icons

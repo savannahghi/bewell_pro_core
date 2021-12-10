@@ -102,10 +102,11 @@ class PhoneLoginAction extends ReduxAction<CoreState> {
 
       dispatch(
         NavigationAction(
-            drawerSelectedIndex:
-                responseAsObject.navigation?.drawerSelectedIndex,
-            primaryActions: responseAsObject.navigation?.primaryActions,
-            secondaryActions: responseAsObject.navigation?.secondaryActions),
+          drawerSelectedIndex: responseAsObject.navigation?.drawerSelectedIndex,
+          primaryActions: responseAsObject.navigation?.primaryActions,
+          secondaryActions: responseAsObject.navigation?.secondaryActions,
+          bottomBarSelectedIndex: 0,
+        ),
       );
 
       dispatch(UpdateSupplierProfileAction(

@@ -1,40 +1,13 @@
 // Dart imports:
 import 'dart:async';
 
-// Flutter imports:
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-
 // Package imports:
 import 'package:app_wrapper/app_wrapper.dart';
 import 'package:async_redux/async_redux.dart';
-import 'package:dart_fcm/dart_fcm.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
-import 'package:flutter_graphql_client/graph_utils.dart';
-import 'package:flutter_html/html_parser.dart';
-import 'package:html/dom.dart' as dom;
-import 'package:http/http.dart' as http;
-import 'package:misc_utilities/bottom_sheet_builder.dart';
-import 'package:misc_utilities/enums.dart';
-import 'package:misc_utilities/misc.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:rxdart/rxdart.dart';
-import 'package:sentry_flutter/sentry_flutter.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/buttons.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:user_feed/user_feed.dart';
-
 // Project imports:
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/graphql/queries.dart';
 import 'package:bewell_pro_core/application/core/services/onboarding.dart';
-import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/refresh_token_action.dart';
@@ -60,6 +33,30 @@ import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages
 import 'package:bewell_pro_core/presentation/clinical/post_visit_survey/post_visit_survey_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/profile_page_items.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
+import 'package:dart_fcm/dart_fcm.dart';
+import 'package:domain_objects/entities.dart';
+import 'package:domain_objects/value_objects.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+// Flutter imports:
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:flutter_graphql_client/graph_utils.dart';
+import 'package:flutter_html/html_parser.dart';
+import 'package:html/dom.dart' as dom;
+import 'package:http/http.dart' as http;
+import 'package:misc_utilities/bottom_sheet_builder.dart';
+import 'package:misc_utilities/enums.dart';
+import 'package:misc_utilities/misc.dart';
+import 'package:misc_utilities/responsive_widget.dart';
+import 'package:rxdart/rxdart.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
+import 'package:shared_themes/colors.dart';
+import 'package:shared_themes/constants.dart';
+import 'package:shared_themes/spaces.dart';
+import 'package:shared_ui_components/buttons.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:user_feed/user_feed.dart';
 
 /// [getAuthTokenStatus] is used to check if the Auth Token has expired or if it needs refreshing
 ///
@@ -826,16 +823,6 @@ Future<String> getInitialRoute({required BuildContext context}) async {
       case AuthTokenStatus.requiresPin:
         return pinVerificationRoute;
       default: // Happy case => Get the onboarding path and
-    }
-
-    if (onboardingPath(state: state).route == homePageRoute) {
-      StoreProvider.dispatch<CoreState>(
-        context,
-        NavigationAction(
-          drawerSelectedIndex: -1,
-          bottomBarSelectedIndex: 0,
-        ),
-      );
     }
 
     return onboardingPath(state: state).route;

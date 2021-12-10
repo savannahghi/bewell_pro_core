@@ -6,6 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/presentation/core/widgets/unrecoverable_error_widget.dart';
+import 'package:shared_themes/constants.dart';
 
 void main() {
   testWidgets(
@@ -15,11 +16,7 @@ void main() {
           const MaterialApp(home: Scaffold(body: UnrecoverableErrorWidget())));
 
       expect(find.byType(Text), findsOneWidget);
-      expect(
-          find.text(
-              'Sorry, an error occurred. Please try again, or contact Slade 360 '
-              'Be.Well Support support on +254790360360'),
-          findsOneWidget);
+      expect(find.text(UserFeedBackTexts.getErrorMessage()), findsOneWidget);
     },
   );
 }
