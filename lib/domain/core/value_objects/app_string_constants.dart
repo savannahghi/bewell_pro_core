@@ -21,23 +21,23 @@ const String stayBtnText = 'Stay';
 const String exitBtnText = 'Exit';
 
 final String bewellCopyrightString =
-    'Copyright ©️ ${returnCurrentYear()} Be.Well';
+    'Copyright ©️ ${returnCurrentYear()} SladeAdvantage';
 final String afyaMojaCopyrightString =
     'Copyright ©️ ${returnCurrentYear()} Healthcloud';
 
 // Communication Setting Strings
 const String emailSubtitle =
-    'Receive emails, including verification PINs and communication from Be.Well by Slade360';
+    'Receive emails, including verification PINs and communication from SladeAdvantage by Slade360';
 const String emailTitle = 'Email';
 const String messagesSubTitle =
-    'Receive text messages including, verification PINs and communication from Be.Well by Slade360';
+    'Receive text messages including, verification PINs and communication from SladeAdvantage by Slade360';
 const String messagesTitle = 'Text messages';
-const String pageHeader = 'Updates from Be.Well by Slade 360';
+const String pageHeader = 'Updates from SladeAdvantage by Slade 360';
 const String pushSubTitle =
-    'Receive push notifications including, verification PINs and communication from Be.Well by Slade360';
+    'Receive push notifications including, verification PINs and communication from SladeAdvantage by Slade360';
 const String pushTitle = 'Push Notifications';
 const String whatsAppSubTitle =
-    'Receive text messages including, verification PINs and communication from Be.Well by Slade360';
+    'Receive text messages including, verification PINs and communication from SladeAdvantage by Slade360';
 const String whatsAppTitle = 'WhatsApp messages';
 
 // Onboarding Strings
@@ -725,7 +725,7 @@ const String examCompletedString = 'Exam completed and signed successfully';
 const String phoneNumberExistsText =
     'a patient registered with that phone number already exists';
 
-const String faqTitle = 'Be.Well support center';
+const String faqTitle = 'SladeAdvantage support center';
 const String faqSubtitle =
     'Our customer service team is on standby for service and support';
 

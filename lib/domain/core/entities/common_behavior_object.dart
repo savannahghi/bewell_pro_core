@@ -1777,6 +1777,7 @@ class AppBrand {
   AppBrand._internal();
 
   BehaviorSubject<String> appLogo = BehaviorSubject<String>.seeded('');
+  BehaviorSubject<String> appLogo2 = BehaviorSubject<String>.seeded('');
   BehaviorSubject<String> appName = BehaviorSubject<String>.seeded('');
 
   static final AppBrand _singleton = AppBrand._internal();

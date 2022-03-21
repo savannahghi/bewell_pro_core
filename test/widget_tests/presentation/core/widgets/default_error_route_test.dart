@@ -18,7 +18,9 @@ import '../../../../mocks/test_helpers.dart';
 
 void main() {
   testWidgets('sil 404 widget', (WidgetTester tester) async {
-    AppBrand().appLogo.add(cameraIconUrl);
+    AppBrand()
+      ..appLogo.add(beWellWhiteIconUrl)
+      ..appLogo2.add(beWellWhiteIconUrl);
 
     await mockNetworkImages(() async {
       await buildTestWidget(

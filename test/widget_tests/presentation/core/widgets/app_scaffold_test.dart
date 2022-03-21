@@ -28,7 +28,9 @@ import '../../../../mocks/test_helpers.dart';
 
 void main() {
   setUp(() {
-    AppBrand().appLogo.add(cameraIconUrl);
+    AppBrand()
+      ..appLogo.add(beWellWhiteIconUrl)
+      ..appLogo2.add(beWellWhiteIconUrl);
   });
 
   testWidgets('should render correctly when all widgets are passed in',
