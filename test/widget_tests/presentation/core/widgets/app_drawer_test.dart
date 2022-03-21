@@ -34,7 +34,9 @@ void main() {
     store = Store<CoreState>(initialState: CoreState.initial());
 
     setUp(() {
-      AppBrand().appLogo.add(cameraIconUrl);
+      AppBrand()
+        ..appLogo.add(beWellWhiteIconUrl)
+        ..appLogo2.add(beWellWhiteIconUrl);
     });
 
     testWidgets('should render permanently on Tablet',

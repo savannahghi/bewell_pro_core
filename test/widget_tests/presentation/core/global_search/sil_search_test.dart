@@ -35,8 +35,10 @@ void main() {
     late Store<CoreState> store;
 
     setUp(() {
-      AppBrand().appLogo.add(cameraIconUrl);
-      AppBrand().appName.add('Be.Well');
+      AppBrand()
+        ..appLogo.add(beWellWhiteIconUrl)
+        ..appLogo2.add(beWellWhiteIconUrl)
+        ..appName.add('Be.Well');
       store = Store<CoreState>(initialState: CoreState.initial());
     });
 
@@ -108,7 +110,7 @@ void main() {
         await tester.pumpAndSettle();
 
         //verify navigation
-        expect(find.text('Be.Well support center'), findsOneWidget);
+        expect(find.text('SladeAdvantage support center'), findsOneWidget);
       });
     });
 
