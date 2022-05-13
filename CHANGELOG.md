@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.32-nullsafety
+
+- chore: app name
+
 ## 1.1.31-nullsafety
 
 - chore: slade advantage rebrand

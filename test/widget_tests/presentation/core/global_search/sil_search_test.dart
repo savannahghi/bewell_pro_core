@@ -110,7 +110,7 @@ void main() {
         await tester.pumpAndSettle();
 
         //verify navigation
-        expect(find.text('SladeAdvantage support center'), findsOneWidget);
+        expect(find.text('Slade360° Advantage support center'), findsOneWidget);
       });
     });
 
