@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:shared_ui_components/buttons.dart';
+import 'package:sghi_core/ui_components/src/buttons.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';
@@ -30,14 +31,19 @@ import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patie
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exam_titles/patient_exam_card_title.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/bewell_patient_profile_page.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/bewell_primary_patient_banner.dart';
+import '../../../../mocks/mock_utils.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
   group('Patient_exam', () {
     late Store<CoreState> store;
 
-    setUp(() {
+    setUp(() async {
+      await Firebase.initializeApp();
+
       store = Store<CoreState>(
         initialState: CoreState.initial().copyWith(
             clinicalState: ClinicalState(

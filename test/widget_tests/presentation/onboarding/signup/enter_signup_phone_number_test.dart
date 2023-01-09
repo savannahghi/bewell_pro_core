@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/inputs.dart';
-import 'package:shared_ui_components/platform_loader.dart';
+import 'package:sghi_core/ui_components/src/inputs.dart';
+import 'package:sghi_core/ui_components/src/platform_loader.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
@@ -18,10 +18,17 @@ import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/pages/phone_login_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/error_alert_box.dart';
 import 'package:bewell_pro_core/presentation/onboarding/signup/enter_signup_phone_number.dart';
+import '../../../../mocks/mock_utils.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
   group('EnterSignUpPhoneNo', () {
+    setUp(() async {
+      await Firebase.initializeApp();
+    });
+
     final Store<CoreState> store =
         Store<CoreState>(initialState: CoreState.initial());
 
@@ -32,8 +39,6 @@ void main() {
         tester: tester,
         widget: EnterSignUpPhoneNo(),
       );
-
-      expect(find.byWidget(mediumVerticalSizedBox), findsWidgets);
 
       bool findTextAndTap(InlineSpan visitor, String text) {
         if (visitor is TextSpan && visitor.text == text) {

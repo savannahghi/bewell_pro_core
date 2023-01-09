@@ -12,7 +12,7 @@ class UpdatePatientPatientFoundAction extends ReduxAction<CoreState> {
   @override
   CoreState? reduce() {
     return state.copyWith.call(
-        clinicalState: state.clinicalState?.copyWith
-            .call(patientSearchFound: searchFound));
+        clinicalState:
+            state.clinicalState?.copyWith(patientSearchFound: searchFound));
   }
 }

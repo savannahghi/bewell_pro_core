@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'narrative.dart';
 
@@ -10,37 +12,11 @@ part of 'narrative.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Narrative _$NarrativeFromJson(Map<String, dynamic> json) {
   return _Narrative.fromJson(json);
 }
-
-/// @nodoc
-class _$NarrativeTearOff {
-  const _$NarrativeTearOff();
-
-  _Narrative call(
-      {@JsonKey(name: 'ID')
-          String? id,
-      @JsonKey(name: 'Status', unknownEnumValue: NarrativeStatusEnum.empty)
-          NarrativeStatusEnum? status,
-      @JsonKey(name: 'Div')
-          String? div}) {
-    return _Narrative(
-      id: id,
-      status: status,
-      div: div,
-    );
-  }
-
-  Narrative fromJson(Map<String, Object> json) {
-    return Narrative.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Narrative = _$NarrativeTearOff();
 
 /// @nodoc
 mixin _$Narrative {
@@ -66,7 +42,8 @@ mixin _$Narrative {
 /// @nodoc
 abstract class $NarrativeCopyWith<$Res> {
   factory $NarrativeCopyWith(Narrative value, $Res Function(Narrative) then) =
-      _$NarrativeCopyWithImpl<$Res>;
+      _$NarrativeCopyWithImpl<$Res, Narrative>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID')
           String? id,
@@ -77,13 +54,16 @@ abstract class $NarrativeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$NarrativeCopyWithImpl<$Res> implements $NarrativeCopyWith<$Res> {
+class _$NarrativeCopyWithImpl<$Res, $Val extends Narrative>
+    implements $NarrativeCopyWith<$Res> {
   _$NarrativeCopyWithImpl(this._value, this._then);
 
-  final Narrative _value;
   // ignore: unused_field
-  final $Res Function(Narrative) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -91,28 +71,29 @@ class _$NarrativeCopyWithImpl<$Res> implements $NarrativeCopyWith<$Res> {
     Object? div = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      status: status == freezed
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as NarrativeStatusEnum?,
-      div: div == freezed
+      div: freezed == div
           ? _value.div
           : div // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$NarrativeCopyWith<$Res> implements $NarrativeCopyWith<$Res> {
-  factory _$NarrativeCopyWith(
-          _Narrative value, $Res Function(_Narrative) then) =
-      __$NarrativeCopyWithImpl<$Res>;
+abstract class _$$_NarrativeCopyWith<$Res> implements $NarrativeCopyWith<$Res> {
+  factory _$$_NarrativeCopyWith(
+          _$_Narrative value, $Res Function(_$_Narrative) then) =
+      __$$_NarrativeCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID')
           String? id,
@@ -123,30 +104,30 @@ abstract class _$NarrativeCopyWith<$Res> implements $NarrativeCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$NarrativeCopyWithImpl<$Res> extends _$NarrativeCopyWithImpl<$Res>
-    implements _$NarrativeCopyWith<$Res> {
-  __$NarrativeCopyWithImpl(_Narrative _value, $Res Function(_Narrative) _then)
-      : super(_value, (v) => _then(v as _Narrative));
+class __$$_NarrativeCopyWithImpl<$Res>
+    extends _$NarrativeCopyWithImpl<$Res, _$_Narrative>
+    implements _$$_NarrativeCopyWith<$Res> {
+  __$$_NarrativeCopyWithImpl(
+      _$_Narrative _value, $Res Function(_$_Narrative) _then)
+      : super(_value, _then);
 
-  @override
-  _Narrative get _value => super._value as _Narrative;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? status = freezed,
     Object? div = freezed,
   }) {
-    return _then(_Narrative(
-      id: id == freezed
+    return _then(_$_Narrative(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      status: status == freezed
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as NarrativeStatusEnum?,
-      div: div == freezed
+      div: freezed == div
           ? _value.div
           : div // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -166,21 +147,21 @@ class _$_Narrative implements _Narrative {
           this.div});
 
   factory _$_Narrative.fromJson(Map<String, dynamic> json) =>
-      _$_$_NarrativeFromJson(json);
+      _$$_NarrativeFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
   final String? id;
-  @override
 
   /// The status of the narrative - whether it's entirely generated
   ///  (from just the defined data or the extensions too),
   ///  or whether a human authored it and it may contain additional data.
+  @override
   @JsonKey(name: 'Status', unknownEnumValue: NarrativeStatusEnum.empty)
   final NarrativeStatusEnum? status;
-  @override
 
   /// The actual narrative content, a stripped down version of XHTML.
+  @override
   @JsonKey(name: 'Div')
   final String? div;
 
@@ -192,62 +173,60 @@ class _$_Narrative implements _Narrative {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Narrative &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.status, status) ||
-                const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.div, div) ||
-                const DeepCollectionEquality().equals(other.div, div)));
+        (other.runtimeType == runtimeType &&
+            other is _$_Narrative &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.div, div) || other.div == div));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(div);
 
   @JsonKey(ignore: true)
   @override
-  _$NarrativeCopyWith<_Narrative> get copyWith =>
-      __$NarrativeCopyWithImpl<_Narrative>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, id, status, div);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_NarrativeCopyWith<_$_Narrative> get copyWith =>
+      __$$_NarrativeCopyWithImpl<_$_Narrative>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_NarrativeToJson(this);
+    return _$$_NarrativeToJson(
+      this,
+    );
   }
 }
 
 abstract class _Narrative implements Narrative {
   factory _Narrative(
       {@JsonKey(name: 'ID')
-          String? id,
+          final String? id,
       @JsonKey(name: 'Status', unknownEnumValue: NarrativeStatusEnum.empty)
-          NarrativeStatusEnum? status,
+          final NarrativeStatusEnum? status,
       @JsonKey(name: 'Div')
-          String? div}) = _$_Narrative;
+          final String? div}) = _$_Narrative;
 
   factory _Narrative.fromJson(Map<String, dynamic> json) =
       _$_Narrative.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
 
   /// The status of the narrative - whether it's entirely generated
   ///  (from just the defined data or the extensions too),
   ///  or whether a human authored it and it may contain additional data.
   @JsonKey(name: 'Status', unknownEnumValue: NarrativeStatusEnum.empty)
-  NarrativeStatusEnum? get status => throw _privateConstructorUsedError;
+  NarrativeStatusEnum? get status;
   @override
 
   /// The actual narrative content, a stripped down version of XHTML.
   @JsonKey(name: 'Div')
-  String? get div => throw _privateConstructorUsedError;
+  String? get div;
   @override
   @JsonKey(ignore: true)
-  _$NarrativeCopyWith<_Narrative> get copyWith =>
+  _$$_NarrativeCopyWith<_$_Narrative> get copyWith =>
       throw _privateConstructorUsedError;
 }

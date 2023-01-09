@@ -3,12 +3,13 @@ import 'dart:convert';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:sghi_core/domain_objects/entities/user_profile.dart';
+import 'package:sghi_core/flutter_graphql_client/i_flutter_graphql_client.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mocktail_image_network/mocktail_image_network.dart';
-import 'package:shared_ui_components/buttons.dart';
+import 'package:sghi_core/ui_components/src/buttons.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
@@ -26,10 +27,13 @@ import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/visit/start_cont_visit/save_patient_record_action.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/visit/start_cont_visit/start_continue_visit_connector.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/bewell_patient_profile_widget.dart';
+import '../../../../../mocks/mock_utils.dart';
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
   group('StartContinueVisitConnector', () {
     final PatientEdge patientWithNoEpisodes = PatientEdge(
       cursor: 'cursor',
@@ -93,7 +97,9 @@ void main() {
 
     late Store<CoreState> store;
 
-    setUp(() {
+    setUp(() async {
+      await Firebase.initializeApp();
+
       store = Store<CoreState>(initialState: CoreState.initial());
     });
 

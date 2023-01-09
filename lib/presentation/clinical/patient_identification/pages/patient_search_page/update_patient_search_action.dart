@@ -14,7 +14,7 @@ class UpdatePatientSearchAction extends ReduxAction<CoreState> {
   @override
   CoreState? reduce() {
     return state.copyWith.call(
-        clinicalState: state.clinicalState?.copyWith
-            .call(patientSearchResult: activeRecords));
+        clinicalState:
+            state.clinicalState?.copyWith(patientSearchResult: activeRecords));
   }
 }

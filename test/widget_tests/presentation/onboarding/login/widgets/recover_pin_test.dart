@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:shared_ui_components/buttons.dart';
-import 'package:shared_ui_components/inputs.dart';
-import 'package:shared_ui_components/platform_loader.dart';
+import 'package:sghi_core/ui_components/src/buttons.dart';
+import 'package:sghi_core/ui_components/src/inputs.dart';
+import 'package:sghi_core/ui_components/src/platform_loader.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
@@ -20,14 +21,19 @@ import 'package:bewell_pro_core/presentation/onboarding/login/pages/recover_pin_
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/error_alert_box.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/onboarding_scaffold.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/recover_pin.dart';
+import '../../../../../mocks/mock_utils.dart';
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';
 
 void main() {
   group('Recover Pin page', () {
+    setupFirebaseAuthMocks();
+
     late Store<CoreState> store;
 
-    setUp(() {
+    setUp(() async {
+      await Firebase.initializeApp();
+
       final CoreState state = CoreState.initial();
       store = Store<CoreState>(initialState: state);
     });

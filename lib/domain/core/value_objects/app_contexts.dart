@@ -1,5 +1,5 @@
 // Package imports:
-import 'package:app_wrapper/app_wrapper.dart';
+import 'package:sghi_core/app_wrapper/enums.dart';
 
 const List<AppContext> testAppContexts = <AppContext>[
   AppContext.BewellPRO,

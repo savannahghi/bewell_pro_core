@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'identifier.dart';
 
@@ -10,49 +12,11 @@ part of 'identifier.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Identifier _$IdentifierFromJson(Map<String, dynamic> json) {
   return _Identifier.fromJson(json);
 }
-
-/// @nodoc
-class _$IdentifierTearOff {
-  const _$IdentifierTearOff();
-
-  _Identifier call(
-      {@JsonKey(name: 'ID')
-          String? id,
-      @JsonKey(name: 'Use', unknownEnumValue: IdentifierUseEnum.official)
-          IdentifierUseEnum? use,
-      @JsonKey(name: 'Type')
-          CodeableConcept? type,
-      @JsonKey(name: 'System')
-          String? system,
-      @JsonKey(name: 'Value')
-          String? value,
-      @JsonKey(name: 'Period')
-          Period? period,
-      @JsonKey(name: 'Assigner')
-          Reference? assigner}) {
-    return _Identifier(
-      id: id,
-      use: use,
-      type: type,
-      system: system,
-      value: value,
-      period: period,
-      assigner: assigner,
-    );
-  }
-
-  Identifier fromJson(Map<String, Object> json) {
-    return Identifier.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Identifier = _$IdentifierTearOff();
 
 /// @nodoc
 mixin _$Identifier {
@@ -94,7 +58,8 @@ mixin _$Identifier {
 abstract class $IdentifierCopyWith<$Res> {
   factory $IdentifierCopyWith(
           Identifier value, $Res Function(Identifier) then) =
-      _$IdentifierCopyWithImpl<$Res>;
+      _$IdentifierCopyWithImpl<$Res, Identifier>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID')
           String? id,
@@ -117,13 +82,16 @@ abstract class $IdentifierCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$IdentifierCopyWithImpl<$Res> implements $IdentifierCopyWith<$Res> {
+class _$IdentifierCopyWithImpl<$Res, $Val extends Identifier>
+    implements $IdentifierCopyWith<$Res> {
   _$IdentifierCopyWithImpl(this._value, this._then);
 
-  final Identifier _value;
   // ignore: unused_field
-  final $Res Function(Identifier) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -135,77 +103,82 @@ class _$IdentifierCopyWithImpl<$Res> implements $IdentifierCopyWith<$Res> {
     Object? assigner = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      use: use == freezed
+      use: freezed == use
           ? _value.use
           : use // ignore: cast_nullable_to_non_nullable
               as IdentifierUseEnum?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      system: system == freezed
+      system: freezed == system
           ? _value.system
           : system // ignore: cast_nullable_to_non_nullable
               as String?,
-      value: value == freezed
+      value: freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String?,
-      period: period == freezed
+      period: freezed == period
           ? _value.period
           : period // ignore: cast_nullable_to_non_nullable
               as Period?,
-      assigner: assigner == freezed
+      assigner: freezed == assigner
           ? _value.assigner
           : assigner // ignore: cast_nullable_to_non_nullable
               as Reference?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get type {
     if (_value.type == null) {
       return null;
     }
 
     return $CodeableConceptCopyWith<$Res>(_value.type!, (value) {
-      return _then(_value.copyWith(type: value));
+      return _then(_value.copyWith(type: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $PeriodCopyWith<$Res>? get period {
     if (_value.period == null) {
       return null;
     }
 
     return $PeriodCopyWith<$Res>(_value.period!, (value) {
-      return _then(_value.copyWith(period: value));
+      return _then(_value.copyWith(period: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get assigner {
     if (_value.assigner == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.assigner!, (value) {
-      return _then(_value.copyWith(assigner: value));
+      return _then(_value.copyWith(assigner: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$IdentifierCopyWith<$Res> implements $IdentifierCopyWith<$Res> {
-  factory _$IdentifierCopyWith(
-          _Identifier value, $Res Function(_Identifier) then) =
-      __$IdentifierCopyWithImpl<$Res>;
+abstract class _$$_IdentifierCopyWith<$Res>
+    implements $IdentifierCopyWith<$Res> {
+  factory _$$_IdentifierCopyWith(
+          _$_Identifier value, $Res Function(_$_Identifier) then) =
+      __$$_IdentifierCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID')
           String? id,
@@ -231,15 +204,14 @@ abstract class _$IdentifierCopyWith<$Res> implements $IdentifierCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$IdentifierCopyWithImpl<$Res> extends _$IdentifierCopyWithImpl<$Res>
-    implements _$IdentifierCopyWith<$Res> {
-  __$IdentifierCopyWithImpl(
-      _Identifier _value, $Res Function(_Identifier) _then)
-      : super(_value, (v) => _then(v as _Identifier));
+class __$$_IdentifierCopyWithImpl<$Res>
+    extends _$IdentifierCopyWithImpl<$Res, _$_Identifier>
+    implements _$$_IdentifierCopyWith<$Res> {
+  __$$_IdentifierCopyWithImpl(
+      _$_Identifier _value, $Res Function(_$_Identifier) _then)
+      : super(_value, _then);
 
-  @override
-  _Identifier get _value => super._value as _Identifier;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -250,32 +222,32 @@ class __$IdentifierCopyWithImpl<$Res> extends _$IdentifierCopyWithImpl<$Res>
     Object? period = freezed,
     Object? assigner = freezed,
   }) {
-    return _then(_Identifier(
-      id: id == freezed
+    return _then(_$_Identifier(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      use: use == freezed
+      use: freezed == use
           ? _value.use
           : use // ignore: cast_nullable_to_non_nullable
               as IdentifierUseEnum?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      system: system == freezed
+      system: freezed == system
           ? _value.system
           : system // ignore: cast_nullable_to_non_nullable
               as String?,
-      value: value == freezed
+      value: freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String?,
-      period: period == freezed
+      period: freezed == period
           ? _value.period
           : period // ignore: cast_nullable_to_non_nullable
               as Period?,
-      assigner: assigner == freezed
+      assigner: freezed == assigner
           ? _value.assigner
           : assigner // ignore: cast_nullable_to_non_nullable
               as Reference?,
@@ -303,40 +275,40 @@ class _$_Identifier implements _Identifier {
           this.assigner});
 
   factory _$_Identifier.fromJson(Map<String, dynamic> json) =>
-      _$_$_IdentifierFromJson(json);
+      _$$_IdentifierFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
   final String? id;
-  @override
 
   /// The purpose of this identifier.
+  @override
   @JsonKey(name: 'Use', unknownEnumValue: IdentifierUseEnum.official)
   final IdentifierUseEnum? use;
-  @override
 
   /// A coded type for the identifier that can be used to determine which
   ///  identifier to use for a specific purpose.
+  @override
   @JsonKey(name: 'Type')
   final CodeableConcept? type;
-  @override
 
   /// Establishes the namespace for the value - that is, a URL that describes
   ///  a set values that are unique.
+  @override
   @JsonKey(name: 'System')
   final String? system;
-  @override
 
   /// The portion of the identifier typically relevant to the user and which
   ///  is unique within the context of the system.
+  @override
   @JsonKey(name: 'Value')
   final String? value;
   @override
   @JsonKey(name: 'Period')
   final Period? period;
-  @override
 
   /// Organization that issued/manages the identifier.
+  @override
   @JsonKey(name: 'Assigner')
   final Reference? assigner;
 
@@ -348,102 +320,93 @@ class _$_Identifier implements _Identifier {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Identifier &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.use, use) ||
-                const DeepCollectionEquality().equals(other.use, use)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.system, system) ||
-                const DeepCollectionEquality().equals(other.system, system)) &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)) &&
-            (identical(other.period, period) ||
-                const DeepCollectionEquality().equals(other.period, period)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_Identifier &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.use, use) || other.use == use) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.system, system) || other.system == system) &&
+            (identical(other.value, value) || other.value == value) &&
+            (identical(other.period, period) || other.period == period) &&
             (identical(other.assigner, assigner) ||
-                const DeepCollectionEquality()
-                    .equals(other.assigner, assigner)));
+                other.assigner == assigner));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(use) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(system) ^
-      const DeepCollectionEquality().hash(value) ^
-      const DeepCollectionEquality().hash(period) ^
-      const DeepCollectionEquality().hash(assigner);
 
   @JsonKey(ignore: true)
   @override
-  _$IdentifierCopyWith<_Identifier> get copyWith =>
-      __$IdentifierCopyWithImpl<_Identifier>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, id, use, type, system, value, period, assigner);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_IdentifierCopyWith<_$_Identifier> get copyWith =>
+      __$$_IdentifierCopyWithImpl<_$_Identifier>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_IdentifierToJson(this);
+    return _$$_IdentifierToJson(
+      this,
+    );
   }
 }
 
 abstract class _Identifier implements Identifier {
   factory _Identifier(
       {@JsonKey(name: 'ID')
-          String? id,
+          final String? id,
       @JsonKey(name: 'Use', unknownEnumValue: IdentifierUseEnum.official)
-          IdentifierUseEnum? use,
+          final IdentifierUseEnum? use,
       @JsonKey(name: 'Type')
-          CodeableConcept? type,
+          final CodeableConcept? type,
       @JsonKey(name: 'System')
-          String? system,
+          final String? system,
       @JsonKey(name: 'Value')
-          String? value,
+          final String? value,
       @JsonKey(name: 'Period')
-          Period? period,
+          final Period? period,
       @JsonKey(name: 'Assigner')
-          Reference? assigner}) = _$_Identifier;
+          final Reference? assigner}) = _$_Identifier;
 
   factory _Identifier.fromJson(Map<String, dynamic> json) =
       _$_Identifier.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
 
   /// The purpose of this identifier.
   @JsonKey(name: 'Use', unknownEnumValue: IdentifierUseEnum.official)
-  IdentifierUseEnum? get use => throw _privateConstructorUsedError;
+  IdentifierUseEnum? get use;
   @override
 
   /// A coded type for the identifier that can be used to determine which
   ///  identifier to use for a specific purpose.
   @JsonKey(name: 'Type')
-  CodeableConcept? get type => throw _privateConstructorUsedError;
+  CodeableConcept? get type;
   @override
 
   /// Establishes the namespace for the value - that is, a URL that describes
   ///  a set values that are unique.
   @JsonKey(name: 'System')
-  String? get system => throw _privateConstructorUsedError;
+  String? get system;
   @override
 
   /// The portion of the identifier typically relevant to the user and which
   ///  is unique within the context of the system.
   @JsonKey(name: 'Value')
-  String? get value => throw _privateConstructorUsedError;
+  String? get value;
   @override
   @JsonKey(name: 'Period')
-  Period? get period => throw _privateConstructorUsedError;
+  Period? get period;
   @override
 
   /// Organization that issued/manages the identifier.
   @JsonKey(name: 'Assigner')
-  Reference? get assigner => throw _privateConstructorUsedError;
+  Reference? get assigner;
   @override
   @JsonKey(ignore: true)
-  _$IdentifierCopyWith<_Identifier> get copyWith =>
+  _$$_IdentifierCopyWith<_$_Identifier> get copyWith =>
       throw _privateConstructorUsedError;
 }

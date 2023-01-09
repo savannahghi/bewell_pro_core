@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'break_glass_episode_creation_input.dart';
 
@@ -10,44 +12,12 @@ part of 'break_glass_episode_creation_input.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 BreakGlassEpisodeCreationInput _$BreakGlassEpisodeCreationInputFromJson(
     Map<String, dynamic> json) {
   return _BreakGlassEpisodeCreationInput.fromJson(json);
 }
-
-/// @nodoc
-class _$BreakGlassEpisodeCreationInputTearOff {
-  const _$BreakGlassEpisodeCreationInputTearOff();
-
-  _BreakGlassEpisodeCreationInput call(
-      {required String? patientID,
-      required String? providerCode,
-      required String? practitionerUID,
-      required String? providerPhone,
-      required String? otp,
-      required bool? fullAccess,
-      required String? patientPhone}) {
-    return _BreakGlassEpisodeCreationInput(
-      patientID: patientID,
-      providerCode: providerCode,
-      practitionerUID: practitionerUID,
-      providerPhone: providerPhone,
-      otp: otp,
-      fullAccess: fullAccess,
-      patientPhone: patientPhone,
-    );
-  }
-
-  BreakGlassEpisodeCreationInput fromJson(Map<String, Object> json) {
-    return BreakGlassEpisodeCreationInput.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $BreakGlassEpisodeCreationInput =
-    _$BreakGlassEpisodeCreationInputTearOff();
 
 /// @nodoc
 mixin _$BreakGlassEpisodeCreationInput {
@@ -70,7 +40,9 @@ abstract class $BreakGlassEpisodeCreationInputCopyWith<$Res> {
   factory $BreakGlassEpisodeCreationInputCopyWith(
           BreakGlassEpisodeCreationInput value,
           $Res Function(BreakGlassEpisodeCreationInput) then) =
-      _$BreakGlassEpisodeCreationInputCopyWithImpl<$Res>;
+      _$BreakGlassEpisodeCreationInputCopyWithImpl<$Res,
+          BreakGlassEpisodeCreationInput>;
+  @useResult
   $Res call(
       {String? patientID,
       String? providerCode,
@@ -82,14 +54,17 @@ abstract class $BreakGlassEpisodeCreationInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$BreakGlassEpisodeCreationInputCopyWithImpl<$Res>
+class _$BreakGlassEpisodeCreationInputCopyWithImpl<$Res,
+        $Val extends BreakGlassEpisodeCreationInput>
     implements $BreakGlassEpisodeCreationInputCopyWith<$Res> {
   _$BreakGlassEpisodeCreationInputCopyWithImpl(this._value, this._then);
 
-  final BreakGlassEpisodeCreationInput _value;
   // ignore: unused_field
-  final $Res Function(BreakGlassEpisodeCreationInput) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? patientID = freezed,
@@ -101,46 +76,47 @@ class _$BreakGlassEpisodeCreationInputCopyWithImpl<$Res>
     Object? patientPhone = freezed,
   }) {
     return _then(_value.copyWith(
-      patientID: patientID == freezed
+      patientID: freezed == patientID
           ? _value.patientID
           : patientID // ignore: cast_nullable_to_non_nullable
               as String?,
-      providerCode: providerCode == freezed
+      providerCode: freezed == providerCode
           ? _value.providerCode
           : providerCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      practitionerUID: practitionerUID == freezed
+      practitionerUID: freezed == practitionerUID
           ? _value.practitionerUID
           : practitionerUID // ignore: cast_nullable_to_non_nullable
               as String?,
-      providerPhone: providerPhone == freezed
+      providerPhone: freezed == providerPhone
           ? _value.providerPhone
           : providerPhone // ignore: cast_nullable_to_non_nullable
               as String?,
-      otp: otp == freezed
+      otp: freezed == otp
           ? _value.otp
           : otp // ignore: cast_nullable_to_non_nullable
               as String?,
-      fullAccess: fullAccess == freezed
+      fullAccess: freezed == fullAccess
           ? _value.fullAccess
           : fullAccess // ignore: cast_nullable_to_non_nullable
               as bool?,
-      patientPhone: patientPhone == freezed
+      patientPhone: freezed == patientPhone
           ? _value.patientPhone
           : patientPhone // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$BreakGlassEpisodeCreationInputCopyWith<$Res>
+abstract class _$$_BreakGlassEpisodeCreationInputCopyWith<$Res>
     implements $BreakGlassEpisodeCreationInputCopyWith<$Res> {
-  factory _$BreakGlassEpisodeCreationInputCopyWith(
-          _BreakGlassEpisodeCreationInput value,
-          $Res Function(_BreakGlassEpisodeCreationInput) then) =
-      __$BreakGlassEpisodeCreationInputCopyWithImpl<$Res>;
+  factory _$$_BreakGlassEpisodeCreationInputCopyWith(
+          _$_BreakGlassEpisodeCreationInput value,
+          $Res Function(_$_BreakGlassEpisodeCreationInput) then) =
+      __$$_BreakGlassEpisodeCreationInputCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? patientID,
       String? providerCode,
@@ -152,18 +128,16 @@ abstract class _$BreakGlassEpisodeCreationInputCopyWith<$Res>
 }
 
 /// @nodoc
-class __$BreakGlassEpisodeCreationInputCopyWithImpl<$Res>
-    extends _$BreakGlassEpisodeCreationInputCopyWithImpl<$Res>
-    implements _$BreakGlassEpisodeCreationInputCopyWith<$Res> {
-  __$BreakGlassEpisodeCreationInputCopyWithImpl(
-      _BreakGlassEpisodeCreationInput _value,
-      $Res Function(_BreakGlassEpisodeCreationInput) _then)
-      : super(_value, (v) => _then(v as _BreakGlassEpisodeCreationInput));
+class __$$_BreakGlassEpisodeCreationInputCopyWithImpl<$Res>
+    extends _$BreakGlassEpisodeCreationInputCopyWithImpl<$Res,
+        _$_BreakGlassEpisodeCreationInput>
+    implements _$$_BreakGlassEpisodeCreationInputCopyWith<$Res> {
+  __$$_BreakGlassEpisodeCreationInputCopyWithImpl(
+      _$_BreakGlassEpisodeCreationInput _value,
+      $Res Function(_$_BreakGlassEpisodeCreationInput) _then)
+      : super(_value, _then);
 
-  @override
-  _BreakGlassEpisodeCreationInput get _value =>
-      super._value as _BreakGlassEpisodeCreationInput;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? patientID = freezed,
@@ -174,32 +148,32 @@ class __$BreakGlassEpisodeCreationInputCopyWithImpl<$Res>
     Object? fullAccess = freezed,
     Object? patientPhone = freezed,
   }) {
-    return _then(_BreakGlassEpisodeCreationInput(
-      patientID: patientID == freezed
+    return _then(_$_BreakGlassEpisodeCreationInput(
+      patientID: freezed == patientID
           ? _value.patientID
           : patientID // ignore: cast_nullable_to_non_nullable
               as String?,
-      providerCode: providerCode == freezed
+      providerCode: freezed == providerCode
           ? _value.providerCode
           : providerCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      practitionerUID: practitionerUID == freezed
+      practitionerUID: freezed == practitionerUID
           ? _value.practitionerUID
           : practitionerUID // ignore: cast_nullable_to_non_nullable
               as String?,
-      providerPhone: providerPhone == freezed
+      providerPhone: freezed == providerPhone
           ? _value.providerPhone
           : providerPhone // ignore: cast_nullable_to_non_nullable
               as String?,
-      otp: otp == freezed
+      otp: freezed == otp
           ? _value.otp
           : otp // ignore: cast_nullable_to_non_nullable
               as String?,
-      fullAccess: fullAccess == freezed
+      fullAccess: freezed == fullAccess
           ? _value.fullAccess
           : fullAccess // ignore: cast_nullable_to_non_nullable
               as bool?,
-      patientPhone: patientPhone == freezed
+      patientPhone: freezed == patientPhone
           ? _value.patientPhone
           : patientPhone // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -222,7 +196,7 @@ class _$_BreakGlassEpisodeCreationInput
 
   factory _$_BreakGlassEpisodeCreationInput.fromJson(
           Map<String, dynamic> json) =>
-      _$_$_BreakGlassEpisodeCreationInputFromJson(json);
+      _$$_BreakGlassEpisodeCreationInputFromJson(json);
 
   @override
   final String? patientID;
@@ -247,82 +221,73 @@ class _$_BreakGlassEpisodeCreationInput
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _BreakGlassEpisodeCreationInput &&
+        (other.runtimeType == runtimeType &&
+            other is _$_BreakGlassEpisodeCreationInput &&
             (identical(other.patientID, patientID) ||
-                const DeepCollectionEquality()
-                    .equals(other.patientID, patientID)) &&
+                other.patientID == patientID) &&
             (identical(other.providerCode, providerCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.providerCode, providerCode)) &&
+                other.providerCode == providerCode) &&
             (identical(other.practitionerUID, practitionerUID) ||
-                const DeepCollectionEquality()
-                    .equals(other.practitionerUID, practitionerUID)) &&
+                other.practitionerUID == practitionerUID) &&
             (identical(other.providerPhone, providerPhone) ||
-                const DeepCollectionEquality()
-                    .equals(other.providerPhone, providerPhone)) &&
-            (identical(other.otp, otp) ||
-                const DeepCollectionEquality().equals(other.otp, otp)) &&
+                other.providerPhone == providerPhone) &&
+            (identical(other.otp, otp) || other.otp == otp) &&
             (identical(other.fullAccess, fullAccess) ||
-                const DeepCollectionEquality()
-                    .equals(other.fullAccess, fullAccess)) &&
+                other.fullAccess == fullAccess) &&
             (identical(other.patientPhone, patientPhone) ||
-                const DeepCollectionEquality()
-                    .equals(other.patientPhone, patientPhone)));
+                other.patientPhone == patientPhone));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(patientID) ^
-      const DeepCollectionEquality().hash(providerCode) ^
-      const DeepCollectionEquality().hash(practitionerUID) ^
-      const DeepCollectionEquality().hash(providerPhone) ^
-      const DeepCollectionEquality().hash(otp) ^
-      const DeepCollectionEquality().hash(fullAccess) ^
-      const DeepCollectionEquality().hash(patientPhone);
 
   @JsonKey(ignore: true)
   @override
-  _$BreakGlassEpisodeCreationInputCopyWith<_BreakGlassEpisodeCreationInput>
-      get copyWith => __$BreakGlassEpisodeCreationInputCopyWithImpl<
-          _BreakGlassEpisodeCreationInput>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, patientID, providerCode,
+      practitionerUID, providerPhone, otp, fullAccess, patientPhone);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_BreakGlassEpisodeCreationInputCopyWith<_$_BreakGlassEpisodeCreationInput>
+      get copyWith => __$$_BreakGlassEpisodeCreationInputCopyWithImpl<
+          _$_BreakGlassEpisodeCreationInput>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_BreakGlassEpisodeCreationInputToJson(this);
+    return _$$_BreakGlassEpisodeCreationInputToJson(
+      this,
+    );
   }
 }
 
 abstract class _BreakGlassEpisodeCreationInput
     implements BreakGlassEpisodeCreationInput {
   factory _BreakGlassEpisodeCreationInput(
-      {required String? patientID,
-      required String? providerCode,
-      required String? practitionerUID,
-      required String? providerPhone,
-      required String? otp,
-      required bool? fullAccess,
-      required String? patientPhone}) = _$_BreakGlassEpisodeCreationInput;
+      {required final String? patientID,
+      required final String? providerCode,
+      required final String? practitionerUID,
+      required final String? providerPhone,
+      required final String? otp,
+      required final bool? fullAccess,
+      required final String? patientPhone}) = _$_BreakGlassEpisodeCreationInput;
 
   factory _BreakGlassEpisodeCreationInput.fromJson(Map<String, dynamic> json) =
       _$_BreakGlassEpisodeCreationInput.fromJson;
 
   @override
-  String? get patientID => throw _privateConstructorUsedError;
+  String? get patientID;
   @override
-  String? get providerCode => throw _privateConstructorUsedError;
+  String? get providerCode;
   @override
-  String? get practitionerUID => throw _privateConstructorUsedError;
+  String? get practitionerUID;
   @override
-  String? get providerPhone => throw _privateConstructorUsedError;
+  String? get providerPhone;
   @override
-  String? get otp => throw _privateConstructorUsedError;
+  String? get otp;
   @override
-  bool? get fullAccess => throw _privateConstructorUsedError;
+  bool? get fullAccess;
   @override
-  String? get patientPhone => throw _privateConstructorUsedError;
+  String? get patientPhone;
   @override
   @JsonKey(ignore: true)
-  _$BreakGlassEpisodeCreationInputCopyWith<_BreakGlassEpisodeCreationInput>
+  _$$_BreakGlassEpisodeCreationInputCopyWith<_$_BreakGlassEpisodeCreationInput>
       get copyWith => throw _privateConstructorUsedError;
 }

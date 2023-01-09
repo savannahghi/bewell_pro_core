@@ -6,11 +6,13 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mocktail_image_network/mocktail_image_network.dart';
-import 'package:shared_ui_components/buttons.dart';
+import 'package:sghi_core/domain_objects/entities/auth_credential_response.dart';
+import 'package:sghi_core/domain_objects/entities/navigation.dart';
+import 'package:sghi_core/ui_components/src/buttons.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/increment_user_visit_count_action.dart';
@@ -31,10 +33,13 @@ import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/en
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/patient_banner_bio_info.dart';
 import 'package:bewell_pro_core/presentation/clinical/post_visit_survey/rating.dart';
 import '../../../../mocks/base64_image.dart';
+import '../../../../mocks/mock_utils.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
   group('patient banner', () {
     late Store<CoreState> store;
 
@@ -50,7 +55,9 @@ void main() {
       birthDate: eighteenYears.toIso8601String(),
     );
 
-    setUp(() {
+    setUp(() async {
+      await Firebase.initializeApp();
+
       store = Store<CoreState>(
         initialState: CoreState.initial().copyWith(
           clinicalState: ClinicalState(
@@ -252,8 +259,8 @@ void main() {
 
       final Store<CoreState> localStore = Store<CoreState>(
         initialState: store.state.copyWith(
-          userState: store.state.userState?.copyWith
-              .call(auth: AuthCredentialResponse()),
+          userState:
+              store.state.userState?.copyWith(auth: AuthCredentialResponse()),
           navigationState: Navigation(
               drawerSelectedIndex: -1,
               bottomBarSelectedIndex: 0,

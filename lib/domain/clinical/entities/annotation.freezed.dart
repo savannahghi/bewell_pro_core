@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'annotation.dart';
 
@@ -10,38 +12,11 @@ part of 'annotation.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Annotation _$AnnotationFromJson(Map<String, dynamic> json) {
   return _Annotation.fromJson(json);
 }
-
-/// @nodoc
-class _$AnnotationTearOff {
-  const _$AnnotationTearOff();
-
-  _Annotation call(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'AuthorReference') Reference? authorReference,
-      @JsonKey(name: 'AuthorString') String? authorString,
-      @JsonKey(name: 'Time') DateTime? time,
-      @JsonKey(name: 'Text') String? text}) {
-    return _Annotation(
-      id: id,
-      authorReference: authorReference,
-      authorString: authorString,
-      time: time,
-      text: text,
-    );
-  }
-
-  Annotation fromJson(Map<String, Object> json) {
-    return Annotation.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Annotation = _$AnnotationTearOff();
 
 /// @nodoc
 mixin _$Annotation {
@@ -70,7 +45,8 @@ mixin _$Annotation {
 abstract class $AnnotationCopyWith<$Res> {
   factory $AnnotationCopyWith(
           Annotation value, $Res Function(Annotation) then) =
-      _$AnnotationCopyWithImpl<$Res>;
+      _$AnnotationCopyWithImpl<$Res, Annotation>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'AuthorReference') Reference? authorReference,
@@ -82,13 +58,16 @@ abstract class $AnnotationCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AnnotationCopyWithImpl<$Res> implements $AnnotationCopyWith<$Res> {
+class _$AnnotationCopyWithImpl<$Res, $Val extends Annotation>
+    implements $AnnotationCopyWith<$Res> {
   _$AnnotationCopyWithImpl(this._value, this._then);
 
-  final Annotation _value;
   // ignore: unused_field
-  final $Res Function(Annotation) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -98,47 +77,50 @@ class _$AnnotationCopyWithImpl<$Res> implements $AnnotationCopyWith<$Res> {
     Object? text = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      authorReference: authorReference == freezed
+      authorReference: freezed == authorReference
           ? _value.authorReference
           : authorReference // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      authorString: authorString == freezed
+      authorString: freezed == authorString
           ? _value.authorString
           : authorString // ignore: cast_nullable_to_non_nullable
               as String?,
-      time: time == freezed
+      time: freezed == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      text: text == freezed
+      text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get authorReference {
     if (_value.authorReference == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.authorReference!, (value) {
-      return _then(_value.copyWith(authorReference: value));
+      return _then(_value.copyWith(authorReference: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$AnnotationCopyWith<$Res> implements $AnnotationCopyWith<$Res> {
-  factory _$AnnotationCopyWith(
-          _Annotation value, $Res Function(_Annotation) then) =
-      __$AnnotationCopyWithImpl<$Res>;
+abstract class _$$_AnnotationCopyWith<$Res>
+    implements $AnnotationCopyWith<$Res> {
+  factory _$$_AnnotationCopyWith(
+          _$_Annotation value, $Res Function(_$_Annotation) then) =
+      __$$_AnnotationCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'AuthorReference') Reference? authorReference,
@@ -151,15 +133,14 @@ abstract class _$AnnotationCopyWith<$Res> implements $AnnotationCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$AnnotationCopyWithImpl<$Res> extends _$AnnotationCopyWithImpl<$Res>
-    implements _$AnnotationCopyWith<$Res> {
-  __$AnnotationCopyWithImpl(
-      _Annotation _value, $Res Function(_Annotation) _then)
-      : super(_value, (v) => _then(v as _Annotation));
+class __$$_AnnotationCopyWithImpl<$Res>
+    extends _$AnnotationCopyWithImpl<$Res, _$_Annotation>
+    implements _$$_AnnotationCopyWith<$Res> {
+  __$$_AnnotationCopyWithImpl(
+      _$_Annotation _value, $Res Function(_$_Annotation) _then)
+      : super(_value, _then);
 
-  @override
-  _Annotation get _value => super._value as _Annotation;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -168,24 +149,24 @@ class __$AnnotationCopyWithImpl<$Res> extends _$AnnotationCopyWithImpl<$Res>
     Object? time = freezed,
     Object? text = freezed,
   }) {
-    return _then(_Annotation(
-      id: id == freezed
+    return _then(_$_Annotation(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      authorReference: authorReference == freezed
+      authorReference: freezed == authorReference
           ? _value.authorReference
           : authorReference // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      authorString: authorString == freezed
+      authorString: freezed == authorString
           ? _value.authorString
           : authorString // ignore: cast_nullable_to_non_nullable
               as String?,
-      time: time == freezed
+      time: freezed == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      text: text == freezed
+      text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -204,14 +185,14 @@ class _$_Annotation implements _Annotation {
       @JsonKey(name: 'Text') this.text});
 
   factory _$_Annotation.fromJson(Map<String, dynamic> json) =>
-      _$_$_AnnotationFromJson(json);
+      _$$_AnnotationFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
   final String? id;
-  @override
 
   /// The individual responsible for making the annotation.
+  @override
   @JsonKey(name: 'AuthorReference')
   final Reference? authorReference;
   @override
@@ -220,9 +201,9 @@ class _$_Annotation implements _Annotation {
   @override
   @JsonKey(name: 'Time')
   final DateTime? time;
-  @override
 
   /// The text of the annotation in markdown format.
+  @override
   @JsonKey(name: 'Text')
   final String? text;
 
@@ -234,73 +215,68 @@ class _$_Annotation implements _Annotation {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Annotation &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_Annotation &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.authorReference, authorReference) ||
-                const DeepCollectionEquality()
-                    .equals(other.authorReference, authorReference)) &&
+                other.authorReference == authorReference) &&
             (identical(other.authorString, authorString) ||
-                const DeepCollectionEquality()
-                    .equals(other.authorString, authorString)) &&
-            (identical(other.time, time) ||
-                const DeepCollectionEquality().equals(other.time, time)) &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)));
+                other.authorString == authorString) &&
+            (identical(other.time, time) || other.time == time) &&
+            (identical(other.text, text) || other.text == text));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(authorReference) ^
-      const DeepCollectionEquality().hash(authorString) ^
-      const DeepCollectionEquality().hash(time) ^
-      const DeepCollectionEquality().hash(text);
 
   @JsonKey(ignore: true)
   @override
-  _$AnnotationCopyWith<_Annotation> get copyWith =>
-      __$AnnotationCopyWithImpl<_Annotation>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, id, authorReference, authorString, time, text);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_AnnotationCopyWith<_$_Annotation> get copyWith =>
+      __$$_AnnotationCopyWithImpl<_$_Annotation>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_AnnotationToJson(this);
+    return _$$_AnnotationToJson(
+      this,
+    );
   }
 }
 
 abstract class _Annotation implements Annotation {
   factory _Annotation(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'AuthorReference') Reference? authorReference,
-      @JsonKey(name: 'AuthorString') String? authorString,
-      @JsonKey(name: 'Time') DateTime? time,
-      @JsonKey(name: 'Text') String? text}) = _$_Annotation;
+      {@JsonKey(name: 'ID') final String? id,
+      @JsonKey(name: 'AuthorReference') final Reference? authorReference,
+      @JsonKey(name: 'AuthorString') final String? authorString,
+      @JsonKey(name: 'Time') final DateTime? time,
+      @JsonKey(name: 'Text') final String? text}) = _$_Annotation;
 
   factory _Annotation.fromJson(Map<String, dynamic> json) =
       _$_Annotation.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
 
   /// The individual responsible for making the annotation.
   @JsonKey(name: 'AuthorReference')
-  Reference? get authorReference => throw _privateConstructorUsedError;
+  Reference? get authorReference;
   @override
   @JsonKey(name: 'AuthorString')
-  String? get authorString => throw _privateConstructorUsedError;
+  String? get authorString;
   @override
   @JsonKey(name: 'Time')
-  DateTime? get time => throw _privateConstructorUsedError;
+  DateTime? get time;
   @override
 
   /// The text of the annotation in markdown format.
   @JsonKey(name: 'Text')
-  String? get text => throw _privateConstructorUsedError;
+  String? get text;
   @override
   @JsonKey(ignore: true)
-  _$AnnotationCopyWith<_Annotation> get copyWith =>
+  _$$_AnnotationCopyWith<_$_Annotation> get copyWith =>
       throw _privateConstructorUsedError;
 }

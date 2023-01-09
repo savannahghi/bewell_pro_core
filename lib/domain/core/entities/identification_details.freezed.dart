@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'identification_details.dart';
 
@@ -10,26 +12,7 @@ part of 'identification_details.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$IdentificationDetailsTearOff {
-  const _$IdentificationDetailsTearOff();
-
-  _IdentificationDetails call(
-      {required DocumentType documentType,
-      required String documentNumber,
-      List<PatientRegistrationImageData>? images}) {
-    return _IdentificationDetails(
-      documentType: documentType,
-      documentNumber: documentNumber,
-      images: images,
-    );
-  }
-}
-
-/// @nodoc
-const $IdentificationDetails = _$IdentificationDetailsTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$IdentificationDetails {
@@ -47,7 +30,8 @@ mixin _$IdentificationDetails {
 abstract class $IdentificationDetailsCopyWith<$Res> {
   factory $IdentificationDetailsCopyWith(IdentificationDetails value,
           $Res Function(IdentificationDetails) then) =
-      _$IdentificationDetailsCopyWithImpl<$Res>;
+      _$IdentificationDetailsCopyWithImpl<$Res, IdentificationDetails>;
+  @useResult
   $Res call(
       {DocumentType documentType,
       String documentNumber,
@@ -55,44 +39,48 @@ abstract class $IdentificationDetailsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$IdentificationDetailsCopyWithImpl<$Res>
+class _$IdentificationDetailsCopyWithImpl<$Res,
+        $Val extends IdentificationDetails>
     implements $IdentificationDetailsCopyWith<$Res> {
   _$IdentificationDetailsCopyWithImpl(this._value, this._then);
 
-  final IdentificationDetails _value;
   // ignore: unused_field
-  final $Res Function(IdentificationDetails) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? documentType = freezed,
-    Object? documentNumber = freezed,
+    Object? documentType = null,
+    Object? documentNumber = null,
     Object? images = freezed,
   }) {
     return _then(_value.copyWith(
-      documentType: documentType == freezed
+      documentType: null == documentType
           ? _value.documentType
           : documentType // ignore: cast_nullable_to_non_nullable
               as DocumentType,
-      documentNumber: documentNumber == freezed
+      documentNumber: null == documentNumber
           ? _value.documentNumber
           : documentNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      images: images == freezed
+      images: freezed == images
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
               as List<PatientRegistrationImageData>?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$IdentificationDetailsCopyWith<$Res>
+abstract class _$$_IdentificationDetailsCopyWith<$Res>
     implements $IdentificationDetailsCopyWith<$Res> {
-  factory _$IdentificationDetailsCopyWith(_IdentificationDetails value,
-          $Res Function(_IdentificationDetails) then) =
-      __$IdentificationDetailsCopyWithImpl<$Res>;
+  factory _$$_IdentificationDetailsCopyWith(_$_IdentificationDetails value,
+          $Res Function(_$_IdentificationDetails) then) =
+      __$$_IdentificationDetailsCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {DocumentType documentType,
       String documentNumber,
@@ -100,33 +88,31 @@ abstract class _$IdentificationDetailsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$IdentificationDetailsCopyWithImpl<$Res>
-    extends _$IdentificationDetailsCopyWithImpl<$Res>
-    implements _$IdentificationDetailsCopyWith<$Res> {
-  __$IdentificationDetailsCopyWithImpl(_IdentificationDetails _value,
-      $Res Function(_IdentificationDetails) _then)
-      : super(_value, (v) => _then(v as _IdentificationDetails));
+class __$$_IdentificationDetailsCopyWithImpl<$Res>
+    extends _$IdentificationDetailsCopyWithImpl<$Res, _$_IdentificationDetails>
+    implements _$$_IdentificationDetailsCopyWith<$Res> {
+  __$$_IdentificationDetailsCopyWithImpl(_$_IdentificationDetails _value,
+      $Res Function(_$_IdentificationDetails) _then)
+      : super(_value, _then);
 
-  @override
-  _IdentificationDetails get _value => super._value as _IdentificationDetails;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? documentType = freezed,
-    Object? documentNumber = freezed,
+    Object? documentType = null,
+    Object? documentNumber = null,
     Object? images = freezed,
   }) {
-    return _then(_IdentificationDetails(
-      documentType: documentType == freezed
+    return _then(_$_IdentificationDetails(
+      documentType: null == documentType
           ? _value.documentType
           : documentType // ignore: cast_nullable_to_non_nullable
               as DocumentType,
-      documentNumber: documentNumber == freezed
+      documentNumber: null == documentNumber
           ? _value.documentNumber
           : documentNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      images: images == freezed
-          ? _value.images
+      images: freezed == images
+          ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
               as List<PatientRegistrationImageData>?,
     ));
@@ -137,14 +123,23 @@ class __$IdentificationDetailsCopyWithImpl<$Res>
 
 class _$_IdentificationDetails implements _IdentificationDetails {
   const _$_IdentificationDetails(
-      {required this.documentType, required this.documentNumber, this.images});
+      {required this.documentType,
+      required this.documentNumber,
+      final List<PatientRegistrationImageData>? images})
+      : _images = images;
 
   @override
   final DocumentType documentType;
   @override
   final String documentNumber;
+  final List<PatientRegistrationImageData>? _images;
   @override
-  final List<PatientRegistrationImageData>? images;
+  List<PatientRegistrationImageData>? get images {
+    final value = _images;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -154,46 +149,42 @@ class _$_IdentificationDetails implements _IdentificationDetails {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _IdentificationDetails &&
+        (other.runtimeType == runtimeType &&
+            other is _$_IdentificationDetails &&
             (identical(other.documentType, documentType) ||
-                const DeepCollectionEquality()
-                    .equals(other.documentType, documentType)) &&
+                other.documentType == documentType) &&
             (identical(other.documentNumber, documentNumber) ||
-                const DeepCollectionEquality()
-                    .equals(other.documentNumber, documentNumber)) &&
-            (identical(other.images, images) ||
-                const DeepCollectionEquality().equals(other.images, images)));
+                other.documentNumber == documentNumber) &&
+            const DeepCollectionEquality().equals(other._images, _images));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(documentType) ^
-      const DeepCollectionEquality().hash(documentNumber) ^
-      const DeepCollectionEquality().hash(images);
+  int get hashCode => Object.hash(runtimeType, documentType, documentNumber,
+      const DeepCollectionEquality().hash(_images));
 
   @JsonKey(ignore: true)
   @override
-  _$IdentificationDetailsCopyWith<_IdentificationDetails> get copyWith =>
-      __$IdentificationDetailsCopyWithImpl<_IdentificationDetails>(
+  @pragma('vm:prefer-inline')
+  _$$_IdentificationDetailsCopyWith<_$_IdentificationDetails> get copyWith =>
+      __$$_IdentificationDetailsCopyWithImpl<_$_IdentificationDetails>(
           this, _$identity);
 }
 
 abstract class _IdentificationDetails implements IdentificationDetails {
   const factory _IdentificationDetails(
-      {required DocumentType documentType,
-      required String documentNumber,
-      List<PatientRegistrationImageData>? images}) = _$_IdentificationDetails;
+          {required final DocumentType documentType,
+          required final String documentNumber,
+          final List<PatientRegistrationImageData>? images}) =
+      _$_IdentificationDetails;
 
   @override
-  DocumentType get documentType => throw _privateConstructorUsedError;
+  DocumentType get documentType;
   @override
-  String get documentNumber => throw _privateConstructorUsedError;
+  String get documentNumber;
   @override
-  List<PatientRegistrationImageData>? get images =>
-      throw _privateConstructorUsedError;
+  List<PatientRegistrationImageData>? get images;
   @override
   @JsonKey(ignore: true)
-  _$IdentificationDetailsCopyWith<_IdentificationDetails> get copyWith =>
+  _$$_IdentificationDetailsCopyWith<_$_IdentificationDetails> get copyWith =>
       throw _privateConstructorUsedError;
 }

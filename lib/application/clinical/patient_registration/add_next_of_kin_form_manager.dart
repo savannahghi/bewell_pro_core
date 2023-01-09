@@ -1,5 +1,4 @@
 // Package imports:
-import 'package:domain_objects/value_objects.dart';
 import 'package:intl/intl.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -10,6 +9,9 @@ import 'package:bewell_pro_core/domain/clinical/entities/simple_next_of_kin_inpu
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
 import 'package:bewell_pro_core/domain/core/entities/name_input.dart';
 import 'package:bewell_pro_core/domain/core/entities/phone_number_input.dart';
+import 'package:sghi_core/domain_objects/value_objects/enums.dart';
+import 'package:sghi_core/domain_objects/value_objects/name.dart';
+import 'package:sghi_core/domain_objects/value_objects/phone_number.dart';
 
 class AddNextOfKinFormManager with Validator {
   final BehaviorSubject<String> _firstName = BehaviorSubject<String>();

@@ -2,13 +2,12 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:misc_utilities/misc.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:misc_utilities/string_constant.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_themes/text_themes.dart';
+import 'package:sghi_core/misc_utilities/misc.dart';
+import 'package:sghi_core/misc_utilities/responsive_widget.dart';
+import 'package:sghi_core/shared_themes/colors.dart';
+import 'package:sghi_core/shared_themes/constants.dart';
+import 'package:sghi_core/shared_themes/spaces.dart';
+import 'package:sghi_core/shared_themes/text_themes.dart';
 import 'package:unicons/unicons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -34,7 +33,13 @@ class HelpCenterChannels extends StatelessWidget {
         children: <Widget>[
           GestureDetector(
               key: AppWidgetKeys.helpCenterCallKey,
-              onTap: () => launch(silPhoneNumber),
+              onTap: () {
+                final Uri launchUri = Uri(
+                  scheme: 'tel',
+                  path: silPhoneNumber,
+                );
+                launchUrl(launchUri);
+              },
               child: Column(
                 children: <Widget>[
                   const CircularBackGroundIcons(
@@ -54,10 +59,13 @@ class HelpCenterChannels extends StatelessWidget {
           GestureDetector(
             key: AppWidgetKeys.helpCenterWhatsAppKey,
             onTap: () => launchWhatsApp(
-                message: '',
-                phone: kWhatsAppNumber,
-                launch:
-                    launch(whatsAppUrl(phone: kWhatsAppNumber, message: ''))),
+              message: '',
+              phone: kWhatsAppNumber,
+              launch: launchUrl(
+                Uri.parse('https://wa.me/$kWhatsAppNumber?text=Hello'),
+                mode: LaunchMode.externalApplication,
+              ),
+            ),
             child: Column(
               children: <Widget>[
                 const CircularBackGroundIcons(

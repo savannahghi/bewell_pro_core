@@ -6,8 +6,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
 
@@ -27,14 +26,24 @@ import 'package:bewell_pro_core/presentation/core/global_search/sil_search.dart'
 import 'package:bewell_pro_core/presentation/core/global_search/widgets/search_widget.dart';
 import 'package:bewell_pro_core/presentation/core/help_center/pages/help_center_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/widgets/profile_master_detail.dart';
+import 'package:sghi_core/domain_objects/entities/bio_data.dart';
+import 'package:sghi_core/domain_objects/entities/navigation.dart';
+import 'package:sghi_core/domain_objects/entities/user_profile.dart';
+import 'package:sghi_core/domain_objects/value_objects/email_address.dart';
+import 'package:sghi_core/domain_objects/value_objects/phone_number.dart';
+import '../../../../mocks/mock_utils.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
   group('sil search and search widget pages', () {
     late Store<CoreState> store;
 
-    setUp(() {
+    setUp(() async {
+      await Firebase.initializeApp();
+
       AppBrand()
         ..appLogo.add(beWellWhiteIconUrl)
         ..appLogo2.add(beWellWhiteIconUrl)
@@ -124,7 +133,7 @@ void main() {
             secondaryActions: secondaryActionsMockedData,
             bottomBarSelectedIndex: -1,
           ),
-          userState: store.state.userState?.copyWith.call(
+          userState: store.state.userState?.copyWith(
             userProfile: UserProfile(
               userBioData: BioData(
                 firstName: testFirstName,
@@ -178,7 +187,7 @@ void main() {
             secondaryActions: secondaryActionsMockedData,
             bottomBarSelectedIndex: -1,
           ),
-          userState: store.state.userState?.copyWith.call(
+          userState: store.state.userState?.copyWith(
             userProfile: UserProfile(
               userBioData: BioData(
                 firstName: testFirstName,
@@ -229,7 +238,7 @@ void main() {
             secondaryActions: secondaryActionsMockedData,
             bottomBarSelectedIndex: 0,
           ),
-          userState: store.state.userState?.copyWith.call(
+          userState: store.state.userState?.copyWith(
             userProfile: UserProfile(
               userBioData: BioData(
                 firstName: testFirstName,
@@ -282,7 +291,7 @@ void main() {
               primaryActions: primaryActionsMockedData,
               secondaryActions: secondaryActionsMockedData,
               bottomBarSelectedIndex: 0),
-          userState: store.state.userState?.copyWith.call(
+          userState: store.state.userState?.copyWith(
             userProfile: UserProfile(
               userBioData: BioData(
                 firstName: testFirstName,
@@ -852,7 +861,7 @@ void main() {
               primaryActions: primaryActionsMockedData,
               secondaryActions: secondaryActionsMockedData,
               bottomBarSelectedIndex: 0),
-          userState: store.state.userState?.copyWith.call(
+          userState: store.state.userState?.copyWith(
             userProfile: UserProfile(
               userBioData: BioData(
                 firstName: testFirstName,
@@ -910,7 +919,7 @@ void main() {
               primaryActions: primaryActionsMockedData,
               secondaryActions: secondaryActionsMockedData,
               bottomBarSelectedIndex: 0),
-          userState: store.state.userState?.copyWith.call(
+          userState: store.state.userState?.copyWith(
             userProfile: UserProfile(
               userBioData: BioData(
                 firstName: testFirstName,

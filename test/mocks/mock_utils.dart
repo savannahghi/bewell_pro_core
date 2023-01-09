@@ -6,7 +6,9 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 
 // Package imports:
+import 'package:firebase_analytics_platform_interface/firebase_analytics_platform_interface.dart';
 import 'package:firebase_core_platform_interface/firebase_core_platform_interface.dart';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 
@@ -23,10 +25,16 @@ http.StreamedResponse simpleResponse(
 
 typedef Callback = Function(MethodCall call);
 
+void setupFirebaseCoreMocks() {
+  TestFirebaseCoreHostApi.setup(MockFirebaseApp());
+}
+
 dynamic setupFirebaseAuthMocks([Callback? customHandlers]) {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  MethodChannelFirebase.channel
+  setupFirebaseCoreMocks();
+
+  MethodChannelFirebaseAnalytics.channel
       .setMockMethodCallHandler((MethodCall call) async {
     if (call.method == 'Firebase#initializeCore') {
       return <Map<String, dynamic>>[
@@ -50,7 +58,9 @@ dynamic setupFirebaseAuthMocks([Callback? customHandlers]) {
         'pluginConstants': <String, dynamic>{},
       };
     }
-    if (customHandlers != null) customHandlers(call);
+    if (customHandlers != null) {
+      customHandlers(call);
+    }
 
     return null;
   });

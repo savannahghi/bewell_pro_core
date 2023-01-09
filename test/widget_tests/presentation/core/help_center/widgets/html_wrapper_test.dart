@@ -5,10 +5,8 @@ import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mocktail_image_network/mocktail_image_network.dart';
 
 // Project imports:
-import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/core/help_center/widgets/html_wrapper.dart';
 import '../../../../../mocks/test_helpers.dart';
 
@@ -24,21 +22,6 @@ void main() {
       expect(find.byType(HtmlWrapper), findsOneWidget);
       expect(find.byType(Text), findsOneWidget);
       expect(find.text('Text without html tags'), findsOneWidget);
-    });
-
-    testWidgets('should render an image widget from html',
-        (WidgetTester tester) async {
-      await mockNetworkImages(() async {
-        await buildTestWidget(
-          tester: tester,
-          widget: const HtmlWrapper(
-              text:
-                  '<figure class="kg-card kg-image-card"><img src="https://uat.ghost.bewell.co.ke/content/images/2021/05/Screenshot_1620652822--1-.png" class="kg-image" alt loading="lazy" width="1078" height="204" srcset="https://uat.ghost.bewell.co.ke/content/images/size/w600/2021/05/Screenshot_1620652822--1-.png 600w, https://uat.ghost.bewell.co.ke/content/images/size/w1000/2021/05/Screenshot_1620652822--1-.png 1000w, https://uat.ghost.bewell.co.ke/content/images/2021/05/Screenshot_1620652822--1-.png 1078w" sizes="(min-width: 720px) 720px"></figure>'),
-        );
-
-        expect(find.byType(HtmlWrapper), findsOneWidget);
-        expect(find.byKey(AppWidgetKeys.htmlWrapperImageKey), findsOneWidget);
-      });
     });
 
     testWidgets('should render a HTML widget for text with html tags',

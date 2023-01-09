@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/buttons.dart';
+import 'package:sghi_core/misc_utilities/responsive_widget.dart';
+import 'package:sghi_core/shared_themes/colors.dart';
+import 'package:sghi_core/shared_themes/spaces.dart';
+import 'package:sghi_core/ui_components/src/buttons.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
@@ -13,8 +13,6 @@ import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 
 import 'package:permission_handler/permission_handler.dart'
     as permission_handler;
-
-
 
 class PermissionsBanner extends StatelessWidget {
   final String message;

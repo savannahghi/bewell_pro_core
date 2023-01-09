@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:shared_themes/colors.dart';
+import 'package:sghi_core/shared_themes/colors.dart';
 
 class PatientExamColumnTitle extends StatelessWidget {
   final String title;

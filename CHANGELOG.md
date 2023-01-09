@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.0.0
+
+- chore: upgrade to flutter 3.3.9
+
 ## 1.1.32-nullsafety
 
 - chore: app name

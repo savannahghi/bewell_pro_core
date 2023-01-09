@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 // Project imports:
@@ -12,10 +13,17 @@ import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/onboarding/common/widgets/landing_actions.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/pages/phone_login_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/signup/phone_signup_page.dart';
+import '../../../../mocks/mock_utils.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
   group('Landing Actions', () {
+    setUp(() async {
+      await Firebase.initializeApp();
+    });
+
     testWidgets('should navigate to create account page',
         (WidgetTester tester) async {
       final Store<CoreState> store =

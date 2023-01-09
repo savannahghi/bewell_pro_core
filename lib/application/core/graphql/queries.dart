@@ -1,5 +1,5 @@
 // Package imports:
-import 'package:user_feed/user_feed.dart';
+import 'package:sghi_core/user_feed/src/domain/value_objects/enums.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';

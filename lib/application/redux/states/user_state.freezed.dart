@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'user_state.dart';
 
@@ -10,44 +12,11 @@ part of 'user_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 UserState _$UserStateFromJson(Map<String, dynamic> json) {
   return _UserState.fromJson(json);
 }
-
-/// @nodoc
-class _$UserStateTearOff {
-  const _$UserStateTearOff();
-
-  _UserState call(
-      {UserProfile? userProfile,
-      Customer? customerProfile,
-      CommunicationSettings? communicationSettings,
-      AuthCredentialResponse? auth,
-      bool? isSignedIn,
-      String? signedInTime,
-      String? inActivitySetInTime,
-      String? tokenExpiryTime}) {
-    return _UserState(
-      userProfile: userProfile,
-      customerProfile: customerProfile,
-      communicationSettings: communicationSettings,
-      auth: auth,
-      isSignedIn: isSignedIn,
-      signedInTime: signedInTime,
-      inActivitySetInTime: inActivitySetInTime,
-      tokenExpiryTime: tokenExpiryTime,
-    );
-  }
-
-  UserState fromJson(Map<String, Object> json) {
-    return UserState.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $UserState = _$UserStateTearOff();
 
 /// @nodoc
 mixin _$UserState {
@@ -72,7 +41,8 @@ mixin _$UserState {
 /// @nodoc
 abstract class $UserStateCopyWith<$Res> {
   factory $UserStateCopyWith(UserState value, $Res Function(UserState) then) =
-      _$UserStateCopyWithImpl<$Res>;
+      _$UserStateCopyWithImpl<$Res, UserState>;
+  @useResult
   $Res call(
       {UserProfile? userProfile,
       Customer? customerProfile,
@@ -90,13 +60,16 @@ abstract class $UserStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UserStateCopyWithImpl<$Res> implements $UserStateCopyWith<$Res> {
+class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
+    implements $UserStateCopyWith<$Res> {
   _$UserStateCopyWithImpl(this._value, this._then);
 
-  final UserState _value;
   // ignore: unused_field
-  final $Res Function(UserState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? userProfile = freezed,
@@ -109,64 +82,67 @@ class _$UserStateCopyWithImpl<$Res> implements $UserStateCopyWith<$Res> {
     Object? tokenExpiryTime = freezed,
   }) {
     return _then(_value.copyWith(
-      userProfile: userProfile == freezed
+      userProfile: freezed == userProfile
           ? _value.userProfile
           : userProfile // ignore: cast_nullable_to_non_nullable
               as UserProfile?,
-      customerProfile: customerProfile == freezed
+      customerProfile: freezed == customerProfile
           ? _value.customerProfile
           : customerProfile // ignore: cast_nullable_to_non_nullable
               as Customer?,
-      communicationSettings: communicationSettings == freezed
+      communicationSettings: freezed == communicationSettings
           ? _value.communicationSettings
           : communicationSettings // ignore: cast_nullable_to_non_nullable
               as CommunicationSettings?,
-      auth: auth == freezed
+      auth: freezed == auth
           ? _value.auth
           : auth // ignore: cast_nullable_to_non_nullable
               as AuthCredentialResponse?,
-      isSignedIn: isSignedIn == freezed
+      isSignedIn: freezed == isSignedIn
           ? _value.isSignedIn
           : isSignedIn // ignore: cast_nullable_to_non_nullable
               as bool?,
-      signedInTime: signedInTime == freezed
+      signedInTime: freezed == signedInTime
           ? _value.signedInTime
           : signedInTime // ignore: cast_nullable_to_non_nullable
               as String?,
-      inActivitySetInTime: inActivitySetInTime == freezed
+      inActivitySetInTime: freezed == inActivitySetInTime
           ? _value.inActivitySetInTime
           : inActivitySetInTime // ignore: cast_nullable_to_non_nullable
               as String?,
-      tokenExpiryTime: tokenExpiryTime == freezed
+      tokenExpiryTime: freezed == tokenExpiryTime
           ? _value.tokenExpiryTime
           : tokenExpiryTime // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $UserProfileCopyWith<$Res>? get userProfile {
     if (_value.userProfile == null) {
       return null;
     }
 
     return $UserProfileCopyWith<$Res>(_value.userProfile!, (value) {
-      return _then(_value.copyWith(userProfile: value));
+      return _then(_value.copyWith(userProfile: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CustomerCopyWith<$Res>? get customerProfile {
     if (_value.customerProfile == null) {
       return null;
     }
 
     return $CustomerCopyWith<$Res>(_value.customerProfile!, (value) {
-      return _then(_value.copyWith(customerProfile: value));
+      return _then(_value.copyWith(customerProfile: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CommunicationSettingsCopyWith<$Res>? get communicationSettings {
     if (_value.communicationSettings == null) {
       return null;
@@ -174,28 +150,30 @@ class _$UserStateCopyWithImpl<$Res> implements $UserStateCopyWith<$Res> {
 
     return $CommunicationSettingsCopyWith<$Res>(_value.communicationSettings!,
         (value) {
-      return _then(_value.copyWith(communicationSettings: value));
+      return _then(_value.copyWith(communicationSettings: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $AuthCredentialResponseCopyWith<$Res>? get auth {
     if (_value.auth == null) {
       return null;
     }
 
     return $AuthCredentialResponseCopyWith<$Res>(_value.auth!, (value) {
-      return _then(_value.copyWith(auth: value));
+      return _then(_value.copyWith(auth: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$UserStateCopyWith<$Res> implements $UserStateCopyWith<$Res> {
-  factory _$UserStateCopyWith(
-          _UserState value, $Res Function(_UserState) then) =
-      __$UserStateCopyWithImpl<$Res>;
+abstract class _$$_UserStateCopyWith<$Res> implements $UserStateCopyWith<$Res> {
+  factory _$$_UserStateCopyWith(
+          _$_UserState value, $Res Function(_$_UserState) then) =
+      __$$_UserStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {UserProfile? userProfile,
       Customer? customerProfile,
@@ -217,14 +195,14 @@ abstract class _$UserStateCopyWith<$Res> implements $UserStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$UserStateCopyWithImpl<$Res> extends _$UserStateCopyWithImpl<$Res>
-    implements _$UserStateCopyWith<$Res> {
-  __$UserStateCopyWithImpl(_UserState _value, $Res Function(_UserState) _then)
-      : super(_value, (v) => _then(v as _UserState));
+class __$$_UserStateCopyWithImpl<$Res>
+    extends _$UserStateCopyWithImpl<$Res, _$_UserState>
+    implements _$$_UserStateCopyWith<$Res> {
+  __$$_UserStateCopyWithImpl(
+      _$_UserState _value, $Res Function(_$_UserState) _then)
+      : super(_value, _then);
 
-  @override
-  _UserState get _value => super._value as _UserState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? userProfile = freezed,
@@ -236,36 +214,36 @@ class __$UserStateCopyWithImpl<$Res> extends _$UserStateCopyWithImpl<$Res>
     Object? inActivitySetInTime = freezed,
     Object? tokenExpiryTime = freezed,
   }) {
-    return _then(_UserState(
-      userProfile: userProfile == freezed
+    return _then(_$_UserState(
+      userProfile: freezed == userProfile
           ? _value.userProfile
           : userProfile // ignore: cast_nullable_to_non_nullable
               as UserProfile?,
-      customerProfile: customerProfile == freezed
+      customerProfile: freezed == customerProfile
           ? _value.customerProfile
           : customerProfile // ignore: cast_nullable_to_non_nullable
               as Customer?,
-      communicationSettings: communicationSettings == freezed
+      communicationSettings: freezed == communicationSettings
           ? _value.communicationSettings
           : communicationSettings // ignore: cast_nullable_to_non_nullable
               as CommunicationSettings?,
-      auth: auth == freezed
+      auth: freezed == auth
           ? _value.auth
           : auth // ignore: cast_nullable_to_non_nullable
               as AuthCredentialResponse?,
-      isSignedIn: isSignedIn == freezed
+      isSignedIn: freezed == isSignedIn
           ? _value.isSignedIn
           : isSignedIn // ignore: cast_nullable_to_non_nullable
               as bool?,
-      signedInTime: signedInTime == freezed
+      signedInTime: freezed == signedInTime
           ? _value.signedInTime
           : signedInTime // ignore: cast_nullable_to_non_nullable
               as String?,
-      inActivitySetInTime: inActivitySetInTime == freezed
+      inActivitySetInTime: freezed == inActivitySetInTime
           ? _value.inActivitySetInTime
           : inActivitySetInTime // ignore: cast_nullable_to_non_nullable
               as String?,
-      tokenExpiryTime: tokenExpiryTime == freezed
+      tokenExpiryTime: freezed == tokenExpiryTime
           ? _value.tokenExpiryTime
           : tokenExpiryTime // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -287,9 +265,10 @@ class _$_UserState implements _UserState {
       this.tokenExpiryTime});
 
   factory _$_UserState.fromJson(Map<String, dynamic> json) =>
-      _$_$_UserStateFromJson(json);
+      _$$_UserStateFromJson(json);
 
-  @override // sourced from the response fo login
+// sourced from the response fo login
+  @override
   final UserProfile? userProfile;
   @override
   final Customer? customerProfile;
@@ -297,7 +276,8 @@ class _$_UserState implements _UserState {
   final CommunicationSettings? communicationSettings;
   @override
   final AuthCredentialResponse? auth;
-  @override // generate from the app
+// generate from the app
+  @override
   final bool? isSignedIn;
   @override
   final String? signedInTime;
@@ -314,88 +294,84 @@ class _$_UserState implements _UserState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UserState &&
+        (other.runtimeType == runtimeType &&
+            other is _$_UserState &&
             (identical(other.userProfile, userProfile) ||
-                const DeepCollectionEquality()
-                    .equals(other.userProfile, userProfile)) &&
+                other.userProfile == userProfile) &&
             (identical(other.customerProfile, customerProfile) ||
-                const DeepCollectionEquality()
-                    .equals(other.customerProfile, customerProfile)) &&
+                other.customerProfile == customerProfile) &&
             (identical(other.communicationSettings, communicationSettings) ||
-                const DeepCollectionEquality().equals(
-                    other.communicationSettings, communicationSettings)) &&
-            (identical(other.auth, auth) ||
-                const DeepCollectionEquality().equals(other.auth, auth)) &&
+                other.communicationSettings == communicationSettings) &&
+            (identical(other.auth, auth) || other.auth == auth) &&
             (identical(other.isSignedIn, isSignedIn) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSignedIn, isSignedIn)) &&
+                other.isSignedIn == isSignedIn) &&
             (identical(other.signedInTime, signedInTime) ||
-                const DeepCollectionEquality()
-                    .equals(other.signedInTime, signedInTime)) &&
+                other.signedInTime == signedInTime) &&
             (identical(other.inActivitySetInTime, inActivitySetInTime) ||
-                const DeepCollectionEquality()
-                    .equals(other.inActivitySetInTime, inActivitySetInTime)) &&
+                other.inActivitySetInTime == inActivitySetInTime) &&
             (identical(other.tokenExpiryTime, tokenExpiryTime) ||
-                const DeepCollectionEquality()
-                    .equals(other.tokenExpiryTime, tokenExpiryTime)));
+                other.tokenExpiryTime == tokenExpiryTime));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(userProfile) ^
-      const DeepCollectionEquality().hash(customerProfile) ^
-      const DeepCollectionEquality().hash(communicationSettings) ^
-      const DeepCollectionEquality().hash(auth) ^
-      const DeepCollectionEquality().hash(isSignedIn) ^
-      const DeepCollectionEquality().hash(signedInTime) ^
-      const DeepCollectionEquality().hash(inActivitySetInTime) ^
-      const DeepCollectionEquality().hash(tokenExpiryTime);
 
   @JsonKey(ignore: true)
   @override
-  _$UserStateCopyWith<_UserState> get copyWith =>
-      __$UserStateCopyWithImpl<_UserState>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      userProfile,
+      customerProfile,
+      communicationSettings,
+      auth,
+      isSignedIn,
+      signedInTime,
+      inActivitySetInTime,
+      tokenExpiryTime);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_UserStateCopyWith<_$_UserState> get copyWith =>
+      __$$_UserStateCopyWithImpl<_$_UserState>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_UserStateToJson(this);
+    return _$$_UserStateToJson(
+      this,
+    );
   }
 }
 
 abstract class _UserState implements UserState {
   factory _UserState(
-      {UserProfile? userProfile,
-      Customer? customerProfile,
-      CommunicationSettings? communicationSettings,
-      AuthCredentialResponse? auth,
-      bool? isSignedIn,
-      String? signedInTime,
-      String? inActivitySetInTime,
-      String? tokenExpiryTime}) = _$_UserState;
+      {final UserProfile? userProfile,
+      final Customer? customerProfile,
+      final CommunicationSettings? communicationSettings,
+      final AuthCredentialResponse? auth,
+      final bool? isSignedIn,
+      final String? signedInTime,
+      final String? inActivitySetInTime,
+      final String? tokenExpiryTime}) = _$_UserState;
 
   factory _UserState.fromJson(Map<String, dynamic> json) =
       _$_UserState.fromJson;
 
   @override // sourced from the response fo login
-  UserProfile? get userProfile => throw _privateConstructorUsedError;
+  UserProfile? get userProfile;
   @override
-  Customer? get customerProfile => throw _privateConstructorUsedError;
+  Customer? get customerProfile;
   @override
-  CommunicationSettings? get communicationSettings =>
-      throw _privateConstructorUsedError;
+  CommunicationSettings? get communicationSettings;
   @override
-  AuthCredentialResponse? get auth => throw _privateConstructorUsedError;
+  AuthCredentialResponse? get auth;
   @override // generate from the app
-  bool? get isSignedIn => throw _privateConstructorUsedError;
+  bool? get isSignedIn;
   @override
-  String? get signedInTime => throw _privateConstructorUsedError;
+  String? get signedInTime;
   @override
-  String? get inActivitySetInTime => throw _privateConstructorUsedError;
+  String? get inActivitySetInTime;
   @override
-  String? get tokenExpiryTime => throw _privateConstructorUsedError;
+  String? get tokenExpiryTime;
   @override
   @JsonKey(ignore: true)
-  _$UserStateCopyWith<_UserState> get copyWith =>
+  _$$_UserStateCopyWith<_$_UserState> get copyWith =>
       throw _privateConstructorUsedError;
 }

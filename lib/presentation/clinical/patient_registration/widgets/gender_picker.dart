@@ -3,8 +3,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:domain_objects/value_objects.dart';
-import 'package:shared_ui_components/inputs.dart';
+import 'package:sghi_core/domain_objects/value_objects/enums.dart';
+import 'package:sghi_core/ui_components/src/inputs.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';

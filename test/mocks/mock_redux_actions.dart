@@ -20,6 +20,7 @@ class MockStartVisitByRequestAccessAction extends MockAction<CoreState> {
         startVisitByRequestAccessAction.otpEpisodeCreationInput;
 
     otpEpisodeCreationInput = otpInput;
+    return null;
   }
 }
 
@@ -33,6 +34,7 @@ class MockStartVisitEmergencyAction extends MockAction<CoreState> {
 
     breakGlassEpisodeCreationInput =
         startVisitEmergencyAction.breakGlassEpisodeCreationInput;
+    return null;
   }
 }
 

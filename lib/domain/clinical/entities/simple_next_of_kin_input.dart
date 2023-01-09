@@ -1,5 +1,5 @@
 // Package imports:
-import 'package:domain_objects/value_objects.dart';
+import 'package:sghi_core/domain_objects/value_objects/enums.dart';
 import 'package:intl/intl.dart';
 
 // Project imports:

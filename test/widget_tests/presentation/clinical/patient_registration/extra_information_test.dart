@@ -5,9 +5,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 // Package imports:
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
-import 'package:shared_themes/constants.dart';
+import 'package:sghi_core/shared_themes/constants.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/domain/clinical/value_objects/system_enums.dart';
@@ -16,10 +17,13 @@ import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.d
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/extra_information.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration_container.dart';
+import '../../../../mocks/mock_utils.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
   group('ExtraInformation', () {
     const String testEmail = 'info@healthcloud.co.ke';
     const String invalidEmail = 'info@healthcloud.';
@@ -27,7 +31,9 @@ void main() {
     late TabController controller;
     late ExtraInformationObject extraInformation;
 
-    setUp(() {
+    setUp(() async {
+      await Firebase.initializeApp();
+
       controller = TabController(length: 6, vsync: const TestVSync());
       extraInformation = ExtraInformationObject();
     });

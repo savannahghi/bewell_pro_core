@@ -1,5 +1,5 @@
 // Package imports:
-import 'package:user_feed/user_feed.dart';
+import 'package:sghi_core/user_feed/src/domain/value_objects/enums.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/allergy.dart';
@@ -1580,7 +1580,7 @@ mutation UpdateFHIRCondition($input: FHIRConditionInput!) {
 Map<String, dynamic> updateProblemMutationVariables(
     Condition payload, String reason) {
   final Condition payloadWithStatusUpdate = payload.copyWith.call(
-    clinicalStatus: payload.clinicalStatus!.copyWith.call(
+    clinicalStatus: payload.clinicalStatus!.copyWith(
       coding: <Coding>[
         payload.clinicalStatus!.coding!.first!.copyWith.call(
           display: 'Resolved',
@@ -1613,7 +1613,7 @@ mutation UpdateAllergy($input: FHIRAllergyIntoleranceInput!) {
 Map<String, dynamic> updateAllergyMutationVariables(
     AllergyIntolerance payload, String reason) {
   final AllergyIntolerance payloadWithStatusUpdate = payload.copyWith.call(
-    clinicalStatus: payload.clinicalStatus!.copyWith.call(
+    clinicalStatus: payload.clinicalStatus!.copyWith(
       coding: <Coding>[
         payload.clinicalStatus!.coding!.first!.copyWith.call(
           display: 'Resolved',

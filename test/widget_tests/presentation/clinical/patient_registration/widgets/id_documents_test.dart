@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 // Flutter imports:
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:

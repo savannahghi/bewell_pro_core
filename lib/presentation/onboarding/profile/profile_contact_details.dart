@@ -1,20 +1,19 @@
 // Flutter imports:
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:app_wrapper/app_wrapper.dart';
+import 'package:sghi_core/app_wrapper/app_wrapper_base.dart';
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
 import 'package:intl/intl.dart';
-import 'package:misc_utilities/enums.dart';
-import 'package:misc_utilities/number_constants.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/profile_banner.dart';
-import 'package:user_profile/contact_utils.dart';
-import 'package:user_profile/contacts.dart';
+import 'package:sghi_core/domain_objects/value_objects/unknown.dart';
+import 'package:sghi_core/misc_utilities/enums.dart';
+import 'package:sghi_core/misc_utilities/number_constants.dart';
+import 'package:sghi_core/misc_utilities/responsive_widget.dart';
+import 'package:sghi_core/shared_themes/spaces.dart';
+import 'package:sghi_core/user_profile/contact_utils.dart';
+import 'package:sghi_core/domain_objects/entities/bio_data.dart';
+import 'package:sghi_core/domain_objects/entities/user_profile.dart';
+import 'package:sghi_core/ui_components/src/profile_banner.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/services/onboarding.dart';
@@ -23,6 +22,7 @@ import 'package:bewell_pro_core/application/redux/view_models/contact_view_model
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
+import 'package:sghi_core/user_profile/contacts.dart';
 
 final GlobalKey<ScaffoldState> _contactDetailsKey = GlobalKey<ScaffoldState>();
 

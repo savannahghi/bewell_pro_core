@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'OTP_episode_creation_input.dart';
 
@@ -10,39 +12,12 @@ part of 'OTP_episode_creation_input.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 OTPEpisodeCreationInput _$OTPEpisodeCreationInputFromJson(
     Map<String, dynamic> json) {
   return _OTPEpisodeCreationInput.fromJson(json);
 }
-
-/// @nodoc
-class _$OTPEpisodeCreationInputTearOff {
-  const _$OTPEpisodeCreationInputTearOff();
-
-  _OTPEpisodeCreationInput call(
-      {required String? patientID,
-      required String? providerCode,
-      required String? msisdn,
-      required String? otp,
-      required bool fullAccess}) {
-    return _OTPEpisodeCreationInput(
-      patientID: patientID,
-      providerCode: providerCode,
-      msisdn: msisdn,
-      otp: otp,
-      fullAccess: fullAccess,
-    );
-  }
-
-  OTPEpisodeCreationInput fromJson(Map<String, Object> json) {
-    return OTPEpisodeCreationInput.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $OTPEpisodeCreationInput = _$OTPEpisodeCreationInputTearOff();
 
 /// @nodoc
 mixin _$OTPEpisodeCreationInput {
@@ -62,7 +37,8 @@ mixin _$OTPEpisodeCreationInput {
 abstract class $OTPEpisodeCreationInputCopyWith<$Res> {
   factory $OTPEpisodeCreationInputCopyWith(OTPEpisodeCreationInput value,
           $Res Function(OTPEpisodeCreationInput) then) =
-      _$OTPEpisodeCreationInputCopyWithImpl<$Res>;
+      _$OTPEpisodeCreationInputCopyWithImpl<$Res, OTPEpisodeCreationInput>;
+  @useResult
   $Res call(
       {String? patientID,
       String? providerCode,
@@ -72,54 +48,58 @@ abstract class $OTPEpisodeCreationInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$OTPEpisodeCreationInputCopyWithImpl<$Res>
+class _$OTPEpisodeCreationInputCopyWithImpl<$Res,
+        $Val extends OTPEpisodeCreationInput>
     implements $OTPEpisodeCreationInputCopyWith<$Res> {
   _$OTPEpisodeCreationInputCopyWithImpl(this._value, this._then);
 
-  final OTPEpisodeCreationInput _value;
   // ignore: unused_field
-  final $Res Function(OTPEpisodeCreationInput) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? patientID = freezed,
     Object? providerCode = freezed,
     Object? msisdn = freezed,
     Object? otp = freezed,
-    Object? fullAccess = freezed,
+    Object? fullAccess = null,
   }) {
     return _then(_value.copyWith(
-      patientID: patientID == freezed
+      patientID: freezed == patientID
           ? _value.patientID
           : patientID // ignore: cast_nullable_to_non_nullable
               as String?,
-      providerCode: providerCode == freezed
+      providerCode: freezed == providerCode
           ? _value.providerCode
           : providerCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      msisdn: msisdn == freezed
+      msisdn: freezed == msisdn
           ? _value.msisdn
           : msisdn // ignore: cast_nullable_to_non_nullable
               as String?,
-      otp: otp == freezed
+      otp: freezed == otp
           ? _value.otp
           : otp // ignore: cast_nullable_to_non_nullable
               as String?,
-      fullAccess: fullAccess == freezed
+      fullAccess: null == fullAccess
           ? _value.fullAccess
           : fullAccess // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$OTPEpisodeCreationInputCopyWith<$Res>
+abstract class _$$_OTPEpisodeCreationInputCopyWith<$Res>
     implements $OTPEpisodeCreationInputCopyWith<$Res> {
-  factory _$OTPEpisodeCreationInputCopyWith(_OTPEpisodeCreationInput value,
-          $Res Function(_OTPEpisodeCreationInput) then) =
-      __$OTPEpisodeCreationInputCopyWithImpl<$Res>;
+  factory _$$_OTPEpisodeCreationInputCopyWith(_$_OTPEpisodeCreationInput value,
+          $Res Function(_$_OTPEpisodeCreationInput) then) =
+      __$$_OTPEpisodeCreationInputCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? patientID,
       String? providerCode,
@@ -129,43 +109,41 @@ abstract class _$OTPEpisodeCreationInputCopyWith<$Res>
 }
 
 /// @nodoc
-class __$OTPEpisodeCreationInputCopyWithImpl<$Res>
-    extends _$OTPEpisodeCreationInputCopyWithImpl<$Res>
-    implements _$OTPEpisodeCreationInputCopyWith<$Res> {
-  __$OTPEpisodeCreationInputCopyWithImpl(_OTPEpisodeCreationInput _value,
-      $Res Function(_OTPEpisodeCreationInput) _then)
-      : super(_value, (v) => _then(v as _OTPEpisodeCreationInput));
+class __$$_OTPEpisodeCreationInputCopyWithImpl<$Res>
+    extends _$OTPEpisodeCreationInputCopyWithImpl<$Res,
+        _$_OTPEpisodeCreationInput>
+    implements _$$_OTPEpisodeCreationInputCopyWith<$Res> {
+  __$$_OTPEpisodeCreationInputCopyWithImpl(_$_OTPEpisodeCreationInput _value,
+      $Res Function(_$_OTPEpisodeCreationInput) _then)
+      : super(_value, _then);
 
-  @override
-  _OTPEpisodeCreationInput get _value =>
-      super._value as _OTPEpisodeCreationInput;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? patientID = freezed,
     Object? providerCode = freezed,
     Object? msisdn = freezed,
     Object? otp = freezed,
-    Object? fullAccess = freezed,
+    Object? fullAccess = null,
   }) {
-    return _then(_OTPEpisodeCreationInput(
-      patientID: patientID == freezed
+    return _then(_$_OTPEpisodeCreationInput(
+      patientID: freezed == patientID
           ? _value.patientID
           : patientID // ignore: cast_nullable_to_non_nullable
               as String?,
-      providerCode: providerCode == freezed
+      providerCode: freezed == providerCode
           ? _value.providerCode
           : providerCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      msisdn: msisdn == freezed
+      msisdn: freezed == msisdn
           ? _value.msisdn
           : msisdn // ignore: cast_nullable_to_non_nullable
               as String?,
-      otp: otp == freezed
+      otp: freezed == otp
           ? _value.otp
           : otp // ignore: cast_nullable_to_non_nullable
               as String?,
-      fullAccess: fullAccess == freezed
+      fullAccess: null == fullAccess
           ? _value.fullAccess
           : fullAccess // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -184,7 +162,7 @@ class _$_OTPEpisodeCreationInput implements _OTPEpisodeCreationInput {
       required this.fullAccess});
 
   factory _$_OTPEpisodeCreationInput.fromJson(Map<String, dynamic> json) =>
-      _$_$_OTPEpisodeCreationInputFromJson(json);
+      _$$_OTPEpisodeCreationInputFromJson(json);
 
   @override
   final String? patientID;
@@ -205,66 +183,62 @@ class _$_OTPEpisodeCreationInput implements _OTPEpisodeCreationInput {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _OTPEpisodeCreationInput &&
+        (other.runtimeType == runtimeType &&
+            other is _$_OTPEpisodeCreationInput &&
             (identical(other.patientID, patientID) ||
-                const DeepCollectionEquality()
-                    .equals(other.patientID, patientID)) &&
+                other.patientID == patientID) &&
             (identical(other.providerCode, providerCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.providerCode, providerCode)) &&
-            (identical(other.msisdn, msisdn) ||
-                const DeepCollectionEquality().equals(other.msisdn, msisdn)) &&
-            (identical(other.otp, otp) ||
-                const DeepCollectionEquality().equals(other.otp, otp)) &&
+                other.providerCode == providerCode) &&
+            (identical(other.msisdn, msisdn) || other.msisdn == msisdn) &&
+            (identical(other.otp, otp) || other.otp == otp) &&
             (identical(other.fullAccess, fullAccess) ||
-                const DeepCollectionEquality()
-                    .equals(other.fullAccess, fullAccess)));
+                other.fullAccess == fullAccess));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(patientID) ^
-      const DeepCollectionEquality().hash(providerCode) ^
-      const DeepCollectionEquality().hash(msisdn) ^
-      const DeepCollectionEquality().hash(otp) ^
-      const DeepCollectionEquality().hash(fullAccess);
 
   @JsonKey(ignore: true)
   @override
-  _$OTPEpisodeCreationInputCopyWith<_OTPEpisodeCreationInput> get copyWith =>
-      __$OTPEpisodeCreationInputCopyWithImpl<_OTPEpisodeCreationInput>(
-          this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType, patientID, providerCode, msisdn, otp, fullAccess);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OTPEpisodeCreationInputCopyWith<_$_OTPEpisodeCreationInput>
+      get copyWith =>
+          __$$_OTPEpisodeCreationInputCopyWithImpl<_$_OTPEpisodeCreationInput>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_OTPEpisodeCreationInputToJson(this);
+    return _$$_OTPEpisodeCreationInputToJson(
+      this,
+    );
   }
 }
 
 abstract class _OTPEpisodeCreationInput implements OTPEpisodeCreationInput {
   factory _OTPEpisodeCreationInput(
-      {required String? patientID,
-      required String? providerCode,
-      required String? msisdn,
-      required String? otp,
-      required bool fullAccess}) = _$_OTPEpisodeCreationInput;
+      {required final String? patientID,
+      required final String? providerCode,
+      required final String? msisdn,
+      required final String? otp,
+      required final bool fullAccess}) = _$_OTPEpisodeCreationInput;
 
   factory _OTPEpisodeCreationInput.fromJson(Map<String, dynamic> json) =
       _$_OTPEpisodeCreationInput.fromJson;
 
   @override
-  String? get patientID => throw _privateConstructorUsedError;
+  String? get patientID;
   @override
-  String? get providerCode => throw _privateConstructorUsedError;
+  String? get providerCode;
   @override
-  String? get msisdn => throw _privateConstructorUsedError;
+  String? get msisdn;
   @override
-  String? get otp => throw _privateConstructorUsedError;
+  String? get otp;
   @override
-  bool get fullAccess => throw _privateConstructorUsedError;
+  bool get fullAccess;
   @override
   @JsonKey(ignore: true)
-  _$OTPEpisodeCreationInputCopyWith<_OTPEpisodeCreationInput> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_OTPEpisodeCreationInputCopyWith<_$_OTPEpisodeCreationInput>
+      get copyWith => throw _privateConstructorUsedError;
 }

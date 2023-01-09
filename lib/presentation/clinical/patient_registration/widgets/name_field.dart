@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/inputs.dart';
+import 'package:sghi_core/afya_moja_core/afya_moja_core.dart';
+import 'package:sghi_core/ui_components/src/inputs.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/domain/core/value_objects/type_defs.dart';

@@ -1,5 +1,6 @@
 // Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
 
@@ -20,11 +21,17 @@ import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/visit/start_cont_visit/send_otp_action.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/bewell_patient_profile_connector.dart';
 import '../../../../mocks/mock_redux_actions.dart';
+import '../../../../mocks/mock_utils.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
   group('BewellPatientProfileConnector', () {
+    setUp(() async {
+      await Firebase.initializeApp();
+    });
     testWidgets('should start visit on click', (WidgetTester tester) async {
       AppBrand().appLogo.add(cameraIconUrl);
       startMockVisitAndExam();

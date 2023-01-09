@@ -18,7 +18,7 @@ class UpdateStartVisitTypeAction extends ReduxAction<CoreState> {
   @override
   CoreState? reduce() {
     return state.copyWith(
-        clinicalState: store.state.clinicalState?.copyWith
-            .call(startVisitType: startVisitType));
+        clinicalState: store.state.clinicalState
+            ?.copyWith(startVisitType: startVisitType));
   }
 }

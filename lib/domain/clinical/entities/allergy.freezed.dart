@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'allergy.dart';
 
@@ -10,91 +12,11 @@ part of 'allergy.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 AllergyIntolerance _$AllergyIntoleranceFromJson(Map<String, dynamic> json) {
   return _AllergyIntolerance.fromJson(json);
 }
-
-/// @nodoc
-class _$AllergyIntoleranceTearOff {
-  const _$AllergyIntoleranceTearOff();
-
-  _AllergyIntolerance call(
-      {@JsonKey(name: 'ID')
-          String? id,
-      @JsonKey(name: 'Identifier')
-          List<Identifier?>? identifier,
-      @JsonKey(name: 'ClinicalStatus')
-          CodeableConcept? clinicalStatus,
-      @JsonKey(name: 'VerificationStatus')
-          CodeableConcept? verificationStatus,
-      @JsonKey(name: 'Type', unknownEnumValue: AllergyIntoleranceTypeEnum.allergy)
-          AllergyIntoleranceTypeEnum? type,
-      @JsonKey(name: 'Category', unknownEnumValue: AllergyIntoleranceCategoryEnum.environment)
-          List<AllergyIntoleranceCategoryEnum?>? category,
-      @JsonKey(name: 'Criticality', unknownEnumValue: AllergyIntoleranceCriticalityEnum.unable_to_assess)
-          AllergyIntoleranceCriticalityEnum? criticality,
-      @JsonKey(name: 'Code')
-          CodeableConcept? code,
-      @JsonKey(name: 'Patient')
-          Reference? patient,
-      @JsonKey(name: 'Encounter')
-          Reference? encounter,
-      @JsonKey(name: 'OnsetDateTime')
-          String? onsetDateTime,
-      @JsonKey(name: 'OnsetAge')
-          Age? onsetAge,
-      @JsonKey(name: 'OnsetPeriod')
-          Period? onsetPeriod,
-      @JsonKey(name: 'OnsetRange')
-          Range? onsetRange,
-      @JsonKey(name: 'OnsetString')
-          String? onsetString,
-      @JsonKey(name: 'RecordedDate')
-          String? recordedDate,
-      @JsonKey(name: 'Recorder')
-          Reference? recorder,
-      @JsonKey(name: 'Asserter')
-          Reference? asserter,
-      @JsonKey(name: 'LastOccurrence')
-          String? lastOccurrence,
-      @JsonKey(name: 'Note')
-          List<Annotation?>? note,
-      @JsonKey(name: 'Reaction')
-          List<AllergyIntoleranceReaction?>? reaction}) {
-    return _AllergyIntolerance(
-      id: id,
-      identifier: identifier,
-      clinicalStatus: clinicalStatus,
-      verificationStatus: verificationStatus,
-      type: type,
-      category: category,
-      criticality: criticality,
-      code: code,
-      patient: patient,
-      encounter: encounter,
-      onsetDateTime: onsetDateTime,
-      onsetAge: onsetAge,
-      onsetPeriod: onsetPeriod,
-      onsetRange: onsetRange,
-      onsetString: onsetString,
-      recordedDate: recordedDate,
-      recorder: recorder,
-      asserter: asserter,
-      lastOccurrence: lastOccurrence,
-      note: note,
-      reaction: reaction,
-    );
-  }
-
-  AllergyIntolerance fromJson(Map<String, Object> json) {
-    return AllergyIntolerance.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $AllergyIntolerance = _$AllergyIntoleranceTearOff();
 
 /// @nodoc
 mixin _$AllergyIntolerance {
@@ -215,7 +137,8 @@ mixin _$AllergyIntolerance {
 abstract class $AllergyIntoleranceCopyWith<$Res> {
   factory $AllergyIntoleranceCopyWith(
           AllergyIntolerance value, $Res Function(AllergyIntolerance) then) =
-      _$AllergyIntoleranceCopyWithImpl<$Res>;
+      _$AllergyIntoleranceCopyWithImpl<$Res, AllergyIntolerance>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID')
           String? id,
@@ -273,14 +196,16 @@ abstract class $AllergyIntoleranceCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AllergyIntoleranceCopyWithImpl<$Res>
+class _$AllergyIntoleranceCopyWithImpl<$Res, $Val extends AllergyIntolerance>
     implements $AllergyIntoleranceCopyWith<$Res> {
   _$AllergyIntoleranceCopyWithImpl(this._value, this._then);
 
-  final AllergyIntolerance _value;
   // ignore: unused_field
-  final $Res Function(AllergyIntolerance) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -306,211 +231,222 @@ class _$AllergyIntoleranceCopyWithImpl<$Res>
     Object? reaction = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      identifier: identifier == freezed
+      identifier: freezed == identifier
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
               as List<Identifier?>?,
-      clinicalStatus: clinicalStatus == freezed
+      clinicalStatus: freezed == clinicalStatus
           ? _value.clinicalStatus
           : clinicalStatus // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      verificationStatus: verificationStatus == freezed
+      verificationStatus: freezed == verificationStatus
           ? _value.verificationStatus
           : verificationStatus // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as AllergyIntoleranceTypeEnum?,
-      category: category == freezed
+      category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as List<AllergyIntoleranceCategoryEnum?>?,
-      criticality: criticality == freezed
+      criticality: freezed == criticality
           ? _value.criticality
           : criticality // ignore: cast_nullable_to_non_nullable
               as AllergyIntoleranceCriticalityEnum?,
-      code: code == freezed
+      code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      patient: patient == freezed
+      patient: freezed == patient
           ? _value.patient
           : patient // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      encounter: encounter == freezed
+      encounter: freezed == encounter
           ? _value.encounter
           : encounter // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      onsetDateTime: onsetDateTime == freezed
+      onsetDateTime: freezed == onsetDateTime
           ? _value.onsetDateTime
           : onsetDateTime // ignore: cast_nullable_to_non_nullable
               as String?,
-      onsetAge: onsetAge == freezed
+      onsetAge: freezed == onsetAge
           ? _value.onsetAge
           : onsetAge // ignore: cast_nullable_to_non_nullable
               as Age?,
-      onsetPeriod: onsetPeriod == freezed
+      onsetPeriod: freezed == onsetPeriod
           ? _value.onsetPeriod
           : onsetPeriod // ignore: cast_nullable_to_non_nullable
               as Period?,
-      onsetRange: onsetRange == freezed
+      onsetRange: freezed == onsetRange
           ? _value.onsetRange
           : onsetRange // ignore: cast_nullable_to_non_nullable
               as Range?,
-      onsetString: onsetString == freezed
+      onsetString: freezed == onsetString
           ? _value.onsetString
           : onsetString // ignore: cast_nullable_to_non_nullable
               as String?,
-      recordedDate: recordedDate == freezed
+      recordedDate: freezed == recordedDate
           ? _value.recordedDate
           : recordedDate // ignore: cast_nullable_to_non_nullable
               as String?,
-      recorder: recorder == freezed
+      recorder: freezed == recorder
           ? _value.recorder
           : recorder // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      asserter: asserter == freezed
+      asserter: freezed == asserter
           ? _value.asserter
           : asserter // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      lastOccurrence: lastOccurrence == freezed
+      lastOccurrence: freezed == lastOccurrence
           ? _value.lastOccurrence
           : lastOccurrence // ignore: cast_nullable_to_non_nullable
               as String?,
-      note: note == freezed
+      note: freezed == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
               as List<Annotation?>?,
-      reaction: reaction == freezed
+      reaction: freezed == reaction
           ? _value.reaction
           : reaction // ignore: cast_nullable_to_non_nullable
               as List<AllergyIntoleranceReaction?>?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get clinicalStatus {
     if (_value.clinicalStatus == null) {
       return null;
     }
 
     return $CodeableConceptCopyWith<$Res>(_value.clinicalStatus!, (value) {
-      return _then(_value.copyWith(clinicalStatus: value));
+      return _then(_value.copyWith(clinicalStatus: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get verificationStatus {
     if (_value.verificationStatus == null) {
       return null;
     }
 
     return $CodeableConceptCopyWith<$Res>(_value.verificationStatus!, (value) {
-      return _then(_value.copyWith(verificationStatus: value));
+      return _then(_value.copyWith(verificationStatus: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get code {
     if (_value.code == null) {
       return null;
     }
 
     return $CodeableConceptCopyWith<$Res>(_value.code!, (value) {
-      return _then(_value.copyWith(code: value));
+      return _then(_value.copyWith(code: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get patient {
     if (_value.patient == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.patient!, (value) {
-      return _then(_value.copyWith(patient: value));
+      return _then(_value.copyWith(patient: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get encounter {
     if (_value.encounter == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.encounter!, (value) {
-      return _then(_value.copyWith(encounter: value));
+      return _then(_value.copyWith(encounter: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $AgeCopyWith<$Res>? get onsetAge {
     if (_value.onsetAge == null) {
       return null;
     }
 
     return $AgeCopyWith<$Res>(_value.onsetAge!, (value) {
-      return _then(_value.copyWith(onsetAge: value));
+      return _then(_value.copyWith(onsetAge: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $PeriodCopyWith<$Res>? get onsetPeriod {
     if (_value.onsetPeriod == null) {
       return null;
     }
 
     return $PeriodCopyWith<$Res>(_value.onsetPeriod!, (value) {
-      return _then(_value.copyWith(onsetPeriod: value));
+      return _then(_value.copyWith(onsetPeriod: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $RangeCopyWith<$Res>? get onsetRange {
     if (_value.onsetRange == null) {
       return null;
     }
 
     return $RangeCopyWith<$Res>(_value.onsetRange!, (value) {
-      return _then(_value.copyWith(onsetRange: value));
+      return _then(_value.copyWith(onsetRange: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get recorder {
     if (_value.recorder == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.recorder!, (value) {
-      return _then(_value.copyWith(recorder: value));
+      return _then(_value.copyWith(recorder: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get asserter {
     if (_value.asserter == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.asserter!, (value) {
-      return _then(_value.copyWith(asserter: value));
+      return _then(_value.copyWith(asserter: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$AllergyIntoleranceCopyWith<$Res>
+abstract class _$$_AllergyIntoleranceCopyWith<$Res>
     implements $AllergyIntoleranceCopyWith<$Res> {
-  factory _$AllergyIntoleranceCopyWith(
-          _AllergyIntolerance value, $Res Function(_AllergyIntolerance) then) =
-      __$AllergyIntoleranceCopyWithImpl<$Res>;
+  factory _$$_AllergyIntoleranceCopyWith(_$_AllergyIntolerance value,
+          $Res Function(_$_AllergyIntolerance) then) =
+      __$$_AllergyIntoleranceCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID')
           String? id,
@@ -578,16 +514,14 @@ abstract class _$AllergyIntoleranceCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AllergyIntoleranceCopyWithImpl<$Res>
-    extends _$AllergyIntoleranceCopyWithImpl<$Res>
-    implements _$AllergyIntoleranceCopyWith<$Res> {
-  __$AllergyIntoleranceCopyWithImpl(
-      _AllergyIntolerance _value, $Res Function(_AllergyIntolerance) _then)
-      : super(_value, (v) => _then(v as _AllergyIntolerance));
+class __$$_AllergyIntoleranceCopyWithImpl<$Res>
+    extends _$AllergyIntoleranceCopyWithImpl<$Res, _$_AllergyIntolerance>
+    implements _$$_AllergyIntoleranceCopyWith<$Res> {
+  __$$_AllergyIntoleranceCopyWithImpl(
+      _$_AllergyIntolerance _value, $Res Function(_$_AllergyIntolerance) _then)
+      : super(_value, _then);
 
-  @override
-  _AllergyIntolerance get _value => super._value as _AllergyIntolerance;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -612,89 +546,89 @@ class __$AllergyIntoleranceCopyWithImpl<$Res>
     Object? note = freezed,
     Object? reaction = freezed,
   }) {
-    return _then(_AllergyIntolerance(
-      id: id == freezed
+    return _then(_$_AllergyIntolerance(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      identifier: identifier == freezed
-          ? _value.identifier
+      identifier: freezed == identifier
+          ? _value._identifier
           : identifier // ignore: cast_nullable_to_non_nullable
               as List<Identifier?>?,
-      clinicalStatus: clinicalStatus == freezed
+      clinicalStatus: freezed == clinicalStatus
           ? _value.clinicalStatus
           : clinicalStatus // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      verificationStatus: verificationStatus == freezed
+      verificationStatus: freezed == verificationStatus
           ? _value.verificationStatus
           : verificationStatus // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as AllergyIntoleranceTypeEnum?,
-      category: category == freezed
-          ? _value.category
+      category: freezed == category
+          ? _value._category
           : category // ignore: cast_nullable_to_non_nullable
               as List<AllergyIntoleranceCategoryEnum?>?,
-      criticality: criticality == freezed
+      criticality: freezed == criticality
           ? _value.criticality
           : criticality // ignore: cast_nullable_to_non_nullable
               as AllergyIntoleranceCriticalityEnum?,
-      code: code == freezed
+      code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      patient: patient == freezed
+      patient: freezed == patient
           ? _value.patient
           : patient // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      encounter: encounter == freezed
+      encounter: freezed == encounter
           ? _value.encounter
           : encounter // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      onsetDateTime: onsetDateTime == freezed
+      onsetDateTime: freezed == onsetDateTime
           ? _value.onsetDateTime
           : onsetDateTime // ignore: cast_nullable_to_non_nullable
               as String?,
-      onsetAge: onsetAge == freezed
+      onsetAge: freezed == onsetAge
           ? _value.onsetAge
           : onsetAge // ignore: cast_nullable_to_non_nullable
               as Age?,
-      onsetPeriod: onsetPeriod == freezed
+      onsetPeriod: freezed == onsetPeriod
           ? _value.onsetPeriod
           : onsetPeriod // ignore: cast_nullable_to_non_nullable
               as Period?,
-      onsetRange: onsetRange == freezed
+      onsetRange: freezed == onsetRange
           ? _value.onsetRange
           : onsetRange // ignore: cast_nullable_to_non_nullable
               as Range?,
-      onsetString: onsetString == freezed
+      onsetString: freezed == onsetString
           ? _value.onsetString
           : onsetString // ignore: cast_nullable_to_non_nullable
               as String?,
-      recordedDate: recordedDate == freezed
+      recordedDate: freezed == recordedDate
           ? _value.recordedDate
           : recordedDate // ignore: cast_nullable_to_non_nullable
               as String?,
-      recorder: recorder == freezed
+      recorder: freezed == recorder
           ? _value.recorder
           : recorder // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      asserter: asserter == freezed
+      asserter: freezed == asserter
           ? _value.asserter
           : asserter // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      lastOccurrence: lastOccurrence == freezed
+      lastOccurrence: freezed == lastOccurrence
           ? _value.lastOccurrence
           : lastOccurrence // ignore: cast_nullable_to_non_nullable
               as String?,
-      note: note == freezed
-          ? _value.note
+      note: freezed == note
+          ? _value._note
           : note // ignore: cast_nullable_to_non_nullable
               as List<Annotation?>?,
-      reaction: reaction == freezed
-          ? _value.reaction
+      reaction: freezed == reaction
+          ? _value._reaction
           : reaction // ignore: cast_nullable_to_non_nullable
               as List<AllergyIntoleranceReaction?>?,
     ));
@@ -708,7 +642,7 @@ class _$_AllergyIntolerance implements _AllergyIntolerance {
       {@JsonKey(name: 'ID')
           this.id,
       @JsonKey(name: 'Identifier')
-          this.identifier,
+          final List<Identifier?>? identifier,
       @JsonKey(name: 'ClinicalStatus')
           this.clinicalStatus,
       @JsonKey(name: 'VerificationStatus')
@@ -716,7 +650,7 @@ class _$_AllergyIntolerance implements _AllergyIntolerance {
       @JsonKey(name: 'Type', unknownEnumValue: AllergyIntoleranceTypeEnum.allergy)
           this.type,
       @JsonKey(name: 'Category', unknownEnumValue: AllergyIntoleranceCategoryEnum.environment)
-          this.category,
+          final List<AllergyIntoleranceCategoryEnum?>? category,
       @JsonKey(name: 'Criticality', unknownEnumValue: AllergyIntoleranceCriticalityEnum.unable_to_assess)
           this.criticality,
       @JsonKey(name: 'Code')
@@ -744,56 +678,77 @@ class _$_AllergyIntolerance implements _AllergyIntolerance {
       @JsonKey(name: 'LastOccurrence')
           this.lastOccurrence,
       @JsonKey(name: 'Note')
-          this.note,
+          final List<Annotation?>? note,
       @JsonKey(name: 'Reaction')
-          this.reaction});
+          final List<AllergyIntoleranceReaction?>? reaction})
+      : _identifier = identifier,
+        _category = category,
+        _note = note,
+        _reaction = reaction;
 
   factory _$_AllergyIntolerance.fromJson(Map<String, dynamic> json) =>
-      _$_$_AllergyIntoleranceFromJson(json);
+      _$$_AllergyIntoleranceFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
   final String? id;
-  @override
 
   /// Business identifiers assigned to this AllergyIntolerance by
   ///  the performer or other systems which remain constant as the resource
   ///  is updated and propagates from server to server.
-  @JsonKey(name: 'Identifier')
-  final List<Identifier?>? identifier;
+  final List<Identifier?>? _identifier;
+
+  /// Business identifiers assigned to this AllergyIntolerance by
+  ///  the performer or other systems which remain constant as the resource
+  ///  is updated and propagates from server to server.
   @override
+  @JsonKey(name: 'Identifier')
+  List<Identifier?>? get identifier {
+    final value = _identifier;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   /// The clinical status of the allergy or intolerance.
+  @override
   @JsonKey(name: 'ClinicalStatus')
   final CodeableConcept? clinicalStatus;
-  @override
 
   /// Assertion about certainty associated with the propensity, or
   ///  potential risk, of a reaction to the identified substance
   ///  (including pharmaceutical product).
+  @override
   @JsonKey(name: 'VerificationStatus')
   final CodeableConcept? verificationStatus;
-  @override
 
   /// Identification of the underlying physiological mechanism for the reaction risk
+  @override
   @JsonKey(name: 'Type', unknownEnumValue: AllergyIntoleranceTypeEnum.allergy)
   final AllergyIntoleranceTypeEnum? type;
-  @override
 
   /// Category of the identified substance.
+  final List<AllergyIntoleranceCategoryEnum?>? _category;
+
+  /// Category of the identified substance.
+  @override
   @JsonKey(
       name: 'Category',
       unknownEnumValue: AllergyIntoleranceCategoryEnum.environment)
-  final List<AllergyIntoleranceCategoryEnum?>? category;
-  @override
+  List<AllergyIntoleranceCategoryEnum?>? get category {
+    final value = _category;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   /// Estimate of the potential clinical harm, or seriousness, of the
   ///  reaction to the identified substance.
+  @override
   @JsonKey(
       name: 'Criticality',
       unknownEnumValue: AllergyIntoleranceCriticalityEnum.unable_to_assess)
   final AllergyIntoleranceCriticalityEnum? criticality;
-  @override
 
   /// Code for an allergy or intolerance statement
   ///  (either a positive or a negated/excluded statement).
@@ -813,22 +768,23 @@ class _$_AllergyIntolerance implements _AllergyIntolerance {
   ///  AllergyIntolerance.reaction.substance falls within the semantic scope
   ///  of AllergyIntolerance.code, then the receiving system should ignore
   ///  AllergyIntolerance.reaction.substance
+  @override
   @JsonKey(name: 'Code')
   final CodeableConcept? code;
-  @override
 
   /// The patient who has the allergy or intolerance.
+  @override
   @JsonKey(name: 'Patient')
   final Reference? patient;
-  @override
 
   /// The encounter when the allergy or intolerance was asserted.
+  @override
   @JsonKey(name: 'Encounter')
   final Reference? encounter;
-  @override
 
   /// Estimated or actual date, date-time, or age when allergy or intolerance
   ///  was identified.
+  @override
   @JsonKey(name: 'OnsetDateTime')
   final String? onsetDateTime;
   @override
@@ -843,38 +799,55 @@ class _$_AllergyIntolerance implements _AllergyIntolerance {
   @override
   @JsonKey(name: 'OnsetString')
   final String? onsetString;
-  @override
 
   /// The recordedDate represents when this particular AllergyIntolerance
   ///  record was created in the system, which is often a system-generated date.
+  @override
   @JsonKey(name: 'RecordedDate')
   final String? recordedDate;
-  @override
 
   /// Individual who recorded the record and takes responsibility for its content.
+  @override
   @JsonKey(name: 'Recorder')
   final Reference? recorder;
-  @override
 
   /// The source of the information about the allergy that is recorded
+  @override
   @JsonKey(name: 'Asserter')
   final Reference? asserter;
-  @override
 
   /// Represents the date and/or time of the last known occurrence of a reaction event.
+  @override
   @JsonKey(name: 'LastOccurrence')
   final String? lastOccurrence;
-  @override
 
   /// Additional narrative about the propensity for the Adverse Reaction, not captured in other fields.
-  @JsonKey(name: 'Note')
-  final List<Annotation?>? note;
+  final List<Annotation?>? _note;
+
+  /// Additional narrative about the propensity for the Adverse Reaction, not captured in other fields.
   @override
+  @JsonKey(name: 'Note')
+  List<Annotation?>? get note {
+    final value = _note;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   /// Details about each adverse reaction event linked to exposure to the
   ///  identified substance.
+  final List<AllergyIntoleranceReaction?>? _reaction;
+
+  /// Details about each adverse reaction event linked to exposure to the
+  ///  identified substance.
+  @override
   @JsonKey(name: 'Reaction')
-  final List<AllergyIntoleranceReaction?>? reaction;
+  List<AllergyIntoleranceReaction?>? get reaction {
+    final value = _reaction;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -884,187 +857,169 @@ class _$_AllergyIntolerance implements _AllergyIntolerance {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AllergyIntolerance &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.identifier, identifier) ||
-                const DeepCollectionEquality()
-                    .equals(other.identifier, identifier)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_AllergyIntolerance &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._identifier, _identifier) &&
             (identical(other.clinicalStatus, clinicalStatus) ||
-                const DeepCollectionEquality()
-                    .equals(other.clinicalStatus, clinicalStatus)) &&
+                other.clinicalStatus == clinicalStatus) &&
             (identical(other.verificationStatus, verificationStatus) ||
-                const DeepCollectionEquality()
-                    .equals(other.verificationStatus, verificationStatus)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.category, category) ||
-                const DeepCollectionEquality()
-                    .equals(other.category, category)) &&
+                other.verificationStatus == verificationStatus) &&
+            (identical(other.type, type) || other.type == type) &&
+            const DeepCollectionEquality().equals(other._category, _category) &&
             (identical(other.criticality, criticality) ||
-                const DeepCollectionEquality()
-                    .equals(other.criticality, criticality)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)) &&
-            (identical(other.patient, patient) ||
-                const DeepCollectionEquality()
-                    .equals(other.patient, patient)) &&
+                other.criticality == criticality) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.patient, patient) || other.patient == patient) &&
             (identical(other.encounter, encounter) ||
-                const DeepCollectionEquality()
-                    .equals(other.encounter, encounter)) &&
+                other.encounter == encounter) &&
             (identical(other.onsetDateTime, onsetDateTime) ||
-                const DeepCollectionEquality()
-                    .equals(other.onsetDateTime, onsetDateTime)) &&
+                other.onsetDateTime == onsetDateTime) &&
             (identical(other.onsetAge, onsetAge) ||
-                const DeepCollectionEquality()
-                    .equals(other.onsetAge, onsetAge)) &&
+                other.onsetAge == onsetAge) &&
             (identical(other.onsetPeriod, onsetPeriod) ||
-                const DeepCollectionEquality()
-                    .equals(other.onsetPeriod, onsetPeriod)) &&
+                other.onsetPeriod == onsetPeriod) &&
             (identical(other.onsetRange, onsetRange) ||
-                const DeepCollectionEquality()
-                    .equals(other.onsetRange, onsetRange)) &&
+                other.onsetRange == onsetRange) &&
             (identical(other.onsetString, onsetString) ||
-                const DeepCollectionEquality()
-                    .equals(other.onsetString, onsetString)) &&
+                other.onsetString == onsetString) &&
             (identical(other.recordedDate, recordedDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.recordedDate, recordedDate)) &&
+                other.recordedDate == recordedDate) &&
             (identical(other.recorder, recorder) ||
-                const DeepCollectionEquality()
-                    .equals(other.recorder, recorder)) &&
+                other.recorder == recorder) &&
             (identical(other.asserter, asserter) ||
-                const DeepCollectionEquality()
-                    .equals(other.asserter, asserter)) &&
+                other.asserter == asserter) &&
             (identical(other.lastOccurrence, lastOccurrence) ||
-                const DeepCollectionEquality()
-                    .equals(other.lastOccurrence, lastOccurrence)) &&
-            (identical(other.note, note) ||
-                const DeepCollectionEquality().equals(other.note, note)) &&
-            (identical(other.reaction, reaction) ||
-                const DeepCollectionEquality()
-                    .equals(other.reaction, reaction)));
+                other.lastOccurrence == lastOccurrence) &&
+            const DeepCollectionEquality().equals(other._note, _note) &&
+            const DeepCollectionEquality().equals(other._reaction, _reaction));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(identifier) ^
-      const DeepCollectionEquality().hash(clinicalStatus) ^
-      const DeepCollectionEquality().hash(verificationStatus) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(category) ^
-      const DeepCollectionEquality().hash(criticality) ^
-      const DeepCollectionEquality().hash(code) ^
-      const DeepCollectionEquality().hash(patient) ^
-      const DeepCollectionEquality().hash(encounter) ^
-      const DeepCollectionEquality().hash(onsetDateTime) ^
-      const DeepCollectionEquality().hash(onsetAge) ^
-      const DeepCollectionEquality().hash(onsetPeriod) ^
-      const DeepCollectionEquality().hash(onsetRange) ^
-      const DeepCollectionEquality().hash(onsetString) ^
-      const DeepCollectionEquality().hash(recordedDate) ^
-      const DeepCollectionEquality().hash(recorder) ^
-      const DeepCollectionEquality().hash(asserter) ^
-      const DeepCollectionEquality().hash(lastOccurrence) ^
-      const DeepCollectionEquality().hash(note) ^
-      const DeepCollectionEquality().hash(reaction);
 
   @JsonKey(ignore: true)
   @override
-  _$AllergyIntoleranceCopyWith<_AllergyIntolerance> get copyWith =>
-      __$AllergyIntoleranceCopyWithImpl<_AllergyIntolerance>(this, _$identity);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        const DeepCollectionEquality().hash(_identifier),
+        clinicalStatus,
+        verificationStatus,
+        type,
+        const DeepCollectionEquality().hash(_category),
+        criticality,
+        code,
+        patient,
+        encounter,
+        onsetDateTime,
+        onsetAge,
+        onsetPeriod,
+        onsetRange,
+        onsetString,
+        recordedDate,
+        recorder,
+        asserter,
+        lastOccurrence,
+        const DeepCollectionEquality().hash(_note),
+        const DeepCollectionEquality().hash(_reaction)
+      ]);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_AllergyIntoleranceCopyWith<_$_AllergyIntolerance> get copyWith =>
+      __$$_AllergyIntoleranceCopyWithImpl<_$_AllergyIntolerance>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_AllergyIntoleranceToJson(this);
+    return _$$_AllergyIntoleranceToJson(
+      this,
+    );
   }
 }
 
 abstract class _AllergyIntolerance implements AllergyIntolerance {
   factory _AllergyIntolerance(
       {@JsonKey(name: 'ID')
-          String? id,
+          final String? id,
       @JsonKey(name: 'Identifier')
-          List<Identifier?>? identifier,
+          final List<Identifier?>? identifier,
       @JsonKey(name: 'ClinicalStatus')
-          CodeableConcept? clinicalStatus,
+          final CodeableConcept? clinicalStatus,
       @JsonKey(name: 'VerificationStatus')
-          CodeableConcept? verificationStatus,
+          final CodeableConcept? verificationStatus,
       @JsonKey(name: 'Type', unknownEnumValue: AllergyIntoleranceTypeEnum.allergy)
-          AllergyIntoleranceTypeEnum? type,
+          final AllergyIntoleranceTypeEnum? type,
       @JsonKey(name: 'Category', unknownEnumValue: AllergyIntoleranceCategoryEnum.environment)
-          List<AllergyIntoleranceCategoryEnum?>? category,
+          final List<AllergyIntoleranceCategoryEnum?>? category,
       @JsonKey(name: 'Criticality', unknownEnumValue: AllergyIntoleranceCriticalityEnum.unable_to_assess)
-          AllergyIntoleranceCriticalityEnum? criticality,
+          final AllergyIntoleranceCriticalityEnum? criticality,
       @JsonKey(name: 'Code')
-          CodeableConcept? code,
+          final CodeableConcept? code,
       @JsonKey(name: 'Patient')
-          Reference? patient,
+          final Reference? patient,
       @JsonKey(name: 'Encounter')
-          Reference? encounter,
+          final Reference? encounter,
       @JsonKey(name: 'OnsetDateTime')
-          String? onsetDateTime,
+          final String? onsetDateTime,
       @JsonKey(name: 'OnsetAge')
-          Age? onsetAge,
+          final Age? onsetAge,
       @JsonKey(name: 'OnsetPeriod')
-          Period? onsetPeriod,
+          final Period? onsetPeriod,
       @JsonKey(name: 'OnsetRange')
-          Range? onsetRange,
+          final Range? onsetRange,
       @JsonKey(name: 'OnsetString')
-          String? onsetString,
+          final String? onsetString,
       @JsonKey(name: 'RecordedDate')
-          String? recordedDate,
+          final String? recordedDate,
       @JsonKey(name: 'Recorder')
-          Reference? recorder,
+          final Reference? recorder,
       @JsonKey(name: 'Asserter')
-          Reference? asserter,
+          final Reference? asserter,
       @JsonKey(name: 'LastOccurrence')
-          String? lastOccurrence,
+          final String? lastOccurrence,
       @JsonKey(name: 'Note')
-          List<Annotation?>? note,
+          final List<Annotation?>? note,
       @JsonKey(name: 'Reaction')
-          List<AllergyIntoleranceReaction?>? reaction}) = _$_AllergyIntolerance;
+          final List<AllergyIntoleranceReaction?>? reaction}) = _$_AllergyIntolerance;
 
   factory _AllergyIntolerance.fromJson(Map<String, dynamic> json) =
       _$_AllergyIntolerance.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
 
   /// Business identifiers assigned to this AllergyIntolerance by
   ///  the performer or other systems which remain constant as the resource
   ///  is updated and propagates from server to server.
   @JsonKey(name: 'Identifier')
-  List<Identifier?>? get identifier => throw _privateConstructorUsedError;
+  List<Identifier?>? get identifier;
   @override
 
   /// The clinical status of the allergy or intolerance.
   @JsonKey(name: 'ClinicalStatus')
-  CodeableConcept? get clinicalStatus => throw _privateConstructorUsedError;
+  CodeableConcept? get clinicalStatus;
   @override
 
   /// Assertion about certainty associated with the propensity, or
   ///  potential risk, of a reaction to the identified substance
   ///  (including pharmaceutical product).
   @JsonKey(name: 'VerificationStatus')
-  CodeableConcept? get verificationStatus => throw _privateConstructorUsedError;
+  CodeableConcept? get verificationStatus;
   @override
 
   /// Identification of the underlying physiological mechanism for the reaction risk
   @JsonKey(name: 'Type', unknownEnumValue: AllergyIntoleranceTypeEnum.allergy)
-  AllergyIntoleranceTypeEnum? get type => throw _privateConstructorUsedError;
+  AllergyIntoleranceTypeEnum? get type;
   @override
 
   /// Category of the identified substance.
   @JsonKey(
       name: 'Category',
       unknownEnumValue: AllergyIntoleranceCategoryEnum.environment)
-  List<AllergyIntoleranceCategoryEnum?>? get category =>
-      throw _privateConstructorUsedError;
+  List<AllergyIntoleranceCategoryEnum?>? get category;
   @override
 
   /// Estimate of the potential clinical harm, or seriousness, of the
@@ -1072,8 +1027,7 @@ abstract class _AllergyIntolerance implements AllergyIntolerance {
   @JsonKey(
       name: 'Criticality',
       unknownEnumValue: AllergyIntoleranceCriticalityEnum.unable_to_assess)
-  AllergyIntoleranceCriticalityEnum? get criticality =>
-      throw _privateConstructorUsedError;
+  AllergyIntoleranceCriticalityEnum? get criticality;
   @override
 
   /// Code for an allergy or intolerance statement
@@ -1095,70 +1049,69 @@ abstract class _AllergyIntolerance implements AllergyIntolerance {
   ///  of AllergyIntolerance.code, then the receiving system should ignore
   ///  AllergyIntolerance.reaction.substance
   @JsonKey(name: 'Code')
-  CodeableConcept? get code => throw _privateConstructorUsedError;
+  CodeableConcept? get code;
   @override
 
   /// The patient who has the allergy or intolerance.
   @JsonKey(name: 'Patient')
-  Reference? get patient => throw _privateConstructorUsedError;
+  Reference? get patient;
   @override
 
   /// The encounter when the allergy or intolerance was asserted.
   @JsonKey(name: 'Encounter')
-  Reference? get encounter => throw _privateConstructorUsedError;
+  Reference? get encounter;
   @override
 
   /// Estimated or actual date, date-time, or age when allergy or intolerance
   ///  was identified.
   @JsonKey(name: 'OnsetDateTime')
-  String? get onsetDateTime => throw _privateConstructorUsedError;
+  String? get onsetDateTime;
   @override
   @JsonKey(name: 'OnsetAge')
-  Age? get onsetAge => throw _privateConstructorUsedError;
+  Age? get onsetAge;
   @override
   @JsonKey(name: 'OnsetPeriod')
-  Period? get onsetPeriod => throw _privateConstructorUsedError;
+  Period? get onsetPeriod;
   @override
   @JsonKey(name: 'OnsetRange')
-  Range? get onsetRange => throw _privateConstructorUsedError;
+  Range? get onsetRange;
   @override
   @JsonKey(name: 'OnsetString')
-  String? get onsetString => throw _privateConstructorUsedError;
+  String? get onsetString;
   @override
 
   /// The recordedDate represents when this particular AllergyIntolerance
   ///  record was created in the system, which is often a system-generated date.
   @JsonKey(name: 'RecordedDate')
-  String? get recordedDate => throw _privateConstructorUsedError;
+  String? get recordedDate;
   @override
 
   /// Individual who recorded the record and takes responsibility for its content.
   @JsonKey(name: 'Recorder')
-  Reference? get recorder => throw _privateConstructorUsedError;
+  Reference? get recorder;
   @override
 
   /// The source of the information about the allergy that is recorded
   @JsonKey(name: 'Asserter')
-  Reference? get asserter => throw _privateConstructorUsedError;
+  Reference? get asserter;
   @override
 
   /// Represents the date and/or time of the last known occurrence of a reaction event.
   @JsonKey(name: 'LastOccurrence')
-  String? get lastOccurrence => throw _privateConstructorUsedError;
+  String? get lastOccurrence;
   @override
 
   /// Additional narrative about the propensity for the Adverse Reaction, not captured in other fields.
   @JsonKey(name: 'Note')
-  List<Annotation?>? get note => throw _privateConstructorUsedError;
+  List<Annotation?>? get note;
   @override
 
   /// Details about each adverse reaction event linked to exposure to the
   ///  identified substance.
   @JsonKey(name: 'Reaction')
-  List<AllergyIntoleranceReaction?>? get reaction =>
-      throw _privateConstructorUsedError;
+  List<AllergyIntoleranceReaction?>? get reaction;
   @override
   @JsonKey(ignore: true)
-  _$AllergyIntoleranceCopyWith<_AllergyIntolerance> get copyWith =>
+  _$$_AllergyIntoleranceCopyWith<_$_AllergyIntolerance> get copyWith =>
       throw _privateConstructorUsedError;
 }

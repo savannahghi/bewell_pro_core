@@ -1,7 +1,14 @@
 // Package imports:
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
+import 'package:sghi_core/domain_objects/entities/auth_credential_response.dart';
+import 'package:sghi_core/domain_objects/entities/bio_data.dart';
+import 'package:sghi_core/domain_objects/entities/communication_settings.dart';
+import 'package:sghi_core/domain_objects/entities/customer.dart';
+import 'package:sghi_core/domain_objects/entities/user_profile.dart';
+import 'package:sghi_core/domain_objects/value_objects/email_address.dart';
+import 'package:sghi_core/domain_objects/value_objects/enums.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:sghi_core/domain_objects/value_objects/name.dart';
+import 'package:sghi_core/domain_objects/value_objects/unknown.dart';
 
 part 'user_state.freezed.dart';
 part 'user_state.g.dart';

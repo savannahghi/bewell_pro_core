@@ -1,7 +1,7 @@
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
+import 'package:sghi_core/domain_objects/entities/supplier_profile.dart';
+import 'package:sghi_core/domain_objects/value_objects/enums.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';

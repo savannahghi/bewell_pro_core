@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'medication.dart';
 
@@ -10,121 +12,11 @@ part of 'medication.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Medication _$MedicationFromJson(Map<String, dynamic> json) {
   return _Medication.fromJson(json);
 }
-
-/// @nodoc
-class _$MedicationTearOff {
-  const _$MedicationTearOff();
-
-  _Medication call(
-      {@JsonKey(name: 'ID')
-          String? id,
-      @JsonKey(name: 'Identifier')
-          List<Identifier?>? identifier,
-      @JsonKey(name: 'Status', unknownEnumValue: MedicationStatusEnum.inactive)
-          MedicationStatusEnum? status,
-      @JsonKey(name: 'StatusReason')
-          CodeableConcept? statusReason,
-      @JsonKey(name: 'Intent', unknownEnumValue: MedicationIntent.proposal)
-          MedicationIntent? intent,
-      @JsonKey(name: 'Category')
-          List<CodeableConcept?>? category,
-      @JsonKey(name: 'Priority', unknownEnumValue: Priority.routine)
-          Priority? priority,
-      @JsonKey(name: 'ReportedBoolean')
-          bool? reportedBoolean,
-      @JsonKey(name: 'ReportedReference')
-          Reference? reportedReference,
-      @JsonKey(name: 'MedicationCodeableConcept')
-          CodeableConcept? medicationCodeableConcept,
-      @JsonKey(name: 'MedicationReference')
-          Reference? medicationReference,
-      @JsonKey(name: 'Subject')
-          Reference? subject,
-      @JsonKey(name: 'Encounter')
-          Reference? encounter,
-      @JsonKey(name: 'SupportingInformation')
-          List<Reference?>? supportingInformation,
-      @JsonKey(name: 'AuthoredOn')
-          String? authoredOn,
-      @JsonKey(name: 'Requester')
-          Reference? requester,
-      @JsonKey(name: 'Performer')
-          Reference? performer,
-      @JsonKey(name: 'PerformerType')
-          CodeableConcept? performerType,
-      @JsonKey(name: 'Recorder')
-          Reference? recorder,
-      @JsonKey(name: 'ReasonReference')
-          List<Reference?>? reasonReference,
-      @JsonKey(name: 'BasedOn')
-          List<Reference?>? basedOn,
-      @JsonKey(name: 'GroupIdentifier')
-          Identifier? groupIdentifier,
-      @JsonKey(name: 'CourseOfTherapyType')
-          CodeableConcept? courseOfTherapyType,
-      @JsonKey(name: 'Insurance')
-          List<Reference?>? insurance,
-      @JsonKey(name: 'Note')
-          List<Annotation?>? note,
-      @JsonKey(name: 'DosageInstruction')
-          List<Dosage?>? dosageInstruction,
-      @JsonKey(name: 'DispenseRequest')
-          MedicationRequestDispense? dispenseRequest,
-      @JsonKey(name: 'Substitution')
-          MedicationRequestSubstitution? substitution,
-      @JsonKey(name: 'PriorPrescription')
-          Reference? priorPrescription,
-      @JsonKey(name: 'DetectedIssue')
-          List<Reference?>? detectedIssue,
-      @JsonKey(name: 'EventHistory')
-          List<Reference?>? eventHistory}) {
-    return _Medication(
-      id: id,
-      identifier: identifier,
-      status: status,
-      statusReason: statusReason,
-      intent: intent,
-      category: category,
-      priority: priority,
-      reportedBoolean: reportedBoolean,
-      reportedReference: reportedReference,
-      medicationCodeableConcept: medicationCodeableConcept,
-      medicationReference: medicationReference,
-      subject: subject,
-      encounter: encounter,
-      supportingInformation: supportingInformation,
-      authoredOn: authoredOn,
-      requester: requester,
-      performer: performer,
-      performerType: performerType,
-      recorder: recorder,
-      reasonReference: reasonReference,
-      basedOn: basedOn,
-      groupIdentifier: groupIdentifier,
-      courseOfTherapyType: courseOfTherapyType,
-      insurance: insurance,
-      note: note,
-      dosageInstruction: dosageInstruction,
-      dispenseRequest: dispenseRequest,
-      substitution: substitution,
-      priorPrescription: priorPrescription,
-      detectedIssue: detectedIssue,
-      eventHistory: eventHistory,
-    );
-  }
-
-  Medication fromJson(Map<String, Object> json) {
-    return Medication.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Medication = _$MedicationTearOff();
 
 /// @nodoc
 mixin _$Medication {
@@ -206,7 +98,8 @@ mixin _$Medication {
 abstract class $MedicationCopyWith<$Res> {
   factory $MedicationCopyWith(
           Medication value, $Res Function(Medication) then) =
-      _$MedicationCopyWithImpl<$Res>;
+      _$MedicationCopyWithImpl<$Res, Medication>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID')
           String? id,
@@ -289,13 +182,16 @@ abstract class $MedicationCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MedicationCopyWithImpl<$Res> implements $MedicationCopyWith<$Res> {
+class _$MedicationCopyWithImpl<$Res, $Val extends Medication>
+    implements $MedicationCopyWith<$Res> {
   _$MedicationCopyWithImpl(this._value, this._then);
 
-  final Medication _value;
   // ignore: unused_field
-  final $Res Function(Medication) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -331,156 +227,159 @@ class _$MedicationCopyWithImpl<$Res> implements $MedicationCopyWith<$Res> {
     Object? eventHistory = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      identifier: identifier == freezed
+      identifier: freezed == identifier
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
               as List<Identifier?>?,
-      status: status == freezed
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as MedicationStatusEnum?,
-      statusReason: statusReason == freezed
+      statusReason: freezed == statusReason
           ? _value.statusReason
           : statusReason // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      intent: intent == freezed
+      intent: freezed == intent
           ? _value.intent
           : intent // ignore: cast_nullable_to_non_nullable
               as MedicationIntent?,
-      category: category == freezed
+      category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as List<CodeableConcept?>?,
-      priority: priority == freezed
+      priority: freezed == priority
           ? _value.priority
           : priority // ignore: cast_nullable_to_non_nullable
               as Priority?,
-      reportedBoolean: reportedBoolean == freezed
+      reportedBoolean: freezed == reportedBoolean
           ? _value.reportedBoolean
           : reportedBoolean // ignore: cast_nullable_to_non_nullable
               as bool?,
-      reportedReference: reportedReference == freezed
+      reportedReference: freezed == reportedReference
           ? _value.reportedReference
           : reportedReference // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      medicationCodeableConcept: medicationCodeableConcept == freezed
+      medicationCodeableConcept: freezed == medicationCodeableConcept
           ? _value.medicationCodeableConcept
           : medicationCodeableConcept // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      medicationReference: medicationReference == freezed
+      medicationReference: freezed == medicationReference
           ? _value.medicationReference
           : medicationReference // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      subject: subject == freezed
+      subject: freezed == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      encounter: encounter == freezed
+      encounter: freezed == encounter
           ? _value.encounter
           : encounter // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      supportingInformation: supportingInformation == freezed
+      supportingInformation: freezed == supportingInformation
           ? _value.supportingInformation
           : supportingInformation // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      authoredOn: authoredOn == freezed
+      authoredOn: freezed == authoredOn
           ? _value.authoredOn
           : authoredOn // ignore: cast_nullable_to_non_nullable
               as String?,
-      requester: requester == freezed
+      requester: freezed == requester
           ? _value.requester
           : requester // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      performer: performer == freezed
+      performer: freezed == performer
           ? _value.performer
           : performer // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      performerType: performerType == freezed
+      performerType: freezed == performerType
           ? _value.performerType
           : performerType // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      recorder: recorder == freezed
+      recorder: freezed == recorder
           ? _value.recorder
           : recorder // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      reasonReference: reasonReference == freezed
+      reasonReference: freezed == reasonReference
           ? _value.reasonReference
           : reasonReference // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      basedOn: basedOn == freezed
+      basedOn: freezed == basedOn
           ? _value.basedOn
           : basedOn // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      groupIdentifier: groupIdentifier == freezed
+      groupIdentifier: freezed == groupIdentifier
           ? _value.groupIdentifier
           : groupIdentifier // ignore: cast_nullable_to_non_nullable
               as Identifier?,
-      courseOfTherapyType: courseOfTherapyType == freezed
+      courseOfTherapyType: freezed == courseOfTherapyType
           ? _value.courseOfTherapyType
           : courseOfTherapyType // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      insurance: insurance == freezed
+      insurance: freezed == insurance
           ? _value.insurance
           : insurance // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      note: note == freezed
+      note: freezed == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
               as List<Annotation?>?,
-      dosageInstruction: dosageInstruction == freezed
+      dosageInstruction: freezed == dosageInstruction
           ? _value.dosageInstruction
           : dosageInstruction // ignore: cast_nullable_to_non_nullable
               as List<Dosage?>?,
-      dispenseRequest: dispenseRequest == freezed
+      dispenseRequest: freezed == dispenseRequest
           ? _value.dispenseRequest
           : dispenseRequest // ignore: cast_nullable_to_non_nullable
               as MedicationRequestDispense?,
-      substitution: substitution == freezed
+      substitution: freezed == substitution
           ? _value.substitution
           : substitution // ignore: cast_nullable_to_non_nullable
               as MedicationRequestSubstitution?,
-      priorPrescription: priorPrescription == freezed
+      priorPrescription: freezed == priorPrescription
           ? _value.priorPrescription
           : priorPrescription // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      detectedIssue: detectedIssue == freezed
+      detectedIssue: freezed == detectedIssue
           ? _value.detectedIssue
           : detectedIssue // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      eventHistory: eventHistory == freezed
+      eventHistory: freezed == eventHistory
           ? _value.eventHistory
           : eventHistory // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get statusReason {
     if (_value.statusReason == null) {
       return null;
     }
 
     return $CodeableConceptCopyWith<$Res>(_value.statusReason!, (value) {
-      return _then(_value.copyWith(statusReason: value));
+      return _then(_value.copyWith(statusReason: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get reportedReference {
     if (_value.reportedReference == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.reportedReference!, (value) {
-      return _then(_value.copyWith(reportedReference: value));
+      return _then(_value.copyWith(reportedReference: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get medicationCodeableConcept {
     if (_value.medicationCodeableConcept == null) {
       return null;
@@ -488,110 +387,120 @@ class _$MedicationCopyWithImpl<$Res> implements $MedicationCopyWith<$Res> {
 
     return $CodeableConceptCopyWith<$Res>(_value.medicationCodeableConcept!,
         (value) {
-      return _then(_value.copyWith(medicationCodeableConcept: value));
+      return _then(_value.copyWith(medicationCodeableConcept: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get medicationReference {
     if (_value.medicationReference == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.medicationReference!, (value) {
-      return _then(_value.copyWith(medicationReference: value));
+      return _then(_value.copyWith(medicationReference: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get subject {
     if (_value.subject == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.subject!, (value) {
-      return _then(_value.copyWith(subject: value));
+      return _then(_value.copyWith(subject: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get encounter {
     if (_value.encounter == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.encounter!, (value) {
-      return _then(_value.copyWith(encounter: value));
+      return _then(_value.copyWith(encounter: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get requester {
     if (_value.requester == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.requester!, (value) {
-      return _then(_value.copyWith(requester: value));
+      return _then(_value.copyWith(requester: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get performer {
     if (_value.performer == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.performer!, (value) {
-      return _then(_value.copyWith(performer: value));
+      return _then(_value.copyWith(performer: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get performerType {
     if (_value.performerType == null) {
       return null;
     }
 
     return $CodeableConceptCopyWith<$Res>(_value.performerType!, (value) {
-      return _then(_value.copyWith(performerType: value));
+      return _then(_value.copyWith(performerType: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get recorder {
     if (_value.recorder == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.recorder!, (value) {
-      return _then(_value.copyWith(recorder: value));
+      return _then(_value.copyWith(recorder: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $IdentifierCopyWith<$Res>? get groupIdentifier {
     if (_value.groupIdentifier == null) {
       return null;
     }
 
     return $IdentifierCopyWith<$Res>(_value.groupIdentifier!, (value) {
-      return _then(_value.copyWith(groupIdentifier: value));
+      return _then(_value.copyWith(groupIdentifier: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get courseOfTherapyType {
     if (_value.courseOfTherapyType == null) {
       return null;
     }
 
     return $CodeableConceptCopyWith<$Res>(_value.courseOfTherapyType!, (value) {
-      return _then(_value.copyWith(courseOfTherapyType: value));
+      return _then(_value.copyWith(courseOfTherapyType: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $MedicationRequestDispenseCopyWith<$Res>? get dispenseRequest {
     if (_value.dispenseRequest == null) {
       return null;
@@ -599,11 +508,12 @@ class _$MedicationCopyWithImpl<$Res> implements $MedicationCopyWith<$Res> {
 
     return $MedicationRequestDispenseCopyWith<$Res>(_value.dispenseRequest!,
         (value) {
-      return _then(_value.copyWith(dispenseRequest: value));
+      return _then(_value.copyWith(dispenseRequest: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $MedicationRequestSubstitutionCopyWith<$Res>? get substitution {
     if (_value.substitution == null) {
       return null;
@@ -611,28 +521,31 @@ class _$MedicationCopyWithImpl<$Res> implements $MedicationCopyWith<$Res> {
 
     return $MedicationRequestSubstitutionCopyWith<$Res>(_value.substitution!,
         (value) {
-      return _then(_value.copyWith(substitution: value));
+      return _then(_value.copyWith(substitution: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get priorPrescription {
     if (_value.priorPrescription == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.priorPrescription!, (value) {
-      return _then(_value.copyWith(priorPrescription: value));
+      return _then(_value.copyWith(priorPrescription: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$MedicationCopyWith<$Res> implements $MedicationCopyWith<$Res> {
-  factory _$MedicationCopyWith(
-          _Medication value, $Res Function(_Medication) then) =
-      __$MedicationCopyWithImpl<$Res>;
+abstract class _$$_MedicationCopyWith<$Res>
+    implements $MedicationCopyWith<$Res> {
+  factory _$$_MedicationCopyWith(
+          _$_Medication value, $Res Function(_$_Medication) then) =
+      __$$_MedicationCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID')
           String? id,
@@ -730,15 +643,14 @@ abstract class _$MedicationCopyWith<$Res> implements $MedicationCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$MedicationCopyWithImpl<$Res> extends _$MedicationCopyWithImpl<$Res>
-    implements _$MedicationCopyWith<$Res> {
-  __$MedicationCopyWithImpl(
-      _Medication _value, $Res Function(_Medication) _then)
-      : super(_value, (v) => _then(v as _Medication));
+class __$$_MedicationCopyWithImpl<$Res>
+    extends _$MedicationCopyWithImpl<$Res, _$_Medication>
+    implements _$$_MedicationCopyWith<$Res> {
+  __$$_MedicationCopyWithImpl(
+      _$_Medication _value, $Res Function(_$_Medication) _then)
+      : super(_value, _then);
 
-  @override
-  _Medication get _value => super._value as _Medication;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -773,129 +685,129 @@ class __$MedicationCopyWithImpl<$Res> extends _$MedicationCopyWithImpl<$Res>
     Object? detectedIssue = freezed,
     Object? eventHistory = freezed,
   }) {
-    return _then(_Medication(
-      id: id == freezed
+    return _then(_$_Medication(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      identifier: identifier == freezed
-          ? _value.identifier
+      identifier: freezed == identifier
+          ? _value._identifier
           : identifier // ignore: cast_nullable_to_non_nullable
               as List<Identifier?>?,
-      status: status == freezed
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as MedicationStatusEnum?,
-      statusReason: statusReason == freezed
+      statusReason: freezed == statusReason
           ? _value.statusReason
           : statusReason // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      intent: intent == freezed
+      intent: freezed == intent
           ? _value.intent
           : intent // ignore: cast_nullable_to_non_nullable
               as MedicationIntent?,
-      category: category == freezed
-          ? _value.category
+      category: freezed == category
+          ? _value._category
           : category // ignore: cast_nullable_to_non_nullable
               as List<CodeableConcept?>?,
-      priority: priority == freezed
+      priority: freezed == priority
           ? _value.priority
           : priority // ignore: cast_nullable_to_non_nullable
               as Priority?,
-      reportedBoolean: reportedBoolean == freezed
+      reportedBoolean: freezed == reportedBoolean
           ? _value.reportedBoolean
           : reportedBoolean // ignore: cast_nullable_to_non_nullable
               as bool?,
-      reportedReference: reportedReference == freezed
+      reportedReference: freezed == reportedReference
           ? _value.reportedReference
           : reportedReference // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      medicationCodeableConcept: medicationCodeableConcept == freezed
+      medicationCodeableConcept: freezed == medicationCodeableConcept
           ? _value.medicationCodeableConcept
           : medicationCodeableConcept // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      medicationReference: medicationReference == freezed
+      medicationReference: freezed == medicationReference
           ? _value.medicationReference
           : medicationReference // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      subject: subject == freezed
+      subject: freezed == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      encounter: encounter == freezed
+      encounter: freezed == encounter
           ? _value.encounter
           : encounter // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      supportingInformation: supportingInformation == freezed
-          ? _value.supportingInformation
+      supportingInformation: freezed == supportingInformation
+          ? _value._supportingInformation
           : supportingInformation // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      authoredOn: authoredOn == freezed
+      authoredOn: freezed == authoredOn
           ? _value.authoredOn
           : authoredOn // ignore: cast_nullable_to_non_nullable
               as String?,
-      requester: requester == freezed
+      requester: freezed == requester
           ? _value.requester
           : requester // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      performer: performer == freezed
+      performer: freezed == performer
           ? _value.performer
           : performer // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      performerType: performerType == freezed
+      performerType: freezed == performerType
           ? _value.performerType
           : performerType // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      recorder: recorder == freezed
+      recorder: freezed == recorder
           ? _value.recorder
           : recorder // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      reasonReference: reasonReference == freezed
-          ? _value.reasonReference
+      reasonReference: freezed == reasonReference
+          ? _value._reasonReference
           : reasonReference // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      basedOn: basedOn == freezed
-          ? _value.basedOn
+      basedOn: freezed == basedOn
+          ? _value._basedOn
           : basedOn // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      groupIdentifier: groupIdentifier == freezed
+      groupIdentifier: freezed == groupIdentifier
           ? _value.groupIdentifier
           : groupIdentifier // ignore: cast_nullable_to_non_nullable
               as Identifier?,
-      courseOfTherapyType: courseOfTherapyType == freezed
+      courseOfTherapyType: freezed == courseOfTherapyType
           ? _value.courseOfTherapyType
           : courseOfTherapyType // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      insurance: insurance == freezed
-          ? _value.insurance
+      insurance: freezed == insurance
+          ? _value._insurance
           : insurance // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      note: note == freezed
-          ? _value.note
+      note: freezed == note
+          ? _value._note
           : note // ignore: cast_nullable_to_non_nullable
               as List<Annotation?>?,
-      dosageInstruction: dosageInstruction == freezed
-          ? _value.dosageInstruction
+      dosageInstruction: freezed == dosageInstruction
+          ? _value._dosageInstruction
           : dosageInstruction // ignore: cast_nullable_to_non_nullable
               as List<Dosage?>?,
-      dispenseRequest: dispenseRequest == freezed
+      dispenseRequest: freezed == dispenseRequest
           ? _value.dispenseRequest
           : dispenseRequest // ignore: cast_nullable_to_non_nullable
               as MedicationRequestDispense?,
-      substitution: substitution == freezed
+      substitution: freezed == substitution
           ? _value.substitution
           : substitution // ignore: cast_nullable_to_non_nullable
               as MedicationRequestSubstitution?,
-      priorPrescription: priorPrescription == freezed
+      priorPrescription: freezed == priorPrescription
           ? _value.priorPrescription
           : priorPrescription // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      detectedIssue: detectedIssue == freezed
-          ? _value.detectedIssue
+      detectedIssue: freezed == detectedIssue
+          ? _value._detectedIssue
           : detectedIssue // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      eventHistory: eventHistory == freezed
-          ? _value.eventHistory
+      eventHistory: freezed == eventHistory
+          ? _value._eventHistory
           : eventHistory // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
     ));
@@ -909,7 +821,7 @@ class _$_Medication implements _Medication {
       {@JsonKey(name: 'ID')
           this.id,
       @JsonKey(name: 'Identifier')
-          this.identifier,
+          final List<Identifier?>? identifier,
       @JsonKey(name: 'Status', unknownEnumValue: MedicationStatusEnum.inactive)
           this.status,
       @JsonKey(name: 'StatusReason')
@@ -917,7 +829,7 @@ class _$_Medication implements _Medication {
       @JsonKey(name: 'Intent', unknownEnumValue: MedicationIntent.proposal)
           this.intent,
       @JsonKey(name: 'Category')
-          this.category,
+          final List<CodeableConcept?>? category,
       @JsonKey(name: 'Priority', unknownEnumValue: Priority.routine)
           this.priority,
       @JsonKey(name: 'ReportedBoolean')
@@ -933,7 +845,7 @@ class _$_Medication implements _Medication {
       @JsonKey(name: 'Encounter')
           this.encounter,
       @JsonKey(name: 'SupportingInformation')
-          this.supportingInformation,
+          final List<Reference?>? supportingInformation,
       @JsonKey(name: 'AuthoredOn')
           this.authoredOn,
       @JsonKey(name: 'Requester')
@@ -945,19 +857,19 @@ class _$_Medication implements _Medication {
       @JsonKey(name: 'Recorder')
           this.recorder,
       @JsonKey(name: 'ReasonReference')
-          this.reasonReference,
+          final List<Reference?>? reasonReference,
       @JsonKey(name: 'BasedOn')
-          this.basedOn,
+          final List<Reference?>? basedOn,
       @JsonKey(name: 'GroupIdentifier')
           this.groupIdentifier,
       @JsonKey(name: 'CourseOfTherapyType')
           this.courseOfTherapyType,
       @JsonKey(name: 'Insurance')
-          this.insurance,
+          final List<Reference?>? insurance,
       @JsonKey(name: 'Note')
-          this.note,
+          final List<Annotation?>? note,
       @JsonKey(name: 'DosageInstruction')
-          this.dosageInstruction,
+          final List<Dosage?>? dosageInstruction,
       @JsonKey(name: 'DispenseRequest')
           this.dispenseRequest,
       @JsonKey(name: 'Substitution')
@@ -965,19 +877,36 @@ class _$_Medication implements _Medication {
       @JsonKey(name: 'PriorPrescription')
           this.priorPrescription,
       @JsonKey(name: 'DetectedIssue')
-          this.detectedIssue,
+          final List<Reference?>? detectedIssue,
       @JsonKey(name: 'EventHistory')
-          this.eventHistory});
+          final List<Reference?>? eventHistory})
+      : _identifier = identifier,
+        _category = category,
+        _supportingInformation = supportingInformation,
+        _reasonReference = reasonReference,
+        _basedOn = basedOn,
+        _insurance = insurance,
+        _note = note,
+        _dosageInstruction = dosageInstruction,
+        _detectedIssue = detectedIssue,
+        _eventHistory = eventHistory;
 
   factory _$_Medication.fromJson(Map<String, dynamic> json) =>
-      _$_$_MedicationFromJson(json);
+      _$$_MedicationFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
   final String? id;
+  final List<Identifier?>? _identifier;
   @override
   @JsonKey(name: 'Identifier')
-  final List<Identifier?>? identifier;
+  List<Identifier?>? get identifier {
+    final value = _identifier;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'Status', unknownEnumValue: MedicationStatusEnum.inactive)
   final MedicationStatusEnum? status;
@@ -987,9 +916,16 @@ class _$_Medication implements _Medication {
   @override
   @JsonKey(name: 'Intent', unknownEnumValue: MedicationIntent.proposal)
   final MedicationIntent? intent;
+  final List<CodeableConcept?>? _category;
   @override
   @JsonKey(name: 'Category')
-  final List<CodeableConcept?>? category;
+  List<CodeableConcept?>? get category {
+    final value = _category;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'Priority', unknownEnumValue: Priority.routine)
   final Priority? priority;
@@ -1011,9 +947,16 @@ class _$_Medication implements _Medication {
   @override
   @JsonKey(name: 'Encounter')
   final Reference? encounter;
+  final List<Reference?>? _supportingInformation;
   @override
   @JsonKey(name: 'SupportingInformation')
-  final List<Reference?>? supportingInformation;
+  List<Reference?>? get supportingInformation {
+    final value = _supportingInformation;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'AuthoredOn')
   final String? authoredOn;
@@ -1029,27 +972,62 @@ class _$_Medication implements _Medication {
   @override
   @JsonKey(name: 'Recorder')
   final Reference? recorder;
+  final List<Reference?>? _reasonReference;
   @override
   @JsonKey(name: 'ReasonReference')
-  final List<Reference?>? reasonReference;
+  List<Reference?>? get reasonReference {
+    final value = _reasonReference;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<Reference?>? _basedOn;
   @override
   @JsonKey(name: 'BasedOn')
-  final List<Reference?>? basedOn;
+  List<Reference?>? get basedOn {
+    final value = _basedOn;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'GroupIdentifier')
   final Identifier? groupIdentifier;
   @override
   @JsonKey(name: 'CourseOfTherapyType')
   final CodeableConcept? courseOfTherapyType;
+  final List<Reference?>? _insurance;
   @override
   @JsonKey(name: 'Insurance')
-  final List<Reference?>? insurance;
+  List<Reference?>? get insurance {
+    final value = _insurance;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<Annotation?>? _note;
   @override
   @JsonKey(name: 'Note')
-  final List<Annotation?>? note;
+  List<Annotation?>? get note {
+    final value = _note;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<Dosage?>? _dosageInstruction;
   @override
   @JsonKey(name: 'DosageInstruction')
-  final List<Dosage?>? dosageInstruction;
+  List<Dosage?>? get dosageInstruction {
+    final value = _dosageInstruction;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'DispenseRequest')
   final MedicationRequestDispense? dispenseRequest;
@@ -1059,12 +1037,25 @@ class _$_Medication implements _Medication {
   @override
   @JsonKey(name: 'PriorPrescription')
   final Reference? priorPrescription;
+  final List<Reference?>? _detectedIssue;
   @override
   @JsonKey(name: 'DetectedIssue')
-  final List<Reference?>? detectedIssue;
+  List<Reference?>? get detectedIssue {
+    final value = _detectedIssue;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<Reference?>? _eventHistory;
   @override
   @JsonKey(name: 'EventHistory')
-  final List<Reference?>? eventHistory;
+  List<Reference?>? get eventHistory {
+    final value = _eventHistory;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -1074,291 +1065,280 @@ class _$_Medication implements _Medication {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Medication &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.identifier, identifier) ||
-                const DeepCollectionEquality()
-                    .equals(other.identifier, identifier)) &&
-            (identical(other.status, status) ||
-                const DeepCollectionEquality().equals(other.status, status)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_Medication &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._identifier, _identifier) &&
+            (identical(other.status, status) || other.status == status) &&
             (identical(other.statusReason, statusReason) ||
-                const DeepCollectionEquality()
-                    .equals(other.statusReason, statusReason)) &&
-            (identical(other.intent, intent) ||
-                const DeepCollectionEquality().equals(other.intent, intent)) &&
-            (identical(other.category, category) ||
-                const DeepCollectionEquality()
-                    .equals(other.category, category)) &&
+                other.statusReason == statusReason) &&
+            (identical(other.intent, intent) || other.intent == intent) &&
+            const DeepCollectionEquality().equals(other._category, _category) &&
             (identical(other.priority, priority) ||
-                const DeepCollectionEquality()
-                    .equals(other.priority, priority)) &&
+                other.priority == priority) &&
             (identical(other.reportedBoolean, reportedBoolean) ||
-                const DeepCollectionEquality()
-                    .equals(other.reportedBoolean, reportedBoolean)) &&
+                other.reportedBoolean == reportedBoolean) &&
             (identical(other.reportedReference, reportedReference) ||
-                const DeepCollectionEquality()
-                    .equals(other.reportedReference, reportedReference)) &&
-            (identical(other.medicationCodeableConcept, medicationCodeableConcept) ||
-                const DeepCollectionEquality().equals(
-                    other.medicationCodeableConcept,
-                    medicationCodeableConcept)) &&
+                other.reportedReference == reportedReference) &&
+            (identical(other.medicationCodeableConcept,
+                    medicationCodeableConcept) ||
+                other.medicationCodeableConcept == medicationCodeableConcept) &&
             (identical(other.medicationReference, medicationReference) ||
-                const DeepCollectionEquality()
-                    .equals(other.medicationReference, medicationReference)) &&
-            (identical(other.subject, subject) ||
-                const DeepCollectionEquality()
-                    .equals(other.subject, subject)) &&
+                other.medicationReference == medicationReference) &&
+            (identical(other.subject, subject) || other.subject == subject) &&
             (identical(other.encounter, encounter) ||
-                const DeepCollectionEquality()
-                    .equals(other.encounter, encounter)) &&
-            (identical(other.supportingInformation, supportingInformation) ||
-                const DeepCollectionEquality().equals(
-                    other.supportingInformation, supportingInformation)) &&
+                other.encounter == encounter) &&
+            const DeepCollectionEquality()
+                .equals(other._supportingInformation, _supportingInformation) &&
             (identical(other.authoredOn, authoredOn) ||
-                const DeepCollectionEquality()
-                    .equals(other.authoredOn, authoredOn)) &&
+                other.authoredOn == authoredOn) &&
             (identical(other.requester, requester) ||
-                const DeepCollectionEquality()
-                    .equals(other.requester, requester)) &&
+                other.requester == requester) &&
             (identical(other.performer, performer) ||
-                const DeepCollectionEquality()
-                    .equals(other.performer, performer)) &&
+                other.performer == performer) &&
             (identical(other.performerType, performerType) ||
-                const DeepCollectionEquality()
-                    .equals(other.performerType, performerType)) &&
+                other.performerType == performerType) &&
             (identical(other.recorder, recorder) ||
-                const DeepCollectionEquality()
-                    .equals(other.recorder, recorder)) &&
-            (identical(other.reasonReference, reasonReference) ||
-                const DeepCollectionEquality().equals(other.reasonReference, reasonReference)) &&
-            (identical(other.basedOn, basedOn) || const DeepCollectionEquality().equals(other.basedOn, basedOn)) &&
-            (identical(other.groupIdentifier, groupIdentifier) || const DeepCollectionEquality().equals(other.groupIdentifier, groupIdentifier)) &&
-            (identical(other.courseOfTherapyType, courseOfTherapyType) || const DeepCollectionEquality().equals(other.courseOfTherapyType, courseOfTherapyType)) &&
-            (identical(other.insurance, insurance) || const DeepCollectionEquality().equals(other.insurance, insurance)) &&
-            (identical(other.note, note) || const DeepCollectionEquality().equals(other.note, note)) &&
-            (identical(other.dosageInstruction, dosageInstruction) || const DeepCollectionEquality().equals(other.dosageInstruction, dosageInstruction)) &&
-            (identical(other.dispenseRequest, dispenseRequest) || const DeepCollectionEquality().equals(other.dispenseRequest, dispenseRequest)) &&
-            (identical(other.substitution, substitution) || const DeepCollectionEquality().equals(other.substitution, substitution)) &&
-            (identical(other.priorPrescription, priorPrescription) || const DeepCollectionEquality().equals(other.priorPrescription, priorPrescription)) &&
-            (identical(other.detectedIssue, detectedIssue) || const DeepCollectionEquality().equals(other.detectedIssue, detectedIssue)) &&
-            (identical(other.eventHistory, eventHistory) || const DeepCollectionEquality().equals(other.eventHistory, eventHistory)));
+                other.recorder == recorder) &&
+            const DeepCollectionEquality()
+                .equals(other._reasonReference, _reasonReference) &&
+            const DeepCollectionEquality().equals(other._basedOn, _basedOn) &&
+            (identical(other.groupIdentifier, groupIdentifier) ||
+                other.groupIdentifier == groupIdentifier) &&
+            (identical(other.courseOfTherapyType, courseOfTherapyType) ||
+                other.courseOfTherapyType == courseOfTherapyType) &&
+            const DeepCollectionEquality()
+                .equals(other._insurance, _insurance) &&
+            const DeepCollectionEquality().equals(other._note, _note) &&
+            const DeepCollectionEquality()
+                .equals(other._dosageInstruction, _dosageInstruction) &&
+            (identical(other.dispenseRequest, dispenseRequest) ||
+                other.dispenseRequest == dispenseRequest) &&
+            (identical(other.substitution, substitution) ||
+                other.substitution == substitution) &&
+            (identical(other.priorPrescription, priorPrescription) ||
+                other.priorPrescription == priorPrescription) &&
+            const DeepCollectionEquality()
+                .equals(other._detectedIssue, _detectedIssue) &&
+            const DeepCollectionEquality()
+                .equals(other._eventHistory, _eventHistory));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(identifier) ^
-      const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(statusReason) ^
-      const DeepCollectionEquality().hash(intent) ^
-      const DeepCollectionEquality().hash(category) ^
-      const DeepCollectionEquality().hash(priority) ^
-      const DeepCollectionEquality().hash(reportedBoolean) ^
-      const DeepCollectionEquality().hash(reportedReference) ^
-      const DeepCollectionEquality().hash(medicationCodeableConcept) ^
-      const DeepCollectionEquality().hash(medicationReference) ^
-      const DeepCollectionEquality().hash(subject) ^
-      const DeepCollectionEquality().hash(encounter) ^
-      const DeepCollectionEquality().hash(supportingInformation) ^
-      const DeepCollectionEquality().hash(authoredOn) ^
-      const DeepCollectionEquality().hash(requester) ^
-      const DeepCollectionEquality().hash(performer) ^
-      const DeepCollectionEquality().hash(performerType) ^
-      const DeepCollectionEquality().hash(recorder) ^
-      const DeepCollectionEquality().hash(reasonReference) ^
-      const DeepCollectionEquality().hash(basedOn) ^
-      const DeepCollectionEquality().hash(groupIdentifier) ^
-      const DeepCollectionEquality().hash(courseOfTherapyType) ^
-      const DeepCollectionEquality().hash(insurance) ^
-      const DeepCollectionEquality().hash(note) ^
-      const DeepCollectionEquality().hash(dosageInstruction) ^
-      const DeepCollectionEquality().hash(dispenseRequest) ^
-      const DeepCollectionEquality().hash(substitution) ^
-      const DeepCollectionEquality().hash(priorPrescription) ^
-      const DeepCollectionEquality().hash(detectedIssue) ^
-      const DeepCollectionEquality().hash(eventHistory);
 
   @JsonKey(ignore: true)
   @override
-  _$MedicationCopyWith<_Medication> get copyWith =>
-      __$MedicationCopyWithImpl<_Medication>(this, _$identity);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        const DeepCollectionEquality().hash(_identifier),
+        status,
+        statusReason,
+        intent,
+        const DeepCollectionEquality().hash(_category),
+        priority,
+        reportedBoolean,
+        reportedReference,
+        medicationCodeableConcept,
+        medicationReference,
+        subject,
+        encounter,
+        const DeepCollectionEquality().hash(_supportingInformation),
+        authoredOn,
+        requester,
+        performer,
+        performerType,
+        recorder,
+        const DeepCollectionEquality().hash(_reasonReference),
+        const DeepCollectionEquality().hash(_basedOn),
+        groupIdentifier,
+        courseOfTherapyType,
+        const DeepCollectionEquality().hash(_insurance),
+        const DeepCollectionEquality().hash(_note),
+        const DeepCollectionEquality().hash(_dosageInstruction),
+        dispenseRequest,
+        substitution,
+        priorPrescription,
+        const DeepCollectionEquality().hash(_detectedIssue),
+        const DeepCollectionEquality().hash(_eventHistory)
+      ]);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_MedicationCopyWith<_$_Medication> get copyWith =>
+      __$$_MedicationCopyWithImpl<_$_Medication>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_MedicationToJson(this);
+    return _$$_MedicationToJson(
+      this,
+    );
   }
 }
 
 abstract class _Medication implements Medication {
   factory _Medication(
       {@JsonKey(name: 'ID')
-          String? id,
+          final String? id,
       @JsonKey(name: 'Identifier')
-          List<Identifier?>? identifier,
+          final List<Identifier?>? identifier,
       @JsonKey(name: 'Status', unknownEnumValue: MedicationStatusEnum.inactive)
-          MedicationStatusEnum? status,
+          final MedicationStatusEnum? status,
       @JsonKey(name: 'StatusReason')
-          CodeableConcept? statusReason,
+          final CodeableConcept? statusReason,
       @JsonKey(name: 'Intent', unknownEnumValue: MedicationIntent.proposal)
-          MedicationIntent? intent,
+          final MedicationIntent? intent,
       @JsonKey(name: 'Category')
-          List<CodeableConcept?>? category,
+          final List<CodeableConcept?>? category,
       @JsonKey(name: 'Priority', unknownEnumValue: Priority.routine)
-          Priority? priority,
+          final Priority? priority,
       @JsonKey(name: 'ReportedBoolean')
-          bool? reportedBoolean,
+          final bool? reportedBoolean,
       @JsonKey(name: 'ReportedReference')
-          Reference? reportedReference,
+          final Reference? reportedReference,
       @JsonKey(name: 'MedicationCodeableConcept')
-          CodeableConcept? medicationCodeableConcept,
+          final CodeableConcept? medicationCodeableConcept,
       @JsonKey(name: 'MedicationReference')
-          Reference? medicationReference,
+          final Reference? medicationReference,
       @JsonKey(name: 'Subject')
-          Reference? subject,
+          final Reference? subject,
       @JsonKey(name: 'Encounter')
-          Reference? encounter,
+          final Reference? encounter,
       @JsonKey(name: 'SupportingInformation')
-          List<Reference?>? supportingInformation,
+          final List<Reference?>? supportingInformation,
       @JsonKey(name: 'AuthoredOn')
-          String? authoredOn,
+          final String? authoredOn,
       @JsonKey(name: 'Requester')
-          Reference? requester,
+          final Reference? requester,
       @JsonKey(name: 'Performer')
-          Reference? performer,
+          final Reference? performer,
       @JsonKey(name: 'PerformerType')
-          CodeableConcept? performerType,
+          final CodeableConcept? performerType,
       @JsonKey(name: 'Recorder')
-          Reference? recorder,
+          final Reference? recorder,
       @JsonKey(name: 'ReasonReference')
-          List<Reference?>? reasonReference,
+          final List<Reference?>? reasonReference,
       @JsonKey(name: 'BasedOn')
-          List<Reference?>? basedOn,
+          final List<Reference?>? basedOn,
       @JsonKey(name: 'GroupIdentifier')
-          Identifier? groupIdentifier,
+          final Identifier? groupIdentifier,
       @JsonKey(name: 'CourseOfTherapyType')
-          CodeableConcept? courseOfTherapyType,
+          final CodeableConcept? courseOfTherapyType,
       @JsonKey(name: 'Insurance')
-          List<Reference?>? insurance,
+          final List<Reference?>? insurance,
       @JsonKey(name: 'Note')
-          List<Annotation?>? note,
+          final List<Annotation?>? note,
       @JsonKey(name: 'DosageInstruction')
-          List<Dosage?>? dosageInstruction,
+          final List<Dosage?>? dosageInstruction,
       @JsonKey(name: 'DispenseRequest')
-          MedicationRequestDispense? dispenseRequest,
+          final MedicationRequestDispense? dispenseRequest,
       @JsonKey(name: 'Substitution')
-          MedicationRequestSubstitution? substitution,
+          final MedicationRequestSubstitution? substitution,
       @JsonKey(name: 'PriorPrescription')
-          Reference? priorPrescription,
+          final Reference? priorPrescription,
       @JsonKey(name: 'DetectedIssue')
-          List<Reference?>? detectedIssue,
+          final List<Reference?>? detectedIssue,
       @JsonKey(name: 'EventHistory')
-          List<Reference?>? eventHistory}) = _$_Medication;
+          final List<Reference?>? eventHistory}) = _$_Medication;
 
   factory _Medication.fromJson(Map<String, dynamic> json) =
       _$_Medication.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
   @JsonKey(name: 'Identifier')
-  List<Identifier?>? get identifier => throw _privateConstructorUsedError;
+  List<Identifier?>? get identifier;
   @override
   @JsonKey(name: 'Status', unknownEnumValue: MedicationStatusEnum.inactive)
-  MedicationStatusEnum? get status => throw _privateConstructorUsedError;
+  MedicationStatusEnum? get status;
   @override
   @JsonKey(name: 'StatusReason')
-  CodeableConcept? get statusReason => throw _privateConstructorUsedError;
+  CodeableConcept? get statusReason;
   @override
   @JsonKey(name: 'Intent', unknownEnumValue: MedicationIntent.proposal)
-  MedicationIntent? get intent => throw _privateConstructorUsedError;
+  MedicationIntent? get intent;
   @override
   @JsonKey(name: 'Category')
-  List<CodeableConcept?>? get category => throw _privateConstructorUsedError;
+  List<CodeableConcept?>? get category;
   @override
   @JsonKey(name: 'Priority', unknownEnumValue: Priority.routine)
-  Priority? get priority => throw _privateConstructorUsedError;
+  Priority? get priority;
   @override
   @JsonKey(name: 'ReportedBoolean')
-  bool? get reportedBoolean => throw _privateConstructorUsedError;
+  bool? get reportedBoolean;
   @override
   @JsonKey(name: 'ReportedReference')
-  Reference? get reportedReference => throw _privateConstructorUsedError;
+  Reference? get reportedReference;
   @override
   @JsonKey(name: 'MedicationCodeableConcept')
-  CodeableConcept? get medicationCodeableConcept =>
-      throw _privateConstructorUsedError;
+  CodeableConcept? get medicationCodeableConcept;
   @override
   @JsonKey(name: 'MedicationReference')
-  Reference? get medicationReference => throw _privateConstructorUsedError;
+  Reference? get medicationReference;
   @override
   @JsonKey(name: 'Subject')
-  Reference? get subject => throw _privateConstructorUsedError;
+  Reference? get subject;
   @override
   @JsonKey(name: 'Encounter')
-  Reference? get encounter => throw _privateConstructorUsedError;
+  Reference? get encounter;
   @override
   @JsonKey(name: 'SupportingInformation')
-  List<Reference?>? get supportingInformation =>
-      throw _privateConstructorUsedError;
+  List<Reference?>? get supportingInformation;
   @override
   @JsonKey(name: 'AuthoredOn')
-  String? get authoredOn => throw _privateConstructorUsedError;
+  String? get authoredOn;
   @override
   @JsonKey(name: 'Requester')
-  Reference? get requester => throw _privateConstructorUsedError;
+  Reference? get requester;
   @override
   @JsonKey(name: 'Performer')
-  Reference? get performer => throw _privateConstructorUsedError;
+  Reference? get performer;
   @override
   @JsonKey(name: 'PerformerType')
-  CodeableConcept? get performerType => throw _privateConstructorUsedError;
+  CodeableConcept? get performerType;
   @override
   @JsonKey(name: 'Recorder')
-  Reference? get recorder => throw _privateConstructorUsedError;
+  Reference? get recorder;
   @override
   @JsonKey(name: 'ReasonReference')
-  List<Reference?>? get reasonReference => throw _privateConstructorUsedError;
+  List<Reference?>? get reasonReference;
   @override
   @JsonKey(name: 'BasedOn')
-  List<Reference?>? get basedOn => throw _privateConstructorUsedError;
+  List<Reference?>? get basedOn;
   @override
   @JsonKey(name: 'GroupIdentifier')
-  Identifier? get groupIdentifier => throw _privateConstructorUsedError;
+  Identifier? get groupIdentifier;
   @override
   @JsonKey(name: 'CourseOfTherapyType')
-  CodeableConcept? get courseOfTherapyType =>
-      throw _privateConstructorUsedError;
+  CodeableConcept? get courseOfTherapyType;
   @override
   @JsonKey(name: 'Insurance')
-  List<Reference?>? get insurance => throw _privateConstructorUsedError;
+  List<Reference?>? get insurance;
   @override
   @JsonKey(name: 'Note')
-  List<Annotation?>? get note => throw _privateConstructorUsedError;
+  List<Annotation?>? get note;
   @override
   @JsonKey(name: 'DosageInstruction')
-  List<Dosage?>? get dosageInstruction => throw _privateConstructorUsedError;
+  List<Dosage?>? get dosageInstruction;
   @override
   @JsonKey(name: 'DispenseRequest')
-  MedicationRequestDispense? get dispenseRequest =>
-      throw _privateConstructorUsedError;
+  MedicationRequestDispense? get dispenseRequest;
   @override
   @JsonKey(name: 'Substitution')
-  MedicationRequestSubstitution? get substitution =>
-      throw _privateConstructorUsedError;
+  MedicationRequestSubstitution? get substitution;
   @override
   @JsonKey(name: 'PriorPrescription')
-  Reference? get priorPrescription => throw _privateConstructorUsedError;
+  Reference? get priorPrescription;
   @override
   @JsonKey(name: 'DetectedIssue')
-  List<Reference?>? get detectedIssue => throw _privateConstructorUsedError;
+  List<Reference?>? get detectedIssue;
   @override
   @JsonKey(name: 'EventHistory')
-  List<Reference?>? get eventHistory => throw _privateConstructorUsedError;
+  List<Reference?>? get eventHistory;
   @override
   @JsonKey(ignore: true)
-  _$MedicationCopyWith<_Medication> get copyWith =>
+  _$$_MedicationCopyWith<_$_Medication> get copyWith =>
       throw _privateConstructorUsedError;
 }

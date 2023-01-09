@@ -5,14 +5,15 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:app_wrapper/app_wrapper.dart';
-import 'package:app_wrapper/src/base_context.dart';
+import 'package:sghi_core/app_wrapper/app_wrapper_base.dart';
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/value_objects.dart';
+import 'package:sghi_core/app_wrapper/base_context.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
-import 'package:shared_ui_components/inputs.dart';
-import 'package:shared_ui_components/verify_phone_otp.dart';
+import 'package:sghi_core/domain_objects/value_objects/unknown.dart';
+import 'package:sghi_core/ui_components/src/inputs.dart';
+import 'package:sghi_core/ui_components/src/verify_phone_otp.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
@@ -25,11 +26,17 @@ import 'package:bewell_pro_core/domain/core/value_objects/domain_constants.dart'
 import 'package:bewell_pro_core/presentation/onboarding/signup/enter_signup_phone_number.dart';
 import 'package:bewell_pro_core/presentation/onboarding/signup/phone_signup.dart';
 import 'package:bewell_pro_core/presentation/router/router_generator.dart';
+import '../../../../mocks/mock_utils.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
   group('phone sign up page', () {
+    setUp(() async {
+      await Firebase.initializeApp();
+    });
     final Store<CoreState> store =
         Store<CoreState>(initialState: CoreState.initial());
 
@@ -64,7 +71,7 @@ void main() {
       expect(find.byKey(AppWidgetKeys.silPrimaryButtonKey), findsOneWidget);
       await tester.tap(find.byKey(AppWidgetKeys.silPrimaryButtonKey));
 
-      await tester.pumpAndSettle();
+      await tester.pump();
 
       expect(store.state.miscState!.otpCode, 'UNKNOWN');
       expect(find.byType(SnackBar), findsOneWidget);
@@ -165,6 +172,13 @@ void main() {
                   'sendContactVerificationOTPEndpoint',
               verifyContactOTPEndpoint: 'verifyContactOTPEndpoint',
               switchFlaggedFeaturesEndpoint: '',
+              optInClientEndpoint: '',
+              pinResetServiceRequestEndpoint: '',
+              refreshStreamTokenEndpoint: '',
+              requestPinResetEndpoint: '',
+              respondedSecurityQuestionsEndpoint: '',
+              verifySecurityQuestionsEndpoint: '',
+              listOrganisationsEndpoint: '',
             ),
             child: StoreProvider<CoreState>(
               store: store,

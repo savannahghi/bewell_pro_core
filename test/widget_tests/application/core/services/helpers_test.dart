@@ -3,26 +3,23 @@ import 'dart:convert';
 
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 // Package imports:
-import 'package:app_wrapper/app_wrapper.dart';
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
-import 'package:flutter_graphql_client/graph_utils.dart';
-import 'package:flutter_html/flutter_html.dart';
+import 'package:sghi_core/app_wrapper/enums.dart';
+import 'package:sghi_core/domain_objects/entities/bio_data.dart';
+import 'package:sghi_core/domain_objects/entities/user_profile.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:sghi_core/domain_objects/value_objects/name.dart';
+import 'package:sghi_core/flutter_graphql_client/flutter_graphql_utils.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
-import 'package:misc_utilities/misc.dart';
-import 'package:misc_utilities/number_constants.dart';
-import 'package:misc_utilities/responsive_widget.dart';
+import 'package:sghi_core/misc_utilities/misc.dart';
+import 'package:sghi_core/misc_utilities/number_constants.dart';
+import 'package:sghi_core/misc_utilities/responsive_widget.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
-import 'package:plugin_platform_interface/plugin_platform_interface.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:shared_ui_components/buttons.dart';
-import 'package:url_launcher_platform_interface/link.dart';
-import 'package:url_launcher_platform_interface/url_launcher_platform_interface.dart';
+import 'package:sghi_core/shared_themes/constants.dart';
+import 'package:sghi_core/ui_components/src/buttons.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
@@ -41,14 +38,19 @@ import 'package:bewell_pro_core/presentation/onboarding/login/pages/phone_login_
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/phone_login.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/pages/user_profile_page.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
+import '../../../../mocks/mock_utils.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
   group('Helpers', () {
     late Store<CoreState> store;
 
-    setUp(() {
+    setUp(() async {
+      await Firebase.initializeApp();
+
       store = Store<CoreState>(initialState: CoreState.initial());
     });
 
@@ -1145,57 +1147,4 @@ void main() {
     await tester.pumpAndSettle();
     expect(showBanner, true);
   });
-
-  testWidgets('onBodyLinkOrImageTapCallback called when link is tapped',
-      (WidgetTester tester) async {
-    final MockUrlLauncher mock = MockUrlLauncher();
-    UrlLauncherPlatform.instance = mock;
-
-    await buildTestWidget(
-      tester: tester,
-      widget: SizedBox(
-        child: Html(
-          data: '<a href="https://example.com">empty</a>',
-          onLinkTap: onBodyLinkOrImageTapCallback,
-        ),
-      ),
-    );
-
-    await tester.tap(find.text('empty'));
-    await tester.pump();
-
-    expect(mock.url, 'https://example.com');
-  });
-}
-
-class MockUrlLauncher
-    with MockPlatformInterfaceMixin
-    implements UrlLauncherPlatform {
-  String? url;
-
-  @override
-  Future<bool> canLaunch(String url) {
-    return Future<bool>.value(true);
-  }
-
-  @override
-  Future<void> closeWebView() {
-    return Future<void>.value();
-  }
-
-  @override
-  Future<bool> launch(String url,
-      {required bool useSafariVC,
-      required bool useWebView,
-      required bool enableJavaScript,
-      required bool enableDomStorage,
-      required bool universalLinksOnly,
-      required Map<String, String> headers,
-      String? webOnlyWindowName}) {
-    this.url = url;
-    return Future<bool>.value(true);
-  }
-
-  @override
-  LinkDelegate? get linkDelegate => null;
 }

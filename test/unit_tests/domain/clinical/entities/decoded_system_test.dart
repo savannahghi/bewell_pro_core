@@ -1,5 +1,4 @@
 // Package imports:
-import 'package:domain_objects/value_objects.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 // Project imports:
@@ -7,6 +6,7 @@ import 'package:bewell_pro_core/domain/clinical/entities/decoded_system.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/fhir.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/narrative.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/narrative_status.dart';
+import 'package:sghi_core/domain_objects/value_objects/unknown.dart';
 
 void main() {
   test('Decoded System should return initial when the div is null', () {

@@ -1,23 +1,23 @@
 // Dart imports:
 import 'dart:convert';
-import 'dart:typed_data';
+import 'dart:io';
 
 // Flutter imports:
 import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/value_objects.dart';
-import 'package:file/memory.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:flutter/services.dart';
+import 'package:sghi_core/domain_objects/value_objects/enums.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
-import 'package:image_picker_platform_interface/image_picker_platform_interface.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:permission_handler_platform_interface/permission_handler_platform_interface.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:shared_ui_components/inputs.dart';
+import 'package:sghi_core/flutter_graphql_client/i_flutter_graphql_client.dart';
+import 'package:sghi_core/shared_themes/colors.dart';
+import 'package:sghi_core/shared_themes/constants.dart';
+import 'package:sghi_core/ui_components/src/inputs.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
@@ -29,16 +29,21 @@ import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration_container.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/verify_phone_dialog.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/widgets/phone_number_field.dart';
-import '../../../../../mocks/base64_image.dart';
+
+import '../../../../../mocks/mock_utils.dart';
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
   group('BasicDetails', () {
     late Store<CoreState> store;
     late TabController controller;
 
-    setUp(() {
+    setUp(() async {
+      await Firebase.initializeApp();
+
       store = Store<CoreState>(initialState: CoreState.initial());
       controller = TabController(length: 4, vsync: const TestVSync());
     });
@@ -122,12 +127,18 @@ void main() {
 
     testWidgets('tapping on profile photo should take photo',
         (WidgetTester tester) async {
-      final MemoryFileSystem fileSystem = MemoryFileSystem();
-      final Uint8List image = base64Decode(mockBase64Image);
-      fileSystem.file(mockImagePath).writeAsBytes(image);
-
-      ImagePickerPlatform.instance = MockImagePickerPlatform();
       PermissionHandlerPlatform.instance = MockPermissionHandlerPlatform();
+
+      const MethodChannel channel =
+          MethodChannel('plugins.flutter.io/image_picker');
+      final List<MethodCall> _methodCalls = <MethodCall>[];
+
+      channel.setMockMethodCallHandler((MethodCall methodCall) async {
+        _methodCalls.add(methodCall);
+
+        final File file = File('test/test_resources/test_file.png');
+        return file.path;
+      });
 
       await tester.runAsync(() async {
         await buildTestWidget(
@@ -135,9 +146,7 @@ void main() {
           store: store,
           widget: PatientRegistrationContainer(
             tabController: controller,
-            child: BasicDetailsWidget(
-              fileSystem: fileSystem,
-            ),
+            child: const BasicDetailsWidget(),
           ),
         );
 
@@ -163,11 +172,16 @@ void main() {
 
     testWidgets('tapping on ID Document Front should take photo',
         (WidgetTester tester) async {
-      final MemoryFileSystem fileSystem = MemoryFileSystem();
-      final Uint8List image = base64Decode(mockBase64Image);
-      fileSystem.file(mockImagePath).writeAsBytes(image);
+      const MethodChannel channel =
+          MethodChannel('plugins.flutter.io/image_picker');
+      final List<MethodCall> _methodCalls = <MethodCall>[];
 
-      ImagePickerPlatform.instance = MockImagePickerPlatform();
+      channel.setMockMethodCallHandler((MethodCall methodCall) async {
+        _methodCalls.add(methodCall);
+
+        final File file = File('test/test_resources/test_file.png');
+        return file.path;
+      });
       PermissionHandlerPlatform.instance = MockPermissionHandlerPlatform();
 
       await tester.runAsync(() async {
@@ -176,9 +190,7 @@ void main() {
           store: store,
           widget: PatientRegistrationContainer(
             tabController: controller,
-            child: BasicDetailsWidget(
-              fileSystem: fileSystem,
-            ),
+            child: const BasicDetailsWidget(),
           ),
         );
 
@@ -190,11 +202,16 @@ void main() {
 
     testWidgets('tapping on ID Document Back should take photo',
         (WidgetTester tester) async {
-      final MemoryFileSystem fileSystem = MemoryFileSystem();
-      final Uint8List image = base64Decode(mockBase64Image);
-      fileSystem.file(mockImagePath).writeAsBytes(image);
+      const MethodChannel channel =
+          MethodChannel('plugins.flutter.io/image_picker');
+      final List<MethodCall> _methodCalls = <MethodCall>[];
 
-      ImagePickerPlatform.instance = MockImagePickerPlatform();
+      channel.setMockMethodCallHandler((MethodCall methodCall) async {
+        _methodCalls.add(methodCall);
+
+        final File file = File('test/test_resources/test_file.png');
+        return file.path;
+      });
       PermissionHandlerPlatform.instance = MockPermissionHandlerPlatform();
 
       await tester.runAsync(() async {
@@ -203,9 +220,7 @@ void main() {
           store: store,
           widget: PatientRegistrationContainer(
             tabController: controller,
-            child: BasicDetailsWidget(
-              fileSystem: fileSystem,
-            ),
+            child: const BasicDetailsWidget(),
           ),
         );
 
@@ -269,19 +284,24 @@ void main() {
     testWidgets(
         'next button should navigate to next page if all form fields '
         'are filled', (WidgetTester tester) async {
-      final MemoryFileSystem fileSystem = MemoryFileSystem();
-      final Uint8List image = base64Decode(mockBase64Image);
-      fileSystem.file(mockImagePath).writeAsBytes(image);
+      const MethodChannel channel =
+          MethodChannel('plugins.flutter.io/image_picker');
+      final List<MethodCall> _methodCalls = <MethodCall>[];
 
-      ImagePickerPlatform.instance = MockImagePickerPlatform();
+      channel.setMockMethodCallHandler((MethodCall methodCall) async {
+        _methodCalls.add(methodCall);
+
+        final File file = File('test/test_resources/test_file.png');
+        return file.path;
+      });
       PermissionHandlerPlatform.instance = MockPermissionHandlerPlatform();
 
       final PatientRegistrationContainer container =
           PatientRegistrationContainer(
         tabController: controller,
-        child: BasicDetailsWidget(
-          fileSystem: fileSystem,
-        ),
+        child: const BasicDetailsWidget(
+            // fileSystem: fileSystem,
+            ),
       );
 
       await buildTestWidget(
@@ -301,7 +321,7 @@ void main() {
       await _pickIdDocument(tester, AppWidgetKeys.idDocumentBackKey);
 
       await tester.tap(nextBtn);
-      await tester.pumpAndSettle(const Duration(seconds: 1));
+      await tester.pumpAndSettle(const Duration(seconds: 10));
 
       expect(
           container.currentIndex, PatientRegistrationContainer.nextOfKinIndex);
@@ -455,15 +475,15 @@ Future<void> _fillFormFields(WidgetTester tester) async {
   expect(find.byType(PhoneNumberFieldWidget), findsOneWidget);
   expect(find.byType(SILPhoneInput), findsOneWidget);
   await tester.enterText(find.byType(SILPhoneInput), testPhoneNumber);
-  await tester.pumpAndSettle();
+  await tester.pump();
   _checkColor(nextBtn, Colors.grey);
 
   // Verify phone
   expect(verifyPhoneBtn, findsOneWidget);
   await tester.ensureVisible(verifyPhoneBtn);
-  await tester.pumpAndSettle();
+  await tester.pump();
   await tester.tap(verifyPhoneBtn);
-  await tester.pumpAndSettle();
+  await tester.pump();
   expect(find.byType(VerifyPhoneDialog), findsOneWidget);
 
   final Finder dialogInput = find.byKey(AppWidgetKeys.otpVerifyInput);

@@ -1,9 +1,9 @@
 // Package imports:
-import 'package:domain_objects/value_objects.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/domain/core/entities/email_input.dart';
+import 'package:sghi_core/domain_objects/value_objects/email_address.dart';
 
 void main() {
   final Map<String, String> data = <String, String>{};

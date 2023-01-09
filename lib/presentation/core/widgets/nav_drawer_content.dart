@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 // Package imports:
 import 'package:async_redux/async_redux.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:flutter_html/shims/dart_ui_real.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/inputs.dart';
+import 'package:sghi_core/afya_moja_core/afya_moja_core.dart';
+import 'package:sghi_core/domain_objects/entities/navigation_item.dart';
+import 'package:sghi_core/domain_objects/entities/navigation_nested_item.dart';
+import 'package:sghi_core/ui_components/src/inputs.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/theme/colors.dart';

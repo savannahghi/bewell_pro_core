@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shared_ui_components/inputs.dart';
+import 'package:sghi_core/ui_components/src/inputs.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/patient.dart';
@@ -78,7 +78,9 @@ void main() {
         await buildTestWidget(
           tester: tester,
           widget: PatientSearchWidget(
-            phoneNumberFormValidator: (String? v) {},
+            phoneNumberFormValidator: (String? v) {
+              return null;
+            },
             searchPatientFunction:
                 (BuildContext context, String searchParam) {},
             patientEdgeList: const <PatientEdge>[],
@@ -99,7 +101,9 @@ void main() {
         await buildTestWidget(
           tester: tester,
           widget: PatientSearchWidget(
-            phoneNumberFormValidator: (String? v) {},
+            phoneNumberFormValidator: (String? v) {
+              return null;
+            },
             searchPatientFunction:
                 (BuildContext context, String searchParam) {},
             patientEdgeList: const <PatientEdge>[],
@@ -120,7 +124,9 @@ void main() {
         await buildTestWidget(
           tester: tester,
           widget: PatientSearchWidget(
-            phoneNumberFormValidator: (String? v) {},
+            phoneNumberFormValidator: (String? v) {
+              return null;
+            },
             searchPatientFunction:
                 (BuildContext context, String searchParam) {},
             patientEdgeList: <PatientEdge>[

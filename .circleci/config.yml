@@ -1,0 +1,52 @@
+version: 2.1
+
+jobs:
+  run_tests_and_generate_coverage:
+    resource_class: large
+    docker:
+      - image: cirrusci/flutter:3.3.8
+    steps:
+      - checkout
+      - run:
+          name: Analyze, test and report coverage
+          no_output_timeout: 10m
+          command: |
+            flutter clean
+            flutter pub get
+            flutter analyze
+            flutter test --coverage test/
+            sudo apt-get -qq update
+            sudo apt-get install -qqy lcov python3-pip
+            pip3 install -Uqqq lxml && pip3 install -Uqqq beautifulsoup4
+            lcov --remove coverage/lcov.info 'lib/*.g.dart' -o coverage/lcov.info
+            lcov --remove coverage/lcov.info 'lib/**/*.freezed.dart' -o coverage/lcov.info
+            genhtml -q -o coverage coverage/lcov.info
+            python3 check_coverage.py
+      - store_artifacts:
+          path: coverage/
+
+  publish_package_to_pub_dev:
+    docker:
+      - image: cirrusci/flutter:stable
+    steps:
+      - checkout
+      - run:
+          name: Setup credentials
+          command: echo $PUB_CREDENTIALS_JSON_FILE > ~/.pub-cache/credentials.json
+      - run:
+          name: Publish package to pub.dev
+          no_output_timeout: 5m
+          command: dart pub publish -f
+
+workflows:
+  version: 2
+  run_tests_and_publish_to_pub.dev:
+    jobs:
+      - run_tests_and_generate_coverage
+      - publish_package_to_pub_dev:
+          requires:
+            - run_tests_and_generate_coverage
+          filters:
+            branches:
+              only:
+                - main

@@ -1,5 +1,4 @@
 // Package imports:
-import 'package:app_wrapper/app_wrapper.dart';
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -9,6 +8,7 @@ import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.d
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/pages/phone_login_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/widgets/build_profile_footer.dart';
+import 'package:sghi_core/app_wrapper/enums.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {

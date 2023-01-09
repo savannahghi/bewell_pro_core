@@ -7,13 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // Package imports:
-import 'package:dart_fcm/dart_fcm.dart';
-import 'package:domain_objects/value_objects.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
 import 'package:mockito/annotations.dart';
+import 'package:sghi_core/dart_fcm/fcm.dart';
+import 'package:sghi_core/domain_objects/value_objects/enums.dart';
+import 'package:sghi_core/domain_objects/value_objects/unknown.dart';
+import 'package:sghi_core/flutter_graphql_client/i_flutter_graphql_client.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
@@ -26,6 +27,8 @@ import 'helpers_test.mocks.dart';
 
 @GenerateMocks(<Type>[SILFCM])
 void main() {
+  setupFirebaseAuthMocks();
+
   group('getRelationFromString', () {
     test('returns the correct NextOfKinRelation', () {
       expect(getRelationFromString(NextOfKinRelation.Emergency_Contact.name),
@@ -317,20 +320,17 @@ void main() {
   });
 
   group('triggerEvent', () {
-    const MethodChannel channel =
-        MethodChannel('plugins.flutter.io/firebase_analytics');
-
-    MethodCall? methodCall;
+    MethodCall? _methodCall;
 
     setUp(() async {
-      channel.setMockMethodCallHandler((MethodCall m) async {
-        methodCall = m;
+      await Firebase.initializeApp();
+      const MethodChannel('plugins.flutter.io/firebase_analytics')
+          .setMockMethodCallHandler((MethodCall methodCall) async {
+        if (methodCall.method == 'Analytics#logEvent') {
+          _methodCall = methodCall;
+          return Future<void>.value(); // set initial values here if desired
+        }
       });
-    });
-
-    tearDown(() {
-      channel.setMockMethodCallHandler(null);
-      methodCall = null;
     });
 
     testWidgets(
@@ -345,9 +345,9 @@ void main() {
 
       triggerEvent('some-event', context);
 
-      expect(methodCall, isNotNull);
-      expect(methodCall!.method, 'logEvent');
-      expect(methodCall!.arguments['parameters']['flavour'], 'PRO');
+      expect(_methodCall, isNotNull);
+      expect(_methodCall!.method, 'Analytics#logEvent');
+      expect(_methodCall!.arguments['parameters']['flavour'], 'PRO');
     });
   });
 

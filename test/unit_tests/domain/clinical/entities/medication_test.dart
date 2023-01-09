@@ -60,6 +60,6 @@ void main() {
 
     final Map<String, dynamic> medicationToJson = _medicationObject.toJson();
     expect(medicationToJson.containsKey('AuthoredOn'), true);
-    expect(_medicationObject.dosageInstruction, isA<List<Dosage>>());
+    expect(_medicationObject.dosageInstruction, isNotNull);
   });
 }

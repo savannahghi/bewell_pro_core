@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:quiver/async.dart';
 import 'package:quiver/testing/time.dart';
@@ -16,6 +14,8 @@ import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/widgets/otp_box_connector.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/visit/start_visit_page/resend_otp_action.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/resend_otp.dart';
+import 'package:sghi_core/domain_objects/entities/user_profile.dart';
+import 'package:sghi_core/domain_objects/value_objects/phone_number.dart';
 import '../../../../../../../mocks/mock_redux_actions.dart';
 import '../../../../../../../mocks/mocks.dart';
 import '../../../../../../../mocks/test_helpers.dart';

@@ -1,10 +1,11 @@
 // Flutter imports:
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shared_ui_components/buttons.dart';
+import 'package:sghi_core/ui_components/src/buttons.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
@@ -12,9 +13,16 @@ import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.d
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/core/widgets/default_error_route.dart';
 import 'package:bewell_pro_core/presentation/router/router_generator.dart';
+import '../../../mocks/mock_utils.dart';
 import '../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
+  setUp(() async {
+    await Firebase.initializeApp();
+  });
+
   group('RouteGeneratoe', () {
     final Store<CoreState> store =
         Store<CoreState>(initialState: CoreState.initial());

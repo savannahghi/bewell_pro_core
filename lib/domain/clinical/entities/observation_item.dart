@@ -1,5 +1,5 @@
 // Package imports:
-import 'package:misc_utilities/misc.dart';
+import 'package:sghi_core/misc_utilities/misc.dart';
 
 class ObservationItem {
   late String observation;

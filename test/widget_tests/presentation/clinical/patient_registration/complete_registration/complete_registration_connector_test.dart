@@ -6,9 +6,10 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/src/entities/user_profile.dart';
-import 'package:domain_objects/src/value_objects/phone_number.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:sghi_core/domain_objects/entities/user_profile.dart';
+import 'package:sghi_core/domain_objects/value_objects/phone_number.dart';
+import 'package:sghi_core/flutter_graphql_client/i_flutter_graphql_client.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 
@@ -27,11 +28,19 @@ import 'package:bewell_pro_core/presentation/clinical/patient_identification/wid
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/complete_registration_page/complete_registration_page.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration_container.dart';
 import '../../../../../mocks/mock_redux_actions.dart';
+import '../../../../../mocks/mock_utils.dart';
+
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
   group('CompleteRegistrationConnector', () {
+    setUp(() async {
+      await Firebase.initializeApp();
+    });
+
     late MockStore<CoreState> mockStore;
 
     const String phoneNumber = '0712345678';

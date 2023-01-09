@@ -2,14 +2,16 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:app_wrapper/app_wrapper.dart';
+import 'package:sghi_core/app_wrapper/app_wrapper_base.dart';
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/value_objects.dart';
-import 'package:flutter_graphql_client/graph_utils.dart';
+import 'package:sghi_core/app_wrapper/endpoints_context.dart';
+import 'package:sghi_core/app_wrapper/enums.dart';
+import 'package:sghi_core/domain_objects/value_objects/unknown.dart';
+import 'package:sghi_core/flutter_graphql_client/flutter_graphql_utils.dart';
 import 'package:http/http.dart';
-import 'package:misc_utilities/misc.dart';
-import 'package:shared_ui_components/platform_loader.dart';
-import 'package:shared_ui_components/verify_phone_otp.dart';
+import 'package:sghi_core/misc_utilities/misc.dart';
+import 'package:sghi_core/ui_components/src/platform_loader.dart';
+import 'package:sghi_core/ui_components/src/verify_phone_otp.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';

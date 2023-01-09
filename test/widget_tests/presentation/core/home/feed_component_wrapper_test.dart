@@ -8,7 +8,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mocktail_image_network/mocktail_image_network.dart';
-import 'package:user_feed/user_feed.dart';
+import 'package:sghi_core/user_feed/src/presentation/preloaders/feed_preloaders.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';

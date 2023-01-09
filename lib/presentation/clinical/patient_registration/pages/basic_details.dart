@@ -4,7 +4,6 @@ import 'dart:convert';
 
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
@@ -12,12 +11,10 @@ import 'package:file/file.dart';
 import 'package:file/local.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
-import 'package:misc_utilities/misc.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/inputs.dart';
+import 'package:sghi_core/afya_moja_core/afya_moja_core.dart';
+import 'package:sghi_core/shared_themes/colors.dart';
+import 'package:sghi_core/shared_themes/constants.dart';
+import 'package:sghi_core/ui_components/src/inputs.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/clinical/patient_registration/basic_details_form_manager.dart';
@@ -47,11 +44,7 @@ import 'package:permission_handler/permission_handler.dart'
     as permission_handler;
 
 class BasicDetailsWidget extends StatefulWidget {
-  final FileSystem fileSystem;
-
-  const BasicDetailsWidget({
-    FileSystem? fileSystem,
-  }) : fileSystem = fileSystem ?? const LocalFileSystem();
+  const BasicDetailsWidget();
 
   @override
   _BasicDetailsWidgetState createState() => _BasicDetailsWidgetState();
@@ -65,6 +58,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
   final BasicDetailsFormManager _formManager = BasicDetailsFormManager();
 
   final ImagePicker imagePicker = ImagePicker();
+  final FileSystem fileSystem = const LocalFileSystem();
 
   /// focus nodes are used to enable seamless data input by automatically focusing
   /// on the next input once the user is done with the current step
@@ -83,7 +77,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance?.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
 
     requestCameraPermissions()
         .then((permission_handler.PermissionStatus? value) {
@@ -116,7 +110,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
     datePickerController.dispose();
     this._firstNameFocusNode.dispose();
     this._lastNameFocusNode.dispose();
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
 
@@ -205,8 +199,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
                         AsyncSnapshot<PatientRegistrationImageData> snapshot) {
                       File? profileImage;
                       if (snapshot.data != null) {
-                        profileImage =
-                            widget.fileSystem.file(snapshot.data?.filePath);
+                        profileImage = fileSystem.file(snapshot.data?.filePath);
                       }
 
                       return PatientPhoto(
@@ -294,8 +287,8 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
                     keyboardType: TextInputType.datetime,
                     onChanged: (String? value) {
                       if (value != null) {
-                        final DateTime date = DateFormat.yMMMMd('en_GB')
-                            .parseLoose(value.replaceAll(',', ''));
+                        final DateFormat format = DateFormat('dd MMM, yyyy');
+                        final DateTime date = format.parse(value);
                         _formManager.inDateOfBirth.add(date);
                       }
                     },
@@ -325,7 +318,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
                   // ID documents
                   IDDocumentsWidget(
                     userType: userStr,
-                    fileSystem: widget.fileSystem,
+                    fileSystem: fileSystem,
                     formManager: _formManager,
                     takePhotoCallback: takePhoto,
                   ),
@@ -355,6 +348,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
         return status;
       }
     }
+    return null;
   }
 
   /// Captures a photo from the device camera
@@ -406,9 +400,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
           query: userRegistrationMutation,
           customNavigation: (Map<String, dynamic> data) {
             result = data;
-            Future<void>.delayed(const Duration(milliseconds: 500), () {
-              Navigator.of(context).pop();
-            });
+            Navigator.of(context).pop();
           },
         );
       },
@@ -506,7 +498,7 @@ class _BasicDetailsWidgetState extends State<BasicDetailsWidget>
 
     if (pickedFile != null) {
       // converts the [pickedFile] above into a file for easier processing
-      final File image = widget.fileSystem.file(pickedFile.path);
+      final File image = fileSystem.file(pickedFile.path);
       final String bytes64 = base64Encode(image.readAsBytesSync());
       final String imgType =
           image.path.split('/').last.split('.').last.toUpperCase();

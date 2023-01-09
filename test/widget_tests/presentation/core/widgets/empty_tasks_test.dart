@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shared_themes/spaces.dart';
+import 'package:sghi_core/afya_moja_core/afya_moja_core.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/presentation/core/widgets/empty_tasks.dart';

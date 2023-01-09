@@ -1,5 +1,7 @@
 // Package imports:
-import 'package:domain_objects/entities.dart';
+import 'package:sghi_core/domain_objects/entities/navigation_icon.dart';
+import 'package:sghi_core/domain_objects/entities/navigation_item.dart';
+import 'package:sghi_core/domain_objects/entities/navigation_nested_item.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';

@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
+import 'package:sghi_core/domain_objects/entities/user_profile.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
-import 'package:user_feed/user_feed.dart';
+import 'package:sghi_core/domain_objects/value_objects/phone_number.dart';
+import 'package:sghi_core/user_feed/src/domain/value_objects/constants.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/services/feed_content_callbacks.dart';

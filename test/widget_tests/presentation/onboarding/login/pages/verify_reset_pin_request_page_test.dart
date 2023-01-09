@@ -5,13 +5,13 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:app_wrapper/app_wrapper.dart';
-import 'package:app_wrapper/src/base_context.dart';
+import 'package:sghi_core/app_wrapper/app_wrapper_base.dart';
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
-import 'package:shared_ui_components/inputs.dart';
-import 'package:shared_ui_components/verify_phone_otp.dart';
+import 'package:sghi_core/app_wrapper/base_context.dart';
+import 'package:sghi_core/ui_components/src/inputs.dart';
+import 'package:sghi_core/ui_components/src/verify_phone_otp.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
@@ -96,6 +96,13 @@ void main() {
                   'sendContactVerificationOTPEndpoint',
               verifyContactOTPEndpoint: 'verifyContactOTPEndpoint',
               switchFlaggedFeaturesEndpoint: '',
+              optInClientEndpoint: '',
+              pinResetServiceRequestEndpoint: '',
+              refreshStreamTokenEndpoint: '',
+              requestPinResetEndpoint: '',
+              respondedSecurityQuestionsEndpoint: '',
+              verifySecurityQuestionsEndpoint: '',
+              listOrganisationsEndpoint: '',
             ),
             child: StoreProvider<CoreState>(
               store: store,

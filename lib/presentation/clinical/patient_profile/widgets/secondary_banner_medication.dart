@@ -6,13 +6,13 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:intl/intl.dart';
-import 'package:misc_utilities/misc.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/buttons.dart';
-import 'package:shared_ui_components/platform_loader.dart';
+import 'package:sghi_core/misc_utilities/misc.dart';
+import 'package:sghi_core/misc_utilities/responsive_widget.dart';
+import 'package:sghi_core/shared_themes/colors.dart';
+import 'package:sghi_core/shared_themes/constants.dart';
+import 'package:sghi_core/shared_themes/spaces.dart';
+import 'package:sghi_core/ui_components/src/buttons.dart';
+import 'package:sghi_core/ui_components/src/platform_loader.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
@@ -58,7 +58,7 @@ class _SecondaryBannerMedicationsState
 
     _retireStreamController = StreamController<dynamic>.broadcast();
 
-    WidgetsBinding.instance?.addPostFrameCallback((Duration timeStamp) async {
+    WidgetsBinding.instance.addPostFrameCallback((Duration timeStamp) async {
       await fetchMedications(context);
       final StreamView<dynamic> refreshController = StreamView<dynamic>(
           SecondaryBannerChangeObject().medicationsListener.stream);
@@ -151,7 +151,7 @@ class _SecondaryBannerMedicationsState
 
           return Scrollbar(
             controller: _medicationsScrollController,
-            isAlwaysShown: activeMedications.length > 4,
+            thumbVisibility: activeMedications.length > 4,
             child: Padding(
               padding: const EdgeInsets.only(right: 10),
               child: ListView.builder(

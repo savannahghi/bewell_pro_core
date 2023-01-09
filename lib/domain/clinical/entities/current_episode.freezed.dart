@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'current_episode.dart';
 
@@ -10,70 +12,11 @@ part of 'current_episode.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 EpisodeOfCare _$EpisodeOfCareFromJson(Map<String, dynamic> json) {
   return _EpisodeOfCare.fromJson(json);
 }
-
-/// @nodoc
-class _$EpisodeOfCareTearOff {
-  const _$EpisodeOfCareTearOff();
-
-  _EpisodeOfCare call(
-      {@JsonKey(name: 'ID')
-          String? id,
-      @JsonKey(name: 'Text')
-          Narrative? text,
-      @JsonKey(name: 'Identifier')
-          List<Identifier?>? identifier,
-      @JsonKey(name: 'Status', unknownEnumValue: EpisodeOfCareStatusEnum.waitlist)
-          EpisodeOfCareStatusEnum? status,
-      @JsonKey(name: 'StatusHistory')
-          List<EpisodeofcareStatusHistory?>? statusHistory,
-      @JsonKey(name: 'Type')
-          List<CodeableConcept?>? type,
-      @JsonKey(name: 'Diagnosis')
-          List<EpisodeofcareDiagnosis?>? diagnosis,
-      @JsonKey(name: 'Patient')
-          Reference? patient,
-      @JsonKey(name: 'ManagingOrganization')
-          Reference? managingOrganization,
-      @JsonKey(name: 'Period')
-          Period? period,
-      @JsonKey(name: 'ReferralRequest')
-          List<Reference?>? referralRequest,
-      @JsonKey(name: 'CareManager')
-          Reference? careManager,
-      @JsonKey(name: 'Team')
-          List<Reference?>? team,
-      @JsonKey(name: 'Account')
-          List<Reference?>? account}) {
-    return _EpisodeOfCare(
-      id: id,
-      text: text,
-      identifier: identifier,
-      status: status,
-      statusHistory: statusHistory,
-      type: type,
-      diagnosis: diagnosis,
-      patient: patient,
-      managingOrganization: managingOrganization,
-      period: period,
-      referralRequest: referralRequest,
-      careManager: careManager,
-      team: team,
-      account: account,
-    );
-  }
-
-  EpisodeOfCare fromJson(Map<String, Object> json) {
-    return EpisodeOfCare.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $EpisodeOfCare = _$EpisodeOfCareTearOff();
 
 /// @nodoc
 mixin _$EpisodeOfCare {
@@ -146,7 +89,8 @@ mixin _$EpisodeOfCare {
 abstract class $EpisodeOfCareCopyWith<$Res> {
   factory $EpisodeOfCareCopyWith(
           EpisodeOfCare value, $Res Function(EpisodeOfCare) then) =
-      _$EpisodeOfCareCopyWithImpl<$Res>;
+      _$EpisodeOfCareCopyWithImpl<$Res, EpisodeOfCare>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID')
           String? id,
@@ -185,14 +129,16 @@ abstract class $EpisodeOfCareCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$EpisodeOfCareCopyWithImpl<$Res>
+class _$EpisodeOfCareCopyWithImpl<$Res, $Val extends EpisodeOfCare>
     implements $EpisodeOfCareCopyWith<$Res> {
   _$EpisodeOfCareCopyWithImpl(this._value, this._then);
 
-  final EpisodeOfCare _value;
   // ignore: unused_field
-  final $Res Function(EpisodeOfCare) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -211,128 +157,134 @@ class _$EpisodeOfCareCopyWithImpl<$Res>
     Object? account = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      text: text == freezed
+      text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as Narrative?,
-      identifier: identifier == freezed
+      identifier: freezed == identifier
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
               as List<Identifier?>?,
-      status: status == freezed
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as EpisodeOfCareStatusEnum?,
-      statusHistory: statusHistory == freezed
+      statusHistory: freezed == statusHistory
           ? _value.statusHistory
           : statusHistory // ignore: cast_nullable_to_non_nullable
               as List<EpisodeofcareStatusHistory?>?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as List<CodeableConcept?>?,
-      diagnosis: diagnosis == freezed
+      diagnosis: freezed == diagnosis
           ? _value.diagnosis
           : diagnosis // ignore: cast_nullable_to_non_nullable
               as List<EpisodeofcareDiagnosis?>?,
-      patient: patient == freezed
+      patient: freezed == patient
           ? _value.patient
           : patient // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      managingOrganization: managingOrganization == freezed
+      managingOrganization: freezed == managingOrganization
           ? _value.managingOrganization
           : managingOrganization // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      period: period == freezed
+      period: freezed == period
           ? _value.period
           : period // ignore: cast_nullable_to_non_nullable
               as Period?,
-      referralRequest: referralRequest == freezed
+      referralRequest: freezed == referralRequest
           ? _value.referralRequest
           : referralRequest // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      careManager: careManager == freezed
+      careManager: freezed == careManager
           ? _value.careManager
           : careManager // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      team: team == freezed
+      team: freezed == team
           ? _value.team
           : team // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      account: account == freezed
+      account: freezed == account
           ? _value.account
           : account // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
     }
 
     return $NarrativeCopyWith<$Res>(_value.text!, (value) {
-      return _then(_value.copyWith(text: value));
+      return _then(_value.copyWith(text: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get patient {
     if (_value.patient == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.patient!, (value) {
-      return _then(_value.copyWith(patient: value));
+      return _then(_value.copyWith(patient: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get managingOrganization {
     if (_value.managingOrganization == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.managingOrganization!, (value) {
-      return _then(_value.copyWith(managingOrganization: value));
+      return _then(_value.copyWith(managingOrganization: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $PeriodCopyWith<$Res>? get period {
     if (_value.period == null) {
       return null;
     }
 
     return $PeriodCopyWith<$Res>(_value.period!, (value) {
-      return _then(_value.copyWith(period: value));
+      return _then(_value.copyWith(period: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get careManager {
     if (_value.careManager == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.careManager!, (value) {
-      return _then(_value.copyWith(careManager: value));
+      return _then(_value.copyWith(careManager: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$EpisodeOfCareCopyWith<$Res>
+abstract class _$$_EpisodeOfCareCopyWith<$Res>
     implements $EpisodeOfCareCopyWith<$Res> {
-  factory _$EpisodeOfCareCopyWith(
-          _EpisodeOfCare value, $Res Function(_EpisodeOfCare) then) =
-      __$EpisodeOfCareCopyWithImpl<$Res>;
+  factory _$$_EpisodeOfCareCopyWith(
+          _$_EpisodeOfCare value, $Res Function(_$_EpisodeOfCare) then) =
+      __$$_EpisodeOfCareCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID')
           String? id,
@@ -376,16 +328,14 @@ abstract class _$EpisodeOfCareCopyWith<$Res>
 }
 
 /// @nodoc
-class __$EpisodeOfCareCopyWithImpl<$Res>
-    extends _$EpisodeOfCareCopyWithImpl<$Res>
-    implements _$EpisodeOfCareCopyWith<$Res> {
-  __$EpisodeOfCareCopyWithImpl(
-      _EpisodeOfCare _value, $Res Function(_EpisodeOfCare) _then)
-      : super(_value, (v) => _then(v as _EpisodeOfCare));
+class __$$_EpisodeOfCareCopyWithImpl<$Res>
+    extends _$EpisodeOfCareCopyWithImpl<$Res, _$_EpisodeOfCare>
+    implements _$$_EpisodeOfCareCopyWith<$Res> {
+  __$$_EpisodeOfCareCopyWithImpl(
+      _$_EpisodeOfCare _value, $Res Function(_$_EpisodeOfCare) _then)
+      : super(_value, _then);
 
-  @override
-  _EpisodeOfCare get _value => super._value as _EpisodeOfCare;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -403,61 +353,61 @@ class __$EpisodeOfCareCopyWithImpl<$Res>
     Object? team = freezed,
     Object? account = freezed,
   }) {
-    return _then(_EpisodeOfCare(
-      id: id == freezed
+    return _then(_$_EpisodeOfCare(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      text: text == freezed
+      text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as Narrative?,
-      identifier: identifier == freezed
-          ? _value.identifier
+      identifier: freezed == identifier
+          ? _value._identifier
           : identifier // ignore: cast_nullable_to_non_nullable
               as List<Identifier?>?,
-      status: status == freezed
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as EpisodeOfCareStatusEnum?,
-      statusHistory: statusHistory == freezed
-          ? _value.statusHistory
+      statusHistory: freezed == statusHistory
+          ? _value._statusHistory
           : statusHistory // ignore: cast_nullable_to_non_nullable
               as List<EpisodeofcareStatusHistory?>?,
-      type: type == freezed
-          ? _value.type
+      type: freezed == type
+          ? _value._type
           : type // ignore: cast_nullable_to_non_nullable
               as List<CodeableConcept?>?,
-      diagnosis: diagnosis == freezed
-          ? _value.diagnosis
+      diagnosis: freezed == diagnosis
+          ? _value._diagnosis
           : diagnosis // ignore: cast_nullable_to_non_nullable
               as List<EpisodeofcareDiagnosis?>?,
-      patient: patient == freezed
+      patient: freezed == patient
           ? _value.patient
           : patient // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      managingOrganization: managingOrganization == freezed
+      managingOrganization: freezed == managingOrganization
           ? _value.managingOrganization
           : managingOrganization // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      period: period == freezed
+      period: freezed == period
           ? _value.period
           : period // ignore: cast_nullable_to_non_nullable
               as Period?,
-      referralRequest: referralRequest == freezed
-          ? _value.referralRequest
+      referralRequest: freezed == referralRequest
+          ? _value._referralRequest
           : referralRequest // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      careManager: careManager == freezed
+      careManager: freezed == careManager
           ? _value.careManager
           : careManager // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      team: team == freezed
-          ? _value.team
+      team: freezed == team
+          ? _value._team
           : team // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      account: account == freezed
-          ? _value.account
+      account: freezed == account
+          ? _value._account
           : account // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
     ));
@@ -473,15 +423,15 @@ class _$_EpisodeOfCare implements _EpisodeOfCare {
       @JsonKey(name: 'Text')
           this.text,
       @JsonKey(name: 'Identifier')
-          this.identifier,
+          final List<Identifier?>? identifier,
       @JsonKey(name: 'Status', unknownEnumValue: EpisodeOfCareStatusEnum.waitlist)
           this.status,
       @JsonKey(name: 'StatusHistory')
-          this.statusHistory,
+          final List<EpisodeofcareStatusHistory?>? statusHistory,
       @JsonKey(name: 'Type')
-          this.type,
+          final List<CodeableConcept?>? type,
       @JsonKey(name: 'Diagnosis')
-          this.diagnosis,
+          final List<EpisodeofcareDiagnosis?>? diagnosis,
       @JsonKey(name: 'Patient')
           this.patient,
       @JsonKey(name: 'ManagingOrganization')
@@ -489,87 +439,152 @@ class _$_EpisodeOfCare implements _EpisodeOfCare {
       @JsonKey(name: 'Period')
           this.period,
       @JsonKey(name: 'ReferralRequest')
-          this.referralRequest,
+          final List<Reference?>? referralRequest,
       @JsonKey(name: 'CareManager')
           this.careManager,
       @JsonKey(name: 'Team')
-          this.team,
+          final List<Reference?>? team,
       @JsonKey(name: 'Account')
-          this.account});
+          final List<Reference?>? account})
+      : _identifier = identifier,
+        _statusHistory = statusHistory,
+        _type = type,
+        _diagnosis = diagnosis,
+        _referralRequest = referralRequest,
+        _team = team,
+        _account = account;
 
   factory _$_EpisodeOfCare.fromJson(Map<String, dynamic> json) =>
-      _$_$_EpisodeOfCareFromJson(json);
+      _$$_EpisodeOfCareFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
   final String? id;
-  @override
 
   /// A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human.
   ///
   /// The narrative need not encode all the structured data, but is required to contain sufficient detail to make it "clinically safe" for a human to just read the narrative.
   /// Resource definitions may define what content should be represented in the narrative to ensure clinical safety.
+  @override
   @JsonKey(name: 'Text')
   final Narrative? text;
-  @override
 
   /// The EpisodeOfCare may be known by different identifiers for different contexts of use, such as when an external agency is tracking the Episode for funding purposes.
+  final List<Identifier?>? _identifier;
+
+  /// The EpisodeOfCare may be known by different identifiers for different contexts of use, such as when an external agency is tracking the Episode for funding purposes.
+  @override
   @JsonKey(name: 'Identifier')
-  final List<Identifier?>? identifier;
+  List<Identifier?>? get identifier {
+    final value = _identifier;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'Status', unknownEnumValue: EpisodeOfCareStatusEnum.waitlist)
   final EpisodeOfCareStatusEnum? status;
-  @override
 
   /// The history of statuses that the EpisodeOfCare has been through
   /// without requiring processing the history of the resource
-  @JsonKey(name: 'StatusHistory')
-  final List<EpisodeofcareStatusHistory?>? statusHistory;
+  final List<EpisodeofcareStatusHistory?>? _statusHistory;
+
+  /// The history of statuses that the EpisodeOfCare has been through
+  /// without requiring processing the history of the resource
   @override
+  @JsonKey(name: 'StatusHistory')
+  List<EpisodeofcareStatusHistory?>? get statusHistory {
+    final value = _statusHistory;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   /// A classification of the type of episode of care; e.g. specialist referral, disease management, type of funded care.
-  @JsonKey(name: 'Type')
-  final List<CodeableConcept?>? type;
+  final List<CodeableConcept?>? _type;
+
+  /// A classification of the type of episode of care; e.g. specialist referral, disease management, type of funded care.
   @override
+  @JsonKey(name: 'Type')
+  List<CodeableConcept?>? get type {
+    final value = _type;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   ///The list of diagnosis relevant to this episode of care.
-  @JsonKey(name: 'Diagnosis')
-  final List<EpisodeofcareDiagnosis?>? diagnosis;
+  final List<EpisodeofcareDiagnosis?>? _diagnosis;
+
+  ///The list of diagnosis relevant to this episode of care.
   @override
+  @JsonKey(name: 'Diagnosis')
+  List<EpisodeofcareDiagnosis?>? get diagnosis {
+    final value = _diagnosis;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   /// The patient who is the focus of this episode of care.
+  @override
   @JsonKey(name: 'Patient')
   final Reference? patient;
-  @override
 
   /// The organization that has assumed the specific responsibilities for the specified duration.
+  @override
   @JsonKey(name: 'ManagingOrganization')
   final Reference? managingOrganization;
-  @override
 
   /// The interval during which the managing organization assumes the defined responsibility.
+  @override
   @JsonKey(name: 'Period')
   final Period? period;
-  @override
 
   /// Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming referrals.
-  @JsonKey(name: 'ReferralRequest')
-  final List<Reference?>? referralRequest;
+  final List<Reference?>? _referralRequest;
+
+  /// Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming referrals.
   @override
+  @JsonKey(name: 'ReferralRequest')
+  List<Reference?>? get referralRequest {
+    final value = _referralRequest;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   /// The practitioner that is the care manager/care coordinator for this patient.
+  @override
   @JsonKey(name: 'CareManager')
   final Reference? careManager;
-  @override
 
   /// The list of practitioners that may be facilitating this episode of care for specific purposes.
-  @JsonKey(name: 'Team')
-  final List<Reference?>? team;
+  final List<Reference?>? _team;
+
+  /// The list of practitioners that may be facilitating this episode of care for specific purposes.
   @override
+  @JsonKey(name: 'Team')
+  List<Reference?>? get team {
+    final value = _team;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   /// The set of accounts that may be used for billing for this EpisodeOfCare.
+  final List<Reference?>? _account;
+
+  /// The set of accounts that may be used for billing for this EpisodeOfCare.
+  @override
   @JsonKey(name: 'Account')
-  final List<Reference?>? account;
+  List<Reference?>? get account {
+    final value = _account;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -579,110 +594,100 @@ class _$_EpisodeOfCare implements _EpisodeOfCare {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _EpisodeOfCare &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)) &&
-            (identical(other.identifier, identifier) ||
-                const DeepCollectionEquality()
-                    .equals(other.identifier, identifier)) &&
-            (identical(other.status, status) ||
-                const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.statusHistory, statusHistory) ||
-                const DeepCollectionEquality()
-                    .equals(other.statusHistory, statusHistory)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.diagnosis, diagnosis) ||
-                const DeepCollectionEquality()
-                    .equals(other.diagnosis, diagnosis)) &&
-            (identical(other.patient, patient) ||
-                const DeepCollectionEquality()
-                    .equals(other.patient, patient)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_EpisodeOfCare &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.text, text) || other.text == text) &&
+            const DeepCollectionEquality()
+                .equals(other._identifier, _identifier) &&
+            (identical(other.status, status) || other.status == status) &&
+            const DeepCollectionEquality()
+                .equals(other._statusHistory, _statusHistory) &&
+            const DeepCollectionEquality().equals(other._type, _type) &&
+            const DeepCollectionEquality()
+                .equals(other._diagnosis, _diagnosis) &&
+            (identical(other.patient, patient) || other.patient == patient) &&
             (identical(other.managingOrganization, managingOrganization) ||
-                const DeepCollectionEquality().equals(
-                    other.managingOrganization, managingOrganization)) &&
-            (identical(other.period, period) ||
-                const DeepCollectionEquality().equals(other.period, period)) &&
-            (identical(other.referralRequest, referralRequest) ||
-                const DeepCollectionEquality()
-                    .equals(other.referralRequest, referralRequest)) &&
+                other.managingOrganization == managingOrganization) &&
+            (identical(other.period, period) || other.period == period) &&
+            const DeepCollectionEquality()
+                .equals(other._referralRequest, _referralRequest) &&
             (identical(other.careManager, careManager) ||
-                const DeepCollectionEquality()
-                    .equals(other.careManager, careManager)) &&
-            (identical(other.team, team) ||
-                const DeepCollectionEquality().equals(other.team, team)) &&
-            (identical(other.account, account) ||
-                const DeepCollectionEquality().equals(other.account, account)));
+                other.careManager == careManager) &&
+            const DeepCollectionEquality().equals(other._team, _team) &&
+            const DeepCollectionEquality().equals(other._account, _account));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(text) ^
-      const DeepCollectionEquality().hash(identifier) ^
-      const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(statusHistory) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(diagnosis) ^
-      const DeepCollectionEquality().hash(patient) ^
-      const DeepCollectionEquality().hash(managingOrganization) ^
-      const DeepCollectionEquality().hash(period) ^
-      const DeepCollectionEquality().hash(referralRequest) ^
-      const DeepCollectionEquality().hash(careManager) ^
-      const DeepCollectionEquality().hash(team) ^
-      const DeepCollectionEquality().hash(account);
 
   @JsonKey(ignore: true)
   @override
-  _$EpisodeOfCareCopyWith<_EpisodeOfCare> get copyWith =>
-      __$EpisodeOfCareCopyWithImpl<_EpisodeOfCare>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      text,
+      const DeepCollectionEquality().hash(_identifier),
+      status,
+      const DeepCollectionEquality().hash(_statusHistory),
+      const DeepCollectionEquality().hash(_type),
+      const DeepCollectionEquality().hash(_diagnosis),
+      patient,
+      managingOrganization,
+      period,
+      const DeepCollectionEquality().hash(_referralRequest),
+      careManager,
+      const DeepCollectionEquality().hash(_team),
+      const DeepCollectionEquality().hash(_account));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_EpisodeOfCareCopyWith<_$_EpisodeOfCare> get copyWith =>
+      __$$_EpisodeOfCareCopyWithImpl<_$_EpisodeOfCare>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_EpisodeOfCareToJson(this);
+    return _$$_EpisodeOfCareToJson(
+      this,
+    );
   }
 }
 
 abstract class _EpisodeOfCare implements EpisodeOfCare {
   factory _EpisodeOfCare(
       {@JsonKey(name: 'ID')
-          String? id,
+          final String? id,
       @JsonKey(name: 'Text')
-          Narrative? text,
+          final Narrative? text,
       @JsonKey(name: 'Identifier')
-          List<Identifier?>? identifier,
+          final List<Identifier?>? identifier,
       @JsonKey(name: 'Status', unknownEnumValue: EpisodeOfCareStatusEnum.waitlist)
-          EpisodeOfCareStatusEnum? status,
+          final EpisodeOfCareStatusEnum? status,
       @JsonKey(name: 'StatusHistory')
-          List<EpisodeofcareStatusHistory?>? statusHistory,
+          final List<EpisodeofcareStatusHistory?>? statusHistory,
       @JsonKey(name: 'Type')
-          List<CodeableConcept?>? type,
+          final List<CodeableConcept?>? type,
       @JsonKey(name: 'Diagnosis')
-          List<EpisodeofcareDiagnosis?>? diagnosis,
+          final List<EpisodeofcareDiagnosis?>? diagnosis,
       @JsonKey(name: 'Patient')
-          Reference? patient,
+          final Reference? patient,
       @JsonKey(name: 'ManagingOrganization')
-          Reference? managingOrganization,
+          final Reference? managingOrganization,
       @JsonKey(name: 'Period')
-          Period? period,
+          final Period? period,
       @JsonKey(name: 'ReferralRequest')
-          List<Reference?>? referralRequest,
+          final List<Reference?>? referralRequest,
       @JsonKey(name: 'CareManager')
-          Reference? careManager,
+          final Reference? careManager,
       @JsonKey(name: 'Team')
-          List<Reference?>? team,
+          final List<Reference?>? team,
       @JsonKey(name: 'Account')
-          List<Reference?>? account}) = _$_EpisodeOfCare;
+          final List<Reference?>? account}) = _$_EpisodeOfCare;
 
   factory _EpisodeOfCare.fromJson(Map<String, dynamic> json) =
       _$_EpisodeOfCare.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
 
   /// A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human.
@@ -690,98 +695,75 @@ abstract class _EpisodeOfCare implements EpisodeOfCare {
   /// The narrative need not encode all the structured data, but is required to contain sufficient detail to make it "clinically safe" for a human to just read the narrative.
   /// Resource definitions may define what content should be represented in the narrative to ensure clinical safety.
   @JsonKey(name: 'Text')
-  Narrative? get text => throw _privateConstructorUsedError;
+  Narrative? get text;
   @override
 
   /// The EpisodeOfCare may be known by different identifiers for different contexts of use, such as when an external agency is tracking the Episode for funding purposes.
   @JsonKey(name: 'Identifier')
-  List<Identifier?>? get identifier => throw _privateConstructorUsedError;
+  List<Identifier?>? get identifier;
   @override
   @JsonKey(name: 'Status', unknownEnumValue: EpisodeOfCareStatusEnum.waitlist)
-  EpisodeOfCareStatusEnum? get status => throw _privateConstructorUsedError;
+  EpisodeOfCareStatusEnum? get status;
   @override
 
   /// The history of statuses that the EpisodeOfCare has been through
   /// without requiring processing the history of the resource
   @JsonKey(name: 'StatusHistory')
-  List<EpisodeofcareStatusHistory?>? get statusHistory =>
-      throw _privateConstructorUsedError;
+  List<EpisodeofcareStatusHistory?>? get statusHistory;
   @override
 
   /// A classification of the type of episode of care; e.g. specialist referral, disease management, type of funded care.
   @JsonKey(name: 'Type')
-  List<CodeableConcept?>? get type => throw _privateConstructorUsedError;
+  List<CodeableConcept?>? get type;
   @override
 
   ///The list of diagnosis relevant to this episode of care.
   @JsonKey(name: 'Diagnosis')
-  List<EpisodeofcareDiagnosis?>? get diagnosis =>
-      throw _privateConstructorUsedError;
+  List<EpisodeofcareDiagnosis?>? get diagnosis;
   @override
 
   /// The patient who is the focus of this episode of care.
   @JsonKey(name: 'Patient')
-  Reference? get patient => throw _privateConstructorUsedError;
+  Reference? get patient;
   @override
 
   /// The organization that has assumed the specific responsibilities for the specified duration.
   @JsonKey(name: 'ManagingOrganization')
-  Reference? get managingOrganization => throw _privateConstructorUsedError;
+  Reference? get managingOrganization;
   @override
 
   /// The interval during which the managing organization assumes the defined responsibility.
   @JsonKey(name: 'Period')
-  Period? get period => throw _privateConstructorUsedError;
+  Period? get period;
   @override
 
   /// Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming referrals.
   @JsonKey(name: 'ReferralRequest')
-  List<Reference?>? get referralRequest => throw _privateConstructorUsedError;
+  List<Reference?>? get referralRequest;
   @override
 
   /// The practitioner that is the care manager/care coordinator for this patient.
   @JsonKey(name: 'CareManager')
-  Reference? get careManager => throw _privateConstructorUsedError;
+  Reference? get careManager;
   @override
 
   /// The list of practitioners that may be facilitating this episode of care for specific purposes.
   @JsonKey(name: 'Team')
-  List<Reference?>? get team => throw _privateConstructorUsedError;
+  List<Reference?>? get team;
   @override
 
   /// The set of accounts that may be used for billing for this EpisodeOfCare.
   @JsonKey(name: 'Account')
-  List<Reference?>? get account => throw _privateConstructorUsedError;
+  List<Reference?>? get account;
   @override
   @JsonKey(ignore: true)
-  _$EpisodeOfCareCopyWith<_EpisodeOfCare> get copyWith =>
+  _$$_EpisodeOfCareCopyWith<_$_EpisodeOfCare> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 EpisodeOfCarePayload _$EpisodeOfCarePayloadFromJson(Map<String, dynamic> json) {
   return _EpisodeOfCarePayload.fromJson(json);
 }
-
-/// @nodoc
-class _$EpisodeOfCarePayloadTearOff {
-  const _$EpisodeOfCarePayloadTearOff();
-
-  _EpisodeOfCarePayload call(
-      {@JsonKey(name: 'totalVisits') int? totalVisits,
-      @JsonKey(name: 'episodeOfCare') EpisodeOfCare? episodeOfCare}) {
-    return _EpisodeOfCarePayload(
-      totalVisits: totalVisits,
-      episodeOfCare: episodeOfCare,
-    );
-  }
-
-  EpisodeOfCarePayload fromJson(Map<String, Object> json) {
-    return EpisodeOfCarePayload.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $EpisodeOfCarePayload = _$EpisodeOfCarePayloadTearOff();
 
 /// @nodoc
 mixin _$EpisodeOfCarePayload {
@@ -800,7 +782,8 @@ mixin _$EpisodeOfCarePayload {
 abstract class $EpisodeOfCarePayloadCopyWith<$Res> {
   factory $EpisodeOfCarePayloadCopyWith(EpisodeOfCarePayload value,
           $Res Function(EpisodeOfCarePayload) then) =
-      _$EpisodeOfCarePayloadCopyWithImpl<$Res>;
+      _$EpisodeOfCarePayloadCopyWithImpl<$Res, EpisodeOfCarePayload>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'totalVisits') int? totalVisits,
       @JsonKey(name: 'episodeOfCare') EpisodeOfCare? episodeOfCare});
@@ -809,50 +792,55 @@ abstract class $EpisodeOfCarePayloadCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$EpisodeOfCarePayloadCopyWithImpl<$Res>
+class _$EpisodeOfCarePayloadCopyWithImpl<$Res,
+        $Val extends EpisodeOfCarePayload>
     implements $EpisodeOfCarePayloadCopyWith<$Res> {
   _$EpisodeOfCarePayloadCopyWithImpl(this._value, this._then);
 
-  final EpisodeOfCarePayload _value;
   // ignore: unused_field
-  final $Res Function(EpisodeOfCarePayload) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? totalVisits = freezed,
     Object? episodeOfCare = freezed,
   }) {
     return _then(_value.copyWith(
-      totalVisits: totalVisits == freezed
+      totalVisits: freezed == totalVisits
           ? _value.totalVisits
           : totalVisits // ignore: cast_nullable_to_non_nullable
               as int?,
-      episodeOfCare: episodeOfCare == freezed
+      episodeOfCare: freezed == episodeOfCare
           ? _value.episodeOfCare
           : episodeOfCare // ignore: cast_nullable_to_non_nullable
               as EpisodeOfCare?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $EpisodeOfCareCopyWith<$Res>? get episodeOfCare {
     if (_value.episodeOfCare == null) {
       return null;
     }
 
     return $EpisodeOfCareCopyWith<$Res>(_value.episodeOfCare!, (value) {
-      return _then(_value.copyWith(episodeOfCare: value));
+      return _then(_value.copyWith(episodeOfCare: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$EpisodeOfCarePayloadCopyWith<$Res>
+abstract class _$$_EpisodeOfCarePayloadCopyWith<$Res>
     implements $EpisodeOfCarePayloadCopyWith<$Res> {
-  factory _$EpisodeOfCarePayloadCopyWith(_EpisodeOfCarePayload value,
-          $Res Function(_EpisodeOfCarePayload) then) =
-      __$EpisodeOfCarePayloadCopyWithImpl<$Res>;
+  factory _$$_EpisodeOfCarePayloadCopyWith(_$_EpisodeOfCarePayload value,
+          $Res Function(_$_EpisodeOfCarePayload) then) =
+      __$$_EpisodeOfCarePayloadCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'totalVisits') int? totalVisits,
       @JsonKey(name: 'episodeOfCare') EpisodeOfCare? episodeOfCare});
@@ -862,27 +850,25 @@ abstract class _$EpisodeOfCarePayloadCopyWith<$Res>
 }
 
 /// @nodoc
-class __$EpisodeOfCarePayloadCopyWithImpl<$Res>
-    extends _$EpisodeOfCarePayloadCopyWithImpl<$Res>
-    implements _$EpisodeOfCarePayloadCopyWith<$Res> {
-  __$EpisodeOfCarePayloadCopyWithImpl(
-      _EpisodeOfCarePayload _value, $Res Function(_EpisodeOfCarePayload) _then)
-      : super(_value, (v) => _then(v as _EpisodeOfCarePayload));
+class __$$_EpisodeOfCarePayloadCopyWithImpl<$Res>
+    extends _$EpisodeOfCarePayloadCopyWithImpl<$Res, _$_EpisodeOfCarePayload>
+    implements _$$_EpisodeOfCarePayloadCopyWith<$Res> {
+  __$$_EpisodeOfCarePayloadCopyWithImpl(_$_EpisodeOfCarePayload _value,
+      $Res Function(_$_EpisodeOfCarePayload) _then)
+      : super(_value, _then);
 
-  @override
-  _EpisodeOfCarePayload get _value => super._value as _EpisodeOfCarePayload;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? totalVisits = freezed,
     Object? episodeOfCare = freezed,
   }) {
-    return _then(_EpisodeOfCarePayload(
-      totalVisits: totalVisits == freezed
+    return _then(_$_EpisodeOfCarePayload(
+      totalVisits: freezed == totalVisits
           ? _value.totalVisits
           : totalVisits // ignore: cast_nullable_to_non_nullable
               as int?,
-      episodeOfCare: episodeOfCare == freezed
+      episodeOfCare: freezed == episodeOfCare
           ? _value.episodeOfCare
           : episodeOfCare // ignore: cast_nullable_to_non_nullable
               as EpisodeOfCare?,
@@ -898,7 +884,7 @@ class _$_EpisodeOfCarePayload implements _EpisodeOfCarePayload {
       @JsonKey(name: 'episodeOfCare') this.episodeOfCare});
 
   factory _$_EpisodeOfCarePayload.fromJson(Map<String, dynamic> json) =>
-      _$_$_EpisodeOfCarePayloadFromJson(json);
+      _$$_EpisodeOfCarePayloadFromJson(json);
 
   @override
   @JsonKey(name: 'totalVisits')
@@ -915,37 +901,37 @@ class _$_EpisodeOfCarePayload implements _EpisodeOfCarePayload {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _EpisodeOfCarePayload &&
+        (other.runtimeType == runtimeType &&
+            other is _$_EpisodeOfCarePayload &&
             (identical(other.totalVisits, totalVisits) ||
-                const DeepCollectionEquality()
-                    .equals(other.totalVisits, totalVisits)) &&
+                other.totalVisits == totalVisits) &&
             (identical(other.episodeOfCare, episodeOfCare) ||
-                const DeepCollectionEquality()
-                    .equals(other.episodeOfCare, episodeOfCare)));
+                other.episodeOfCare == episodeOfCare));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(totalVisits) ^
-      const DeepCollectionEquality().hash(episodeOfCare);
 
   @JsonKey(ignore: true)
   @override
-  _$EpisodeOfCarePayloadCopyWith<_EpisodeOfCarePayload> get copyWith =>
-      __$EpisodeOfCarePayloadCopyWithImpl<_EpisodeOfCarePayload>(
+  int get hashCode => Object.hash(runtimeType, totalVisits, episodeOfCare);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_EpisodeOfCarePayloadCopyWith<_$_EpisodeOfCarePayload> get copyWith =>
+      __$$_EpisodeOfCarePayloadCopyWithImpl<_$_EpisodeOfCarePayload>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_EpisodeOfCarePayloadToJson(this);
+    return _$$_EpisodeOfCarePayloadToJson(
+      this,
+    );
   }
 }
 
 abstract class _EpisodeOfCarePayload implements EpisodeOfCarePayload {
   factory _EpisodeOfCarePayload(
-          {@JsonKey(name: 'totalVisits') int? totalVisits,
-          @JsonKey(name: 'episodeOfCare') EpisodeOfCare? episodeOfCare}) =
+          {@JsonKey(name: 'totalVisits') final int? totalVisits,
+          @JsonKey(name: 'episodeOfCare') final EpisodeOfCare? episodeOfCare}) =
       _$_EpisodeOfCarePayload;
 
   factory _EpisodeOfCarePayload.fromJson(Map<String, dynamic> json) =
@@ -953,12 +939,12 @@ abstract class _EpisodeOfCarePayload implements EpisodeOfCarePayload {
 
   @override
   @JsonKey(name: 'totalVisits')
-  int? get totalVisits => throw _privateConstructorUsedError;
+  int? get totalVisits;
   @override
   @JsonKey(name: 'episodeOfCare')
-  EpisodeOfCare? get episodeOfCare => throw _privateConstructorUsedError;
+  EpisodeOfCare? get episodeOfCare;
   @override
   @JsonKey(ignore: true)
-  _$EpisodeOfCarePayloadCopyWith<_EpisodeOfCarePayload> get copyWith =>
+  _$$_EpisodeOfCarePayloadCopyWith<_$_EpisodeOfCarePayload> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -13,7 +13,7 @@ class AddEpisodeAction extends ReduxAction<CoreState> {
   @override
   CoreState? reduce() {
     return state.copyWith(
-        clinicalState: store.state.clinicalState?.copyWith
-            .call(currentEpisodeOfCare: episodeOfCare));
+        clinicalState: store.state.clinicalState
+            ?.copyWith(currentEpisodeOfCare: episodeOfCare));
   }
 }

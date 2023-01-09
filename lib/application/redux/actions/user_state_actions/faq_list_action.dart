@@ -13,6 +13,6 @@ class FaqListAction extends ReduxAction<CoreState> {
   @override
   CoreState reduce() {
     return state.copyWith(
-        miscState: state.miscState?.copyWith.call(faqList: this.faqList));
+        miscState: state.miscState?.copyWith(faqList: this.faqList));
   }
 }

@@ -3,11 +3,16 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
-import 'package:user_profile/term_and_conditions.dart';
+import 'package:sghi_core/domain_objects/entities/bio_data.dart';
+import 'package:sghi_core/domain_objects/entities/user_profile.dart';
+import 'package:sghi_core/domain_objects/value_objects/enums.dart';
+import 'package:sghi_core/domain_objects/value_objects/name.dart';
+import 'package:sghi_core/domain_objects/value_objects/phone_number.dart';
+import 'package:sghi_core/domain_objects/value_objects/unknown.dart';
+import 'package:sghi_core/user_profile/term_and_conditions.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
@@ -23,11 +28,17 @@ import 'package:bewell_pro_core/presentation/onboarding/profile/pages/user_profi
 import 'package:bewell_pro_core/presentation/onboarding/profile/profile_contact_details.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/widgets/profile_detail.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/widgets/profile_master_detail.dart';
+import '../../../../mocks/mock_utils.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
   group('UserProfile Page', () {
+    setUp(() async {
+      await Firebase.initializeApp();
+    });
     late Store<CoreState> store;
 
     setUp(() {

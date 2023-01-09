@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:flutter_test/flutter_test.dart';
-import 'package:misc_utilities/responsive_widget.dart';
+import 'package:sghi_core/misc_utilities/responsive_widget.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';

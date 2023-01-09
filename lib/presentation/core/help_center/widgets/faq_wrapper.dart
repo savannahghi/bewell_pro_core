@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:misc_utilities/misc.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:shared_ui_components/platform_loader.dart';
+import 'package:sghi_core/misc_utilities/misc.dart';
+import 'package:sghi_core/misc_utilities/responsive_widget.dart';
+import 'package:sghi_core/ui_components/src/platform_loader.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/graphql/queries.dart';
@@ -37,7 +37,7 @@ class _FAQWrapperState extends State<FAQWrapper> {
   void initState() {
     _streamController = StreamController<Object>.broadcast();
     _stream = _streamController.stream;
-    WidgetsBinding.instance!.addPostFrameCallback((Duration timeStamp) async {
+    WidgetsBinding.instance.addPostFrameCallback((Duration timeStamp) async {
       await fetchData();
     });
     super.initState();
