@@ -1,9 +1,35 @@
 // Dart imports:
 import 'dart:async';
 
+// Flutter imports:
+import 'package:flutter/material.dart';
+
 // Package imports:
-import 'package:app_wrapper/app_wrapper.dart';
 import 'package:async_redux/async_redux.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:sghi_core/app_wrapper/app_wrapper_base.dart';
+import 'package:sghi_core/app_wrapper/enums.dart';
+import 'package:sghi_core/dart_fcm/fcm.dart';
+import 'package:sghi_core/domain_objects/entities/navigation.dart';
+import 'package:sghi_core/domain_objects/entities/navigation_item.dart';
+import 'package:sghi_core/domain_objects/entities/user_profile.dart';
+import 'package:sghi_core/domain_objects/value_objects/enums.dart';
+import 'package:sghi_core/domain_objects/value_objects/unknown.dart';
+import 'package:sghi_core/flutter_graphql_client/flutter_graphql_utils.dart';
+import 'package:sghi_core/flutter_graphql_client/i_flutter_graphql_client.dart';
+import 'package:http/http.dart' as http;
+import 'package:sghi_core/misc_utilities/bottom_sheet_builder.dart';
+import 'package:sghi_core/misc_utilities/enums.dart';
+import 'package:sghi_core/misc_utilities/misc.dart';
+import 'package:rxdart/rxdart.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
+import 'package:sghi_core/misc_utilities/responsive_widget.dart';
+import 'package:sghi_core/shared_themes/colors.dart';
+import 'package:sghi_core/shared_themes/constants.dart';
+import 'package:sghi_core/shared_themes/spaces.dart';
+import 'package:sghi_core/ui_components/src/buttons.dart';
+import 'package:sghi_core/user_feed/src/domain/value_objects/enums.dart';
+
 // Project imports:
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
 import 'package:bewell_pro_core/application/core/graphql/queries.dart';
@@ -33,30 +59,6 @@ import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages
 import 'package:bewell_pro_core/presentation/clinical/post_visit_survey/post_visit_survey_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/profile_page_items.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
-import 'package:dart_fcm/dart_fcm.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
-// Flutter imports:
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
-import 'package:flutter_graphql_client/graph_utils.dart';
-import 'package:flutter_html/html_parser.dart';
-import 'package:html/dom.dart' as dom;
-import 'package:http/http.dart' as http;
-import 'package:misc_utilities/bottom_sheet_builder.dart';
-import 'package:misc_utilities/enums.dart';
-import 'package:misc_utilities/misc.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:rxdart/rxdart.dart';
-import 'package:sentry_flutter/sentry_flutter.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/buttons.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:user_feed/user_feed.dart';
 
 /// [getAuthTokenStatus] is used to check if the Auth Token has expired or if it needs refreshing
 ///
@@ -588,6 +590,7 @@ Future<String?> sendOtpRequest({
 
     return null;
   }
+  return null;
 }
 
 NextOfKinRelation getRelationFromString(String nextOfKinString) {
@@ -846,11 +849,13 @@ void triggerEvent(String eventName, BuildContext context, {String? route}) {
       StoreProvider.state<CoreState>(context)!.userState!;
 
   final EventObject eventObjectPayload = EventObject(
-    firstName: userState.userProfile!.userBioData!.firstName?.getValue(),
-    lastName: userState.userProfile!.userBioData!.lastName?.getValue(),
-    uid: userState.auth!.uid,
-    route: route,
-    primaryPhoneNumber: userState.userProfile!.primaryPhoneNumber?.getValue(),
+    firstName: userState.userProfile!.userBioData!.firstName?.getValue() ?? '',
+    lastName: userState.userProfile!.userBioData!.lastName?.getValue() ?? '',
+    uid: userState.auth!.uid ?? '',
+    route: route ?? '',
+    appVersion: APPVERSION,
+    primaryPhoneNumber:
+        userState.userProfile!.primaryPhoneNumber?.getValue() ?? '',
     flavour: Flavour.PRO.name,
     timestamp: DateTime.now(),
   );
@@ -861,7 +866,7 @@ void triggerEvent(String eventName, BuildContext context, {String? route}) {
   /// The environment specific event name
   final String contextEventName = '${eventName}_$appContext';
 
-  final FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics();
+  final FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.instance;
 
   firebaseAnalytics.logEvent(
       name: contextEventName, parameters: eventObjectPayload.toJson());
@@ -965,9 +970,4 @@ double getResponsivePadding({required BuildContext context}) {
   }
 
   return padding;
-}
-
-void onBodyLinkOrImageTapCallback(String? url, RenderContext context,
-    Map<String, String> attributes, dom.Element? element) {
-  launch(url!);
 }

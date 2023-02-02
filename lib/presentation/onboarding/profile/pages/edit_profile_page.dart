@@ -1,14 +1,13 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
 import 'package:intl/intl.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/profile_banner.dart';
+import 'package:sghi_core/afya_moja_core/afya_moja_core.dart';
+import 'package:sghi_core/domain_objects/entities/bio_data.dart';
+import 'package:sghi_core/domain_objects/entities/user_profile.dart';
+import 'package:sghi_core/ui_components/src/profile_banner.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';

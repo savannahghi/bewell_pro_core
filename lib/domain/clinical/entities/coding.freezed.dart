@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'coding.dart';
 
@@ -10,40 +12,11 @@ part of 'coding.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Coding _$CodingFromJson(Map<String, dynamic> json) {
   return _Coding.fromJson(json);
 }
-
-/// @nodoc
-class _$CodingTearOff {
-  const _$CodingTearOff();
-
-  _Coding call(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'System') String? system,
-      @JsonKey(name: 'Version') String? version,
-      @JsonKey(name: 'Code') String? code,
-      @JsonKey(name: 'Display') String? display,
-      @JsonKey(name: 'UserSelected') bool? userSelected}) {
-    return _Coding(
-      id: id,
-      system: system,
-      version: version,
-      code: code,
-      display: display,
-      userSelected: userSelected,
-    );
-  }
-
-  Coding fromJson(Map<String, Object> json) {
-    return Coding.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Coding = _$CodingTearOff();
 
 /// @nodoc
 mixin _$Coding {
@@ -89,7 +62,8 @@ mixin _$Coding {
 /// @nodoc
 abstract class $CodingCopyWith<$Res> {
   factory $CodingCopyWith(Coding value, $Res Function(Coding) then) =
-      _$CodingCopyWithImpl<$Res>;
+      _$CodingCopyWithImpl<$Res, Coding>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'System') String? system,
@@ -100,13 +74,16 @@ abstract class $CodingCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CodingCopyWithImpl<$Res> implements $CodingCopyWith<$Res> {
+class _$CodingCopyWithImpl<$Res, $Val extends Coding>
+    implements $CodingCopyWith<$Res> {
   _$CodingCopyWithImpl(this._value, this._then);
 
-  final Coding _value;
   // ignore: unused_field
-  final $Res Function(Coding) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -117,39 +94,40 @@ class _$CodingCopyWithImpl<$Res> implements $CodingCopyWith<$Res> {
     Object? userSelected = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      system: system == freezed
+      system: freezed == system
           ? _value.system
           : system // ignore: cast_nullable_to_non_nullable
               as String?,
-      version: version == freezed
+      version: freezed == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String?,
-      code: code == freezed
+      code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String?,
-      display: display == freezed
+      display: freezed == display
           ? _value.display
           : display // ignore: cast_nullable_to_non_nullable
               as String?,
-      userSelected: userSelected == freezed
+      userSelected: freezed == userSelected
           ? _value.userSelected
           : userSelected // ignore: cast_nullable_to_non_nullable
               as bool?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$CodingCopyWith<$Res> implements $CodingCopyWith<$Res> {
-  factory _$CodingCopyWith(_Coding value, $Res Function(_Coding) then) =
-      __$CodingCopyWithImpl<$Res>;
+abstract class _$$_CodingCopyWith<$Res> implements $CodingCopyWith<$Res> {
+  factory _$$_CodingCopyWith(_$_Coding value, $Res Function(_$_Coding) then) =
+      __$$_CodingCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'System') String? system,
@@ -160,14 +138,13 @@ abstract class _$CodingCopyWith<$Res> implements $CodingCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$CodingCopyWithImpl<$Res> extends _$CodingCopyWithImpl<$Res>
-    implements _$CodingCopyWith<$Res> {
-  __$CodingCopyWithImpl(_Coding _value, $Res Function(_Coding) _then)
-      : super(_value, (v) => _then(v as _Coding));
+class __$$_CodingCopyWithImpl<$Res>
+    extends _$CodingCopyWithImpl<$Res, _$_Coding>
+    implements _$$_CodingCopyWith<$Res> {
+  __$$_CodingCopyWithImpl(_$_Coding _value, $Res Function(_$_Coding) _then)
+      : super(_value, _then);
 
-  @override
-  _Coding get _value => super._value as _Coding;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -177,28 +154,28 @@ class __$CodingCopyWithImpl<$Res> extends _$CodingCopyWithImpl<$Res>
     Object? display = freezed,
     Object? userSelected = freezed,
   }) {
-    return _then(_Coding(
-      id: id == freezed
+    return _then(_$_Coding(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      system: system == freezed
+      system: freezed == system
           ? _value.system
           : system // ignore: cast_nullable_to_non_nullable
               as String?,
-      version: version == freezed
+      version: freezed == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String?,
-      code: code == freezed
+      code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String?,
-      display: display == freezed
+      display: freezed == display
           ? _value.display
           : display // ignore: cast_nullable_to_non_nullable
               as String?,
-      userSelected: userSelected == freezed
+      userSelected: freezed == userSelected
           ? _value.userSelected
           : userSelected // ignore: cast_nullable_to_non_nullable
               as bool?,
@@ -218,18 +195,17 @@ class _$_Coding implements _Coding {
       @JsonKey(name: 'UserSelected') this.userSelected});
 
   factory _$_Coding.fromJson(Map<String, dynamic> json) =>
-      _$_$_CodingFromJson(json);
+      _$$_CodingFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
   final String? id;
-  @override
 
   /// The identification of the code system that defines the meaning of the
   ///  symbol in the code.
+  @override
   @JsonKey(name: 'System')
   final String? system;
-  @override
 
   /// The version of the code system which was used when choosing this code.
   ///
@@ -237,26 +213,27 @@ class _$_Coding implements _Coding {
   ///  because the meaning of codes is consistent across versions. However
   ///  this cannot consistently be assured, and when the meaning is not
   ///  guaranteed to be consistent, the version SHOULD be exchanged
+  @override
   @JsonKey(name: 'Version')
   final String? version;
-  @override
 
   /// A symbol in syntax defined by the system. The symbol may be a
   ///  predefined code or an expression in a syntax defined by the coding
   ///  system (e.g. post-coordination).
+  @override
   @JsonKey(name: 'Code')
   final String? code;
-  @override
 
   /// A representation of the meaning of the code in the system, following
   ///  the rules of the system.
+  @override
   @JsonKey(name: 'Display')
   final String? display;
-  @override
 
   /// Indicates that this coding was chosen by a user directly
   ///
   ///  - e.g. off a pick list of available items (codes or displays).
+  @override
   @JsonKey(name: 'UserSelected')
   final bool? userSelected;
 
@@ -268,65 +245,56 @@ class _$_Coding implements _Coding {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Coding &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.system, system) ||
-                const DeepCollectionEquality().equals(other.system, system)) &&
-            (identical(other.version, version) ||
-                const DeepCollectionEquality()
-                    .equals(other.version, version)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)) &&
-            (identical(other.display, display) ||
-                const DeepCollectionEquality()
-                    .equals(other.display, display)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_Coding &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.system, system) || other.system == system) &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.display, display) || other.display == display) &&
             (identical(other.userSelected, userSelected) ||
-                const DeepCollectionEquality()
-                    .equals(other.userSelected, userSelected)));
+                other.userSelected == userSelected));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(system) ^
-      const DeepCollectionEquality().hash(version) ^
-      const DeepCollectionEquality().hash(code) ^
-      const DeepCollectionEquality().hash(display) ^
-      const DeepCollectionEquality().hash(userSelected);
 
   @JsonKey(ignore: true)
   @override
-  _$CodingCopyWith<_Coding> get copyWith =>
-      __$CodingCopyWithImpl<_Coding>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType, id, system, version, code, display, userSelected);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CodingCopyWith<_$_Coding> get copyWith =>
+      __$$_CodingCopyWithImpl<_$_Coding>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_CodingToJson(this);
+    return _$$_CodingToJson(
+      this,
+    );
   }
 }
 
 abstract class _Coding implements Coding {
   factory _Coding(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'System') String? system,
-      @JsonKey(name: 'Version') String? version,
-      @JsonKey(name: 'Code') String? code,
-      @JsonKey(name: 'Display') String? display,
-      @JsonKey(name: 'UserSelected') bool? userSelected}) = _$_Coding;
+      {@JsonKey(name: 'ID') final String? id,
+      @JsonKey(name: 'System') final String? system,
+      @JsonKey(name: 'Version') final String? version,
+      @JsonKey(name: 'Code') final String? code,
+      @JsonKey(name: 'Display') final String? display,
+      @JsonKey(name: 'UserSelected') final bool? userSelected}) = _$_Coding;
 
   factory _Coding.fromJson(Map<String, dynamic> json) = _$_Coding.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
 
   /// The identification of the code system that defines the meaning of the
   ///  symbol in the code.
   @JsonKey(name: 'System')
-  String? get system => throw _privateConstructorUsedError;
+  String? get system;
   @override
 
   /// The version of the code system which was used when choosing this code.
@@ -336,28 +304,29 @@ abstract class _Coding implements Coding {
   ///  this cannot consistently be assured, and when the meaning is not
   ///  guaranteed to be consistent, the version SHOULD be exchanged
   @JsonKey(name: 'Version')
-  String? get version => throw _privateConstructorUsedError;
+  String? get version;
   @override
 
   /// A symbol in syntax defined by the system. The symbol may be a
   ///  predefined code or an expression in a syntax defined by the coding
   ///  system (e.g. post-coordination).
   @JsonKey(name: 'Code')
-  String? get code => throw _privateConstructorUsedError;
+  String? get code;
   @override
 
   /// A representation of the meaning of the code in the system, following
   ///  the rules of the system.
   @JsonKey(name: 'Display')
-  String? get display => throw _privateConstructorUsedError;
+  String? get display;
   @override
 
   /// Indicates that this coding was chosen by a user directly
   ///
   ///  - e.g. off a pick list of available items (codes or displays).
   @JsonKey(name: 'UserSelected')
-  bool? get userSelected => throw _privateConstructorUsedError;
+  bool? get userSelected;
   @override
   @JsonKey(ignore: true)
-  _$CodingCopyWith<_Coding> get copyWith => throw _privateConstructorUsedError;
+  _$$_CodingCopyWith<_$_Coding> get copyWith =>
+      throw _privateConstructorUsedError;
 }

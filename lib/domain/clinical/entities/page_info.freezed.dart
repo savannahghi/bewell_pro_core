@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'page_info.dart';
 
@@ -10,36 +12,11 @@ part of 'page_info.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PageInfo _$PageInfoFromJson(Map<String, dynamic> json) {
   return _PageInfo.fromJson(json);
 }
-
-/// @nodoc
-class _$PageInfoTearOff {
-  const _$PageInfoTearOff();
-
-  _PageInfo call(
-      {bool? hasNextPage,
-      bool? hasPreviousPage,
-      String? startCursor,
-      String? endCursor}) {
-    return _PageInfo(
-      hasNextPage: hasNextPage,
-      hasPreviousPage: hasPreviousPage,
-      startCursor: startCursor,
-      endCursor: endCursor,
-    );
-  }
-
-  PageInfo fromJson(Map<String, Object> json) {
-    return PageInfo.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PageInfo = _$PageInfoTearOff();
 
 /// @nodoc
 mixin _$PageInfo {
@@ -57,7 +34,8 @@ mixin _$PageInfo {
 /// @nodoc
 abstract class $PageInfoCopyWith<$Res> {
   factory $PageInfoCopyWith(PageInfo value, $Res Function(PageInfo) then) =
-      _$PageInfoCopyWithImpl<$Res>;
+      _$PageInfoCopyWithImpl<$Res, PageInfo>;
+  @useResult
   $Res call(
       {bool? hasNextPage,
       bool? hasPreviousPage,
@@ -66,13 +44,16 @@ abstract class $PageInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PageInfoCopyWithImpl<$Res> implements $PageInfoCopyWith<$Res> {
+class _$PageInfoCopyWithImpl<$Res, $Val extends PageInfo>
+    implements $PageInfoCopyWith<$Res> {
   _$PageInfoCopyWithImpl(this._value, this._then);
 
-  final PageInfo _value;
   // ignore: unused_field
-  final $Res Function(PageInfo) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? hasNextPage = freezed,
@@ -81,31 +62,33 @@ class _$PageInfoCopyWithImpl<$Res> implements $PageInfoCopyWith<$Res> {
     Object? endCursor = freezed,
   }) {
     return _then(_value.copyWith(
-      hasNextPage: hasNextPage == freezed
+      hasNextPage: freezed == hasNextPage
           ? _value.hasNextPage
           : hasNextPage // ignore: cast_nullable_to_non_nullable
               as bool?,
-      hasPreviousPage: hasPreviousPage == freezed
+      hasPreviousPage: freezed == hasPreviousPage
           ? _value.hasPreviousPage
           : hasPreviousPage // ignore: cast_nullable_to_non_nullable
               as bool?,
-      startCursor: startCursor == freezed
+      startCursor: freezed == startCursor
           ? _value.startCursor
           : startCursor // ignore: cast_nullable_to_non_nullable
               as String?,
-      endCursor: endCursor == freezed
+      endCursor: freezed == endCursor
           ? _value.endCursor
           : endCursor // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$PageInfoCopyWith<$Res> implements $PageInfoCopyWith<$Res> {
-  factory _$PageInfoCopyWith(_PageInfo value, $Res Function(_PageInfo) then) =
-      __$PageInfoCopyWithImpl<$Res>;
+abstract class _$$_PageInfoCopyWith<$Res> implements $PageInfoCopyWith<$Res> {
+  factory _$$_PageInfoCopyWith(
+          _$_PageInfo value, $Res Function(_$_PageInfo) then) =
+      __$$_PageInfoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool? hasNextPage,
       bool? hasPreviousPage,
@@ -114,14 +97,14 @@ abstract class _$PageInfoCopyWith<$Res> implements $PageInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$PageInfoCopyWithImpl<$Res> extends _$PageInfoCopyWithImpl<$Res>
-    implements _$PageInfoCopyWith<$Res> {
-  __$PageInfoCopyWithImpl(_PageInfo _value, $Res Function(_PageInfo) _then)
-      : super(_value, (v) => _then(v as _PageInfo));
+class __$$_PageInfoCopyWithImpl<$Res>
+    extends _$PageInfoCopyWithImpl<$Res, _$_PageInfo>
+    implements _$$_PageInfoCopyWith<$Res> {
+  __$$_PageInfoCopyWithImpl(
+      _$_PageInfo _value, $Res Function(_$_PageInfo) _then)
+      : super(_value, _then);
 
-  @override
-  _PageInfo get _value => super._value as _PageInfo;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? hasNextPage = freezed,
@@ -129,20 +112,20 @@ class __$PageInfoCopyWithImpl<$Res> extends _$PageInfoCopyWithImpl<$Res>
     Object? startCursor = freezed,
     Object? endCursor = freezed,
   }) {
-    return _then(_PageInfo(
-      hasNextPage: hasNextPage == freezed
+    return _then(_$_PageInfo(
+      hasNextPage: freezed == hasNextPage
           ? _value.hasNextPage
           : hasNextPage // ignore: cast_nullable_to_non_nullable
               as bool?,
-      hasPreviousPage: hasPreviousPage == freezed
+      hasPreviousPage: freezed == hasPreviousPage
           ? _value.hasPreviousPage
           : hasPreviousPage // ignore: cast_nullable_to_non_nullable
               as bool?,
-      startCursor: startCursor == freezed
+      startCursor: freezed == startCursor
           ? _value.startCursor
           : startCursor // ignore: cast_nullable_to_non_nullable
               as String?,
-      endCursor: endCursor == freezed
+      endCursor: freezed == endCursor
           ? _value.endCursor
           : endCursor // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -160,7 +143,7 @@ class _$_PageInfo implements _PageInfo {
       this.endCursor});
 
   factory _$_PageInfo.fromJson(Map<String, dynamic> json) =>
-      _$_$_PageInfoFromJson(json);
+      _$$_PageInfoFromJson(json);
 
   @override
   final bool? hasNextPage;
@@ -179,59 +162,56 @@ class _$_PageInfo implements _PageInfo {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PageInfo &&
+        (other.runtimeType == runtimeType &&
+            other is _$_PageInfo &&
             (identical(other.hasNextPage, hasNextPage) ||
-                const DeepCollectionEquality()
-                    .equals(other.hasNextPage, hasNextPage)) &&
+                other.hasNextPage == hasNextPage) &&
             (identical(other.hasPreviousPage, hasPreviousPage) ||
-                const DeepCollectionEquality()
-                    .equals(other.hasPreviousPage, hasPreviousPage)) &&
+                other.hasPreviousPage == hasPreviousPage) &&
             (identical(other.startCursor, startCursor) ||
-                const DeepCollectionEquality()
-                    .equals(other.startCursor, startCursor)) &&
+                other.startCursor == startCursor) &&
             (identical(other.endCursor, endCursor) ||
-                const DeepCollectionEquality()
-                    .equals(other.endCursor, endCursor)));
+                other.endCursor == endCursor));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(hasNextPage) ^
-      const DeepCollectionEquality().hash(hasPreviousPage) ^
-      const DeepCollectionEquality().hash(startCursor) ^
-      const DeepCollectionEquality().hash(endCursor);
 
   @JsonKey(ignore: true)
   @override
-  _$PageInfoCopyWith<_PageInfo> get copyWith =>
-      __$PageInfoCopyWithImpl<_PageInfo>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType, hasNextPage, hasPreviousPage, startCursor, endCursor);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PageInfoCopyWith<_$_PageInfo> get copyWith =>
+      __$$_PageInfoCopyWithImpl<_$_PageInfo>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PageInfoToJson(this);
+    return _$$_PageInfoToJson(
+      this,
+    );
   }
 }
 
 abstract class _PageInfo implements PageInfo {
   factory _PageInfo(
-      {bool? hasNextPage,
-      bool? hasPreviousPage,
-      String? startCursor,
-      String? endCursor}) = _$_PageInfo;
+      {final bool? hasNextPage,
+      final bool? hasPreviousPage,
+      final String? startCursor,
+      final String? endCursor}) = _$_PageInfo;
 
   factory _PageInfo.fromJson(Map<String, dynamic> json) = _$_PageInfo.fromJson;
 
   @override
-  bool? get hasNextPage => throw _privateConstructorUsedError;
+  bool? get hasNextPage;
   @override
-  bool? get hasPreviousPage => throw _privateConstructorUsedError;
+  bool? get hasPreviousPage;
   @override
-  String? get startCursor => throw _privateConstructorUsedError;
+  String? get startCursor;
   @override
-  String? get endCursor => throw _privateConstructorUsedError;
+  String? get endCursor;
   @override
   @JsonKey(ignore: true)
-  _$PageInfoCopyWith<_PageInfo> get copyWith =>
+  _$$_PageInfoCopyWith<_$_PageInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }

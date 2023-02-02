@@ -2,11 +2,11 @@
 import 'dart:convert';
 
 // Flutter imports:
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/value_objects.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 
@@ -15,14 +15,18 @@ import 'package:bewell_pro_core/application/redux/actions/onboarding_actions/ver
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/pages/set_user_names_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/change_pin.dart';
+import 'package:sghi_core/domain_objects/value_objects/unknown.dart';
+import '../../../../../mocks/mock_utils.dart';
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';
 
 void main() {
   group('VerifyPinAction', () {
     late StoreTester<CoreState> storeTester;
+    setupFirebaseAuthMocks();
 
-    setUp(() {
+    setUp(() async {
+      await Firebase.initializeApp();
       storeTester = StoreTester<CoreState>(
         initialState: CoreState.initial(),
         testInfoPrinter: (TestInfo<dynamic> testInfo) {},

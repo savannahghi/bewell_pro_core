@@ -6,10 +6,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:app_wrapper/app_wrapper.dart';
+import 'package:sghi_core/app_wrapper/app_wrapper_base.dart';
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:sghi_core/app_wrapper/endpoints_context.dart';
+import 'package:sghi_core/domain_objects/entities/auth_credential_response.dart';
+import 'package:sghi_core/flutter_graphql_client/i_flutter_graphql_client.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';

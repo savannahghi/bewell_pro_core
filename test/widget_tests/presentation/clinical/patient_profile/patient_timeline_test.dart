@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
 
@@ -22,11 +23,17 @@ import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/be
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/load_more_timeline_records.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/patient_timeline_record.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/start_continue_exam_banner.dart';
+import '../../../../mocks/mock_utils.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
   group('patient_timeline', () {
+    setUp(() async {
+      await Firebase.initializeApp();
+    });
     late Store<CoreState> store;
 
     setUp(() {

@@ -3,11 +3,12 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:app_wrapper/app_wrapper.dart';
+import 'package:sghi_core/app_wrapper/app_wrapper_base.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_themes/text_themes.dart';
+import 'package:sghi_core/app_wrapper/enums.dart';
+import 'package:sghi_core/misc_utilities/responsive_widget.dart';
+import 'package:sghi_core/shared_themes/spaces.dart';
+import 'package:sghi_core/shared_themes/text_themes.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
@@ -36,7 +37,7 @@ class LandingPage extends StatelessWidget {
     final bool isLargeScreen = ResponsiveWidget.isLargeScreen(context);
 
     /// Sends Initial event
-    final FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics();
+    final FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.instance;
     firebaseAnalytics.logAppOpen();
 
     return WillPopScope(

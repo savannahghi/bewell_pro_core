@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'user_feed_state.dart';
 
@@ -10,29 +12,11 @@ part of 'user_feed_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 UserFeedState _$UserFeedStateFromJson(Map<String, dynamic> json) {
   return _UserFeedState.fromJson(json);
 }
-
-/// @nodoc
-class _$UserFeedStateTearOff {
-  const _$UserFeedStateTearOff();
-
-  _UserFeedState call({String? userFeed}) {
-    return _UserFeedState(
-      userFeed: userFeed,
-    );
-  }
-
-  UserFeedState fromJson(Map<String, Object> json) {
-    return UserFeedState.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $UserFeedState = _$UserFeedStateTearOff();
 
 /// @nodoc
 mixin _$UserFeedState {
@@ -48,59 +32,61 @@ mixin _$UserFeedState {
 abstract class $UserFeedStateCopyWith<$Res> {
   factory $UserFeedStateCopyWith(
           UserFeedState value, $Res Function(UserFeedState) then) =
-      _$UserFeedStateCopyWithImpl<$Res>;
+      _$UserFeedStateCopyWithImpl<$Res, UserFeedState>;
+  @useResult
   $Res call({String? userFeed});
 }
 
 /// @nodoc
-class _$UserFeedStateCopyWithImpl<$Res>
+class _$UserFeedStateCopyWithImpl<$Res, $Val extends UserFeedState>
     implements $UserFeedStateCopyWith<$Res> {
   _$UserFeedStateCopyWithImpl(this._value, this._then);
 
-  final UserFeedState _value;
   // ignore: unused_field
-  final $Res Function(UserFeedState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? userFeed = freezed,
   }) {
     return _then(_value.copyWith(
-      userFeed: userFeed == freezed
+      userFeed: freezed == userFeed
           ? _value.userFeed
           : userFeed // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$UserFeedStateCopyWith<$Res>
+abstract class _$$_UserFeedStateCopyWith<$Res>
     implements $UserFeedStateCopyWith<$Res> {
-  factory _$UserFeedStateCopyWith(
-          _UserFeedState value, $Res Function(_UserFeedState) then) =
-      __$UserFeedStateCopyWithImpl<$Res>;
+  factory _$$_UserFeedStateCopyWith(
+          _$_UserFeedState value, $Res Function(_$_UserFeedState) then) =
+      __$$_UserFeedStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String? userFeed});
 }
 
 /// @nodoc
-class __$UserFeedStateCopyWithImpl<$Res>
-    extends _$UserFeedStateCopyWithImpl<$Res>
-    implements _$UserFeedStateCopyWith<$Res> {
-  __$UserFeedStateCopyWithImpl(
-      _UserFeedState _value, $Res Function(_UserFeedState) _then)
-      : super(_value, (v) => _then(v as _UserFeedState));
+class __$$_UserFeedStateCopyWithImpl<$Res>
+    extends _$UserFeedStateCopyWithImpl<$Res, _$_UserFeedState>
+    implements _$$_UserFeedStateCopyWith<$Res> {
+  __$$_UserFeedStateCopyWithImpl(
+      _$_UserFeedState _value, $Res Function(_$_UserFeedState) _then)
+      : super(_value, _then);
 
-  @override
-  _UserFeedState get _value => super._value as _UserFeedState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? userFeed = freezed,
   }) {
-    return _then(_UserFeedState(
-      userFeed: userFeed == freezed
+    return _then(_$_UserFeedState(
+      userFeed: freezed == userFeed
           ? _value.userFeed
           : userFeed // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -114,7 +100,7 @@ class _$_UserFeedState implements _UserFeedState {
   _$_UserFeedState({this.userFeed});
 
   factory _$_UserFeedState.fromJson(Map<String, dynamic> json) =>
-      _$_$_UserFeedStateFromJson(json);
+      _$$_UserFeedStateFromJson(json);
 
   @override
   final String? userFeed;
@@ -127,37 +113,40 @@ class _$_UserFeedState implements _UserFeedState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UserFeedState &&
+        (other.runtimeType == runtimeType &&
+            other is _$_UserFeedState &&
             (identical(other.userFeed, userFeed) ||
-                const DeepCollectionEquality()
-                    .equals(other.userFeed, userFeed)));
+                other.userFeed == userFeed));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(userFeed);
 
   @JsonKey(ignore: true)
   @override
-  _$UserFeedStateCopyWith<_UserFeedState> get copyWith =>
-      __$UserFeedStateCopyWithImpl<_UserFeedState>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, userFeed);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_UserFeedStateCopyWith<_$_UserFeedState> get copyWith =>
+      __$$_UserFeedStateCopyWithImpl<_$_UserFeedState>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_UserFeedStateToJson(this);
+    return _$$_UserFeedStateToJson(
+      this,
+    );
   }
 }
 
 abstract class _UserFeedState implements UserFeedState {
-  factory _UserFeedState({String? userFeed}) = _$_UserFeedState;
+  factory _UserFeedState({final String? userFeed}) = _$_UserFeedState;
 
   factory _UserFeedState.fromJson(Map<String, dynamic> json) =
       _$_UserFeedState.fromJson;
 
   @override
-  String? get userFeed => throw _privateConstructorUsedError;
+  String? get userFeed;
   @override
   @JsonKey(ignore: true)
-  _$UserFeedStateCopyWith<_UserFeedState> get copyWith =>
+  _$$_UserFeedStateCopyWith<_$_UserFeedState> get copyWith =>
       throw _privateConstructorUsedError;
 }

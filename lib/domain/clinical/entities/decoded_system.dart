@@ -2,11 +2,11 @@
 import 'dart:convert';
 
 // Package imports:
-import 'package:domain_objects/value_objects.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/fhir.dart';
 import 'package:bewell_pro_core/domain/clinical/entities/narrative.dart';
+import 'package:sghi_core/domain_objects/value_objects/unknown.dart';
 
 class DecodedSystem {
   final Map<String, dynamic> decodedJson;

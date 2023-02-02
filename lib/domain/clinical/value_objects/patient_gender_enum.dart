@@ -8,7 +8,7 @@ enum PatientGenderEnum {
   male,
   @JsonValue('female')
   female,
-  @JsonValue(other)
+  @JsonValue('other')
   other,
   @JsonValue('unknown')
   unknown,

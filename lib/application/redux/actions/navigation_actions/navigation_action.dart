@@ -1,6 +1,7 @@
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
+import 'package:sghi_core/domain_objects/entities/navigation.dart';
+import 'package:sghi_core/domain_objects/entities/navigation_item.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';

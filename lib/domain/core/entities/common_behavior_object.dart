@@ -1,5 +1,4 @@
 // Flutter imports:
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
@@ -1080,7 +1079,9 @@ class AddBMIObject {
 
     final double bmi = weight / (heightInm * heightInm);
 
-    this..heightInCm.add(heightInm * 100)..bmi.add(bmi.toStringAsFixed(1));
+    this
+      ..heightInCm.add(heightInm * 100)
+      ..bmi.add(bmi.toStringAsFixed(1));
   }
 }
 
@@ -1652,7 +1653,9 @@ class PatientSearchStore {
   static final PatientSearchStore _singleton = PatientSearchStore._internal();
 
   void reset() {
-    this..isNotFound.add(false)..phoneNumber.add(null);
+    this
+      ..isNotFound.add(false)
+      ..phoneNumber.add(null);
   }
 }
 

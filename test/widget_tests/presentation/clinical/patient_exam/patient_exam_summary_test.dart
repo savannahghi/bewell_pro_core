@@ -3,11 +3,11 @@ import 'dart:convert';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mocktail_image_network/mocktail_image_network.dart';
-import 'package:shared_ui_components/platform_loader.dart';
+import 'package:sghi_core/domain_objects/entities/user_profile.dart';
+import 'package:sghi_core/ui_components/src/platform_loader.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';

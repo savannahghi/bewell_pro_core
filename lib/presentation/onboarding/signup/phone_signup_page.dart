@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/value_objects.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 // Project imports:
@@ -13,6 +12,7 @@ import 'package:bewell_pro_core/application/redux/view_models/misc_state_view_mo
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/onboarding_scaffold.dart';
 import 'package:bewell_pro_core/presentation/onboarding/signup/phone_signup.dart';
+import 'package:sghi_core/domain_objects/value_objects/unknown.dart';
 
 /// Phone Signup page. Prompts user to signup/register when they don't have an account
 class PhoneSignUpPage extends StatefulWidget {

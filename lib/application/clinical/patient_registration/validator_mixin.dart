@@ -5,12 +5,13 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 
 // Package imports:
-import 'package:domain_objects/value_objects.dart';
+import 'package:sghi_core/domain_objects/value_objects/enums.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/domain/core/entities/identification_details.dart';
 import 'package:bewell_pro_core/domain/core/failures/generic_exception.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';
+import 'package:sghi_core/domain_objects/value_objects/phone_number.dart';
 
 mixin Validator {
   final StreamTransformer<String, String> validateName =

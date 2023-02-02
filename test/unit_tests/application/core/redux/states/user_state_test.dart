@@ -6,7 +6,7 @@ import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 
 void main() {
   group('UserState:', () {
-    final Map<String, dynamic> userStateJson = <String, dynamic>{
+    final UserState userStateJson = UserState.fromJson(<String, dynamic>{
       'userProfile': <String, dynamic>{
         'id': 'UNKNOWN',
         'userName': 'UNKNOWN',
@@ -52,7 +52,7 @@ void main() {
       'inActivitySetInTime': 'UNKNOWN',
       'tokenExpiryTime': 'UNKNOWN',
       'signedInTime': 'UNKNOWN',
-    };
+    });
 
     final Map<String, dynamic> modifiedUserStateJson = <String, dynamic>{
       'userProfile': <String, dynamic>{
@@ -75,7 +75,7 @@ void main() {
     test('should serialize user state json correctly', () {
       final UserState userState = UserState.initial();
 
-      expect(userState.toJson(), userStateJson);
+      expect(userState.toJson(), userStateJson.toJson());
 
       final UserState modifiedUserState =
           UserState.fromJson(modifiedUserStateJson);

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
 
@@ -23,10 +24,13 @@ import 'package:bewell_pro_core/domain/core/value_objects/type_defs.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/bewell_patient_profile_widget.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/bewell_secondary_patient_banner.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/start_or_continue_exam_wrapper.dart';
+import '../../../../mocks/mock_utils.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
   group('patient profile page', () {
     BewellPatientProfileWidget buildWidget({
       OnStartVisit? onStartVisit,
@@ -39,7 +43,8 @@ void main() {
 
     late Store<CoreState> store;
 
-    setUp(() {
+    setUp(() async {
+      await Firebase.initializeApp();
       AppBrand().appLogo.add(cameraIconUrl);
       store = Store<CoreState>(
         initialState: CoreState.initial().copyWith(

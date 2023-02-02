@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
 
@@ -17,6 +15,8 @@ import 'package:bewell_pro_core/application/redux/actions/onboarding_actions/cha
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/pages/phone_login_page.dart';
+import 'package:sghi_core/domain_objects/entities/user_profile.dart';
+import 'package:sghi_core/domain_objects/value_objects/unknown.dart';
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';
 

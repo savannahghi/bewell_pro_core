@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'medication_edge.dart';
 
@@ -10,33 +12,12 @@ part of 'medication_edge.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 MedicationRelayConnection _$MedicationRelayConnectionFromJson(
     Map<String, dynamic> json) {
   return _MedicationRelayConnection.fromJson(json);
 }
-
-/// @nodoc
-class _$MedicationRelayConnectionTearOff {
-  const _$MedicationRelayConnectionTearOff();
-
-  _MedicationRelayConnection call(
-      {@JsonKey(name: 'edges') List<MedicationEdgeRelay?>? edges,
-      @JsonKey(name: 'pageInfo') PageInfo? pageInfo}) {
-    return _MedicationRelayConnection(
-      edges: edges,
-      pageInfo: pageInfo,
-    );
-  }
-
-  MedicationRelayConnection fromJson(Map<String, Object> json) {
-    return MedicationRelayConnection.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $MedicationRelayConnection = _$MedicationRelayConnectionTearOff();
 
 /// @nodoc
 mixin _$MedicationRelayConnection {
@@ -55,7 +36,8 @@ mixin _$MedicationRelayConnection {
 abstract class $MedicationRelayConnectionCopyWith<$Res> {
   factory $MedicationRelayConnectionCopyWith(MedicationRelayConnection value,
           $Res Function(MedicationRelayConnection) then) =
-      _$MedicationRelayConnectionCopyWithImpl<$Res>;
+      _$MedicationRelayConnectionCopyWithImpl<$Res, MedicationRelayConnection>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'edges') List<MedicationEdgeRelay?>? edges,
       @JsonKey(name: 'pageInfo') PageInfo? pageInfo});
@@ -64,50 +46,56 @@ abstract class $MedicationRelayConnectionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MedicationRelayConnectionCopyWithImpl<$Res>
+class _$MedicationRelayConnectionCopyWithImpl<$Res,
+        $Val extends MedicationRelayConnection>
     implements $MedicationRelayConnectionCopyWith<$Res> {
   _$MedicationRelayConnectionCopyWithImpl(this._value, this._then);
 
-  final MedicationRelayConnection _value;
   // ignore: unused_field
-  final $Res Function(MedicationRelayConnection) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? edges = freezed,
     Object? pageInfo = freezed,
   }) {
     return _then(_value.copyWith(
-      edges: edges == freezed
+      edges: freezed == edges
           ? _value.edges
           : edges // ignore: cast_nullable_to_non_nullable
               as List<MedicationEdgeRelay?>?,
-      pageInfo: pageInfo == freezed
+      pageInfo: freezed == pageInfo
           ? _value.pageInfo
           : pageInfo // ignore: cast_nullable_to_non_nullable
               as PageInfo?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $PageInfoCopyWith<$Res>? get pageInfo {
     if (_value.pageInfo == null) {
       return null;
     }
 
     return $PageInfoCopyWith<$Res>(_value.pageInfo!, (value) {
-      return _then(_value.copyWith(pageInfo: value));
+      return _then(_value.copyWith(pageInfo: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$MedicationRelayConnectionCopyWith<$Res>
+abstract class _$$_MedicationRelayConnectionCopyWith<$Res>
     implements $MedicationRelayConnectionCopyWith<$Res> {
-  factory _$MedicationRelayConnectionCopyWith(_MedicationRelayConnection value,
-          $Res Function(_MedicationRelayConnection) then) =
-      __$MedicationRelayConnectionCopyWithImpl<$Res>;
+  factory _$$_MedicationRelayConnectionCopyWith(
+          _$_MedicationRelayConnection value,
+          $Res Function(_$_MedicationRelayConnection) then) =
+      __$$_MedicationRelayConnectionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'edges') List<MedicationEdgeRelay?>? edges,
       @JsonKey(name: 'pageInfo') PageInfo? pageInfo});
@@ -117,28 +105,27 @@ abstract class _$MedicationRelayConnectionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$MedicationRelayConnectionCopyWithImpl<$Res>
-    extends _$MedicationRelayConnectionCopyWithImpl<$Res>
-    implements _$MedicationRelayConnectionCopyWith<$Res> {
-  __$MedicationRelayConnectionCopyWithImpl(_MedicationRelayConnection _value,
-      $Res Function(_MedicationRelayConnection) _then)
-      : super(_value, (v) => _then(v as _MedicationRelayConnection));
+class __$$_MedicationRelayConnectionCopyWithImpl<$Res>
+    extends _$MedicationRelayConnectionCopyWithImpl<$Res,
+        _$_MedicationRelayConnection>
+    implements _$$_MedicationRelayConnectionCopyWith<$Res> {
+  __$$_MedicationRelayConnectionCopyWithImpl(
+      _$_MedicationRelayConnection _value,
+      $Res Function(_$_MedicationRelayConnection) _then)
+      : super(_value, _then);
 
-  @override
-  _MedicationRelayConnection get _value =>
-      super._value as _MedicationRelayConnection;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? edges = freezed,
     Object? pageInfo = freezed,
   }) {
-    return _then(_MedicationRelayConnection(
-      edges: edges == freezed
-          ? _value.edges
+    return _then(_$_MedicationRelayConnection(
+      edges: freezed == edges
+          ? _value._edges
           : edges // ignore: cast_nullable_to_non_nullable
               as List<MedicationEdgeRelay?>?,
-      pageInfo: pageInfo == freezed
+      pageInfo: freezed == pageInfo
           ? _value.pageInfo
           : pageInfo // ignore: cast_nullable_to_non_nullable
               as PageInfo?,
@@ -150,15 +137,23 @@ class __$MedicationRelayConnectionCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_MedicationRelayConnection implements _MedicationRelayConnection {
   _$_MedicationRelayConnection(
-      {@JsonKey(name: 'edges') this.edges,
-      @JsonKey(name: 'pageInfo') this.pageInfo});
+      {@JsonKey(name: 'edges') final List<MedicationEdgeRelay?>? edges,
+      @JsonKey(name: 'pageInfo') this.pageInfo})
+      : _edges = edges;
 
   factory _$_MedicationRelayConnection.fromJson(Map<String, dynamic> json) =>
-      _$_$_MedicationRelayConnectionFromJson(json);
+      _$$_MedicationRelayConnectionFromJson(json);
 
+  final List<MedicationEdgeRelay?>? _edges;
   @override
   @JsonKey(name: 'edges')
-  final List<MedicationEdgeRelay?>? edges;
+  List<MedicationEdgeRelay?>? get edges {
+    final value = _edges;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'pageInfo')
   final PageInfo? pageInfo;
@@ -171,37 +166,37 @@ class _$_MedicationRelayConnection implements _MedicationRelayConnection {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _MedicationRelayConnection &&
-            (identical(other.edges, edges) ||
-                const DeepCollectionEquality().equals(other.edges, edges)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_MedicationRelayConnection &&
+            const DeepCollectionEquality().equals(other._edges, _edges) &&
             (identical(other.pageInfo, pageInfo) ||
-                const DeepCollectionEquality()
-                    .equals(other.pageInfo, pageInfo)));
+                other.pageInfo == pageInfo));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(edges) ^
-      const DeepCollectionEquality().hash(pageInfo);
 
   @JsonKey(ignore: true)
   @override
-  _$MedicationRelayConnectionCopyWith<_MedicationRelayConnection>
-      get copyWith =>
-          __$MedicationRelayConnectionCopyWithImpl<_MedicationRelayConnection>(
-              this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_edges), pageInfo);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_MedicationRelayConnectionCopyWith<_$_MedicationRelayConnection>
+      get copyWith => __$$_MedicationRelayConnectionCopyWithImpl<
+          _$_MedicationRelayConnection>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_MedicationRelayConnectionToJson(this);
+    return _$$_MedicationRelayConnectionToJson(
+      this,
+    );
   }
 }
 
 abstract class _MedicationRelayConnection implements MedicationRelayConnection {
   factory _MedicationRelayConnection(
-          {@JsonKey(name: 'edges') List<MedicationEdgeRelay?>? edges,
-          @JsonKey(name: 'pageInfo') PageInfo? pageInfo}) =
+          {@JsonKey(name: 'edges') final List<MedicationEdgeRelay?>? edges,
+          @JsonKey(name: 'pageInfo') final PageInfo? pageInfo}) =
       _$_MedicationRelayConnection;
 
   factory _MedicationRelayConnection.fromJson(Map<String, dynamic> json) =
@@ -209,40 +204,19 @@ abstract class _MedicationRelayConnection implements MedicationRelayConnection {
 
   @override
   @JsonKey(name: 'edges')
-  List<MedicationEdgeRelay?>? get edges => throw _privateConstructorUsedError;
+  List<MedicationEdgeRelay?>? get edges;
   @override
   @JsonKey(name: 'pageInfo')
-  PageInfo? get pageInfo => throw _privateConstructorUsedError;
+  PageInfo? get pageInfo;
   @override
   @JsonKey(ignore: true)
-  _$MedicationRelayConnectionCopyWith<_MedicationRelayConnection>
+  _$$_MedicationRelayConnectionCopyWith<_$_MedicationRelayConnection>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 MedicationEdgeRelay _$MedicationEdgeRelayFromJson(Map<String, dynamic> json) {
   return _MedicationEdgeRelay.fromJson(json);
 }
-
-/// @nodoc
-class _$MedicationEdgeRelayTearOff {
-  const _$MedicationEdgeRelayTearOff();
-
-  _MedicationEdgeRelay call(
-      {@JsonKey(name: 'cursor') String? cursor,
-      @JsonKey(name: 'node') Medication? node}) {
-    return _MedicationEdgeRelay(
-      cursor: cursor,
-      node: node,
-    );
-  }
-
-  MedicationEdgeRelay fromJson(Map<String, Object> json) {
-    return MedicationEdgeRelay.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $MedicationEdgeRelay = _$MedicationEdgeRelayTearOff();
 
 /// @nodoc
 mixin _$MedicationEdgeRelay {
@@ -261,7 +235,8 @@ mixin _$MedicationEdgeRelay {
 abstract class $MedicationEdgeRelayCopyWith<$Res> {
   factory $MedicationEdgeRelayCopyWith(
           MedicationEdgeRelay value, $Res Function(MedicationEdgeRelay) then) =
-      _$MedicationEdgeRelayCopyWithImpl<$Res>;
+      _$MedicationEdgeRelayCopyWithImpl<$Res, MedicationEdgeRelay>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'cursor') String? cursor,
       @JsonKey(name: 'node') Medication? node});
@@ -270,50 +245,54 @@ abstract class $MedicationEdgeRelayCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MedicationEdgeRelayCopyWithImpl<$Res>
+class _$MedicationEdgeRelayCopyWithImpl<$Res, $Val extends MedicationEdgeRelay>
     implements $MedicationEdgeRelayCopyWith<$Res> {
   _$MedicationEdgeRelayCopyWithImpl(this._value, this._then);
 
-  final MedicationEdgeRelay _value;
   // ignore: unused_field
-  final $Res Function(MedicationEdgeRelay) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? cursor = freezed,
     Object? node = freezed,
   }) {
     return _then(_value.copyWith(
-      cursor: cursor == freezed
+      cursor: freezed == cursor
           ? _value.cursor
           : cursor // ignore: cast_nullable_to_non_nullable
               as String?,
-      node: node == freezed
+      node: freezed == node
           ? _value.node
           : node // ignore: cast_nullable_to_non_nullable
               as Medication?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $MedicationCopyWith<$Res>? get node {
     if (_value.node == null) {
       return null;
     }
 
     return $MedicationCopyWith<$Res>(_value.node!, (value) {
-      return _then(_value.copyWith(node: value));
+      return _then(_value.copyWith(node: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$MedicationEdgeRelayCopyWith<$Res>
+abstract class _$$_MedicationEdgeRelayCopyWith<$Res>
     implements $MedicationEdgeRelayCopyWith<$Res> {
-  factory _$MedicationEdgeRelayCopyWith(_MedicationEdgeRelay value,
-          $Res Function(_MedicationEdgeRelay) then) =
-      __$MedicationEdgeRelayCopyWithImpl<$Res>;
+  factory _$$_MedicationEdgeRelayCopyWith(_$_MedicationEdgeRelay value,
+          $Res Function(_$_MedicationEdgeRelay) then) =
+      __$$_MedicationEdgeRelayCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'cursor') String? cursor,
       @JsonKey(name: 'node') Medication? node});
@@ -323,27 +302,25 @@ abstract class _$MedicationEdgeRelayCopyWith<$Res>
 }
 
 /// @nodoc
-class __$MedicationEdgeRelayCopyWithImpl<$Res>
-    extends _$MedicationEdgeRelayCopyWithImpl<$Res>
-    implements _$MedicationEdgeRelayCopyWith<$Res> {
-  __$MedicationEdgeRelayCopyWithImpl(
-      _MedicationEdgeRelay _value, $Res Function(_MedicationEdgeRelay) _then)
-      : super(_value, (v) => _then(v as _MedicationEdgeRelay));
+class __$$_MedicationEdgeRelayCopyWithImpl<$Res>
+    extends _$MedicationEdgeRelayCopyWithImpl<$Res, _$_MedicationEdgeRelay>
+    implements _$$_MedicationEdgeRelayCopyWith<$Res> {
+  __$$_MedicationEdgeRelayCopyWithImpl(_$_MedicationEdgeRelay _value,
+      $Res Function(_$_MedicationEdgeRelay) _then)
+      : super(_value, _then);
 
-  @override
-  _MedicationEdgeRelay get _value => super._value as _MedicationEdgeRelay;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? cursor = freezed,
     Object? node = freezed,
   }) {
-    return _then(_MedicationEdgeRelay(
-      cursor: cursor == freezed
+    return _then(_$_MedicationEdgeRelay(
+      cursor: freezed == cursor
           ? _value.cursor
           : cursor // ignore: cast_nullable_to_non_nullable
               as String?,
-      node: node == freezed
+      node: freezed == node
           ? _value.node
           : node // ignore: cast_nullable_to_non_nullable
               as Medication?,
@@ -358,7 +335,7 @@ class _$_MedicationEdgeRelay implements _MedicationEdgeRelay {
       {@JsonKey(name: 'cursor') this.cursor, @JsonKey(name: 'node') this.node});
 
   factory _$_MedicationEdgeRelay.fromJson(Map<String, dynamic> json) =>
-      _$_$_MedicationEdgeRelayFromJson(json);
+      _$$_MedicationEdgeRelayFromJson(json);
 
   @override
   @JsonKey(name: 'cursor')
@@ -375,47 +352,47 @@ class _$_MedicationEdgeRelay implements _MedicationEdgeRelay {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _MedicationEdgeRelay &&
-            (identical(other.cursor, cursor) ||
-                const DeepCollectionEquality().equals(other.cursor, cursor)) &&
-            (identical(other.node, node) ||
-                const DeepCollectionEquality().equals(other.node, node)));
+        (other.runtimeType == runtimeType &&
+            other is _$_MedicationEdgeRelay &&
+            (identical(other.cursor, cursor) || other.cursor == cursor) &&
+            (identical(other.node, node) || other.node == node));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(cursor) ^
-      const DeepCollectionEquality().hash(node);
 
   @JsonKey(ignore: true)
   @override
-  _$MedicationEdgeRelayCopyWith<_MedicationEdgeRelay> get copyWith =>
-      __$MedicationEdgeRelayCopyWithImpl<_MedicationEdgeRelay>(
+  int get hashCode => Object.hash(runtimeType, cursor, node);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_MedicationEdgeRelayCopyWith<_$_MedicationEdgeRelay> get copyWith =>
+      __$$_MedicationEdgeRelayCopyWithImpl<_$_MedicationEdgeRelay>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_MedicationEdgeRelayToJson(this);
+    return _$$_MedicationEdgeRelayToJson(
+      this,
+    );
   }
 }
 
 abstract class _MedicationEdgeRelay implements MedicationEdgeRelay {
   factory _MedicationEdgeRelay(
-      {@JsonKey(name: 'cursor') String? cursor,
-      @JsonKey(name: 'node') Medication? node}) = _$_MedicationEdgeRelay;
+      {@JsonKey(name: 'cursor') final String? cursor,
+      @JsonKey(name: 'node') final Medication? node}) = _$_MedicationEdgeRelay;
 
   factory _MedicationEdgeRelay.fromJson(Map<String, dynamic> json) =
       _$_MedicationEdgeRelay.fromJson;
 
   @override
   @JsonKey(name: 'cursor')
-  String? get cursor => throw _privateConstructorUsedError;
+  String? get cursor;
   @override
   @JsonKey(name: 'node')
-  Medication? get node => throw _privateConstructorUsedError;
+  Medication? get node;
   @override
   @JsonKey(ignore: true)
-  _$MedicationEdgeRelayCopyWith<_MedicationEdgeRelay> get copyWith =>
+  _$$_MedicationEdgeRelayCopyWith<_$_MedicationEdgeRelay> get copyWith =>
       throw _privateConstructorUsedError;
 }

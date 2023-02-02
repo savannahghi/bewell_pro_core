@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/buttons.dart';
-import 'package:shared_ui_components/platform_loader.dart';
+import 'package:sghi_core/domain_objects/entities/user_profile.dart';
+import 'package:sghi_core/shared_themes/colors.dart';
+import 'package:sghi_core/shared_themes/constants.dart';
+import 'package:sghi_core/afya_moja_core/afya_moja_core.dart';
+import 'package:sghi_core/ui_components/src/buttons.dart';
+import 'package:sghi_core/ui_components/src/platform_loader.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';

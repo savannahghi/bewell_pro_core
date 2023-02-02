@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'communication.dart';
 
@@ -10,34 +12,11 @@ part of 'communication.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Communication _$CommunicationFromJson(Map<String, dynamic> json) {
   return _Communication.fromJson(json);
 }
-
-/// @nodoc
-class _$CommunicationTearOff {
-  const _$CommunicationTearOff();
-
-  _Communication call(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'language') CodeableConcept? language,
-      @JsonKey(name: 'preferred') bool? preferred}) {
-    return _Communication(
-      id: id,
-      language: language,
-      preferred: preferred,
-    );
-  }
-
-  Communication fromJson(Map<String, Object> json) {
-    return Communication.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Communication = _$CommunicationTearOff();
 
 /// @nodoc
 mixin _$Communication {
@@ -66,7 +45,8 @@ mixin _$Communication {
 abstract class $CommunicationCopyWith<$Res> {
   factory $CommunicationCopyWith(
           Communication value, $Res Function(Communication) then) =
-      _$CommunicationCopyWithImpl<$Res>;
+      _$CommunicationCopyWithImpl<$Res, Communication>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'language') CodeableConcept? language,
@@ -76,14 +56,16 @@ abstract class $CommunicationCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CommunicationCopyWithImpl<$Res>
+class _$CommunicationCopyWithImpl<$Res, $Val extends Communication>
     implements $CommunicationCopyWith<$Res> {
   _$CommunicationCopyWithImpl(this._value, this._then);
 
-  final Communication _value;
   // ignore: unused_field
-  final $Res Function(Communication) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -91,40 +73,42 @@ class _$CommunicationCopyWithImpl<$Res>
     Object? preferred = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      language: language == freezed
+      language: freezed == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      preferred: preferred == freezed
+      preferred: freezed == preferred
           ? _value.preferred
           : preferred // ignore: cast_nullable_to_non_nullable
               as bool?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get language {
     if (_value.language == null) {
       return null;
     }
 
     return $CodeableConceptCopyWith<$Res>(_value.language!, (value) {
-      return _then(_value.copyWith(language: value));
+      return _then(_value.copyWith(language: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$CommunicationCopyWith<$Res>
+abstract class _$$_CommunicationCopyWith<$Res>
     implements $CommunicationCopyWith<$Res> {
-  factory _$CommunicationCopyWith(
-          _Communication value, $Res Function(_Communication) then) =
-      __$CommunicationCopyWithImpl<$Res>;
+  factory _$$_CommunicationCopyWith(
+          _$_Communication value, $Res Function(_$_Communication) then) =
+      __$$_CommunicationCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'language') CodeableConcept? language,
@@ -135,32 +119,30 @@ abstract class _$CommunicationCopyWith<$Res>
 }
 
 /// @nodoc
-class __$CommunicationCopyWithImpl<$Res>
-    extends _$CommunicationCopyWithImpl<$Res>
-    implements _$CommunicationCopyWith<$Res> {
-  __$CommunicationCopyWithImpl(
-      _Communication _value, $Res Function(_Communication) _then)
-      : super(_value, (v) => _then(v as _Communication));
+class __$$_CommunicationCopyWithImpl<$Res>
+    extends _$CommunicationCopyWithImpl<$Res, _$_Communication>
+    implements _$$_CommunicationCopyWith<$Res> {
+  __$$_CommunicationCopyWithImpl(
+      _$_Communication _value, $Res Function(_$_Communication) _then)
+      : super(_value, _then);
 
-  @override
-  _Communication get _value => super._value as _Communication;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? language = freezed,
     Object? preferred = freezed,
   }) {
-    return _then(_Communication(
-      id: id == freezed
+    return _then(_$_Communication(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      language: language == freezed
+      language: freezed == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      preferred: preferred == freezed
+      preferred: freezed == preferred
           ? _value.preferred
           : preferred // ignore: cast_nullable_to_non_nullable
               as bool?,
@@ -177,23 +159,23 @@ class _$_Communication implements _Communication {
       @JsonKey(name: 'preferred') this.preferred});
 
   factory _$_Communication.fromJson(Map<String, dynamic> json) =>
-      _$_$_CommunicationFromJson(json);
+      _$$_CommunicationFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
   final String? id;
-  @override
 
   /// The ISO-639-1 alpha 2 code in lower case for the language, optionally
   ///  followed by a hyphen and the ISO-3166-1 alpha 2 code for the region
   ///  in upper case; e.g. "en" for English, or "en-US"
   ///  for American English versus "en-EN" for England English.
+  @override
   @JsonKey(name: 'language')
   final CodeableConcept? language;
-  @override
 
   /// Indicates whether or not the patient prefers this language
   ///  (over other languages he masters up a certain level).
+  @override
   @JsonKey(name: 'preferred')
   final bool? preferred;
 
@@ -205,47 +187,45 @@ class _$_Communication implements _Communication {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Communication &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_Communication &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.language, language) ||
-                const DeepCollectionEquality()
-                    .equals(other.language, language)) &&
+                other.language == language) &&
             (identical(other.preferred, preferred) ||
-                const DeepCollectionEquality()
-                    .equals(other.preferred, preferred)));
+                other.preferred == preferred));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(language) ^
-      const DeepCollectionEquality().hash(preferred);
 
   @JsonKey(ignore: true)
   @override
-  _$CommunicationCopyWith<_Communication> get copyWith =>
-      __$CommunicationCopyWithImpl<_Communication>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, id, language, preferred);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CommunicationCopyWith<_$_Communication> get copyWith =>
+      __$$_CommunicationCopyWithImpl<_$_Communication>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_CommunicationToJson(this);
+    return _$$_CommunicationToJson(
+      this,
+    );
   }
 }
 
 abstract class _Communication implements Communication {
   factory _Communication(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'language') CodeableConcept? language,
-      @JsonKey(name: 'preferred') bool? preferred}) = _$_Communication;
+      {@JsonKey(name: 'ID') final String? id,
+      @JsonKey(name: 'language') final CodeableConcept? language,
+      @JsonKey(name: 'preferred') final bool? preferred}) = _$_Communication;
 
   factory _Communication.fromJson(Map<String, dynamic> json) =
       _$_Communication.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
 
   /// The ISO-639-1 alpha 2 code in lower case for the language, optionally
@@ -253,15 +233,15 @@ abstract class _Communication implements Communication {
   ///  in upper case; e.g. "en" for English, or "en-US"
   ///  for American English versus "en-EN" for England English.
   @JsonKey(name: 'language')
-  CodeableConcept? get language => throw _privateConstructorUsedError;
+  CodeableConcept? get language;
   @override
 
   /// Indicates whether or not the patient prefers this language
   ///  (over other languages he masters up a certain level).
   @JsonKey(name: 'preferred')
-  bool? get preferred => throw _privateConstructorUsedError;
+  bool? get preferred;
   @override
   @JsonKey(ignore: true)
-  _$CommunicationCopyWith<_Communication> get copyWith =>
+  _$$_CommunicationCopyWith<_$_Communication> get copyWith =>
       throw _privateConstructorUsedError;
 }

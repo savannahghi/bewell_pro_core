@@ -1,16 +1,15 @@
 // Flutter imports:
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 // Package imports:
-import 'package:domain_objects/value_objects.dart';
-import 'package:misc_utilities/misc.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/buttons.dart';
-import 'package:shared_ui_components/inputs.dart';
+import 'package:sghi_core/domain_objects/value_objects/enums.dart';
+import 'package:sghi_core/misc_utilities/misc.dart';
+import 'package:sghi_core/shared_themes/colors.dart';
+import 'package:sghi_core/shared_themes/constants.dart';
+import 'package:sghi_core/shared_themes/spaces.dart';
+import 'package:sghi_core/ui_components/src/buttons.dart';
+import 'package:sghi_core/ui_components/src/inputs.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/clinical/patient_registration/add_next_of_kin_form_manager.dart';

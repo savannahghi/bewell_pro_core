@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'fhir.dart';
 
@@ -10,32 +12,11 @@ part of 'fhir.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Attester _$AttesterFromJson(Map<String, dynamic> json) {
   return _Attester.fromJson(json);
 }
-
-/// @nodoc
-class _$AttesterTearOff {
-  const _$AttesterTearOff();
-
-  _Attester call(
-      {@JsonKey(name: 'ID') CodeableConcept? id,
-      @JsonKey(name: 'Mode') CompositionAttesterModeEnum? mode}) {
-    return _Attester(
-      id: id,
-      mode: mode,
-    );
-  }
-
-  Attester fromJson(Map<String, Object> json) {
-    return Attester.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Attester = _$AttesterTearOff();
 
 /// @nodoc
 mixin _$Attester {
@@ -53,7 +34,8 @@ mixin _$Attester {
 /// @nodoc
 abstract class $AttesterCopyWith<$Res> {
   factory $AttesterCopyWith(Attester value, $Res Function(Attester) then) =
-      _$AttesterCopyWithImpl<$Res>;
+      _$AttesterCopyWithImpl<$Res, Attester>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') CodeableConcept? id,
       @JsonKey(name: 'Mode') CompositionAttesterModeEnum? mode});
@@ -62,47 +44,53 @@ abstract class $AttesterCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AttesterCopyWithImpl<$Res> implements $AttesterCopyWith<$Res> {
+class _$AttesterCopyWithImpl<$Res, $Val extends Attester>
+    implements $AttesterCopyWith<$Res> {
   _$AttesterCopyWithImpl(this._value, this._then);
 
-  final Attester _value;
   // ignore: unused_field
-  final $Res Function(Attester) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? mode = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      mode: mode == freezed
+      mode: freezed == mode
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as CompositionAttesterModeEnum?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get id {
     if (_value.id == null) {
       return null;
     }
 
     return $CodeableConceptCopyWith<$Res>(_value.id!, (value) {
-      return _then(_value.copyWith(id: value));
+      return _then(_value.copyWith(id: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$AttesterCopyWith<$Res> implements $AttesterCopyWith<$Res> {
-  factory _$AttesterCopyWith(_Attester value, $Res Function(_Attester) then) =
-      __$AttesterCopyWithImpl<$Res>;
+abstract class _$$_AttesterCopyWith<$Res> implements $AttesterCopyWith<$Res> {
+  factory _$$_AttesterCopyWith(
+          _$_Attester value, $Res Function(_$_Attester) then) =
+      __$$_AttesterCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') CodeableConcept? id,
       @JsonKey(name: 'Mode') CompositionAttesterModeEnum? mode});
@@ -112,25 +100,25 @@ abstract class _$AttesterCopyWith<$Res> implements $AttesterCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$AttesterCopyWithImpl<$Res> extends _$AttesterCopyWithImpl<$Res>
-    implements _$AttesterCopyWith<$Res> {
-  __$AttesterCopyWithImpl(_Attester _value, $Res Function(_Attester) _then)
-      : super(_value, (v) => _then(v as _Attester));
+class __$$_AttesterCopyWithImpl<$Res>
+    extends _$AttesterCopyWithImpl<$Res, _$_Attester>
+    implements _$$_AttesterCopyWith<$Res> {
+  __$$_AttesterCopyWithImpl(
+      _$_Attester _value, $Res Function(_$_Attester) _then)
+      : super(_value, _then);
 
-  @override
-  _Attester get _value => super._value as _Attester;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? mode = freezed,
   }) {
-    return _then(_Attester(
-      id: id == freezed
+    return _then(_$_Attester(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      mode: mode == freezed
+      mode: freezed == mode
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as CompositionAttesterModeEnum?,
@@ -144,7 +132,7 @@ class _$_Attester implements _Attester {
   _$_Attester({@JsonKey(name: 'ID') this.id, @JsonKey(name: 'Mode') this.mode});
 
   factory _$_Attester.fromJson(Map<String, dynamic> json) =>
-      _$_$_AttesterFromJson(json);
+      _$$_AttesterFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
@@ -161,77 +149,53 @@ class _$_Attester implements _Attester {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Attester &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.mode, mode) ||
-                const DeepCollectionEquality().equals(other.mode, mode)));
+        (other.runtimeType == runtimeType &&
+            other is _$_Attester &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.mode, mode) || other.mode == mode));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(mode);
 
   @JsonKey(ignore: true)
   @override
-  _$AttesterCopyWith<_Attester> get copyWith =>
-      __$AttesterCopyWithImpl<_Attester>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, id, mode);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_AttesterCopyWith<_$_Attester> get copyWith =>
+      __$$_AttesterCopyWithImpl<_$_Attester>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_AttesterToJson(this);
+    return _$$_AttesterToJson(
+      this,
+    );
   }
 }
 
 abstract class _Attester implements Attester {
   factory _Attester(
-      {@JsonKey(name: 'ID') CodeableConcept? id,
-      @JsonKey(name: 'Mode') CompositionAttesterModeEnum? mode}) = _$_Attester;
+          {@JsonKey(name: 'ID') final CodeableConcept? id,
+          @JsonKey(name: 'Mode') final CompositionAttesterModeEnum? mode}) =
+      _$_Attester;
 
   factory _Attester.fromJson(Map<String, dynamic> json) = _$_Attester.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  CodeableConcept? get id => throw _privateConstructorUsedError;
+  CodeableConcept? get id;
   @override
   @JsonKey(name: 'Mode')
-  CompositionAttesterModeEnum? get mode => throw _privateConstructorUsedError;
+  CompositionAttesterModeEnum? get mode;
   @override
   @JsonKey(ignore: true)
-  _$AttesterCopyWith<_Attester> get copyWith =>
+  _$$_AttesterCopyWith<_$_Attester> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 RelatesTo _$RelatesToFromJson(Map<String, dynamic> json) {
   return _RelatesTo.fromJson(json);
 }
-
-/// @nodoc
-class _$RelatesToTearOff {
-  const _$RelatesToTearOff();
-
-  _RelatesTo call(
-      {@JsonKey(name: 'ID') CodeableConcept? id,
-      @JsonKey(name: 'Code') String? code,
-      @JsonKey(name: 'TargetIdentifier') Identifier? targetIdentifier,
-      @JsonKey(name: 'TargetReference') Reference? targetReference}) {
-    return _RelatesTo(
-      id: id,
-      code: code,
-      targetIdentifier: targetIdentifier,
-      targetReference: targetReference,
-    );
-  }
-
-  RelatesTo fromJson(Map<String, Object> json) {
-    return RelatesTo.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $RelatesTo = _$RelatesToTearOff();
 
 /// @nodoc
 mixin _$RelatesTo {
@@ -253,7 +217,8 @@ mixin _$RelatesTo {
 /// @nodoc
 abstract class $RelatesToCopyWith<$Res> {
   factory $RelatesToCopyWith(RelatesTo value, $Res Function(RelatesTo) then) =
-      _$RelatesToCopyWithImpl<$Res>;
+      _$RelatesToCopyWithImpl<$Res, RelatesTo>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') CodeableConcept? id,
       @JsonKey(name: 'Code') String? code,
@@ -266,13 +231,16 @@ abstract class $RelatesToCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RelatesToCopyWithImpl<$Res> implements $RelatesToCopyWith<$Res> {
+class _$RelatesToCopyWithImpl<$Res, $Val extends RelatesTo>
+    implements $RelatesToCopyWith<$Res> {
   _$RelatesToCopyWithImpl(this._value, this._then);
 
-  final RelatesTo _value;
   // ignore: unused_field
-  final $Res Function(RelatesTo) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -281,65 +249,69 @@ class _$RelatesToCopyWithImpl<$Res> implements $RelatesToCopyWith<$Res> {
     Object? targetReference = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      code: code == freezed
+      code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String?,
-      targetIdentifier: targetIdentifier == freezed
+      targetIdentifier: freezed == targetIdentifier
           ? _value.targetIdentifier
           : targetIdentifier // ignore: cast_nullable_to_non_nullable
               as Identifier?,
-      targetReference: targetReference == freezed
+      targetReference: freezed == targetReference
           ? _value.targetReference
           : targetReference // ignore: cast_nullable_to_non_nullable
               as Reference?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get id {
     if (_value.id == null) {
       return null;
     }
 
     return $CodeableConceptCopyWith<$Res>(_value.id!, (value) {
-      return _then(_value.copyWith(id: value));
+      return _then(_value.copyWith(id: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $IdentifierCopyWith<$Res>? get targetIdentifier {
     if (_value.targetIdentifier == null) {
       return null;
     }
 
     return $IdentifierCopyWith<$Res>(_value.targetIdentifier!, (value) {
-      return _then(_value.copyWith(targetIdentifier: value));
+      return _then(_value.copyWith(targetIdentifier: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get targetReference {
     if (_value.targetReference == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.targetReference!, (value) {
-      return _then(_value.copyWith(targetReference: value));
+      return _then(_value.copyWith(targetReference: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$RelatesToCopyWith<$Res> implements $RelatesToCopyWith<$Res> {
-  factory _$RelatesToCopyWith(
-          _RelatesTo value, $Res Function(_RelatesTo) then) =
-      __$RelatesToCopyWithImpl<$Res>;
+abstract class _$$_RelatesToCopyWith<$Res> implements $RelatesToCopyWith<$Res> {
+  factory _$$_RelatesToCopyWith(
+          _$_RelatesTo value, $Res Function(_$_RelatesTo) then) =
+      __$$_RelatesToCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') CodeableConcept? id,
       @JsonKey(name: 'Code') String? code,
@@ -355,14 +327,14 @@ abstract class _$RelatesToCopyWith<$Res> implements $RelatesToCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$RelatesToCopyWithImpl<$Res> extends _$RelatesToCopyWithImpl<$Res>
-    implements _$RelatesToCopyWith<$Res> {
-  __$RelatesToCopyWithImpl(_RelatesTo _value, $Res Function(_RelatesTo) _then)
-      : super(_value, (v) => _then(v as _RelatesTo));
+class __$$_RelatesToCopyWithImpl<$Res>
+    extends _$RelatesToCopyWithImpl<$Res, _$_RelatesTo>
+    implements _$$_RelatesToCopyWith<$Res> {
+  __$$_RelatesToCopyWithImpl(
+      _$_RelatesTo _value, $Res Function(_$_RelatesTo) _then)
+      : super(_value, _then);
 
-  @override
-  _RelatesTo get _value => super._value as _RelatesTo;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -370,20 +342,20 @@ class __$RelatesToCopyWithImpl<$Res> extends _$RelatesToCopyWithImpl<$Res>
     Object? targetIdentifier = freezed,
     Object? targetReference = freezed,
   }) {
-    return _then(_RelatesTo(
-      id: id == freezed
+    return _then(_$_RelatesTo(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      code: code == freezed
+      code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String?,
-      targetIdentifier: targetIdentifier == freezed
+      targetIdentifier: freezed == targetIdentifier
           ? _value.targetIdentifier
           : targetIdentifier // ignore: cast_nullable_to_non_nullable
               as Identifier?,
-      targetReference: targetReference == freezed
+      targetReference: freezed == targetReference
           ? _value.targetReference
           : targetReference // ignore: cast_nullable_to_non_nullable
               as Reference?,
@@ -401,7 +373,7 @@ class _$_RelatesTo implements _RelatesTo {
       @JsonKey(name: 'TargetReference') this.targetReference});
 
   factory _$_RelatesTo.fromJson(Map<String, dynamic> json) =>
-      _$_$_RelatesToFromJson(json);
+      _$$_RelatesToFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
@@ -424,44 +396,41 @@ class _$_RelatesTo implements _RelatesTo {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RelatesTo &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_RelatesTo &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.code, code) || other.code == code) &&
             (identical(other.targetIdentifier, targetIdentifier) ||
-                const DeepCollectionEquality()
-                    .equals(other.targetIdentifier, targetIdentifier)) &&
+                other.targetIdentifier == targetIdentifier) &&
             (identical(other.targetReference, targetReference) ||
-                const DeepCollectionEquality()
-                    .equals(other.targetReference, targetReference)));
+                other.targetReference == targetReference));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(code) ^
-      const DeepCollectionEquality().hash(targetIdentifier) ^
-      const DeepCollectionEquality().hash(targetReference);
 
   @JsonKey(ignore: true)
   @override
-  _$RelatesToCopyWith<_RelatesTo> get copyWith =>
-      __$RelatesToCopyWithImpl<_RelatesTo>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, id, code, targetIdentifier, targetReference);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_RelatesToCopyWith<_$_RelatesTo> get copyWith =>
+      __$$_RelatesToCopyWithImpl<_$_RelatesTo>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_RelatesToToJson(this);
+    return _$$_RelatesToToJson(
+      this,
+    );
   }
 }
 
 abstract class _RelatesTo implements RelatesTo {
   factory _RelatesTo(
-          {@JsonKey(name: 'ID') CodeableConcept? id,
-          @JsonKey(name: 'Code') String? code,
-          @JsonKey(name: 'TargetIdentifier') Identifier? targetIdentifier,
-          @JsonKey(name: 'TargetReference') Reference? targetReference}) =
+          {@JsonKey(name: 'ID') final CodeableConcept? id,
+          @JsonKey(name: 'Code') final String? code,
+          @JsonKey(name: 'TargetIdentifier') final Identifier? targetIdentifier,
+          @JsonKey(name: 'TargetReference') final Reference? targetReference}) =
       _$_RelatesTo;
 
   factory _RelatesTo.fromJson(Map<String, dynamic> json) =
@@ -469,50 +438,25 @@ abstract class _RelatesTo implements RelatesTo {
 
   @override
   @JsonKey(name: 'ID')
-  CodeableConcept? get id => throw _privateConstructorUsedError;
+  CodeableConcept? get id;
   @override
   @JsonKey(name: 'Code')
-  String? get code => throw _privateConstructorUsedError;
+  String? get code;
   @override
   @JsonKey(name: 'TargetIdentifier')
-  Identifier? get targetIdentifier => throw _privateConstructorUsedError;
+  Identifier? get targetIdentifier;
   @override
   @JsonKey(name: 'TargetReference')
-  Reference? get targetReference => throw _privateConstructorUsedError;
+  Reference? get targetReference;
   @override
   @JsonKey(ignore: true)
-  _$RelatesToCopyWith<_RelatesTo> get copyWith =>
+  _$$_RelatesToCopyWith<_$_RelatesTo> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 Event _$EventFromJson(Map<String, dynamic> json) {
   return _Event.fromJson(json);
 }
-
-/// @nodoc
-class _$EventTearOff {
-  const _$EventTearOff();
-
-  _Event call(
-      {@JsonKey(name: 'ID') CodeableConcept? id,
-      @JsonKey(name: 'Code') String? code,
-      @JsonKey(name: 'Period') Period? targetIdentifier,
-      @JsonKey(name: 'Detail') List<Reference?>? detail}) {
-    return _Event(
-      id: id,
-      code: code,
-      targetIdentifier: targetIdentifier,
-      detail: detail,
-    );
-  }
-
-  Event fromJson(Map<String, Object> json) {
-    return Event.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Event = _$EventTearOff();
 
 /// @nodoc
 mixin _$Event {
@@ -533,7 +477,8 @@ mixin _$Event {
 /// @nodoc
 abstract class $EventCopyWith<$Res> {
   factory $EventCopyWith(Event value, $Res Function(Event) then) =
-      _$EventCopyWithImpl<$Res>;
+      _$EventCopyWithImpl<$Res, Event>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') CodeableConcept? id,
       @JsonKey(name: 'Code') String? code,
@@ -545,13 +490,16 @@ abstract class $EventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$EventCopyWithImpl<$Res> implements $EventCopyWith<$Res> {
+class _$EventCopyWithImpl<$Res, $Val extends Event>
+    implements $EventCopyWith<$Res> {
   _$EventCopyWithImpl(this._value, this._then);
 
-  final Event _value;
   // ignore: unused_field
-  final $Res Function(Event) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -560,53 +508,56 @@ class _$EventCopyWithImpl<$Res> implements $EventCopyWith<$Res> {
     Object? detail = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      code: code == freezed
+      code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String?,
-      targetIdentifier: targetIdentifier == freezed
+      targetIdentifier: freezed == targetIdentifier
           ? _value.targetIdentifier
           : targetIdentifier // ignore: cast_nullable_to_non_nullable
               as Period?,
-      detail: detail == freezed
+      detail: freezed == detail
           ? _value.detail
           : detail // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get id {
     if (_value.id == null) {
       return null;
     }
 
     return $CodeableConceptCopyWith<$Res>(_value.id!, (value) {
-      return _then(_value.copyWith(id: value));
+      return _then(_value.copyWith(id: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $PeriodCopyWith<$Res>? get targetIdentifier {
     if (_value.targetIdentifier == null) {
       return null;
     }
 
     return $PeriodCopyWith<$Res>(_value.targetIdentifier!, (value) {
-      return _then(_value.copyWith(targetIdentifier: value));
+      return _then(_value.copyWith(targetIdentifier: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$EventCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$EventCopyWith(_Event value, $Res Function(_Event) then) =
-      __$EventCopyWithImpl<$Res>;
+abstract class _$$_EventCopyWith<$Res> implements $EventCopyWith<$Res> {
+  factory _$$_EventCopyWith(_$_Event value, $Res Function(_$_Event) then) =
+      __$$_EventCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') CodeableConcept? id,
       @JsonKey(name: 'Code') String? code,
@@ -620,14 +571,12 @@ abstract class _$EventCopyWith<$Res> implements $EventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$EventCopyWith<$Res> {
-  __$EventCopyWithImpl(_Event _value, $Res Function(_Event) _then)
-      : super(_value, (v) => _then(v as _Event));
+class __$$_EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$_Event>
+    implements _$$_EventCopyWith<$Res> {
+  __$$_EventCopyWithImpl(_$_Event _value, $Res Function(_$_Event) _then)
+      : super(_value, _then);
 
-  @override
-  _Event get _value => super._value as _Event;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -635,21 +584,21 @@ class __$EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
     Object? targetIdentifier = freezed,
     Object? detail = freezed,
   }) {
-    return _then(_Event(
-      id: id == freezed
+    return _then(_$_Event(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      code: code == freezed
+      code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String?,
-      targetIdentifier: targetIdentifier == freezed
+      targetIdentifier: freezed == targetIdentifier
           ? _value.targetIdentifier
           : targetIdentifier // ignore: cast_nullable_to_non_nullable
               as Period?,
-      detail: detail == freezed
-          ? _value.detail
+      detail: freezed == detail
+          ? _value._detail
           : detail // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
     ));
@@ -663,10 +612,11 @@ class _$_Event implements _Event {
       {@JsonKey(name: 'ID') this.id,
       @JsonKey(name: 'Code') this.code,
       @JsonKey(name: 'Period') this.targetIdentifier,
-      @JsonKey(name: 'Detail') this.detail});
+      @JsonKey(name: 'Detail') final List<Reference?>? detail})
+      : _detail = detail;
 
   factory _$_Event.fromJson(Map<String, dynamic> json) =>
-      _$_$_EventFromJson(json);
+      _$$_EventFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
@@ -677,9 +627,15 @@ class _$_Event implements _Event {
   @override
   @JsonKey(name: 'Period')
   final Period? targetIdentifier;
+  final List<Reference?>? _detail;
   @override
   @JsonKey(name: 'Detail')
-  final List<Reference?>? detail;
+  List<Reference?>? get detail {
+    final value = _detail;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -689,105 +645,64 @@ class _$_Event implements _Event {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Event &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_Event &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.code, code) || other.code == code) &&
             (identical(other.targetIdentifier, targetIdentifier) ||
-                const DeepCollectionEquality()
-                    .equals(other.targetIdentifier, targetIdentifier)) &&
-            (identical(other.detail, detail) ||
-                const DeepCollectionEquality().equals(other.detail, detail)));
+                other.targetIdentifier == targetIdentifier) &&
+            const DeepCollectionEquality().equals(other._detail, _detail));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(code) ^
-      const DeepCollectionEquality().hash(targetIdentifier) ^
-      const DeepCollectionEquality().hash(detail);
 
   @JsonKey(ignore: true)
   @override
-  _$EventCopyWith<_Event> get copyWith =>
-      __$EventCopyWithImpl<_Event>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, id, code, targetIdentifier,
+      const DeepCollectionEquality().hash(_detail));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_EventCopyWith<_$_Event> get copyWith =>
+      __$$_EventCopyWithImpl<_$_Event>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_EventToJson(this);
+    return _$$_EventToJson(
+      this,
+    );
   }
 }
 
 abstract class _Event implements Event {
   factory _Event(
-      {@JsonKey(name: 'ID') CodeableConcept? id,
-      @JsonKey(name: 'Code') String? code,
-      @JsonKey(name: 'Period') Period? targetIdentifier,
-      @JsonKey(name: 'Detail') List<Reference?>? detail}) = _$_Event;
+      {@JsonKey(name: 'ID') final CodeableConcept? id,
+      @JsonKey(name: 'Code') final String? code,
+      @JsonKey(name: 'Period') final Period? targetIdentifier,
+      @JsonKey(name: 'Detail') final List<Reference?>? detail}) = _$_Event;
 
   factory _Event.fromJson(Map<String, dynamic> json) = _$_Event.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  CodeableConcept? get id => throw _privateConstructorUsedError;
+  CodeableConcept? get id;
   @override
   @JsonKey(name: 'Code')
-  String? get code => throw _privateConstructorUsedError;
+  String? get code;
   @override
   @JsonKey(name: 'Period')
-  Period? get targetIdentifier => throw _privateConstructorUsedError;
+  Period? get targetIdentifier;
   @override
   @JsonKey(name: 'Detail')
-  List<Reference?>? get detail => throw _privateConstructorUsedError;
+  List<Reference?>? get detail;
   @override
   @JsonKey(ignore: true)
-  _$EventCopyWith<_Event> get copyWith => throw _privateConstructorUsedError;
+  _$$_EventCopyWith<_$_Event> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 Section _$SectionFromJson(Map<String, dynamic> json) {
   return _Section.fromJson(json);
 }
-
-/// @nodoc
-class _$SectionTearOff {
-  const _$SectionTearOff();
-
-  _Section call(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'Title') String? title,
-      @JsonKey(name: 'Code') String? code,
-      @JsonKey(name: 'Author') List<Reference?>? author,
-      @JsonKey(name: 'Focus') Reference? focus,
-      @JsonKey(name: 'Text') Narrative? text,
-      @JsonKey(name: 'Mode') String? mode,
-      @JsonKey(name: 'OrderedBy') CodeableConcept? orderedBy,
-      @JsonKey(name: 'Entry') List<Reference?>? entry,
-      @JsonKey(name: 'EmptyReason') Reference? emptyReason,
-      @JsonKey(name: 'Section') List<Section?>? section}) {
-    return _Section(
-      id: id,
-      title: title,
-      code: code,
-      author: author,
-      focus: focus,
-      text: text,
-      mode: mode,
-      orderedBy: orderedBy,
-      entry: entry,
-      emptyReason: emptyReason,
-      section: section,
-    );
-  }
-
-  Section fromJson(Map<String, Object> json) {
-    return Section.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Section = _$SectionTearOff();
 
 /// @nodoc
 mixin _$Section {
@@ -822,7 +737,8 @@ mixin _$Section {
 /// @nodoc
 abstract class $SectionCopyWith<$Res> {
   factory $SectionCopyWith(Section value, $Res Function(Section) then) =
-      _$SectionCopyWithImpl<$Res>;
+      _$SectionCopyWithImpl<$Res, Section>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'Title') String? title,
@@ -843,13 +759,16 @@ abstract class $SectionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SectionCopyWithImpl<$Res> implements $SectionCopyWith<$Res> {
+class _$SectionCopyWithImpl<$Res, $Val extends Section>
+    implements $SectionCopyWith<$Res> {
   _$SectionCopyWithImpl(this._value, this._then);
 
-  final Section _value;
   // ignore: unused_field
-  final $Res Function(Section) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -865,103 +784,109 @@ class _$SectionCopyWithImpl<$Res> implements $SectionCopyWith<$Res> {
     Object? section = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      code: code == freezed
+      code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String?,
-      author: author == freezed
+      author: freezed == author
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      focus: focus == freezed
+      focus: freezed == focus
           ? _value.focus
           : focus // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      text: text == freezed
+      text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as Narrative?,
-      mode: mode == freezed
+      mode: freezed == mode
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as String?,
-      orderedBy: orderedBy == freezed
+      orderedBy: freezed == orderedBy
           ? _value.orderedBy
           : orderedBy // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      entry: entry == freezed
+      entry: freezed == entry
           ? _value.entry
           : entry // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      emptyReason: emptyReason == freezed
+      emptyReason: freezed == emptyReason
           ? _value.emptyReason
           : emptyReason // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      section: section == freezed
+      section: freezed == section
           ? _value.section
           : section // ignore: cast_nullable_to_non_nullable
               as List<Section?>?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get focus {
     if (_value.focus == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.focus!, (value) {
-      return _then(_value.copyWith(focus: value));
+      return _then(_value.copyWith(focus: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
     }
 
     return $NarrativeCopyWith<$Res>(_value.text!, (value) {
-      return _then(_value.copyWith(text: value));
+      return _then(_value.copyWith(text: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get orderedBy {
     if (_value.orderedBy == null) {
       return null;
     }
 
     return $CodeableConceptCopyWith<$Res>(_value.orderedBy!, (value) {
-      return _then(_value.copyWith(orderedBy: value));
+      return _then(_value.copyWith(orderedBy: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get emptyReason {
     if (_value.emptyReason == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.emptyReason!, (value) {
-      return _then(_value.copyWith(emptyReason: value));
+      return _then(_value.copyWith(emptyReason: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$SectionCopyWith<$Res> implements $SectionCopyWith<$Res> {
-  factory _$SectionCopyWith(_Section value, $Res Function(_Section) then) =
-      __$SectionCopyWithImpl<$Res>;
+abstract class _$$_SectionCopyWith<$Res> implements $SectionCopyWith<$Res> {
+  factory _$$_SectionCopyWith(
+          _$_Section value, $Res Function(_$_Section) then) =
+      __$$_SectionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'Title') String? title,
@@ -986,14 +911,13 @@ abstract class _$SectionCopyWith<$Res> implements $SectionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$SectionCopyWithImpl<$Res> extends _$SectionCopyWithImpl<$Res>
-    implements _$SectionCopyWith<$Res> {
-  __$SectionCopyWithImpl(_Section _value, $Res Function(_Section) _then)
-      : super(_value, (v) => _then(v as _Section));
+class __$$_SectionCopyWithImpl<$Res>
+    extends _$SectionCopyWithImpl<$Res, _$_Section>
+    implements _$$_SectionCopyWith<$Res> {
+  __$$_SectionCopyWithImpl(_$_Section _value, $Res Function(_$_Section) _then)
+      : super(_value, _then);
 
-  @override
-  _Section get _value => super._value as _Section;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -1008,49 +932,49 @@ class __$SectionCopyWithImpl<$Res> extends _$SectionCopyWithImpl<$Res>
     Object? emptyReason = freezed,
     Object? section = freezed,
   }) {
-    return _then(_Section(
-      id: id == freezed
+    return _then(_$_Section(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      code: code == freezed
+      code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String?,
-      author: author == freezed
-          ? _value.author
+      author: freezed == author
+          ? _value._author
           : author // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      focus: focus == freezed
+      focus: freezed == focus
           ? _value.focus
           : focus // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      text: text == freezed
+      text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as Narrative?,
-      mode: mode == freezed
+      mode: freezed == mode
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as String?,
-      orderedBy: orderedBy == freezed
+      orderedBy: freezed == orderedBy
           ? _value.orderedBy
           : orderedBy // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      entry: entry == freezed
-          ? _value.entry
+      entry: freezed == entry
+          ? _value._entry
           : entry // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      emptyReason: emptyReason == freezed
+      emptyReason: freezed == emptyReason
           ? _value.emptyReason
           : emptyReason // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      section: section == freezed
-          ? _value.section
+      section: freezed == section
+          ? _value._section
           : section // ignore: cast_nullable_to_non_nullable
               as List<Section?>?,
     ));
@@ -1064,17 +988,20 @@ class _$_Section implements _Section {
       {@JsonKey(name: 'ID') this.id,
       @JsonKey(name: 'Title') this.title,
       @JsonKey(name: 'Code') this.code,
-      @JsonKey(name: 'Author') this.author,
+      @JsonKey(name: 'Author') final List<Reference?>? author,
       @JsonKey(name: 'Focus') this.focus,
       @JsonKey(name: 'Text') this.text,
       @JsonKey(name: 'Mode') this.mode,
       @JsonKey(name: 'OrderedBy') this.orderedBy,
-      @JsonKey(name: 'Entry') this.entry,
+      @JsonKey(name: 'Entry') final List<Reference?>? entry,
       @JsonKey(name: 'EmptyReason') this.emptyReason,
-      @JsonKey(name: 'Section') this.section});
+      @JsonKey(name: 'Section') final List<Section?>? section})
+      : _author = author,
+        _entry = entry,
+        _section = section;
 
   factory _$_Section.fromJson(Map<String, dynamic> json) =>
-      _$_$_SectionFromJson(json);
+      _$$_SectionFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
@@ -1085,9 +1012,16 @@ class _$_Section implements _Section {
   @override
   @JsonKey(name: 'Code')
   final String? code;
+  final List<Reference?>? _author;
   @override
   @JsonKey(name: 'Author')
-  final List<Reference?>? author;
+  List<Reference?>? get author {
+    final value = _author;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'Focus')
   final Reference? focus;
@@ -1100,15 +1034,28 @@ class _$_Section implements _Section {
   @override
   @JsonKey(name: 'OrderedBy')
   final CodeableConcept? orderedBy;
+  final List<Reference?>? _entry;
   @override
   @JsonKey(name: 'Entry')
-  final List<Reference?>? entry;
+  List<Reference?>? get entry {
+    final value = _entry;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'EmptyReason')
   final Reference? emptyReason;
+  final List<Section?>? _section;
   @override
   @JsonKey(name: 'Section')
-  final List<Section?>? section;
+  List<Section?>? get section {
+    final value = _section;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -1118,146 +1065,111 @@ class _$_Section implements _Section {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Section &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)) &&
-            (identical(other.author, author) ||
-                const DeepCollectionEquality().equals(other.author, author)) &&
-            (identical(other.focus, focus) ||
-                const DeepCollectionEquality().equals(other.focus, focus)) &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)) &&
-            (identical(other.mode, mode) ||
-                const DeepCollectionEquality().equals(other.mode, mode)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_Section &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.code, code) || other.code == code) &&
+            const DeepCollectionEquality().equals(other._author, _author) &&
+            (identical(other.focus, focus) || other.focus == focus) &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.mode, mode) || other.mode == mode) &&
             (identical(other.orderedBy, orderedBy) ||
-                const DeepCollectionEquality()
-                    .equals(other.orderedBy, orderedBy)) &&
-            (identical(other.entry, entry) ||
-                const DeepCollectionEquality().equals(other.entry, entry)) &&
+                other.orderedBy == orderedBy) &&
+            const DeepCollectionEquality().equals(other._entry, _entry) &&
             (identical(other.emptyReason, emptyReason) ||
-                const DeepCollectionEquality()
-                    .equals(other.emptyReason, emptyReason)) &&
-            (identical(other.section, section) ||
-                const DeepCollectionEquality().equals(other.section, section)));
+                other.emptyReason == emptyReason) &&
+            const DeepCollectionEquality().equals(other._section, _section));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(code) ^
-      const DeepCollectionEquality().hash(author) ^
-      const DeepCollectionEquality().hash(focus) ^
-      const DeepCollectionEquality().hash(text) ^
-      const DeepCollectionEquality().hash(mode) ^
-      const DeepCollectionEquality().hash(orderedBy) ^
-      const DeepCollectionEquality().hash(entry) ^
-      const DeepCollectionEquality().hash(emptyReason) ^
-      const DeepCollectionEquality().hash(section);
 
   @JsonKey(ignore: true)
   @override
-  _$SectionCopyWith<_Section> get copyWith =>
-      __$SectionCopyWithImpl<_Section>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      title,
+      code,
+      const DeepCollectionEquality().hash(_author),
+      focus,
+      text,
+      mode,
+      orderedBy,
+      const DeepCollectionEquality().hash(_entry),
+      emptyReason,
+      const DeepCollectionEquality().hash(_section));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_SectionCopyWith<_$_Section> get copyWith =>
+      __$$_SectionCopyWithImpl<_$_Section>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SectionToJson(this);
+    return _$$_SectionToJson(
+      this,
+    );
   }
 }
 
 abstract class _Section implements Section {
   factory _Section(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'Title') String? title,
-      @JsonKey(name: 'Code') String? code,
-      @JsonKey(name: 'Author') List<Reference?>? author,
-      @JsonKey(name: 'Focus') Reference? focus,
-      @JsonKey(name: 'Text') Narrative? text,
-      @JsonKey(name: 'Mode') String? mode,
-      @JsonKey(name: 'OrderedBy') CodeableConcept? orderedBy,
-      @JsonKey(name: 'Entry') List<Reference?>? entry,
-      @JsonKey(name: 'EmptyReason') Reference? emptyReason,
-      @JsonKey(name: 'Section') List<Section?>? section}) = _$_Section;
+      {@JsonKey(name: 'ID') final String? id,
+      @JsonKey(name: 'Title') final String? title,
+      @JsonKey(name: 'Code') final String? code,
+      @JsonKey(name: 'Author') final List<Reference?>? author,
+      @JsonKey(name: 'Focus') final Reference? focus,
+      @JsonKey(name: 'Text') final Narrative? text,
+      @JsonKey(name: 'Mode') final String? mode,
+      @JsonKey(name: 'OrderedBy') final CodeableConcept? orderedBy,
+      @JsonKey(name: 'Entry') final List<Reference?>? entry,
+      @JsonKey(name: 'EmptyReason') final Reference? emptyReason,
+      @JsonKey(name: 'Section') final List<Section?>? section}) = _$_Section;
 
   factory _Section.fromJson(Map<String, dynamic> json) = _$_Section.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
   @JsonKey(name: 'Title')
-  String? get title => throw _privateConstructorUsedError;
+  String? get title;
   @override
   @JsonKey(name: 'Code')
-  String? get code => throw _privateConstructorUsedError;
+  String? get code;
   @override
   @JsonKey(name: 'Author')
-  List<Reference?>? get author => throw _privateConstructorUsedError;
+  List<Reference?>? get author;
   @override
   @JsonKey(name: 'Focus')
-  Reference? get focus => throw _privateConstructorUsedError;
+  Reference? get focus;
   @override
   @JsonKey(name: 'Text')
-  Narrative? get text => throw _privateConstructorUsedError;
+  Narrative? get text;
   @override
   @JsonKey(name: 'Mode')
-  String? get mode => throw _privateConstructorUsedError;
+  String? get mode;
   @override
   @JsonKey(name: 'OrderedBy')
-  CodeableConcept? get orderedBy => throw _privateConstructorUsedError;
+  CodeableConcept? get orderedBy;
   @override
   @JsonKey(name: 'Entry')
-  List<Reference?>? get entry => throw _privateConstructorUsedError;
+  List<Reference?>? get entry;
   @override
   @JsonKey(name: 'EmptyReason')
-  Reference? get emptyReason => throw _privateConstructorUsedError;
+  Reference? get emptyReason;
   @override
   @JsonKey(name: 'Section')
-  List<Section?>? get section => throw _privateConstructorUsedError;
+  List<Section?>? get section;
   @override
   @JsonKey(ignore: true)
-  _$SectionCopyWith<_Section> get copyWith =>
+  _$$_SectionCopyWith<_$_Section> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 Age _$AgeFromJson(Map<String, dynamic> json) {
   return _Age.fromJson(json);
 }
-
-/// @nodoc
-class _$AgeTearOff {
-  const _$AgeTearOff();
-
-  _Age call(
-      {@JsonKey(name: 'ID') CodeableConcept? id,
-      @JsonKey(name: 'Value') double? value,
-      @JsonKey(name: 'Comparator') ComparatorEnum? comparator,
-      @JsonKey(name: 'Unit') String? unit,
-      @JsonKey(name: 'System') String? system,
-      @JsonKey(name: 'Code') String? code}) {
-    return _Age(
-      id: id,
-      value: value,
-      comparator: comparator,
-      unit: unit,
-      system: system,
-      code: code,
-    );
-  }
-
-  Age fromJson(Map<String, Object> json) {
-    return Age.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Age = _$AgeTearOff();
 
 /// @nodoc
 mixin _$Age {
@@ -1282,7 +1194,8 @@ mixin _$Age {
 /// @nodoc
 abstract class $AgeCopyWith<$Res> {
   factory $AgeCopyWith(Age value, $Res Function(Age) then) =
-      _$AgeCopyWithImpl<$Res>;
+      _$AgeCopyWithImpl<$Res, Age>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') CodeableConcept? id,
       @JsonKey(name: 'Value') double? value,
@@ -1295,13 +1208,15 @@ abstract class $AgeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AgeCopyWithImpl<$Res> implements $AgeCopyWith<$Res> {
+class _$AgeCopyWithImpl<$Res, $Val extends Age> implements $AgeCopyWith<$Res> {
   _$AgeCopyWithImpl(this._value, this._then);
 
-  final Age _value;
   // ignore: unused_field
-  final $Res Function(Age) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -1312,50 +1227,52 @@ class _$AgeCopyWithImpl<$Res> implements $AgeCopyWith<$Res> {
     Object? code = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      value: value == freezed
+      value: freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as double?,
-      comparator: comparator == freezed
+      comparator: freezed == comparator
           ? _value.comparator
           : comparator // ignore: cast_nullable_to_non_nullable
               as ComparatorEnum?,
-      unit: unit == freezed
+      unit: freezed == unit
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String?,
-      system: system == freezed
+      system: freezed == system
           ? _value.system
           : system // ignore: cast_nullable_to_non_nullable
               as String?,
-      code: code == freezed
+      code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get id {
     if (_value.id == null) {
       return null;
     }
 
     return $CodeableConceptCopyWith<$Res>(_value.id!, (value) {
-      return _then(_value.copyWith(id: value));
+      return _then(_value.copyWith(id: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$AgeCopyWith<$Res> implements $AgeCopyWith<$Res> {
-  factory _$AgeCopyWith(_Age value, $Res Function(_Age) then) =
-      __$AgeCopyWithImpl<$Res>;
+abstract class _$$_AgeCopyWith<$Res> implements $AgeCopyWith<$Res> {
+  factory _$$_AgeCopyWith(_$_Age value, $Res Function(_$_Age) then) =
+      __$$_AgeCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') CodeableConcept? id,
       @JsonKey(name: 'Value') double? value,
@@ -1369,14 +1286,12 @@ abstract class _$AgeCopyWith<$Res> implements $AgeCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$AgeCopyWithImpl<$Res> extends _$AgeCopyWithImpl<$Res>
-    implements _$AgeCopyWith<$Res> {
-  __$AgeCopyWithImpl(_Age _value, $Res Function(_Age) _then)
-      : super(_value, (v) => _then(v as _Age));
+class __$$_AgeCopyWithImpl<$Res> extends _$AgeCopyWithImpl<$Res, _$_Age>
+    implements _$$_AgeCopyWith<$Res> {
+  __$$_AgeCopyWithImpl(_$_Age _value, $Res Function(_$_Age) _then)
+      : super(_value, _then);
 
-  @override
-  _Age get _value => super._value as _Age;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -1386,28 +1301,28 @@ class __$AgeCopyWithImpl<$Res> extends _$AgeCopyWithImpl<$Res>
     Object? system = freezed,
     Object? code = freezed,
   }) {
-    return _then(_Age(
-      id: id == freezed
+    return _then(_$_Age(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      value: value == freezed
+      value: freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as double?,
-      comparator: comparator == freezed
+      comparator: freezed == comparator
           ? _value.comparator
           : comparator // ignore: cast_nullable_to_non_nullable
               as ComparatorEnum?,
-      unit: unit == freezed
+      unit: freezed == unit
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String?,
-      system: system == freezed
+      system: freezed == system
           ? _value.system
           : system // ignore: cast_nullable_to_non_nullable
               as String?,
-      code: code == freezed
+      code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -1426,7 +1341,7 @@ class _$_Age implements _Age {
       @JsonKey(name: 'System') this.system,
       @JsonKey(name: 'Code') this.code});
 
-  factory _$_Age.fromJson(Map<String, dynamic> json) => _$_$_AgeFromJson(json);
+  factory _$_Age.fromJson(Map<String, dynamic> json) => _$$_AgeFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
@@ -1455,109 +1370,73 @@ class _$_Age implements _Age {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Age &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_Age &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.value, value) || other.value == value) &&
             (identical(other.comparator, comparator) ||
-                const DeepCollectionEquality()
-                    .equals(other.comparator, comparator)) &&
-            (identical(other.unit, unit) ||
-                const DeepCollectionEquality().equals(other.unit, unit)) &&
-            (identical(other.system, system) ||
-                const DeepCollectionEquality().equals(other.system, system)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)));
+                other.comparator == comparator) &&
+            (identical(other.unit, unit) || other.unit == unit) &&
+            (identical(other.system, system) || other.system == system) &&
+            (identical(other.code, code) || other.code == code));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(value) ^
-      const DeepCollectionEquality().hash(comparator) ^
-      const DeepCollectionEquality().hash(unit) ^
-      const DeepCollectionEquality().hash(system) ^
-      const DeepCollectionEquality().hash(code);
 
   @JsonKey(ignore: true)
   @override
-  _$AgeCopyWith<_Age> get copyWith =>
-      __$AgeCopyWithImpl<_Age>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, id, value, comparator, unit, system, code);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_AgeCopyWith<_$_Age> get copyWith =>
+      __$$_AgeCopyWithImpl<_$_Age>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_AgeToJson(this);
+    return _$$_AgeToJson(
+      this,
+    );
   }
 }
 
 abstract class _Age implements Age {
   factory _Age(
-      {@JsonKey(name: 'ID') CodeableConcept? id,
-      @JsonKey(name: 'Value') double? value,
-      @JsonKey(name: 'Comparator') ComparatorEnum? comparator,
-      @JsonKey(name: 'Unit') String? unit,
-      @JsonKey(name: 'System') String? system,
-      @JsonKey(name: 'Code') String? code}) = _$_Age;
+      {@JsonKey(name: 'ID') final CodeableConcept? id,
+      @JsonKey(name: 'Value') final double? value,
+      @JsonKey(name: 'Comparator') final ComparatorEnum? comparator,
+      @JsonKey(name: 'Unit') final String? unit,
+      @JsonKey(name: 'System') final String? system,
+      @JsonKey(name: 'Code') final String? code}) = _$_Age;
 
   factory _Age.fromJson(Map<String, dynamic> json) = _$_Age.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  CodeableConcept? get id => throw _privateConstructorUsedError;
+  CodeableConcept? get id;
   @override
   @JsonKey(name: 'Value')
-  double? get value => throw _privateConstructorUsedError;
+  double? get value;
   @override
   @JsonKey(name: 'Comparator')
-  ComparatorEnum? get comparator => throw _privateConstructorUsedError;
+  ComparatorEnum? get comparator;
   @override
   @JsonKey(name: 'Unit')
-  String? get unit => throw _privateConstructorUsedError;
+  String? get unit;
   @override
   @JsonKey(name: 'System')
-  String? get system => throw _privateConstructorUsedError;
+  String? get system;
   @override
   @JsonKey(name: 'Code')
-  String? get code => throw _privateConstructorUsedError;
+  String? get code;
   @override
   @JsonKey(ignore: true)
-  _$AgeCopyWith<_Age> get copyWith => throw _privateConstructorUsedError;
+  _$$_AgeCopyWith<_$_Age> get copyWith => throw _privateConstructorUsedError;
 }
 
 Quantity _$QuantityFromJson(Map<String, dynamic> json) {
   return _Quantity.fromJson(json);
 }
-
-/// @nodoc
-class _$QuantityTearOff {
-  const _$QuantityTearOff();
-
-  _Quantity call(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'Value') double? value,
-      @JsonKey(name: 'Comparator') ComparatorEnum? comparator,
-      @JsonKey(name: 'Unit') String? unit,
-      @JsonKey(name: 'System') String? system,
-      @JsonKey(name: 'Code') String? code}) {
-    return _Quantity(
-      id: id,
-      value: value,
-      comparator: comparator,
-      unit: unit,
-      system: system,
-      code: code,
-    );
-  }
-
-  Quantity fromJson(Map<String, Object> json) {
-    return Quantity.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Quantity = _$QuantityTearOff();
 
 /// @nodoc
 mixin _$Quantity {
@@ -1583,7 +1462,8 @@ mixin _$Quantity {
 /// @nodoc
 abstract class $QuantityCopyWith<$Res> {
   factory $QuantityCopyWith(Quantity value, $Res Function(Quantity) then) =
-      _$QuantityCopyWithImpl<$Res>;
+      _$QuantityCopyWithImpl<$Res, Quantity>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'Value') double? value,
@@ -1594,13 +1474,16 @@ abstract class $QuantityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$QuantityCopyWithImpl<$Res> implements $QuantityCopyWith<$Res> {
+class _$QuantityCopyWithImpl<$Res, $Val extends Quantity>
+    implements $QuantityCopyWith<$Res> {
   _$QuantityCopyWithImpl(this._value, this._then);
 
-  final Quantity _value;
   // ignore: unused_field
-  final $Res Function(Quantity) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -1611,39 +1494,41 @@ class _$QuantityCopyWithImpl<$Res> implements $QuantityCopyWith<$Res> {
     Object? code = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      value: value == freezed
+      value: freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as double?,
-      comparator: comparator == freezed
+      comparator: freezed == comparator
           ? _value.comparator
           : comparator // ignore: cast_nullable_to_non_nullable
               as ComparatorEnum?,
-      unit: unit == freezed
+      unit: freezed == unit
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String?,
-      system: system == freezed
+      system: freezed == system
           ? _value.system
           : system // ignore: cast_nullable_to_non_nullable
               as String?,
-      code: code == freezed
+      code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$QuantityCopyWith<$Res> implements $QuantityCopyWith<$Res> {
-  factory _$QuantityCopyWith(_Quantity value, $Res Function(_Quantity) then) =
-      __$QuantityCopyWithImpl<$Res>;
+abstract class _$$_QuantityCopyWith<$Res> implements $QuantityCopyWith<$Res> {
+  factory _$$_QuantityCopyWith(
+          _$_Quantity value, $Res Function(_$_Quantity) then) =
+      __$$_QuantityCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'Value') double? value,
@@ -1654,14 +1539,14 @@ abstract class _$QuantityCopyWith<$Res> implements $QuantityCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$QuantityCopyWithImpl<$Res> extends _$QuantityCopyWithImpl<$Res>
-    implements _$QuantityCopyWith<$Res> {
-  __$QuantityCopyWithImpl(_Quantity _value, $Res Function(_Quantity) _then)
-      : super(_value, (v) => _then(v as _Quantity));
+class __$$_QuantityCopyWithImpl<$Res>
+    extends _$QuantityCopyWithImpl<$Res, _$_Quantity>
+    implements _$$_QuantityCopyWith<$Res> {
+  __$$_QuantityCopyWithImpl(
+      _$_Quantity _value, $Res Function(_$_Quantity) _then)
+      : super(_value, _then);
 
-  @override
-  _Quantity get _value => super._value as _Quantity;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -1671,28 +1556,28 @@ class __$QuantityCopyWithImpl<$Res> extends _$QuantityCopyWithImpl<$Res>
     Object? system = freezed,
     Object? code = freezed,
   }) {
-    return _then(_Quantity(
-      id: id == freezed
+    return _then(_$_Quantity(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      value: value == freezed
+      value: freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as double?,
-      comparator: comparator == freezed
+      comparator: freezed == comparator
           ? _value.comparator
           : comparator // ignore: cast_nullable_to_non_nullable
               as ComparatorEnum?,
-      unit: unit == freezed
+      unit: freezed == unit
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String?,
-      system: system == freezed
+      system: freezed == system
           ? _value.system
           : system // ignore: cast_nullable_to_non_nullable
               as String?,
-      code: code == freezed
+      code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -1712,7 +1597,7 @@ class _$_Quantity implements _Quantity {
       @JsonKey(name: 'Code') this.code});
 
   factory _$_Quantity.fromJson(Map<String, dynamic> json) =>
-      _$_$_QuantityFromJson(json);
+      _$$_QuantityFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
@@ -1741,106 +1626,74 @@ class _$_Quantity implements _Quantity {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Quantity &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_Quantity &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.value, value) || other.value == value) &&
             (identical(other.comparator, comparator) ||
-                const DeepCollectionEquality()
-                    .equals(other.comparator, comparator)) &&
-            (identical(other.unit, unit) ||
-                const DeepCollectionEquality().equals(other.unit, unit)) &&
-            (identical(other.system, system) ||
-                const DeepCollectionEquality().equals(other.system, system)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)));
+                other.comparator == comparator) &&
+            (identical(other.unit, unit) || other.unit == unit) &&
+            (identical(other.system, system) || other.system == system) &&
+            (identical(other.code, code) || other.code == code));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(value) ^
-      const DeepCollectionEquality().hash(comparator) ^
-      const DeepCollectionEquality().hash(unit) ^
-      const DeepCollectionEquality().hash(system) ^
-      const DeepCollectionEquality().hash(code);
 
   @JsonKey(ignore: true)
   @override
-  _$QuantityCopyWith<_Quantity> get copyWith =>
-      __$QuantityCopyWithImpl<_Quantity>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, id, value, comparator, unit, system, code);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_QuantityCopyWith<_$_Quantity> get copyWith =>
+      __$$_QuantityCopyWithImpl<_$_Quantity>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_QuantityToJson(this);
+    return _$$_QuantityToJson(
+      this,
+    );
   }
 }
 
 abstract class _Quantity implements Quantity {
   factory _Quantity(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'Value') double? value,
-      @JsonKey(name: 'Comparator') ComparatorEnum? comparator,
-      @JsonKey(name: 'Unit') String? unit,
-      @JsonKey(name: 'System') String? system,
-      @JsonKey(name: 'Code') String? code}) = _$_Quantity;
+      {@JsonKey(name: 'ID') final String? id,
+      @JsonKey(name: 'Value') final double? value,
+      @JsonKey(name: 'Comparator') final ComparatorEnum? comparator,
+      @JsonKey(name: 'Unit') final String? unit,
+      @JsonKey(name: 'System') final String? system,
+      @JsonKey(name: 'Code') final String? code}) = _$_Quantity;
 
   factory _Quantity.fromJson(Map<String, dynamic> json) = _$_Quantity.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
   @JsonKey(name: 'Value')
-  double? get value => throw _privateConstructorUsedError;
+  double? get value;
   @override
   @JsonKey(name: 'Comparator')
-  ComparatorEnum? get comparator => throw _privateConstructorUsedError;
+  ComparatorEnum? get comparator;
   @override
   @JsonKey(name: 'Unit')
-  String? get unit => throw _privateConstructorUsedError;
+  String? get unit;
   @override
   @JsonKey(name: 'System')
-  String? get system => throw _privateConstructorUsedError;
+  String? get system;
   @override
   @JsonKey(name: 'Code')
-  String? get code => throw _privateConstructorUsedError;
+  String? get code;
   @override
   @JsonKey(ignore: true)
-  _$QuantityCopyWith<_Quantity> get copyWith =>
+  _$$_QuantityCopyWith<_$_Quantity> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 Stage _$StageFromJson(Map<String, dynamic> json) {
   return _Stage.fromJson(json);
 }
-
-/// @nodoc
-class _$StageTearOff {
-  const _$StageTearOff();
-
-  _Stage call(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'Summary') CodeableConcept? summary,
-      @JsonKey(name: 'Assessment') List<Reference?>? assessment,
-      @JsonKey(name: 'Type') Reference? type}) {
-    return _Stage(
-      id: id,
-      summary: summary,
-      assessment: assessment,
-      type: type,
-    );
-  }
-
-  Stage fromJson(Map<String, Object> json) {
-    return Stage.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Stage = _$StageTearOff();
 
 /// @nodoc
 mixin _$Stage {
@@ -1861,7 +1714,8 @@ mixin _$Stage {
 /// @nodoc
 abstract class $StageCopyWith<$Res> {
   factory $StageCopyWith(Stage value, $Res Function(Stage) then) =
-      _$StageCopyWithImpl<$Res>;
+      _$StageCopyWithImpl<$Res, Stage>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'Summary') CodeableConcept? summary,
@@ -1873,13 +1727,16 @@ abstract class $StageCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$StageCopyWithImpl<$Res> implements $StageCopyWith<$Res> {
+class _$StageCopyWithImpl<$Res, $Val extends Stage>
+    implements $StageCopyWith<$Res> {
   _$StageCopyWithImpl(this._value, this._then);
 
-  final Stage _value;
   // ignore: unused_field
-  final $Res Function(Stage) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -1888,53 +1745,56 @@ class _$StageCopyWithImpl<$Res> implements $StageCopyWith<$Res> {
     Object? type = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      summary: summary == freezed
+      summary: freezed == summary
           ? _value.summary
           : summary // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      assessment: assessment == freezed
+      assessment: freezed == assessment
           ? _value.assessment
           : assessment // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as Reference?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get summary {
     if (_value.summary == null) {
       return null;
     }
 
     return $CodeableConceptCopyWith<$Res>(_value.summary!, (value) {
-      return _then(_value.copyWith(summary: value));
+      return _then(_value.copyWith(summary: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get type {
     if (_value.type == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.type!, (value) {
-      return _then(_value.copyWith(type: value));
+      return _then(_value.copyWith(type: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$StageCopyWith<$Res> implements $StageCopyWith<$Res> {
-  factory _$StageCopyWith(_Stage value, $Res Function(_Stage) then) =
-      __$StageCopyWithImpl<$Res>;
+abstract class _$$_StageCopyWith<$Res> implements $StageCopyWith<$Res> {
+  factory _$$_StageCopyWith(_$_Stage value, $Res Function(_$_Stage) then) =
+      __$$_StageCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'Summary') CodeableConcept? summary,
@@ -1948,14 +1808,12 @@ abstract class _$StageCopyWith<$Res> implements $StageCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$StageCopyWithImpl<$Res> extends _$StageCopyWithImpl<$Res>
-    implements _$StageCopyWith<$Res> {
-  __$StageCopyWithImpl(_Stage _value, $Res Function(_Stage) _then)
-      : super(_value, (v) => _then(v as _Stage));
+class __$$_StageCopyWithImpl<$Res> extends _$StageCopyWithImpl<$Res, _$_Stage>
+    implements _$$_StageCopyWith<$Res> {
+  __$$_StageCopyWithImpl(_$_Stage _value, $Res Function(_$_Stage) _then)
+      : super(_value, _then);
 
-  @override
-  _Stage get _value => super._value as _Stage;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -1963,20 +1821,20 @@ class __$StageCopyWithImpl<$Res> extends _$StageCopyWithImpl<$Res>
     Object? assessment = freezed,
     Object? type = freezed,
   }) {
-    return _then(_Stage(
-      id: id == freezed
+    return _then(_$_Stage(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      summary: summary == freezed
+      summary: freezed == summary
           ? _value.summary
           : summary // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      assessment: assessment == freezed
-          ? _value.assessment
+      assessment: freezed == assessment
+          ? _value._assessment
           : assessment // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as Reference?,
@@ -1990,11 +1848,12 @@ class _$_Stage implements _Stage {
   _$_Stage(
       {@JsonKey(name: 'ID') this.id,
       @JsonKey(name: 'Summary') this.summary,
-      @JsonKey(name: 'Assessment') this.assessment,
-      @JsonKey(name: 'Type') this.type});
+      @JsonKey(name: 'Assessment') final List<Reference?>? assessment,
+      @JsonKey(name: 'Type') this.type})
+      : _assessment = assessment;
 
   factory _$_Stage.fromJson(Map<String, dynamic> json) =>
-      _$_$_StageFromJson(json);
+      _$$_StageFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
@@ -2002,9 +1861,16 @@ class _$_Stage implements _Stage {
   @override
   @JsonKey(name: 'Summary')
   final CodeableConcept? summary;
+  final List<Reference?>? _assessment;
   @override
   @JsonKey(name: 'Assessment')
-  final List<Reference?>? assessment;
+  List<Reference?>? get assessment {
+    final value = _assessment;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'Type')
   final Reference? type;
@@ -2017,90 +1883,64 @@ class _$_Stage implements _Stage {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Stage &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.summary, summary) ||
-                const DeepCollectionEquality()
-                    .equals(other.summary, summary)) &&
-            (identical(other.assessment, assessment) ||
-                const DeepCollectionEquality()
-                    .equals(other.assessment, assessment)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)));
+        (other.runtimeType == runtimeType &&
+            other is _$_Stage &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.summary, summary) || other.summary == summary) &&
+            const DeepCollectionEquality()
+                .equals(other._assessment, _assessment) &&
+            (identical(other.type, type) || other.type == type));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(summary) ^
-      const DeepCollectionEquality().hash(assessment) ^
-      const DeepCollectionEquality().hash(type);
 
   @JsonKey(ignore: true)
   @override
-  _$StageCopyWith<_Stage> get copyWith =>
-      __$StageCopyWithImpl<_Stage>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, id, summary,
+      const DeepCollectionEquality().hash(_assessment), type);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_StageCopyWith<_$_Stage> get copyWith =>
+      __$$_StageCopyWithImpl<_$_Stage>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_StageToJson(this);
+    return _$$_StageToJson(
+      this,
+    );
   }
 }
 
 abstract class _Stage implements Stage {
   factory _Stage(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'Summary') CodeableConcept? summary,
-      @JsonKey(name: 'Assessment') List<Reference?>? assessment,
-      @JsonKey(name: 'Type') Reference? type}) = _$_Stage;
+      {@JsonKey(name: 'ID') final String? id,
+      @JsonKey(name: 'Summary') final CodeableConcept? summary,
+      @JsonKey(name: 'Assessment') final List<Reference?>? assessment,
+      @JsonKey(name: 'Type') final Reference? type}) = _$_Stage;
 
   factory _Stage.fromJson(Map<String, dynamic> json) = _$_Stage.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
   @JsonKey(name: 'Summary')
-  CodeableConcept? get summary => throw _privateConstructorUsedError;
+  CodeableConcept? get summary;
   @override
   @JsonKey(name: 'Assessment')
-  List<Reference?>? get assessment => throw _privateConstructorUsedError;
+  List<Reference?>? get assessment;
   @override
   @JsonKey(name: 'Type')
-  Reference? get type => throw _privateConstructorUsedError;
+  Reference? get type;
   @override
   @JsonKey(ignore: true)
-  _$StageCopyWith<_Stage> get copyWith => throw _privateConstructorUsedError;
+  _$$_StageCopyWith<_$_Stage> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 Evidence _$EvidenceFromJson(Map<String, dynamic> json) {
   return _Evidence.fromJson(json);
 }
-
-/// @nodoc
-class _$EvidenceTearOff {
-  const _$EvidenceTearOff();
-
-  _Evidence call(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'Code') CodeableConcept? code,
-      @JsonKey(name: 'Detail') List<Reference?>? detail}) {
-    return _Evidence(
-      id: id,
-      code: code,
-      detail: detail,
-    );
-  }
-
-  Evidence fromJson(Map<String, Object> json) {
-    return Evidence.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Evidence = _$EvidenceTearOff();
 
 /// @nodoc
 mixin _$Evidence {
@@ -2120,7 +1960,8 @@ mixin _$Evidence {
 /// @nodoc
 abstract class $EvidenceCopyWith<$Res> {
   factory $EvidenceCopyWith(Evidence value, $Res Function(Evidence) then) =
-      _$EvidenceCopyWithImpl<$Res>;
+      _$EvidenceCopyWithImpl<$Res, Evidence>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'Code') CodeableConcept? code,
@@ -2130,13 +1971,16 @@ abstract class $EvidenceCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$EvidenceCopyWithImpl<$Res> implements $EvidenceCopyWith<$Res> {
+class _$EvidenceCopyWithImpl<$Res, $Val extends Evidence>
+    implements $EvidenceCopyWith<$Res> {
   _$EvidenceCopyWithImpl(this._value, this._then);
 
-  final Evidence _value;
   // ignore: unused_field
-  final $Res Function(Evidence) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -2144,38 +1988,41 @@ class _$EvidenceCopyWithImpl<$Res> implements $EvidenceCopyWith<$Res> {
     Object? detail = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      code: code == freezed
+      code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      detail: detail == freezed
+      detail: freezed == detail
           ? _value.detail
           : detail // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get code {
     if (_value.code == null) {
       return null;
     }
 
     return $CodeableConceptCopyWith<$Res>(_value.code!, (value) {
-      return _then(_value.copyWith(code: value));
+      return _then(_value.copyWith(code: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$EvidenceCopyWith<$Res> implements $EvidenceCopyWith<$Res> {
-  factory _$EvidenceCopyWith(_Evidence value, $Res Function(_Evidence) then) =
-      __$EvidenceCopyWithImpl<$Res>;
+abstract class _$$_EvidenceCopyWith<$Res> implements $EvidenceCopyWith<$Res> {
+  factory _$$_EvidenceCopyWith(
+          _$_Evidence value, $Res Function(_$_Evidence) then) =
+      __$$_EvidenceCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'Code') CodeableConcept? code,
@@ -2186,31 +2033,31 @@ abstract class _$EvidenceCopyWith<$Res> implements $EvidenceCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$EvidenceCopyWithImpl<$Res> extends _$EvidenceCopyWithImpl<$Res>
-    implements _$EvidenceCopyWith<$Res> {
-  __$EvidenceCopyWithImpl(_Evidence _value, $Res Function(_Evidence) _then)
-      : super(_value, (v) => _then(v as _Evidence));
+class __$$_EvidenceCopyWithImpl<$Res>
+    extends _$EvidenceCopyWithImpl<$Res, _$_Evidence>
+    implements _$$_EvidenceCopyWith<$Res> {
+  __$$_EvidenceCopyWithImpl(
+      _$_Evidence _value, $Res Function(_$_Evidence) _then)
+      : super(_value, _then);
 
-  @override
-  _Evidence get _value => super._value as _Evidence;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? code = freezed,
     Object? detail = freezed,
   }) {
-    return _then(_Evidence(
-      id: id == freezed
+    return _then(_$_Evidence(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      code: code == freezed
+      code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      detail: detail == freezed
-          ? _value.detail
+      detail: freezed == detail
+          ? _value._detail
           : detail // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
     ));
@@ -2223,10 +2070,11 @@ class _$_Evidence implements _Evidence {
   _$_Evidence(
       {@JsonKey(name: 'ID') this.id,
       @JsonKey(name: 'Code') this.code,
-      @JsonKey(name: 'Detail') this.detail});
+      @JsonKey(name: 'Detail') final List<Reference?>? detail})
+      : _detail = detail;
 
   factory _$_Evidence.fromJson(Map<String, dynamic> json) =>
-      _$_$_EvidenceFromJson(json);
+      _$$_EvidenceFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
@@ -2234,9 +2082,15 @@ class _$_Evidence implements _Evidence {
   @override
   @JsonKey(name: 'Code')
   final CodeableConcept? code;
+  final List<Reference?>? _detail;
   @override
   @JsonKey(name: 'Detail')
-  final List<Reference?>? detail;
+  List<Reference?>? get detail {
+    final value = _detail;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -2246,108 +2100,58 @@ class _$_Evidence implements _Evidence {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Evidence &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)) &&
-            (identical(other.detail, detail) ||
-                const DeepCollectionEquality().equals(other.detail, detail)));
+        (other.runtimeType == runtimeType &&
+            other is _$_Evidence &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.code, code) || other.code == code) &&
+            const DeepCollectionEquality().equals(other._detail, _detail));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(code) ^
-      const DeepCollectionEquality().hash(detail);
 
   @JsonKey(ignore: true)
   @override
-  _$EvidenceCopyWith<_Evidence> get copyWith =>
-      __$EvidenceCopyWithImpl<_Evidence>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType, id, code, const DeepCollectionEquality().hash(_detail));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_EvidenceCopyWith<_$_Evidence> get copyWith =>
+      __$$_EvidenceCopyWithImpl<_$_Evidence>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_EvidenceToJson(this);
+    return _$$_EvidenceToJson(
+      this,
+    );
   }
 }
 
 abstract class _Evidence implements Evidence {
   factory _Evidence(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'Code') CodeableConcept? code,
-      @JsonKey(name: 'Detail') List<Reference?>? detail}) = _$_Evidence;
+      {@JsonKey(name: 'ID') final String? id,
+      @JsonKey(name: 'Code') final CodeableConcept? code,
+      @JsonKey(name: 'Detail') final List<Reference?>? detail}) = _$_Evidence;
 
   factory _Evidence.fromJson(Map<String, dynamic> json) = _$_Evidence.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
   @JsonKey(name: 'Code')
-  CodeableConcept? get code => throw _privateConstructorUsedError;
+  CodeableConcept? get code;
   @override
   @JsonKey(name: 'Detail')
-  List<Reference?>? get detail => throw _privateConstructorUsedError;
+  List<Reference?>? get detail;
   @override
   @JsonKey(ignore: true)
-  _$EvidenceCopyWith<_Evidence> get copyWith =>
+  _$$_EvidenceCopyWith<_$_Evidence> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 Composition _$CompositionFromJson(Map<String, dynamic> json) {
   return _Composition.fromJson(json);
 }
-
-/// @nodoc
-class _$CompositionTearOff {
-  const _$CompositionTearOff();
-
-  _Composition call(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'Identifier') Identifier? identifier,
-      @JsonKey(name: 'Status') CompositionStatusEnum? status,
-      @JsonKey(name: 'Type') CodeableConcept? type,
-      @JsonKey(name: 'Category') List<CodeableConcept?>? category,
-      @JsonKey(name: 'Subject') Reference? subject,
-      @JsonKey(name: 'Encounter') Reference? encounter,
-      @JsonKey(name: 'Date') String? date,
-      @JsonKey(name: 'Author') List<Reference?>? author,
-      @JsonKey(name: 'Title') String? title,
-      @JsonKey(name: 'Confidentiality') String? confidentiality,
-      @JsonKey(name: 'Attester') List<Attester?>? attester,
-      @JsonKey(name: 'Custodian') Reference? custodian,
-      @JsonKey(name: 'RelatesTo') List<RelatesTo?>? relatesTo,
-      @JsonKey(name: 'Event') List<Event?>? event,
-      @JsonKey(name: 'Section') List<Section?>? section}) {
-    return _Composition(
-      id: id,
-      identifier: identifier,
-      status: status,
-      type: type,
-      category: category,
-      subject: subject,
-      encounter: encounter,
-      date: date,
-      author: author,
-      title: title,
-      confidentiality: confidentiality,
-      attester: attester,
-      custodian: custodian,
-      relatesTo: relatesTo,
-      event: event,
-      section: section,
-    );
-  }
-
-  Composition fromJson(Map<String, Object> json) {
-    return Composition.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Composition = _$CompositionTearOff();
 
 /// @nodoc
 mixin _$Composition {
@@ -2394,7 +2198,8 @@ mixin _$Composition {
 abstract class $CompositionCopyWith<$Res> {
   factory $CompositionCopyWith(
           Composition value, $Res Function(Composition) then) =
-      _$CompositionCopyWithImpl<$Res>;
+      _$CompositionCopyWithImpl<$Res, Composition>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'Identifier') Identifier? identifier,
@@ -2421,13 +2226,16 @@ abstract class $CompositionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CompositionCopyWithImpl<$Res> implements $CompositionCopyWith<$Res> {
+class _$CompositionCopyWithImpl<$Res, $Val extends Composition>
+    implements $CompositionCopyWith<$Res> {
   _$CompositionCopyWithImpl(this._value, this._then);
 
-  final Composition _value;
   // ignore: unused_field
-  final $Res Function(Composition) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -2448,136 +2256,142 @@ class _$CompositionCopyWithImpl<$Res> implements $CompositionCopyWith<$Res> {
     Object? section = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      identifier: identifier == freezed
+      identifier: freezed == identifier
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
               as Identifier?,
-      status: status == freezed
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as CompositionStatusEnum?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      category: category == freezed
+      category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as List<CodeableConcept?>?,
-      subject: subject == freezed
+      subject: freezed == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      encounter: encounter == freezed
+      encounter: freezed == encounter
           ? _value.encounter
           : encounter // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      date: date == freezed
+      date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as String?,
-      author: author == freezed
+      author: freezed == author
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      confidentiality: confidentiality == freezed
+      confidentiality: freezed == confidentiality
           ? _value.confidentiality
           : confidentiality // ignore: cast_nullable_to_non_nullable
               as String?,
-      attester: attester == freezed
+      attester: freezed == attester
           ? _value.attester
           : attester // ignore: cast_nullable_to_non_nullable
               as List<Attester?>?,
-      custodian: custodian == freezed
+      custodian: freezed == custodian
           ? _value.custodian
           : custodian // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      relatesTo: relatesTo == freezed
+      relatesTo: freezed == relatesTo
           ? _value.relatesTo
           : relatesTo // ignore: cast_nullable_to_non_nullable
               as List<RelatesTo?>?,
-      event: event == freezed
+      event: freezed == event
           ? _value.event
           : event // ignore: cast_nullable_to_non_nullable
               as List<Event?>?,
-      section: section == freezed
+      section: freezed == section
           ? _value.section
           : section // ignore: cast_nullable_to_non_nullable
               as List<Section?>?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $IdentifierCopyWith<$Res>? get identifier {
     if (_value.identifier == null) {
       return null;
     }
 
     return $IdentifierCopyWith<$Res>(_value.identifier!, (value) {
-      return _then(_value.copyWith(identifier: value));
+      return _then(_value.copyWith(identifier: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get type {
     if (_value.type == null) {
       return null;
     }
 
     return $CodeableConceptCopyWith<$Res>(_value.type!, (value) {
-      return _then(_value.copyWith(type: value));
+      return _then(_value.copyWith(type: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get subject {
     if (_value.subject == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.subject!, (value) {
-      return _then(_value.copyWith(subject: value));
+      return _then(_value.copyWith(subject: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get encounter {
     if (_value.encounter == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.encounter!, (value) {
-      return _then(_value.copyWith(encounter: value));
+      return _then(_value.copyWith(encounter: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get custodian {
     if (_value.custodian == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.custodian!, (value) {
-      return _then(_value.copyWith(custodian: value));
+      return _then(_value.copyWith(custodian: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$CompositionCopyWith<$Res>
+abstract class _$$_CompositionCopyWith<$Res>
     implements $CompositionCopyWith<$Res> {
-  factory _$CompositionCopyWith(
-          _Composition value, $Res Function(_Composition) then) =
-      __$CompositionCopyWithImpl<$Res>;
+  factory _$$_CompositionCopyWith(
+          _$_Composition value, $Res Function(_$_Composition) then) =
+      __$$_CompositionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'Identifier') Identifier? identifier,
@@ -2609,15 +2423,14 @@ abstract class _$CompositionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$CompositionCopyWithImpl<$Res> extends _$CompositionCopyWithImpl<$Res>
-    implements _$CompositionCopyWith<$Res> {
-  __$CompositionCopyWithImpl(
-      _Composition _value, $Res Function(_Composition) _then)
-      : super(_value, (v) => _then(v as _Composition));
+class __$$_CompositionCopyWithImpl<$Res>
+    extends _$CompositionCopyWithImpl<$Res, _$_Composition>
+    implements _$$_CompositionCopyWith<$Res> {
+  __$$_CompositionCopyWithImpl(
+      _$_Composition _value, $Res Function(_$_Composition) _then)
+      : super(_value, _then);
 
-  @override
-  _Composition get _value => super._value as _Composition;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -2637,69 +2450,69 @@ class __$CompositionCopyWithImpl<$Res> extends _$CompositionCopyWithImpl<$Res>
     Object? event = freezed,
     Object? section = freezed,
   }) {
-    return _then(_Composition(
-      id: id == freezed
+    return _then(_$_Composition(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      identifier: identifier == freezed
+      identifier: freezed == identifier
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
               as Identifier?,
-      status: status == freezed
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as CompositionStatusEnum?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      category: category == freezed
-          ? _value.category
+      category: freezed == category
+          ? _value._category
           : category // ignore: cast_nullable_to_non_nullable
               as List<CodeableConcept?>?,
-      subject: subject == freezed
+      subject: freezed == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      encounter: encounter == freezed
+      encounter: freezed == encounter
           ? _value.encounter
           : encounter // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      date: date == freezed
+      date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as String?,
-      author: author == freezed
-          ? _value.author
+      author: freezed == author
+          ? _value._author
           : author // ignore: cast_nullable_to_non_nullable
               as List<Reference?>?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      confidentiality: confidentiality == freezed
+      confidentiality: freezed == confidentiality
           ? _value.confidentiality
           : confidentiality // ignore: cast_nullable_to_non_nullable
               as String?,
-      attester: attester == freezed
-          ? _value.attester
+      attester: freezed == attester
+          ? _value._attester
           : attester // ignore: cast_nullable_to_non_nullable
               as List<Attester?>?,
-      custodian: custodian == freezed
+      custodian: freezed == custodian
           ? _value.custodian
           : custodian // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      relatesTo: relatesTo == freezed
-          ? _value.relatesTo
+      relatesTo: freezed == relatesTo
+          ? _value._relatesTo
           : relatesTo // ignore: cast_nullable_to_non_nullable
               as List<RelatesTo?>?,
-      event: event == freezed
-          ? _value.event
+      event: freezed == event
+          ? _value._event
           : event // ignore: cast_nullable_to_non_nullable
               as List<Event?>?,
-      section: section == freezed
-          ? _value.section
+      section: freezed == section
+          ? _value._section
           : section // ignore: cast_nullable_to_non_nullable
               as List<Section?>?,
     ));
@@ -2714,21 +2527,27 @@ class _$_Composition implements _Composition {
       @JsonKey(name: 'Identifier') this.identifier,
       @JsonKey(name: 'Status') this.status,
       @JsonKey(name: 'Type') this.type,
-      @JsonKey(name: 'Category') this.category,
+      @JsonKey(name: 'Category') final List<CodeableConcept?>? category,
       @JsonKey(name: 'Subject') this.subject,
       @JsonKey(name: 'Encounter') this.encounter,
       @JsonKey(name: 'Date') this.date,
-      @JsonKey(name: 'Author') this.author,
+      @JsonKey(name: 'Author') final List<Reference?>? author,
       @JsonKey(name: 'Title') this.title,
       @JsonKey(name: 'Confidentiality') this.confidentiality,
-      @JsonKey(name: 'Attester') this.attester,
+      @JsonKey(name: 'Attester') final List<Attester?>? attester,
       @JsonKey(name: 'Custodian') this.custodian,
-      @JsonKey(name: 'RelatesTo') this.relatesTo,
-      @JsonKey(name: 'Event') this.event,
-      @JsonKey(name: 'Section') this.section});
+      @JsonKey(name: 'RelatesTo') final List<RelatesTo?>? relatesTo,
+      @JsonKey(name: 'Event') final List<Event?>? event,
+      @JsonKey(name: 'Section') final List<Section?>? section})
+      : _category = category,
+        _author = author,
+        _attester = attester,
+        _relatesTo = relatesTo,
+        _event = event,
+        _section = section;
 
   factory _$_Composition.fromJson(Map<String, dynamic> json) =>
-      _$_$_CompositionFromJson(json);
+      _$$_CompositionFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
@@ -2742,9 +2561,16 @@ class _$_Composition implements _Composition {
   @override
   @JsonKey(name: 'Type')
   final CodeableConcept? type;
+  final List<CodeableConcept?>? _category;
   @override
   @JsonKey(name: 'Category')
-  final List<CodeableConcept?>? category;
+  List<CodeableConcept?>? get category {
+    final value = _category;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'Subject')
   final Reference? subject;
@@ -2754,30 +2580,64 @@ class _$_Composition implements _Composition {
   @override
   @JsonKey(name: 'Date')
   final String? date;
+  final List<Reference?>? _author;
   @override
   @JsonKey(name: 'Author')
-  final List<Reference?>? author;
+  List<Reference?>? get author {
+    final value = _author;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'Title')
   final String? title;
   @override
   @JsonKey(name: 'Confidentiality')
   final String? confidentiality;
+  final List<Attester?>? _attester;
   @override
   @JsonKey(name: 'Attester')
-  final List<Attester?>? attester;
+  List<Attester?>? get attester {
+    final value = _attester;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'Custodian')
   final Reference? custodian;
+  final List<RelatesTo?>? _relatesTo;
   @override
   @JsonKey(name: 'RelatesTo')
-  final List<RelatesTo?>? relatesTo;
+  List<RelatesTo?>? get relatesTo {
+    final value = _relatesTo;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<Event?>? _event;
   @override
   @JsonKey(name: 'Event')
-  final List<Event?>? event;
+  List<Event?>? get event {
+    final value = _event;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<Section?>? _section;
   @override
   @JsonKey(name: 'Section')
-  final List<Section?>? section;
+  List<Section?>? get section {
+    final value = _section;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -2787,210 +2647,146 @@ class _$_Composition implements _Composition {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Composition &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_Composition &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.identifier, identifier) ||
-                const DeepCollectionEquality()
-                    .equals(other.identifier, identifier)) &&
-            (identical(other.status, status) ||
-                const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.category, category) ||
-                const DeepCollectionEquality()
-                    .equals(other.category, category)) &&
-            (identical(other.subject, subject) ||
-                const DeepCollectionEquality()
-                    .equals(other.subject, subject)) &&
+                other.identifier == identifier) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.type, type) || other.type == type) &&
+            const DeepCollectionEquality().equals(other._category, _category) &&
+            (identical(other.subject, subject) || other.subject == subject) &&
             (identical(other.encounter, encounter) ||
-                const DeepCollectionEquality()
-                    .equals(other.encounter, encounter)) &&
-            (identical(other.date, date) ||
-                const DeepCollectionEquality().equals(other.date, date)) &&
-            (identical(other.author, author) ||
-                const DeepCollectionEquality().equals(other.author, author)) &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
+                other.encounter == encounter) &&
+            (identical(other.date, date) || other.date == date) &&
+            const DeepCollectionEquality().equals(other._author, _author) &&
+            (identical(other.title, title) || other.title == title) &&
             (identical(other.confidentiality, confidentiality) ||
-                const DeepCollectionEquality()
-                    .equals(other.confidentiality, confidentiality)) &&
-            (identical(other.attester, attester) ||
-                const DeepCollectionEquality()
-                    .equals(other.attester, attester)) &&
+                other.confidentiality == confidentiality) &&
+            const DeepCollectionEquality().equals(other._attester, _attester) &&
             (identical(other.custodian, custodian) ||
-                const DeepCollectionEquality()
-                    .equals(other.custodian, custodian)) &&
-            (identical(other.relatesTo, relatesTo) ||
-                const DeepCollectionEquality()
-                    .equals(other.relatesTo, relatesTo)) &&
-            (identical(other.event, event) ||
-                const DeepCollectionEquality().equals(other.event, event)) &&
-            (identical(other.section, section) ||
-                const DeepCollectionEquality().equals(other.section, section)));
+                other.custodian == custodian) &&
+            const DeepCollectionEquality()
+                .equals(other._relatesTo, _relatesTo) &&
+            const DeepCollectionEquality().equals(other._event, _event) &&
+            const DeepCollectionEquality().equals(other._section, _section));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(identifier) ^
-      const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(category) ^
-      const DeepCollectionEquality().hash(subject) ^
-      const DeepCollectionEquality().hash(encounter) ^
-      const DeepCollectionEquality().hash(date) ^
-      const DeepCollectionEquality().hash(author) ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(confidentiality) ^
-      const DeepCollectionEquality().hash(attester) ^
-      const DeepCollectionEquality().hash(custodian) ^
-      const DeepCollectionEquality().hash(relatesTo) ^
-      const DeepCollectionEquality().hash(event) ^
-      const DeepCollectionEquality().hash(section);
 
   @JsonKey(ignore: true)
   @override
-  _$CompositionCopyWith<_Composition> get copyWith =>
-      __$CompositionCopyWithImpl<_Composition>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      identifier,
+      status,
+      type,
+      const DeepCollectionEquality().hash(_category),
+      subject,
+      encounter,
+      date,
+      const DeepCollectionEquality().hash(_author),
+      title,
+      confidentiality,
+      const DeepCollectionEquality().hash(_attester),
+      custodian,
+      const DeepCollectionEquality().hash(_relatesTo),
+      const DeepCollectionEquality().hash(_event),
+      const DeepCollectionEquality().hash(_section));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CompositionCopyWith<_$_Composition> get copyWith =>
+      __$$_CompositionCopyWithImpl<_$_Composition>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_CompositionToJson(this);
+    return _$$_CompositionToJson(
+      this,
+    );
   }
 }
 
 abstract class _Composition implements Composition {
   factory _Composition(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'Identifier') Identifier? identifier,
-      @JsonKey(name: 'Status') CompositionStatusEnum? status,
-      @JsonKey(name: 'Type') CodeableConcept? type,
-      @JsonKey(name: 'Category') List<CodeableConcept?>? category,
-      @JsonKey(name: 'Subject') Reference? subject,
-      @JsonKey(name: 'Encounter') Reference? encounter,
-      @JsonKey(name: 'Date') String? date,
-      @JsonKey(name: 'Author') List<Reference?>? author,
-      @JsonKey(name: 'Title') String? title,
-      @JsonKey(name: 'Confidentiality') String? confidentiality,
-      @JsonKey(name: 'Attester') List<Attester?>? attester,
-      @JsonKey(name: 'Custodian') Reference? custodian,
-      @JsonKey(name: 'RelatesTo') List<RelatesTo?>? relatesTo,
-      @JsonKey(name: 'Event') List<Event?>? event,
-      @JsonKey(name: 'Section') List<Section?>? section}) = _$_Composition;
+          {@JsonKey(name: 'ID') final String? id,
+          @JsonKey(name: 'Identifier') final Identifier? identifier,
+          @JsonKey(name: 'Status') final CompositionStatusEnum? status,
+          @JsonKey(name: 'Type') final CodeableConcept? type,
+          @JsonKey(name: 'Category') final List<CodeableConcept?>? category,
+          @JsonKey(name: 'Subject') final Reference? subject,
+          @JsonKey(name: 'Encounter') final Reference? encounter,
+          @JsonKey(name: 'Date') final String? date,
+          @JsonKey(name: 'Author') final List<Reference?>? author,
+          @JsonKey(name: 'Title') final String? title,
+          @JsonKey(name: 'Confidentiality') final String? confidentiality,
+          @JsonKey(name: 'Attester') final List<Attester?>? attester,
+          @JsonKey(name: 'Custodian') final Reference? custodian,
+          @JsonKey(name: 'RelatesTo') final List<RelatesTo?>? relatesTo,
+          @JsonKey(name: 'Event') final List<Event?>? event,
+          @JsonKey(name: 'Section') final List<Section?>? section}) =
+      _$_Composition;
 
   factory _Composition.fromJson(Map<String, dynamic> json) =
       _$_Composition.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
   @JsonKey(name: 'Identifier')
-  Identifier? get identifier => throw _privateConstructorUsedError;
+  Identifier? get identifier;
   @override
   @JsonKey(name: 'Status')
-  CompositionStatusEnum? get status => throw _privateConstructorUsedError;
+  CompositionStatusEnum? get status;
   @override
   @JsonKey(name: 'Type')
-  CodeableConcept? get type => throw _privateConstructorUsedError;
+  CodeableConcept? get type;
   @override
   @JsonKey(name: 'Category')
-  List<CodeableConcept?>? get category => throw _privateConstructorUsedError;
+  List<CodeableConcept?>? get category;
   @override
   @JsonKey(name: 'Subject')
-  Reference? get subject => throw _privateConstructorUsedError;
+  Reference? get subject;
   @override
   @JsonKey(name: 'Encounter')
-  Reference? get encounter => throw _privateConstructorUsedError;
+  Reference? get encounter;
   @override
   @JsonKey(name: 'Date')
-  String? get date => throw _privateConstructorUsedError;
+  String? get date;
   @override
   @JsonKey(name: 'Author')
-  List<Reference?>? get author => throw _privateConstructorUsedError;
+  List<Reference?>? get author;
   @override
   @JsonKey(name: 'Title')
-  String? get title => throw _privateConstructorUsedError;
+  String? get title;
   @override
   @JsonKey(name: 'Confidentiality')
-  String? get confidentiality => throw _privateConstructorUsedError;
+  String? get confidentiality;
   @override
   @JsonKey(name: 'Attester')
-  List<Attester?>? get attester => throw _privateConstructorUsedError;
+  List<Attester?>? get attester;
   @override
   @JsonKey(name: 'Custodian')
-  Reference? get custodian => throw _privateConstructorUsedError;
+  Reference? get custodian;
   @override
   @JsonKey(name: 'RelatesTo')
-  List<RelatesTo?>? get relatesTo => throw _privateConstructorUsedError;
+  List<RelatesTo?>? get relatesTo;
   @override
   @JsonKey(name: 'Event')
-  List<Event?>? get event => throw _privateConstructorUsedError;
+  List<Event?>? get event;
   @override
   @JsonKey(name: 'Section')
-  List<Section?>? get section => throw _privateConstructorUsedError;
+  List<Section?>? get section;
   @override
   @JsonKey(ignore: true)
-  _$CompositionCopyWith<_Composition> get copyWith =>
+  _$$_CompositionCopyWith<_$_Composition> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 TimingRepeat _$TimingRepeatFromJson(Map<String, dynamic> json) {
   return _TimingRepeat.fromJson(json);
 }
-
-/// @nodoc
-class _$TimingRepeatTearOff {
-  const _$TimingRepeatTearOff();
-
-  _TimingRepeat call(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'BoundsDuration') Duration? boundsDuration,
-      @JsonKey(name: 'BoundsRange') Range? boundsRange,
-      @JsonKey(name: 'BoundsPeriod') Period? boundsPeriod,
-      @JsonKey(name: 'Count') int? count,
-      @JsonKey(name: 'CountMax') int? countMax,
-      @JsonKey(name: 'Duration') double? duration,
-      @JsonKey(name: 'DurationMax') double? durationMax,
-      @JsonKey(name: 'DurationUnit') TimingRepeatPeriodUnit? durationUnit,
-      @JsonKey(name: 'Frequency') int? frequency,
-      @JsonKey(name: 'FrequencyMax') int? frequencyMax,
-      @JsonKey(name: 'Period') double? period,
-      @JsonKey(name: 'PeriodMax') double? periodMax,
-      @JsonKey(name: 'PeriodUnit') TimingRepeatPeriodUnit? periodUnit,
-      @JsonKey(name: 'DayOfWeek') DayOfWeek? dayOfWeek,
-      @JsonKey(name: 'When') TimingRepeatPeriodUnit? when,
-      @JsonKey(name: 'Offset') int? offset}) {
-    return _TimingRepeat(
-      id: id,
-      boundsDuration: boundsDuration,
-      boundsRange: boundsRange,
-      boundsPeriod: boundsPeriod,
-      count: count,
-      countMax: countMax,
-      duration: duration,
-      durationMax: durationMax,
-      durationUnit: durationUnit,
-      frequency: frequency,
-      frequencyMax: frequencyMax,
-      period: period,
-      periodMax: periodMax,
-      periodUnit: periodUnit,
-      dayOfWeek: dayOfWeek,
-      when: when,
-      offset: offset,
-    );
-  }
-
-  TimingRepeat fromJson(Map<String, Object> json) {
-    return TimingRepeat.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $TimingRepeat = _$TimingRepeatTearOff();
 
 /// @nodoc
 mixin _$TimingRepeat {
@@ -3040,7 +2836,8 @@ mixin _$TimingRepeat {
 abstract class $TimingRepeatCopyWith<$Res> {
   factory $TimingRepeatCopyWith(
           TimingRepeat value, $Res Function(TimingRepeat) then) =
-      _$TimingRepeatCopyWithImpl<$Res>;
+      _$TimingRepeatCopyWithImpl<$Res, TimingRepeat>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'BoundsDuration') Duration? boundsDuration,
@@ -3065,13 +2862,16 @@ abstract class $TimingRepeatCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TimingRepeatCopyWithImpl<$Res> implements $TimingRepeatCopyWith<$Res> {
+class _$TimingRepeatCopyWithImpl<$Res, $Val extends TimingRepeat>
+    implements $TimingRepeatCopyWith<$Res> {
   _$TimingRepeatCopyWithImpl(this._value, this._then);
 
-  final TimingRepeat _value;
   // ignore: unused_field
-  final $Res Function(TimingRepeat) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -3093,107 +2893,110 @@ class _$TimingRepeatCopyWithImpl<$Res> implements $TimingRepeatCopyWith<$Res> {
     Object? offset = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      boundsDuration: boundsDuration == freezed
+      boundsDuration: freezed == boundsDuration
           ? _value.boundsDuration
           : boundsDuration // ignore: cast_nullable_to_non_nullable
               as Duration?,
-      boundsRange: boundsRange == freezed
+      boundsRange: freezed == boundsRange
           ? _value.boundsRange
           : boundsRange // ignore: cast_nullable_to_non_nullable
               as Range?,
-      boundsPeriod: boundsPeriod == freezed
+      boundsPeriod: freezed == boundsPeriod
           ? _value.boundsPeriod
           : boundsPeriod // ignore: cast_nullable_to_non_nullable
               as Period?,
-      count: count == freezed
+      count: freezed == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
               as int?,
-      countMax: countMax == freezed
+      countMax: freezed == countMax
           ? _value.countMax
           : countMax // ignore: cast_nullable_to_non_nullable
               as int?,
-      duration: duration == freezed
+      duration: freezed == duration
           ? _value.duration
           : duration // ignore: cast_nullable_to_non_nullable
               as double?,
-      durationMax: durationMax == freezed
+      durationMax: freezed == durationMax
           ? _value.durationMax
           : durationMax // ignore: cast_nullable_to_non_nullable
               as double?,
-      durationUnit: durationUnit == freezed
+      durationUnit: freezed == durationUnit
           ? _value.durationUnit
           : durationUnit // ignore: cast_nullable_to_non_nullable
               as TimingRepeatPeriodUnit?,
-      frequency: frequency == freezed
+      frequency: freezed == frequency
           ? _value.frequency
           : frequency // ignore: cast_nullable_to_non_nullable
               as int?,
-      frequencyMax: frequencyMax == freezed
+      frequencyMax: freezed == frequencyMax
           ? _value.frequencyMax
           : frequencyMax // ignore: cast_nullable_to_non_nullable
               as int?,
-      period: period == freezed
+      period: freezed == period
           ? _value.period
           : period // ignore: cast_nullable_to_non_nullable
               as double?,
-      periodMax: periodMax == freezed
+      periodMax: freezed == periodMax
           ? _value.periodMax
           : periodMax // ignore: cast_nullable_to_non_nullable
               as double?,
-      periodUnit: periodUnit == freezed
+      periodUnit: freezed == periodUnit
           ? _value.periodUnit
           : periodUnit // ignore: cast_nullable_to_non_nullable
               as TimingRepeatPeriodUnit?,
-      dayOfWeek: dayOfWeek == freezed
+      dayOfWeek: freezed == dayOfWeek
           ? _value.dayOfWeek
           : dayOfWeek // ignore: cast_nullable_to_non_nullable
               as DayOfWeek?,
-      when: when == freezed
+      when: freezed == when
           ? _value.when
           : when // ignore: cast_nullable_to_non_nullable
               as TimingRepeatPeriodUnit?,
-      offset: offset == freezed
+      offset: freezed == offset
           ? _value.offset
           : offset // ignore: cast_nullable_to_non_nullable
               as int?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $RangeCopyWith<$Res>? get boundsRange {
     if (_value.boundsRange == null) {
       return null;
     }
 
     return $RangeCopyWith<$Res>(_value.boundsRange!, (value) {
-      return _then(_value.copyWith(boundsRange: value));
+      return _then(_value.copyWith(boundsRange: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $PeriodCopyWith<$Res>? get boundsPeriod {
     if (_value.boundsPeriod == null) {
       return null;
     }
 
     return $PeriodCopyWith<$Res>(_value.boundsPeriod!, (value) {
-      return _then(_value.copyWith(boundsPeriod: value));
+      return _then(_value.copyWith(boundsPeriod: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$TimingRepeatCopyWith<$Res>
+abstract class _$$_TimingRepeatCopyWith<$Res>
     implements $TimingRepeatCopyWith<$Res> {
-  factory _$TimingRepeatCopyWith(
-          _TimingRepeat value, $Res Function(_TimingRepeat) then) =
-      __$TimingRepeatCopyWithImpl<$Res>;
+  factory _$$_TimingRepeatCopyWith(
+          _$_TimingRepeat value, $Res Function(_$_TimingRepeat) then) =
+      __$$_TimingRepeatCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'BoundsDuration') Duration? boundsDuration,
@@ -3220,15 +3023,14 @@ abstract class _$TimingRepeatCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TimingRepeatCopyWithImpl<$Res> extends _$TimingRepeatCopyWithImpl<$Res>
-    implements _$TimingRepeatCopyWith<$Res> {
-  __$TimingRepeatCopyWithImpl(
-      _TimingRepeat _value, $Res Function(_TimingRepeat) _then)
-      : super(_value, (v) => _then(v as _TimingRepeat));
+class __$$_TimingRepeatCopyWithImpl<$Res>
+    extends _$TimingRepeatCopyWithImpl<$Res, _$_TimingRepeat>
+    implements _$$_TimingRepeatCopyWith<$Res> {
+  __$$_TimingRepeatCopyWithImpl(
+      _$_TimingRepeat _value, $Res Function(_$_TimingRepeat) _then)
+      : super(_value, _then);
 
-  @override
-  _TimingRepeat get _value => super._value as _TimingRepeat;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -3249,72 +3051,72 @@ class __$TimingRepeatCopyWithImpl<$Res> extends _$TimingRepeatCopyWithImpl<$Res>
     Object? when = freezed,
     Object? offset = freezed,
   }) {
-    return _then(_TimingRepeat(
-      id: id == freezed
+    return _then(_$_TimingRepeat(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      boundsDuration: boundsDuration == freezed
+      boundsDuration: freezed == boundsDuration
           ? _value.boundsDuration
           : boundsDuration // ignore: cast_nullable_to_non_nullable
               as Duration?,
-      boundsRange: boundsRange == freezed
+      boundsRange: freezed == boundsRange
           ? _value.boundsRange
           : boundsRange // ignore: cast_nullable_to_non_nullable
               as Range?,
-      boundsPeriod: boundsPeriod == freezed
+      boundsPeriod: freezed == boundsPeriod
           ? _value.boundsPeriod
           : boundsPeriod // ignore: cast_nullable_to_non_nullable
               as Period?,
-      count: count == freezed
+      count: freezed == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
               as int?,
-      countMax: countMax == freezed
+      countMax: freezed == countMax
           ? _value.countMax
           : countMax // ignore: cast_nullable_to_non_nullable
               as int?,
-      duration: duration == freezed
+      duration: freezed == duration
           ? _value.duration
           : duration // ignore: cast_nullable_to_non_nullable
               as double?,
-      durationMax: durationMax == freezed
+      durationMax: freezed == durationMax
           ? _value.durationMax
           : durationMax // ignore: cast_nullable_to_non_nullable
               as double?,
-      durationUnit: durationUnit == freezed
+      durationUnit: freezed == durationUnit
           ? _value.durationUnit
           : durationUnit // ignore: cast_nullable_to_non_nullable
               as TimingRepeatPeriodUnit?,
-      frequency: frequency == freezed
+      frequency: freezed == frequency
           ? _value.frequency
           : frequency // ignore: cast_nullable_to_non_nullable
               as int?,
-      frequencyMax: frequencyMax == freezed
+      frequencyMax: freezed == frequencyMax
           ? _value.frequencyMax
           : frequencyMax // ignore: cast_nullable_to_non_nullable
               as int?,
-      period: period == freezed
+      period: freezed == period
           ? _value.period
           : period // ignore: cast_nullable_to_non_nullable
               as double?,
-      periodMax: periodMax == freezed
+      periodMax: freezed == periodMax
           ? _value.periodMax
           : periodMax // ignore: cast_nullable_to_non_nullable
               as double?,
-      periodUnit: periodUnit == freezed
+      periodUnit: freezed == periodUnit
           ? _value.periodUnit
           : periodUnit // ignore: cast_nullable_to_non_nullable
               as TimingRepeatPeriodUnit?,
-      dayOfWeek: dayOfWeek == freezed
+      dayOfWeek: freezed == dayOfWeek
           ? _value.dayOfWeek
           : dayOfWeek // ignore: cast_nullable_to_non_nullable
               as DayOfWeek?,
-      when: when == freezed
+      when: freezed == when
           ? _value.when
           : when // ignore: cast_nullable_to_non_nullable
               as TimingRepeatPeriodUnit?,
-      offset: offset == freezed
+      offset: freezed == offset
           ? _value.offset
           : offset // ignore: cast_nullable_to_non_nullable
               as int?,
@@ -3345,7 +3147,7 @@ class _$_TimingRepeat implements _TimingRepeat {
       @JsonKey(name: 'Offset') this.offset});
 
   factory _$_TimingRepeat.fromJson(Map<String, dynamic> json) =>
-      _$_$_TimingRepeatFromJson(json);
+      _$$_TimingRepeatFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
@@ -3407,196 +3209,158 @@ class _$_TimingRepeat implements _TimingRepeat {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TimingRepeat &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_TimingRepeat &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.boundsDuration, boundsDuration) ||
-                const DeepCollectionEquality()
-                    .equals(other.boundsDuration, boundsDuration)) &&
+                other.boundsDuration == boundsDuration) &&
             (identical(other.boundsRange, boundsRange) ||
-                const DeepCollectionEquality()
-                    .equals(other.boundsRange, boundsRange)) &&
+                other.boundsRange == boundsRange) &&
             (identical(other.boundsPeriod, boundsPeriod) ||
-                const DeepCollectionEquality()
-                    .equals(other.boundsPeriod, boundsPeriod)) &&
-            (identical(other.count, count) ||
-                const DeepCollectionEquality().equals(other.count, count)) &&
+                other.boundsPeriod == boundsPeriod) &&
+            (identical(other.count, count) || other.count == count) &&
             (identical(other.countMax, countMax) ||
-                const DeepCollectionEquality()
-                    .equals(other.countMax, countMax)) &&
+                other.countMax == countMax) &&
             (identical(other.duration, duration) ||
-                const DeepCollectionEquality()
-                    .equals(other.duration, duration)) &&
+                other.duration == duration) &&
             (identical(other.durationMax, durationMax) ||
-                const DeepCollectionEquality()
-                    .equals(other.durationMax, durationMax)) &&
+                other.durationMax == durationMax) &&
             (identical(other.durationUnit, durationUnit) ||
-                const DeepCollectionEquality()
-                    .equals(other.durationUnit, durationUnit)) &&
+                other.durationUnit == durationUnit) &&
             (identical(other.frequency, frequency) ||
-                const DeepCollectionEquality()
-                    .equals(other.frequency, frequency)) &&
+                other.frequency == frequency) &&
             (identical(other.frequencyMax, frequencyMax) ||
-                const DeepCollectionEquality()
-                    .equals(other.frequencyMax, frequencyMax)) &&
-            (identical(other.period, period) ||
-                const DeepCollectionEquality().equals(other.period, period)) &&
+                other.frequencyMax == frequencyMax) &&
+            (identical(other.period, period) || other.period == period) &&
             (identical(other.periodMax, periodMax) ||
-                const DeepCollectionEquality()
-                    .equals(other.periodMax, periodMax)) &&
+                other.periodMax == periodMax) &&
             (identical(other.periodUnit, periodUnit) ||
-                const DeepCollectionEquality()
-                    .equals(other.periodUnit, periodUnit)) &&
+                other.periodUnit == periodUnit) &&
             (identical(other.dayOfWeek, dayOfWeek) ||
-                const DeepCollectionEquality()
-                    .equals(other.dayOfWeek, dayOfWeek)) &&
-            (identical(other.when, when) ||
-                const DeepCollectionEquality().equals(other.when, when)) &&
-            (identical(other.offset, offset) ||
-                const DeepCollectionEquality().equals(other.offset, offset)));
+                other.dayOfWeek == dayOfWeek) &&
+            (identical(other.when, when) || other.when == when) &&
+            (identical(other.offset, offset) || other.offset == offset));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(boundsDuration) ^
-      const DeepCollectionEquality().hash(boundsRange) ^
-      const DeepCollectionEquality().hash(boundsPeriod) ^
-      const DeepCollectionEquality().hash(count) ^
-      const DeepCollectionEquality().hash(countMax) ^
-      const DeepCollectionEquality().hash(duration) ^
-      const DeepCollectionEquality().hash(durationMax) ^
-      const DeepCollectionEquality().hash(durationUnit) ^
-      const DeepCollectionEquality().hash(frequency) ^
-      const DeepCollectionEquality().hash(frequencyMax) ^
-      const DeepCollectionEquality().hash(period) ^
-      const DeepCollectionEquality().hash(periodMax) ^
-      const DeepCollectionEquality().hash(periodUnit) ^
-      const DeepCollectionEquality().hash(dayOfWeek) ^
-      const DeepCollectionEquality().hash(when) ^
-      const DeepCollectionEquality().hash(offset);
 
   @JsonKey(ignore: true)
   @override
-  _$TimingRepeatCopyWith<_TimingRepeat> get copyWith =>
-      __$TimingRepeatCopyWithImpl<_TimingRepeat>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      boundsDuration,
+      boundsRange,
+      boundsPeriod,
+      count,
+      countMax,
+      duration,
+      durationMax,
+      durationUnit,
+      frequency,
+      frequencyMax,
+      period,
+      periodMax,
+      periodUnit,
+      dayOfWeek,
+      when,
+      offset);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_TimingRepeatCopyWith<_$_TimingRepeat> get copyWith =>
+      __$$_TimingRepeatCopyWithImpl<_$_TimingRepeat>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_TimingRepeatToJson(this);
+    return _$$_TimingRepeatToJson(
+      this,
+    );
   }
 }
 
 abstract class _TimingRepeat implements TimingRepeat {
   factory _TimingRepeat(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'BoundsDuration') Duration? boundsDuration,
-      @JsonKey(name: 'BoundsRange') Range? boundsRange,
-      @JsonKey(name: 'BoundsPeriod') Period? boundsPeriod,
-      @JsonKey(name: 'Count') int? count,
-      @JsonKey(name: 'CountMax') int? countMax,
-      @JsonKey(name: 'Duration') double? duration,
-      @JsonKey(name: 'DurationMax') double? durationMax,
-      @JsonKey(name: 'DurationUnit') TimingRepeatPeriodUnit? durationUnit,
-      @JsonKey(name: 'Frequency') int? frequency,
-      @JsonKey(name: 'FrequencyMax') int? frequencyMax,
-      @JsonKey(name: 'Period') double? period,
-      @JsonKey(name: 'PeriodMax') double? periodMax,
-      @JsonKey(name: 'PeriodUnit') TimingRepeatPeriodUnit? periodUnit,
-      @JsonKey(name: 'DayOfWeek') DayOfWeek? dayOfWeek,
-      @JsonKey(name: 'When') TimingRepeatPeriodUnit? when,
-      @JsonKey(name: 'Offset') int? offset}) = _$_TimingRepeat;
+      {@JsonKey(name: 'ID') final String? id,
+      @JsonKey(name: 'BoundsDuration') final Duration? boundsDuration,
+      @JsonKey(name: 'BoundsRange') final Range? boundsRange,
+      @JsonKey(name: 'BoundsPeriod') final Period? boundsPeriod,
+      @JsonKey(name: 'Count') final int? count,
+      @JsonKey(name: 'CountMax') final int? countMax,
+      @JsonKey(name: 'Duration') final double? duration,
+      @JsonKey(name: 'DurationMax') final double? durationMax,
+      @JsonKey(name: 'DurationUnit') final TimingRepeatPeriodUnit? durationUnit,
+      @JsonKey(name: 'Frequency') final int? frequency,
+      @JsonKey(name: 'FrequencyMax') final int? frequencyMax,
+      @JsonKey(name: 'Period') final double? period,
+      @JsonKey(name: 'PeriodMax') final double? periodMax,
+      @JsonKey(name: 'PeriodUnit') final TimingRepeatPeriodUnit? periodUnit,
+      @JsonKey(name: 'DayOfWeek') final DayOfWeek? dayOfWeek,
+      @JsonKey(name: 'When') final TimingRepeatPeriodUnit? when,
+      @JsonKey(name: 'Offset') final int? offset}) = _$_TimingRepeat;
 
   factory _TimingRepeat.fromJson(Map<String, dynamic> json) =
       _$_TimingRepeat.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
   @JsonKey(name: 'BoundsDuration')
-  Duration? get boundsDuration => throw _privateConstructorUsedError;
+  Duration? get boundsDuration;
   @override
   @JsonKey(name: 'BoundsRange')
-  Range? get boundsRange => throw _privateConstructorUsedError;
+  Range? get boundsRange;
   @override
   @JsonKey(name: 'BoundsPeriod')
-  Period? get boundsPeriod => throw _privateConstructorUsedError;
+  Period? get boundsPeriod;
   @override
   @JsonKey(name: 'Count')
-  int? get count => throw _privateConstructorUsedError;
+  int? get count;
   @override
   @JsonKey(name: 'CountMax')
-  int? get countMax => throw _privateConstructorUsedError;
+  int? get countMax;
   @override
   @JsonKey(name: 'Duration')
-  double? get duration => throw _privateConstructorUsedError;
+  double? get duration;
   @override
   @JsonKey(name: 'DurationMax')
-  double? get durationMax => throw _privateConstructorUsedError;
+  double? get durationMax;
   @override
   @JsonKey(name: 'DurationUnit')
-  TimingRepeatPeriodUnit? get durationUnit =>
-      throw _privateConstructorUsedError;
+  TimingRepeatPeriodUnit? get durationUnit;
   @override
   @JsonKey(name: 'Frequency')
-  int? get frequency => throw _privateConstructorUsedError;
+  int? get frequency;
   @override
   @JsonKey(name: 'FrequencyMax')
-  int? get frequencyMax => throw _privateConstructorUsedError;
+  int? get frequencyMax;
   @override
   @JsonKey(name: 'Period')
-  double? get period => throw _privateConstructorUsedError;
+  double? get period;
   @override
   @JsonKey(name: 'PeriodMax')
-  double? get periodMax => throw _privateConstructorUsedError;
+  double? get periodMax;
   @override
   @JsonKey(name: 'PeriodUnit')
-  TimingRepeatPeriodUnit? get periodUnit => throw _privateConstructorUsedError;
+  TimingRepeatPeriodUnit? get periodUnit;
   @override
   @JsonKey(name: 'DayOfWeek')
-  DayOfWeek? get dayOfWeek => throw _privateConstructorUsedError;
+  DayOfWeek? get dayOfWeek;
   @override
   @JsonKey(name: 'When')
-  TimingRepeatPeriodUnit? get when => throw _privateConstructorUsedError;
+  TimingRepeatPeriodUnit? get when;
   @override
   @JsonKey(name: 'Offset')
-  int? get offset => throw _privateConstructorUsedError;
+  int? get offset;
   @override
   @JsonKey(ignore: true)
-  _$TimingRepeatCopyWith<_TimingRepeat> get copyWith =>
+  _$$_TimingRepeatCopyWith<_$_TimingRepeat> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 Timing _$TimingFromJson(Map<String, dynamic> json) {
   return _Timing.fromJson(json);
 }
-
-/// @nodoc
-class _$TimingTearOff {
-  const _$TimingTearOff();
-
-  _Timing call(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'Event') Duration? event,
-      @JsonKey(name: 'Repeat') TimingRepeat? repeat,
-      @JsonKey(name: 'Code') TimingCodes? code}) {
-    return _Timing(
-      id: id,
-      event: event,
-      repeat: repeat,
-      code: code,
-    );
-  }
-
-  Timing fromJson(Map<String, Object> json) {
-    return Timing.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Timing = _$TimingTearOff();
 
 /// @nodoc
 mixin _$Timing {
@@ -3617,7 +3381,8 @@ mixin _$Timing {
 /// @nodoc
 abstract class $TimingCopyWith<$Res> {
   factory $TimingCopyWith(Timing value, $Res Function(Timing) then) =
-      _$TimingCopyWithImpl<$Res>;
+      _$TimingCopyWithImpl<$Res, Timing>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'Event') Duration? event,
@@ -3628,13 +3393,16 @@ abstract class $TimingCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TimingCopyWithImpl<$Res> implements $TimingCopyWith<$Res> {
+class _$TimingCopyWithImpl<$Res, $Val extends Timing>
+    implements $TimingCopyWith<$Res> {
   _$TimingCopyWithImpl(this._value, this._then);
 
-  final Timing _value;
   // ignore: unused_field
-  final $Res Function(Timing) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -3643,42 +3411,44 @@ class _$TimingCopyWithImpl<$Res> implements $TimingCopyWith<$Res> {
     Object? code = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      event: event == freezed
+      event: freezed == event
           ? _value.event
           : event // ignore: cast_nullable_to_non_nullable
               as Duration?,
-      repeat: repeat == freezed
+      repeat: freezed == repeat
           ? _value.repeat
           : repeat // ignore: cast_nullable_to_non_nullable
               as TimingRepeat?,
-      code: code == freezed
+      code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as TimingCodes?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TimingRepeatCopyWith<$Res>? get repeat {
     if (_value.repeat == null) {
       return null;
     }
 
     return $TimingRepeatCopyWith<$Res>(_value.repeat!, (value) {
-      return _then(_value.copyWith(repeat: value));
+      return _then(_value.copyWith(repeat: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$TimingCopyWith<$Res> implements $TimingCopyWith<$Res> {
-  factory _$TimingCopyWith(_Timing value, $Res Function(_Timing) then) =
-      __$TimingCopyWithImpl<$Res>;
+abstract class _$$_TimingCopyWith<$Res> implements $TimingCopyWith<$Res> {
+  factory _$$_TimingCopyWith(_$_Timing value, $Res Function(_$_Timing) then) =
+      __$$_TimingCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'Event') Duration? event,
@@ -3690,14 +3460,13 @@ abstract class _$TimingCopyWith<$Res> implements $TimingCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$TimingCopyWithImpl<$Res> extends _$TimingCopyWithImpl<$Res>
-    implements _$TimingCopyWith<$Res> {
-  __$TimingCopyWithImpl(_Timing _value, $Res Function(_Timing) _then)
-      : super(_value, (v) => _then(v as _Timing));
+class __$$_TimingCopyWithImpl<$Res>
+    extends _$TimingCopyWithImpl<$Res, _$_Timing>
+    implements _$$_TimingCopyWith<$Res> {
+  __$$_TimingCopyWithImpl(_$_Timing _value, $Res Function(_$_Timing) _then)
+      : super(_value, _then);
 
-  @override
-  _Timing get _value => super._value as _Timing;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -3705,20 +3474,20 @@ class __$TimingCopyWithImpl<$Res> extends _$TimingCopyWithImpl<$Res>
     Object? repeat = freezed,
     Object? code = freezed,
   }) {
-    return _then(_Timing(
-      id: id == freezed
+    return _then(_$_Timing(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      event: event == freezed
+      event: freezed == event
           ? _value.event
           : event // ignore: cast_nullable_to_non_nullable
               as Duration?,
-      repeat: repeat == freezed
+      repeat: freezed == repeat
           ? _value.repeat
           : repeat // ignore: cast_nullable_to_non_nullable
               as TimingRepeat?,
-      code: code == freezed
+      code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as TimingCodes?,
@@ -3736,7 +3505,7 @@ class _$_Timing implements _Timing {
       @JsonKey(name: 'Code') this.code});
 
   factory _$_Timing.fromJson(Map<String, dynamic> json) =>
-      _$_$_TimingFromJson(json);
+      _$$_TimingFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
@@ -3759,88 +3528,62 @@ class _$_Timing implements _Timing {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Timing &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.event, event) ||
-                const DeepCollectionEquality().equals(other.event, event)) &&
-            (identical(other.repeat, repeat) ||
-                const DeepCollectionEquality().equals(other.repeat, repeat)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)));
+        (other.runtimeType == runtimeType &&
+            other is _$_Timing &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.event, event) || other.event == event) &&
+            (identical(other.repeat, repeat) || other.repeat == repeat) &&
+            (identical(other.code, code) || other.code == code));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(event) ^
-      const DeepCollectionEquality().hash(repeat) ^
-      const DeepCollectionEquality().hash(code);
 
   @JsonKey(ignore: true)
   @override
-  _$TimingCopyWith<_Timing> get copyWith =>
-      __$TimingCopyWithImpl<_Timing>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, id, event, repeat, code);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_TimingCopyWith<_$_Timing> get copyWith =>
+      __$$_TimingCopyWithImpl<_$_Timing>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_TimingToJson(this);
+    return _$$_TimingToJson(
+      this,
+    );
   }
 }
 
 abstract class _Timing implements Timing {
   factory _Timing(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'Event') Duration? event,
-      @JsonKey(name: 'Repeat') TimingRepeat? repeat,
-      @JsonKey(name: 'Code') TimingCodes? code}) = _$_Timing;
+      {@JsonKey(name: 'ID') final String? id,
+      @JsonKey(name: 'Event') final Duration? event,
+      @JsonKey(name: 'Repeat') final TimingRepeat? repeat,
+      @JsonKey(name: 'Code') final TimingCodes? code}) = _$_Timing;
 
   factory _Timing.fromJson(Map<String, dynamic> json) = _$_Timing.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
   @JsonKey(name: 'Event')
-  Duration? get event => throw _privateConstructorUsedError;
+  Duration? get event;
   @override
   @JsonKey(name: 'Repeat')
-  TimingRepeat? get repeat => throw _privateConstructorUsedError;
+  TimingRepeat? get repeat;
   @override
   @JsonKey(name: 'Code')
-  TimingCodes? get code => throw _privateConstructorUsedError;
+  TimingCodes? get code;
   @override
   @JsonKey(ignore: true)
-  _$TimingCopyWith<_Timing> get copyWith => throw _privateConstructorUsedError;
+  _$$_TimingCopyWith<_$_Timing> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 RateRatio _$RateRatioFromJson(Map<String, dynamic> json) {
   return _RateRatio.fromJson(json);
 }
-
-/// @nodoc
-class _$RateRatioTearOff {
-  const _$RateRatioTearOff();
-
-  _RateRatio call(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'Numerator') Quantity? numerator,
-      @JsonKey(name: 'Denominator') Quantity? denominator}) {
-    return _RateRatio(
-      id: id,
-      numerator: numerator,
-      denominator: denominator,
-    );
-  }
-
-  RateRatio fromJson(Map<String, Object> json) {
-    return RateRatio.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $RateRatio = _$RateRatioTearOff();
 
 /// @nodoc
 mixin _$RateRatio {
@@ -3860,7 +3603,8 @@ mixin _$RateRatio {
 /// @nodoc
 abstract class $RateRatioCopyWith<$Res> {
   factory $RateRatioCopyWith(RateRatio value, $Res Function(RateRatio) then) =
-      _$RateRatioCopyWithImpl<$Res>;
+      _$RateRatioCopyWithImpl<$Res, RateRatio>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'Numerator') Quantity? numerator,
@@ -3871,13 +3615,16 @@ abstract class $RateRatioCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RateRatioCopyWithImpl<$Res> implements $RateRatioCopyWith<$Res> {
+class _$RateRatioCopyWithImpl<$Res, $Val extends RateRatio>
+    implements $RateRatioCopyWith<$Res> {
   _$RateRatioCopyWithImpl(this._value, this._then);
 
-  final RateRatio _value;
   // ignore: unused_field
-  final $Res Function(RateRatio) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -3885,50 +3632,53 @@ class _$RateRatioCopyWithImpl<$Res> implements $RateRatioCopyWith<$Res> {
     Object? denominator = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      numerator: numerator == freezed
+      numerator: freezed == numerator
           ? _value.numerator
           : numerator // ignore: cast_nullable_to_non_nullable
               as Quantity?,
-      denominator: denominator == freezed
+      denominator: freezed == denominator
           ? _value.denominator
           : denominator // ignore: cast_nullable_to_non_nullable
               as Quantity?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $QuantityCopyWith<$Res>? get numerator {
     if (_value.numerator == null) {
       return null;
     }
 
     return $QuantityCopyWith<$Res>(_value.numerator!, (value) {
-      return _then(_value.copyWith(numerator: value));
+      return _then(_value.copyWith(numerator: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $QuantityCopyWith<$Res>? get denominator {
     if (_value.denominator == null) {
       return null;
     }
 
     return $QuantityCopyWith<$Res>(_value.denominator!, (value) {
-      return _then(_value.copyWith(denominator: value));
+      return _then(_value.copyWith(denominator: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$RateRatioCopyWith<$Res> implements $RateRatioCopyWith<$Res> {
-  factory _$RateRatioCopyWith(
-          _RateRatio value, $Res Function(_RateRatio) then) =
-      __$RateRatioCopyWithImpl<$Res>;
+abstract class _$$_RateRatioCopyWith<$Res> implements $RateRatioCopyWith<$Res> {
+  factory _$$_RateRatioCopyWith(
+          _$_RateRatio value, $Res Function(_$_RateRatio) then) =
+      __$$_RateRatioCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'Numerator') Quantity? numerator,
@@ -3941,30 +3691,30 @@ abstract class _$RateRatioCopyWith<$Res> implements $RateRatioCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$RateRatioCopyWithImpl<$Res> extends _$RateRatioCopyWithImpl<$Res>
-    implements _$RateRatioCopyWith<$Res> {
-  __$RateRatioCopyWithImpl(_RateRatio _value, $Res Function(_RateRatio) _then)
-      : super(_value, (v) => _then(v as _RateRatio));
+class __$$_RateRatioCopyWithImpl<$Res>
+    extends _$RateRatioCopyWithImpl<$Res, _$_RateRatio>
+    implements _$$_RateRatioCopyWith<$Res> {
+  __$$_RateRatioCopyWithImpl(
+      _$_RateRatio _value, $Res Function(_$_RateRatio) _then)
+      : super(_value, _then);
 
-  @override
-  _RateRatio get _value => super._value as _RateRatio;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? numerator = freezed,
     Object? denominator = freezed,
   }) {
-    return _then(_RateRatio(
-      id: id == freezed
+    return _then(_$_RateRatio(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      numerator: numerator == freezed
+      numerator: freezed == numerator
           ? _value.numerator
           : numerator // ignore: cast_nullable_to_non_nullable
               as Quantity?,
-      denominator: denominator == freezed
+      denominator: freezed == denominator
           ? _value.denominator
           : denominator // ignore: cast_nullable_to_non_nullable
               as Quantity?,
@@ -3981,7 +3731,7 @@ class _$_RateRatio implements _RateRatio {
       @JsonKey(name: 'Denominator') this.denominator});
 
   factory _$_RateRatio.fromJson(Map<String, dynamic> json) =>
-      _$_$_RateRatioFromJson(json);
+      _$$_RateRatioFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
@@ -4001,93 +3751,61 @@ class _$_RateRatio implements _RateRatio {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RateRatio &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_RateRatio &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.numerator, numerator) ||
-                const DeepCollectionEquality()
-                    .equals(other.numerator, numerator)) &&
+                other.numerator == numerator) &&
             (identical(other.denominator, denominator) ||
-                const DeepCollectionEquality()
-                    .equals(other.denominator, denominator)));
+                other.denominator == denominator));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(numerator) ^
-      const DeepCollectionEquality().hash(denominator);
 
   @JsonKey(ignore: true)
   @override
-  _$RateRatioCopyWith<_RateRatio> get copyWith =>
-      __$RateRatioCopyWithImpl<_RateRatio>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, id, numerator, denominator);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_RateRatioCopyWith<_$_RateRatio> get copyWith =>
+      __$$_RateRatioCopyWithImpl<_$_RateRatio>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_RateRatioToJson(this);
+    return _$$_RateRatioToJson(
+      this,
+    );
   }
 }
 
 abstract class _RateRatio implements RateRatio {
   factory _RateRatio(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'Numerator') Quantity? numerator,
-      @JsonKey(name: 'Denominator') Quantity? denominator}) = _$_RateRatio;
+          {@JsonKey(name: 'ID') final String? id,
+          @JsonKey(name: 'Numerator') final Quantity? numerator,
+          @JsonKey(name: 'Denominator') final Quantity? denominator}) =
+      _$_RateRatio;
 
   factory _RateRatio.fromJson(Map<String, dynamic> json) =
       _$_RateRatio.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
   @JsonKey(name: 'Numerator')
-  Quantity? get numerator => throw _privateConstructorUsedError;
+  Quantity? get numerator;
   @override
   @JsonKey(name: 'Denominator')
-  Quantity? get denominator => throw _privateConstructorUsedError;
+  Quantity? get denominator;
   @override
   @JsonKey(ignore: true)
-  _$RateRatioCopyWith<_RateRatio> get copyWith =>
+  _$$_RateRatioCopyWith<_$_RateRatio> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 DosageDoseAndRate _$DosageDoseAndRateFromJson(Map<String, dynamic> json) {
   return _DosageDoseAndRate.fromJson(json);
 }
-
-/// @nodoc
-class _$DosageDoseAndRateTearOff {
-  const _$DosageDoseAndRateTearOff();
-
-  _DosageDoseAndRate call(
-      {@JsonKey(name: 'ID') String? id,
-      @JsonKey(name: 'Type') CodeableConcept? type,
-      @JsonKey(name: 'DoseRange') Range? doseRange,
-      @JsonKey(name: 'DoseQuantity') Quantity? doseQuantity,
-      @JsonKey(name: 'RateRatio') RateRatio? rateRatio,
-      @JsonKey(name: 'RateRange') Range? rateRange,
-      @JsonKey(name: 'RateQuantity') Quantity? rateQuantity}) {
-    return _DosageDoseAndRate(
-      id: id,
-      type: type,
-      doseRange: doseRange,
-      doseQuantity: doseQuantity,
-      rateRatio: rateRatio,
-      rateRange: rateRange,
-      rateQuantity: rateQuantity,
-    );
-  }
-
-  DosageDoseAndRate fromJson(Map<String, Object> json) {
-    return DosageDoseAndRate.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DosageDoseAndRate = _$DosageDoseAndRateTearOff();
 
 /// @nodoc
 mixin _$DosageDoseAndRate {
@@ -4116,7 +3834,8 @@ mixin _$DosageDoseAndRate {
 abstract class $DosageDoseAndRateCopyWith<$Res> {
   factory $DosageDoseAndRateCopyWith(
           DosageDoseAndRate value, $Res Function(DosageDoseAndRate) then) =
-      _$DosageDoseAndRateCopyWithImpl<$Res>;
+      _$DosageDoseAndRateCopyWithImpl<$Res, DosageDoseAndRate>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'Type') CodeableConcept? type,
@@ -4135,14 +3854,16 @@ abstract class $DosageDoseAndRateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DosageDoseAndRateCopyWithImpl<$Res>
+class _$DosageDoseAndRateCopyWithImpl<$Res, $Val extends DosageDoseAndRate>
     implements $DosageDoseAndRateCopyWith<$Res> {
   _$DosageDoseAndRateCopyWithImpl(this._value, this._then);
 
-  final DosageDoseAndRate _value;
   // ignore: unused_field
-  final $Res Function(DosageDoseAndRate) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -4154,111 +3875,118 @@ class _$DosageDoseAndRateCopyWithImpl<$Res>
     Object? rateQuantity = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      doseRange: doseRange == freezed
+      doseRange: freezed == doseRange
           ? _value.doseRange
           : doseRange // ignore: cast_nullable_to_non_nullable
               as Range?,
-      doseQuantity: doseQuantity == freezed
+      doseQuantity: freezed == doseQuantity
           ? _value.doseQuantity
           : doseQuantity // ignore: cast_nullable_to_non_nullable
               as Quantity?,
-      rateRatio: rateRatio == freezed
+      rateRatio: freezed == rateRatio
           ? _value.rateRatio
           : rateRatio // ignore: cast_nullable_to_non_nullable
               as RateRatio?,
-      rateRange: rateRange == freezed
+      rateRange: freezed == rateRange
           ? _value.rateRange
           : rateRange // ignore: cast_nullable_to_non_nullable
               as Range?,
-      rateQuantity: rateQuantity == freezed
+      rateQuantity: freezed == rateQuantity
           ? _value.rateQuantity
           : rateQuantity // ignore: cast_nullable_to_non_nullable
               as Quantity?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get type {
     if (_value.type == null) {
       return null;
     }
 
     return $CodeableConceptCopyWith<$Res>(_value.type!, (value) {
-      return _then(_value.copyWith(type: value));
+      return _then(_value.copyWith(type: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $RangeCopyWith<$Res>? get doseRange {
     if (_value.doseRange == null) {
       return null;
     }
 
     return $RangeCopyWith<$Res>(_value.doseRange!, (value) {
-      return _then(_value.copyWith(doseRange: value));
+      return _then(_value.copyWith(doseRange: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $QuantityCopyWith<$Res>? get doseQuantity {
     if (_value.doseQuantity == null) {
       return null;
     }
 
     return $QuantityCopyWith<$Res>(_value.doseQuantity!, (value) {
-      return _then(_value.copyWith(doseQuantity: value));
+      return _then(_value.copyWith(doseQuantity: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $RateRatioCopyWith<$Res>? get rateRatio {
     if (_value.rateRatio == null) {
       return null;
     }
 
     return $RateRatioCopyWith<$Res>(_value.rateRatio!, (value) {
-      return _then(_value.copyWith(rateRatio: value));
+      return _then(_value.copyWith(rateRatio: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $RangeCopyWith<$Res>? get rateRange {
     if (_value.rateRange == null) {
       return null;
     }
 
     return $RangeCopyWith<$Res>(_value.rateRange!, (value) {
-      return _then(_value.copyWith(rateRange: value));
+      return _then(_value.copyWith(rateRange: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $QuantityCopyWith<$Res>? get rateQuantity {
     if (_value.rateQuantity == null) {
       return null;
     }
 
     return $QuantityCopyWith<$Res>(_value.rateQuantity!, (value) {
-      return _then(_value.copyWith(rateQuantity: value));
+      return _then(_value.copyWith(rateQuantity: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$DosageDoseAndRateCopyWith<$Res>
+abstract class _$$_DosageDoseAndRateCopyWith<$Res>
     implements $DosageDoseAndRateCopyWith<$Res> {
-  factory _$DosageDoseAndRateCopyWith(
-          _DosageDoseAndRate value, $Res Function(_DosageDoseAndRate) then) =
-      __$DosageDoseAndRateCopyWithImpl<$Res>;
+  factory _$$_DosageDoseAndRateCopyWith(_$_DosageDoseAndRate value,
+          $Res Function(_$_DosageDoseAndRate) then) =
+      __$$_DosageDoseAndRateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'Type') CodeableConcept? type,
@@ -4283,16 +4011,14 @@ abstract class _$DosageDoseAndRateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DosageDoseAndRateCopyWithImpl<$Res>
-    extends _$DosageDoseAndRateCopyWithImpl<$Res>
-    implements _$DosageDoseAndRateCopyWith<$Res> {
-  __$DosageDoseAndRateCopyWithImpl(
-      _DosageDoseAndRate _value, $Res Function(_DosageDoseAndRate) _then)
-      : super(_value, (v) => _then(v as _DosageDoseAndRate));
+class __$$_DosageDoseAndRateCopyWithImpl<$Res>
+    extends _$DosageDoseAndRateCopyWithImpl<$Res, _$_DosageDoseAndRate>
+    implements _$$_DosageDoseAndRateCopyWith<$Res> {
+  __$$_DosageDoseAndRateCopyWithImpl(
+      _$_DosageDoseAndRate _value, $Res Function(_$_DosageDoseAndRate) _then)
+      : super(_value, _then);
 
-  @override
-  _DosageDoseAndRate get _value => super._value as _DosageDoseAndRate;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -4303,32 +4029,32 @@ class __$DosageDoseAndRateCopyWithImpl<$Res>
     Object? rateRange = freezed,
     Object? rateQuantity = freezed,
   }) {
-    return _then(_DosageDoseAndRate(
-      id: id == freezed
+    return _then(_$_DosageDoseAndRate(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      doseRange: doseRange == freezed
+      doseRange: freezed == doseRange
           ? _value.doseRange
           : doseRange // ignore: cast_nullable_to_non_nullable
               as Range?,
-      doseQuantity: doseQuantity == freezed
+      doseQuantity: freezed == doseQuantity
           ? _value.doseQuantity
           : doseQuantity // ignore: cast_nullable_to_non_nullable
               as Quantity?,
-      rateRatio: rateRatio == freezed
+      rateRatio: freezed == rateRatio
           ? _value.rateRatio
           : rateRatio // ignore: cast_nullable_to_non_nullable
               as RateRatio?,
-      rateRange: rateRange == freezed
+      rateRange: freezed == rateRange
           ? _value.rateRange
           : rateRange // ignore: cast_nullable_to_non_nullable
               as Range?,
-      rateQuantity: rateQuantity == freezed
+      rateQuantity: freezed == rateQuantity
           ? _value.rateQuantity
           : rateQuantity // ignore: cast_nullable_to_non_nullable
               as Quantity?,
@@ -4349,7 +4075,7 @@ class _$_DosageDoseAndRate implements _DosageDoseAndRate {
       @JsonKey(name: 'RateQuantity') this.rateQuantity});
 
   factory _$_DosageDoseAndRate.fromJson(Map<String, dynamic> json) =>
-      _$_$_DosageDoseAndRateFromJson(json);
+      _$$_DosageDoseAndRateFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
@@ -4381,59 +4107,51 @@ class _$_DosageDoseAndRate implements _DosageDoseAndRate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DosageDoseAndRate &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_DosageDoseAndRate &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.doseRange, doseRange) ||
-                const DeepCollectionEquality()
-                    .equals(other.doseRange, doseRange)) &&
+                other.doseRange == doseRange) &&
             (identical(other.doseQuantity, doseQuantity) ||
-                const DeepCollectionEquality()
-                    .equals(other.doseQuantity, doseQuantity)) &&
+                other.doseQuantity == doseQuantity) &&
             (identical(other.rateRatio, rateRatio) ||
-                const DeepCollectionEquality()
-                    .equals(other.rateRatio, rateRatio)) &&
+                other.rateRatio == rateRatio) &&
             (identical(other.rateRange, rateRange) ||
-                const DeepCollectionEquality()
-                    .equals(other.rateRange, rateRange)) &&
+                other.rateRange == rateRange) &&
             (identical(other.rateQuantity, rateQuantity) ||
-                const DeepCollectionEquality()
-                    .equals(other.rateQuantity, rateQuantity)));
+                other.rateQuantity == rateQuantity));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(doseRange) ^
-      const DeepCollectionEquality().hash(doseQuantity) ^
-      const DeepCollectionEquality().hash(rateRatio) ^
-      const DeepCollectionEquality().hash(rateRange) ^
-      const DeepCollectionEquality().hash(rateQuantity);
 
   @JsonKey(ignore: true)
   @override
-  _$DosageDoseAndRateCopyWith<_DosageDoseAndRate> get copyWith =>
-      __$DosageDoseAndRateCopyWithImpl<_DosageDoseAndRate>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, id, type, doseRange,
+      doseQuantity, rateRatio, rateRange, rateQuantity);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_DosageDoseAndRateCopyWith<_$_DosageDoseAndRate> get copyWith =>
+      __$$_DosageDoseAndRateCopyWithImpl<_$_DosageDoseAndRate>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_DosageDoseAndRateToJson(this);
+    return _$$_DosageDoseAndRateToJson(
+      this,
+    );
   }
 }
 
 abstract class _DosageDoseAndRate implements DosageDoseAndRate {
   factory _DosageDoseAndRate(
-          {@JsonKey(name: 'ID') String? id,
-          @JsonKey(name: 'Type') CodeableConcept? type,
-          @JsonKey(name: 'DoseRange') Range? doseRange,
-          @JsonKey(name: 'DoseQuantity') Quantity? doseQuantity,
-          @JsonKey(name: 'RateRatio') RateRatio? rateRatio,
-          @JsonKey(name: 'RateRange') Range? rateRange,
-          @JsonKey(name: 'RateQuantity') Quantity? rateQuantity}) =
+          {@JsonKey(name: 'ID') final String? id,
+          @JsonKey(name: 'Type') final CodeableConcept? type,
+          @JsonKey(name: 'DoseRange') final Range? doseRange,
+          @JsonKey(name: 'DoseQuantity') final Quantity? doseQuantity,
+          @JsonKey(name: 'RateRatio') final RateRatio? rateRatio,
+          @JsonKey(name: 'RateRange') final Range? rateRange,
+          @JsonKey(name: 'RateQuantity') final Quantity? rateQuantity}) =
       _$_DosageDoseAndRate;
 
   factory _DosageDoseAndRate.fromJson(Map<String, dynamic> json) =
@@ -4441,27 +4159,27 @@ abstract class _DosageDoseAndRate implements DosageDoseAndRate {
 
   @override
   @JsonKey(name: 'ID')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
   @JsonKey(name: 'Type')
-  CodeableConcept? get type => throw _privateConstructorUsedError;
+  CodeableConcept? get type;
   @override
   @JsonKey(name: 'DoseRange')
-  Range? get doseRange => throw _privateConstructorUsedError;
+  Range? get doseRange;
   @override
   @JsonKey(name: 'DoseQuantity')
-  Quantity? get doseQuantity => throw _privateConstructorUsedError;
+  Quantity? get doseQuantity;
   @override
   @JsonKey(name: 'RateRatio')
-  RateRatio? get rateRatio => throw _privateConstructorUsedError;
+  RateRatio? get rateRatio;
   @override
   @JsonKey(name: 'RateRange')
-  Range? get rateRange => throw _privateConstructorUsedError;
+  Range? get rateRange;
   @override
   @JsonKey(name: 'RateQuantity')
-  Quantity? get rateQuantity => throw _privateConstructorUsedError;
+  Quantity? get rateQuantity;
   @override
   @JsonKey(ignore: true)
-  _$DosageDoseAndRateCopyWith<_DosageDoseAndRate> get copyWith =>
+  _$$_DosageDoseAndRateCopyWith<_$_DosageDoseAndRate> get copyWith =>
       throw _privateConstructorUsedError;
 }

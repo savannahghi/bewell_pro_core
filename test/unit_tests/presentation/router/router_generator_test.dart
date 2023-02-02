@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:flutter_test/flutter_test.dart';
-import 'package:user_profile/term_and_conditions.dart';
+import 'package:sghi_core/user_profile/term_and_conditions.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/pages/patient_exam.dart';

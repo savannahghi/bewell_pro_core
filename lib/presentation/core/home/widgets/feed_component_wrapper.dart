@@ -5,11 +5,14 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:app_wrapper/app_wrapper.dart';
+import 'package:sghi_core/app_wrapper/app_wrapper_base.dart';
 import 'package:async_redux/async_redux.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:user_feed/user_feed.dart';
+import 'package:sghi_core/flutter_graphql_client/i_flutter_graphql_client.dart';
+import 'package:sghi_core/misc_utilities/responsive_widget.dart';
+import 'package:sghi_core/user_feed/src/domain/resources/inputs.dart';
+import 'package:sghi_core/user_feed/src/domain/value_objects/enums.dart';
+import 'package:sghi_core/user_feed/src/presentation/core/feed.dart';
+import 'package:sghi_core/user_feed/src/presentation/preloaders/feed_preloaders.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
@@ -39,7 +42,7 @@ class _FeedComponentWrapperState extends State<FeedComponentWrapper> {
     _feedStreamController = StreamController<Object>.broadcast();
     _feedStream = _feedStreamController.stream;
 
-    WidgetsBinding.instance?.addPostFrameCallback((Duration timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((Duration timeStamp) {
       final IGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
 
       StoreProvider.dispatch<CoreState>(

@@ -16,7 +16,7 @@ class SaveEventAction extends ReduxAction<CoreState> {
         .call(eventName: eventName, eventPayload: eventPayload);
 
     return state.copyWith(
-      miscState: state.miscState?.copyWith.call(eventState: eventState),
+      miscState: state.miscState?.copyWith(eventState: eventState),
     );
   }
 }

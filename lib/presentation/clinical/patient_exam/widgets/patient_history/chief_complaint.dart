@@ -5,12 +5,12 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:misc_utilities/misc.dart';
-import 'package:misc_utilities/responsive_widget.dart';
+import 'package:sghi_core/misc_utilities/misc.dart';
+import 'package:sghi_core/misc_utilities/responsive_widget.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/constants.dart';
-import 'package:shared_ui_components/platform_loader.dart';
+import 'package:sghi_core/shared_themes/colors.dart';
+import 'package:sghi_core/shared_themes/constants.dart';
+import 'package:sghi_core/ui_components/src/platform_loader.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
@@ -46,7 +46,7 @@ class _ChiefComplaintState extends State<ChiefComplaint> {
     _streamController = StreamController<dynamic>.broadcast();
     _stream = _streamController.stream;
 
-    WidgetsBinding.instance!.addPostFrameCallback((Duration timeStamp) async {
+    WidgetsBinding.instance.addPostFrameCallback((Duration timeStamp) async {
       await _getCondition();
     });
 

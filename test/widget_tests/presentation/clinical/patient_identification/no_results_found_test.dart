@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
-import 'package:shared_ui_components/buttons.dart';
+import 'package:sghi_core/ui_components/src/buttons.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
@@ -14,10 +15,16 @@ import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_identification/widgets/no_results_found.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_registration/pages/patient_registration.dart';
+import '../../../../mocks/mock_utils.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
   group('no results found page', () {
+    setUp(() async {
+      await Firebase.initializeApp();
+    });
     final Store<CoreState> store =
         Store<CoreState>(initialState: CoreState.initial());
 

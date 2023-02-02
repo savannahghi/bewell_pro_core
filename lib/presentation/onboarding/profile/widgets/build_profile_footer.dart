@@ -3,10 +3,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:app_wrapper/app_wrapper.dart';
+import 'package:sghi_core/app_wrapper/app_wrapper_base.dart';
 import 'package:async_redux/async_redux.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_themes/text_themes.dart';
+import 'package:sghi_core/afya_moja_core/afya_moja_core.dart';
+import 'package:sghi_core/app_wrapper/enums.dart';
+import 'package:sghi_core/shared_themes/text_themes.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';

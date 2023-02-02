@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:user_profile/term_and_conditions.dart';
+import 'package:sghi_core/user_profile/term_and_conditions.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
@@ -36,7 +36,6 @@ import 'package:bewell_pro_core/presentation/onboarding/profile/pages/user_profi
 import 'package:bewell_pro_core/presentation/onboarding/profile/profile_contact_details.dart';
 import 'package:bewell_pro_core/presentation/onboarding/signup/phone_signup_page.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
-import 'routes.dart';
 
 class RouteGenerator {
   static Route<dynamic>? generateRoute(RouteSettings? settings) {

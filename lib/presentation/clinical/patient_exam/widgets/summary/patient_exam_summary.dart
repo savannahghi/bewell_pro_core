@@ -5,10 +5,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:misc_utilities/misc.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/platform_loader.dart';
+import 'package:sghi_core/misc_utilities/misc.dart';
+import 'package:sghi_core/misc_utilities/responsive_widget.dart';
+import 'package:sghi_core/shared_themes/spaces.dart';
+import 'package:sghi_core/ui_components/src/platform_loader.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/graphql/queries.dart';
@@ -40,7 +40,7 @@ class _PatientExamSummaryState extends State<PatientExamSummary> {
 
   @override
   void didChangeDependencies() {
-    WidgetsBinding.instance!.addPostFrameCallback((Duration timeStamp) async {
+    WidgetsBinding.instance.addPostFrameCallback((Duration timeStamp) async {
       genericFetchFunction(
           queryString: fetchVisitSummaryQuery,
           variables: fetchVisitSummaryVariables(),

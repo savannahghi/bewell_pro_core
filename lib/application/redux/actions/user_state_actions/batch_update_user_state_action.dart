@@ -1,11 +1,14 @@
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
+import 'package:sghi_core/domain_objects/entities/auth_credential_response.dart';
+import 'package:sghi_core/domain_objects/entities/communication_settings.dart';
+import 'package:sghi_core/domain_objects/entities/user_profile.dart';
+import 'package:sghi_core/domain_objects/value_objects/email_address.dart';
+import 'package:sghi_core/domain_objects/value_objects/phone_number.dart';
 
 /// [BatchUpdateUserStateAction] is used to update the packages internal state. If a state changes requires
 /// for it to be replicated in the backend, a use-case specific action should be created

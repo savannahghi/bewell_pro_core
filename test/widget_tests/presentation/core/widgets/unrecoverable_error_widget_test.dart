@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/presentation/core/widgets/unrecoverable_error_widget.dart';
-import 'package:shared_themes/constants.dart';
+import 'package:sghi_core/shared_themes/constants.dart';
 
 void main() {
   testWidgets(

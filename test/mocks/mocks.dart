@@ -8,22 +8,26 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:app_wrapper/app_wrapper.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
-import 'package:flutter_graphql_client/graph_sqlite.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
-import 'package:image_picker/image_picker.dart';
 import 'package:image_picker_platform_interface/image_picker_platform_interface.dart';
 import 'package:mockito/mockito.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:permission_handler_platform_interface/permission_handler_platform_interface.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
-import 'package:shared_ui_components/inputs.dart';
-import 'package:user_feed/user_feed.dart' as feed_obj;
+import 'package:sghi_core/app_wrapper/device_capabilities.dart';
+import 'package:sghi_core/domain_objects/entities/navigation_icon.dart';
+import 'package:sghi_core/domain_objects/entities/navigation_item.dart';
+import 'package:sghi_core/domain_objects/entities/navigation_nested_item.dart';
+import 'package:sghi_core/domain_objects/value_objects/email_address.dart';
+import 'package:sghi_core/domain_objects/value_objects/enums.dart';
+import 'package:sghi_core/domain_objects/value_objects/name.dart';
+import 'package:sghi_core/domain_objects/value_objects/phone_number.dart';
+import 'package:sghi_core/domain_objects/value_objects/unknown.dart';
+import 'package:sghi_core/flutter_graphql_client/i_flutter_graphql_client.dart';
+import 'package:sghi_core/ui_components/src/inputs.dart';
+import 'package:sghi_core/user_feed/src/domain/value_objects/enums.dart'
+    as feed_obj;
+import 'package:sqflite/sqflite.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
@@ -93,14 +97,6 @@ class MockHttpClient implements http.Client {
   Future<http.StreamedResponse> send(http.BaseRequest request) =>
       // ignore: null_argument_to_non_null_type
       Future<http.StreamedResponse>.value();
-}
-
-class MockFirebaseAnalytics extends Mock implements FirebaseAnalytics {
-  @override
-  Future<void> logEvent(
-      {required String name, Map<String, Object?>? parameters}) {
-    return Future<void>.value();
-  }
 }
 
 const String mockImagePath = './image.jpg';

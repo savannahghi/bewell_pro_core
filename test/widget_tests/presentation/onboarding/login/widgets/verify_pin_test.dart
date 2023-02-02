@@ -6,10 +6,11 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
-import 'package:shared_ui_components/platform_loader.dart';
+import 'package:sghi_core/domain_objects/entities/auth_credential_response.dart';
+import 'package:sghi_core/ui_components/src/platform_loader.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';
@@ -24,13 +25,17 @@ import 'package:bewell_pro_core/presentation/onboarding/login/pages/set_user_nam
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/user_names_form.dart';
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/verify_pin.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/change_pin.dart';
+import '../../../../../mocks/mock_utils.dart';
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';
 
 void main() {
   late Store<CoreState> store;
+  setupFirebaseAuthMocks();
 
-  setUp(() {
+  setUp(() async {
+    await Firebase.initializeApp();
+
     store = Store<CoreState>(initialState: CoreState.initial());
   });
 

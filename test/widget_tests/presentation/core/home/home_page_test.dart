@@ -8,8 +8,8 @@ import 'package:flutter/services.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/value_objects.dart';
 import 'package:fake_async/fake_async.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mocktail_image_network/mocktail_image_network.dart';
@@ -28,14 +28,20 @@ import 'package:bewell_pro_core/presentation/core/home/pages/home_page.dart';
 import 'package:bewell_pro_core/presentation/core/home/widgets/feed_component_wrapper.dart';
 import 'package:bewell_pro_core/presentation/core/home/widgets/session_timeout.dart';
 import 'package:bewell_pro_core/presentation/core/home/widgets/sil_bottom_navigation_bar.dart';
+import 'package:sghi_core/domain_objects/value_objects/unknown.dart';
+import '../../../../mocks/mock_utils.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
   group('HomePage', () {
     late Store<CoreState> store;
 
-    setUp(() {
+    setUp(() async {
+      await Firebase.initializeApp();
+
       AppBrand().appLogo.add(cameraIconUrl);
       store = Store<CoreState>(initialState: CoreState.initial());
     });

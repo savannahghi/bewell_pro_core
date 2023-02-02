@@ -1,8 +1,8 @@
 // Package imports:
-import 'package:domain_objects/value_objects.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/domain/core/entities/payload_input.dart';
+import 'package:sghi_core/domain_objects/value_objects/phone_number.dart';
 
 class PhoneNumberInput with PayloadInput {
   final PhoneNumber msisdn;

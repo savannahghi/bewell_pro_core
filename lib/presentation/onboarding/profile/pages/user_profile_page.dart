@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:misc_utilities/enums.dart';
-import 'package:misc_utilities/number_constants.dart';
-import 'package:misc_utilities/responsive_widget.dart';
+import 'package:sghi_core/misc_utilities/enums.dart';
+import 'package:sghi_core/misc_utilities/number_constants.dart';
+import 'package:sghi_core/misc_utilities/responsive_widget.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';

@@ -5,8 +5,8 @@ import 'dart:async';
 import 'package:flutter/widgets.dart';
 
 // Package imports:
-import 'package:app_wrapper/app_wrapper.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:sghi_core/app_wrapper/app_wrapper_base.dart';
+import 'package:sghi_core/flutter_graphql_client/i_flutter_graphql_client.dart';
 import 'package:http/http.dart' as http;
 
 // Project imports:

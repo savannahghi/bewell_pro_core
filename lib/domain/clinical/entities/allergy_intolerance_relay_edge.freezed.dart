@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'allergy_intolerance_relay_edge.dart';
 
@@ -10,33 +12,12 @@ part of 'allergy_intolerance_relay_edge.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 AllergyIntoleranceRelayEdge _$AllergyIntoleranceRelayEdgeFromJson(
     Map<String, dynamic> json) {
   return _AllergyIntoleranceRelayEdge.fromJson(json);
 }
-
-/// @nodoc
-class _$AllergyIntoleranceRelayEdgeTearOff {
-  const _$AllergyIntoleranceRelayEdgeTearOff();
-
-  _AllergyIntoleranceRelayEdge call(
-      {@JsonKey(name: 'cursor') String? cursor,
-      @JsonKey(name: 'node') AllergyIntolerance? node}) {
-    return _AllergyIntoleranceRelayEdge(
-      cursor: cursor,
-      node: node,
-    );
-  }
-
-  AllergyIntoleranceRelayEdge fromJson(Map<String, Object> json) {
-    return AllergyIntoleranceRelayEdge.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $AllergyIntoleranceRelayEdge = _$AllergyIntoleranceRelayEdgeTearOff();
 
 /// @nodoc
 mixin _$AllergyIntoleranceRelayEdge {
@@ -56,7 +37,9 @@ abstract class $AllergyIntoleranceRelayEdgeCopyWith<$Res> {
   factory $AllergyIntoleranceRelayEdgeCopyWith(
           AllergyIntoleranceRelayEdge value,
           $Res Function(AllergyIntoleranceRelayEdge) then) =
-      _$AllergyIntoleranceRelayEdgeCopyWithImpl<$Res>;
+      _$AllergyIntoleranceRelayEdgeCopyWithImpl<$Res,
+          AllergyIntoleranceRelayEdge>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'cursor') String? cursor,
       @JsonKey(name: 'node') AllergyIntolerance? node});
@@ -65,51 +48,56 @@ abstract class $AllergyIntoleranceRelayEdgeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AllergyIntoleranceRelayEdgeCopyWithImpl<$Res>
+class _$AllergyIntoleranceRelayEdgeCopyWithImpl<$Res,
+        $Val extends AllergyIntoleranceRelayEdge>
     implements $AllergyIntoleranceRelayEdgeCopyWith<$Res> {
   _$AllergyIntoleranceRelayEdgeCopyWithImpl(this._value, this._then);
 
-  final AllergyIntoleranceRelayEdge _value;
   // ignore: unused_field
-  final $Res Function(AllergyIntoleranceRelayEdge) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? cursor = freezed,
     Object? node = freezed,
   }) {
     return _then(_value.copyWith(
-      cursor: cursor == freezed
+      cursor: freezed == cursor
           ? _value.cursor
           : cursor // ignore: cast_nullable_to_non_nullable
               as String?,
-      node: node == freezed
+      node: freezed == node
           ? _value.node
           : node // ignore: cast_nullable_to_non_nullable
               as AllergyIntolerance?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $AllergyIntoleranceCopyWith<$Res>? get node {
     if (_value.node == null) {
       return null;
     }
 
     return $AllergyIntoleranceCopyWith<$Res>(_value.node!, (value) {
-      return _then(_value.copyWith(node: value));
+      return _then(_value.copyWith(node: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$AllergyIntoleranceRelayEdgeCopyWith<$Res>
+abstract class _$$_AllergyIntoleranceRelayEdgeCopyWith<$Res>
     implements $AllergyIntoleranceRelayEdgeCopyWith<$Res> {
-  factory _$AllergyIntoleranceRelayEdgeCopyWith(
-          _AllergyIntoleranceRelayEdge value,
-          $Res Function(_AllergyIntoleranceRelayEdge) then) =
-      __$AllergyIntoleranceRelayEdgeCopyWithImpl<$Res>;
+  factory _$$_AllergyIntoleranceRelayEdgeCopyWith(
+          _$_AllergyIntoleranceRelayEdge value,
+          $Res Function(_$_AllergyIntoleranceRelayEdge) then) =
+      __$$_AllergyIntoleranceRelayEdgeCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'cursor') String? cursor,
       @JsonKey(name: 'node') AllergyIntolerance? node});
@@ -119,29 +107,27 @@ abstract class _$AllergyIntoleranceRelayEdgeCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AllergyIntoleranceRelayEdgeCopyWithImpl<$Res>
-    extends _$AllergyIntoleranceRelayEdgeCopyWithImpl<$Res>
-    implements _$AllergyIntoleranceRelayEdgeCopyWith<$Res> {
-  __$AllergyIntoleranceRelayEdgeCopyWithImpl(
-      _AllergyIntoleranceRelayEdge _value,
-      $Res Function(_AllergyIntoleranceRelayEdge) _then)
-      : super(_value, (v) => _then(v as _AllergyIntoleranceRelayEdge));
+class __$$_AllergyIntoleranceRelayEdgeCopyWithImpl<$Res>
+    extends _$AllergyIntoleranceRelayEdgeCopyWithImpl<$Res,
+        _$_AllergyIntoleranceRelayEdge>
+    implements _$$_AllergyIntoleranceRelayEdgeCopyWith<$Res> {
+  __$$_AllergyIntoleranceRelayEdgeCopyWithImpl(
+      _$_AllergyIntoleranceRelayEdge _value,
+      $Res Function(_$_AllergyIntoleranceRelayEdge) _then)
+      : super(_value, _then);
 
-  @override
-  _AllergyIntoleranceRelayEdge get _value =>
-      super._value as _AllergyIntoleranceRelayEdge;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? cursor = freezed,
     Object? node = freezed,
   }) {
-    return _then(_AllergyIntoleranceRelayEdge(
-      cursor: cursor == freezed
+    return _then(_$_AllergyIntoleranceRelayEdge(
+      cursor: freezed == cursor
           ? _value.cursor
           : cursor // ignore: cast_nullable_to_non_nullable
               as String?,
-      node: node == freezed
+      node: freezed == node
           ? _value.node
           : node // ignore: cast_nullable_to_non_nullable
               as AllergyIntolerance?,
@@ -156,7 +142,7 @@ class _$_AllergyIntoleranceRelayEdge implements _AllergyIntoleranceRelayEdge {
       {@JsonKey(name: 'cursor') this.cursor, @JsonKey(name: 'node') this.node});
 
   factory _$_AllergyIntoleranceRelayEdge.fromJson(Map<String, dynamic> json) =>
-      _$_$_AllergyIntoleranceRelayEdgeFromJson(json);
+      _$$_AllergyIntoleranceRelayEdgeFromJson(json);
 
   @override
   @JsonKey(name: 'cursor')
@@ -173,36 +159,36 @@ class _$_AllergyIntoleranceRelayEdge implements _AllergyIntoleranceRelayEdge {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AllergyIntoleranceRelayEdge &&
-            (identical(other.cursor, cursor) ||
-                const DeepCollectionEquality().equals(other.cursor, cursor)) &&
-            (identical(other.node, node) ||
-                const DeepCollectionEquality().equals(other.node, node)));
+        (other.runtimeType == runtimeType &&
+            other is _$_AllergyIntoleranceRelayEdge &&
+            (identical(other.cursor, cursor) || other.cursor == cursor) &&
+            (identical(other.node, node) || other.node == node));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(cursor) ^
-      const DeepCollectionEquality().hash(node);
 
   @JsonKey(ignore: true)
   @override
-  _$AllergyIntoleranceRelayEdgeCopyWith<_AllergyIntoleranceRelayEdge>
-      get copyWith => __$AllergyIntoleranceRelayEdgeCopyWithImpl<
-          _AllergyIntoleranceRelayEdge>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, cursor, node);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_AllergyIntoleranceRelayEdgeCopyWith<_$_AllergyIntoleranceRelayEdge>
+      get copyWith => __$$_AllergyIntoleranceRelayEdgeCopyWithImpl<
+          _$_AllergyIntoleranceRelayEdge>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_AllergyIntoleranceRelayEdgeToJson(this);
+    return _$$_AllergyIntoleranceRelayEdgeToJson(
+      this,
+    );
   }
 }
 
 abstract class _AllergyIntoleranceRelayEdge
     implements AllergyIntoleranceRelayEdge {
   factory _AllergyIntoleranceRelayEdge(
-          {@JsonKey(name: 'cursor') String? cursor,
-          @JsonKey(name: 'node') AllergyIntolerance? node}) =
+          {@JsonKey(name: 'cursor') final String? cursor,
+          @JsonKey(name: 'node') final AllergyIntolerance? node}) =
       _$_AllergyIntoleranceRelayEdge;
 
   factory _AllergyIntoleranceRelayEdge.fromJson(Map<String, dynamic> json) =
@@ -210,12 +196,12 @@ abstract class _AllergyIntoleranceRelayEdge
 
   @override
   @JsonKey(name: 'cursor')
-  String? get cursor => throw _privateConstructorUsedError;
+  String? get cursor;
   @override
   @JsonKey(name: 'node')
-  AllergyIntolerance? get node => throw _privateConstructorUsedError;
+  AllergyIntolerance? get node;
   @override
   @JsonKey(ignore: true)
-  _$AllergyIntoleranceRelayEdgeCopyWith<_AllergyIntoleranceRelayEdge>
+  _$$_AllergyIntoleranceRelayEdgeCopyWith<_$_AllergyIntoleranceRelayEdge>
       get copyWith => throw _privateConstructorUsedError;
 }

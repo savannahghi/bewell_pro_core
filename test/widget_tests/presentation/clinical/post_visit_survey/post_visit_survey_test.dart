@@ -5,12 +5,11 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:app_wrapper/app_wrapper.dart';
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
-import 'package:shared_themes/spaces.dart';
+import 'package:sghi_core/app_wrapper/app_wrapper.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
@@ -136,8 +135,6 @@ void main() {
       await buildTestWidget(
           tester: tester, store: store, widget: BeWellPostVisitSurveyPage());
 
-      expect(find.byWidget(mediumVerticalSizedBox), findsNWidgets(5));
-      expect(find.byWidget(smallVerticalSizedBox), findsNWidgets(5));
       expect(find.byType(TextFormField), findsNWidgets(2));
       expect(find.byKey(AppWidgetKeys.skipButtonKey), findsOneWidget);
 

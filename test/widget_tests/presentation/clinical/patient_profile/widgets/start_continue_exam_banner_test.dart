@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
 
@@ -20,13 +21,18 @@ import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_exam_tiles.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/bewell_primary_patient_banner.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_profile/widgets/start_continue_exam_banner.dart';
+import '../../../../../mocks/mock_utils.dart';
 import '../../../../../mocks/mocks.dart';
 import '../../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
   late Store<CoreState> store;
 
-  setUp(() {
+  setUp(() async {
+    await Firebase.initializeApp();
+
     AppBrand().appLogo.add(cameraIconUrl);
     store = Store<CoreState>(
       initialState: CoreState.initial().copyWith(

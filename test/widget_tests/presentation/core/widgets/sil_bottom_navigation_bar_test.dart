@@ -52,6 +52,7 @@ void main() {
         expect(find.byType(HelpCenterPage), findsOneWidget);
       });
     });
+
     testWidgets('renders correctly as SIL employee',
         (WidgetTester tester) async {
       await store.dispatch(NavigationAction(

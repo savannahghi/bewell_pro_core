@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
 
@@ -14,11 +14,18 @@ import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.d
 import 'package:bewell_pro_core/presentation/onboarding/login/widgets/onboarding_scaffold.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/change_pin.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/pages/user_profile_page.dart';
+import 'package:sghi_core/domain_objects/entities/auth_credential_response.dart';
+import 'package:sghi_core/domain_objects/entities/user_profile.dart';
+import '../../../../mocks/mock_utils.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
   group('ProfileChangePin', () {
+    setUp(() async {
+      await Firebase.initializeApp();
+    });
     late Store<CoreState> store;
 
     setUp(() {

@@ -5,14 +5,14 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:app_wrapper/app_wrapper.dart';
+import 'package:sghi_core/app_wrapper/app_wrapper_base.dart';
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:sghi_core/domain_objects/entities/navigation_item.dart';
+import 'package:sghi_core/flutter_graphql_client/i_flutter_graphql_client.dart';
 import 'package:http/http.dart' as http;
-import 'package:misc_utilities/misc.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/constants.dart';
+import 'package:sghi_core/misc_utilities/misc.dart';
+import 'package:sghi_core/shared_themes/colors.dart';
+import 'package:sghi_core/shared_themes/constants.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';

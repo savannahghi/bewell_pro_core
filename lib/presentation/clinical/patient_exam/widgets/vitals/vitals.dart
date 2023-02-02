@@ -5,8 +5,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:misc_utilities/misc.dart';
-import 'package:shared_ui_components/platform_loader.dart';
+import 'package:sghi_core/misc_utilities/misc.dart';
+import 'package:sghi_core/ui_components/src/platform_loader.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/graphql/queries.dart';
@@ -34,7 +34,7 @@ class _VitalsState extends State<Vitals> {
 
   @override
   void didChangeDependencies() {
-    WidgetsBinding.instance!.addPostFrameCallback((Duration timeStamp) async {
+    WidgetsBinding.instance.addPostFrameCallback((Duration timeStamp) async {
       await fetchPatientVitals(_vitalsStreamController, context);
     });
     refreshController.listen((dynamic value) async {

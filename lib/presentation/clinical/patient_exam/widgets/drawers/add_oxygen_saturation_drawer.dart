@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/inputs.dart';
+import 'package:sghi_core/misc_utilities/responsive_widget.dart';
+import 'package:sghi_core/shared_themes/colors.dart';
+import 'package:sghi_core/shared_themes/spaces.dart';
+import 'package:sghi_core/ui_components/src/inputs.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/graphql/mutations.dart';
@@ -26,8 +26,6 @@ import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawe
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/vital_constants.dart';
 
 /// [common] and [shared]
-
-
 
 class AddOxygenSaturation extends StatefulWidget {
   @override

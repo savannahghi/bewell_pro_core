@@ -11,7 +11,7 @@ void main() {
       expect(state, CoreState.initial());
 
       state = state.copyWith(
-          userState: state.userState?.copyWith.call(isSignedIn: true));
+          userState: state.userState?.copyWith(isSignedIn: true));
 
       expect(state, isNot(CoreState.initial()));
     });

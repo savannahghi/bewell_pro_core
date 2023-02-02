@@ -1,12 +1,10 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 // Package imports:
-import 'package:misc_utilities/responsive_widget.dart';
 import 'package:rxdart/subjects.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/buttons.dart';
+import 'package:sghi_core/afya_moja_core/afya_moja_core.dart';
+import 'package:sghi_core/ui_components/src/buttons.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';

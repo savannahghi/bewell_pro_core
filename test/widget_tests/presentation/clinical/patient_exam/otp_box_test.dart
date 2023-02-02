@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:quiver/async.dart';
 import 'package:quiver/testing/time.dart';
-import 'package:shared_ui_components/inputs.dart';
-import 'package:shared_ui_components/platform_loader.dart';
+import 'package:sghi_core/domain_objects/entities/user_profile.dart';
+import 'package:sghi_core/ui_components/src/inputs.dart';
+import 'package:sghi_core/ui_components/src/platform_loader.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/batch_update_user_state_action.dart';

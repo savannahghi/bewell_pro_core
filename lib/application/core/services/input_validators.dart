@@ -1,5 +1,5 @@
 // Package imports:
-import 'package:misc_utilities/misc.dart';
+import 'package:sghi_core/misc_utilities/misc.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/domain/core/value_objects/app_string_constants.dart';

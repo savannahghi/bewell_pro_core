@@ -6,9 +6,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/platform_loader.dart';
+import 'package:sghi_core/shared_themes/colors.dart';
+import 'package:sghi_core/afya_moja_core/afya_moja_core.dart';
+import 'package:sghi_core/ui_components/src/platform_loader.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/domain/clinical/entities/fhir.dart';
@@ -35,7 +35,7 @@ class _PatientHistoryWrapperState extends State<PatientHistoryWrapper> {
     _patientHistoryStreamController = StreamController<dynamic>.broadcast();
     _patientHistoryStream = _patientHistoryStreamController.stream;
 
-    WidgetsBinding.instance!.addPostFrameCallback((Duration timeStamp) async {
+    WidgetsBinding.instance.addPostFrameCallback((Duration timeStamp) async {
       await fetchCompositionData(
         streamController: this._patientHistoryStreamController,
         context: context,

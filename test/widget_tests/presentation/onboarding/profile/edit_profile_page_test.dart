@@ -3,16 +3,20 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
+import 'package:sghi_core/domain_objects/entities/bio_data.dart';
+import 'package:sghi_core/domain_objects/entities/user_profile.dart';
+import 'package:sghi_core/domain_objects/value_objects/enums.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
 import 'package:bewell_pro_core/application/redux/states/user_state.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/pages/edit_profile_page.dart';
 import 'package:bewell_pro_core/presentation/onboarding/profile/widgets/edit_profile_form.dart';
+import 'package:sghi_core/domain_objects/value_objects/name.dart';
+import 'package:sghi_core/domain_objects/value_objects/phone_number.dart';
+import 'package:sghi_core/domain_objects/value_objects/unknown.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {

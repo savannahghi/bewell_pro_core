@@ -2,9 +2,10 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
-import 'package:shared_ui_components/buttons.dart';
+import 'package:sghi_core/ui_components/src/buttons.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/domain/core/entities/common_behavior_object.dart';
@@ -14,9 +15,15 @@ import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/presentation/core/home/pages/home_page.dart';
 import 'package:bewell_pro_core/presentation/core/widgets/default_error_route.dart';
 import 'package:bewell_pro_core/presentation/router/routes.dart';
+import '../../../../mocks/mock_utils.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
+  setUp(() async {
+    await Firebase.initializeApp();
+  });
   testWidgets('sil 404 widget', (WidgetTester tester) async {
     AppBrand()
       ..appLogo.add(beWellWhiteIconUrl)

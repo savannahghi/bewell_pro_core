@@ -1,6 +1,6 @@
 // Package imports:
-import 'package:domain_objects/value_objects.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:sghi_core/domain_objects/value_objects/unknown.dart';
 
 part 'event_state.freezed.dart';
 part 'event_state.g.dart';

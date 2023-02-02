@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'patient_connection.dart';
 
@@ -10,34 +12,11 @@ part of 'patient_connection.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PatientEdge _$PatientEdgeFromJson(Map<String, dynamic> json) {
   return _PatientEdge.fromJson(json);
 }
-
-/// @nodoc
-class _$PatientEdgeTearOff {
-  const _$PatientEdgeTearOff();
-
-  _PatientEdge call(
-      {@JsonKey(name: 'cursor') String? cursor,
-      @JsonKey(name: 'node') Patient? node,
-      @JsonKey(name: 'hasOpenEpisodes') bool? hasOpenEpisodes}) {
-    return _PatientEdge(
-      cursor: cursor,
-      node: node,
-      hasOpenEpisodes: hasOpenEpisodes,
-    );
-  }
-
-  PatientEdge fromJson(Map<String, Object> json) {
-    return PatientEdge.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PatientEdge = _$PatientEdgeTearOff();
 
 /// @nodoc
 mixin _$PatientEdge {
@@ -58,7 +37,8 @@ mixin _$PatientEdge {
 abstract class $PatientEdgeCopyWith<$Res> {
   factory $PatientEdgeCopyWith(
           PatientEdge value, $Res Function(PatientEdge) then) =
-      _$PatientEdgeCopyWithImpl<$Res>;
+      _$PatientEdgeCopyWithImpl<$Res, PatientEdge>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'cursor') String? cursor,
       @JsonKey(name: 'node') Patient? node,
@@ -68,13 +48,16 @@ abstract class $PatientEdgeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PatientEdgeCopyWithImpl<$Res> implements $PatientEdgeCopyWith<$Res> {
+class _$PatientEdgeCopyWithImpl<$Res, $Val extends PatientEdge>
+    implements $PatientEdgeCopyWith<$Res> {
   _$PatientEdgeCopyWithImpl(this._value, this._then);
 
-  final PatientEdge _value;
   // ignore: unused_field
-  final $Res Function(PatientEdge) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? cursor = freezed,
@@ -82,40 +65,42 @@ class _$PatientEdgeCopyWithImpl<$Res> implements $PatientEdgeCopyWith<$Res> {
     Object? hasOpenEpisodes = freezed,
   }) {
     return _then(_value.copyWith(
-      cursor: cursor == freezed
+      cursor: freezed == cursor
           ? _value.cursor
           : cursor // ignore: cast_nullable_to_non_nullable
               as String?,
-      node: node == freezed
+      node: freezed == node
           ? _value.node
           : node // ignore: cast_nullable_to_non_nullable
               as Patient?,
-      hasOpenEpisodes: hasOpenEpisodes == freezed
+      hasOpenEpisodes: freezed == hasOpenEpisodes
           ? _value.hasOpenEpisodes
           : hasOpenEpisodes // ignore: cast_nullable_to_non_nullable
               as bool?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $PatientCopyWith<$Res>? get node {
     if (_value.node == null) {
       return null;
     }
 
     return $PatientCopyWith<$Res>(_value.node!, (value) {
-      return _then(_value.copyWith(node: value));
+      return _then(_value.copyWith(node: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$PatientEdgeCopyWith<$Res>
+abstract class _$$_PatientEdgeCopyWith<$Res>
     implements $PatientEdgeCopyWith<$Res> {
-  factory _$PatientEdgeCopyWith(
-          _PatientEdge value, $Res Function(_PatientEdge) then) =
-      __$PatientEdgeCopyWithImpl<$Res>;
+  factory _$$_PatientEdgeCopyWith(
+          _$_PatientEdge value, $Res Function(_$_PatientEdge) then) =
+      __$$_PatientEdgeCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'cursor') String? cursor,
       @JsonKey(name: 'node') Patient? node,
@@ -126,31 +111,30 @@ abstract class _$PatientEdgeCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PatientEdgeCopyWithImpl<$Res> extends _$PatientEdgeCopyWithImpl<$Res>
-    implements _$PatientEdgeCopyWith<$Res> {
-  __$PatientEdgeCopyWithImpl(
-      _PatientEdge _value, $Res Function(_PatientEdge) _then)
-      : super(_value, (v) => _then(v as _PatientEdge));
+class __$$_PatientEdgeCopyWithImpl<$Res>
+    extends _$PatientEdgeCopyWithImpl<$Res, _$_PatientEdge>
+    implements _$$_PatientEdgeCopyWith<$Res> {
+  __$$_PatientEdgeCopyWithImpl(
+      _$_PatientEdge _value, $Res Function(_$_PatientEdge) _then)
+      : super(_value, _then);
 
-  @override
-  _PatientEdge get _value => super._value as _PatientEdge;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? cursor = freezed,
     Object? node = freezed,
     Object? hasOpenEpisodes = freezed,
   }) {
-    return _then(_PatientEdge(
-      cursor: cursor == freezed
+    return _then(_$_PatientEdge(
+      cursor: freezed == cursor
           ? _value.cursor
           : cursor // ignore: cast_nullable_to_non_nullable
               as String?,
-      node: node == freezed
+      node: freezed == node
           ? _value.node
           : node // ignore: cast_nullable_to_non_nullable
               as Patient?,
-      hasOpenEpisodes: hasOpenEpisodes == freezed
+      hasOpenEpisodes: freezed == hasOpenEpisodes
           ? _value.hasOpenEpisodes
           : hasOpenEpisodes // ignore: cast_nullable_to_non_nullable
               as bool?,
@@ -167,7 +151,7 @@ class _$_PatientEdge implements _PatientEdge {
       @JsonKey(name: 'hasOpenEpisodes') this.hasOpenEpisodes});
 
   factory _$_PatientEdge.fromJson(Map<String, dynamic> json) =>
-      _$_$_PatientEdgeFromJson(json);
+      _$$_PatientEdgeFromJson(json);
 
   @override
   @JsonKey(name: 'cursor')
@@ -187,39 +171,37 @@ class _$_PatientEdge implements _PatientEdge {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PatientEdge &&
-            (identical(other.cursor, cursor) ||
-                const DeepCollectionEquality().equals(other.cursor, cursor)) &&
-            (identical(other.node, node) ||
-                const DeepCollectionEquality().equals(other.node, node)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_PatientEdge &&
+            (identical(other.cursor, cursor) || other.cursor == cursor) &&
+            (identical(other.node, node) || other.node == node) &&
             (identical(other.hasOpenEpisodes, hasOpenEpisodes) ||
-                const DeepCollectionEquality()
-                    .equals(other.hasOpenEpisodes, hasOpenEpisodes)));
+                other.hasOpenEpisodes == hasOpenEpisodes));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(cursor) ^
-      const DeepCollectionEquality().hash(node) ^
-      const DeepCollectionEquality().hash(hasOpenEpisodes);
 
   @JsonKey(ignore: true)
   @override
-  _$PatientEdgeCopyWith<_PatientEdge> get copyWith =>
-      __$PatientEdgeCopyWithImpl<_PatientEdge>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, cursor, node, hasOpenEpisodes);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PatientEdgeCopyWith<_$_PatientEdge> get copyWith =>
+      __$$_PatientEdgeCopyWithImpl<_$_PatientEdge>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PatientEdgeToJson(this);
+    return _$$_PatientEdgeToJson(
+      this,
+    );
   }
 }
 
 abstract class _PatientEdge implements PatientEdge {
   factory _PatientEdge(
-          {@JsonKey(name: 'cursor') String? cursor,
-          @JsonKey(name: 'node') Patient? node,
-          @JsonKey(name: 'hasOpenEpisodes') bool? hasOpenEpisodes}) =
+          {@JsonKey(name: 'cursor') final String? cursor,
+          @JsonKey(name: 'node') final Patient? node,
+          @JsonKey(name: 'hasOpenEpisodes') final bool? hasOpenEpisodes}) =
       _$_PatientEdge;
 
   factory _PatientEdge.fromJson(Map<String, dynamic> json) =
@@ -227,43 +209,22 @@ abstract class _PatientEdge implements PatientEdge {
 
   @override
   @JsonKey(name: 'cursor')
-  String? get cursor => throw _privateConstructorUsedError;
+  String? get cursor;
   @override
   @JsonKey(name: 'node')
-  Patient? get node => throw _privateConstructorUsedError;
+  Patient? get node;
   @override
   @JsonKey(name: 'hasOpenEpisodes')
-  bool? get hasOpenEpisodes => throw _privateConstructorUsedError;
+  bool? get hasOpenEpisodes;
   @override
   @JsonKey(ignore: true)
-  _$PatientEdgeCopyWith<_PatientEdge> get copyWith =>
+  _$$_PatientEdgeCopyWith<_$_PatientEdge> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 PatientConnection _$PatientConnectionFromJson(Map<String, dynamic> json) {
   return _PatientConnection.fromJson(json);
 }
-
-/// @nodoc
-class _$PatientConnectionTearOff {
-  const _$PatientConnectionTearOff();
-
-  _PatientConnection call(
-      {@JsonKey(name: 'edges') List<PatientEdge?>? edges,
-      @JsonKey(name: 'pageInfo') PageInfo? pageInfo}) {
-    return _PatientConnection(
-      edges: edges,
-      pageInfo: pageInfo,
-    );
-  }
-
-  PatientConnection fromJson(Map<String, Object> json) {
-    return PatientConnection.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PatientConnection = _$PatientConnectionTearOff();
 
 /// @nodoc
 mixin _$PatientConnection {
@@ -282,7 +243,8 @@ mixin _$PatientConnection {
 abstract class $PatientConnectionCopyWith<$Res> {
   factory $PatientConnectionCopyWith(
           PatientConnection value, $Res Function(PatientConnection) then) =
-      _$PatientConnectionCopyWithImpl<$Res>;
+      _$PatientConnectionCopyWithImpl<$Res, PatientConnection>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'edges') List<PatientEdge?>? edges,
       @JsonKey(name: 'pageInfo') PageInfo? pageInfo});
@@ -291,50 +253,54 @@ abstract class $PatientConnectionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PatientConnectionCopyWithImpl<$Res>
+class _$PatientConnectionCopyWithImpl<$Res, $Val extends PatientConnection>
     implements $PatientConnectionCopyWith<$Res> {
   _$PatientConnectionCopyWithImpl(this._value, this._then);
 
-  final PatientConnection _value;
   // ignore: unused_field
-  final $Res Function(PatientConnection) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? edges = freezed,
     Object? pageInfo = freezed,
   }) {
     return _then(_value.copyWith(
-      edges: edges == freezed
+      edges: freezed == edges
           ? _value.edges
           : edges // ignore: cast_nullable_to_non_nullable
               as List<PatientEdge?>?,
-      pageInfo: pageInfo == freezed
+      pageInfo: freezed == pageInfo
           ? _value.pageInfo
           : pageInfo // ignore: cast_nullable_to_non_nullable
               as PageInfo?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $PageInfoCopyWith<$Res>? get pageInfo {
     if (_value.pageInfo == null) {
       return null;
     }
 
     return $PageInfoCopyWith<$Res>(_value.pageInfo!, (value) {
-      return _then(_value.copyWith(pageInfo: value));
+      return _then(_value.copyWith(pageInfo: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$PatientConnectionCopyWith<$Res>
+abstract class _$$_PatientConnectionCopyWith<$Res>
     implements $PatientConnectionCopyWith<$Res> {
-  factory _$PatientConnectionCopyWith(
-          _PatientConnection value, $Res Function(_PatientConnection) then) =
-      __$PatientConnectionCopyWithImpl<$Res>;
+  factory _$$_PatientConnectionCopyWith(_$_PatientConnection value,
+          $Res Function(_$_PatientConnection) then) =
+      __$$_PatientConnectionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'edges') List<PatientEdge?>? edges,
       @JsonKey(name: 'pageInfo') PageInfo? pageInfo});
@@ -344,27 +310,25 @@ abstract class _$PatientConnectionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PatientConnectionCopyWithImpl<$Res>
-    extends _$PatientConnectionCopyWithImpl<$Res>
-    implements _$PatientConnectionCopyWith<$Res> {
-  __$PatientConnectionCopyWithImpl(
-      _PatientConnection _value, $Res Function(_PatientConnection) _then)
-      : super(_value, (v) => _then(v as _PatientConnection));
+class __$$_PatientConnectionCopyWithImpl<$Res>
+    extends _$PatientConnectionCopyWithImpl<$Res, _$_PatientConnection>
+    implements _$$_PatientConnectionCopyWith<$Res> {
+  __$$_PatientConnectionCopyWithImpl(
+      _$_PatientConnection _value, $Res Function(_$_PatientConnection) _then)
+      : super(_value, _then);
 
-  @override
-  _PatientConnection get _value => super._value as _PatientConnection;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? edges = freezed,
     Object? pageInfo = freezed,
   }) {
-    return _then(_PatientConnection(
-      edges: edges == freezed
-          ? _value.edges
+    return _then(_$_PatientConnection(
+      edges: freezed == edges
+          ? _value._edges
           : edges // ignore: cast_nullable_to_non_nullable
               as List<PatientEdge?>?,
-      pageInfo: pageInfo == freezed
+      pageInfo: freezed == pageInfo
           ? _value.pageInfo
           : pageInfo // ignore: cast_nullable_to_non_nullable
               as PageInfo?,
@@ -376,15 +340,23 @@ class __$PatientConnectionCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_PatientConnection implements _PatientConnection {
   _$_PatientConnection(
-      {@JsonKey(name: 'edges') this.edges,
-      @JsonKey(name: 'pageInfo') this.pageInfo});
+      {@JsonKey(name: 'edges') final List<PatientEdge?>? edges,
+      @JsonKey(name: 'pageInfo') this.pageInfo})
+      : _edges = edges;
 
   factory _$_PatientConnection.fromJson(Map<String, dynamic> json) =>
-      _$_$_PatientConnectionFromJson(json);
+      _$$_PatientConnectionFromJson(json);
 
+  final List<PatientEdge?>? _edges;
   @override
   @JsonKey(name: 'edges')
-  final List<PatientEdge?>? edges;
+  List<PatientEdge?>? get edges {
+    final value = _edges;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'pageInfo')
   final PageInfo? pageInfo;
@@ -397,81 +369,57 @@ class _$_PatientConnection implements _PatientConnection {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PatientConnection &&
-            (identical(other.edges, edges) ||
-                const DeepCollectionEquality().equals(other.edges, edges)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_PatientConnection &&
+            const DeepCollectionEquality().equals(other._edges, _edges) &&
             (identical(other.pageInfo, pageInfo) ||
-                const DeepCollectionEquality()
-                    .equals(other.pageInfo, pageInfo)));
+                other.pageInfo == pageInfo));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(edges) ^
-      const DeepCollectionEquality().hash(pageInfo);
 
   @JsonKey(ignore: true)
   @override
-  _$PatientConnectionCopyWith<_PatientConnection> get copyWith =>
-      __$PatientConnectionCopyWithImpl<_PatientConnection>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_edges), pageInfo);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PatientConnectionCopyWith<_$_PatientConnection> get copyWith =>
+      __$$_PatientConnectionCopyWithImpl<_$_PatientConnection>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PatientConnectionToJson(this);
+    return _$$_PatientConnectionToJson(
+      this,
+    );
   }
 }
 
 abstract class _PatientConnection implements PatientConnection {
   factory _PatientConnection(
-      {@JsonKey(name: 'edges') List<PatientEdge?>? edges,
-      @JsonKey(name: 'pageInfo') PageInfo? pageInfo}) = _$_PatientConnection;
+          {@JsonKey(name: 'edges') final List<PatientEdge?>? edges,
+          @JsonKey(name: 'pageInfo') final PageInfo? pageInfo}) =
+      _$_PatientConnection;
 
   factory _PatientConnection.fromJson(Map<String, dynamic> json) =
       _$_PatientConnection.fromJson;
 
   @override
   @JsonKey(name: 'edges')
-  List<PatientEdge?>? get edges => throw _privateConstructorUsedError;
+  List<PatientEdge?>? get edges;
   @override
   @JsonKey(name: 'pageInfo')
-  PageInfo? get pageInfo => throw _privateConstructorUsedError;
+  PageInfo? get pageInfo;
   @override
   @JsonKey(ignore: true)
-  _$PatientConnectionCopyWith<_PatientConnection> get copyWith =>
+  _$$_PatientConnectionCopyWith<_$_PatientConnection> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 PatientInfo _$PatientInfoFromJson(Map<String, dynamic> json) {
   return _PatientInfo.fromJson(json);
 }
-
-/// @nodoc
-class _$PatientInfoTearOff {
-  const _$PatientInfoTearOff();
-
-  _PatientInfo call(
-      {String? patientId,
-      String? patientReference,
-      String? patientName,
-      String? encounterId,
-      String? encounterReference}) {
-    return _PatientInfo(
-      patientId: patientId,
-      patientReference: patientReference,
-      patientName: patientName,
-      encounterId: encounterId,
-      encounterReference: encounterReference,
-    );
-  }
-
-  PatientInfo fromJson(Map<String, Object> json) {
-    return PatientInfo.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PatientInfo = _$PatientInfoTearOff();
 
 /// @nodoc
 mixin _$PatientInfo {
@@ -491,7 +439,8 @@ mixin _$PatientInfo {
 abstract class $PatientInfoCopyWith<$Res> {
   factory $PatientInfoCopyWith(
           PatientInfo value, $Res Function(PatientInfo) then) =
-      _$PatientInfoCopyWithImpl<$Res>;
+      _$PatientInfoCopyWithImpl<$Res, PatientInfo>;
+  @useResult
   $Res call(
       {String? patientId,
       String? patientReference,
@@ -501,13 +450,16 @@ abstract class $PatientInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PatientInfoCopyWithImpl<$Res> implements $PatientInfoCopyWith<$Res> {
+class _$PatientInfoCopyWithImpl<$Res, $Val extends PatientInfo>
+    implements $PatientInfoCopyWith<$Res> {
   _$PatientInfoCopyWithImpl(this._value, this._then);
 
-  final PatientInfo _value;
   // ignore: unused_field
-  final $Res Function(PatientInfo) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? patientId = freezed,
@@ -517,37 +469,38 @@ class _$PatientInfoCopyWithImpl<$Res> implements $PatientInfoCopyWith<$Res> {
     Object? encounterReference = freezed,
   }) {
     return _then(_value.copyWith(
-      patientId: patientId == freezed
+      patientId: freezed == patientId
           ? _value.patientId
           : patientId // ignore: cast_nullable_to_non_nullable
               as String?,
-      patientReference: patientReference == freezed
+      patientReference: freezed == patientReference
           ? _value.patientReference
           : patientReference // ignore: cast_nullable_to_non_nullable
               as String?,
-      patientName: patientName == freezed
+      patientName: freezed == patientName
           ? _value.patientName
           : patientName // ignore: cast_nullable_to_non_nullable
               as String?,
-      encounterId: encounterId == freezed
+      encounterId: freezed == encounterId
           ? _value.encounterId
           : encounterId // ignore: cast_nullable_to_non_nullable
               as String?,
-      encounterReference: encounterReference == freezed
+      encounterReference: freezed == encounterReference
           ? _value.encounterReference
           : encounterReference // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$PatientInfoCopyWith<$Res>
+abstract class _$$_PatientInfoCopyWith<$Res>
     implements $PatientInfoCopyWith<$Res> {
-  factory _$PatientInfoCopyWith(
-          _PatientInfo value, $Res Function(_PatientInfo) then) =
-      __$PatientInfoCopyWithImpl<$Res>;
+  factory _$$_PatientInfoCopyWith(
+          _$_PatientInfo value, $Res Function(_$_PatientInfo) then) =
+      __$$_PatientInfoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? patientId,
       String? patientReference,
@@ -557,15 +510,14 @@ abstract class _$PatientInfoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PatientInfoCopyWithImpl<$Res> extends _$PatientInfoCopyWithImpl<$Res>
-    implements _$PatientInfoCopyWith<$Res> {
-  __$PatientInfoCopyWithImpl(
-      _PatientInfo _value, $Res Function(_PatientInfo) _then)
-      : super(_value, (v) => _then(v as _PatientInfo));
+class __$$_PatientInfoCopyWithImpl<$Res>
+    extends _$PatientInfoCopyWithImpl<$Res, _$_PatientInfo>
+    implements _$$_PatientInfoCopyWith<$Res> {
+  __$$_PatientInfoCopyWithImpl(
+      _$_PatientInfo _value, $Res Function(_$_PatientInfo) _then)
+      : super(_value, _then);
 
-  @override
-  _PatientInfo get _value => super._value as _PatientInfo;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? patientId = freezed,
@@ -574,24 +526,24 @@ class __$PatientInfoCopyWithImpl<$Res> extends _$PatientInfoCopyWithImpl<$Res>
     Object? encounterId = freezed,
     Object? encounterReference = freezed,
   }) {
-    return _then(_PatientInfo(
-      patientId: patientId == freezed
+    return _then(_$_PatientInfo(
+      patientId: freezed == patientId
           ? _value.patientId
           : patientId // ignore: cast_nullable_to_non_nullable
               as String?,
-      patientReference: patientReference == freezed
+      patientReference: freezed == patientReference
           ? _value.patientReference
           : patientReference // ignore: cast_nullable_to_non_nullable
               as String?,
-      patientName: patientName == freezed
+      patientName: freezed == patientName
           ? _value.patientName
           : patientName // ignore: cast_nullable_to_non_nullable
               as String?,
-      encounterId: encounterId == freezed
+      encounterId: freezed == encounterId
           ? _value.encounterId
           : encounterId // ignore: cast_nullable_to_non_nullable
               as String?,
-      encounterReference: encounterReference == freezed
+      encounterReference: freezed == encounterReference
           ? _value.encounterReference
           : encounterReference // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -610,7 +562,7 @@ class _$_PatientInfo implements _PatientInfo {
       this.encounterReference});
 
   factory _$_PatientInfo.fromJson(Map<String, dynamic> json) =>
-      _$_$_PatientInfoFromJson(json);
+      _$$_PatientInfoFromJson(json);
 
   @override
   final String? patientId;
@@ -631,67 +583,62 @@ class _$_PatientInfo implements _PatientInfo {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PatientInfo &&
+        (other.runtimeType == runtimeType &&
+            other is _$_PatientInfo &&
             (identical(other.patientId, patientId) ||
-                const DeepCollectionEquality()
-                    .equals(other.patientId, patientId)) &&
+                other.patientId == patientId) &&
             (identical(other.patientReference, patientReference) ||
-                const DeepCollectionEquality()
-                    .equals(other.patientReference, patientReference)) &&
+                other.patientReference == patientReference) &&
             (identical(other.patientName, patientName) ||
-                const DeepCollectionEquality()
-                    .equals(other.patientName, patientName)) &&
+                other.patientName == patientName) &&
             (identical(other.encounterId, encounterId) ||
-                const DeepCollectionEquality()
-                    .equals(other.encounterId, encounterId)) &&
+                other.encounterId == encounterId) &&
             (identical(other.encounterReference, encounterReference) ||
-                const DeepCollectionEquality()
-                    .equals(other.encounterReference, encounterReference)));
+                other.encounterReference == encounterReference));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(patientId) ^
-      const DeepCollectionEquality().hash(patientReference) ^
-      const DeepCollectionEquality().hash(patientName) ^
-      const DeepCollectionEquality().hash(encounterId) ^
-      const DeepCollectionEquality().hash(encounterReference);
 
   @JsonKey(ignore: true)
   @override
-  _$PatientInfoCopyWith<_PatientInfo> get copyWith =>
-      __$PatientInfoCopyWithImpl<_PatientInfo>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, patientId, patientReference,
+      patientName, encounterId, encounterReference);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PatientInfoCopyWith<_$_PatientInfo> get copyWith =>
+      __$$_PatientInfoCopyWithImpl<_$_PatientInfo>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PatientInfoToJson(this);
+    return _$$_PatientInfoToJson(
+      this,
+    );
   }
 }
 
 abstract class _PatientInfo implements PatientInfo {
   factory _PatientInfo(
-      {String? patientId,
-      String? patientReference,
-      String? patientName,
-      String? encounterId,
-      String? encounterReference}) = _$_PatientInfo;
+      {final String? patientId,
+      final String? patientReference,
+      final String? patientName,
+      final String? encounterId,
+      final String? encounterReference}) = _$_PatientInfo;
 
   factory _PatientInfo.fromJson(Map<String, dynamic> json) =
       _$_PatientInfo.fromJson;
 
   @override
-  String? get patientId => throw _privateConstructorUsedError;
+  String? get patientId;
   @override
-  String? get patientReference => throw _privateConstructorUsedError;
+  String? get patientReference;
   @override
-  String? get patientName => throw _privateConstructorUsedError;
+  String? get patientName;
   @override
-  String? get encounterId => throw _privateConstructorUsedError;
+  String? get encounterId;
   @override
-  String? get encounterReference => throw _privateConstructorUsedError;
+  String? get encounterReference;
   @override
   @JsonKey(ignore: true)
-  _$PatientInfoCopyWith<_PatientInfo> get copyWith =>
+  _$$_PatientInfoCopyWith<_$_PatientInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }

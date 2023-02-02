@@ -2,9 +2,7 @@
 import 'dart:convert';
 
 // Flutter imports:
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/basic.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
@@ -20,6 +18,7 @@ import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patie
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/review_of_systems_item_widget.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/symptom_widget.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_examination/widgets/quick_access_item_widget.dart';
+
 import '../../../../../../mocks/mocks.dart';
 import '../../../../../../mocks/test_helpers.dart';
 

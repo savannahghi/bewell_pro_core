@@ -28,9 +28,9 @@ void main() {
     expect(find.byIcon(Icons.search), findsOneWidget);
   });
   testWidgets('GuideBox renders correctly', (WidgetTester tester) async {
-    final IconData iconData = Icons.account_box;
+    const IconData iconData = Icons.account_box;
 
-    await tester.pumpWidget(MaterialApp(
+    await tester.pumpWidget(const MaterialApp(
         home: GuideBox(iconData: iconData, description: '', title: 'top')));
     expect(find.byType(Positioned), findsWidgets);
     expect(find.text('top'), findsOneWidget);

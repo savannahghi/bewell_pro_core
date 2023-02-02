@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shared_ui_components/buttons.dart';
+import 'package:sghi_core/ui_components/src/buttons.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/clinical_exam_forms/retire_composition_button.dart';

@@ -5,8 +5,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:quiver/async.dart';
 import 'package:quiver/testing/time.dart';
-import 'package:shared_ui_components/inputs.dart';
-import 'package:shared_ui_components/platform_loader.dart';
+import 'package:sghi_core/ui_components/src/inputs.dart';
+import 'package:sghi_core/ui_components/src/platform_loader.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/domain/clinical/value_objects/start_visit_type_enum.dart';

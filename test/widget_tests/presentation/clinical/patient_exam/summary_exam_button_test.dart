@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
-import 'package:shared_ui_components/inputs.dart';
-import 'package:shared_ui_components/platform_loader.dart';
+import 'package:sghi_core/domain_objects/entities/user_profile.dart';
+import 'package:sghi_core/ui_components/src/inputs.dart';
+import 'package:sghi_core/ui_components/src/platform_loader.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/states/clinical_state.dart';
@@ -25,14 +26,19 @@ import 'package:bewell_pro_core/domain/core/value_objects/asset_strings.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/summary_action.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/widgets/otp_box.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/summary/widgets/summary_exam_button.dart';
+import '../../../../mocks/mock_utils.dart';
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 
 void main() {
+  setupFirebaseAuthMocks();
+
   group('SaveExamSummaryButton', () {
     late Store<CoreState> store;
 
-    setUp(() {
+    setUp(() async {
+      await Firebase.initializeApp();
+
       final UserState userState = UserState.initial().copyWith(
         userProfile: UserProfile.initial().copyWith(
           primaryEmailAddress: testEmailAddress,

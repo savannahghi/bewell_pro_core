@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:shared_ui_components/inputs.dart';
+import 'package:sghi_core/ui_components/src/inputs.dart';
 import 'package:unicons/unicons.dart';
 
 // Project imports:

@@ -1,6 +1,6 @@
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/value_objects.dart';
+import 'package:sghi_core/domain_objects/value_objects/unknown.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/actions/misc_state_actions/batch_update_misc_state_action.dart';

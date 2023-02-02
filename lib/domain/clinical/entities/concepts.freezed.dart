@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'concepts.dart';
 
@@ -10,40 +12,11 @@ part of 'concepts.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 ConceptName _$ConceptNameFromJson(Map<String, dynamic> json) {
   return _ConceptName.fromJson(json);
 }
-
-/// @nodoc
-class _$ConceptNameTearOff {
-  const _$ConceptNameTearOff();
-
-  _ConceptName call(
-      {@JsonKey(name: 'external_id') String? loading,
-      @JsonKey(name: 'locale') String? locale,
-      @JsonKey(name: 'name') String? name,
-      @JsonKey(name: 'name_type') String? nameType,
-      @JsonKey(name: 'type') String? type,
-      @JsonKey(name: 'uuid') String? uuid}) {
-    return _ConceptName(
-      loading: loading,
-      locale: locale,
-      name: name,
-      nameType: nameType,
-      type: type,
-      uuid: uuid,
-    );
-  }
-
-  ConceptName fromJson(Map<String, Object> json) {
-    return ConceptName.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ConceptName = _$ConceptNameTearOff();
 
 /// @nodoc
 mixin _$ConceptName {
@@ -70,7 +43,8 @@ mixin _$ConceptName {
 abstract class $ConceptNameCopyWith<$Res> {
   factory $ConceptNameCopyWith(
           ConceptName value, $Res Function(ConceptName) then) =
-      _$ConceptNameCopyWithImpl<$Res>;
+      _$ConceptNameCopyWithImpl<$Res, ConceptName>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'external_id') String? loading,
       @JsonKey(name: 'locale') String? locale,
@@ -81,13 +55,16 @@ abstract class $ConceptNameCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ConceptNameCopyWithImpl<$Res> implements $ConceptNameCopyWith<$Res> {
+class _$ConceptNameCopyWithImpl<$Res, $Val extends ConceptName>
+    implements $ConceptNameCopyWith<$Res> {
   _$ConceptNameCopyWithImpl(this._value, this._then);
 
-  final ConceptName _value;
   // ignore: unused_field
-  final $Res Function(ConceptName) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? loading = freezed,
@@ -98,41 +75,42 @@ class _$ConceptNameCopyWithImpl<$Res> implements $ConceptNameCopyWith<$Res> {
     Object? uuid = freezed,
   }) {
     return _then(_value.copyWith(
-      loading: loading == freezed
+      loading: freezed == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
               as String?,
-      locale: locale == freezed
+      locale: freezed == locale
           ? _value.locale
           : locale // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      nameType: nameType == freezed
+      nameType: freezed == nameType
           ? _value.nameType
           : nameType // ignore: cast_nullable_to_non_nullable
               as String?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
-      uuid: uuid == freezed
+      uuid: freezed == uuid
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$ConceptNameCopyWith<$Res>
+abstract class _$$_ConceptNameCopyWith<$Res>
     implements $ConceptNameCopyWith<$Res> {
-  factory _$ConceptNameCopyWith(
-          _ConceptName value, $Res Function(_ConceptName) then) =
-      __$ConceptNameCopyWithImpl<$Res>;
+  factory _$$_ConceptNameCopyWith(
+          _$_ConceptName value, $Res Function(_$_ConceptName) then) =
+      __$$_ConceptNameCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'external_id') String? loading,
       @JsonKey(name: 'locale') String? locale,
@@ -143,15 +121,14 @@ abstract class _$ConceptNameCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ConceptNameCopyWithImpl<$Res> extends _$ConceptNameCopyWithImpl<$Res>
-    implements _$ConceptNameCopyWith<$Res> {
-  __$ConceptNameCopyWithImpl(
-      _ConceptName _value, $Res Function(_ConceptName) _then)
-      : super(_value, (v) => _then(v as _ConceptName));
+class __$$_ConceptNameCopyWithImpl<$Res>
+    extends _$ConceptNameCopyWithImpl<$Res, _$_ConceptName>
+    implements _$$_ConceptNameCopyWith<$Res> {
+  __$$_ConceptNameCopyWithImpl(
+      _$_ConceptName _value, $Res Function(_$_ConceptName) _then)
+      : super(_value, _then);
 
-  @override
-  _ConceptName get _value => super._value as _ConceptName;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? loading = freezed,
@@ -161,28 +138,28 @@ class __$ConceptNameCopyWithImpl<$Res> extends _$ConceptNameCopyWithImpl<$Res>
     Object? type = freezed,
     Object? uuid = freezed,
   }) {
-    return _then(_ConceptName(
-      loading: loading == freezed
+    return _then(_$_ConceptName(
+      loading: freezed == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
               as String?,
-      locale: locale == freezed
+      locale: freezed == locale
           ? _value.locale
           : locale // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      nameType: nameType == freezed
+      nameType: freezed == nameType
           ? _value.nameType
           : nameType // ignore: cast_nullable_to_non_nullable
               as String?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
-      uuid: uuid == freezed
+      uuid: freezed == uuid
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -202,7 +179,7 @@ class _$_ConceptName implements _ConceptName {
       @JsonKey(name: 'uuid') this.uuid});
 
   factory _$_ConceptName.fromJson(Map<String, dynamic> json) =>
-      _$_$_ConceptNameFromJson(json);
+      _$$_ConceptNameFromJson(json);
 
   @override
   @JsonKey(name: 'external_id')
@@ -231,108 +208,75 @@ class _$_ConceptName implements _ConceptName {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ConceptName &&
-            (identical(other.loading, loading) ||
-                const DeepCollectionEquality()
-                    .equals(other.loading, loading)) &&
-            (identical(other.locale, locale) ||
-                const DeepCollectionEquality().equals(other.locale, locale)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_ConceptName &&
+            (identical(other.loading, loading) || other.loading == loading) &&
+            (identical(other.locale, locale) || other.locale == locale) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.nameType, nameType) ||
-                const DeepCollectionEquality()
-                    .equals(other.nameType, nameType)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.uuid, uuid) ||
-                const DeepCollectionEquality().equals(other.uuid, uuid)));
+                other.nameType == nameType) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.uuid, uuid) || other.uuid == uuid));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(loading) ^
-      const DeepCollectionEquality().hash(locale) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(nameType) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(uuid);
 
   @JsonKey(ignore: true)
   @override
-  _$ConceptNameCopyWith<_ConceptName> get copyWith =>
-      __$ConceptNameCopyWithImpl<_ConceptName>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, loading, locale, name, nameType, type, uuid);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ConceptNameCopyWith<_$_ConceptName> get copyWith =>
+      __$$_ConceptNameCopyWithImpl<_$_ConceptName>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ConceptNameToJson(this);
+    return _$$_ConceptNameToJson(
+      this,
+    );
   }
 }
 
 abstract class _ConceptName implements ConceptName {
   factory _ConceptName(
-      {@JsonKey(name: 'external_id') String? loading,
-      @JsonKey(name: 'locale') String? locale,
-      @JsonKey(name: 'name') String? name,
-      @JsonKey(name: 'name_type') String? nameType,
-      @JsonKey(name: 'type') String? type,
-      @JsonKey(name: 'uuid') String? uuid}) = _$_ConceptName;
+      {@JsonKey(name: 'external_id') final String? loading,
+      @JsonKey(name: 'locale') final String? locale,
+      @JsonKey(name: 'name') final String? name,
+      @JsonKey(name: 'name_type') final String? nameType,
+      @JsonKey(name: 'type') final String? type,
+      @JsonKey(name: 'uuid') final String? uuid}) = _$_ConceptName;
 
   factory _ConceptName.fromJson(Map<String, dynamic> json) =
       _$_ConceptName.fromJson;
 
   @override
   @JsonKey(name: 'external_id')
-  String? get loading => throw _privateConstructorUsedError;
+  String? get loading;
   @override
   @JsonKey(name: 'locale')
-  String? get locale => throw _privateConstructorUsedError;
+  String? get locale;
   @override
   @JsonKey(name: 'name')
-  String? get name => throw _privateConstructorUsedError;
+  String? get name;
   @override
   @JsonKey(name: 'name_type')
-  String? get nameType => throw _privateConstructorUsedError;
+  String? get nameType;
   @override
   @JsonKey(name: 'type')
-  String? get type => throw _privateConstructorUsedError;
+  String? get type;
   @override
   @JsonKey(name: 'uuid')
-  String? get uuid => throw _privateConstructorUsedError;
+  String? get uuid;
   @override
   @JsonKey(ignore: true)
-  _$ConceptNameCopyWith<_ConceptName> get copyWith =>
+  _$$_ConceptNameCopyWith<_$_ConceptName> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 Description _$DescriptionFromJson(Map<String, dynamic> json) {
   return _Description.fromJson(json);
 }
-
-/// @nodoc
-class _$DescriptionTearOff {
-  const _$DescriptionTearOff();
-
-  _Description call(
-      {@JsonKey(name: 'description') String? description,
-      @JsonKey(name: 'description_type') String? descriptionType,
-      @JsonKey(name: 'type') String? type,
-      @JsonKey(name: 'uuid') String? uuid}) {
-    return _Description(
-      description: description,
-      descriptionType: descriptionType,
-      type: type,
-      uuid: uuid,
-    );
-  }
-
-  Description fromJson(Map<String, Object> json) {
-    return Description.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Description = _$DescriptionTearOff();
 
 /// @nodoc
 mixin _$Description {
@@ -355,7 +299,8 @@ mixin _$Description {
 abstract class $DescriptionCopyWith<$Res> {
   factory $DescriptionCopyWith(
           Description value, $Res Function(Description) then) =
-      _$DescriptionCopyWithImpl<$Res>;
+      _$DescriptionCopyWithImpl<$Res, Description>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'description') String? description,
       @JsonKey(name: 'description_type') String? descriptionType,
@@ -364,13 +309,16 @@ abstract class $DescriptionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DescriptionCopyWithImpl<$Res> implements $DescriptionCopyWith<$Res> {
+class _$DescriptionCopyWithImpl<$Res, $Val extends Description>
+    implements $DescriptionCopyWith<$Res> {
   _$DescriptionCopyWithImpl(this._value, this._then);
 
-  final Description _value;
   // ignore: unused_field
-  final $Res Function(Description) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? description = freezed,
@@ -379,33 +327,34 @@ class _$DescriptionCopyWithImpl<$Res> implements $DescriptionCopyWith<$Res> {
     Object? uuid = freezed,
   }) {
     return _then(_value.copyWith(
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      descriptionType: descriptionType == freezed
+      descriptionType: freezed == descriptionType
           ? _value.descriptionType
           : descriptionType // ignore: cast_nullable_to_non_nullable
               as String?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
-      uuid: uuid == freezed
+      uuid: freezed == uuid
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$DescriptionCopyWith<$Res>
+abstract class _$$_DescriptionCopyWith<$Res>
     implements $DescriptionCopyWith<$Res> {
-  factory _$DescriptionCopyWith(
-          _Description value, $Res Function(_Description) then) =
-      __$DescriptionCopyWithImpl<$Res>;
+  factory _$$_DescriptionCopyWith(
+          _$_Description value, $Res Function(_$_Description) then) =
+      __$$_DescriptionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'description') String? description,
       @JsonKey(name: 'description_type') String? descriptionType,
@@ -414,15 +363,14 @@ abstract class _$DescriptionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DescriptionCopyWithImpl<$Res> extends _$DescriptionCopyWithImpl<$Res>
-    implements _$DescriptionCopyWith<$Res> {
-  __$DescriptionCopyWithImpl(
-      _Description _value, $Res Function(_Description) _then)
-      : super(_value, (v) => _then(v as _Description));
+class __$$_DescriptionCopyWithImpl<$Res>
+    extends _$DescriptionCopyWithImpl<$Res, _$_Description>
+    implements _$$_DescriptionCopyWith<$Res> {
+  __$$_DescriptionCopyWithImpl(
+      _$_Description _value, $Res Function(_$_Description) _then)
+      : super(_value, _then);
 
-  @override
-  _Description get _value => super._value as _Description;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? description = freezed,
@@ -430,20 +378,20 @@ class __$DescriptionCopyWithImpl<$Res> extends _$DescriptionCopyWithImpl<$Res>
     Object? type = freezed,
     Object? uuid = freezed,
   }) {
-    return _then(_Description(
-      description: description == freezed
+    return _then(_$_Description(
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      descriptionType: descriptionType == freezed
+      descriptionType: freezed == descriptionType
           ? _value.descriptionType
           : descriptionType // ignore: cast_nullable_to_non_nullable
               as String?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
-      uuid: uuid == freezed
+      uuid: freezed == uuid
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -461,7 +409,7 @@ class _$_Description implements _Description {
       @JsonKey(name: 'uuid') this.uuid});
 
   factory _$_Description.fromJson(Map<String, dynamic> json) =>
-      _$_$_DescriptionFromJson(json);
+      _$$_DescriptionFromJson(json);
 
   @override
   @JsonKey(name: 'description')
@@ -484,126 +432,66 @@ class _$_Description implements _Description {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Description &&
+        (other.runtimeType == runtimeType &&
+            other is _$_Description &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
+                other.description == description) &&
             (identical(other.descriptionType, descriptionType) ||
-                const DeepCollectionEquality()
-                    .equals(other.descriptionType, descriptionType)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.uuid, uuid) ||
-                const DeepCollectionEquality().equals(other.uuid, uuid)));
+                other.descriptionType == descriptionType) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.uuid, uuid) || other.uuid == uuid));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(descriptionType) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(uuid);
 
   @JsonKey(ignore: true)
   @override
-  _$DescriptionCopyWith<_Description> get copyWith =>
-      __$DescriptionCopyWithImpl<_Description>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, description, descriptionType, type, uuid);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_DescriptionCopyWith<_$_Description> get copyWith =>
+      __$$_DescriptionCopyWithImpl<_$_Description>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_DescriptionToJson(this);
+    return _$$_DescriptionToJson(
+      this,
+    );
   }
 }
 
 abstract class _Description implements Description {
   factory _Description(
-      {@JsonKey(name: 'description') String? description,
-      @JsonKey(name: 'description_type') String? descriptionType,
-      @JsonKey(name: 'type') String? type,
-      @JsonKey(name: 'uuid') String? uuid}) = _$_Description;
+      {@JsonKey(name: 'description') final String? description,
+      @JsonKey(name: 'description_type') final String? descriptionType,
+      @JsonKey(name: 'type') final String? type,
+      @JsonKey(name: 'uuid') final String? uuid}) = _$_Description;
 
   factory _Description.fromJson(Map<String, dynamic> json) =
       _$_Description.fromJson;
 
   @override
   @JsonKey(name: 'description')
-  String? get description => throw _privateConstructorUsedError;
+  String? get description;
   @override
   @JsonKey(name: 'description_type')
-  String? get descriptionType => throw _privateConstructorUsedError;
+  String? get descriptionType;
   @override
   @JsonKey(name: 'type')
-  String? get type => throw _privateConstructorUsedError;
+  String? get type;
   @override
   @JsonKey(name: 'uuid')
-  String? get uuid => throw _privateConstructorUsedError;
+  String? get uuid;
   @override
   @JsonKey(ignore: true)
-  _$DescriptionCopyWith<_Description> get copyWith =>
+  _$$_DescriptionCopyWith<_$_Description> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 Concept _$ConceptFromJson(Map<String, dynamic> json) {
   return _Concept.fromJson(json);
 }
-
-/// @nodoc
-class _$ConceptTearOff {
-  const _$ConceptTearOff();
-
-  _Concept call(
-      {@JsonKey(name: 'concept_class') String? conceptClass,
-      @JsonKey(name: 'created_on') String? createdOn,
-      @JsonKey(name: 'datatype') String? dataType,
-      @JsonKey(name: 'descriptions') List<Description?>? descriptions,
-      @JsonKey(name: 'display_locale') String? displayLocale,
-      @JsonKey(name: 'display_name') String? displayName,
-      @JsonKey(name: 'external_id') String? externalID,
-      @JsonKey(name: 'id') String? id,
-      @JsonKey(name: 'is_latest_version') bool? isLatestVersion,
-      @JsonKey(name: 'locale') String? locale,
-      @JsonKey(name: 'owner') String? owner,
-      @JsonKey(name: 'retired') bool? retired,
-      @JsonKey(name: 'uuid') String? uuid,
-      @JsonKey(name: 'source') String? source,
-      @JsonKey(name: 'source_url') String? sourceURL,
-      @JsonKey(name: 'type') String? type,
-      @JsonKey(name: 'updated_on') String? updatedOn,
-      @JsonKey(name: 'url') String? url,
-      @JsonKey(name: 'version') String? version,
-      @JsonKey(name: 'names') List<ConceptName?>? names}) {
-    return _Concept(
-      conceptClass: conceptClass,
-      createdOn: createdOn,
-      dataType: dataType,
-      descriptions: descriptions,
-      displayLocale: displayLocale,
-      displayName: displayName,
-      externalID: externalID,
-      id: id,
-      isLatestVersion: isLatestVersion,
-      locale: locale,
-      owner: owner,
-      retired: retired,
-      uuid: uuid,
-      source: source,
-      sourceURL: sourceURL,
-      type: type,
-      updatedOn: updatedOn,
-      url: url,
-      version: version,
-      names: names,
-    );
-  }
-
-  Concept fromJson(Map<String, Object> json) {
-    return Concept.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Concept = _$ConceptTearOff();
 
 /// @nodoc
 mixin _$Concept {
@@ -656,7 +544,8 @@ mixin _$Concept {
 /// @nodoc
 abstract class $ConceptCopyWith<$Res> {
   factory $ConceptCopyWith(Concept value, $Res Function(Concept) then) =
-      _$ConceptCopyWithImpl<$Res>;
+      _$ConceptCopyWithImpl<$Res, Concept>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'concept_class') String? conceptClass,
       @JsonKey(name: 'created_on') String? createdOn,
@@ -681,13 +570,16 @@ abstract class $ConceptCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ConceptCopyWithImpl<$Res> implements $ConceptCopyWith<$Res> {
+class _$ConceptCopyWithImpl<$Res, $Val extends Concept>
+    implements $ConceptCopyWith<$Res> {
   _$ConceptCopyWithImpl(this._value, this._then);
 
-  final Concept _value;
   // ignore: unused_field
-  final $Res Function(Concept) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? conceptClass = freezed,
@@ -712,95 +604,97 @@ class _$ConceptCopyWithImpl<$Res> implements $ConceptCopyWith<$Res> {
     Object? names = freezed,
   }) {
     return _then(_value.copyWith(
-      conceptClass: conceptClass == freezed
+      conceptClass: freezed == conceptClass
           ? _value.conceptClass
           : conceptClass // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdOn: createdOn == freezed
+      createdOn: freezed == createdOn
           ? _value.createdOn
           : createdOn // ignore: cast_nullable_to_non_nullable
               as String?,
-      dataType: dataType == freezed
+      dataType: freezed == dataType
           ? _value.dataType
           : dataType // ignore: cast_nullable_to_non_nullable
               as String?,
-      descriptions: descriptions == freezed
+      descriptions: freezed == descriptions
           ? _value.descriptions
           : descriptions // ignore: cast_nullable_to_non_nullable
               as List<Description?>?,
-      displayLocale: displayLocale == freezed
+      displayLocale: freezed == displayLocale
           ? _value.displayLocale
           : displayLocale // ignore: cast_nullable_to_non_nullable
               as String?,
-      displayName: displayName == freezed
+      displayName: freezed == displayName
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
               as String?,
-      externalID: externalID == freezed
+      externalID: freezed == externalID
           ? _value.externalID
           : externalID // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      isLatestVersion: isLatestVersion == freezed
+      isLatestVersion: freezed == isLatestVersion
           ? _value.isLatestVersion
           : isLatestVersion // ignore: cast_nullable_to_non_nullable
               as bool?,
-      locale: locale == freezed
+      locale: freezed == locale
           ? _value.locale
           : locale // ignore: cast_nullable_to_non_nullable
               as String?,
-      owner: owner == freezed
+      owner: freezed == owner
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
               as String?,
-      retired: retired == freezed
+      retired: freezed == retired
           ? _value.retired
           : retired // ignore: cast_nullable_to_non_nullable
               as bool?,
-      uuid: uuid == freezed
+      uuid: freezed == uuid
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
               as String?,
-      source: source == freezed
+      source: freezed == source
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
               as String?,
-      sourceURL: sourceURL == freezed
+      sourceURL: freezed == sourceURL
           ? _value.sourceURL
           : sourceURL // ignore: cast_nullable_to_non_nullable
               as String?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
-      updatedOn: updatedOn == freezed
+      updatedOn: freezed == updatedOn
           ? _value.updatedOn
           : updatedOn // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      version: version == freezed
+      version: freezed == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String?,
-      names: names == freezed
+      names: freezed == names
           ? _value.names
           : names // ignore: cast_nullable_to_non_nullable
               as List<ConceptName?>?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$ConceptCopyWith<$Res> implements $ConceptCopyWith<$Res> {
-  factory _$ConceptCopyWith(_Concept value, $Res Function(_Concept) then) =
-      __$ConceptCopyWithImpl<$Res>;
+abstract class _$$_ConceptCopyWith<$Res> implements $ConceptCopyWith<$Res> {
+  factory _$$_ConceptCopyWith(
+          _$_Concept value, $Res Function(_$_Concept) then) =
+      __$$_ConceptCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'concept_class') String? conceptClass,
       @JsonKey(name: 'created_on') String? createdOn,
@@ -825,14 +719,13 @@ abstract class _$ConceptCopyWith<$Res> implements $ConceptCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ConceptCopyWithImpl<$Res> extends _$ConceptCopyWithImpl<$Res>
-    implements _$ConceptCopyWith<$Res> {
-  __$ConceptCopyWithImpl(_Concept _value, $Res Function(_Concept) _then)
-      : super(_value, (v) => _then(v as _Concept));
+class __$$_ConceptCopyWithImpl<$Res>
+    extends _$ConceptCopyWithImpl<$Res, _$_Concept>
+    implements _$$_ConceptCopyWith<$Res> {
+  __$$_ConceptCopyWithImpl(_$_Concept _value, $Res Function(_$_Concept) _then)
+      : super(_value, _then);
 
-  @override
-  _Concept get _value => super._value as _Concept;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? conceptClass = freezed,
@@ -856,85 +749,85 @@ class __$ConceptCopyWithImpl<$Res> extends _$ConceptCopyWithImpl<$Res>
     Object? version = freezed,
     Object? names = freezed,
   }) {
-    return _then(_Concept(
-      conceptClass: conceptClass == freezed
+    return _then(_$_Concept(
+      conceptClass: freezed == conceptClass
           ? _value.conceptClass
           : conceptClass // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdOn: createdOn == freezed
+      createdOn: freezed == createdOn
           ? _value.createdOn
           : createdOn // ignore: cast_nullable_to_non_nullable
               as String?,
-      dataType: dataType == freezed
+      dataType: freezed == dataType
           ? _value.dataType
           : dataType // ignore: cast_nullable_to_non_nullable
               as String?,
-      descriptions: descriptions == freezed
-          ? _value.descriptions
+      descriptions: freezed == descriptions
+          ? _value._descriptions
           : descriptions // ignore: cast_nullable_to_non_nullable
               as List<Description?>?,
-      displayLocale: displayLocale == freezed
+      displayLocale: freezed == displayLocale
           ? _value.displayLocale
           : displayLocale // ignore: cast_nullable_to_non_nullable
               as String?,
-      displayName: displayName == freezed
+      displayName: freezed == displayName
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
               as String?,
-      externalID: externalID == freezed
+      externalID: freezed == externalID
           ? _value.externalID
           : externalID // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      isLatestVersion: isLatestVersion == freezed
+      isLatestVersion: freezed == isLatestVersion
           ? _value.isLatestVersion
           : isLatestVersion // ignore: cast_nullable_to_non_nullable
               as bool?,
-      locale: locale == freezed
+      locale: freezed == locale
           ? _value.locale
           : locale // ignore: cast_nullable_to_non_nullable
               as String?,
-      owner: owner == freezed
+      owner: freezed == owner
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
               as String?,
-      retired: retired == freezed
+      retired: freezed == retired
           ? _value.retired
           : retired // ignore: cast_nullable_to_non_nullable
               as bool?,
-      uuid: uuid == freezed
+      uuid: freezed == uuid
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
               as String?,
-      source: source == freezed
+      source: freezed == source
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
               as String?,
-      sourceURL: sourceURL == freezed
+      sourceURL: freezed == sourceURL
           ? _value.sourceURL
           : sourceURL // ignore: cast_nullable_to_non_nullable
               as String?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
-      updatedOn: updatedOn == freezed
+      updatedOn: freezed == updatedOn
           ? _value.updatedOn
           : updatedOn // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      version: version == freezed
+      version: freezed == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String?,
-      names: names == freezed
-          ? _value.names
+      names: freezed == names
+          ? _value._names
           : names // ignore: cast_nullable_to_non_nullable
               as List<ConceptName?>?,
     ));
@@ -948,7 +841,7 @@ class _$_Concept implements _Concept {
       {@JsonKey(name: 'concept_class') this.conceptClass,
       @JsonKey(name: 'created_on') this.createdOn,
       @JsonKey(name: 'datatype') this.dataType,
-      @JsonKey(name: 'descriptions') this.descriptions,
+      @JsonKey(name: 'descriptions') final List<Description?>? descriptions,
       @JsonKey(name: 'display_locale') this.displayLocale,
       @JsonKey(name: 'display_name') this.displayName,
       @JsonKey(name: 'external_id') this.externalID,
@@ -964,10 +857,12 @@ class _$_Concept implements _Concept {
       @JsonKey(name: 'updated_on') this.updatedOn,
       @JsonKey(name: 'url') this.url,
       @JsonKey(name: 'version') this.version,
-      @JsonKey(name: 'names') this.names});
+      @JsonKey(name: 'names') final List<ConceptName?>? names})
+      : _descriptions = descriptions,
+        _names = names;
 
   factory _$_Concept.fromJson(Map<String, dynamic> json) =>
-      _$_$_ConceptFromJson(json);
+      _$$_ConceptFromJson(json);
 
   @override
   @JsonKey(name: 'concept_class')
@@ -978,9 +873,16 @@ class _$_Concept implements _Concept {
   @override
   @JsonKey(name: 'datatype')
   final String? dataType;
+  final List<Description?>? _descriptions;
   @override
   @JsonKey(name: 'descriptions')
-  final List<Description?>? descriptions;
+  List<Description?>? get descriptions {
+    final value = _descriptions;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'display_locale')
   final String? displayLocale;
@@ -1026,9 +928,15 @@ class _$_Concept implements _Concept {
   @override
   @JsonKey(name: 'version')
   final String? version;
+  final List<ConceptName?>? _names;
   @override
   @JsonKey(name: 'names')
-  final List<ConceptName?>? names;
+  List<ConceptName?>? get names {
+    final value = _names;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -1038,209 +946,174 @@ class _$_Concept implements _Concept {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Concept &&
+        (other.runtimeType == runtimeType &&
+            other is _$_Concept &&
             (identical(other.conceptClass, conceptClass) ||
-                const DeepCollectionEquality()
-                    .equals(other.conceptClass, conceptClass)) &&
+                other.conceptClass == conceptClass) &&
             (identical(other.createdOn, createdOn) ||
-                const DeepCollectionEquality()
-                    .equals(other.createdOn, createdOn)) &&
+                other.createdOn == createdOn) &&
             (identical(other.dataType, dataType) ||
-                const DeepCollectionEquality()
-                    .equals(other.dataType, dataType)) &&
-            (identical(other.descriptions, descriptions) ||
-                const DeepCollectionEquality()
-                    .equals(other.descriptions, descriptions)) &&
+                other.dataType == dataType) &&
+            const DeepCollectionEquality()
+                .equals(other._descriptions, _descriptions) &&
             (identical(other.displayLocale, displayLocale) ||
-                const DeepCollectionEquality()
-                    .equals(other.displayLocale, displayLocale)) &&
+                other.displayLocale == displayLocale) &&
             (identical(other.displayName, displayName) ||
-                const DeepCollectionEquality()
-                    .equals(other.displayName, displayName)) &&
+                other.displayName == displayName) &&
             (identical(other.externalID, externalID) ||
-                const DeepCollectionEquality()
-                    .equals(other.externalID, externalID)) &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+                other.externalID == externalID) &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.isLatestVersion, isLatestVersion) ||
-                const DeepCollectionEquality()
-                    .equals(other.isLatestVersion, isLatestVersion)) &&
-            (identical(other.locale, locale) ||
-                const DeepCollectionEquality().equals(other.locale, locale)) &&
-            (identical(other.owner, owner) ||
-                const DeepCollectionEquality().equals(other.owner, owner)) &&
-            (identical(other.retired, retired) ||
-                const DeepCollectionEquality()
-                    .equals(other.retired, retired)) &&
-            (identical(other.uuid, uuid) ||
-                const DeepCollectionEquality().equals(other.uuid, uuid)) &&
-            (identical(other.source, source) ||
-                const DeepCollectionEquality().equals(other.source, source)) &&
+                other.isLatestVersion == isLatestVersion) &&
+            (identical(other.locale, locale) || other.locale == locale) &&
+            (identical(other.owner, owner) || other.owner == owner) &&
+            (identical(other.retired, retired) || other.retired == retired) &&
+            (identical(other.uuid, uuid) || other.uuid == uuid) &&
+            (identical(other.source, source) || other.source == source) &&
             (identical(other.sourceURL, sourceURL) ||
-                const DeepCollectionEquality()
-                    .equals(other.sourceURL, sourceURL)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
+                other.sourceURL == sourceURL) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.updatedOn, updatedOn) ||
-                const DeepCollectionEquality()
-                    .equals(other.updatedOn, updatedOn)) &&
-            (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)) &&
-            (identical(other.version, version) ||
-                const DeepCollectionEquality()
-                    .equals(other.version, version)) &&
-            (identical(other.names, names) ||
-                const DeepCollectionEquality().equals(other.names, names)));
+                other.updatedOn == updatedOn) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.version, version) || other.version == version) &&
+            const DeepCollectionEquality().equals(other._names, _names));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(conceptClass) ^
-      const DeepCollectionEquality().hash(createdOn) ^
-      const DeepCollectionEquality().hash(dataType) ^
-      const DeepCollectionEquality().hash(descriptions) ^
-      const DeepCollectionEquality().hash(displayLocale) ^
-      const DeepCollectionEquality().hash(displayName) ^
-      const DeepCollectionEquality().hash(externalID) ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(isLatestVersion) ^
-      const DeepCollectionEquality().hash(locale) ^
-      const DeepCollectionEquality().hash(owner) ^
-      const DeepCollectionEquality().hash(retired) ^
-      const DeepCollectionEquality().hash(uuid) ^
-      const DeepCollectionEquality().hash(source) ^
-      const DeepCollectionEquality().hash(sourceURL) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(updatedOn) ^
-      const DeepCollectionEquality().hash(url) ^
-      const DeepCollectionEquality().hash(version) ^
-      const DeepCollectionEquality().hash(names);
 
   @JsonKey(ignore: true)
   @override
-  _$ConceptCopyWith<_Concept> get copyWith =>
-      __$ConceptCopyWithImpl<_Concept>(this, _$identity);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        conceptClass,
+        createdOn,
+        dataType,
+        const DeepCollectionEquality().hash(_descriptions),
+        displayLocale,
+        displayName,
+        externalID,
+        id,
+        isLatestVersion,
+        locale,
+        owner,
+        retired,
+        uuid,
+        source,
+        sourceURL,
+        type,
+        updatedOn,
+        url,
+        version,
+        const DeepCollectionEquality().hash(_names)
+      ]);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ConceptCopyWith<_$_Concept> get copyWith =>
+      __$$_ConceptCopyWithImpl<_$_Concept>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ConceptToJson(this);
+    return _$$_ConceptToJson(
+      this,
+    );
   }
 }
 
 abstract class _Concept implements Concept {
   factory _Concept(
-      {@JsonKey(name: 'concept_class') String? conceptClass,
-      @JsonKey(name: 'created_on') String? createdOn,
-      @JsonKey(name: 'datatype') String? dataType,
-      @JsonKey(name: 'descriptions') List<Description?>? descriptions,
-      @JsonKey(name: 'display_locale') String? displayLocale,
-      @JsonKey(name: 'display_name') String? displayName,
-      @JsonKey(name: 'external_id') String? externalID,
-      @JsonKey(name: 'id') String? id,
-      @JsonKey(name: 'is_latest_version') bool? isLatestVersion,
-      @JsonKey(name: 'locale') String? locale,
-      @JsonKey(name: 'owner') String? owner,
-      @JsonKey(name: 'retired') bool? retired,
-      @JsonKey(name: 'uuid') String? uuid,
-      @JsonKey(name: 'source') String? source,
-      @JsonKey(name: 'source_url') String? sourceURL,
-      @JsonKey(name: 'type') String? type,
-      @JsonKey(name: 'updated_on') String? updatedOn,
-      @JsonKey(name: 'url') String? url,
-      @JsonKey(name: 'version') String? version,
-      @JsonKey(name: 'names') List<ConceptName?>? names}) = _$_Concept;
+      {@JsonKey(name: 'concept_class') final String? conceptClass,
+      @JsonKey(name: 'created_on') final String? createdOn,
+      @JsonKey(name: 'datatype') final String? dataType,
+      @JsonKey(name: 'descriptions') final List<Description?>? descriptions,
+      @JsonKey(name: 'display_locale') final String? displayLocale,
+      @JsonKey(name: 'display_name') final String? displayName,
+      @JsonKey(name: 'external_id') final String? externalID,
+      @JsonKey(name: 'id') final String? id,
+      @JsonKey(name: 'is_latest_version') final bool? isLatestVersion,
+      @JsonKey(name: 'locale') final String? locale,
+      @JsonKey(name: 'owner') final String? owner,
+      @JsonKey(name: 'retired') final bool? retired,
+      @JsonKey(name: 'uuid') final String? uuid,
+      @JsonKey(name: 'source') final String? source,
+      @JsonKey(name: 'source_url') final String? sourceURL,
+      @JsonKey(name: 'type') final String? type,
+      @JsonKey(name: 'updated_on') final String? updatedOn,
+      @JsonKey(name: 'url') final String? url,
+      @JsonKey(name: 'version') final String? version,
+      @JsonKey(name: 'names') final List<ConceptName?>? names}) = _$_Concept;
 
   factory _Concept.fromJson(Map<String, dynamic> json) = _$_Concept.fromJson;
 
   @override
   @JsonKey(name: 'concept_class')
-  String? get conceptClass => throw _privateConstructorUsedError;
+  String? get conceptClass;
   @override
   @JsonKey(name: 'created_on')
-  String? get createdOn => throw _privateConstructorUsedError;
+  String? get createdOn;
   @override
   @JsonKey(name: 'datatype')
-  String? get dataType => throw _privateConstructorUsedError;
+  String? get dataType;
   @override
   @JsonKey(name: 'descriptions')
-  List<Description?>? get descriptions => throw _privateConstructorUsedError;
+  List<Description?>? get descriptions;
   @override
   @JsonKey(name: 'display_locale')
-  String? get displayLocale => throw _privateConstructorUsedError;
+  String? get displayLocale;
   @override
   @JsonKey(name: 'display_name')
-  String? get displayName => throw _privateConstructorUsedError;
+  String? get displayName;
   @override
   @JsonKey(name: 'external_id')
-  String? get externalID => throw _privateConstructorUsedError;
+  String? get externalID;
   @override
   @JsonKey(name: 'id')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
   @JsonKey(name: 'is_latest_version')
-  bool? get isLatestVersion => throw _privateConstructorUsedError;
+  bool? get isLatestVersion;
   @override
   @JsonKey(name: 'locale')
-  String? get locale => throw _privateConstructorUsedError;
+  String? get locale;
   @override
   @JsonKey(name: 'owner')
-  String? get owner => throw _privateConstructorUsedError;
+  String? get owner;
   @override
   @JsonKey(name: 'retired')
-  bool? get retired => throw _privateConstructorUsedError;
+  bool? get retired;
   @override
   @JsonKey(name: 'uuid')
-  String? get uuid => throw _privateConstructorUsedError;
+  String? get uuid;
   @override
   @JsonKey(name: 'source')
-  String? get source => throw _privateConstructorUsedError;
+  String? get source;
   @override
   @JsonKey(name: 'source_url')
-  String? get sourceURL => throw _privateConstructorUsedError;
+  String? get sourceURL;
   @override
   @JsonKey(name: 'type')
-  String? get type => throw _privateConstructorUsedError;
+  String? get type;
   @override
   @JsonKey(name: 'updated_on')
-  String? get updatedOn => throw _privateConstructorUsedError;
+  String? get updatedOn;
   @override
   @JsonKey(name: 'url')
-  String? get url => throw _privateConstructorUsedError;
+  String? get url;
   @override
   @JsonKey(name: 'version')
-  String? get version => throw _privateConstructorUsedError;
+  String? get version;
   @override
   @JsonKey(name: 'names')
-  List<ConceptName?>? get names => throw _privateConstructorUsedError;
+  List<ConceptName?>? get names;
   @override
   @JsonKey(ignore: true)
-  _$ConceptCopyWith<_Concept> get copyWith =>
+  _$$_ConceptCopyWith<_$_Concept> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 ConceptList _$ConceptListFromJson(Map<String, dynamic> json) {
   return _ConceptList.fromJson(json);
 }
-
-/// @nodoc
-class _$ConceptListTearOff {
-  const _$ConceptListTearOff();
-
-  _ConceptList call(
-      {@JsonKey(name: 'listConcepts') List<Concept?>? listConcepts}) {
-    return _ConceptList(
-      listConcepts: listConcepts,
-    );
-  }
-
-  ConceptList fromJson(Map<String, Object> json) {
-    return ConceptList.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ConceptList = _$ConceptListTearOff();
 
 /// @nodoc
 mixin _$ConceptList {
@@ -1257,58 +1130,62 @@ mixin _$ConceptList {
 abstract class $ConceptListCopyWith<$Res> {
   factory $ConceptListCopyWith(
           ConceptList value, $Res Function(ConceptList) then) =
-      _$ConceptListCopyWithImpl<$Res>;
+      _$ConceptListCopyWithImpl<$Res, ConceptList>;
+  @useResult
   $Res call({@JsonKey(name: 'listConcepts') List<Concept?>? listConcepts});
 }
 
 /// @nodoc
-class _$ConceptListCopyWithImpl<$Res> implements $ConceptListCopyWith<$Res> {
+class _$ConceptListCopyWithImpl<$Res, $Val extends ConceptList>
+    implements $ConceptListCopyWith<$Res> {
   _$ConceptListCopyWithImpl(this._value, this._then);
 
-  final ConceptList _value;
   // ignore: unused_field
-  final $Res Function(ConceptList) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? listConcepts = freezed,
   }) {
     return _then(_value.copyWith(
-      listConcepts: listConcepts == freezed
+      listConcepts: freezed == listConcepts
           ? _value.listConcepts
           : listConcepts // ignore: cast_nullable_to_non_nullable
               as List<Concept?>?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$ConceptListCopyWith<$Res>
+abstract class _$$_ConceptListCopyWith<$Res>
     implements $ConceptListCopyWith<$Res> {
-  factory _$ConceptListCopyWith(
-          _ConceptList value, $Res Function(_ConceptList) then) =
-      __$ConceptListCopyWithImpl<$Res>;
+  factory _$$_ConceptListCopyWith(
+          _$_ConceptList value, $Res Function(_$_ConceptList) then) =
+      __$$_ConceptListCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({@JsonKey(name: 'listConcepts') List<Concept?>? listConcepts});
 }
 
 /// @nodoc
-class __$ConceptListCopyWithImpl<$Res> extends _$ConceptListCopyWithImpl<$Res>
-    implements _$ConceptListCopyWith<$Res> {
-  __$ConceptListCopyWithImpl(
-      _ConceptList _value, $Res Function(_ConceptList) _then)
-      : super(_value, (v) => _then(v as _ConceptList));
+class __$$_ConceptListCopyWithImpl<$Res>
+    extends _$ConceptListCopyWithImpl<$Res, _$_ConceptList>
+    implements _$$_ConceptListCopyWith<$Res> {
+  __$$_ConceptListCopyWithImpl(
+      _$_ConceptList _value, $Res Function(_$_ConceptList) _then)
+      : super(_value, _then);
 
-  @override
-  _ConceptList get _value => super._value as _ConceptList;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? listConcepts = freezed,
   }) {
-    return _then(_ConceptList(
-      listConcepts: listConcepts == freezed
-          ? _value.listConcepts
+    return _then(_$_ConceptList(
+      listConcepts: freezed == listConcepts
+          ? _value._listConcepts
           : listConcepts // ignore: cast_nullable_to_non_nullable
               as List<Concept?>?,
     ));
@@ -1318,14 +1195,22 @@ class __$ConceptListCopyWithImpl<$Res> extends _$ConceptListCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_ConceptList implements _ConceptList {
-  _$_ConceptList({@JsonKey(name: 'listConcepts') this.listConcepts});
+  _$_ConceptList(
+      {@JsonKey(name: 'listConcepts') final List<Concept?>? listConcepts})
+      : _listConcepts = listConcepts;
 
   factory _$_ConceptList.fromJson(Map<String, dynamic> json) =>
-      _$_$_ConceptListFromJson(json);
+      _$$_ConceptListFromJson(json);
 
+  final List<Concept?>? _listConcepts;
   @override
   @JsonKey(name: 'listConcepts')
-  final List<Concept?>? listConcepts;
+  List<Concept?>? get listConcepts {
+    final value = _listConcepts;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -1335,30 +1220,34 @@ class _$_ConceptList implements _ConceptList {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ConceptList &&
-            (identical(other.listConcepts, listConcepts) ||
-                const DeepCollectionEquality()
-                    .equals(other.listConcepts, listConcepts)));
+        (other.runtimeType == runtimeType &&
+            other is _$_ConceptList &&
+            const DeepCollectionEquality()
+                .equals(other._listConcepts, _listConcepts));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(listConcepts);
 
   @JsonKey(ignore: true)
   @override
-  _$ConceptListCopyWith<_ConceptList> get copyWith =>
-      __$ConceptListCopyWithImpl<_ConceptList>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_listConcepts));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ConceptListCopyWith<_$_ConceptList> get copyWith =>
+      __$$_ConceptListCopyWithImpl<_$_ConceptList>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ConceptListToJson(this);
+    return _$$_ConceptListToJson(
+      this,
+    );
   }
 }
 
 abstract class _ConceptList implements ConceptList {
   factory _ConceptList(
-          {@JsonKey(name: 'listConcepts') List<Concept?>? listConcepts}) =
+          {@JsonKey(name: 'listConcepts') final List<Concept?>? listConcepts}) =
       _$_ConceptList;
 
   factory _ConceptList.fromJson(Map<String, dynamic> json) =
@@ -1366,9 +1255,9 @@ abstract class _ConceptList implements ConceptList {
 
   @override
   @JsonKey(name: 'listConcepts')
-  List<Concept?>? get listConcepts => throw _privateConstructorUsedError;
+  List<Concept?>? get listConcepts;
   @override
   @JsonKey(ignore: true)
-  _$ConceptListCopyWith<_ConceptList> get copyWith =>
+  _$$_ConceptListCopyWith<_$_ConceptList> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'condition_edge.dart';
 
@@ -10,33 +12,12 @@ part of 'condition_edge.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 ConditionRelayConnection _$ConditionRelayConnectionFromJson(
     Map<String, dynamic> json) {
   return _ConditionRelayConnection.fromJson(json);
 }
-
-/// @nodoc
-class _$ConditionRelayConnectionTearOff {
-  const _$ConditionRelayConnectionTearOff();
-
-  _ConditionRelayConnection call(
-      {@JsonKey(name: 'edges') List<ConditionEdgeRelay?>? edges,
-      @JsonKey(name: 'pageInfo') PageInfo? pageInfo}) {
-    return _ConditionRelayConnection(
-      edges: edges,
-      pageInfo: pageInfo,
-    );
-  }
-
-  ConditionRelayConnection fromJson(Map<String, Object> json) {
-    return ConditionRelayConnection.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ConditionRelayConnection = _$ConditionRelayConnectionTearOff();
 
 /// @nodoc
 mixin _$ConditionRelayConnection {
@@ -55,7 +36,8 @@ mixin _$ConditionRelayConnection {
 abstract class $ConditionRelayConnectionCopyWith<$Res> {
   factory $ConditionRelayConnectionCopyWith(ConditionRelayConnection value,
           $Res Function(ConditionRelayConnection) then) =
-      _$ConditionRelayConnectionCopyWithImpl<$Res>;
+      _$ConditionRelayConnectionCopyWithImpl<$Res, ConditionRelayConnection>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'edges') List<ConditionEdgeRelay?>? edges,
       @JsonKey(name: 'pageInfo') PageInfo? pageInfo});
@@ -64,50 +46,56 @@ abstract class $ConditionRelayConnectionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ConditionRelayConnectionCopyWithImpl<$Res>
+class _$ConditionRelayConnectionCopyWithImpl<$Res,
+        $Val extends ConditionRelayConnection>
     implements $ConditionRelayConnectionCopyWith<$Res> {
   _$ConditionRelayConnectionCopyWithImpl(this._value, this._then);
 
-  final ConditionRelayConnection _value;
   // ignore: unused_field
-  final $Res Function(ConditionRelayConnection) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? edges = freezed,
     Object? pageInfo = freezed,
   }) {
     return _then(_value.copyWith(
-      edges: edges == freezed
+      edges: freezed == edges
           ? _value.edges
           : edges // ignore: cast_nullable_to_non_nullable
               as List<ConditionEdgeRelay?>?,
-      pageInfo: pageInfo == freezed
+      pageInfo: freezed == pageInfo
           ? _value.pageInfo
           : pageInfo // ignore: cast_nullable_to_non_nullable
               as PageInfo?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $PageInfoCopyWith<$Res>? get pageInfo {
     if (_value.pageInfo == null) {
       return null;
     }
 
     return $PageInfoCopyWith<$Res>(_value.pageInfo!, (value) {
-      return _then(_value.copyWith(pageInfo: value));
+      return _then(_value.copyWith(pageInfo: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$ConditionRelayConnectionCopyWith<$Res>
+abstract class _$$_ConditionRelayConnectionCopyWith<$Res>
     implements $ConditionRelayConnectionCopyWith<$Res> {
-  factory _$ConditionRelayConnectionCopyWith(_ConditionRelayConnection value,
-          $Res Function(_ConditionRelayConnection) then) =
-      __$ConditionRelayConnectionCopyWithImpl<$Res>;
+  factory _$$_ConditionRelayConnectionCopyWith(
+          _$_ConditionRelayConnection value,
+          $Res Function(_$_ConditionRelayConnection) then) =
+      __$$_ConditionRelayConnectionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'edges') List<ConditionEdgeRelay?>? edges,
       @JsonKey(name: 'pageInfo') PageInfo? pageInfo});
@@ -117,28 +105,26 @@ abstract class _$ConditionRelayConnectionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ConditionRelayConnectionCopyWithImpl<$Res>
-    extends _$ConditionRelayConnectionCopyWithImpl<$Res>
-    implements _$ConditionRelayConnectionCopyWith<$Res> {
-  __$ConditionRelayConnectionCopyWithImpl(_ConditionRelayConnection _value,
-      $Res Function(_ConditionRelayConnection) _then)
-      : super(_value, (v) => _then(v as _ConditionRelayConnection));
+class __$$_ConditionRelayConnectionCopyWithImpl<$Res>
+    extends _$ConditionRelayConnectionCopyWithImpl<$Res,
+        _$_ConditionRelayConnection>
+    implements _$$_ConditionRelayConnectionCopyWith<$Res> {
+  __$$_ConditionRelayConnectionCopyWithImpl(_$_ConditionRelayConnection _value,
+      $Res Function(_$_ConditionRelayConnection) _then)
+      : super(_value, _then);
 
-  @override
-  _ConditionRelayConnection get _value =>
-      super._value as _ConditionRelayConnection;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? edges = freezed,
     Object? pageInfo = freezed,
   }) {
-    return _then(_ConditionRelayConnection(
-      edges: edges == freezed
-          ? _value.edges
+    return _then(_$_ConditionRelayConnection(
+      edges: freezed == edges
+          ? _value._edges
           : edges // ignore: cast_nullable_to_non_nullable
               as List<ConditionEdgeRelay?>?,
-      pageInfo: pageInfo == freezed
+      pageInfo: freezed == pageInfo
           ? _value.pageInfo
           : pageInfo // ignore: cast_nullable_to_non_nullable
               as PageInfo?,
@@ -150,15 +136,23 @@ class __$ConditionRelayConnectionCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ConditionRelayConnection implements _ConditionRelayConnection {
   _$_ConditionRelayConnection(
-      {@JsonKey(name: 'edges') this.edges,
-      @JsonKey(name: 'pageInfo') this.pageInfo});
+      {@JsonKey(name: 'edges') final List<ConditionEdgeRelay?>? edges,
+      @JsonKey(name: 'pageInfo') this.pageInfo})
+      : _edges = edges;
 
   factory _$_ConditionRelayConnection.fromJson(Map<String, dynamic> json) =>
-      _$_$_ConditionRelayConnectionFromJson(json);
+      _$$_ConditionRelayConnectionFromJson(json);
 
+  final List<ConditionEdgeRelay?>? _edges;
   @override
   @JsonKey(name: 'edges')
-  final List<ConditionEdgeRelay?>? edges;
+  List<ConditionEdgeRelay?>? get edges {
+    final value = _edges;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'pageInfo')
   final PageInfo? pageInfo;
@@ -171,36 +165,37 @@ class _$_ConditionRelayConnection implements _ConditionRelayConnection {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ConditionRelayConnection &&
-            (identical(other.edges, edges) ||
-                const DeepCollectionEquality().equals(other.edges, edges)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_ConditionRelayConnection &&
+            const DeepCollectionEquality().equals(other._edges, _edges) &&
             (identical(other.pageInfo, pageInfo) ||
-                const DeepCollectionEquality()
-                    .equals(other.pageInfo, pageInfo)));
+                other.pageInfo == pageInfo));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(edges) ^
-      const DeepCollectionEquality().hash(pageInfo);
 
   @JsonKey(ignore: true)
   @override
-  _$ConditionRelayConnectionCopyWith<_ConditionRelayConnection> get copyWith =>
-      __$ConditionRelayConnectionCopyWithImpl<_ConditionRelayConnection>(
-          this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_edges), pageInfo);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ConditionRelayConnectionCopyWith<_$_ConditionRelayConnection>
+      get copyWith => __$$_ConditionRelayConnectionCopyWithImpl<
+          _$_ConditionRelayConnection>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ConditionRelayConnectionToJson(this);
+    return _$$_ConditionRelayConnectionToJson(
+      this,
+    );
   }
 }
 
 abstract class _ConditionRelayConnection implements ConditionRelayConnection {
   factory _ConditionRelayConnection(
-          {@JsonKey(name: 'edges') List<ConditionEdgeRelay?>? edges,
-          @JsonKey(name: 'pageInfo') PageInfo? pageInfo}) =
+          {@JsonKey(name: 'edges') final List<ConditionEdgeRelay?>? edges,
+          @JsonKey(name: 'pageInfo') final PageInfo? pageInfo}) =
       _$_ConditionRelayConnection;
 
   factory _ConditionRelayConnection.fromJson(Map<String, dynamic> json) =
@@ -208,40 +203,19 @@ abstract class _ConditionRelayConnection implements ConditionRelayConnection {
 
   @override
   @JsonKey(name: 'edges')
-  List<ConditionEdgeRelay?>? get edges => throw _privateConstructorUsedError;
+  List<ConditionEdgeRelay?>? get edges;
   @override
   @JsonKey(name: 'pageInfo')
-  PageInfo? get pageInfo => throw _privateConstructorUsedError;
+  PageInfo? get pageInfo;
   @override
   @JsonKey(ignore: true)
-  _$ConditionRelayConnectionCopyWith<_ConditionRelayConnection> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_ConditionRelayConnectionCopyWith<_$_ConditionRelayConnection>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 ConditionEdgeRelay _$ConditionEdgeRelayFromJson(Map<String, dynamic> json) {
   return _ConditionEdgeRelay.fromJson(json);
 }
-
-/// @nodoc
-class _$ConditionEdgeRelayTearOff {
-  const _$ConditionEdgeRelayTearOff();
-
-  _ConditionEdgeRelay call(
-      {@JsonKey(name: 'cursor') String? cursor,
-      @JsonKey(name: 'node') Condition? node}) {
-    return _ConditionEdgeRelay(
-      cursor: cursor,
-      node: node,
-    );
-  }
-
-  ConditionEdgeRelay fromJson(Map<String, Object> json) {
-    return ConditionEdgeRelay.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ConditionEdgeRelay = _$ConditionEdgeRelayTearOff();
 
 /// @nodoc
 mixin _$ConditionEdgeRelay {
@@ -260,7 +234,8 @@ mixin _$ConditionEdgeRelay {
 abstract class $ConditionEdgeRelayCopyWith<$Res> {
   factory $ConditionEdgeRelayCopyWith(
           ConditionEdgeRelay value, $Res Function(ConditionEdgeRelay) then) =
-      _$ConditionEdgeRelayCopyWithImpl<$Res>;
+      _$ConditionEdgeRelayCopyWithImpl<$Res, ConditionEdgeRelay>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'cursor') String? cursor,
       @JsonKey(name: 'node') Condition? node});
@@ -269,50 +244,54 @@ abstract class $ConditionEdgeRelayCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ConditionEdgeRelayCopyWithImpl<$Res>
+class _$ConditionEdgeRelayCopyWithImpl<$Res, $Val extends ConditionEdgeRelay>
     implements $ConditionEdgeRelayCopyWith<$Res> {
   _$ConditionEdgeRelayCopyWithImpl(this._value, this._then);
 
-  final ConditionEdgeRelay _value;
   // ignore: unused_field
-  final $Res Function(ConditionEdgeRelay) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? cursor = freezed,
     Object? node = freezed,
   }) {
     return _then(_value.copyWith(
-      cursor: cursor == freezed
+      cursor: freezed == cursor
           ? _value.cursor
           : cursor // ignore: cast_nullable_to_non_nullable
               as String?,
-      node: node == freezed
+      node: freezed == node
           ? _value.node
           : node // ignore: cast_nullable_to_non_nullable
               as Condition?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ConditionCopyWith<$Res>? get node {
     if (_value.node == null) {
       return null;
     }
 
     return $ConditionCopyWith<$Res>(_value.node!, (value) {
-      return _then(_value.copyWith(node: value));
+      return _then(_value.copyWith(node: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$ConditionEdgeRelayCopyWith<$Res>
+abstract class _$$_ConditionEdgeRelayCopyWith<$Res>
     implements $ConditionEdgeRelayCopyWith<$Res> {
-  factory _$ConditionEdgeRelayCopyWith(
-          _ConditionEdgeRelay value, $Res Function(_ConditionEdgeRelay) then) =
-      __$ConditionEdgeRelayCopyWithImpl<$Res>;
+  factory _$$_ConditionEdgeRelayCopyWith(_$_ConditionEdgeRelay value,
+          $Res Function(_$_ConditionEdgeRelay) then) =
+      __$$_ConditionEdgeRelayCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'cursor') String? cursor,
       @JsonKey(name: 'node') Condition? node});
@@ -322,27 +301,25 @@ abstract class _$ConditionEdgeRelayCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ConditionEdgeRelayCopyWithImpl<$Res>
-    extends _$ConditionEdgeRelayCopyWithImpl<$Res>
-    implements _$ConditionEdgeRelayCopyWith<$Res> {
-  __$ConditionEdgeRelayCopyWithImpl(
-      _ConditionEdgeRelay _value, $Res Function(_ConditionEdgeRelay) _then)
-      : super(_value, (v) => _then(v as _ConditionEdgeRelay));
+class __$$_ConditionEdgeRelayCopyWithImpl<$Res>
+    extends _$ConditionEdgeRelayCopyWithImpl<$Res, _$_ConditionEdgeRelay>
+    implements _$$_ConditionEdgeRelayCopyWith<$Res> {
+  __$$_ConditionEdgeRelayCopyWithImpl(
+      _$_ConditionEdgeRelay _value, $Res Function(_$_ConditionEdgeRelay) _then)
+      : super(_value, _then);
 
-  @override
-  _ConditionEdgeRelay get _value => super._value as _ConditionEdgeRelay;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? cursor = freezed,
     Object? node = freezed,
   }) {
-    return _then(_ConditionEdgeRelay(
-      cursor: cursor == freezed
+    return _then(_$_ConditionEdgeRelay(
+      cursor: freezed == cursor
           ? _value.cursor
           : cursor // ignore: cast_nullable_to_non_nullable
               as String?,
-      node: node == freezed
+      node: freezed == node
           ? _value.node
           : node // ignore: cast_nullable_to_non_nullable
               as Condition?,
@@ -357,7 +334,7 @@ class _$_ConditionEdgeRelay implements _ConditionEdgeRelay {
       {@JsonKey(name: 'cursor') this.cursor, @JsonKey(name: 'node') this.node});
 
   factory _$_ConditionEdgeRelay.fromJson(Map<String, dynamic> json) =>
-      _$_$_ConditionEdgeRelayFromJson(json);
+      _$$_ConditionEdgeRelayFromJson(json);
 
   @override
   @JsonKey(name: 'cursor')
@@ -374,46 +351,47 @@ class _$_ConditionEdgeRelay implements _ConditionEdgeRelay {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ConditionEdgeRelay &&
-            (identical(other.cursor, cursor) ||
-                const DeepCollectionEquality().equals(other.cursor, cursor)) &&
-            (identical(other.node, node) ||
-                const DeepCollectionEquality().equals(other.node, node)));
+        (other.runtimeType == runtimeType &&
+            other is _$_ConditionEdgeRelay &&
+            (identical(other.cursor, cursor) || other.cursor == cursor) &&
+            (identical(other.node, node) || other.node == node));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(cursor) ^
-      const DeepCollectionEquality().hash(node);
 
   @JsonKey(ignore: true)
   @override
-  _$ConditionEdgeRelayCopyWith<_ConditionEdgeRelay> get copyWith =>
-      __$ConditionEdgeRelayCopyWithImpl<_ConditionEdgeRelay>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, cursor, node);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ConditionEdgeRelayCopyWith<_$_ConditionEdgeRelay> get copyWith =>
+      __$$_ConditionEdgeRelayCopyWithImpl<_$_ConditionEdgeRelay>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ConditionEdgeRelayToJson(this);
+    return _$$_ConditionEdgeRelayToJson(
+      this,
+    );
   }
 }
 
 abstract class _ConditionEdgeRelay implements ConditionEdgeRelay {
   factory _ConditionEdgeRelay(
-      {@JsonKey(name: 'cursor') String? cursor,
-      @JsonKey(name: 'node') Condition? node}) = _$_ConditionEdgeRelay;
+      {@JsonKey(name: 'cursor') final String? cursor,
+      @JsonKey(name: 'node') final Condition? node}) = _$_ConditionEdgeRelay;
 
   factory _ConditionEdgeRelay.fromJson(Map<String, dynamic> json) =
       _$_ConditionEdgeRelay.fromJson;
 
   @override
   @JsonKey(name: 'cursor')
-  String? get cursor => throw _privateConstructorUsedError;
+  String? get cursor;
   @override
   @JsonKey(name: 'node')
-  Condition? get node => throw _privateConstructorUsedError;
+  Condition? get node;
   @override
   @JsonKey(ignore: true)
-  _$ConditionEdgeRelayCopyWith<_ConditionEdgeRelay> get copyWith =>
+  _$$_ConditionEdgeRelayCopyWith<_$_ConditionEdgeRelay> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -2,14 +2,14 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:app_wrapper/app_wrapper.dart';
-import 'package:flutter_graphql_client/graph_utils.dart';
+import 'package:sghi_core/app_wrapper/app_wrapper_base.dart';
 import 'package:quiver/core.dart';
 import 'package:rxdart/rxdart.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/clinical/patient_registration/validator_mixin.dart';
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
+import 'package:sghi_core/flutter_graphql_client/flutter_graphql_utils.dart';
 
 class PhoneNumberFormManager with Validator {
   final BehaviorSubject<String> _phoneNumber = BehaviorSubject<String>();

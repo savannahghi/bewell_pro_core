@@ -5,14 +5,14 @@ import 'package:flutter/services.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/value_objects.dart';
-import 'package:misc_utilities/misc.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_themes/text_themes.dart';
-import 'package:shared_ui_components/buttons.dart';
-import 'package:shared_ui_components/inputs.dart';
-import 'package:shared_ui_components/platform_loader.dart';
+import 'package:sghi_core/domain_objects/value_objects/unknown.dart';
+import 'package:sghi_core/misc_utilities/misc.dart';
+import 'package:sghi_core/shared_themes/colors.dart';
+import 'package:sghi_core/shared_themes/spaces.dart';
+import 'package:sghi_core/shared_themes/text_themes.dart';
+import 'package:sghi_core/ui_components/src/buttons.dart';
+import 'package:sghi_core/ui_components/src/inputs.dart';
+import 'package:sghi_core/ui_components/src/platform_loader.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/core/services/helpers.dart';
@@ -44,7 +44,7 @@ class _PhoneLoginState extends State<PhoneLogin> {
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance?.addPostFrameCallback((Duration timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((Duration timeStamp) {
       StoreProvider.dispatch<CoreState>(
         context,
         BatchUpdateMiscStateAction(

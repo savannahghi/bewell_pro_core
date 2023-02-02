@@ -1,9 +1,6 @@
 // Dart imports:
 import 'dart:convert';
 
-// Flutter imports:
-import 'package:flutter/material.dart';
-
 // Package imports:
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -18,6 +15,7 @@ import 'package:bewell_pro_core/domain/core/value_objects/app_widget_keys.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/drawers/drawer_utils/drawer_save_button.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_history/history_form_input.dart';
 import 'package:bewell_pro_core/presentation/clinical/patient_exam/widgets/patient_history/patient_history_form.dart';
+
 import '../../../../mocks/mocks.dart';
 import '../../../../mocks/test_helpers.dart';
 

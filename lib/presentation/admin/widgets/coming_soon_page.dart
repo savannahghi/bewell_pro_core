@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:misc_utilities/enums.dart';
-import 'package:misc_utilities/responsive_widget.dart';
-import 'package:shared_ui_components/coming_soon_page.dart';
+import 'package:sghi_core/domain_objects/entities/navigation_item.dart';
+import 'package:sghi_core/misc_utilities/enums.dart';
+import 'package:sghi_core/misc_utilities/responsive_widget.dart';
+import 'package:sghi_core/ui_components/src/coming_soon_page.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/actions/user_state_actions/logout_action.dart';

@@ -2,9 +2,9 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/spaces.dart';
-import 'package:shared_ui_components/inputs.dart';
+import 'package:sghi_core/shared_themes/colors.dart';
+import 'package:sghi_core/afya_moja_core/afya_moja_core.dart';
+import 'package:sghi_core/ui_components/src/inputs.dart';
 import 'package:unicons/unicons.dart';
 
 // Project imports:
@@ -141,7 +141,9 @@ class _HistoryFormInputState extends State<HistoryFormInput> {
                       payload = val;
                       return null;
                     }
-                  : (String? v) {},
+                  : (String? v) {
+                      return null;
+                    },
               initialValue: payload,
               onChanged: (String v) {
                 widget.callbackRegister

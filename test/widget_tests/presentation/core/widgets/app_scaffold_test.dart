@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail_image_network/mocktail_image_network.dart';
-import 'package:shared_ui_components/buttons.dart';
+import 'package:sghi_core/domain_objects/entities/auth_credential_response.dart';
+import 'package:sghi_core/ui_components/src/buttons.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/actions/navigation_actions/navigation_action.dart';

@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:shared_themes/colors.dart';
+import 'package:sghi_core/shared_themes/colors.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/domain/core/value_objects/numbers_constants.dart';

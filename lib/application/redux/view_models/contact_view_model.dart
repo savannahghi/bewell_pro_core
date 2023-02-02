@@ -1,10 +1,12 @@
 // Package imports:
 import 'package:async_redux/async_redux.dart';
-import 'package:domain_objects/entities.dart';
-import 'package:domain_objects/value_objects.dart';
 
 // Project imports:
 import 'package:bewell_pro_core/application/redux/states/core_state.dart';
+import 'package:sghi_core/domain_objects/entities/user_profile.dart';
+import 'package:sghi_core/domain_objects/value_objects/email_address.dart';
+import 'package:sghi_core/domain_objects/value_objects/phone_number.dart';
+import 'package:sghi_core/domain_objects/value_objects/unknown.dart';
 
 class ContactViewModel extends Vm {
   final EmailAddress primaryEmail;
