@@ -52,7 +52,7 @@ class _CommunicationSettingsPageState extends State<CommunicationSettingsPage> {
                   child: SILProfileBanner(
                     height: 140,
                     backgroundImagePath: doctorIcon,
-                    userPhotoUrl: (userProfile.photoUploadID != null)
+                    userPhotoPath: (userProfile.photoUploadID != null)
                         ? userProfile.photoUploadID!
                         : UNKNOWN,
                     userName:
@@ -61,6 +61,8 @@ class _CommunicationSettingsPageState extends State<CommunicationSettingsPage> {
                         ? userProfile.primaryPhoneNumber!.getValue()
                         : UNKNOWN,
                     profileRoute: userProfileRoute,
+                    gender:
+                        userProfile.userBioData?.gender.toString() ?? UNKNOWN,
                   ),
                 ),
               ),

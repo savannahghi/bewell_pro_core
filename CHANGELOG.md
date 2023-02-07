@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.0.1
+
+- chore: upgrade sghi_core package
+
 ## 2.0.0
 
 - chore: upgrade to flutter 3.3.9

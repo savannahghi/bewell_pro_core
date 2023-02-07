@@ -70,8 +70,9 @@ class _ProfileMasterDetailState extends State<ProfileMasterDetail> {
           child: Material(
             child: SILProfileBanner(
               editable: true,
+              gender: bioData?.gender.toString() ?? UNKNOWN,
               backgroundImagePath: doctorIcon,
-              userPhotoUrl: (userProfile?.photoUploadID != null)
+              userPhotoPath: (userProfile?.photoUploadID != null)
                   ? userProfile!.photoUploadID!
                   : UNKNOWN,
               userName: userName,

@@ -37,9 +37,10 @@ class _EditProfilePageState extends State<EditProfilePage> {
               child: Material(
                 child: SILProfileBanner(
                   backgroundImagePath: doctorIcon,
-                  userPhotoUrl: (userProfile.photoUploadID != null)
+                  userPhotoPath: (userProfile.photoUploadID != null)
                       ? userProfile.photoUploadID!
                       : UNKNOWN,
+                  gender: userProfile.userBioData?.gender.toString() ?? UNKNOWN,
                   userName:
                       '${toBeginningOfSentenceCase(bioData.firstName?.getValue())} ${toBeginningOfSentenceCase(bioData.lastName?.getValue())}',
                   primaryPhone: userProfile.primaryPhoneNumber!.getValue(),
