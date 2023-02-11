@@ -1,6 +1,6 @@
 name: bewell_pro_core
 description: Main package for Slade Advantage
-version: 2.0.0
+version: 2.0.1
 homepage: https://github.com/savannahghi/bewell_pro_core
 repository: https://github.com/savannahghi/bewell_pro_core
 issue_tracker: https://github.com/savannahghi/bewell_pro_core/issues
@@ -55,7 +55,7 @@ dependencies:
   quiver: ^3.0.1
   rxdart: ^0.27.1
   sentry_flutter: ^6.9.1
-  sghi_core: ^0.2.10
+  sghi_core: ^0.2.12
   shimmer: ^2.0.0
   sqflite: ^2.0.0+4
   unicons: ^2.0.1
