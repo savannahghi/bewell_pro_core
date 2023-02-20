@@ -36,14 +36,17 @@ Map<String, dynamic> getFAQQueryVariables() {
   return <String, dynamic>{'flavour': Flavour.PRO.name};
 }
 
+//TODO: Debug backend for persistent as it does not allow BOTH as variable. Leads to server timeout
 Map<String, dynamic> getFeedQueryVariables() {
   return <String, dynamic>{
     'flavour': Flavour.PRO.name,
-    'persistent': 'BOTH',
+    'persistent': 'FALSE',
     'isAnonymous': false,
   };
 }
 
+
+//TODO: Debug backend for the icon image url. Current link leads to dead url, needs updating.
 // Feed content query
 const String getFeedContentQuery = r'''
 query GetFeed(

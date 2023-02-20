@@ -273,7 +273,7 @@ packages:
       name: connectivity_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.2"
   connectivity_plus:
     dependency: "direct main"
     description:
@@ -448,7 +448,7 @@ packages:
       name: device_info_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.2"
   diacritic:
     dependency: transitive
     description:
@@ -1149,7 +1149,7 @@ packages:
       name: node_preamble
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.2"
   numerus:
     dependency: transitive
     description:
@@ -1450,7 +1450,7 @@ packages:
       name: sghi_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.12"
+    version: "0.2.13"
   share_plus:
     dependency: transitive
     description:
