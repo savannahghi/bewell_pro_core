@@ -61,6 +61,7 @@ class ProfileContactDetails extends StatelessWidget {
             ),
             veryLargeVerticalSizedBox,
             largeVerticalSizedBox,
+            veryLargeVerticalSizedBox,
             BuildContactProvider(),
           ],
         ),

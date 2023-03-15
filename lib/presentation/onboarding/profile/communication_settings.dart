@@ -67,6 +67,7 @@ class _CommunicationSettingsPageState extends State<CommunicationSettingsPage> {
                 ),
               ),
               veryLargeVerticalSizedBox,
+              veryLargeVerticalSizedBox,
               Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal:

@@ -83,7 +83,7 @@ class _ProfileMasterDetailState extends State<ProfileMasterDetail> {
         ),
         veryLargeVerticalSizedBox,
         mediumVerticalSizedBox,
-
+        veryLargeVerticalSizedBox,
         /// [Account] section
         const ProfileSeparator(text: accountSection),
 

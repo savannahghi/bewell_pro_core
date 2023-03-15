@@ -1,5 +1,10 @@
 # CHANGELOG
 
+
+## 2.0.2
+
+- chore: update user profile page
+
 ## 2.0.1
 
 - chore: upgrade sghi_core package

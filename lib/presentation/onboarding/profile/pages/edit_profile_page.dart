@@ -49,6 +49,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
               ),
             ),
             veryLargeVerticalSizedBox,
+            veryLargeVerticalSizedBox,
             EditProfileForm(),
           ],
         ),
