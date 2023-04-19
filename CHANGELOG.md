@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.0.3
+
+- chore: upgrade permisiion_handler package
+
 ## 2.0.2
 
 - chore: feed content query

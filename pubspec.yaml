@@ -1,6 +1,6 @@
 name: bewell_pro_core
 description: Main package for Slade Advantage
-version: 2.0.2
+version: 2.0.3
 homepage: https://github.com/savannahghi/bewell_pro_core
 repository: https://github.com/savannahghi/bewell_pro_core
 issue_tracker: https://github.com/savannahghi/bewell_pro_core/issues
@@ -48,7 +48,7 @@ dependencies:
   json_serializable: ^6.1.4
   material_design_icons_flutter: ^6.0.7096
   path: ^1.8.0
-  permission_handler: ^6.1.0
+  permission_handler: ^9.2.0
   permission_handler_platform_interface: ^3.6.1
   photo_view: ^0.14.0
   plugin_platform_interface: ^2.0.1
