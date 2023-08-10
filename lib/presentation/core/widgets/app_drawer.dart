@@ -36,7 +36,10 @@ class AppDrawer extends StatelessWidget {
                         children: <Widget>[
                           /// [All items]
                           NavDrawerContent(
-                            drawerItems: secondaryNavigationItem,
+                            drawerItems: secondaryNavigationItem
+                                .where((NavigationItem navigationItem) =>
+                                    navigationItem.title != 'Role Management')
+                                .toList(),
                             favouriteDrawer: false,
                           ),
 
@@ -44,7 +47,8 @@ class AppDrawer extends StatelessWidget {
                           NavDrawerContent(
                             drawerItems: secondaryNavigationItem
                                 .where((NavigationItem navigationItem) =>
-                                    navigationItem.isFavourite == true)
+                                    navigationItem.isFavourite == true &&
+                                    navigationItem.title != 'Role Management')
                                 .toList(),
                             favouriteDrawer: true,
                           ),
