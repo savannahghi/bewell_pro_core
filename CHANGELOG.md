@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 2.0.3
+
+- chore: upgrade permisiion_handler package
+
+## 2.0.2
+
+- chore: feed content query
+
 ## 2.0.1
 
 - chore: upgrade sghi_core package
